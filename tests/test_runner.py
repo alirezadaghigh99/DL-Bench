@@ -16,7 +16,7 @@ def clear_pycache():
         print(f"{pycache_dir} cleared.")
 
 def run_pytest(test_file, python_path="/local/data0/moved_data/publishablew/", 
-               test_case=None, conda_env="/home/aliredaq/anaconda3/envs/myenv/", is_conda = False, rep = None):
+               test_case=None, conda_env="/home/z/anaconda3/envs/myenv/", is_conda = False, rep = None):
     # Prepare the command
     if rep == "DeepReg":
         is_conda = True
@@ -28,7 +28,7 @@ def run_pytest(test_file, python_path="/local/data0/moved_data/publishablew/",
 
     # Use `source` to activate conda environment and run the pytest command
     if is_conda:
-        conda_setup = "/home/aliredaq/anaconda3/etc/profile.d/conda.sh"
+        conda_setup = "/home/z/anaconda3/etc/profile.d/conda.sh"
 
         command = f'source {conda_setup} && conda activate {rep.lower()} && PYTHONPATH={python_path} && cd {python_path}{rep} && python -m pytest {full_test_file} --color=no --cache-clear -v' 
         print("!"*20)
@@ -131,9 +131,9 @@ def runner(file_path, function_name, test_file, llm_output, llm, rep):
     process_test_results(test_cases=related_tests, test_errs=err, final_result=final_test_result, initial_test=initial_test_result, file_name=os.path.basename(file_path) , llm_output=llm_output, function_name=function_name, llm=llm, rep=rep)
 
 # if __name__ == "__main__":
-#     file_path = "/home/aliredaq/Desktop/CG-DeepLearning/CGBench/repo_test_v4/pyro/pyro/ops/tensor_utils.py"  
+#     file_path = "/home/z/Desktop/CG-DeepLearning/CGBench/repo_test_v4/pyro/pyro/ops/tensor_utils.py"  
 #     function_name = "as_complex"  
-#     test_file = "/home/aliredaq/Desktop/CG-DeepLearning/CGBench/repo_test_v4/pyro/tests/ops/test_tensor_utils.py::test_dct_dim"  
+#     test_file = "/home/z/Desktop/CG-DeepLearning/CGBench/repo_test_v4/pyro/tests/ops/test_tensor_utils.py::test_dct_dim"  
 
 #     runner(file_path, function_name, test_file, "")
 

@@ -38,18 +38,16 @@ def get_completion(prompt,tem = 0 , model="gpt-4o"):
 def call_mistral(prompt):
     from botocore.exceptions import ClientError
 
-    # Create a Bedrock Runtime client in the AWS Region of your choice.
+
     client = boto3.client("bedrock-runtime", region_name="us-west-2")
 
-    # Set the model ID, e.g., Mistral Large.
+
     model_id = "mistral.mistral-7b-instruct-v0:2"
 
-    # Define the prompt for the model.
 
-    # Embed the prompt in Mistral's instruction format.
     formatted_prompt = f"<s>[INST] {prompt} [/INST]"
 
-    # Format the request payload using the model's native structure.
+
     native_request = {
         "prompt": formatted_prompt,
         "max_tokens": 2048,
@@ -67,16 +65,16 @@ def call_mistral(prompt):
         print(f"ERROR: Can't invoke '{model_id}'. Reason: {e}")
         exit(1)
 
-    # Decode the response body.
+
     model_response = json.loads(response["body"].read())
 
-    # Extract and print the response text.
+
     response_text = model_response["outputs"][0]["text"]
     return response_text
 def call_llama(prompt):
     from botocore.exceptions import ClientError
 
-    # Create a Bedrock Runtime client in the AWS Region of your choice.
+
     client = boto3.client("bedrock-runtime", region_name="us-west-2")
     model_id = "meta.llama3-1-70b-instruct-v1:0"
     formatted_prompt = f"""
@@ -87,7 +85,7 @@ def call_llama(prompt):
 <|start_header_id|>assistant<|end_header_id|>
 """
 
-# Format the request payload using the model's native structure.
+
     native_request = {
         "prompt": formatted_prompt,
         "max_gen_len": 2048,

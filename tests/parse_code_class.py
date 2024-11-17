@@ -11,7 +11,7 @@ for r in repos:
     for llm in llms:
         original_data_params = f"LLMs/output_mistral/{r}/"
         folder_path = f"LLMs/output_{llm}/{r}/"
-        # BASE_PATH = "/home/aliredaq/Desktop/CG-DeepLearning/CGBench/repo_test_v4/"
+        # BASE_PATH = "/home/x/Desktop/CG-DeepLearning/CGBench/repo_test_v4/"
         # BASE_PATH = "/local/data0/moved_data/publishablew/"
         BASE_PATH = "/local/data0/moved_data/"
         # BASE_PATH = "/local/data0/moved_data/"

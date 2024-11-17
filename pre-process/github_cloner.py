@@ -61,7 +61,7 @@ with open(file_path, 'r') as json_file:
 
 i = 0
 count = 0
-token = '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'
+token = 'c'
 print(len(json_list))
 for js in tqdm(json_list):
     data = json.loads(js)

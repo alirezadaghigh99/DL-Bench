@@ -15,7 +15,7 @@ def clear_pycache():
         shutil.rmtree(pycache_dir)
         print(f"{pycache_dir} cleared.")
 
-def run_pytest(test_file, python_path= "/local/data0/moved_data/", test_case=None, conda_env="/home/aliredaq/anaconda3/envs/myenv/", is_conda = False, repository="None"):
+def run_pytest(test_file, python_path= "/local/data0/moved_data/", test_case=None, conda_env="/home/z/anaconda3/envs/myenv/", is_conda = False, repository="None"):
     # python_path += repository + "/"
     if test_case:
         full_test_file = f"{test_file}::{test_case}"
@@ -23,7 +23,7 @@ def run_pytest(test_file, python_path= "/local/data0/moved_data/", test_case=Non
         full_test_file = test_file
 
     if is_conda:
-        conda_setup = "/home/aliredaq/anaconda3/etc/profile.d/conda.sh"
+        conda_setup = "/home/z/anaconda3/etc/profile.d/conda.sh"
 
         command = f'source {conda_setup} && conda activate {conda_env} && PYTHONPATH={python_path} && cd {python_path}{repository} && python -m pytest {full_test_file} --color=no --cache-clear -v' 
         print("!"*20)
