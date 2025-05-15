@@ -1,0 +1,1015 @@
+output file:
+processed_scikit-learnf_regression165.json
+function:
+f_regression
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True] I: Seeding RNGs with 405794574
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False] FAILED
+
+=================================== FAILURES ===================================
+_ test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True] _
+
+X = array([[ 2,  1],
+       [ 2,  0],
+       [ 2, 10],
+       [ 2,  4]])
+y = array([0, 1, 1, 0]), expected_f_statistic = array([0.       , 0.2293578])
+expected_p_values = array([1.        , 0.67924985]), force_finite = True
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:322: in f_regression
+    return f_regression(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:30: in f_regression
+    corr = r_regression(X, y, center=center)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 0.  , -2.75],
+       [ 0.  , -3.75],
+       [ 0.  ,  6.25],
+       [ 0.  ,  0.25]])
+y = array([-0.5,  0.5,  0.5, -0.5]), center = True
+
+    def r_regression(X, y, center=True):
+        """Calculate the Pearson correlation coefficient between each feature in X and the target y."""
+        X = np.asarray(X)
+        y = np.asarray(y)
+        if center:
+            X = X - np.mean(X, axis=0)
+            y = y - np.mean(y)
+>       corr = np.dot(X.T, y) / (np.sqrt(np.sum(X ** 2, axis=0)) * np.sqrt(np.sum(y ** 2)))
+E       RuntimeWarning: invalid value encountered in divide
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:23: RuntimeWarning
+_ test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True] _
+
+X = array([[ 5,  1],
+       [ 3,  0],
+       [ 2, 10],
+       [ 8,  4]])
+y = array([0, 0, 0, 0]), expected_f_statistic = array([0., 0.])
+expected_p_values = array([1., 1.]), force_finite = True
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:322: in f_regression
+    return f_regression(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:30: in f_regression
+    corr = r_regression(X, y, center=center)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 0.5 , -2.75],
+       [-1.5 , -3.75],
+       [-2.5 ,  6.25],
+       [ 3.5 ,  0.25]])
+y = array([0., 0., 0., 0.]), center = True
+
+    def r_regression(X, y, center=True):
+        """Calculate the Pearson correlation coefficient between each feature in X and the target y."""
+        X = np.asarray(X)
+        y = np.asarray(y)
+        if center:
+            X = X - np.mean(X, axis=0)
+            y = y - np.mean(y)
+>       corr = np.dot(X.T, y) / (np.sqrt(np.sum(X ** 2, axis=0)) * np.sqrt(np.sum(y ** 2)))
+E       RuntimeWarning: invalid value encountered in divide
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:23: RuntimeWarning
+_ test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True] _
+
+X = array([[ 0,  1],
+       [ 1,  0],
+       [ 2, 10],
+       [ 3,  4]])
+y = array([0, 1, 2, 3])
+expected_f_statistic = array([1.79769313e+308, 8.45433000e-001])
+expected_p_values = array([0.      , 0.454913]), force_finite = True
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+            f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+>       np.testing.assert_array_almost_equal(f_statistic, expected_f_statistic)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.9/contextlib.py:79: in inner
+    return func(*args, **kwds)
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_array_almost_equal.<locals>.compare at 0x7fcce591aca0>, array([4.50359963e+15, 8.45433255e-01]), array([1.79769313e+308, 8.45433000e-001]))
+kwds = {'err_msg': '', 'header': 'Arrays are not almost equal to 6 decimals', 'precision': 6, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not almost equal to 6 decimals
+E           
+E           Mismatched elements: 1 / 2 (50%)
+E           Max absolute difference among violations: 1.79769313e+308
+E           Max relative difference among violations: 1.
+E            ACTUAL: array([4.503600e+15, 8.454333e-01])
+E            DESIRED: array([1.797693e+308, 8.454330e-001])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_ test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True] _
+
+X = array([[ 3,  1],
+       [ 2,  0],
+       [ 1, 10],
+       [ 0,  4]])
+y = array([0, 1, 2, 3])
+expected_f_statistic = array([1.79769313e+308, 8.45433000e-001])
+expected_p_values = array([0.      , 0.454913]), force_finite = True
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+            f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+>       np.testing.assert_array_almost_equal(f_statistic, expected_f_statistic)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.9/contextlib.py:79: in inner
+    return func(*args, **kwds)
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_array_almost_equal.<locals>.compare at 0x7fcce58c4790>, array([4.50359963e+15, 8.45433255e-01]), array([1.79769313e+308, 8.45433000e-001]))
+kwds = {'err_msg': '', 'header': 'Arrays are not almost equal to 6 decimals', 'precision': 6, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not almost equal to 6 decimals
+E           
+E           Mismatched elements: 1 / 2 (50%)
+E           Max absolute difference among violations: 1.79769313e+308
+E           Max relative difference among violations: 1.
+E            ACTUAL: array([4.503600e+15, 8.454333e-01])
+E            DESIRED: array([1.797693e+308, 8.454330e-001])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_ test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False] _
+
+X = array([[ 2,  1],
+       [ 2,  0],
+       [ 2, 10],
+       [ 2,  4]])
+y = array([0, 1, 1, 0]), expected_f_statistic = array([      nan, 0.2293578])
+expected_p_values = array([       nan, 0.67924985]), force_finite = False
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:322: in f_regression
+    return f_regression(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:30: in f_regression
+    corr = r_regression(X, y, center=center)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 0.  , -2.75],
+       [ 0.  , -3.75],
+       [ 0.  ,  6.25],
+       [ 0.  ,  0.25]])
+y = array([-0.5,  0.5,  0.5, -0.5]), center = True
+
+    def r_regression(X, y, center=True):
+        """Calculate the Pearson correlation coefficient between each feature in X and the target y."""
+        X = np.asarray(X)
+        y = np.asarray(y)
+        if center:
+            X = X - np.mean(X, axis=0)
+            y = y - np.mean(y)
+>       corr = np.dot(X.T, y) / (np.sqrt(np.sum(X ** 2, axis=0)) * np.sqrt(np.sum(y ** 2)))
+E       RuntimeWarning: invalid value encountered in divide
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:23: RuntimeWarning
+_ test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False] _
+
+X = array([[ 5,  1],
+       [ 3,  0],
+       [ 2, 10],
+       [ 8,  4]])
+y = array([0, 0, 0, 0]), expected_f_statistic = array([nan, nan])
+expected_p_values = array([nan, nan]), force_finite = False
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:301: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:322: in f_regression
+    return f_regression(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:30: in f_regression
+    corr = r_regression(X, y, center=center)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 0.5 , -2.75],
+       [-1.5 , -3.75],
+       [-2.5 ,  6.25],
+       [ 3.5 ,  0.25]])
+y = array([0., 0., 0., 0.]), center = True
+
+    def r_regression(X, y, center=True):
+        """Calculate the Pearson correlation coefficient between each feature in X and the target y."""
+        X = np.asarray(X)
+        y = np.asarray(y)
+        if center:
+            X = X - np.mean(X, axis=0)
+            y = y - np.mean(y)
+>       corr = np.dot(X.T, y) / (np.sqrt(np.sum(X ** 2, axis=0)) * np.sqrt(np.sum(y ** 2)))
+E       RuntimeWarning: invalid value encountered in divide
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:23: RuntimeWarning
+_ test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False] _
+
+X = array([[ 0,  1],
+       [ 1,  0],
+       [ 2, 10],
+       [ 3,  4]])
+y = array([0, 1, 2, 3]), expected_f_statistic = array([     inf, 0.845433])
+expected_p_values = array([0.      , 0.454913]), force_finite = False
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+            f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+>       np.testing.assert_array_almost_equal(f_statistic, expected_f_statistic)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.9/contextlib.py:79: in inner
+    return func(*args, **kwds)
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_array_almost_equal.<locals>.compare at 0x7fcce591ac10>, array([4.50359963e+15, 8.45433255e-01]), array([     inf, 0.845433]))
+kwds = {'err_msg': '', 'header': 'Arrays are not almost equal to 6 decimals', 'precision': 6, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not almost equal to 6 decimals
+E           
+E           +inf location mismatch:
+E            ACTUAL: array([4.503600e+15, 8.454333e-01])
+E            DESIRED: array([     inf, 0.845433])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_ test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False] _
+
+X = array([[ 3,  1],
+       [ 2,  0],
+       [ 1, 10],
+       [ 0,  4]])
+y = array([0, 1, 2, 3]), expected_f_statistic = array([     inf, 0.845433])
+expected_p_values = array([0.      , 0.454913]), force_finite = False
+
+    @pytest.mark.parametrize(
+        "X, y, expected_f_statistic, expected_p_values, force_finite",
+        [
+            (
+                # A feature in X is constant - forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([0.0, 0.2293578]),
+                np.array([1.0, 0.67924985]),
+                True,
+            ),
+            (
+                # The target y is constant - forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([0.0, 0.0]),
+                np.array([1.0, 1.0]),
+                True,
+            ),
+            (
+                # Feature in X correlated with y - forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # Feature in X anti-correlated with y - forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.finfo(np.float64).max, 0.845433]),
+                np.array([0.0, 0.454913]),
+                True,
+            ),
+            (
+                # A feature in X is constant - not forcing finite
+                np.array([[2, 1], [2, 0], [2, 10], [2, 4]]),
+                np.array([0, 1, 1, 0]),
+                np.array([np.nan, 0.2293578]),
+                np.array([np.nan, 0.67924985]),
+                False,
+            ),
+            (
+                # The target y is constant - not forcing finite
+                np.array([[5, 1], [3, 0], [2, 10], [8, 4]]),
+                np.array([0, 0, 0, 0]),
+                np.array([np.nan, np.nan]),
+                np.array([np.nan, np.nan]),
+                False,
+            ),
+            (
+                # Feature in X correlated with y - not forcing finite
+                np.array([[0, 1], [1, 0], [2, 10], [3, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+            (
+                # Feature in X anti-correlated with y - not forcing finite
+                np.array([[3, 1], [2, 0], [1, 10], [0, 4]]),
+                np.array([0, 1, 2, 3]),
+                np.array([np.inf, 0.845433]),
+                np.array([0.0, 0.454913]),
+                False,
+            ),
+        ],
+    )
+    def test_f_regression_corner_case(
+        X, y, expected_f_statistic, expected_p_values, force_finite
+    ):
+        """Check the behaviour of `force_finite` for some corner cases with `f_regression`.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/15672
+        """
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+            f_statistic, p_values = f_regression(X, y, force_finite=force_finite)
+>       np.testing.assert_array_almost_equal(f_statistic, expected_f_statistic)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.9/contextlib.py:79: in inner
+    return func(*args, **kwds)
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_array_almost_equal.<locals>.compare at 0x7fcce5b0b940>, array([4.50359963e+15, 8.45433255e-01]), array([     inf, 0.845433]))
+kwds = {'err_msg': '', 'header': 'Arrays are not almost equal to 6 decimals', 'precision': 6, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not almost equal to 6 decimals
+E           
+E           +inf location mismatch:
+E            ACTUAL: array([4.503600e+15, 8.454333e-01])
+E            DESIRED: array([     inf, 0.845433])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False]
+============================== 8 failed in 0.57s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True] I: Seeding RNGs with 1088612604
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False] PASSED
+
+============================== 8 passed in 0.31s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X0-y0-expected_f_statistic0-expected_p_values0-True] I: Seeding RNGs with 2136511325
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X1-y1-expected_f_statistic1-expected_p_values1-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X2-y2-expected_f_statistic2-expected_p_values2-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X3-y3-expected_f_statistic3-expected_p_values3-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X4-y4-expected_f_statistic4-expected_p_values4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X5-y5-expected_f_statistic5-expected_p_values5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X6-y6-expected_f_statistic6-expected_p_values6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_feature_select.py::test_f_regression_corner_case[X7-y7-expected_f_statistic7-expected_p_values7-False] PASSED
+
+============================== 8 passed in 0.28s ===============================

@@ -1,0 +1,406 @@
+output file:
+processed_korniaunproject_points_orthographic74.json
+function:
+unproject_points_orthographic
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] FAILED', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] FAILED', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'openxla', 'onnxrt', 'inductor', 'jit', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] FAILED
+
+=================================== FAILURES ===================================
+________ TestProjectionOrthographic.test_cardinality[cpu-float32-None] _________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f1c30>
+device = device(type='cpu'), dtype = torch.float32, batch_size = None
+
+    @pytest.mark.parametrize("batch_size", [None, 1, 2, 3])
+    def test_cardinality(self, device, dtype, batch_size):
+>       self._test_cardinality_project_batch(device, dtype, batch_size)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:151: in _test_cardinality_project_batch
+    assert unproject_points_orthographic(points, extension).shape == batch_tuple + (3,)
+../publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py:31: in unproject_points_orthographic
+    return unproject_points_orthographic(points_in_camera, extension)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+points_in_camera = tensor([0.9712, 0.5170]), extension = tensor(0.2830)
+
+    def unproject_points_orthographic(points_in_camera, extension):
+        """
+        Unprojects 2D points from the canonical z=1 plane into 3D space using the given extension.
+    
+        Args:
+            points_in_camera (Tensor): A tensor of shape (..., 2) representing the 2D points.
+            extension (Tensor): A tensor of shape (..., 1) representing the extension for each point.
+    
+        Returns:
+            Tensor: A tensor of shape (..., 3) representing the unprojected 3D points.
+        """
+>       unprojected_points = torch.cat((points_in_camera, extension), dim=-1)
+E       RuntimeError: zero-dimensional tensor (at position 1) cannot be concatenated
+
+../publishablew/kornia/kornia/kornia/geometry/camera/temp.py:17: RuntimeError
+__________ TestProjectionOrthographic.test_cardinality[cpu-float32-1] __________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f1b70>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 1
+
+    @pytest.mark.parametrize("batch_size", [None, 1, 2, 3])
+    def test_cardinality(self, device, dtype, batch_size):
+>       self._test_cardinality_project_batch(device, dtype, batch_size)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:151: in _test_cardinality_project_batch
+    assert unproject_points_orthographic(points, extension).shape == batch_tuple + (3,)
+../publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py:31: in unproject_points_orthographic
+    return unproject_points_orthographic(points_in_camera, extension)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+points_in_camera = tensor([[0.3211, 0.2529]]), extension = tensor([0.0855])
+
+    def unproject_points_orthographic(points_in_camera, extension):
+        """
+        Unprojects 2D points from the canonical z=1 plane into 3D space using the given extension.
+    
+        Args:
+            points_in_camera (Tensor): A tensor of shape (..., 2) representing the 2D points.
+            extension (Tensor): A tensor of shape (..., 1) representing the extension for each point.
+    
+        Returns:
+            Tensor: A tensor of shape (..., 3) representing the unprojected 3D points.
+        """
+>       unprojected_points = torch.cat((points_in_camera, extension), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 2 and 1
+
+../publishablew/kornia/kornia/kornia/geometry/camera/temp.py:17: RuntimeError
+__________ TestProjectionOrthographic.test_cardinality[cpu-float32-2] __________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f1ed0>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 2
+
+    @pytest.mark.parametrize("batch_size", [None, 1, 2, 3])
+    def test_cardinality(self, device, dtype, batch_size):
+>       self._test_cardinality_project_batch(device, dtype, batch_size)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:151: in _test_cardinality_project_batch
+    assert unproject_points_orthographic(points, extension).shape == batch_tuple + (3,)
+../publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py:31: in unproject_points_orthographic
+    return unproject_points_orthographic(points_in_camera, extension)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+points_in_camera = tensor([[0.0047, 0.6826],
+        [0.5800, 0.0784]])
+extension = tensor([0.1077, 0.9345])
+
+    def unproject_points_orthographic(points_in_camera, extension):
+        """
+        Unprojects 2D points from the canonical z=1 plane into 3D space using the given extension.
+    
+        Args:
+            points_in_camera (Tensor): A tensor of shape (..., 2) representing the 2D points.
+            extension (Tensor): A tensor of shape (..., 1) representing the extension for each point.
+    
+        Returns:
+            Tensor: A tensor of shape (..., 3) representing the unprojected 3D points.
+        """
+>       unprojected_points = torch.cat((points_in_camera, extension), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 2 and 1
+
+../publishablew/kornia/kornia/kornia/geometry/camera/temp.py:17: RuntimeError
+__________ TestProjectionOrthographic.test_cardinality[cpu-float32-3] __________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f1f90>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 3
+
+    @pytest.mark.parametrize("batch_size", [None, 1, 2, 3])
+    def test_cardinality(self, device, dtype, batch_size):
+>       self._test_cardinality_project_batch(device, dtype, batch_size)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:151: in _test_cardinality_project_batch
+    assert unproject_points_orthographic(points, extension).shape == batch_tuple + (3,)
+../publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py:31: in unproject_points_orthographic
+    return unproject_points_orthographic(points_in_camera, extension)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+points_in_camera = tensor([[0.1618, 0.4561],
+        [0.7619, 0.0932],
+        [0.5526, 0.9660]])
+extension = tensor([0.4778, 0.8785, 0.5026])
+
+    def unproject_points_orthographic(points_in_camera, extension):
+        """
+        Unprojects 2D points from the canonical z=1 plane into 3D space using the given extension.
+    
+        Args:
+            points_in_camera (Tensor): A tensor of shape (..., 2) representing the 2D points.
+            extension (Tensor): A tensor of shape (..., 1) representing the extension for each point.
+    
+        Returns:
+            Tensor: A tensor of shape (..., 3) representing the unprojected 3D points.
+        """
+>       unprojected_points = torch.cat((points_in_camera, extension), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 2 and 1
+
+../publishablew/kornia/kornia/kornia/geometry/camera/temp.py:17: RuntimeError
+_ TestProjectionOrthographic.test_unproject_points_orthographic_batch_extension[cpu-float32] _
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f2a40>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_unproject_points_orthographic_batch_extension(self, device, dtype):
+        points = torch.tensor([[1.0, 2.0], [3.0, 4.0]], device=device, dtype=dtype)
+        extension = torch.tensor([2.0, 3.0], device=device, dtype=dtype)
+        expected = torch.tensor([[1.0, 2.0, 2.0], [3.0, 4.0, 3.0]], device=device, dtype=dtype)
+>       self.assert_close(unproject_points_orthographic(points, extension), expected)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py:31: in unproject_points_orthographic
+    return unproject_points_orthographic(points_in_camera, extension)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+points_in_camera = tensor([[1., 2.],
+        [3., 4.]])
+extension = tensor([2., 3.])
+
+    def unproject_points_orthographic(points_in_camera, extension):
+        """
+        Unprojects 2D points from the canonical z=1 plane into 3D space using the given extension.
+    
+        Args:
+            points_in_camera (Tensor): A tensor of shape (..., 2) representing the 2D points.
+            extension (Tensor): A tensor of shape (..., 1) representing the extension for each point.
+    
+        Returns:
+            Tensor: A tensor of shape (..., 3) representing the unprojected 3D points.
+        """
+>       unprojected_points = torch.cat((points_in_camera, extension), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 2 and 1
+
+../publishablew/kornia/kornia/kornia/geometry/camera/temp.py:17: RuntimeError
+____________ TestProjectionOrthographic.test_exception[cpu-float32] ____________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f33d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_exception(self, device, dtype) -> None:
+        points = torch.tensor([1.0, 2.0, 3.0], device=device, dtype=dtype)
+        extension = torch.tensor([2.0], device=device, dtype=dtype)
+>       with pytest.raises(TypeError):
+E       Failed: DID NOT RAISE <class 'TypeError'>
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:193: Failed
+_______________ TestProjectionOrthographic.test_jit[cpu-float32] _______________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7c2ad00f39a0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_jit(self, device, dtype) -> None:
+        self._test_jit_project(device, dtype)
+>       self._test_jit_unproject(device, dtype)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:226: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:219: in _test_jit_unproject
+    op_script = torch.jit.script(unproject_points_orthographic)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7c2ba0b9bd30>
+ctx = <torch._sources.SourceContext object at 0x7c2ac5f2f0b0>
+node = <ast.ImportFrom object at 0x7c2ad00b62c0>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py", line 30
+E           def unproject_points_orthographic(points_in_camera: Tensor, extension: Tensor) -> Tensor:
+E               from .temp import unproject_points_orthographic
+E               ~~~~ <--- HERE
+E               return unproject_points_orthographic(points_in_camera, extension)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32]
+========================= 7 failed, 7 passed in 0.41s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'onnxrt', 'jit', 'tvm', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] PASSED
+
+============================== 14 passed in 0.21s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'onnxrt', 'tvm', 'openxla', 'inductor', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] PASSED
+
+============================== 14 passed in 0.20s ==============================

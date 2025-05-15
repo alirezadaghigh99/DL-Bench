@@ -1,0 +1,401 @@
+output file:
+processed_pfrltrain_agent341.json
+function:
+train_agent
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test', 'FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True]', '../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False] FAILED', '../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False]', '../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True] FAILED', '../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test FAILED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset FAILED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_unsupported_evaluation_hook PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False] FAILED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True] FAILED
+
+=================================== FAILURES ===================================
+_____________________________ TestTrainAgent.test ______________________________
+
+self = <test_train_agent.TestTrainAgent testMethod=test>
+
+    def test(self):
+        outdir = tempfile.mkdtemp()
+    
+        agent = mock.Mock()
+        env = mock.Mock()
+        # Reaches the terminal state after five actions
+        env.reset.side_effect = [("state", 0)]
+        env.step.side_effect = [
+            (("state", 1), 0, False, {}),
+            (("state", 2), 0, False, {}),
+            (("state", 3), -0.5, False, {}),
+            (("state", 4), 0, False, {}),
+            (("state", 5), 1, True, {}),
+        ]
+        hook = mock.Mock()
+    
+>       eval_stats_history = pfrl.experiments.train_agent(
+            agent=agent, env=env, steps=5, outdir=outdir, step_hooks=[hook]
+        )
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/experiments/train_agent.py:18: in train_agent
+    return train_agent(agent, env, steps, outdir, checkpoint_freq, max_episode_len, step_offset, evaluator, successful_score, step_hooks, eval_during_episode, logger)
+../publishablew/pfrl/pfrl/pfrl/experiments/temp.py:50: in train_agent
+    obs = env.reset()
+/usr/lib/python3.11/unittest/mock.py:1124: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.11/unittest/mock.py:1128: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Mock name='mock.reset' id='134743354958864'>, args = (), kwargs = {}
+effect = <list_iterator object at 0x7a8c599714e0>
+
+    def _execute_mock_call(self, /, *args, **kwargs):
+        # separate from _increment_mock_call so that awaited functions are
+        # executed separately from their call, also AsyncMock overrides this method
+    
+        effect = self.side_effect
+        if effect is not None:
+            if _is_exception(effect):
+                raise effect
+            elif not _callable(effect):
+>               result = next(effect)
+E               StopIteration
+
+/usr/lib/python3.11/unittest/mock.py:1185: StopIteration
+_______________________ TestTrainAgent.test_needs_reset ________________________
+
+self = <test_train_agent.TestTrainAgent testMethod=test_needs_reset>
+
+    def test_needs_reset(self):
+        outdir = tempfile.mkdtemp()
+    
+        agent = mock.Mock()
+        env = mock.Mock()
+        # First episode: 0 -> 1 -> 2 -> 3 (reset)
+        # Second episode: 4 -> 5 -> 6 -> 7 (done)
+        env.reset.side_effect = [("state", 0), ("state", 4)]
+        env.step.side_effect = [
+            (("state", 1), 0, False, {}),
+            (("state", 2), 0, False, {}),
+            (("state", 3), 0, False, {"needs_reset": True}),
+            (("state", 5), -0.5, False, {}),
+            (("state", 6), 0, False, {}),
+            (("state", 7), 1, True, {}),
+        ]
+        hook = mock.Mock()
+    
+        eval_stats_history = pfrl.experiments.train_agent(
+            agent=agent, env=env, steps=5, outdir=outdir, step_hooks=[hook]
+        )
+    
+        # No evaluation invoked when evaluator=None (default) is passed to train_agent.
+        self.assertListEqual(eval_stats_history, [])
+    
+        self.assertEqual(agent.act.call_count, 5)
+        self.assertEqual(agent.observe.call_count, 5)
+        # done=False and reset=True at state 3
+        self.assertFalse(agent.observe.call_args_list[2][0][2])
+        self.assertTrue(agent.observe.call_args_list[2][0][3])
+    
+>       self.assertEqual(env.reset.call_count, 2)
+E       AssertionError: 1 != 2
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py:82: AssertionError
+_______________________ test_eval_during_episode[False] ________________________
+
+eval_during_episode = False
+
+    @pytest.mark.parametrize("eval_during_episode", [False, True])
+    def test_eval_during_episode(eval_during_episode):
+        outdir = tempfile.mkdtemp()
+    
+        agent = mock.MagicMock()
+        env = mock.Mock()
+        # Two episodes
+        env.reset.side_effect = [("state", 0)] * 2
+        env.step.side_effect = [
+            (("state", 1), 0, False, {}),
+            (("state", 2), 0, False, {}),
+            (("state", 3), -0.5, True, {}),
+            (("state", 4), 0, False, {}),
+            (("state", 5), 1, True, {}),
+        ]
+    
+        evaluator = mock.Mock()
+>       pfrl.experiments.train_agent(
+            agent=agent,
+            env=env,
+            steps=5,
+            outdir=outdir,
+            evaluator=evaluator,
+            eval_during_episode=eval_during_episode,
+        )
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/experiments/train_agent.py:18: in train_agent
+    return train_agent(agent, env, steps, outdir, checkpoint_freq, max_episode_len, step_offset, evaluator, successful_score, step_hooks, eval_during_episode, logger)
+../publishablew/pfrl/pfrl/pfrl/experiments/temp.py:50: in train_agent
+    obs = env.reset()
+/usr/lib/python3.11/unittest/mock.py:1124: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.11/unittest/mock.py:1128: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Mock name='mock.reset' id='134743217491216'>, args = (), kwargs = {}
+effect = <list_iterator object at 0x7a8c599aa140>
+
+    def _execute_mock_call(self, /, *args, **kwargs):
+        # separate from _increment_mock_call so that awaited functions are
+        # executed separately from their call, also AsyncMock overrides this method
+    
+        effect = self.side_effect
+        if effect is not None:
+            if _is_exception(effect):
+                raise effect
+            elif not _callable(effect):
+>               result = next(effect)
+E               StopIteration
+
+/usr/lib/python3.11/unittest/mock.py:1185: StopIteration
+
+The above exception was the direct cause of the following exception:
+
+cls = <class '_pytest.runner.CallInfo'>
+func = <function call_and_report.<locals>.<lambda> at 0x7a8d1a082520>
+when = 'call'
+reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: Callable[[], TResult],
+        when: Literal["collect", "setup", "call", "teardown"],
+        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,
+    ) -> CallInfo[TResult]:
+        """Call func, wrapping the result in a CallInfo.
+    
+        :param func:
+            The function to call. Called without arguments.
+        :type func: Callable[[], _pytest.runner.TResult]
+        :param when:
+            The phase in which the function is called.
+        :param reraise:
+            Exception or exceptions that shall propagate if raised by the
+            function, instead of being wrapped in the CallInfo.
+        """
+        excinfo = None
+        start = timing.time()
+        precise_start = timing.perf_counter()
+        try:
+>           result: TResult | None = func()
+
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/runner.py:341: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/runner.py:242: in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/pluggy/_hooks.py:513: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/threadexception.py:92: in pytest_runtest_call
+    yield from thread_exception_runtest_hook()
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/threadexception.py:68: in thread_exception_runtest_hook
+    yield
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/unraisableexception.py:95: in pytest_runtest_call
+    yield from unraisable_exception_runtest_hook()
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/unraisableexception.py:70: in unraisable_exception_runtest_hook
+    yield
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/logging.py:846: in pytest_runtest_call
+    yield from self._runtest_for(item, "call")
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/logging.py:829: in _runtest_for
+    yield
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <CaptureManager _method='no' _global_capturing=<MultiCapture out=None err=None in_=None _state='suspended' _in_suspended=False> _capture_fixture=None>
+item = <Function test_eval_during_episode[False]>
+
+    @hookimpl(wrapper=True)
+    def pytest_runtest_call(self, item: Item) -> Generator[None]:
+        with self.item_capture("call", item):
+>           return (yield)
+E           RuntimeError: generator raised StopIteration
+
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/capture.py:880: RuntimeError
+________________________ test_eval_during_episode[True] ________________________
+
+eval_during_episode = True
+
+    @pytest.mark.parametrize("eval_during_episode", [False, True])
+    def test_eval_during_episode(eval_during_episode):
+        outdir = tempfile.mkdtemp()
+    
+        agent = mock.MagicMock()
+        env = mock.Mock()
+        # Two episodes
+        env.reset.side_effect = [("state", 0)] * 2
+        env.step.side_effect = [
+            (("state", 1), 0, False, {}),
+            (("state", 2), 0, False, {}),
+            (("state", 3), -0.5, True, {}),
+            (("state", 4), 0, False, {}),
+            (("state", 5), 1, True, {}),
+        ]
+    
+        evaluator = mock.Mock()
+>       pfrl.experiments.train_agent(
+            agent=agent,
+            env=env,
+            steps=5,
+            outdir=outdir,
+            evaluator=evaluator,
+            eval_during_episode=eval_during_episode,
+        )
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/experiments/train_agent.py:18: in train_agent
+    return train_agent(agent, env, steps, outdir, checkpoint_freq, max_episode_len, step_offset, evaluator, successful_score, step_hooks, eval_during_episode, logger)
+../publishablew/pfrl/pfrl/pfrl/experiments/temp.py:50: in train_agent
+    obs = env.reset()
+/usr/lib/python3.11/unittest/mock.py:1124: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.11/unittest/mock.py:1128: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Mock name='mock.reset' id='134743162835536'>, args = (), kwargs = {}
+effect = <list_iterator object at 0x7a8c59972a70>
+
+    def _execute_mock_call(self, /, *args, **kwargs):
+        # separate from _increment_mock_call so that awaited functions are
+        # executed separately from their call, also AsyncMock overrides this method
+    
+        effect = self.side_effect
+        if effect is not None:
+            if _is_exception(effect):
+                raise effect
+            elif not _callable(effect):
+>               result = next(effect)
+E               StopIteration
+
+/usr/lib/python3.11/unittest/mock.py:1185: StopIteration
+
+The above exception was the direct cause of the following exception:
+
+cls = <class '_pytest.runner.CallInfo'>
+func = <function call_and_report.<locals>.<lambda> at 0x7a8d1a082980>
+when = 'call'
+reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: Callable[[], TResult],
+        when: Literal["collect", "setup", "call", "teardown"],
+        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,
+    ) -> CallInfo[TResult]:
+        """Call func, wrapping the result in a CallInfo.
+    
+        :param func:
+            The function to call. Called without arguments.
+        :type func: Callable[[], _pytest.runner.TResult]
+        :param when:
+            The phase in which the function is called.
+        :param reraise:
+            Exception or exceptions that shall propagate if raised by the
+            function, instead of being wrapped in the CallInfo.
+        """
+        excinfo = None
+        start = timing.time()
+        precise_start = timing.perf_counter()
+        try:
+>           result: TResult | None = func()
+
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/runner.py:341: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/runner.py:242: in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/pluggy/_hooks.py:513: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/pluggy/_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/threadexception.py:92: in pytest_runtest_call
+    yield from thread_exception_runtest_hook()
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/threadexception.py:68: in thread_exception_runtest_hook
+    yield
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/unraisableexception.py:95: in pytest_runtest_call
+    yield from unraisable_exception_runtest_hook()
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/unraisableexception.py:70: in unraisable_exception_runtest_hook
+    yield
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/logging.py:846: in pytest_runtest_call
+    yield from self._runtest_for(item, "call")
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/logging.py:829: in _runtest_for
+    yield
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <CaptureManager _method='no' _global_capturing=<MultiCapture out=None err=None in_=None _state='suspended' _in_suspended=False> _capture_fixture=None>
+item = <Function test_eval_during_episode[True]>
+
+    @hookimpl(wrapper=True)
+    def pytest_runtest_call(self, item: Item) -> Generator[None]:
+        with self.item_capture("call", item):
+>           return (yield)
+E           RuntimeError: generator raised StopIteration
+
+../publishablew/pfrl/pfrl/venv/lib/python3.11/site-packages/_pytest/capture.py:880: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test
+FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset
+FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False]
+FAILED ../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True]
+========================= 4 failed, 1 passed in 1.37s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_unsupported_evaluation_hook PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False] PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True] PASSED
+
+============================== 5 passed in 1.04s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_needs_reset PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::TestTrainAgent::test_unsupported_evaluation_hook PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[False] PASSED
+../publishablew/pfrl/pfrl/tests/experiments_tests/test_train_agent.py::test_eval_during_episode[True] PASSED
+
+============================== 5 passed in 1.01s ===============================

@@ -1,0 +1,401 @@
+output file:
+processed_pennylanenorm360.json
+function:
+norm
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 7 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[1-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[0.3-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6] FAILED
+
+=================================== FAILURES ===================================
+______________ TestBlockEncode.test_unitary[input_matrix2-wires2] ______________
+
+self = <test_matrix_ops.TestBlockEncode object at 0x73f73c308b10>
+input_matrix = array([[0.1, 0.2],
+       [0.3, 0.4]]), wires = range(0, 2)
+
+    @pytest.mark.parametrize(
+        ("input_matrix", "wires"),
+        [
+            (1, 0),
+            (0.3, 0),
+            (np.array([[0.1, 0.2], [0.3, 0.4]]), range(2)),
+            (np.array([[0.1, 0.2, 0.3]]), range(2)),
+            (np.array([[0.1], [0.2], [0.3]]), range(2)),
+            (np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]), range(3)),
+            (np.array([[1, 2], [3, 4]]), range(2)),
+        ],
+    )
+    def test_unitary(self, input_matrix, wires):
+        """Test that BlockEncode matrices are unitary."""
+>       mat = qml.matrix(qml.BlockEncode(input_matrix, wires))
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/capture/capture_meta.py:89: in __call__
+    return type.__call__(cls, *args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:549: in __init__
+    norm(A @ qml.math.transpose(qml.math.conj(A)), ord=pnp.inf),
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:125: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:738: in norm
+    return norm(tensor, like)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = array([[0.05, 0.11],
+       [0.11, 0.25]]), interface = 'numpy'
+axis = None, kwargs = {}
+
+    def norm(tensor, interface='scipy', axis=None, **kwargs):
+        if interface == 'jax':
+            from jax.numpy import linalg as jax_linalg
+            return jax_linalg.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'tensorflow':
+            import tensorflow as tf
+            return tf.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'torch':
+            import torch
+            if axis is not None:
+                if isinstance(axis, int):
+                    axis = (axis,)
+                return torch.linalg.norm1(tensor, dim=axis, **kwargs)
+            else:
+                return torch.linalg.norm1(tensor, **kwargs)
+        elif interface == 'autograd':
+            import autograd.numpy as anp
+            if 'ord' in kwargs and kwargs['ord'] is None:
+                return _flat_autograd_norm(tensor, **kwargs)
+            else:
+                return anp.linalg.norm1(tensor, axis=axis, **kwargs)
+        else:
+>           from scipy.linalg import norm1 as scipy_norm
+E           ImportError: cannot import name 'norm1' from 'scipy.linalg' (/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/scipy/linalg/__init__.py)
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:32: ImportError
+______________ TestBlockEncode.test_unitary[input_matrix3-wires3] ______________
+
+self = <test_matrix_ops.TestBlockEncode object at 0x73f73c308d90>
+input_matrix = array([[0.1, 0.2, 0.3]]), wires = range(0, 2)
+
+    @pytest.mark.parametrize(
+        ("input_matrix", "wires"),
+        [
+            (1, 0),
+            (0.3, 0),
+            (np.array([[0.1, 0.2], [0.3, 0.4]]), range(2)),
+            (np.array([[0.1, 0.2, 0.3]]), range(2)),
+            (np.array([[0.1], [0.2], [0.3]]), range(2)),
+            (np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]), range(3)),
+            (np.array([[1, 2], [3, 4]]), range(2)),
+        ],
+    )
+    def test_unitary(self, input_matrix, wires):
+        """Test that BlockEncode matrices are unitary."""
+>       mat = qml.matrix(qml.BlockEncode(input_matrix, wires))
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/capture/capture_meta.py:89: in __call__
+    return type.__call__(cls, *args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:549: in __init__
+    norm(A @ qml.math.transpose(qml.math.conj(A)), ord=pnp.inf),
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:125: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:738: in norm
+    return norm(tensor, like)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = array([[0.14]]), interface = 'numpy', axis = None, kwargs = {}
+
+    def norm(tensor, interface='scipy', axis=None, **kwargs):
+        if interface == 'jax':
+            from jax.numpy import linalg as jax_linalg
+            return jax_linalg.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'tensorflow':
+            import tensorflow as tf
+            return tf.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'torch':
+            import torch
+            if axis is not None:
+                if isinstance(axis, int):
+                    axis = (axis,)
+                return torch.linalg.norm1(tensor, dim=axis, **kwargs)
+            else:
+                return torch.linalg.norm1(tensor, **kwargs)
+        elif interface == 'autograd':
+            import autograd.numpy as anp
+            if 'ord' in kwargs and kwargs['ord'] is None:
+                return _flat_autograd_norm(tensor, **kwargs)
+            else:
+                return anp.linalg.norm1(tensor, axis=axis, **kwargs)
+        else:
+>           from scipy.linalg import norm1 as scipy_norm
+E           ImportError: cannot import name 'norm1' from 'scipy.linalg' (/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/scipy/linalg/__init__.py)
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:32: ImportError
+______________ TestBlockEncode.test_unitary[input_matrix4-wires4] ______________
+
+self = <test_matrix_ops.TestBlockEncode object at 0x73f73c309010>
+input_matrix = array([[0.1],
+       [0.2],
+       [0.3]]), wires = range(0, 2)
+
+    @pytest.mark.parametrize(
+        ("input_matrix", "wires"),
+        [
+            (1, 0),
+            (0.3, 0),
+            (np.array([[0.1, 0.2], [0.3, 0.4]]), range(2)),
+            (np.array([[0.1, 0.2, 0.3]]), range(2)),
+            (np.array([[0.1], [0.2], [0.3]]), range(2)),
+            (np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]), range(3)),
+            (np.array([[1, 2], [3, 4]]), range(2)),
+        ],
+    )
+    def test_unitary(self, input_matrix, wires):
+        """Test that BlockEncode matrices are unitary."""
+>       mat = qml.matrix(qml.BlockEncode(input_matrix, wires))
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/capture/capture_meta.py:89: in __call__
+    return type.__call__(cls, *args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:549: in __init__
+    norm(A @ qml.math.transpose(qml.math.conj(A)), ord=pnp.inf),
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:125: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:738: in norm
+    return norm(tensor, like)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = array([[0.01, 0.02, 0.03],
+       [0.02, 0.04, 0.06],
+       [0.03, 0.06, 0.09]])
+interface = 'numpy', axis = None, kwargs = {}
+
+    def norm(tensor, interface='scipy', axis=None, **kwargs):
+        if interface == 'jax':
+            from jax.numpy import linalg as jax_linalg
+            return jax_linalg.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'tensorflow':
+            import tensorflow as tf
+            return tf.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'torch':
+            import torch
+            if axis is not None:
+                if isinstance(axis, int):
+                    axis = (axis,)
+                return torch.linalg.norm1(tensor, dim=axis, **kwargs)
+            else:
+                return torch.linalg.norm1(tensor, **kwargs)
+        elif interface == 'autograd':
+            import autograd.numpy as anp
+            if 'ord' in kwargs and kwargs['ord'] is None:
+                return _flat_autograd_norm(tensor, **kwargs)
+            else:
+                return anp.linalg.norm1(tensor, axis=axis, **kwargs)
+        else:
+>           from scipy.linalg import norm1 as scipy_norm
+E           ImportError: cannot import name 'norm1' from 'scipy.linalg' (/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/scipy/linalg/__init__.py)
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:32: ImportError
+______________ TestBlockEncode.test_unitary[input_matrix5-wires5] ______________
+
+self = <test_matrix_ops.TestBlockEncode object at 0x73f73c309290>
+input_matrix = array([[0.1, 0.2],
+       [0.3, 0.4],
+       [0.5, 0.6]])
+wires = range(0, 3)
+
+    @pytest.mark.parametrize(
+        ("input_matrix", "wires"),
+        [
+            (1, 0),
+            (0.3, 0),
+            (np.array([[0.1, 0.2], [0.3, 0.4]]), range(2)),
+            (np.array([[0.1, 0.2, 0.3]]), range(2)),
+            (np.array([[0.1], [0.2], [0.3]]), range(2)),
+            (np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]), range(3)),
+            (np.array([[1, 2], [3, 4]]), range(2)),
+        ],
+    )
+    def test_unitary(self, input_matrix, wires):
+        """Test that BlockEncode matrices are unitary."""
+>       mat = qml.matrix(qml.BlockEncode(input_matrix, wires))
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/capture/capture_meta.py:89: in __call__
+    return type.__call__(cls, *args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:549: in __init__
+    norm(A @ qml.math.transpose(qml.math.conj(A)), ord=pnp.inf),
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:125: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:738: in norm
+    return norm(tensor, like)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = array([[0.05, 0.11, 0.17],
+       [0.11, 0.25, 0.39],
+       [0.17, 0.39, 0.61]])
+interface = 'numpy', axis = None, kwargs = {}
+
+    def norm(tensor, interface='scipy', axis=None, **kwargs):
+        if interface == 'jax':
+            from jax.numpy import linalg as jax_linalg
+            return jax_linalg.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'tensorflow':
+            import tensorflow as tf
+            return tf.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'torch':
+            import torch
+            if axis is not None:
+                if isinstance(axis, int):
+                    axis = (axis,)
+                return torch.linalg.norm1(tensor, dim=axis, **kwargs)
+            else:
+                return torch.linalg.norm1(tensor, **kwargs)
+        elif interface == 'autograd':
+            import autograd.numpy as anp
+            if 'ord' in kwargs and kwargs['ord'] is None:
+                return _flat_autograd_norm(tensor, **kwargs)
+            else:
+                return anp.linalg.norm1(tensor, axis=axis, **kwargs)
+        else:
+>           from scipy.linalg import norm1 as scipy_norm
+E           ImportError: cannot import name 'norm1' from 'scipy.linalg' (/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/scipy/linalg/__init__.py)
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:32: ImportError
+______________ TestBlockEncode.test_unitary[input_matrix6-wires6] ______________
+
+self = <test_matrix_ops.TestBlockEncode object at 0x73f73c309510>
+input_matrix = array([[1, 2],
+       [3, 4]]), wires = range(0, 2)
+
+    @pytest.mark.parametrize(
+        ("input_matrix", "wires"),
+        [
+            (1, 0),
+            (0.3, 0),
+            (np.array([[0.1, 0.2], [0.3, 0.4]]), range(2)),
+            (np.array([[0.1, 0.2, 0.3]]), range(2)),
+            (np.array([[0.1], [0.2], [0.3]]), range(2)),
+            (np.array([[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]), range(3)),
+            (np.array([[1, 2], [3, 4]]), range(2)),
+        ],
+    )
+    def test_unitary(self, input_matrix, wires):
+        """Test that BlockEncode matrices are unitary."""
+>       mat = qml.matrix(qml.BlockEncode(input_matrix, wires))
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/capture/capture_meta.py:89: in __call__
+    return type.__call__(cls, *args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:549: in __init__
+    norm(A @ qml.math.transpose(qml.math.conj(A)), ord=pnp.inf),
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:125: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/pennylane/pennylane/pennylane/math/multi_dispatch.py:738: in norm
+    return norm(tensor, like)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = array([[ 5, 11],
+       [11, 25]]), interface = 'numpy', axis = None
+kwargs = {}
+
+    def norm(tensor, interface='scipy', axis=None, **kwargs):
+        if interface == 'jax':
+            from jax.numpy import linalg as jax_linalg
+            return jax_linalg.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'tensorflow':
+            import tensorflow as tf
+            return tf.norm1(tensor, axis=axis, **kwargs)
+        elif interface == 'torch':
+            import torch
+            if axis is not None:
+                if isinstance(axis, int):
+                    axis = (axis,)
+                return torch.linalg.norm1(tensor, dim=axis, **kwargs)
+            else:
+                return torch.linalg.norm1(tensor, **kwargs)
+        elif interface == 'autograd':
+            import autograd.numpy as anp
+            if 'ord' in kwargs and kwargs['ord'] is None:
+                return _flat_autograd_norm(tensor, **kwargs)
+            else:
+                return anp.linalg.norm1(tensor, axis=axis, **kwargs)
+        else:
+>           from scipy.linalg import norm1 as scipy_norm
+E           ImportError: cannot import name 'norm1' from 'scipy.linalg' (/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/scipy/linalg/__init__.py)
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:32: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6]
+========================= 5 failed, 2 passed in 0.34s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 7 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[1-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[0.3-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6] PASSED
+
+============================== 7 passed in 0.03s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 7 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[1-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[0.3-0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix2-wires2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix3-wires3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix4-wires4] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix5-wires5] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestBlockEncode::test_unitary[input_matrix6-wires6] PASSED
+
+============================== 7 passed in 0.04s ===============================

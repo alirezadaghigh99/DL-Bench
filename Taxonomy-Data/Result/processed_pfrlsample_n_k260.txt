@@ -1,0 +1,150 @@
+output file:
+processed_pfrlsample_n_k260.json
+function:
+sample_n_k
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5] FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2]', 'FAILED ../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5]', '../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 16 items
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[7-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[100-5] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[0-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2] FAILED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5] FAILED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[0-0] PASSED
+
+=================================== FAILURES ===================================
+_________________________ TestSampleNK.test_slow[7-2] __________________________
+
+self = <test_random.TestSampleNK object at 0x75c9171fd550>
+
+    @pytest.mark.slow
+    def test_slow(self):
+        self.samples = [sample_n_k(self.n, self.k) for _ in range(10000)]
+        self.subtest_total_counts()
+>       self.subtest_order_counts()
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:74: in subtest_order_counts
+    self.subtest_normal_distrib(cnt, mean, std)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_random.TestSampleNK object at 0x75c9171fd550>, xs = array([10000.])
+mean = 5000.0, std = np.float64(50.0)
+
+    def subtest_normal_distrib(self, xs, mean, std):
+        _, pvalue = stats.kstest(xs, "norm", (mean, std))
+>       assert pvalue > 1e-5
+E       assert np.float64(0.0) > 1e-05
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:78: AssertionError
+________________________ TestSampleNK.test_slow[100-5] _________________________
+
+self = <test_random.TestSampleNK object at 0x75c9171fda50>
+
+    @pytest.mark.slow
+    def test_slow(self):
+        self.samples = [sample_n_k(self.n, self.k) for _ in range(10000)]
+>       self.subtest_total_counts()
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:55: in subtest_total_counts
+    self.subtest_normal_distrib(cnt, mean, std)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_random.TestSampleNK object at 0x75c9171fda50>
+xs = array([ 933.,  970.,  956.,  958.,  948.,  965.,  962.,  910.,  878.,
+        818.,  814.,  762.,  735.,  647.,  573.,... 116.,   58.,   56.,   37.,   67.,
+         90.,   73.,   66.,   20.,    9.,    5.,  950.,  936.,  939.,
+        904.])
+mean = 500.0, std = np.float64(21.79449471770337)
+
+    def subtest_normal_distrib(self, xs, mean, std):
+        _, pvalue = stats.kstest(xs, "norm", (mean, std))
+>       assert pvalue > 1e-5
+E       assert np.float64(4.1595050513098707e-22) > 1e-05
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py:78: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2]
+FAILED ../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5]
+========================= 2 failed, 14 passed in 1.90s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 16 items
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[7-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[100-5] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[0-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[0-0] PASSED
+
+============================== 16 passed in 1.79s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 16 items
+
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[7-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[100-5] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_fast[0-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[2-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-1] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[5-4] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[7-2] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[20-10] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[100-5] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[1-0] PASSED
+../publishablew/pfrl/pfrl/tests/utils_tests/test_random.py::TestSampleNK::test_slow[0-0] PASSED
+
+============================== 16 passed in 4.82s ==============================

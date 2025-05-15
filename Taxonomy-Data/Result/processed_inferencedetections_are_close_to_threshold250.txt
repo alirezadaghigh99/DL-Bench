@@ -1,0 +1,290 @@
+output file:
+processed_inferencedetections_are_close_to_threshold250.json
+function:
+detections_are_close_to_threshold
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1] FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0]', '../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0] FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1]', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2]', '../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:42:04] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 3 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0] FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1] FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2] FAILED
+
+=================================== FAILURES ===================================
+_ test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0] _
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+
+    @pytest.mark.parametrize(
+        "prediction",
+        [
+            OBJECT_DETECTION_PREDICTION,
+            INSTANCE_SEGMENTATION_PREDICTION,
+            KEYPOINTS_PREDICTION,
+        ],
+    )
+    def test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met(
+        prediction: dict,
+    ) -> None:
+        # when
+>       result = detections_are_close_to_threshold(
+            prediction=prediction,
+            selected_class_names=None,
+            threshold=0.6,
+            epsilon=0.15,
+            minimum_objects_close_to_threshold=1,
+        )
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py:290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/active_learning/samplers/close_to_threshold.py:69: in detections_are_close_to_threshold
+    return detections_are_close_to_threshold(prediction, selected_class_names, threshold, epsilon, minimum_objects_close_to_threshold)
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:35: in detections_are_close_to_threshold
+    count = count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+selected_class_names = None, threshold = 0.6, epsilon = 0.15
+
+    def count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon):
+        """
+        Count the number of detections whose confidence is within epsilon of the threshold
+        and belong to the selected class names.
+        """
+        count = 0
+>       for detection in prediction.detections:
+E       AttributeError: 'dict' object has no attribute 'detections'
+
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:23: AttributeError
+_ test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1] _
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+
+    @pytest.mark.parametrize(
+        "prediction",
+        [
+            OBJECT_DETECTION_PREDICTION,
+            INSTANCE_SEGMENTATION_PREDICTION,
+            KEYPOINTS_PREDICTION,
+        ],
+    )
+    def test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met(
+        prediction: dict,
+    ) -> None:
+        # when
+>       result = detections_are_close_to_threshold(
+            prediction=prediction,
+            selected_class_names=None,
+            threshold=0.6,
+            epsilon=0.15,
+            minimum_objects_close_to_threshold=1,
+        )
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py:290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/active_learning/samplers/close_to_threshold.py:69: in detections_are_close_to_threshold
+    return detections_are_close_to_threshold(prediction, selected_class_names, threshold, epsilon, minimum_objects_close_to_threshold)
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:35: in detections_are_close_to_threshold
+    count = count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+selected_class_names = None, threshold = 0.6, epsilon = 0.15
+
+    def count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon):
+        """
+        Count the number of detections whose confidence is within epsilon of the threshold
+        and belong to the selected class names.
+        """
+        count = 0
+>       for detection in prediction.detections:
+E       AttributeError: 'dict' object has no attribute 'detections'
+
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:23: AttributeError
+_ test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2] _
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+
+    @pytest.mark.parametrize(
+        "prediction",
+        [
+            OBJECT_DETECTION_PREDICTION,
+            INSTANCE_SEGMENTATION_PREDICTION,
+            KEYPOINTS_PREDICTION,
+        ],
+    )
+    def test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met(
+        prediction: dict,
+    ) -> None:
+        # when
+>       result = detections_are_close_to_threshold(
+            prediction=prediction,
+            selected_class_names=None,
+            threshold=0.6,
+            epsilon=0.15,
+            minimum_objects_close_to_threshold=1,
+        )
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py:290: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/active_learning/samplers/close_to_threshold.py:69: in detections_are_close_to_threshold
+    return detections_are_close_to_threshold(prediction, selected_class_names, threshold, epsilon, minimum_objects_close_to_threshold)
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:35: in detections_are_close_to_threshold
+    count = count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+prediction = {'predictions': [{'class': 'a', 'class_id': 1, 'confidence': 0.9, 'height': 309.0, ...}, {'class': 'b', 'class_id': 1, 'confidence': 0.7, 'height': 309.0, ...}]}
+selected_class_names = None, threshold = 0.6, epsilon = 0.15
+
+    def count_detections_close_to_threshold(prediction, selected_class_names, threshold, epsilon):
+        """
+        Count the number of detections whose confidence is within epsilon of the threshold
+        and belong to the selected class names.
+        """
+        count = 0
+>       for detection in prediction.detections:
+E       AttributeError: 'dict' object has no attribute 'detections'
+
+../publishablew/inference/inference/inference/core/active_learning/samplers/temp.py:23: AttributeError
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0]
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1]
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2]
+======================== 3 failed, 13 warnings in 4.12s ========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:42:09] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 3 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 3 passed, 13 warnings in 3.97s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:41:58] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 3 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction0] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction1] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_close_to_threshold.py::test_detection_prediction_is_close_to_threshold_when_minimum_objects_criterion_met[prediction2] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 3 passed, 13 warnings in 4.37s ========================

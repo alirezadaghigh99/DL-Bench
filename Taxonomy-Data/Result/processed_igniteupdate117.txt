@@ -1,0 +1,56 @@
+output file:
+processed_igniteupdate117.json
+function:
+update
+Error Cases:
+Error
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+ERRor
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/ignite/ignite/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/ignite/ignite
+configfile: setup.cfg
+collecting ... collected 4 items
+
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[False-None] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[False-cpu] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[True-None] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[True-cpu] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/ignite/ignite/ignite/handlers/checkpoint.py:16
+  /local/data0/moved_data/publishablew/ignite/ignite/ignite/handlers/checkpoint.py:16: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+    from torch.distributed.optim import ZeroRedundancyOptimizer
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 0.16s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/ignite/ignite/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/ignite/ignite
+configfile: setup.cfg
+collecting ... collected 4 items
+
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[False-None] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[False-cpu] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[True-None] PASSED
+../publishablew/ignite/ignite/tests/ignite/engine/test_create_supervised.py::test_create_supervised_trainer[True-cpu] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/ignite/ignite/ignite/handlers/checkpoint.py:16
+  /local/data0/moved_data/publishablew/ignite/ignite/ignite/handlers/checkpoint.py:16: DeprecationWarning: `TorchScript` support for functional optimizers is deprecated and will be removed in a future PyTorch release. Consider using the `torch.compile` optimizer instead.
+    from torch.distributed.optim import ZeroRedundancyOptimizer
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 0.50s =========================

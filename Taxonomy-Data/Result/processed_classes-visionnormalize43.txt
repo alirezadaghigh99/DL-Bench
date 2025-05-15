@@ -1,0 +1,122 @@
+output file:
+processed_classes-visionnormalize43.json
+function:
+normalize
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_balanced_positive_negative_sampler PASSED [  9%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_box_linear_coder PASSED [ 18%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] PASSED [ 27%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] PASSED [ 36%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] PASSED [ 45%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] PASSED [ 54%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] PASSED [ 63%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] PASSED [ 72%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_validate_resnet_inputs_detection PASSED [ 81%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_transform_copy_targets PASSED [ 90%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_not_float_normalize PASSED [100%]
+
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_transform_copy_targets
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/transform.py:111: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    mean = torch.tensor(self.image_mean, device=image.device)
+
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_transform_copy_targets
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/transform.py:112: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    std = torch.tensor(self.image_std, device=image.device)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 11 passed, 8 warnings in 1.23s ========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_balanced_positive_negative_sampler PASSED [  9%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_box_linear_coder PASSED [ 18%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] PASSED [ 27%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] PASSED [ 36%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] PASSED [ 45%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] PASSED [ 54%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] PASSED [ 63%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] PASSED [ 72%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_validate_resnet_inputs_detection PASSED [ 81%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_transform_copy_targets PASSED [ 90%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_not_float_normalize PASSED [100%]
+
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 11 passed, 6 warnings in 1.33s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_balanced_positive_negative_sampler PASSED [  9%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_box_linear_coder PASSED [ 18%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] PASSED [ 27%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] PASSED [ 36%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] PASSED [ 45%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] PASSED [ 54%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] PASSED [ 63%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] PASSED [ 72%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_validate_resnet_inputs_detection PASSED [ 81%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_transform_copy_targets PASSED [ 90%]
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_not_float_normalize PASSED [100%]
+
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 11 passed, 6 warnings in 1.28s ========================

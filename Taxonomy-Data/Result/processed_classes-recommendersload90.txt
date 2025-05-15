@@ -1,0 +1,133 @@
+output file:
+processed_classes-recommendersload90.json
+function:
+load
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load', '../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load FAILED [100%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init PASSED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init PASSED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct PASSED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load FAILED [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_save_load ________________________________
+
+init_rbm = {'display_epoch': 20, 'epochs': 10, 'init_stdv': 0.01, 'keep_prob': 0.8, ...}
+affinity_matrix = (array([[0, 0, 0, ..., 0, 1, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [2, 0, 2, ..., 0, 3, 0],
+       ...,
+       [1...0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]]))
+
+    @pytest.mark.gpu
+    def test_save_load(init_rbm, affinity_matrix):
+    
+        # obtain the train/test set matrices
+        Xtr, _ = affinity_matrix
+    
+        # initialize the model
+        original_model = RBM(
+            possible_ratings=np.setdiff1d(np.unique(Xtr), np.array([0])),
+            visible_units=Xtr.shape[1],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+            keep_prob=init_rbm["keep_prob"],
+            learning_rate=init_rbm["learning_rate"],
+            init_stdv=init_rbm["init_stdv"],
+            sampling_protocol=init_rbm["sampling_protocol"],
+            display_epoch=init_rbm["display_epoch"],
+        )
+    
+        # save the model
+        original_model.save()
+    
+        # initialize another model
+        saved_model = RBM(
+            possible_ratings=np.setdiff1d(np.unique(Xtr), np.array([0])),
+            visible_units=Xtr.shape[1],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+            keep_prob=init_rbm["keep_prob"],
+            learning_rate=init_rbm["learning_rate"],
+            init_stdv=init_rbm["init_stdv"],
+            sampling_protocol=init_rbm["sampling_protocol"],
+            display_epoch=init_rbm["display_epoch"],
+        )
+    
+        # load the pretrained model
+>       saved_model.load()
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <recommenders.models.rbm.rbm.RBM object at 0x74da675144d0>
+file_path = './rbm_model.ckpt'
+
+    def load(self, file_path='./rbm_model.ckpt'):
+>       saver = tf.train.Saver()
+E       AttributeError: module 'tensorflow._api.v2.train' has no attribute 'Saver'
+
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:488: AttributeError
+----------------------------- Captured stderr call -----------------------------
+I0000 00:00:1736464635.471732 2782793 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9392 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+I0000 00:00:1736464635.572595 2782793 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9392 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+=========================== short test summary info ============================
+FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load
+========================= 1 failed, 3 passed in 3.55s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init PASSED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init PASSED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct PASSED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load PASSED [100%]
+
+============================== 4 passed in 3.26s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init PASSED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init PASSED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct PASSED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load PASSED [100%]
+
+============================== 4 passed in 3.33s ===============================

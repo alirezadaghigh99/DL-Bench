@@ -1,0 +1,464 @@
+output file:
+processed_cleanlabgenerate_noise_matrix_from_trace32.json
+function:
+generate_noise_matrix_from_trace
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline FAILED', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high', '../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 24 items
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid FAILED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_sum_empty PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_min_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_probs_min_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_zero PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter FAILED
+
+=================================== FAILURES ===================================
+______________________________ test_main_pipeline ______________________________
+
+verbose = False, n = 10, valid_noise_matrix = True, frac_zero_noise_rates = 0
+
+    def test_main_pipeline(
+        verbose=False,
+        n=10,
+        valid_noise_matrix=True,
+        frac_zero_noise_rates=0,
+    ):
+        trace = 1.5
+        py = [0.1, 0.1, 0.2, 0.6]
+        K = len(py)
+        y = [z for i, p in enumerate(py) for z in [i] * int(p * n)]
+>       nm = noise_generation.generate_noise_matrix_from_trace(
+            K=K,
+            trace=trace,
+            py=py,
+            seed=0,
+            valid_noise_matrix=valid_noise_matrix,
+            frac_zero_noise_rates=frac_zero_noise_rates,
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+_______________________ test_main_pipeline_fraczero_high _______________________
+
+    def test_main_pipeline_fraczero_high():
+>       test_main_pipeline(n=1000, frac_zero_noise_rates=0.75)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+__________________________ test_main_pipeline_verbose __________________________
+
+verbose = True, n = 10
+
+    def test_main_pipeline_verbose(verbose=True, n=10):
+>       test_main_pipeline(verbose=verbose, n=n)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+___________________________ test_main_pipeline_many ____________________________
+
+verbose = False, n = 1000
+
+    def test_main_pipeline_many(verbose=False, n=1000):
+>       test_main_pipeline(verbose=verbose, n=n)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+____________________ test_main_pipeline_many_verbose_valid _____________________
+
+verbose = True, n = 100
+
+    def test_main_pipeline_many_verbose_valid(verbose=True, n=100):
+>       test_main_pipeline(verbose, n, valid_noise_matrix=True)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+________________________ test_main_pipeline_many_valid _________________________
+
+verbose = False, n = 100
+
+    def test_main_pipeline_many_valid(verbose=False, n=100):
+>       test_main_pipeline(verbose, n, valid_noise_matrix=True)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+_______________________ test_main_pipeline_many_verbose ________________________
+
+verbose = True, n = 1000
+
+    def test_main_pipeline_many_verbose(verbose=True, n=1000):
+>       test_main_pipeline(verbose=verbose, n=n)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:22: in test_main_pipeline
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 4, trace = 1.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+_________________________ test_trace_less_than_1_error _________________________
+
+trace = 0.5
+
+    def test_trace_less_than_1_error(trace=0.5):
+        try:
+>           noise_generation.generate_noise_matrix_from_trace(3, trace)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 3, trace = 0.5
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+__________________________ test_trace_equals_1_error ___________________________
+
+trace = 1
+
+    def test_trace_equals_1_error(trace=1):
+>       test_trace_less_than_1_error(trace)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:111: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:103: in test_trace_less_than_1_error
+    noise_generation.generate_noise_matrix_from_trace(3, trace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 3, trace = 1
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+____________________________ test_valid_no_py_error ____________________________
+
+    def test_valid_no_py_error():
+        try:
+>           noise_generation.generate_noise_matrix_from_trace(
+                K=3,
+                trace=2,
+                valid_noise_matrix=True,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 3, trace = 2
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+_____________________________ test_one_class_error _____________________________
+
+    def test_one_class_error():
+        try:
+>           noise_generation.generate_noise_matrix_from_trace(
+                K=1,
+                trace=2,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:133: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 1, trace = 2
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+__________________________ test_two_class_nofraczero ___________________________
+
+    def test_two_class_nofraczero():
+        trace = 1.1
+>       nm = noise_generation.generate_noise_matrix_from_trace(
+            K=2,
+            trace=trace,
+            valid_noise_matrix=True,
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 2, trace = 1.1
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+_________________________ test_two_class_fraczero_high _________________________
+
+valid = False
+
+    def test_two_class_fraczero_high(valid=False):
+        trace = 1.8
+        frac_zero_noise_rates = 0.75
+>       nm = noise_generation.generate_noise_matrix_from_trace(
+            K=2,
+            trace=trace,
+            valid_noise_matrix=valid,
+            frac_zero_noise_rates=frac_zero_noise_rates,
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 2, trace = 1.8
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+______________________ test_two_class_fraczero_high_valid ______________________
+
+    def test_two_class_fraczero_high_valid():
+>       test_two_class_fraczero_high(True)
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:160: in test_two_class_fraczero_high
+    nm = noise_generation.generate_noise_matrix_from_trace(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 2, trace = 1.8
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+________________________________ test_max_iter _________________________________
+
+    def test_max_iter():
+        trace = 2
+        K = 3
+        py = [1 / float(K)] * K
+>       nm = noise_generation.generate_noise_matrix_from_trace(
+            K=K,
+            trace=trace,
+            valid_noise_matrix=True,
+            max_iter=1,
+            py=py,
+            seed=1,
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+K = 3, trace = 2
+
+    def generate_noise_matrix_from_trace(K, trace, *, max_trace_prob=1.0, min_trace_prob=1e-05, max_noise_rate=1 - 1e-05, min_noise_rate=0.0, valid_noise_matrix=True, py=None, frac_zero_noise_rates=0.0, seed=0, max_iter=10000) -> Optional[np.ndarray]:
+        from .temp import generate_noise_matrix_from_trace
+>       return generate_noise_matrix_from_trace(K, trace)
+E       TypeError: generate_noise_matrix_from_trace() missing 4 required positional arguments: 'max_trace_prob', 'min_trace_prob', 'max_noise_rate', and 'min_noise_rate'
+
+../publishablew/cleanlab/cleanlab/cleanlab/benchmarking/noise_generation.py:114: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter
+========================= 15 failed, 9 passed in 0.80s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 24 items
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_sum_empty PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_min_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_probs_min_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_zero PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter PASSED
+
+============================== 24 passed in 0.55s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 24 items
+
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_fraczero_high PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_verbose PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_main_pipeline_many_verbose PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_inputs_verify[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_invalid_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_less_than_1_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_trace_equals_1_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_valid_no_py_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_one_class_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_nofraczero PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_two_class_fraczero_high_valid PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_sum_empty PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_gen_probs_min_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_probs_min_max_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_zero PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_balls_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_noise_generation.py::test_max_iter PASSED
+
+============================== 24 passed in 0.54s ==============================

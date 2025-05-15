@@ -1,0 +1,174 @@
+output file:
+processed_korniaproject_points335.json
+function:
+project_points
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'openxla', 'tvm', 'onnxrt', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_invalid[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_jit[cpu-float32] PASSED
+
+============================== 17 passed in 0.22s ==============================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'onnxrt', 'tvm', 'cudagraphs', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_invalid[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_jit[cpu-float32] PASSED
+
+============================== 17 passed in 0.22s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'cudagraphs', 'openxla', 'jit', 'inductor', None, 'tvm'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_points_z1_invalid[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_unproject_points_z1_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionZ1::test_jit[cpu-float32] PASSED
+
+============================== 17 passed in 0.24s ==============================

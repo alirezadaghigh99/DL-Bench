@@ -1,0 +1,255 @@
+output file:
+processed_classes-pytorch3dstack66.json
+function:
+stack
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_stack - Ass...', '../pytorch3d/tests/test_transforms.py::TestTransform::test_stack FAILED  [ 21%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone PASSED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail PASSED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation PASSED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse PASSED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle PASSED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on PASSED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale PASSED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate PASSED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack FAILED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to PASSED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate PASSED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose PASSED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail PASSED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose PASSED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z PASSED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________________ TestTransform.test_stack ___________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_stack>
+
+    def test_stack(self):
+        rotations = random_rotations(3)
+        transform3 = Transform3d().rotate(rotations).translate(torch.full((3, 3), 0.3))
+        transform1 = Scale(37)
+        transform4 = transform1.stack(transform3)
+        self.assertEqual(len(transform1), 1)
+        self.assertEqual(len(transform3), 3)
+>       self.assertEqual(len(transform4), 4)
+E       AssertionError: 2 != 4
+
+../pytorch3d/tests/test_transforms.py:478: AssertionError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_stack - Ass...
+========================= 1 failed, 64 passed in 1.67s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone PASSED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail PASSED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation PASSED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse PASSED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle PASSED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on PASSED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale PASSED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate PASSED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack PASSED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to PASSED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate PASSED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose PASSED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail PASSED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose PASSED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z PASSED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+============================== 65 passed in 1.45s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone PASSED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail PASSED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation PASSED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse PASSED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle PASSED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on PASSED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale PASSED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate PASSED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack PASSED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to PASSED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate PASSED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose PASSED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail PASSED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose PASSED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z PASSED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+============================== 65 passed in 1.56s ==============================

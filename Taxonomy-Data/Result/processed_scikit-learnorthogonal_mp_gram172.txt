@@ -1,0 +1,682 @@
+output file:
+processed_scikit-learnorthogonal_mp_gram172.json
+function:
+orthogonal_mp_gram
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64]', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32]', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes I: Seeding RNGs with 624948033
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator_n_nonzero_coefs PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_identical_regressors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_no_atoms PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency FAILED
+
+=================================== FAILURES ===================================
+___________________________ test_correct_shapes_gram ___________________________
+
+    def test_correct_shapes_gram():
+>       assert orthogonal_mp_gram(G, Xy[:, 0], n_nonzero_coefs=5).shape == (n_features,)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([ -6.61271573,  30.58230642,   6.51337973,  -2.82251011,
+        29.86512081,  -1.34701743,  31.67826713,  10.51...13209,
+         5.04597292,  12.08622387, -10.31260385, -43.20490286,
+        88.94369191, -23.72568845,  -8.90044923])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+_____________________________ test_n_nonzero_coefs _____________________________
+
+    def test_n_nonzero_coefs():
+        assert np.count_nonzero(orthogonal_mp(X, y[:, 0], n_nonzero_coefs=5)) <= 5
+        assert (
+>           np.count_nonzero(orthogonal_mp(X, y[:, 0], n_nonzero_coefs=5, precompute=True))
+            <= 5
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[ -6.61271573],
+       [ 30.58230642],
+       [  6.51337973],
+       [ -2.82251011],
+       [ 29.86512081],
+   ...7],
+       [-10.31260385],
+       [-43.20490286],
+       [ 88.94369191],
+       [-23.72568845],
+       [ -8.90044923]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+___________________________________ test_tol ___________________________________
+
+    def test_tol():
+        tol = 0.5
+        gamma = orthogonal_mp(X, y[:, 0], tol=tol)
+>       gamma_gram = orthogonal_mp(X, y[:, 0], tol=tol, precompute=True)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[ -6.61271573],
+       [ 30.58230642],
+       [  6.51337973],
+       [ -2.82251011],
+       [ 29.86512081],
+   ...7],
+       [-10.31260385],
+       [-43.20490286],
+       [ 88.94369191],
+       [-23.72568845],
+       [ -8.90044923]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+____________________________ test_with_without_gram ____________________________
+
+    def test_with_without_gram():
+        assert_array_almost_equal(
+            orthogonal_mp(X, y, n_nonzero_coefs=5),
+>           orthogonal_mp(X, y, n_nonzero_coefs=5, precompute=True),
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+__________________________ test_with_without_gram_tol __________________________
+
+    def test_with_without_gram_tol():
+        assert_array_almost_equal(
+>           orthogonal_mp(X, y, tol=1.0), orthogonal_mp(X, y, tol=1.0, precompute=True)
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+__________________________ test_unreachable_accuracy ___________________________
+
+    def test_unreachable_accuracy():
+        assert_array_almost_equal(
+            orthogonal_mp(X, y, tol=0), orthogonal_mp(X, y, n_nonzero_coefs=n_features)
+        )
+        warning_message = (
+            "Orthogonal matching pursuit ended prematurely "
+            "due to linear dependence in the dictionary. "
+            "The requested precision might not have been met."
+        )
+        with pytest.warns(RuntimeWarning, match=warning_message):
+            assert_array_almost_equal(
+>               orthogonal_mp(X, y, tol=0, precompute=True),
+                orthogonal_mp(X, y, precompute=True, n_nonzero_coefs=n_features),
+            )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+
+During handling of the above exception, another exception occurred:
+
+    def test_unreachable_accuracy():
+        assert_array_almost_equal(
+            orthogonal_mp(X, y, tol=0), orthogonal_mp(X, y, n_nonzero_coefs=n_features)
+        )
+        warning_message = (
+            "Orthogonal matching pursuit ended prematurely "
+            "due to linear dependence in the dictionary. "
+            "The requested precision might not have been met."
+        )
+        with pytest.warns(RuntimeWarning, match=warning_message):
+>           assert_array_almost_equal(
+                orthogonal_mp(X, y, tol=0, precompute=True),
+                orthogonal_mp(X, y, precompute=True, n_nonzero_coefs=n_features),
+            )
+E           Failed: DID NOT WARN. No warnings of type (<class 'RuntimeWarning'>,) were emitted.
+E            Emitted warnings: [].
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:90: Failed
+_________________________ test_perfect_signal_recovery _________________________
+
+    def test_perfect_signal_recovery():
+        (idx,) = gamma[:, 0].nonzero()
+        gamma_rec = orthogonal_mp(X, y[:, 0], n_nonzero_coefs=5)
+>       gamma_gram = orthogonal_mp_gram(G, Xy[:, 0], n_nonzero_coefs=5)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([ -6.61271573,  30.58230642,   6.51337973,  -2.82251011,
+        29.86512081,  -1.34701743,  31.67826713,  10.51...13209,
+         5.04597292,  12.08622387, -10.31260385, -43.20490286,
+        88.94369191, -23.72568845,  -8.90044923])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+_______________________ test_orthogonal_mp_gram_readonly _______________________
+
+    def test_orthogonal_mp_gram_readonly():
+        # Non-regression test for:
+        # https://github.com/scikit-learn/scikit-learn/issues/5956
+        (idx,) = gamma[:, 0].nonzero()
+        G_readonly = G.copy()
+        G_readonly.setflags(write=False)
+        Xy_readonly = Xy.copy()
+        Xy_readonly.setflags(write=False)
+>       gamma_gram = orthogonal_mp_gram(
+            G_readonly, Xy_readonly[:, 0], n_nonzero_coefs=5, copy_Gram=False, copy_Xy=False
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([ -6.61271573,  30.58230642,   6.51337973,  -2.82251011,
+        29.86512081,  -1.34701743,  31.67826713,  10.51...13209,
+         5.04597292,  12.08622387, -10.31260385, -43.20490286,
+        88.94369191, -23.72568845,  -8.90044923])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+___________________________ test_swapped_regressors ____________________________
+
+    def test_swapped_regressors():
+        gamma = np.zeros(n_features)
+        # X[:, 21] should be selected first, then X[:, 0] selected second,
+        # which will take X[:, 21]'s place in case the algorithm does
+        # column swapping for optimization (which is the case at the moment)
+        gamma[21] = 1.0
+        gamma[0] = 0.5
+        new_y = np.dot(X, gamma)
+        new_Xy = np.dot(X.T, new_y)
+        gamma_hat = orthogonal_mp(X, new_y, n_nonzero_coefs=2)
+>       gamma_hat_gram = orthogonal_mp_gram(G, new_Xy, n_nonzero_coefs=2)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:196: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([ 33.03647063,  20.27839081,   2.42756102,   3.23087492,
+        48.49798978, -18.86617351, -15.07741084,  -7.73...29443,
+        15.93747263,  22.33959086,  20.57129723,  16.01921794,
+       -18.06171164, -12.89667373, -21.14401457])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+________________________________ test_omp_path _________________________________
+
+    def test_omp_path():
+        path = orthogonal_mp(X, y, n_nonzero_coefs=5, return_path=True)
+        last = orthogonal_mp(X, y, n_nonzero_coefs=5, return_path=False)
+        assert path.shape == (n_features, n_targets, 5)
+        assert_array_almost_equal(path[:, :, -1], last)
+>       path = orthogonal_mp_gram(G, Xy, n_nonzero_coefs=5, return_path=True)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:215: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+_____________________ test_omp_return_path_prop_with_gram ______________________
+
+    def test_omp_return_path_prop_with_gram():
+>       path = orthogonal_mp(X, y, n_nonzero_coefs=5, return_path=True, precompute=True)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:222: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:329: in orthogonal_mp
+    return orthogonal_mp_gram(G, Xy, n_nonzero_coefs=n_nonzero_coefs, tol=tol, norms_squared=norms_squared, copy_Gram=copy_X, copy_Xy=False, return_path=return_path)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+________________________ test_omp_reaches_least_squares ________________________
+
+    def test_omp_reaches_least_squares():
+        # Use small simple data; it's a sanity check but OMP can stop early
+        rng = check_random_state(0)
+        n_samples, n_features = (10, 8)
+        n_targets = 3
+        X = rng.randn(n_samples, n_features)
+        Y = rng.randn(n_samples, n_targets)
+        omp = OrthogonalMatchingPursuit(n_nonzero_coefs=n_features)
+        lstsq = LinearRegression()
+>       omp.fit(X, Y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:251: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:619: in fit
+    coef_, self.n_iter_ = orthogonal_mp_gram(Gram, Xy=Xy, n_nonzero_coefs=self.n_nonzero_coefs_, tol=self.tol, norms_squared=norms_sq, copy_Gram=True, copy_Xy=True, return_n_iter=True)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[15.27171517,  1.07699595,  7.03836901, -2.9155821 ,  2.15523654,
+         3.20971532,  4.58284238, -1.55114244...     [-1.55114244, -2.03589247, -1.28560571,  3.36562022,  2.40180048,
+        -0.3587242 ,  0.06121659,  4.64012724]])
+Xy = array([[ 0.85555733, -0.71056666, -4.54306975],
+       [-4.89065182, -0.62298592, -0.63426023],
+       [-0.76688859,  ...4901771, -2.90188452],
+       [-1.00830809,  2.54439015, -3.73139093],
+       [ 1.64094516,  3.25280491,  2.96536116]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+______________________ test_omp_gram_dtype_match[float32] ______________________
+
+data_type = <class 'numpy.float32'>
+
+    @pytest.mark.parametrize("data_type", (np.float32, np.float64))
+    def test_omp_gram_dtype_match(data_type):
+        # verify matching input data type and output data type
+>       coef = orthogonal_mp_gram(
+            G.astype(data_type), Xy.astype(data_type), n_nonzero_coefs=5
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.       ,  -2.4044354, -11.842244 , ...,   5.0251255,
+         -6.835417 , -37.352486 ],
+       [ -2.404435... ],
+       [-37.352486 , -24.439894 , -16.394545 , ...,  -6.1287427,
+        -19.693773 , 100.       ]], dtype=float32)
+Xy = array([[  -6.6127157,   47.65693  ,  -12.381502 ],
+       [  30.582306 ,   70.019905 ,    3.636421 ],
+       [   6.513...,
+       [ -23.725689 ,   28.395529 ,  -38.82879  ],
+       [  -8.900449 ,  -11.493483 ,  -17.39691  ]], dtype=float32)
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+______________________ test_omp_gram_dtype_match[float64] ______________________
+
+data_type = <class 'numpy.float64'>
+
+    @pytest.mark.parametrize("data_type", (np.float32, np.float64))
+    def test_omp_gram_dtype_match(data_type):
+        # verify matching input data type and output data type
+>       coef = orthogonal_mp_gram(
+            G.astype(data_type), Xy.astype(data_type), n_nonzero_coefs=5
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.        ,  -2.40443536, -11.84224424, ...,   5.02512549,
+         -6.83541684, -37.35248456],
+       [ -2....9.69377232],
+       [-37.35248456, -24.4398946 , -16.39454396, ...,  -6.12874257,
+        -19.69377232, 100.        ]])
+Xy = array([[  -6.61271573,   47.65692719,  -12.38150206],
+       [  30.58230642,   70.01990535,    3.63642093],
+       [  ...22685944],
+       [ -23.72568845,   28.39552943,  -38.82878853],
+       [  -8.90044923,  -11.49348283,  -17.3969092 ]])
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+_____________________ test_omp_gram_numerical_consistency ______________________
+
+    def test_omp_gram_numerical_consistency():
+        # verify numericaly consistency among np.float32 and np.float64
+>       coef_32 = orthogonal_mp_gram(
+            G.astype(np.float32), Xy.astype(np.float32), n_nonzero_coefs=5
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py:267: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+Gram = array([[100.       ,  -2.4044354, -11.842244 , ...,   5.0251255,
+         -6.835417 , -37.352486 ],
+       [ -2.404435... ],
+       [-37.352486 , -24.439894 , -16.394545 , ...,  -6.1287427,
+        -19.693773 , 100.       ]], dtype=float32)
+Xy = array([[  -6.6127157,   47.65693  ,  -12.381502 ],
+       [  30.582306 ,   70.019905 ,    3.636421 ],
+       [   6.513...,
+       [ -23.725689 ,   28.395529 ,  -38.82879  ],
+       [  -8.900449 ,  -11.493483 ,  -17.39691  ]], dtype=float32)
+
+    @validate_params({'Gram': ['array-like'], 'Xy': ['array-like'], 'n_nonzero_coefs': [Interval(Integral, 0, None, closed='neither'), None], 'tol': [Interval(Real, 0, None, closed='left'), None], 'norms_squared': ['array-like', None], 'copy_Gram': ['boolean'], 'copy_Xy': ['boolean'], 'return_path': ['boolean'], 'return_n_iter': ['boolean']}, prefer_skip_nested_validation=True)
+    def orthogonal_mp_gram(Gram, Xy, *, n_nonzero_coefs=None, tol=None, norms_squared=None, copy_Gram=True, copy_Xy=True, return_path=False, return_n_iter=False):
+>       from .temp import orthogonal_mp_gram
+E       ImportError: cannot import name 'orthogonal_mp_gram' from 'sklearn.linear_model.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/linear_model/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/_omp.py:355: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency
+=================== 15 failed, 8 passed, 6 warnings in 0.60s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes I: Seeding RNGs with 1996728995
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator_n_nonzero_coefs PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_identical_regressors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_no_atoms PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency PASSED
+
+======================== 23 passed, 6 warnings in 0.22s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes I: Seeding RNGs with 928233551
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_correct_shapes_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_n_nonzero_coefs PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_tol PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_with_without_gram_tol PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_unreachable_accuracy PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_bad_input[keyword_params0-positional_params1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_perfect_signal_recovery PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_orthogonal_mp_gram_readonly PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_estimator_n_nonzero_coefs PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_identical_regressors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_swapped_regressors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_no_atoms PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_path PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_return_path_prop_with_gram PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_reaches_least_squares PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float32] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_dtype_match[float64] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/linear_model/tests/test_omp.py::test_omp_gram_numerical_consistency PASSED
+
+======================== 23 passed, 6 warnings in 0.27s ========================

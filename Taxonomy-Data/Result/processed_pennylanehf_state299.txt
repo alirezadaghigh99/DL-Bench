@@ -1,0 +1,203 @@
+output file:
+processed_pennylanehf_state299.json
+function:
+hf_state
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11]', 'FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10]', '../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11] FAILED', '../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10] FAILED', '../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 12 items
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-occupation_number-exp_state0] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-occupation_number-exp_state1] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-occupation_number-exp_state2] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-occupation_number-exp_state3] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-parity-exp_state4] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-parity-exp_state5] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-parity-exp_state6] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-parity-exp_state7] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-bravyi_kitaev-exp_state8] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9] FAILED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10] FAILED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11] FAILED
+
+=================================== FAILURES ===================================
+_________________ test_hf_state[2-5-bravyi_kitaev-exp_state9] __________________
+
+electrons = 2, orbitals = 5, basis = 'bravyi_kitaev'
+exp_state = tensor([1, 0, 0, 0, 0], requires_grad=True)
+
+    @pytest.mark.parametrize(
+        ("electrons", "orbitals", "basis", "exp_state"),
+        # Obtained manually using Eqs (10, 14) of
+        # [`Tranter et al. Int. J. Quantum Chem. 115, 1431 (2015)
+        # <https://doi.org/10.1002/qua.24969>`_]
+        [
+            (1, 1, "occupation_number", np.array([1])),
+            (2, 5, "occupation_number", np.array([1, 1, 0, 0, 0])),
+            (1, 5, "occupation_number", np.array([1, 0, 0, 0, 0])),
+            (5, 5, "occupation_number", np.array([1, 1, 1, 1, 1])),
+            (1, 1, "parity", np.array([1])),
+            (2, 5, "parity", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "parity", np.array([1, 1, 1, 1, 1])),
+            (5, 5, "parity", np.array([1, 0, 1, 0, 1])),
+            (1, 1, "bravyi_kitaev", np.array([1])),
+            (2, 5, "bravyi_kitaev", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "bravyi_kitaev", np.array([1, 1, 0, 1, 0])),
+            (5, 5, "bravyi_kitaev", np.array([1, 0, 1, 0, 1])),
+        ],
+    )
+    def test_hf_state(electrons, orbitals, basis, exp_state):
+        r"""Test the correctness of the generated occupation-number vector"""
+    
+        res_state = qchem.hf_state(electrons, orbitals, basis)
+    
+        assert len(res_state) == len(exp_state)
+>       assert np.allclose(res_state, exp_state)
+E       assert False
+E        +  where False = <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0>(array([1, 1, 0, 0, 0]), tensor([1, 0, 0, 0, 0], requires_grad=True))
+E        +    where <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0> = np.allclose
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py:331: AssertionError
+_________________ test_hf_state[1-5-bravyi_kitaev-exp_state10] _________________
+
+electrons = 1, orbitals = 5, basis = 'bravyi_kitaev'
+exp_state = tensor([1, 1, 0, 1, 0], requires_grad=True)
+
+    @pytest.mark.parametrize(
+        ("electrons", "orbitals", "basis", "exp_state"),
+        # Obtained manually using Eqs (10, 14) of
+        # [`Tranter et al. Int. J. Quantum Chem. 115, 1431 (2015)
+        # <https://doi.org/10.1002/qua.24969>`_]
+        [
+            (1, 1, "occupation_number", np.array([1])),
+            (2, 5, "occupation_number", np.array([1, 1, 0, 0, 0])),
+            (1, 5, "occupation_number", np.array([1, 0, 0, 0, 0])),
+            (5, 5, "occupation_number", np.array([1, 1, 1, 1, 1])),
+            (1, 1, "parity", np.array([1])),
+            (2, 5, "parity", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "parity", np.array([1, 1, 1, 1, 1])),
+            (5, 5, "parity", np.array([1, 0, 1, 0, 1])),
+            (1, 1, "bravyi_kitaev", np.array([1])),
+            (2, 5, "bravyi_kitaev", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "bravyi_kitaev", np.array([1, 1, 0, 1, 0])),
+            (5, 5, "bravyi_kitaev", np.array([1, 0, 1, 0, 1])),
+        ],
+    )
+    def test_hf_state(electrons, orbitals, basis, exp_state):
+        r"""Test the correctness of the generated occupation-number vector"""
+    
+        res_state = qchem.hf_state(electrons, orbitals, basis)
+    
+        assert len(res_state) == len(exp_state)
+>       assert np.allclose(res_state, exp_state)
+E       assert False
+E        +  where False = <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0>(array([1, 0, 0, 0, 0]), tensor([1, 1, 0, 1, 0], requires_grad=True))
+E        +    where <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0> = np.allclose
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py:331: AssertionError
+_________________ test_hf_state[5-5-bravyi_kitaev-exp_state11] _________________
+
+electrons = 5, orbitals = 5, basis = 'bravyi_kitaev'
+exp_state = tensor([1, 0, 1, 0, 1], requires_grad=True)
+
+    @pytest.mark.parametrize(
+        ("electrons", "orbitals", "basis", "exp_state"),
+        # Obtained manually using Eqs (10, 14) of
+        # [`Tranter et al. Int. J. Quantum Chem. 115, 1431 (2015)
+        # <https://doi.org/10.1002/qua.24969>`_]
+        [
+            (1, 1, "occupation_number", np.array([1])),
+            (2, 5, "occupation_number", np.array([1, 1, 0, 0, 0])),
+            (1, 5, "occupation_number", np.array([1, 0, 0, 0, 0])),
+            (5, 5, "occupation_number", np.array([1, 1, 1, 1, 1])),
+            (1, 1, "parity", np.array([1])),
+            (2, 5, "parity", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "parity", np.array([1, 1, 1, 1, 1])),
+            (5, 5, "parity", np.array([1, 0, 1, 0, 1])),
+            (1, 1, "bravyi_kitaev", np.array([1])),
+            (2, 5, "bravyi_kitaev", np.array([1, 0, 0, 0, 0])),
+            (1, 5, "bravyi_kitaev", np.array([1, 1, 0, 1, 0])),
+            (5, 5, "bravyi_kitaev", np.array([1, 0, 1, 0, 1])),
+        ],
+    )
+    def test_hf_state(electrons, orbitals, basis, exp_state):
+        r"""Test the correctness of the generated occupation-number vector"""
+    
+        res_state = qchem.hf_state(electrons, orbitals, basis)
+    
+        assert len(res_state) == len(exp_state)
+>       assert np.allclose(res_state, exp_state)
+E       assert False
+E        +  where False = <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0>(array([1, 1, 1, 1, 1]), tensor([1, 0, 1, 0, 1], requires_grad=True))
+E        +    where <function primitive.<locals>.f_wrapped at 0x7a454f7cf1a0> = np.allclose
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py:331: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9]
+FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10]
+FAILED ../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11]
+========================= 3 failed, 9 passed in 0.17s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 12 items
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-occupation_number-exp_state0] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-occupation_number-exp_state1] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-occupation_number-exp_state2] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-occupation_number-exp_state3] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-parity-exp_state4] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-parity-exp_state5] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-parity-exp_state6] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-parity-exp_state7] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-bravyi_kitaev-exp_state8] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11] PASSED
+
+============================== 12 passed in 0.03s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 12 items
+
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-occupation_number-exp_state0] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-occupation_number-exp_state1] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-occupation_number-exp_state2] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-occupation_number-exp_state3] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-parity-exp_state4] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-parity-exp_state5] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-parity-exp_state6] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-parity-exp_state7] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-1-bravyi_kitaev-exp_state8] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[2-5-bravyi_kitaev-exp_state9] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[1-5-bravyi_kitaev-exp_state10] PASSED
+../publishablew/pennylane/pennylane/tests/qchem/test_structure.py::test_hf_state[5-5-bravyi_kitaev-exp_state11] PASSED
+
+============================== 12 passed in 0.05s ==============================

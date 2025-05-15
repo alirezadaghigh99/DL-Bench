@@ -1,0 +1,755 @@
+output file:
+processed_classes-korniafit19.json
+function:
+fit
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1] FAILED [ 26%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu] FAILED [ 60%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu] FAILED [ 66%]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False] FAILED [ 13%]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1] FAILED [ 40%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06] FAILED [ 33%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0] FAILED [ 20%]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True] FAILED [  6%]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001] FAILED [ 46%]', '../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32] FAILED [ 86%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'openxla', 'cudagraphs', 'onnxrt', 'jit', None, 'tvm'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 15 items
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True] FAILED [  6%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False] FAILED [ 13%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0] FAILED [ 20%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1] FAILED [ 26%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06] FAILED [ 33%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1] FAILED [ 40%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001] FAILED [ 46%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_individual_transforms[cpu] PASSED [ 53%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu] FAILED [ 60%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu] FAILED [ 66%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted[cpu-float32] PASSED [ 73%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted_inv[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32] FAILED [ 86%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-True] PASSED [ 93%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-False] PASSED [100%]
+
+=================================== FAILURES ===================================
+_________________ TestZCA.test_zca_unbiased[cpu-float32-True] __________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e0f40>, unbiased = True
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("unbiased", [True, False])
+    def test_zca_unbiased(self, unbiased, device, dtype):
+        data = torch.tensor([[0, 1], [1, 0], [-1, 0], [0, -1]], device=device, dtype=dtype)
+    
+        if unbiased:
+            unbiased_val = 1.5
+        else:
+            unbiased_val = 2.0
+    
+        expected = torch.sqrt(unbiased_val * torch.abs(data)) * torch.sign(data)
+    
+        zca = kornia.enhance.ZCAWhitening(unbiased=unbiased).fit(data)
+    
+>       actual = zca(data)
+E       TypeError: 'NoneType' object is not callable
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:23: TypeError
+_________________ TestZCA.test_zca_unbiased[cpu-float32-False] _________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e0eb0>, unbiased = False
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("unbiased", [True, False])
+    def test_zca_unbiased(self, unbiased, device, dtype):
+        data = torch.tensor([[0, 1], [1, 0], [-1, 0], [0, -1]], device=device, dtype=dtype)
+    
+        if unbiased:
+            unbiased_val = 1.5
+        else:
+            unbiased_val = 2.0
+    
+        expected = torch.sqrt(unbiased_val * torch.abs(data)) * torch.sign(data)
+    
+        zca = kornia.enhance.ZCAWhitening(unbiased=unbiased).fit(data)
+    
+>       actual = zca(data)
+E       TypeError: 'NoneType' object is not callable
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:23: TypeError
+_____________________ TestZCA.test_dim_args[cpu-float32-0] _____________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e1420>, dim = 0
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("dim", [0, 1])
+    def test_dim_args(self, dim, device, dtype):
+        if "xla" in device.type:
+            pytest.skip("buggy with XLA devices.")
+    
+        if dtype == torch.float16:
+            pytest.skip("not work for half-precision")
+    
+        data = torch.tensor([[0, 1], [1, 0], [-1, 0], [0, -1]], device=device, dtype=dtype)
+    
+        if dim == 1:
+            expected = torch.tensor(
+                [
+                    [-0.35360718, 0.35360718],
+                    [0.35351562, -0.35351562],
+                    [-0.35353088, 0.35353088],
+                    [0.35353088, -0.35353088],
+                ],
+                device=device,
+                dtype=dtype,
+            )
+        elif dim == 0:
+            expected = torch.tensor(
+                [[0.0, 1.2247448], [1.2247448, 0.0], [-1.2247448, 0.0], [0.0, -1.2247448]], device=device, dtype=dtype
+            )
+    
+        zca = kornia.enhance.ZCAWhitening(dim=dim)
+>       actual = zca(data, True)
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/zca.py:100: in forward
+    x_whiten = linear_transform(x, self.transform_matrix, self.mean_vector, self.dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+inp = tensor([[ 0.,  1.],
+        [ 1.,  0.],
+        [-1.,  0.],
+        [ 0., -1.]])
+transform_matrix = tensor([[0., 0.]])
+mean_vector = tensor([[1.2247, 0.0000],
+        [0.0000, 1.2247]]), dim = 0
+
+    def linear_transform(inp: Tensor, transform_matrix: Tensor, mean_vector: Tensor, dim: int=0) -> Tensor:
+        """Given a transformation matrix and a mean vector, this function will flatten the input tensor along the given
+        dimension and subtract the mean vector from it. Then the dot product with the transformation matrix will be
+        computed and then the resulting tensor is reshaped to the original input shape.
+    
+        .. math::
+    
+            \\mathbf{X}_{T} = (\\mathbf{X - \\mu})(T)
+    
+        Args:
+            inp: Input data :math:`X`.
+            transform_matrix: Transform matrix :math:`T`.
+            mean_vector: mean vector :math:`\\mu`.
+            dim: Batch dimension.
+    
+        Shapes:
+            - inp: :math:`(D_0,...,D_{\\text{dim}},...,D_N)` is a batch of N-D tensors.
+            - transform_matrix: :math:`(\\Pi_{d=0,d\\neq \\text{dim}}^N D_d, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+            - mean_vector: :math:`(1, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+    
+        Returns:
+            Transformed data.
+    
+        Example:
+            >>> # Example where dim = 3
+            >>> inp = torch.ones((10,3,4,5))
+            >>> transform_mat = torch.ones((10*3*4,10*3*4))
+            >>> mean = 2*torch.ones((1,10*3*4))
+            >>> out = linear_transform(inp, transform_mat, mean, 3)
+            >>> print(out.shape, out.unique())  # Should a be (10,3,4,5) tensor of -120s
+            torch.Size([10, 3, 4, 5]) tensor([-120.])
+    
+            >>> # Example where dim = 0
+            >>> inp = torch.ones((10,2))
+            >>> transform_mat = torch.ones((2,2))
+            >>> mean = torch.zeros((1,2))
+            >>> out = linear_transform(inp, transform_mat, mean)
+            >>> print(out.shape, out.unique()) # Should a be (10,2) tensor of 2s
+            torch.Size([10, 2]) tensor([2.])
+        """
+        inp_size = inp.size()
+        if dim >= len(inp_size) or dim < -len(inp_size):
+            raise IndexError(f'Dimension out of range (expected to be in range of [{-len(inp_size)},{len(inp_size) - 1}], but got {dim}')
+        if dim < 0:
+            dim = len(inp_size) + dim
+        feat_dims = concatenate([torch.arange(0, dim), torch.arange(dim + 1, len(inp_size))])
+        perm = concatenate([tensor([dim]), feat_dims])
+        perm_inv = torch.argsort(perm)
+        new_order: List[int] = perm.tolist()
+        inv_order: List[int] = perm_inv.tolist()
+        feature_sizes = tensor(inp_size[0:dim] + inp_size[dim + 1:])
+        num_features: int = int(torch.prod(feature_sizes).item())
+        inp_permute = inp.permute(new_order)
+        inp_flat = inp_permute.reshape((-1, num_features))
+>       inp_center = inp_flat - mean_vector
+E       RuntimeError: The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 0
+
+../publishablew/kornia/kornia/kornia/enhance/zca.py:285: RuntimeError
+_____________________ TestZCA.test_dim_args[cpu-float32-1] _____________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e1360>, dim = 1
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("dim", [0, 1])
+    def test_dim_args(self, dim, device, dtype):
+        if "xla" in device.type:
+            pytest.skip("buggy with XLA devices.")
+    
+        if dtype == torch.float16:
+            pytest.skip("not work for half-precision")
+    
+        data = torch.tensor([[0, 1], [1, 0], [-1, 0], [0, -1]], device=device, dtype=dtype)
+    
+        if dim == 1:
+            expected = torch.tensor(
+                [
+                    [-0.35360718, 0.35360718],
+                    [0.35351562, -0.35351562],
+                    [-0.35353088, 0.35353088],
+                    [0.35353088, -0.35353088],
+                ],
+                device=device,
+                dtype=dtype,
+            )
+        elif dim == 0:
+            expected = torch.tensor(
+                [[0.0, 1.2247448], [1.2247448, 0.0], [-1.2247448, 0.0], [0.0, -1.2247448]], device=device, dtype=dtype
+            )
+    
+        zca = kornia.enhance.ZCAWhitening(dim=dim)
+>       actual = zca(data, True)
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/zca.py:100: in forward
+    x_whiten = linear_transform(x, self.transform_matrix, self.mean_vector, self.dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+inp = tensor([[ 0.,  1.],
+        [ 1.,  0.],
+        [-1.,  0.],
+        [ 0., -1.]])
+transform_matrix = tensor([[ 0.5000,  0.5000, -0.5000, -0.5000]])
+mean_vector = tensor([[ 718.7421,  239.3449, -239.3450,  239.3450],
+        [ 239.3449,  746.6839,  253.3160, -253.3160],
+        [-239.3450,  253.3160,  746.6840,  253.3160],
+        [ 239.3450, -253.3160,  253.3160,  746.6840]])
+dim = 1
+
+    def linear_transform(inp: Tensor, transform_matrix: Tensor, mean_vector: Tensor, dim: int=0) -> Tensor:
+        """Given a transformation matrix and a mean vector, this function will flatten the input tensor along the given
+        dimension and subtract the mean vector from it. Then the dot product with the transformation matrix will be
+        computed and then the resulting tensor is reshaped to the original input shape.
+    
+        .. math::
+    
+            \\mathbf{X}_{T} = (\\mathbf{X - \\mu})(T)
+    
+        Args:
+            inp: Input data :math:`X`.
+            transform_matrix: Transform matrix :math:`T`.
+            mean_vector: mean vector :math:`\\mu`.
+            dim: Batch dimension.
+    
+        Shapes:
+            - inp: :math:`(D_0,...,D_{\\text{dim}},...,D_N)` is a batch of N-D tensors.
+            - transform_matrix: :math:`(\\Pi_{d=0,d\\neq \\text{dim}}^N D_d, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+            - mean_vector: :math:`(1, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+    
+        Returns:
+            Transformed data.
+    
+        Example:
+            >>> # Example where dim = 3
+            >>> inp = torch.ones((10,3,4,5))
+            >>> transform_mat = torch.ones((10*3*4,10*3*4))
+            >>> mean = 2*torch.ones((1,10*3*4))
+            >>> out = linear_transform(inp, transform_mat, mean, 3)
+            >>> print(out.shape, out.unique())  # Should a be (10,3,4,5) tensor of -120s
+            torch.Size([10, 3, 4, 5]) tensor([-120.])
+    
+            >>> # Example where dim = 0
+            >>> inp = torch.ones((10,2))
+            >>> transform_mat = torch.ones((2,2))
+            >>> mean = torch.zeros((1,2))
+            >>> out = linear_transform(inp, transform_mat, mean)
+            >>> print(out.shape, out.unique()) # Should a be (10,2) tensor of 2s
+            torch.Size([10, 2]) tensor([2.])
+        """
+        inp_size = inp.size()
+        if dim >= len(inp_size) or dim < -len(inp_size):
+            raise IndexError(f'Dimension out of range (expected to be in range of [{-len(inp_size)},{len(inp_size) - 1}], but got {dim}')
+        if dim < 0:
+            dim = len(inp_size) + dim
+        feat_dims = concatenate([torch.arange(0, dim), torch.arange(dim + 1, len(inp_size))])
+        perm = concatenate([tensor([dim]), feat_dims])
+        perm_inv = torch.argsort(perm)
+        new_order: List[int] = perm.tolist()
+        inv_order: List[int] = perm_inv.tolist()
+        feature_sizes = tensor(inp_size[0:dim] + inp_size[dim + 1:])
+        num_features: int = int(torch.prod(feature_sizes).item())
+        inp_permute = inp.permute(new_order)
+        inp_flat = inp_permute.reshape((-1, num_features))
+>       inp_center = inp_flat - mean_vector
+E       RuntimeError: The size of tensor a (2) must match the size of tensor b (4) at non-singleton dimension 0
+
+../publishablew/kornia/kornia/kornia/enhance/zca.py:285: RuntimeError
+____________ TestZCA.test_identity[cpu-float32-input_shape0-1e-06] _____________
+
+self = <test_zca.TestZCA object at 0x7dcea52e18d0>, input_shape = (15, 2, 2, 2)
+eps = 1e-06, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("input_shape,eps", [((15, 2, 2, 2), 1e-6), ((10, 4), 0.1), ((20, 3, 2, 2), 1e-3)])
+    def test_identity(self, input_shape, eps, device, dtype):
+        """Assert that data can be recovered by the inverse transform."""
+        data = torch.randn(*input_shape, device=device, dtype=dtype)
+    
+        zca = kornia.enhance.ZCAWhitening(compute_inv=True, eps=eps).fit(data)
+    
+>       data_w = zca(data)
+E       TypeError: 'NoneType' object is not callable
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:65: TypeError
+_____________ TestZCA.test_identity[cpu-float32-input_shape1-0.1] ______________
+
+self = <test_zca.TestZCA object at 0x7dcea52e1810>, input_shape = (10, 4)
+eps = 0.1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("input_shape,eps", [((15, 2, 2, 2), 1e-6), ((10, 4), 0.1), ((20, 3, 2, 2), 1e-3)])
+    def test_identity(self, input_shape, eps, device, dtype):
+        """Assert that data can be recovered by the inverse transform."""
+        data = torch.randn(*input_shape, device=device, dtype=dtype)
+    
+        zca = kornia.enhance.ZCAWhitening(compute_inv=True, eps=eps).fit(data)
+    
+>       data_w = zca(data)
+E       TypeError: 'NoneType' object is not callable
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:65: TypeError
+____________ TestZCA.test_identity[cpu-float32-input_shape2-0.001] _____________
+
+self = <test_zca.TestZCA object at 0x7dcea52e1b70>, input_shape = (20, 3, 2, 2)
+eps = 0.001, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("input_shape,eps", [((15, 2, 2, 2), 1e-6), ((10, 4), 0.1), ((20, 3, 2, 2), 1e-3)])
+    def test_identity(self, input_shape, eps, device, dtype):
+        """Assert that data can be recovered by the inverse transform."""
+        data = torch.randn(*input_shape, device=device, dtype=dtype)
+    
+        zca = kornia.enhance.ZCAWhitening(compute_inv=True, eps=eps).fit(data)
+    
+>       data_w = zca(data)
+E       TypeError: 'NoneType' object is not callable
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:65: TypeError
+_____________________ TestZCA.test_grad_zca_with_fit[cpu] ______________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e2080>, device = device(type='cpu')
+
+    def test_grad_zca_with_fit(self, device):
+        data = torch.tensor([[2, 0], [0, 1], [-2, 0], [0, -1]], device=device, dtype=torch.float64)
+    
+        def zca_fit(x):
+            zca = kornia.enhance.ZCAWhitening(detach_transforms=False)
+            return zca(x, include_fit=True)
+    
+>       self.gradcheck(zca_fit, (data,))
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:93: in zca_fit
+    return zca(x, include_fit=True)
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/zca.py:100: in forward
+    x_whiten = linear_transform(x, self.transform_matrix, self.mean_vector, self.dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+inp = tensor([[ 2.,  0.],
+        [ 0.,  1.],
+        [-2.,  0.],
+        [ 0., -1.]], dtype=torch.float64, requires_grad=True)
+transform_matrix = tensor([[0., 0.]], dtype=torch.float64, grad_fn=<ViewBackward0>)
+mean_vector = tensor([[0.6124, 0.0000],
+        [0.0000, 1.2247]], dtype=torch.float64, grad_fn=<MmBackward0>)
+dim = 0
+
+    def linear_transform(inp: Tensor, transform_matrix: Tensor, mean_vector: Tensor, dim: int=0) -> Tensor:
+        """Given a transformation matrix and a mean vector, this function will flatten the input tensor along the given
+        dimension and subtract the mean vector from it. Then the dot product with the transformation matrix will be
+        computed and then the resulting tensor is reshaped to the original input shape.
+    
+        .. math::
+    
+            \\mathbf{X}_{T} = (\\mathbf{X - \\mu})(T)
+    
+        Args:
+            inp: Input data :math:`X`.
+            transform_matrix: Transform matrix :math:`T`.
+            mean_vector: mean vector :math:`\\mu`.
+            dim: Batch dimension.
+    
+        Shapes:
+            - inp: :math:`(D_0,...,D_{\\text{dim}},...,D_N)` is a batch of N-D tensors.
+            - transform_matrix: :math:`(\\Pi_{d=0,d\\neq \\text{dim}}^N D_d, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+            - mean_vector: :math:`(1, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+    
+        Returns:
+            Transformed data.
+    
+        Example:
+            >>> # Example where dim = 3
+            >>> inp = torch.ones((10,3,4,5))
+            >>> transform_mat = torch.ones((10*3*4,10*3*4))
+            >>> mean = 2*torch.ones((1,10*3*4))
+            >>> out = linear_transform(inp, transform_mat, mean, 3)
+            >>> print(out.shape, out.unique())  # Should a be (10,3,4,5) tensor of -120s
+            torch.Size([10, 3, 4, 5]) tensor([-120.])
+    
+            >>> # Example where dim = 0
+            >>> inp = torch.ones((10,2))
+            >>> transform_mat = torch.ones((2,2))
+            >>> mean = torch.zeros((1,2))
+            >>> out = linear_transform(inp, transform_mat, mean)
+            >>> print(out.shape, out.unique()) # Should a be (10,2) tensor of 2s
+            torch.Size([10, 2]) tensor([2.])
+        """
+        inp_size = inp.size()
+        if dim >= len(inp_size) or dim < -len(inp_size):
+            raise IndexError(f'Dimension out of range (expected to be in range of [{-len(inp_size)},{len(inp_size) - 1}], but got {dim}')
+        if dim < 0:
+            dim = len(inp_size) + dim
+        feat_dims = concatenate([torch.arange(0, dim), torch.arange(dim + 1, len(inp_size))])
+        perm = concatenate([tensor([dim]), feat_dims])
+        perm_inv = torch.argsort(perm)
+        new_order: List[int] = perm.tolist()
+        inv_order: List[int] = perm_inv.tolist()
+        feature_sizes = tensor(inp_size[0:dim] + inp_size[dim + 1:])
+        num_features: int = int(torch.prod(feature_sizes).item())
+        inp_permute = inp.permute(new_order)
+        inp_flat = inp_permute.reshape((-1, num_features))
+>       inp_center = inp_flat - mean_vector
+E       RuntimeError: The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 0
+
+../publishablew/kornia/kornia/kornia/enhance/zca.py:285: RuntimeError
+______________________ TestZCA.test_grad_detach_zca[cpu] _______________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e2350>, device = device(type='cpu')
+
+    def test_grad_detach_zca(self, device):
+        data = torch.tensor([[1, 0], [0, 1], [-2, 0], [0, -1]], device=device, dtype=torch.float64)
+    
+        zca = kornia.enhance.ZCAWhitening()
+    
+        zca.fit(data)
+    
+>       self.gradcheck(zca, (data,))
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/zca.py:100: in forward
+    x_whiten = linear_transform(x, self.transform_matrix, self.mean_vector, self.dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+inp = tensor([[ 1.,  0.],
+        [ 0.,  1.],
+        [-2.,  0.],
+        [ 0., -1.]], dtype=torch.float64, requires_grad=True)
+transform_matrix = tensor([[-0.2500,  0.0000]], dtype=torch.float64)
+mean_vector = tensor([[0.7947, 0.0000],
+        [0.0000, 1.2247]], dtype=torch.float64)
+dim = 0
+
+    def linear_transform(inp: Tensor, transform_matrix: Tensor, mean_vector: Tensor, dim: int=0) -> Tensor:
+        """Given a transformation matrix and a mean vector, this function will flatten the input tensor along the given
+        dimension and subtract the mean vector from it. Then the dot product with the transformation matrix will be
+        computed and then the resulting tensor is reshaped to the original input shape.
+    
+        .. math::
+    
+            \\mathbf{X}_{T} = (\\mathbf{X - \\mu})(T)
+    
+        Args:
+            inp: Input data :math:`X`.
+            transform_matrix: Transform matrix :math:`T`.
+            mean_vector: mean vector :math:`\\mu`.
+            dim: Batch dimension.
+    
+        Shapes:
+            - inp: :math:`(D_0,...,D_{\\text{dim}},...,D_N)` is a batch of N-D tensors.
+            - transform_matrix: :math:`(\\Pi_{d=0,d\\neq \\text{dim}}^N D_d, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+            - mean_vector: :math:`(1, \\Pi_{d=0,d\\neq \\text{dim}}^N D_d)`
+    
+        Returns:
+            Transformed data.
+    
+        Example:
+            >>> # Example where dim = 3
+            >>> inp = torch.ones((10,3,4,5))
+            >>> transform_mat = torch.ones((10*3*4,10*3*4))
+            >>> mean = 2*torch.ones((1,10*3*4))
+            >>> out = linear_transform(inp, transform_mat, mean, 3)
+            >>> print(out.shape, out.unique())  # Should a be (10,3,4,5) tensor of -120s
+            torch.Size([10, 3, 4, 5]) tensor([-120.])
+    
+            >>> # Example where dim = 0
+            >>> inp = torch.ones((10,2))
+            >>> transform_mat = torch.ones((2,2))
+            >>> mean = torch.zeros((1,2))
+            >>> out = linear_transform(inp, transform_mat, mean)
+            >>> print(out.shape, out.unique()) # Should a be (10,2) tensor of 2s
+            torch.Size([10, 2]) tensor([2.])
+        """
+        inp_size = inp.size()
+        if dim >= len(inp_size) or dim < -len(inp_size):
+            raise IndexError(f'Dimension out of range (expected to be in range of [{-len(inp_size)},{len(inp_size) - 1}], but got {dim}')
+        if dim < 0:
+            dim = len(inp_size) + dim
+        feat_dims = concatenate([torch.arange(0, dim), torch.arange(dim + 1, len(inp_size))])
+        perm = concatenate([tensor([dim]), feat_dims])
+        perm_inv = torch.argsort(perm)
+        new_order: List[int] = perm.tolist()
+        inv_order: List[int] = perm_inv.tolist()
+        feature_sizes = tensor(inp_size[0:dim] + inp_size[dim + 1:])
+        num_features: int = int(torch.prod(feature_sizes).item())
+        inp_permute = inp.permute(new_order)
+        inp_flat = inp_permute.reshape((-1, num_features))
+>       inp_center = inp_flat - mean_vector
+E       RuntimeError: The size of tensor a (4) must match the size of tensor b (2) at non-singleton dimension 0
+
+../publishablew/kornia/kornia/kornia/enhance/zca.py:285: RuntimeError
+________________________ TestZCA.test_jit[cpu-float32] _________________________
+
+self = <test_zca.TestZCA object at 0x7dcea52e2950>, device = device(type='cpu')
+dtype = torch.float32
+
+    def test_jit(self, device, dtype):
+        data = torch.rand(10, 3, 1, 2, device=device, dtype=dtype)
+        zca = kornia.enhance.ZCAWhitening().fit(data)
+        zca_jit = kornia.enhance.ZCAWhitening().fit(data)
+>       zca_jit = torch.jit.script(zca_jit)
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1215: in _script_impl
+    return torch.jit._recursive.create_script_class(obj)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:524: in create_script_class
+    _compile_and_register_class(type(obj), rcb, qualified_class_name)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:59: in _compile_and_register_class
+    ast = get_jit_class_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:277: in get_jit_class_def
+    sourcelines, file_lineno, filename = get_source_lines_and_file(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/_sources.py:23: in get_source_lines_and_file
+    filename = inspect.getsourcefile(obj)
+/usr/lib/python3.10/inspect.py:817: in getsourcefile
+    filename = getfile(object)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/package/package_importer.py:730: in _patched_getfile
+    return _orig_getfile(object)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+object = <class 'NoneType'>
+
+    def getfile(object):
+        """Work out which source or compiled file an object was defined in."""
+        if ismodule(object):
+            if getattr(object, '__file__', None):
+                return object.__file__
+            raise TypeError('{!r} is a built-in module'.format(object))
+        if isclass(object):
+            if hasattr(object, '__module__'):
+                module = sys.modules.get(object.__module__)
+                if getattr(module, '__file__', None):
+                    return module.__file__
+                if object.__module__ == '__main__':
+                    raise OSError('source code not available')
+>           raise TypeError('{!r} is a built-in class'.format(object))
+E           TypeError: <class 'NoneType'> is a built-in class
+
+/usr/lib/python3.10/inspect.py:786: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32]
+========================= 10 failed, 5 passed in 0.75s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', None, 'onnxrt', 'jit', 'inductor', 'openxla', 'tvm', 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 15 items
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True] PASSED [  6%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False] PASSED [ 13%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1] PASSED [ 26%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001] PASSED [ 46%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_individual_transforms[cpu] PASSED [ 53%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted[cpu-float32] PASSED [ 73%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted_inv[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32] PASSED [ 86%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-True] PASSED [ 93%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-False] PASSED [100%]
+
+============================== 15 passed in 0.23s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'jit', 'cudagraphs', 'onnxrt', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 15 items
+
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-True] PASSED [  6%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_unbiased[cpu-float32-False] PASSED [ 13%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-0] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_dim_args[cpu-float32-1] PASSED [ 26%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape0-1e-06] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape1-0.1] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_identity[cpu-float32-input_shape2-0.001] PASSED [ 46%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_individual_transforms[cpu] PASSED [ 53%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_zca_with_fit[cpu] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_grad_detach_zca[cpu] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted[cpu-float32] PASSED [ 73%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_not_fitted_inv[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_jit[cpu-float32] PASSED [ 86%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-True] PASSED [ 93%]
+../publishablew/kornia/kornia/tests/enhance/test_zca.py::TestZCA::test_zca_whiten_func_unbiased[cpu-float32-False] PASSED [100%]
+
+============================== 15 passed in 0.49s ==============================

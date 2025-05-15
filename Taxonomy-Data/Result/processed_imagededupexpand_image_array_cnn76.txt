@@ -1,0 +1,224 @@
+output file:
+processed_imagededupexpand_image_array_cnn76.json
+function:
+expand_image_array_cnn
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit', 'tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit FAILED [ 45%]', 'tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error FAILED [ 55%]', 'FAILED tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array', 'tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array FAILED [ 40%]', 'FAILED tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array FAILED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit FAILED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error FAILED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+=================================== FAILURES ===================================
+______ test_expand_image_array_cnn_checks_3_dims_and_returns_input_array _______
+
+self = <MagicMock name='_check_3_dim' id='131582508795344'>, args = ((3, 3, 3),)
+kwargs = {}, msg = "Expected '_check_3_dim' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected '_check_3_dim' to be called once. Called 0 times.
+
+/usr/lib/python3.11/unittest/mock.py:950: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+chk_3_dim_mocker = <MagicMock name='_check_3_dim' id='131582508795344'>
+
+    def test_expand_image_array_cnn_checks_3_dims_and_returns_input_array(chk_3_dim_mocker):
+        image_arr_3d = np.random.random((3, 3, 3))
+        ret_arr = expand_image_array_cnn(image_arr_3d)
+>       chk_3_dim_mocker.assert_called_once_with(image_arr_3d.shape)
+E       AssertionError: Expected '_check_3_dim' to be called once. Called 0 times.
+
+tests/test_image_utils.py:96: AssertionError
+_________________ test_expand_image_array_cnn_2d_adds_dim_unit _________________
+
+self = <MagicMock name='_add_third_dim' id='131582510740304'>
+args = (array([[0.93362471, 0.87988561, 0.74717009],
+       [0.65742186, 0.57747011, 0.32424765],
+       [0.36493692, 0.33877044, 0.53220632]]),)
+kwargs = {}
+msg = "Expected '_add_third_dim' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected '_add_third_dim' to be called once. Called 0 times.
+
+/usr/lib/python3.11/unittest/mock.py:950: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+mocker = <pytest_mock.plugin.MockerFixture object at 0x77ac70b06c50>
+chk_3_dim_mocker = <MagicMock name='_check_3_dim' id='131582508688784'>
+raise_wrong_dim_value_error_mocker = <MagicMock name='_raise_wrong_dim_value_error' id='131582508693840'>
+
+    def test_expand_image_array_cnn_2d_adds_dim_unit(
+        mocker, chk_3_dim_mocker, raise_wrong_dim_value_error_mocker
+    ):
+        image_arr_2d = np.random.random((3, 3))
+        reshape_2_dim_mocker = mocker.patch('imagededup.utils.image_utils._add_third_dim')
+        expand_image_array_cnn(image_arr_2d)
+        chk_3_dim_mocker.assert_not_called()
+        raise_wrong_dim_value_error_mocker.assert_not_called()
+>       reshape_2_dim_mocker.assert_called_once_with(image_arr_2d)
+E       AssertionError: Expected '_add_third_dim' to be called once. Called 0 times.
+
+tests/test_image_utils.py:108: AssertionError
+_____________ test_expand_image_array_cnn_wrong_dims_raises_error ______________
+
+chk_3_dim_mocker = <MagicMock name='_check_3_dim' id='131582509104528'>
+raise_wrong_dim_value_error_mocker = <MagicMock name='_raise_wrong_dim_value_error' id='131582508715344'>
+
+    def test_expand_image_array_cnn_wrong_dims_raises_error(
+        chk_3_dim_mocker, raise_wrong_dim_value_error_mocker
+    ):
+        image_arr_4d = np.random.random((3, 3, 2, 5))
+>       expand_image_array_cnn(image_arr_4d)
+
+tests/test_image_utils.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/utils/image_utils.py:55: in expand_image_array_cnn
+    return expand_image_array_cnn(image_arr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image_arr = array([[[[0.38187436, 0.17022099, 0.91238215, 0.70896505, 0.26529305],
+         [0.41205016, 0.04341889, 0.32044333, 0...7242255, 0.81559969, 0.92628202, 0.5033203 ],
+         [0.56218062, 0.81224151, 0.37376411, 0.51565898, 0.2521896 ]]]])
+
+    def expand_image_array_cnn(image_arr):
+        """
+        Ensures the input image array is in the correct format for CNNs.
+    
+        Parameters:
+        image_arr (np.ndarray): A NumPy array representing the input image.
+                                The array can be 2D (grayscale) or 3D (RGB).
+    
+        Returns:
+        np.ndarray: A 3D NumPy array representing the image. If the input is a 2D array,
+                    it is converted to a 3D array by repeating the grayscale values across three channels.
+        """
+        if not isinstance(image_arr, np.ndarray):
+            raise ValueError('Input must be a NumPy array.')
+        if image_arr.ndim == 2:
+            image_arr = np.stack((image_arr,) * 3, axis=-1)
+        elif image_arr.ndim == 3:
+            if image_arr.shape[-1] != 3:
+                raise ValueError('3D input image must have three channels.')
+        else:
+>           raise ValueError('Input image must be either 2D or 3D.')
+E           ValueError: Input image must be either 2D or 3D.
+
+imagededup/utils/temp.py:28: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array
+FAILED tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit
+FAILED tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error
+========================= 3 failed, 17 passed in 1.98s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.86s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.86s ==============================

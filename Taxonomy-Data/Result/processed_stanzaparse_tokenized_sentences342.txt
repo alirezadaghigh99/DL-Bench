@@ -1,0 +1,260 @@
+output file:
+processed_stanzaparse_tokenized_sentences342.json
+function:
+parse_tokenized_sentences
+Error Cases:
+
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.9.0.json:   0%|          | 0.00/48.5k [00:00<?, ?B/s]
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.9.0.json: 392kB [00:00, 16.3MB/s]                    
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences', '../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences FAILED', '../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text', 'FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 4 items
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_read_tokenized_file PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences FAILED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text FAILED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir FAILED
+
+=================================== FAILURES ===================================
+________________________ test_parse_tokenized_sentences ________________________
+
+pipeline = <stanza.pipeline.core.Pipeline object at 0x78ccea52f390>
+
+    def test_parse_tokenized_sentences(pipeline):
+        con_processor = pipeline.processors["constituency"]
+        model = con_processor._model
+        args = model.args
+    
+        sentences = [["This", "is", "a", "test"]]
+>       trees = text_processing.parse_tokenized_sentences(args, model, [pipeline], sentences)
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:23: in parse_tokenized_sentences
+    return parse_tokenized_sentences(args, model, retag_pipeline, sentences)
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:13: in parse_tokenized_sentences
+    retagged_sentences = retag_tags(retag_pipeline, sentences)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+retag_pipeline = [<stanza.pipeline.core.Pipeline object at 0x78ccea52f390>]
+sentences = [['This', 'is', 'a', 'test']]
+
+    def retag_tags(retag_pipeline, sentences):
+>       return retag_pipeline.retag(sentences)
+E       AttributeError: 'list' object has no attribute 'retag'
+
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:10: AttributeError
+------------------------------ Captured log setup ------------------------------
+INFO     stanza:core.py:207 Checking for updates to resources.json in case models have been updated.  Note: this behavior can be turned off with download_method=None or download_method=DownloadMethod.REUSE_RESOURCES
+INFO     stanza:common.py:161 Downloaded file to /local/data0/moved_data/Organized_benchmark/stanza_test/models/resources.json
+INFO     stanza:core.py:271 Loading these models for language: en (English):
+======================================
+| Processor    | Package             |
+--------------------------------------
+| tokenize     | combined            |
+| pos          | combined_charlm     |
+| constituency | ptb3-revised_charlm |
+======================================
+
+INFO     stanza:core.py:290 Using device: cuda
+INFO     stanza:core.py:296 Loading: tokenize
+INFO     stanza:core.py:296 Loading: pos
+INFO     stanza:core.py:296 Loading: constituency
+INFO     stanza:core.py:348 Done loading processors!
+_______________________________ test_parse_text ________________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-6/test_parse_text0')
+pipeline = <stanza.pipeline.core.Pipeline object at 0x78ccea52f390>
+
+    def test_parse_text(tmp_path, pipeline):
+        con_processor = pipeline.processors["constituency"]
+        model = con_processor._model
+        args = dict(model.args)
+    
+        model_path = con_processor._config['model_path']
+    
+        raw_file = str(tmp_path / "test_input.txt")
+        with open(raw_file, "w") as fout:
+            fout.write("This is a test\nThis is another test\n")
+        output_file = str(tmp_path / "test_output.txt")
+    
+        args['tokenized_file'] = raw_file
+        args['predict_file'] = output_file
+    
+>       text_processing.load_model_parse_text(args, model_path, [pipeline])
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:90: in load_model_parse_text
+    parse_text(args, model, retag_pipeline)
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:58: in parse_text
+    treebank = parse_tokenized_sentences(args, model, retag_pipeline, chunk)
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:23: in parse_tokenized_sentences
+    return parse_tokenized_sentences(args, model, retag_pipeline, sentences)
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:13: in parse_tokenized_sentences
+    retagged_sentences = retag_tags(retag_pipeline, sentences)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+retag_pipeline = [<stanza.pipeline.core.Pipeline object at 0x78ccea52f390>]
+sentences = [['This', 'is', 'a', 'test'], ['This', 'is', 'another', 'test']]
+
+    def retag_tags(retag_pipeline, sentences):
+>       return retag_pipeline.retag(sentences)
+E       AttributeError: 'list' object has no attribute 'retag'
+
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:10: AttributeError
+------------------------------ Captured log call -------------------------------
+INFO     stanza:text_processing.py:84 Loaded model from /local/data0/moved_data/Organized_benchmark/stanza_test/models/en/constituency/ptb3-revised_charlm.pt
+INFO     stanza:text_processing.py:52 Processing 2 lines
+INFO     stanza:text_processing.py:57 Processing trees 0 to 2
+________________________________ test_parse_dir ________________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-6/test_parse_dir0')
+pipeline = <stanza.pipeline.core.Pipeline object at 0x78ccea52f390>
+
+    def test_parse_dir(tmp_path, pipeline):
+        con_processor = pipeline.processors["constituency"]
+        model = con_processor._model
+        args = model.args
+    
+        raw_dir = str(tmp_path / "input")
+        os.makedirs(raw_dir)
+        raw_f1 = str(tmp_path / "input" / "f1.txt")
+        raw_f2 = str(tmp_path / "input" / "f2.txt")
+        output_dir = str(tmp_path / "output")
+    
+        with open(raw_f1, "w") as fout:
+            fout.write("This is a test")
+        with open(raw_f2, "w") as fout:
+            fout.write("This is another test")
+    
+>       text_processing.parse_dir(args, model, [pipeline], raw_dir, output_dir)
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:71: in parse_dir
+    parse_text(args, model, retag_pipeline, tokenized_file=input_path, predict_file=output_path)
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:58: in parse_text
+    treebank = parse_tokenized_sentences(args, model, retag_pipeline, chunk)
+../publishablew/stanza/stanza/stanza/models/constituency/text_processing.py:23: in parse_tokenized_sentences
+    return parse_tokenized_sentences(args, model, retag_pipeline, sentences)
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:13: in parse_tokenized_sentences
+    retagged_sentences = retag_tags(retag_pipeline, sentences)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+retag_pipeline = [<stanza.pipeline.core.Pipeline object at 0x78ccea52f390>]
+sentences = [['This', 'is', 'another', 'test']]
+
+    def retag_tags(retag_pipeline, sentences):
+>       return retag_pipeline.retag(sentences)
+E       AttributeError: 'list' object has no attribute 'retag'
+
+../publishablew/stanza/stanza/stanza/models/constituency/temp.py:10: AttributeError
+------------------------------ Captured log call -------------------------------
+INFO     stanza:text_processing.py:70 Processing /tmp/pytest-of-aliredaq/pytest-6/test_parse_dir0/input/f2.txt to /tmp/pytest-of-aliredaq/pytest-6/test_parse_dir0/output/f2.mrg
+INFO     stanza:text_processing.py:52 Processing 1 lines
+INFO     stanza:text_processing.py:57 Processing trees 0 to 1
+=============================== warnings summary ===============================
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/pos/trainer.py:139: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/pretrain.py:56: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    data = torch.load(self.filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+constituency/test_text_processing.py::test_parse_text
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/constituency/base_trainer.py:87: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences
+FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text
+FAILED ../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir
+=================== 3 failed, 1 passed, 5 warnings in 3.47s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 4 items
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_read_tokenized_file PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir PASSED
+
+=============================== warnings summary ===============================
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/pos/trainer.py:139: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/pretrain.py:56: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    data = torch.load(self.filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+constituency/test_text_processing.py::test_parse_text
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/constituency/base_trainer.py:87: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 5 warnings in 3.75s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 4 items
+
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_read_tokenized_file PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_tokenized_sentences PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_text PASSED
+../publishablew/stanza/stanza/stanza/tests/constituency/test_text_processing.py::test_parse_dir PASSED
+
+=============================== warnings summary ===============================
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/pos/trainer.py:139: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/pretrain.py:56: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    data = torch.load(self.filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+constituency/test_text_processing.py::test_parse_tokenized_sentences
+constituency/test_text_processing.py::test_parse_text
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/constituency/base_trainer.py:87: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 5 warnings in 3.72s =========================

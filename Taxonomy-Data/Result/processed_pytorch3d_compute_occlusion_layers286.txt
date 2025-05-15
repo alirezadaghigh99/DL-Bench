@@ -1,0 +1,237 @@
+output file:
+processed_pytorch3d_compute_occlusion_layers286.json
+function:
+_compute_occlusion_layers
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal FAILED', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer', '../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting FAILED', '../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+=================================== FAILURES ===================================
+__________________ TestComputeOcclusionLayers.test_all_equal ___________________
+
+self = <tests.test_splatter_blend.TestComputeOcclusionLayers testMethod=test_all_equal>
+
+    def test_all_equal(self):
+        # If all q-vals are equal, then all splats must be on the surface level.
+        N, H, W, K = 2, 3, 4, 5
+        q_depth = torch.ones((N, H, W, K)) * 0.1234
+>       occlusion_layers = _compute_occlusion_layers(q_depth)
+
+../pytorch3d/tests/test_splatter_blend.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:67: in _compute_occlusion_layers
+    return _compute_occlusion_layers(q_depth)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+q_depth = tensor([[[[0.1234, 0.1234, 0.1234, 0.1234, 0.1234],
+          [0.1234, 0.1234, 0.1234, 0.1234, 0.1234],
+          [0.1...34, 0.1234],
+          [0.1234, 0.1234, 0.1234, 0.1234, 0.1234],
+          [0.1234, 0.1234, 0.1234, 0.1234, 0.1234]]]])
+
+    def _compute_occlusion_layers(q_depth):
+        """
+        Compute occlusion layers for each splatting pixel.
+    
+        Args:
+            q_depth (torch.Tensor): Input depth tensor of shape (N, H, W).
+    
+        Returns:
+            torch.Tensor: Occlusion layers tensor of shape (N, H, W, 9).
+        """
+>       N, H, W = q_depth.shape
+E       ValueError: too many values to unpack (expected 3)
+
+../pytorch3d/pytorch3d/renderer/temp.py:22: ValueError
+__________ TestComputeOcclusionLayers.test_mid_to_top_level_splatting __________
+
+self = <tests.test_splatter_blend.TestComputeOcclusionLayers testMethod=test_mid_to_top_level_splatting>
+
+    def test_mid_to_top_level_splatting(self):
+        # Check that occlusion buffers get accumulated as expected when the splatting
+        # and splatted pixels are co-surface on different intersection layers.
+        # This test will make best sense with accompanying Fig. 4 from "Differentiable
+        # Surface Rendering via Non-differentiable Sampling" by Cole et al.
+        for direction, offset in enumerate(offsets):
+            if direction == 4:
+                continue  # Skip self-splatting which is always co-surface.
+    
+            depths = torch.zeros(1, 3, 3, 3)
+    
+            # This is our q, the pixel splatted onto, in the center of the image.
+            depths[0, 1, 1] = torch.tensor([0.71, 0.8, 1.0])
+    
+            # This is our p, the splatting pixel.
+            depths[0, offset[0] + 1, offset[1] + 1] = torch.tensor([0.5, 0.7, 0.9])
+    
+>           occlusion_layers = _compute_occlusion_layers(depths)
+
+../pytorch3d/tests/test_splatter_blend.py:230: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:67: in _compute_occlusion_layers
+    return _compute_occlusion_layers(q_depth)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+q_depth = tensor([[[[0.5000, 0.7000, 0.9000],
+          [0.0000, 0.0000, 0.0000],
+          [0.0000, 0.0000, 0.0000]],
+
+        ...0000]],
+
+         [[0.0000, 0.0000, 0.0000],
+          [0.0000, 0.0000, 0.0000],
+          [0.0000, 0.0000, 0.0000]]]])
+
+    def _compute_occlusion_layers(q_depth):
+        """
+        Compute occlusion layers for each splatting pixel.
+    
+        Args:
+            q_depth (torch.Tensor): Input depth tensor of shape (N, H, W).
+    
+        Returns:
+            torch.Tensor: Occlusion layers tensor of shape (N, H, W, 9).
+        """
+>       N, H, W = q_depth.shape
+E       ValueError: too many values to unpack (expected 3)
+
+../pytorch3d/pytorch3d/renderer/temp.py:22: ValueError
+_________________ TestComputeOcclusionLayers.test_single_layer _________________
+
+self = <tests.test_splatter_blend.TestComputeOcclusionLayers testMethod=test_single_layer>
+
+    def test_single_layer(self):
+        # If there's only one layer, all splats must be on the surface level.
+        N, H, W, K = 2, 3, 4, 1
+        q_depth = torch.rand(N, H, W, K)
+>       occlusion_layers = _compute_occlusion_layers(q_depth)
+
+../pytorch3d/tests/test_splatter_blend.py:203: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:67: in _compute_occlusion_layers
+    return _compute_occlusion_layers(q_depth)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+q_depth = tensor([[[[0.9166],
+          [0.8722],
+          [0.1564],
+          [0.1390]],
+
+         [[0.3311],
+          [0.654...     [0.1011],
+          [0.7873]],
+
+         [[0.2345],
+          [0.9652],
+          [0.6409],
+          [0.6111]]]])
+
+    def _compute_occlusion_layers(q_depth):
+        """
+        Compute occlusion layers for each splatting pixel.
+    
+        Args:
+            q_depth (torch.Tensor): Input depth tensor of shape (N, H, W).
+    
+        Returns:
+            torch.Tensor: Occlusion layers tensor of shape (N, H, W, 9).
+        """
+>       N, H, W = q_depth.shape
+E       ValueError: too many values to unpack (expected 3)
+
+../pytorch3d/pytorch3d/renderer/temp.py:22: ValueError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer
+========================= 3 failed, 16 passed in 1.26s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.21s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.29s ==============================

@@ -1,0 +1,250 @@
+output file:
+processed_inferencesample_based_on_detections_number54.json
+function:
+sample_based_on_detections_number
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds', '../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:42:19] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 17 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-2] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[2-1-5] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[5-4-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[1-2-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[2-5-1] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[5-None-4] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_classification_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_stub_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_fails PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_not_in_range PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_not_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_required_value_missing PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_malformed_config_given PASSED
+
+=================================== FAILURES ===================================
+_ test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds _
+
+random_mock = <MagicMock name='random' id='123275510083152'>
+
+    @mock.patch.object(number_of_detections.random, "random")
+    def test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds(
+        random_mock: MagicMock,
+    ) -> None:
+        # given
+        random_mock.return_value = 0.29
+    
+        # when
+        result = sample_based_on_detections_number(
+            image=np.zeros((128, 128, 3), dtype=np.uint8),
+            prediction=OBJECT_DETECTION_PREDICTION,
+            prediction_type=OBJECT_DETECTION_TASK,
+            more_than=1,
+            less_than=3,
+            selected_class_names={"a", "b"},
+            probability=0.3,
+        )
+    
+        # then
+>       assert result is True
+E       assert False is True
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py:141: AssertionError
+_______________ test_initialize_detections_number_based_sampling _______________
+
+    def test_initialize_detections_number_based_sampling() -> None:
+        # given
+        strategy_config = {
+            "name": "two_detections",
+            "less_than": 3,
+            "more_than": 1,
+            "selected_class_names": {"a", "b"},
+            "probability": 1.0,
+        }
+    
+        # when
+        sampling_method = initialize_detections_number_based_sampling(
+            strategy_config=strategy_config
+        )
+        result = sampling_method.sample(
+            np.zeros((128, 128, 3), dtype=np.uint8),
+            OBJECT_DETECTION_PREDICTION,
+            OBJECT_DETECTION_TASK,
+        )
+    
+        # then
+>       assert result is True
+E       assert False is True
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py:203: AssertionError
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling
+================== 2 failed, 15 passed, 13 warnings in 3.94s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:42:24] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 17 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-2] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[2-1-5] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[5-4-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[1-2-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[2-5-1] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[5-None-4] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_classification_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_stub_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_fails PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_not_in_range PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_not_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_required_value_missing PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_malformed_config_given PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 17 passed, 13 warnings in 3.88s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:42:14] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 17 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-2] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[2-1-5] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[5-4-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_meets_condition[1-None-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[1-2-None] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[2-5-1] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_is_in_range_value_does_not_meet_condition[5-None-4] PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_classification_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_stub_prediction_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_succeeds PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_in_range_and_sampling_fails PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_sample_based_on_detections_number_when_detections_not_in_range PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_not_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_test_initialize_detections_number_based_sampling_when_optional_values_given PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_required_value_missing PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/active_learning/samplers/test_number_of_detections.py::test_initialize_detections_number_based_sampling_when_malformed_config_given PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 17 passed, 13 warnings in 4.30s ========================

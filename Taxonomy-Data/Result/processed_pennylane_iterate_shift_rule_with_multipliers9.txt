@@ -1,0 +1,419 @@
+output file:
+processed_pennylane_iterate_shift_rule_with_multipliers9.json
+function:
+_iterate_shift_rule_with_multipliers
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None] FAILED', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976] FAILED', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976]', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None]', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586]', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None]', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586]', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976]', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None] FAILED', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586] FAILED', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None]', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586]', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976]', '../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 9 items
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976] FAILED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586] FAILED
+
+=================================== FAILURES ===================================
+__________ TestIterateShiftRuleWithMultipliers.test_first_order[None] __________
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cafeed0>
+period = None
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_first_order(self, period):
+        """Test first order iteration of a rule with multipliers."""
+        rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 1, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)], order = 1, period = None
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+___ TestIterateShiftRuleWithMultipliers.test_first_order[1.0471975511965976] ___
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb37310>
+period = 1.0471975511965976
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_first_order(self, period):
+        """Test first order iteration of a rule with multipliers."""
+        rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 1, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)], order = 1
+period = 1.0471975511965976
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+___ TestIterateShiftRuleWithMultipliers.test_first_order[6.283185307179586] ____
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb37590>
+period = 6.283185307179586
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_first_order(self, period):
+        """Test first order iteration of a rule with multipliers."""
+        rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 1, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(-0.9, 0.7, -0.2), (0.2, 1.2, 0.4)], order = 1
+period = 6.283185307179586
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+_________ TestIterateShiftRuleWithMultipliers.test_second_order[None] __________
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb44390>
+period = None
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_second_order(self, period):
+        """Test second order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 2, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 2, period = None
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+__ TestIterateShiftRuleWithMultipliers.test_second_order[1.0471975511965976] ___
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb44610>
+period = 1.0471975511965976
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_second_order(self, period):
+        """Test second order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 2, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 2
+period = 1.0471975511965976
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+___ TestIterateShiftRuleWithMultipliers.test_second_order[6.283185307179586] ___
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb44890>
+period = 6.283185307179586
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_second_order(self, period):
+        """Test second order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 2, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 2
+period = 6.283185307179586
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+__________ TestIterateShiftRuleWithMultipliers.test_third_order[None] __________
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb455d0>
+period = None
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_third_order(self, period):
+        """Test third order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 3, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 3, period = None
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+___ TestIterateShiftRuleWithMultipliers.test_third_order[1.0471975511965976] ___
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb45850>
+period = 1.0471975511965976
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_third_order(self, period):
+        """Test third order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 3, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 3
+period = 1.0471975511965976
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+___ TestIterateShiftRuleWithMultipliers.test_third_order[6.283185307179586] ____
+
+self = <test_general_shift_rules.TestIterateShiftRuleWithMultipliers object at 0x7a3f2cb45ad0>
+period = 6.283185307179586
+
+    @pytest.mark.parametrize("period", [None, np.pi / 3, 2 * np.pi])
+    def test_third_order(self, period):
+        """Test third order iteration of a rule with multipliers."""
+        rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)]
+>       iterated_rule = _iterate_shift_rule_with_multipliers(rule, 3, period)
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py:113: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/gradients/general_shift_rules.py:142: in _iterate_shift_rule_with_multipliers
+    return _iterate_shift_rule_with_multipliers(rule, order, period)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+rule = [(0.2, 1.2, 0.4), (-0.9, 0.7, -0.2)], order = 3
+period = 6.283185307179586
+
+    def _iterate_shift_rule_with_multipliers(rule, order, period=None):
+        """
+        Apply a shift rule with multipliers repeatedly along the same parameter axis.
+    
+        Args:
+            rule (np.ndarray): A 2D array where each row contains [coefficient, multiplier, shift].
+            order (int): The number of times to apply the shift rule.
+            period (float, optional): The period for handling periodic boundary conditions.
+    
+        Returns:
+            np.ndarray: A stacked array of combined rules with columns corresponding to
+                        coefficients, multipliers, and cumulative shifts.
+        """
+>       coefficients, multipliers, shifts = (rule[:, 0], rule[:, 1], rule[:, 2])
+E       TypeError: list indices must be integers or slices, not tuple
+
+../publishablew/pennylane/pennylane/pennylane/gradients/temp.py:27: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976]
+FAILED ../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586]
+============================== 9 failed in 0.21s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 9 items
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586] PASSED
+
+============================== 9 passed in 0.02s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 9 items
+
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_first_order[6.283185307179586] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_second_order[6.283185307179586] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[None] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[1.0471975511965976] PASSED
+../publishablew/pennylane/pennylane/tests/gradients/core/test_general_shift_rules.py::TestIterateShiftRuleWithMultipliers::test_third_order[6.283185307179586] PASSED
+
+============================== 9 passed in 0.02s ===============================

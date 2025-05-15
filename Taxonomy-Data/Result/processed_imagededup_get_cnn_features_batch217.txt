@@ -1,0 +1,1058 @@
+output file:
+processed_imagededup_get_cnn_features_batch217.json
+function:
+_get_cnn_features_batch
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED tests/test_cnn.py::test_call_method_accepted - Failed: Unexpected exce...', 'tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration FAILED [ 93%]', 'tests/test_cnn.py::test_finds_non_recursive FAILED                       [ 45%]', 'tests/test_cnn.py::test_scores_saving FAILED                             [100%]', 'FAILED tests/test_cnn.py::test_recursive_on_flat_directory - FileNotFoundErro...', "FAILED tests/test_cnn.py::test_scores_saving - FileNotFoundError: Couldn't fi...", 'tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result FAILED [ 23%]', 'tests/test_cnn.py::test_encode_images FAILED                             [ 36%]', 'tests/test_cnn.py::test_recursive_find_duplicates_dir_integration FAILED [ 89%]', 'tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration FAILED [ 97%]', 'tests/test_cnn.py::test_find_duplicates_dir_integration FAILED           [ 86%]', 'tests/test_cnn.py::test__get_cnn_features_batch FAILED                   [ 19%]', 'FAILED tests/test_cnn.py::test_find_duplicates_encoding_integration - FileNot...', 'FAILED tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration', 'FAILED tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result', 'FAILED tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration', 'FAILED tests/test_cnn.py::test__get_cnn_features_batch - FileNotFoundError: C...', 'tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration FAILED [ 95%]', 'FAILED tests/test_cnn.py::test_find_duplicates_dir_integration - FileNotFound...', "FAILED tests/test_cnn.py::test_encode_images - FileNotFoundError: Couldn't fi...", 'tests/test_cnn.py::test_forward_method_accepted FAILED                   [ 15%]', 'FAILED tests/test_cnn.py::test_finds_non_recursive - AssertionError: assert [...', 'tests/test_cnn.py::test_recursive_on_flat_directory FAILED               [ 43%]', 'tests/test_cnn.py::test_call_method_accepted FAILED                      [ 13%]', 'FAILED tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration - Fi...', 'FAILED tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models - Fi...', 'FAILED tests/test_cnn.py::test_forward_method_accepted - Failed: Unexpected e...', 'FAILED tests/test_cnn.py::test_recursive_find_duplicates_dir_integration - Ke...', 'tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models FAILED [ 21%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 46 items
+
+tests/test_cnn.py::test__init_defaults PASSED                            [  2%]
+tests/test_cnn.py::test__init_custom PASSED                              [  4%]
+tests/test_cnn.py::test__init_missing_custom_args_raises_exception PASSED [  6%]
+tests/test_cnn.py::test_default_custom_name_raises_warning PASSED        [  8%]
+tests/test_cnn.py::test_positional_init PASSED                           [ 10%]
+tests/test_cnn.py::test_call_method_accepted FAILED                      [ 13%]
+tests/test_cnn.py::test_forward_method_accepted FAILED                   [ 15%]
+tests/test_cnn.py::test__get_cnn_features_single PASSED                  [ 17%]
+tests/test_cnn.py::test__get_cnn_features_batch FAILED                   [ 19%]
+tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models FAILED [ 21%]
+tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result FAILED [ 23%]
+tests/test_cnn.py::test_encode_image_expand_image_array_cnn_gets_called PASSED [ 26%]
+tests/test_cnn.py::test_encode_image_wrong_dim_input_array PASSED        [ 28%]
+tests/test_cnn.py::test_encode_image_2_dim_array_encoded PASSED          [ 30%]
+tests/test_cnn.py::test_encode_image_2_dim_file_equals_array PASSED      [ 32%]
+tests/test_cnn.py::test_encode_image PASSED                              [ 34%]
+tests/test_cnn.py::test_encode_images FAILED                             [ 36%]
+tests/test_cnn.py::test_encode_images_num_workers PASSED                 [ 39%]
+tests/test_cnn.py::test_encode_images_num_workers_default_override_on_nonlinux SKIPPED [ 41%]
+tests/test_cnn.py::test_recursive_on_flat_directory FAILED               [ 43%]
+tests/test_cnn.py::test_finds_non_recursive FAILED                       [ 45%]
+tests/test_cnn.py::test__check_threshold_bounds_input_not_float PASSED   [ 47%]
+tests/test_cnn.py::test__check_threshold_bounds_input_out_of_range PASSED [ 50%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_false PASSED        [ 52%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_true PASSED         [ 54%]
+tests/test_cnn.py::test__find_duplicates_dict_outfile_true PASSED        [ 56%]
+tests/test_cnn.py::test_find_duplicates_dir PASSED                       [ 58%]
+tests/test_cnn.py::test_find_duplicates_dir_num_enc_workers PASSED       [ 60%]
+tests/test_cnn.py::test_find_duplicates_mp PASSED                        [ 63%]
+tests/test_cnn.py::test_find_duplicates_with_dir PASSED                  [ 65%]
+tests/test_cnn.py::test_find_duplicates_dict PASSED                      [ 67%]
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact PASSED [ 69%]
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning PASSED    [ 71%]
+tests/test_cnn.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 73%]
+tests/test_cnn.py::test_find_duplicates_wrong_threhsold_input PASSED     [ 76%]
+tests/test_cnn.py::test_find_duplicates_wrong_input PASSED               [ 78%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_false PASSED   [ 80%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_true PASSED    [ 82%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_map PASSED    [ 84%]
+tests/test_cnn.py::test_find_duplicates_dir_integration FAILED           [ 86%]
+tests/test_cnn.py::test_recursive_find_duplicates_dir_integration FAILED [ 89%]
+tests/test_cnn.py::test_find_duplicates_encoding_integration FAILED      [ 91%]
+tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration FAILED [ 93%]
+tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration FAILED [ 95%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration FAILED [ 97%]
+tests/test_cnn.py::test_scores_saving FAILED                             [100%]
+
+=================================== FAILURES ===================================
+__________________________ test_call_method_accepted ___________________________
+
+    def test_call_method_accepted():
+        cnn = CNN(model_config=CustomModel(model=CallModel(),
+                                           transform=CallModel.transform,
+                                           name=CallModel.name))
+        assert cnn.model_config.name == CallModel.name
+        assert cnn.model_config.transform == CallModel.transform
+        try:
+>           cnn.encode_images(TEST_IMAGE_DIR)
+
+tests/test_cnn.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_call_method_accepted():
+        cnn = CNN(model_config=CustomModel(model=CallModel(),
+                                           transform=CallModel.transform,
+                                           name=CallModel.name))
+        assert cnn.model_config.name == CallModel.name
+        assert cnn.model_config.transform == CallModel.transform
+        try:
+            cnn.encode_images(TEST_IMAGE_DIR)
+        except Exception as e:
+>           pytest.fail(f'Unexpected exception: {e}')
+E           Failed: Unexpected exception: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+tests/test_cnn.py:114: Failed
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:02,880: INFO Device set to cuda ..
+2025-01-22 14:22:02,880: INFO Initialized: test_custom_model for feature extraction ..
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:47 Device set to cuda ..
+INFO     imagededup.methods.cnn:cnn.py:51 Initialized: test_custom_model for feature extraction ..
+_________________________ test_forward_method_accepted _________________________
+
+    def test_forward_method_accepted():
+        cnn = CNN(model_config=CustomModel(model=ForwardModel(),
+                                           transform=ForwardModel.transform,
+                                           name=ForwardModel.name))
+        assert cnn.model_config.name == ForwardModel.name
+        assert cnn.model_config.transform == ForwardModel.transform
+        try:
+>           cnn.encode_images(TEST_IMAGE_DIR)
+
+tests/test_cnn.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_forward_method_accepted():
+        cnn = CNN(model_config=CustomModel(model=ForwardModel(),
+                                           transform=ForwardModel.transform,
+                                           name=ForwardModel.name))
+        assert cnn.model_config.name == ForwardModel.name
+        assert cnn.model_config.transform == ForwardModel.transform
+        try:
+            cnn.encode_images(TEST_IMAGE_DIR)
+        except Exception as e:
+>           pytest.fail(f'Unexpected exception: {e}')
+E           Failed: Unexpected exception: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+tests/test_cnn.py:141: Failed
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:03,037: INFO Device set to cuda ..
+2025-01-22 14:22:03,037: INFO Initialized: test_custom_model for feature extraction ..
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:47 Device set to cuda ..
+INFO     imagededup.methods.cnn:cnn.py:51 Initialized: test_custom_model for feature extraction ..
+_________________________ test__get_cnn_features_batch _________________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test__get_cnn_features_batch(cnn):
+    
+>       result = cnn._get_cnn_features_batch(TEST_IMAGE_DIR)
+
+tests/test_cnn.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+________________ test__get_cnn_features_batch_nondefault_models ________________
+
+    def test__get_cnn_features_batch_nondefault_models():
+        cnn = CNN(model_config=CustomModel(model=EfficientNet(),
+                                           transform=EfficientNet.transform,
+                                           name=EfficientNet.name))
+>       result = cnn._get_cnn_features_batch(TEST_IMAGE_DIR)
+
+tests/test_cnn.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:03,389: INFO Device set to cuda ..
+2025-01-22 14:22:03,408: INFO Initialized: efficientnet_b4 for feature extraction ..
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:47 Device set to cuda ..
+INFO     imagededup.methods.cnn:cnn.py:51 Initialized: efficientnet_b4 for feature extraction ..
+_____ test__get_cnn_features_batch_num_workers_do_not_change_final_result ______
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    @pytest.mark.skipif(sys.platform == 'win32' or sys.platform == 'darwin', reason='runs only on linux.')
+    def test__get_cnn_features_batch_num_workers_do_not_change_final_result(cnn):
+    
+>       result = cnn._get_cnn_features_batch(TEST_IMAGE_DIR, num_workers=4)
+
+tests/test_cnn.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+______________________________ test_encode_images ______________________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_encode_images(cnn):
+>       result = cnn.encode_images(TEST_IMAGE_DIR)
+
+tests/test_cnn.py:288: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+_______________________ test_recursive_on_flat_directory _______________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_recursive_on_flat_directory(cnn):
+>       result = cnn.encode_images(TEST_IMAGE_DIR, recursive=True)
+
+tests/test_cnn.py:374: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/base_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+___________________________ test_finds_non_recursive ___________________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_finds_non_recursive(cnn):
+        result = cnn.encode_images(TEST_IMAGE_DIR_MIXED_NESTED)
+    
+        expected_predicted_files = [
+            'ukbench00120_hflip.jpg',
+        ]
+    
+>       assert list(sorted(result.keys(), key=str.lower)) == expected_predicted_files
+E       AssertionError: assert ['ukbench0012...nch09268.jpg'] == ['ukbench00120_hflip.jpg']
+E         
+E         At index 0 diff: 'ukbench00120.jpg' != 'ukbench00120_hflip.jpg'
+E         Left contains 3 more items, first extra item: 'ukbench00120_resize.jpg'
+E         
+E         Full diff:
+E           [
+E         -     'ukbench00120_hflip.jpg',...
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/test_cnn.py:403: AssertionError
+_____________________ test_find_duplicates_dir_integration _____________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_find_duplicates_dir_integration(cnn):
+        expected_duplicates = {
+            'ukbench00120.jpg': [
+                ('ukbench00120_hflip.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.98120844),
+                ('ukbench00120_rotation.jpg',  0.90708774)
+            ],
+            'ukbench00120_hflip.jpg': [
+                ('ukbench00120.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg',  0.9030868)
+            ],
+            'ukbench00120_resize.jpg': [
+                ('ukbench00120.jpg', 0.98120844),
+                ('ukbench00120_hflip.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg',  0.9102372),
+            ],
+            'ukbench00120_rotation.jpg': [('ukbench00120.jpg', 0.90708774),
+                                          ('ukbench00120_hflip.jpg', 0.9030868),
+                                          ('ukbench00120_resize.jpg',  0.9102372)],
+            'ukbench09268.jpg': [],
+        }
+>       duplicates = cnn.find_duplicates(
+            image_dir=TEST_IMAGE_DIR_MIXED,
+            min_similarity_threshold=0.9,
+            scores=True,
+            outfile=False,
+        )
+
+tests/test_cnn.py:802: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:315: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, min_similarity_threshold=min_similarity_threshold, scores=scores, outfile=outfile, recursive=recursive, num_enc_workers=num_enc_workers, num_sim_workers=num_sim_workers)
+imagededup/methods/cnn.py:269: in _find_duplicates_dir
+    self.encode_images(image_dir=image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+________________ test_recursive_find_duplicates_dir_integration ________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_recursive_find_duplicates_dir_integration(cnn):
+        expected_duplicates = {
+            str(Path('lvl1/ukbench00120.jpg')): [
+                ('ukbench00120_hflip.jpg',  0.9891392),
+                (str(Path('lvl1/lvl2b/ukbench00120_resize.jpg')), 0.99194086),
+                (str(Path('lvl1/lvl2a/ukbench00120_rotation.jpg')),  0.90708774),
+            ],
+            'ukbench00120_hflip.jpg': [
+                (str(Path('lvl1/lvl2a/ukbench00120_rotation.jpg')), 0.9030868),
+                (str(Path('lvl1/ukbench00120.jpg')), 0.9891392),
+                (str(Path('lvl1/lvl2b/ukbench00120_resize.jpg')),  0.9793916),
+            ],
+            str(Path('lvl1/lvl2b/ukbench00120_resize.jpg')): [
+                (str(Path('lvl1/lvl2a/ukbench00120_rotation.jpg')), 0.9102372),
+                (str(Path('lvl1/ukbench00120.jpg')), 0.99194086),
+                ('ukbench00120_hflip.jpg',  0.9793916),
+            ],
+            str(Path('lvl1/lvl2a/ukbench00120_rotation.jpg')): [('ukbench00120_hflip.jpg',  0.9030868),
+                                                                (str(Path('lvl1/ukbench00120.jpg')), 0.90708774),
+                                                                (str(Path('lvl1/lvl2b/ukbench00120_resize.jpg')), 0.9102372)],
+            str(Path('lvl1/lvl2b/ukbench09268.jpg')): [],
+        }
+        duplicates = cnn.find_duplicates(
+            image_dir=TEST_IMAGE_DIR_MIXED_NESTED,
+            min_similarity_threshold=0.9,
+            scores=True,
+            outfile=False,
+            recursive=True,
+        )
+        # verify variable type
+>       assert isinstance(duplicates[str(Path('lvl1/ukbench00120.jpg'))][0][1], np.float32)
+E       KeyError: 'lvl1/ukbench00120.jpg'
+
+tests/test_cnn.py:855: KeyError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:04,306: INFO Start: Calculating cosine similarities...
+2025-01-22 14:22:04,307: INFO End: Calculating cosine similarities.
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:228 Start: Calculating cosine similarities...
+INFO     imagededup.methods.cnn:cnn.py:231 End: Calculating cosine similarities.
+__________________ test_find_duplicates_encoding_integration ___________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_find_duplicates_encoding_integration(cnn):
+        expected_duplicates = {
+            'ukbench00120.jpg': [
+                ('ukbench00120_hflip.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.98120844),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_hflip.jpg': [
+                ('ukbench00120.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_resize.jpg': [
+                ('ukbench00120.jpg', 0.98120844),
+                ('ukbench00120_hflip.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_rotation.jpg': [('ukbench00120.jpg', 0.98120844),
+                                          ('ukbench00120_hflip.jpg', 0.98120844),
+                                          ('ukbench00120_resize.jpg', 0.98120844),],
+            'ukbench09268.jpg': [],
+        }
+    
+>       encodings = cnn.encode_images(TEST_IMAGE_DIR_MIXED)
+
+tests/test_cnn.py:893: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+________________ test_find_duplicates_to_remove_dir_integration ________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_find_duplicates_to_remove_dir_integration(cnn):
+>       duplicates_list = cnn.find_duplicates_to_remove(
+            image_dir=TEST_IMAGE_DIR_MIXED, min_similarity_threshold=0.9, outfile=False
+        )
+
+tests/test_cnn.py:915: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:360: in find_duplicates_to_remove
+    duplicates = self.find_duplicates(image_dir=image_dir, encoding_map=encoding_map, min_similarity_threshold=min_similarity_threshold, scores=False, recursive=recursive, num_enc_workers=num_enc_workers, num_sim_workers=num_sim_workers)
+imagededup/methods/cnn.py:315: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, min_similarity_threshold=min_similarity_threshold, scores=scores, outfile=outfile, recursive=recursive, num_enc_workers=num_enc_workers, num_sim_workers=num_sim_workers)
+imagededup/methods/cnn.py:269: in _find_duplicates_dir
+    self.encode_images(image_dir=image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+___________ test_recursive_find_duplicates_to_remove_dir_integration ___________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_recursive_find_duplicates_to_remove_dir_integration(cnn):
+        duplicates_list = cnn.find_duplicates_to_remove(
+            image_dir=TEST_IMAGE_DIR_MIXED_NESTED,
+            min_similarity_threshold=0.9,
+            outfile=False,
+            recursive=True,
+        )
+>       assert set(duplicates_list) == set(
+            [str(Path('lvl1/ukbench00120.jpg')), 'ukbench00120_hflip.jpg', str(Path('lvl1/lvl2b/ukbench00120_resize.jpg'))]
+        )
+E       AssertionError: assert {np.str_('ukb...002_dup.jpg')} == {'lvl1/lvl2b/...20_hflip.jpg'}
+E         
+E         Extra items in the left set:
+E         np.str_('ukbench00002_dup.jpg')
+E         Extra items in the right set:
+E         'lvl1/lvl2b/ukbench00120_resize.jpg'
+E         'ukbench00120_hflip.jpg'
+E         'lvl1/ukbench00120.jpg'...
+E         
+E         ...Full output truncated (8 lines hidden), use '-vv' to show
+
+tests/test_cnn.py:931: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:04,795: INFO Start: Calculating cosine similarities...
+2025-01-22 14:22:04,796: INFO End: Calculating cosine similarities.
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:228 Start: Calculating cosine similarities...
+INFO     imagededup.methods.cnn:cnn.py:231 End: Calculating cosine similarities.
+_____________ test_find_duplicates_to_remove_encoding_integration ______________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_find_duplicates_to_remove_encoding_integration(cnn):
+>       encodings = cnn.encode_images(TEST_IMAGE_DIR_MIXED)
+
+tests/test_cnn.py:938: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+______________________________ test_scores_saving ______________________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x74c2e93c60d0>
+
+    def test_scores_saving(cnn):
+        save_file = 'myduplicates.json'
+>       cnn.find_duplicates(
+            image_dir=TEST_IMAGE_DIR_MIXED,
+            min_similarity_threshold=0.7,
+            scores=True,
+            outfile=save_file,
+        )
+
+tests/test_cnn.py:949: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/cnn.py:315: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, min_similarity_threshold=min_similarity_threshold, scores=scores, outfile=outfile, recursive=recursive, num_enc_workers=num_enc_workers, num_sim_workers=num_sim_workers)
+imagededup/methods/cnn.py:269: in _find_duplicates_dir
+    self.encode_images(image_dir=image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+imagededup/methods/cnn.py:188: in encode_images
+    return self._get_cnn_features_batch(image_dir=image_dir, recursive=recursive, num_workers=num_enc_workers)
+imagededup/methods/cnn.py:94: in _get_cnn_features_batch
+    return _get_cnn_features_batch(image_dir, recursive, num_workers)
+imagededup/methods/temp.py:29: in _get_cnn_features_batch
+    dataset = ImageFolder(root=str(image_dir), transform=transform)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:328: in __init__
+    super().__init__(
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:149: in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:234: in find_classes
+    return find_classes(directory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+directory = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+
+    def find_classes(directory: Union[str, Path]) -> Tuple[List[str], Dict[str, int]]:
+        """Finds the class folders in a dataset.
+    
+        See :class:`DatasetFolder` for details.
+        """
+        classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+        if not classes:
+>           raise FileNotFoundError(f"Couldn't find any class folder in {directory}.")
+E           FileNotFoundError: Couldn't find any class folder in /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images.
+
+/home/aliredaq/.local/lib/python3.11/site-packages/torchvision/datasets/folder.py:43: FileNotFoundError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_cnn.py::test_finds_non_recursive
+tests/test_cnn.py::test_recursive_find_duplicates_dir_integration
+tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration
+  /home/aliredaq/.local/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+    warnings.warn(
+
+tests/test_cnn.py::test_finds_non_recursive
+tests/test_cnn.py::test_recursive_find_duplicates_dir_integration
+tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration
+  /home/aliredaq/.local/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+    warnings.warn(msg)
+
+tests/test_cnn.py::test_find_duplicates_dict
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/cnn.py:319: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cnn.py::test_call_method_accepted - Failed: Unexpected exce...
+FAILED tests/test_cnn.py::test_forward_method_accepted - Failed: Unexpected e...
+FAILED tests/test_cnn.py::test__get_cnn_features_batch - FileNotFoundError: C...
+FAILED tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models - Fi...
+FAILED tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result
+FAILED tests/test_cnn.py::test_encode_images - FileNotFoundError: Couldn't fi...
+FAILED tests/test_cnn.py::test_recursive_on_flat_directory - FileNotFoundErro...
+FAILED tests/test_cnn.py::test_finds_non_recursive - AssertionError: assert [...
+FAILED tests/test_cnn.py::test_find_duplicates_dir_integration - FileNotFound...
+FAILED tests/test_cnn.py::test_recursive_find_duplicates_dir_integration - Ke...
+FAILED tests/test_cnn.py::test_find_duplicates_encoding_integration - FileNot...
+FAILED tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration - Fi...
+FAILED tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration
+FAILED tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration
+FAILED tests/test_cnn.py::test_scores_saving - FileNotFoundError: Couldn't fi...
+============ 15 failed, 30 passed, 1 skipped, 10 warnings in 6.56s =============
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 46 items
+
+tests/test_cnn.py::test__init_defaults PASSED                            [  2%]
+tests/test_cnn.py::test__init_custom PASSED                              [  4%]
+tests/test_cnn.py::test__init_missing_custom_args_raises_exception PASSED [  6%]
+tests/test_cnn.py::test_default_custom_name_raises_warning PASSED        [  8%]
+tests/test_cnn.py::test_positional_init PASSED                           [ 10%]
+tests/test_cnn.py::test_call_method_accepted PASSED                      [ 13%]
+tests/test_cnn.py::test_forward_method_accepted PASSED                   [ 15%]
+tests/test_cnn.py::test__get_cnn_features_single PASSED                  [ 17%]
+tests/test_cnn.py::test__get_cnn_features_batch PASSED                   [ 19%]
+tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models PASSED [ 21%]
+tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result PASSED [ 23%]
+tests/test_cnn.py::test_encode_image_expand_image_array_cnn_gets_called PASSED [ 26%]
+tests/test_cnn.py::test_encode_image_wrong_dim_input_array PASSED        [ 28%]
+tests/test_cnn.py::test_encode_image_2_dim_array_encoded PASSED          [ 30%]
+tests/test_cnn.py::test_encode_image_2_dim_file_equals_array PASSED      [ 32%]
+tests/test_cnn.py::test_encode_image PASSED                              [ 34%]
+tests/test_cnn.py::test_encode_images PASSED                             [ 36%]
+tests/test_cnn.py::test_encode_images_num_workers PASSED                 [ 39%]
+tests/test_cnn.py::test_encode_images_num_workers_default_override_on_nonlinux SKIPPED [ 41%]
+tests/test_cnn.py::test_recursive_on_flat_directory PASSED               [ 43%]
+tests/test_cnn.py::test_finds_non_recursive PASSED                       [ 45%]
+tests/test_cnn.py::test__check_threshold_bounds_input_not_float PASSED   [ 47%]
+tests/test_cnn.py::test__check_threshold_bounds_input_out_of_range PASSED [ 50%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_false PASSED        [ 52%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_true PASSED         [ 54%]
+tests/test_cnn.py::test__find_duplicates_dict_outfile_true PASSED        [ 56%]
+tests/test_cnn.py::test_find_duplicates_dir PASSED                       [ 58%]
+tests/test_cnn.py::test_find_duplicates_dir_num_enc_workers PASSED       [ 60%]
+tests/test_cnn.py::test_find_duplicates_mp PASSED                        [ 63%]
+tests/test_cnn.py::test_find_duplicates_with_dir PASSED                  [ 65%]
+tests/test_cnn.py::test_find_duplicates_dict PASSED                      [ 67%]
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact PASSED [ 69%]
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning PASSED    [ 71%]
+tests/test_cnn.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 73%]
+tests/test_cnn.py::test_find_duplicates_wrong_threhsold_input PASSED     [ 76%]
+tests/test_cnn.py::test_find_duplicates_wrong_input PASSED               [ 78%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_false PASSED   [ 80%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_true PASSED    [ 82%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_map PASSED    [ 84%]
+tests/test_cnn.py::test_find_duplicates_dir_integration PASSED           [ 86%]
+tests/test_cnn.py::test_recursive_find_duplicates_dir_integration PASSED [ 89%]
+tests/test_cnn.py::test_find_duplicates_encoding_integration FAILED      [ 91%]
+tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration PASSED [ 93%]
+tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration PASSED [ 95%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration PASSED [ 97%]
+tests/test_cnn.py::test_scores_saving PASSED                             [100%]
+
+=================================== FAILURES ===================================
+__________________ test_find_duplicates_encoding_integration ___________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x73b10528f950>
+
+    def test_find_duplicates_encoding_integration(cnn):
+        expected_duplicates = {
+            'ukbench00120.jpg': [
+                ('ukbench00120_hflip.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.98120844),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_hflip.jpg': [
+                ('ukbench00120.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_resize.jpg': [
+                ('ukbench00120.jpg', 0.98120844),
+                ('ukbench00120_hflip.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_rotation.jpg': [('ukbench00120.jpg', 0.98120844),
+                                          ('ukbench00120_hflip.jpg', 0.98120844),
+                                          ('ukbench00120_resize.jpg', 0.98120844),],
+            'ukbench09268.jpg': [],
+        }
+    
+        encodings = cnn.encode_images(TEST_IMAGE_DIR_MIXED)
+>       with pytest.warns(None):
+
+tests/test_cnn.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:22:13,054: INFO Start: Image encoding generation
+2025-01-22 14:22:13,069: WARNING Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg:
+cannot identify image file '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg'
+2025-01-22 14:22:13,072: INFO Found 1 bad images, ignoring for encoding generation ..
+2025-01-22 14:22:13,072: INFO End: Image encoding generation
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:135 Start: Image encoding generation
+WARNING  imagededup.utils.image_utils:image_utils.py:160 Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg:
+cannot identify image file '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg'
+INFO     imagededup.methods.cnn:cnn.py:156 Found 1 bad images, ignoring for encoding generation ..
+INFO     imagededup.methods.cnn:cnn.py:167 End: Image encoding generation
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_cnn.py::test_find_duplicates_dict
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/cnn.py:463: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cnn.py::test_find_duplicates_encoding_integration - TypeErr...
+============= 1 failed, 44 passed, 1 skipped, 5 warnings in 7.38s ==============
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 46 items
+
+tests/test_cnn.py::test__init_defaults PASSED                            [  2%]
+tests/test_cnn.py::test__init_custom PASSED                              [  4%]
+tests/test_cnn.py::test__init_missing_custom_args_raises_exception PASSED [  6%]
+tests/test_cnn.py::test_default_custom_name_raises_warning PASSED        [  8%]
+tests/test_cnn.py::test_positional_init PASSED                           [ 10%]
+tests/test_cnn.py::test_call_method_accepted PASSED                      [ 13%]
+tests/test_cnn.py::test_forward_method_accepted PASSED                   [ 15%]
+tests/test_cnn.py::test__get_cnn_features_single PASSED                  [ 17%]
+tests/test_cnn.py::test__get_cnn_features_batch PASSED                   [ 19%]
+tests/test_cnn.py::test__get_cnn_features_batch_nondefault_models PASSED [ 21%]
+tests/test_cnn.py::test__get_cnn_features_batch_num_workers_do_not_change_final_result PASSED [ 23%]
+tests/test_cnn.py::test_encode_image_expand_image_array_cnn_gets_called PASSED [ 26%]
+tests/test_cnn.py::test_encode_image_wrong_dim_input_array PASSED        [ 28%]
+tests/test_cnn.py::test_encode_image_2_dim_array_encoded PASSED          [ 30%]
+tests/test_cnn.py::test_encode_image_2_dim_file_equals_array PASSED      [ 32%]
+tests/test_cnn.py::test_encode_image PASSED                              [ 34%]
+tests/test_cnn.py::test_encode_images PASSED                             [ 36%]
+tests/test_cnn.py::test_encode_images_num_workers PASSED                 [ 39%]
+tests/test_cnn.py::test_encode_images_num_workers_default_override_on_nonlinux SKIPPED [ 41%]
+tests/test_cnn.py::test_recursive_on_flat_directory PASSED               [ 43%]
+tests/test_cnn.py::test_finds_non_recursive PASSED                       [ 45%]
+tests/test_cnn.py::test__check_threshold_bounds_input_not_float PASSED   [ 47%]
+tests/test_cnn.py::test__check_threshold_bounds_input_out_of_range PASSED [ 50%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_false PASSED        [ 52%]
+tests/test_cnn.py::test__find_duplicates_dict_scores_true PASSED         [ 54%]
+tests/test_cnn.py::test__find_duplicates_dict_outfile_true PASSED        [ 56%]
+tests/test_cnn.py::test_find_duplicates_dir PASSED                       [ 58%]
+tests/test_cnn.py::test_find_duplicates_dir_num_enc_workers PASSED       [ 60%]
+tests/test_cnn.py::test_find_duplicates_mp PASSED                        [ 63%]
+tests/test_cnn.py::test_find_duplicates_with_dir PASSED                  [ 65%]
+tests/test_cnn.py::test_find_duplicates_dict PASSED                      [ 67%]
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact PASSED [ 69%]
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning PASSED    [ 71%]
+tests/test_cnn.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 73%]
+tests/test_cnn.py::test_find_duplicates_wrong_threhsold_input PASSED     [ 76%]
+tests/test_cnn.py::test_find_duplicates_wrong_input PASSED               [ 78%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_false PASSED   [ 80%]
+tests/test_cnn.py::test_find_duplicates_to_remove_outfile_true PASSED    [ 82%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_map PASSED    [ 84%]
+tests/test_cnn.py::test_find_duplicates_dir_integration PASSED           [ 86%]
+tests/test_cnn.py::test_recursive_find_duplicates_dir_integration PASSED [ 89%]
+tests/test_cnn.py::test_find_duplicates_encoding_integration FAILED      [ 91%]
+tests/test_cnn.py::test_find_duplicates_to_remove_dir_integration PASSED [ 93%]
+tests/test_cnn.py::test_recursive_find_duplicates_to_remove_dir_integration PASSED [ 95%]
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration PASSED [ 97%]
+tests/test_cnn.py::test_scores_saving PASSED                             [100%]
+
+=================================== FAILURES ===================================
+__________________ test_find_duplicates_encoding_integration ___________________
+
+cnn = <imagededup.methods.cnn.CNN object at 0x76a2690860d0>
+
+    def test_find_duplicates_encoding_integration(cnn):
+        expected_duplicates = {
+            'ukbench00120.jpg': [
+                ('ukbench00120_hflip.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.98120844),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_hflip.jpg': [
+                ('ukbench00120.jpg', 0.9672552),
+                ('ukbench00120_resize.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_resize.jpg': [
+                ('ukbench00120.jpg', 0.98120844),
+                ('ukbench00120_hflip.jpg', 0.95676106),
+                ('ukbench00120_rotation.jpg', 0.95676106),
+            ],
+            'ukbench00120_rotation.jpg': [('ukbench00120.jpg', 0.98120844),
+                                          ('ukbench00120_hflip.jpg', 0.98120844),
+                                          ('ukbench00120_resize.jpg', 0.98120844),],
+            'ukbench09268.jpg': [],
+        }
+    
+        encodings = cnn.encode_images(TEST_IMAGE_DIR_MIXED)
+>       with pytest.warns(None):
+
+tests/test_cnn.py:894: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:21:57,175: INFO Start: Image encoding generation
+2025-01-22 14:21:57,190: WARNING Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg:
+cannot identify image file '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg'
+2025-01-22 14:21:57,194: INFO Found 1 bad images, ignoring for encoding generation ..
+2025-01-22 14:21:57,194: INFO End: Image encoding generation
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.methods.cnn:cnn.py:135 Start: Image encoding generation
+WARNING  imagededup.utils.image_utils:image_utils.py:160 Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg:
+cannot identify image file '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench09268_corrupt.jpg'
+INFO     imagededup.methods.cnn:cnn.py:156 Found 1 bad images, ignoring for encoding generation ..
+INFO     imagededup.methods.cnn:cnn.py:167 End: Image encoding generation
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_cnn.py::test_find_duplicates_dict
+tests/test_cnn.py::test_find_duplicates_dict_num_worker_has_impact
+tests/test_cnn.py::test_find_duplicates_dict_recursive_warning
+tests/test_cnn.py::test_find_duplicates_to_remove_encoding_integration
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/cnn.py:463: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_cnn.py::test_find_duplicates_encoding_integration - TypeErr...
+============= 1 failed, 44 passed, 1 skipped, 5 warnings in 7.74s ==============

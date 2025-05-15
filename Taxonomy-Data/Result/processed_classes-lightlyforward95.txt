@@ -1,0 +1,96 @@
+output file:
+processed_classes-lightlyforward95.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward', '../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward FAILED [100%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 5 items
+
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward_cuda PASSED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_lambda_value_error PASSED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_loss_value PASSED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward FAILED [100%]
+
+=================================== FAILURES ===================================
+__________________ testMMCRLoss.test_shape_assertion_forward ___________________
+
+self = <test_MMCR_loss.testMMCRLoss testMethod=test_shape_assertion_forward>
+
+    def test_shape_assertion_forward(self) -> None:
+        bs = 3
+        dim = 128
+        k = 32
+    
+        loss_fn = MMCRLoss()
+        online = torch.randn(bs, k, dim)
+        momentum = torch.randn(bs, k, dim + 1)
+    
+        with self.assertRaises(AssertionError):
+>           loss_fn(online, momentum)
+
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def forward(self, online: torch.Tensor, momentum: torch.Tensor) -> torch.Tensor:
+        if online.shape != momentum.shape:
+>           raise ValueError("The 'online' and 'momentum' tensors must have the same shape.")
+E           ValueError: The 'online' and 'momentum' tensors must have the same shape.
+
+../publishablew/lightly/lightly/lightly/loss/mmcr_loss.py:42: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward
+========================= 1 failed, 4 passed in 2.81s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 5 items
+
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward_cuda PASSED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_lambda_value_error PASSED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_loss_value PASSED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward PASSED [100%]
+
+============================== 5 passed in 2.68s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 5 items
+
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_forward_cuda PASSED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_lambda_value_error PASSED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_loss_value PASSED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_MMCR_loss.py::testMMCRLoss::test_shape_assertion_forward PASSED [100%]
+
+============================== 5 passed in 2.86s ===============================

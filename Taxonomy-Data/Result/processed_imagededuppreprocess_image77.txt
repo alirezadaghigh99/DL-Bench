@@ -1,0 +1,209 @@
+output file:
+processed_imagededuppreprocess_image77.json
+function:
+preprocess_image
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED tests/test_image_utils.py::test_preprocess_image_accepts_array_input', 'tests/test_image_utils.py::test_load_image_all_inputs_correct FAILED     [100%]', 'FAILED tests/test_image_utils.py::test_preprocess_image_accepts_pil_input - A...', 'tests/test_image_utils.py::test_preprocess_image_grayscale_false FAILED  [ 75%]', 'tests/test_image_utils.py::test_preprocess_image_accepts_array_input FAILED [ 60%]', 'tests/test_image_utils.py::test_preprocess_image_accepts_pil_input FAILED [ 65%]', 'FAILED tests/test_image_utils.py::test_load_image_all_inputs_correct - Assert...', 'FAILED tests/test_image_utils.py::test_preprocess_image_grayscale_false - Att...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input FAILED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input FAILED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false FAILED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct FAILED     [100%]
+
+=================================== FAILURES ===================================
+__________________ test_preprocess_image_accepts_array_input ___________________
+
+    def test_preprocess_image_accepts_array_input():
+        inp_x = Image.open(PATH_SINGLE_IMAGE)
+        inp_x = np.array(inp_x)
+        target_size = (2, 2)
+>       ret_array = preprocess_image(inp_x, target_size=target_size, grayscale=True)
+
+tests/test_image_utils.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/utils/image_utils.py:76: in preprocess_image
+    return preprocess_image(image, target_size, grayscale)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=640x480 at 0x7FCE7A8B46D0>
+target_size = (2, 2), grayscale = True
+
+    def preprocess_image(image, target_size=None, grayscale=False):
+        if isinstance(image, np.ndarray):
+            image = Image.fromarray(image)
+        elif not isinstance(image, Image.Image):
+            raise ValueError('Input must be a NumPy array or a Pillow Image object.')
+        if target_size is not None:
+>           image = image.resize(target_size, Image.ANTIALIAS)
+E           AttributeError: module 'PIL.Image' has no attribute 'ANTIALIAS'
+
+imagededup/utils/temp.py:14: AttributeError
+___________________ test_preprocess_image_accepts_pil_input ____________________
+
+    def test_preprocess_image_accepts_pil_input():
+        inp_x = Image.open(PATH_SINGLE_IMAGE)
+        target_size = (2, 2)
+>       ret_array = preprocess_image(inp_x, target_size=target_size, grayscale=True)
+
+tests/test_image_utils.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/utils/image_utils.py:76: in preprocess_image
+    return preprocess_image(image, target_size, grayscale)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=640x480 at 0x7FCE726EA6D0>
+target_size = (2, 2), grayscale = True
+
+    def preprocess_image(image, target_size=None, grayscale=False):
+        if isinstance(image, np.ndarray):
+            image = Image.fromarray(image)
+        elif not isinstance(image, Image.Image):
+            raise ValueError('Input must be a NumPy array or a Pillow Image object.')
+        if target_size is not None:
+>           image = image.resize(target_size, Image.ANTIALIAS)
+E           AttributeError: module 'PIL.Image' has no attribute 'ANTIALIAS'
+
+imagededup/utils/temp.py:14: AttributeError
+____________________ test_preprocess_image_grayscale_false _____________________
+
+    def test_preprocess_image_grayscale_false():
+        inp_x = Image.open(PATH_SINGLE_IMAGE)
+        target_size = (2, 2)
+>       ret_array = preprocess_image(inp_x, target_size=target_size, grayscale=False)
+
+tests/test_image_utils.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/utils/image_utils.py:76: in preprocess_image
+    return preprocess_image(image, target_size, grayscale)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=640x480 at 0x7FCE7261BCD0>
+target_size = (2, 2), grayscale = False
+
+    def preprocess_image(image, target_size=None, grayscale=False):
+        if isinstance(image, np.ndarray):
+            image = Image.fromarray(image)
+        elif not isinstance(image, Image.Image):
+            raise ValueError('Input must be a NumPy array or a Pillow Image object.')
+        if target_size is not None:
+>           image = image.resize(target_size, Image.ANTIALIAS)
+E           AttributeError: module 'PIL.Image' has no attribute 'ANTIALIAS'
+
+imagededup/utils/temp.py:14: AttributeError
+______________________ test_load_image_all_inputs_correct ______________________
+
+    def test_load_image_all_inputs_correct():
+        target_size = (8, 8)
+        loaded_image = load_image(
+            image_file=PATH_SINGLE_IMAGE, target_size=target_size, grayscale=True
+        )
+>       assert isinstance(loaded_image, np.ndarray)
+E       AssertionError: assert False
+E        +  where False = isinstance(None, <class 'numpy.ndarray'>)
+E        +    where <class 'numpy.ndarray'> = np.ndarray
+
+tests/test_image_utils.py:207: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:20:45,939: WARNING Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench00120.jpg:
+module 'PIL.Image' has no attribute 'ANTIALIAS'
+------------------------------ Captured log call -------------------------------
+WARNING  imagededup.utils.image_utils:image_utils.py:126 Invalid image file /local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench00120.jpg:
+module 'PIL.Image' has no attribute 'ANTIALIAS'
+=========================== short test summary info ============================
+FAILED tests/test_image_utils.py::test_preprocess_image_accepts_array_input
+FAILED tests/test_image_utils.py::test_preprocess_image_accepts_pil_input - A...
+FAILED tests/test_image_utils.py::test_preprocess_image_grayscale_false - Att...
+FAILED tests/test_image_utils.py::test_load_image_all_inputs_correct - Assert...
+========================= 4 failed, 16 passed in 1.92s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.90s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.92s ==============================

@@ -1,0 +1,135 @@
+output file:
+processed_korniadeg2rad302.json
+function:
+deg2rad
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'cudagraphs', 'inductor', 'onnxrt', 'tvm', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape0] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape3] PASSED
+
+============================== 4 passed in 0.12s ===============================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'onnxrt', 'tvm', 'jit', 'inductor', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape0] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape3] PASSED
+
+============================== 4 passed in 0.16s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'tvm', 'inductor', 'onnxrt', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape0] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestRadDegConversions::test_deg2rad_gradcheck[cpu-batch_shape3] PASSED
+
+============================== 4 passed in 0.15s ===============================

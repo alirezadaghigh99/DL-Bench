@@ -1,0 +1,288 @@
+output file:
+processed_classes-korniaforward55.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32] FAILED [ 60%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32] FAILED [ 40%]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32] FAILED [ 20%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'onnxrt', 'tvm', 'cudagraphs', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32] FAILED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32] FAILED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32] FAILED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_jit[cpu-float32] SKIPPED [100%]
+
+=================================== FAILURES ===================================
+_____________________ TestRotate.test_angle90[cpu-float32] _____________________
+
+self = <test_affine.TestRotate object at 0x7b087eef6bc0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_angle90(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype)
+        expected = torch.tensor([[[0.0, 0.0], [4.0, 6.0], [3.0, 5.0], [0.0, 0.0]]], device=device, dtype=dtype)
+        # prepare transformation
+        angle = torch.tensor([90.0], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Rotate(angle, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:269: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Rotate()
+input = tensor([[[1., 2.],
+         [3., 4.],
+         [5., 6.],
+         [7., 8.]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+>       n, c, h, w = input.size()
+E       ValueError: not enough values to unpack (expected 4, got 3)
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:660: ValueError
+_________________ TestRotate.test_angle90_batch2[cpu-float32] __________________
+
+self = <test_affine.TestRotate object at 0x7b087eef6fb0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_angle90_batch2(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype).repeat(
+            2, 1, 1, 1
+        )
+        expected = torch.tensor(
+            [[[[0.0, 0.0], [4.0, 6.0], [3.0, 5.0], [0.0, 0.0]]], [[[0.0, 0.0], [5.0, 3.0], [6.0, 4.0], [0.0, 0.0]]]],
+            device=device,
+            dtype=dtype,
+        )
+        # prepare transformation
+        angle = torch.tensor([90.0, -90.0], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Rotate(angle, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:284: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Rotate()
+input = tensor([[[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]],
+
+
+        [[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        n, c, h, w = input.size()
+        if self.center is None:
+            center_x, center_y = (w / 2, h / 2)
+        else:
+            center_x, center_y = self.center
+>       angle_rad = -self.angle * math.pi / 180
+E       NameError: name 'math' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:665: NameError
+____________ TestRotate.test_angle90_batch2_broadcast[cpu-float32] _____________
+
+self = <test_affine.TestRotate object at 0x7b087eef72e0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_angle90_batch2_broadcast(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype).repeat(
+            2, 1, 1, 1
+        )
+        expected = torch.tensor(
+            [[[[0.0, 0.0], [4.0, 6.0], [3.0, 5.0], [0.0, 0.0]]], [[[0.0, 0.0], [4.0, 6.0], [3.0, 5.0], [0.0, 0.0]]]],
+            device=device,
+            dtype=dtype,
+        )
+        # prepare transformation
+        angle = torch.tensor([90.0], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Rotate(angle, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:299: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Rotate()
+input = tensor([[[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]],
+
+
+        [[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        n, c, h, w = input.size()
+        if self.center is None:
+            center_x, center_y = (w / 2, h / 2)
+        else:
+            center_x, center_y = self.center
+>       angle_rad = -self.angle * math.pi / 180
+E       NameError: name 'math' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:665: NameError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32]
+==================== 3 failed, 1 passed, 1 skipped in 0.41s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'inductor', 'cudagraphs', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_jit[cpu-float32] SKIPPED [100%]
+
+========================= 4 passed, 1 skipped in 0.18s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'openxla', 'jit', 'onnxrt', 'tvm', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90[cpu-float32] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2[cpu-float32] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_angle90_batch2_broadcast[cpu-float32] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestRotate::test_jit[cpu-float32] SKIPPED [100%]
+
+========================= 4 passed, 1 skipped in 0.22s =========================

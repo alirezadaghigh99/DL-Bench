@@ -1,0 +1,304 @@
+output file:
+processed_korniargb_to_yuv420128.json
+function:
+rgb_to_yuv420
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', None, 'openxla', 'tvm', 'jit', 'onnxrt', 'inductor', 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape4] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_white[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_black[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_gray[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_blue[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_forth_and_back[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_module[cpu-float32] PASSED
+
+=================================== FAILURES ===================================
+_________________ TestRgbToYuv420.test_exception[cpu-float32] __________________
+
+self = <test_yuv.TestRgbToYuv420 object at 0x7190cd4fe290>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_exception(self, device, dtype):
+        with pytest.raises(TypeError):
+>           assert kornia.color.rgb_to_yuv420([0.0])
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/yuv.py:45: in rgb_to_yuv420
+    return rgb_to_yuv420(image)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = [0.0]
+
+    def rgb_to_yuv420(image: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
+>       if image.dim() < 3 or image.size(-3) != 3:
+E       AttributeError: 'list' object has no attribute 'dim'
+
+../publishablew/kornia/kornia/kornia/color/temp.py:10: AttributeError
+__________________ TestRgbToYuv420.test_unit_red[cpu-float32] __________________
+
+self = <test_yuv.TestRgbToYuv420 object at 0x7190cd4fef50>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_unit_red(self, device, dtype):  # skipcq: PYL-R0201
+        rgb = (
+            torch.tensor(
+                [[[255, 255], [255, 255]], [[0, 0], [0, 0]], [[0, 0], [0, 0]]], device=device, dtype=torch.uint8
+            ).type(dtype)
+            / 255.0
+        )
+        refy = torch.tensor([[[76, 76], [76, 76]]], device=device, dtype=torch.uint8)
+        refuv = torch.tensor([[[-37]], [[127]]], device=device, dtype=torch.int8)
+    
+        resy = (kornia.color.rgb_to_yuv420(rgb)[0] * 255.0).round().type(torch.uint8)
+        resuv = (kornia.color.rgb_to_yuv420(rgb)[1] * 255.0).round().clamp(-128, 127).type(torch.int8)
+        self.assert_close(refy, resy)
+>       self.assert_close(refuv, resuv)
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[-37]],
+
+        [[127]]], dtype=torch.int8)
+expected = tensor([[[-38]],
+
+        [[127]]], dtype=torch.int8), rtol = 0.0
+atol = 0.0, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not equal!
+E       
+E       Mismatched elements: 1 / 2 (50.0%)
+E       Greatest absolute difference: 1 at index (0, 0, 0)
+E       Greatest relative difference: 0.02631578966975212 at index (0, 0, 0)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+____________________ TestRgbToYuv420.test_jit[cpu-float32] _____________________
+
+self = <test_yuv.TestRgbToYuv420 object at 0x7190cd4ffc10>
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    def test_jit(self, device, dtype):
+        B, C, H, W = 2, 3, 4, 4
+        img = torch.ones(B, C, H, W, device=device, dtype=dtype)
+        op = kornia.color.rgb_to_yuv420
+>       op_jit = torch.jit.script(op)
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py:213: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7191a7fabd30>
+ctx = <torch._sources.SourceContext object at 0x7190ccd45990>
+node = <ast.ImportFrom object at 0x7190cd392e30>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/color/yuv.py", line 44
+E           def rgb_to_yuv420(image: Tensor) -> tuple[Tensor, Tensor]:
+E               from .temp import rgb_to_yuv420
+E               ~~~~ <--- HERE
+E               return rgb_to_yuv420(image)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32]
+========================= 3 failed, 13 passed in 0.39s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'cudagraphs', 'openxla', 'tvm', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape4] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_white[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_black[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_gray[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_blue[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_forth_and_back[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_module[cpu-float32] PASSED
+
+============================== 16 passed in 0.21s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'openxla', 'cudagraphs', 'inductor', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_cardinality[cpu-float32-shape4] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_white[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_black[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_gray[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_red[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_unit_blue[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_forth_and_back[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_yuv.py::TestRgbToYuv420::test_module[cpu-float32] PASSED
+
+============================== 16 passed in 0.24s ==============================

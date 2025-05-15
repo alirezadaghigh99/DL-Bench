@@ -1,0 +1,550 @@
+output file:
+processed_cleanlabvalue_counts345.json
+function:
+value_counts
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings]', '../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str FAILED', '../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 21 items
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_inm 
+ Inverse Noise Matrix P(true_label|given_label) of shape (3, 3)
+ p(y|s)	s=0	s=1	s=2
+	---	---	---
+y=0 |	1.0	0.0	0.2
+y=1 |	0.0	0.7	0.2
+y=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (2, 2)
+ p(y|s)	s=0	s=1
+	---	---
+y=0 |	1.0	0.3
+y=1 |	0.0	0.7
+	Trace(matrix) = 1.7
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (1, 1)
+ p(y|s)	s=0
+	---
+y=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_joint 
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (3, 3)
+ p(s,y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	0.1	0.0	0.1
+s=1 |	0.1	0.1	0.1
+s=2 |	0.2	0.1	0.2
+	Trace(matrix) = 0.4
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (2, 2)
+ p(s,y)	y=0	y=1
+	---	---
+s=0 |	0.2	0.3
+s=1 |	0.4	0.1
+	Trace(matrix) = 0.3
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (1, 1)
+ p(s,y)	y=0
+	---
+s=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_square 
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_noise_matrix 
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_f1 PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str FAILED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_remove_noise PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_sum PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_one_hot PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_num_unique PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_missing_classes PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_row_totals PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix_nonconsecutive PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_format_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_normalized_entropy PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_force_two_dimensions PASSED
+
+=================================== FAILURES ===================================
+____________________________ test_value_counts_str _____________________________
+
+    def test_value_counts_str():
+        r = util.value_counts(["a", "b", "a"])
+>       assert all(np.array([2, 1]) - r < 1e-4)
+E       ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py:63: ValueError
+_______________ test_value_counts_fill_missing_classes[integers] _______________
+
+test_case = TestCase(labels=[0, 1, 0, 2], id='integers')
+
+    @pytest.mark.parametrize(
+        "test_case",
+        value_counts_missing_classes_test_cases,
+        ids=lambda x: str(x.id),
+    )
+    def test_value_counts_fill_missing_classes(test_case):
+        labels = test_case.labels
+        is_multi_label = isinstance(labels[0], list)
+        r = util.value_counts_fill_missing_classes(labels, num_classes=4, multi_label=is_multi_label)
+>       assert np.array_equal(r, [2, 1, 1, 0])
+E       assert False
+E        +  where False = <function array_equal at 0x76695e3a2830>(array([[2],\n       [1],\n       [1]]), [2, 1, 1, 0])
+E        +    where <function array_equal at 0x76695e3a2830> = np.array_equal
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py:85: AssertionError
+_______________ test_value_counts_fill_missing_classes[strings] ________________
+
+test_case = TestCase(labels=['a', 'b', 'a', 'c'], id='strings')
+
+    @pytest.mark.parametrize(
+        "test_case",
+        value_counts_missing_classes_test_cases,
+        ids=lambda x: str(x.id),
+    )
+    def test_value_counts_fill_missing_classes(test_case):
+        labels = test_case.labels
+        is_multi_label = isinstance(labels[0], list)
+        r = util.value_counts_fill_missing_classes(labels, num_classes=4, multi_label=is_multi_label)
+>       assert np.array_equal(r, [2, 1, 1, 0])
+E       assert False
+E        +  where False = <function array_equal at 0x76695e3a2830>(array([[0],\n       [0],\n       [0]]), [2, 1, 1, 0])
+E        +    where <function array_equal at 0x76695e3a2830> = np.array_equal
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py:85: AssertionError
+_________ test_value_counts_fill_missing_classes[multilabel_integers] __________
+
+test_case = TestCase(labels=[[0], [0, 1], [2]], id='multilabel_integers')
+
+    @pytest.mark.parametrize(
+        "test_case",
+        value_counts_missing_classes_test_cases,
+        ids=lambda x: str(x.id),
+    )
+    def test_value_counts_fill_missing_classes(test_case):
+        labels = test_case.labels
+        is_multi_label = isinstance(labels[0], list)
+>       r = util.value_counts_fill_missing_classes(labels, num_classes=4, multi_label=is_multi_label)
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/internal/util.py:138: in value_counts_fill_missing_classes
+    return value_counts(x, num_classes=num_classes, multi_label=multi_label)
+../publishablew/cleanlab/cleanlab/cleanlab/internal/util.py:88: in value_counts
+    return value_counts(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = array([list([0]), list([0, 1]), list([2])], dtype=object)
+num_classes = None, multi_label = False
+
+    def value_counts(x, num_classes=None, multi_label=False):
+        x = np.array(x, dtype=object)
+        if multi_label:
+            x = np.concatenate([np.array(item) for item in x])
+        unique, counts = np.unique(x, return_counts=True)
+>       count_dict = dict(zip(unique, counts))
+E       TypeError: unhashable type: 'list'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/temp.py:15: TypeError
+__________ test_value_counts_fill_missing_classes[multilabel_strings] __________
+
+test_case = TestCase(labels=[['c'], ['a', 'b'], ['a']], id='multilabel_strings')
+
+    @pytest.mark.parametrize(
+        "test_case",
+        value_counts_missing_classes_test_cases,
+        ids=lambda x: str(x.id),
+    )
+    def test_value_counts_fill_missing_classes(test_case):
+        labels = test_case.labels
+        is_multi_label = isinstance(labels[0], list)
+>       r = util.value_counts_fill_missing_classes(labels, num_classes=4, multi_label=is_multi_label)
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/internal/util.py:138: in value_counts_fill_missing_classes
+    return value_counts(x, num_classes=num_classes, multi_label=multi_label)
+../publishablew/cleanlab/cleanlab/cleanlab/internal/util.py:88: in value_counts
+    return value_counts(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = array([list(['c']), list(['a', 'b']), list(['a'])], dtype=object)
+num_classes = None, multi_label = False
+
+    def value_counts(x, num_classes=None, multi_label=False):
+        x = np.array(x, dtype=object)
+        if multi_label:
+            x = np.concatenate([np.array(item) for item in x])
+        unique, counts = np.unique(x, return_counts=True)
+>       count_dict = dict(zip(unique, counts))
+E       TypeError: unhashable type: 'list'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/temp.py:15: TypeError
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_util.py:0
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_util.py:0: PytestCollectionWarning: cannot collect test class 'TestCase' because it has a __new__ constructor (from: tests/test_util.py)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings]
+=================== 5 failed, 16 passed, 1 warning in 0.71s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 21 items
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_inm 
+ Inverse Noise Matrix P(true_label|given_label) of shape (3, 3)
+ p(y|s)	s=0	s=1	s=2
+	---	---	---
+y=0 |	1.0	0.0	0.2
+y=1 |	0.0	0.7	0.2
+y=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (2, 2)
+ p(y|s)	s=0	s=1
+	---	---
+y=0 |	1.0	0.3
+y=1 |	0.0	0.7
+	Trace(matrix) = 1.7
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (1, 1)
+ p(y|s)	s=0
+	---
+y=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_joint 
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (3, 3)
+ p(s,y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	0.1	0.0	0.1
+s=1 |	0.1	0.1	0.1
+s=2 |	0.2	0.1	0.2
+	Trace(matrix) = 0.4
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (2, 2)
+ p(s,y)	y=0	y=1
+	---	---
+s=0 |	0.2	0.3
+s=1 |	0.4	0.1
+	Trace(matrix) = 0.3
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (1, 1)
+ p(s,y)	y=0
+	---
+s=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_square 
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_noise_matrix 
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_f1 PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_remove_noise PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_sum PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_one_hot PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_num_unique PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_missing_classes PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_row_totals PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix_nonconsecutive PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_format_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_normalized_entropy PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_force_two_dimensions PASSED
+
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_util.py:0
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_util.py:0: PytestCollectionWarning: cannot collect test class 'TestCase' because it has a __new__ constructor (from: tests/test_util.py)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 21 passed, 1 warning in 0.53s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 21 items
+
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_inm 
+ Inverse Noise Matrix P(true_label|given_label) of shape (3, 3)
+ p(y|s)	s=0	s=1	s=2
+	---	---	---
+y=0 |	1.0	0.0	0.2
+y=1 |	0.0	0.7	0.2
+y=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (2, 2)
+ p(y|s)	s=0	s=1
+	---	---
+y=0 |	1.0	0.3
+y=1 |	0.0	0.7
+	Trace(matrix) = 1.7
+
+
+ Inverse Noise Matrix P(true_label|given_label) of shape (1, 1)
+ p(y|s)	s=0
+	---
+y=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_joint 
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (3, 3)
+ p(s,y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	0.1	0.0	0.1
+s=1 |	0.1	0.1	0.1
+s=2 |	0.2	0.1	0.2
+	Trace(matrix) = 0.4
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (2, 2)
+ p(s,y)	y=0	y=1
+	---	---
+s=0 |	0.2	0.3
+s=1 |	0.4	0.1
+	Trace(matrix) = 0.3
+
+
+ Joint Label Noise Distribution Matrix P(given_label, true_label) of shape (1, 1)
+ p(s,y)	y=0
+	---
+s=0 |	1
+	Trace(matrix) = 1
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_square 
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ A square matrix of shape (3, 3)
+ s,y	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_print_noise_matrix 
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+
+ Noise Matrix (aka Noisy Channel) P(given_label|true_label) of shape (3, 3)
+ p(s|y)	y=0	y=1	y=2
+	---	---	---
+s=0 |	1.0	0.0	0.2
+s=1 |	0.0	0.7	0.2
+s=2 |	0.0	0.3	0.6
+	Trace(matrix) = 2.3
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_f1 PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_str PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[integers] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_integers] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_value_counts_fill_missing_classes[multilabel_strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_pu_remove_noise PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_sum PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_one_hot PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_num_unique PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_missing_classes PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_round_preserving_row_totals PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_confusion_matrix_nonconsecutive PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_format_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_normalized_entropy PASSED
+../publishablew/cleanlab/cleanlab/tests/test_util.py::test_force_two_dimensions PASSED
+
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_util.py:0
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_util.py:0: PytestCollectionWarning: cannot collect test class 'TestCase' because it has a __new__ constructor (from: tests/test_util.py)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 21 passed, 1 warning in 0.54s =========================

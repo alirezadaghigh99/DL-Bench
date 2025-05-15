@@ -1,0 +1,215 @@
+output file:
+processed_korniakl_div_loss_2d123.json
+function:
+kl_div_loss_2d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'jit', 'inductor', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred0-target0-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred1-target1-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred2-target2-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf] FAILED
+
+=================================== FAILURES ===================================
+____ TestDivergenceLoss.test_kl_div_loss_2d[cpu-float32-pred3-target3-inf] _____
+
+self = <test_divergence.TestDivergenceLoss object at 0x7b7edf901ba0>
+device = device(type='cpu'), dtype = torch.float32
+pred = tensor([[[[0., 0., 0., 0.],
+          [0., 0., 0., 0.]],
+
+         [[0., 0., 0., 0.],
+          [0., 0., 0., 0.]],
+
+  ...,
+
+         [[0., 0., 0., 0.],
+          [0., 0., 0., 0.]],
+
+         [[0., 0., 0., 0.],
+          [0., 0., 0., 0.]]]])
+target = tensor([[[[0.1250, 0.1250, 0.1250, 0.1250],
+          [0.1250, 0.1250, 0.1250, 0.1250]],
+
+         [[0.1250, 0.1250, 0..., 0.1250, 0.1250, 0.1250]],
+
+         [[0.1250, 0.1250, 0.1250, 0.1250],
+          [0.1250, 0.1250, 0.1250, 0.1250]]]])
+expected = tensor(inf)
+
+    @pytest.mark.parametrize(
+        "pred,target,expected",
+        [
+            (torch.full((1, 1, 2, 4), 0.125), torch.full((1, 1, 2, 4), 0.125), 0.0),
+            (torch.full((1, 7, 2, 4), 0.125), torch.full((1, 7, 2, 4), 0.125), 0.0),
+            (torch.full((1, 7, 2, 4), 0.125), torch.zeros((1, 7, 2, 4)), 0.0),
+            (torch.zeros((1, 7, 2, 4)), torch.full((1, 7, 2, 4), 0.125), math.inf),
+        ],
+    )
+    def test_kl_div_loss_2d(self, device, dtype, pred, target, expected):
+        actual = kornia.losses.kl_div_loss_2d(pred.to(device, dtype), target.to(device, dtype))
+        expected = torch.tensor(expected).to(device, dtype)
+>       self.assert_close(actual, expected)
+
+../publishablew/kornia/kornia/tests/losses/test_divergence.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor(2.6183), expected = tensor(inf), rtol = 0.0001, atol = 1e-05
+kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Scalars are not close!
+E       
+E       Expected inf but got 2.6183011531829834.
+E       Absolute difference: inf (up to 1e-05 allowed)
+E       Relative difference: nan (up to 0.0001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf]
+========================= 1 failed, 3 passed in 0.22s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'openxla', 'tvm', 'onnxrt', 'inductor', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred0-target0-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred1-target1-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred2-target2-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf] PASSED
+
+============================== 4 passed in 0.16s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'tvm', 'cudagraphs', 'onnxrt', None, 'openxla'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred0-target0-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred1-target1-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred2-target2-0.0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_divergence.py::TestDivergenceLoss::test_kl_div_loss_2d[cpu-float32-pred3-target3-inf] PASSED
+
+============================== 4 passed in 0.22s ===============================

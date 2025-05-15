@@ -1,0 +1,798 @@
+output file:
+processed_korniamatch_fginn195.json
+function:
+match_fginn
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'jit', 'inductor', 'openxla', 'cudagraphs', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_jit[cpu-float32] SKIPPED
+
+=================================== FAILURES ===================================
+_________________ TestMatchFGINN.test_shape_one_way[cpu-2-4-4] _________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12efed40>, num_desc1 = 2
+num_desc2 = 4, dim = 4, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_one_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.5983, 0.3044, 0.2008, 0.8059],
+        [0.5138, 0.0309, 0.2446, 0.5774]])
+desc2 = tensor([[0.1775, 0.1057, 0.9243, 0.3749],
+        [0.4778, 0.3722, 0.1375, 0.0744],
+        [0.7900, 0.7023, 0.3505, 0.8233],
+        [0.1487, 0.6182, 0.5580, 0.4339]])
+lafs1 = tensor([[[[0.7837, 0.9444, 0.2909],
+          [0.8365, 0.7707, 0.8067]],
+
+         [[0.2763, 0.5216, 0.3814],
+          [0.0223, 0.6542, 0.6808]]]])
+lafs2 = tensor([[[[0.9536, 0.7255, 0.1232],
+          [0.7220, 0.3127, 0.1348]],
+
+         [[0.9129, 0.9126, 0.5618],
+        ...8077],
+          [0.4826, 0.3166, 0.8723]],
+
+         [[0.2027, 0.7051, 0.7839],
+          [0.4254, 0.9822, 0.3180]]]])
+th = 0.9, spatial_th = 1000, mutual = False
+dm = tensor([[0.9621, 0.7471, 0.4666, 0.7527],
+        [0.7884, 0.6182, 0.7738, 0.7727]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+________________ TestMatchFGINN.test_shape_one_way[cpu-2-5-128] ________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12efec80>, num_desc1 = 2
+num_desc2 = 5, dim = 128, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_one_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.3762, 0.6434, 0.3510, 0.3004, 0.0099, 0.5650, 0.2387, 0.5273, 0.7653,
+         0.3790, 0.7105, 0.6022, 0.80...53, 0.3337,
+         0.6504, 0.9424, 0.6559, 0.1016, 0.4182, 0.9265, 0.1984, 0.2407, 0.8744,
+         0.9476, 0.7175]])
+desc2 = tensor([[0.6476, 0.1735, 0.3417, 0.7120, 0.8948, 0.8215, 0.3403, 0.2936, 0.5331,
+         0.8789, 0.1037, 0.3604, 0.28...04, 0.4909,
+         0.3910, 0.4590, 0.9544, 0.5310, 0.5863, 0.7400, 0.9889, 0.3745, 0.5992,
+         0.2132, 0.3464]])
+lafs1 = tensor([[[[0.1495, 0.7520, 0.4865],
+          [0.3221, 0.7755, 0.2633]],
+
+         [[0.9840, 0.4699, 0.8293],
+          [0.5142, 0.4294, 0.1944]]]])
+lafs2 = tensor([[[[0.0450, 0.5926, 0.9376],
+          [0.0897, 0.3235, 0.3398]],
+
+         [[0.1380, 0.9853, 0.8112],
+        ...5002],
+          [0.0271, 0.8868, 0.6705]],
+
+         [[0.1822, 0.8642, 0.7277],
+          [0.7667, 0.2566, 0.8992]]]])
+th = 0.9, spatial_th = 1000, mutual = False
+dm = tensor([[4.6095, 4.1657, 4.3384, 4.7282, 4.2709],
+        [4.5581, 4.9297, 4.5035, 4.9763, 4.7080]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+________________ TestMatchFGINN.test_shape_one_way[cpu-6-2-32] _________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12eff010>, num_desc1 = 6
+num_desc2 = 2, dim = 32, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_one_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.8668, 0.6246, 0.2672, 0.4325, 0.5881, 0.0905, 0.9504, 0.9993, 0.1041,
+         0.0319, 0.3742, 0.2521, 0.67...881, 0.4891, 0.6392, 0.0777, 0.7464, 0.2635, 0.5207, 0.1463, 0.4369,
+         0.9420, 0.8110, 0.6969, 0.5122, 0.0031]])
+desc2 = tensor([[0.5579, 0.0297, 0.6130, 0.6073, 0.1176, 0.8861, 0.9846, 0.3170, 0.2027,
+         0.3126, 0.2364, 0.0635, 0.35...239, 0.4534, 0.5353, 0.2795, 0.6747, 0.1496, 0.2501, 0.5983, 0.4324,
+         0.7970, 0.6681, 0.5049, 0.8845, 0.4243]])
+lafs1 = tensor([[[[0.5570, 0.1363, 0.1633],
+          [0.3053, 0.5655, 0.0535]],
+
+         [[0.5665, 0.4388, 0.7059],
+        ...2539],
+          [0.9599, 0.9083, 0.5841]],
+
+         [[0.6838, 0.1670, 0.8587],
+          [0.8472, 0.8739, 0.6689]]]])
+lafs2 = tensor([[[[0.2365, 0.7788, 0.7403],
+          [0.3137, 0.5066, 0.1773]],
+
+         [[0.6739, 0.5984, 0.7292],
+          [0.0263, 0.0314, 0.9432]]]])
+th = 0.9, spatial_th = 1000, mutual = False
+dm = tensor([[2.3120, 1.9533],
+        [2.6155, 1.9126],
+        [2.3616, 2.3191],
+        [2.5455, 1.9018],
+        [2.2635, 1.7956],
+        [2.3552, 2.1494]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+_________________ TestMatchFGINN.test_shape_two_way[cpu-2-4-4] _________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12eff310>, num_desc1 = 2
+num_desc2 = 4, dim = 4, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_two_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000, mutual=True)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:253: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.5212, 0.4738, 0.3703, 0.3910],
+        [0.0864, 0.6550, 0.9664, 0.4509]])
+desc2 = tensor([[0.4326, 0.1160, 0.0316, 0.4176],
+        [0.4624, 0.5037, 0.9309, 0.0597],
+        [0.0198, 0.4749, 0.1911, 0.6863],
+        [0.0488, 0.4601, 0.0328, 0.0629]])
+lafs1 = tensor([[[[0.5539, 0.7760, 0.3111],
+          [0.6698, 0.7071, 0.4781]],
+
+         [[0.2565, 0.3499, 0.9321],
+          [0.0268, 0.3244, 0.4931]]]])
+lafs2 = tensor([[[[0.6757, 0.3138, 0.5339],
+          [0.3565, 0.4435, 0.9181]],
+
+         [[0.9947, 0.0531, 0.8561],
+        ...8904],
+          [0.4807, 0.3616, 0.7549]],
+
+         [[0.8811, 0.7955, 0.0468],
+          [0.1733, 0.0519, 0.4197]]]])
+th = 0.9, spatial_th = 1000, mutual = True
+dm = tensor([[0.5013, 0.6545, 0.6088, 0.6670],
+        [1.1337, 0.5644, 0.8327, 1.0303]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+________________ TestMatchFGINN.test_shape_two_way[cpu-2-5-128] ________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12eff280>, num_desc1 = 2
+num_desc2 = 5, dim = 128, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_two_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000, mutual=True)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:253: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.9394, 0.8802, 0.5693, 0.5049, 0.5448, 0.8206, 0.2607, 0.6121, 0.1956,
+         0.1885, 0.8252, 0.9263, 0.07...92, 0.3557,
+         0.7261, 0.4581, 0.7246, 0.5524, 0.4882, 0.3959, 0.9031, 0.6479, 0.4715,
+         0.6631, 0.3927]])
+desc2 = tensor([[0.5833, 0.3356, 0.2235, 0.6327, 0.4328, 0.2825, 0.1803, 0.7130, 0.9104,
+         0.6592, 0.7286, 0.6742, 0.16...79, 0.5986,
+         0.7791, 0.0760, 0.5406, 0.2636, 0.1553, 0.2357, 0.3189, 0.4726, 0.5085,
+         0.5566, 0.1505]])
+lafs1 = tensor([[[[0.5243, 0.5215, 0.7113],
+          [0.8018, 0.8275, 0.6573]],
+
+         [[0.5466, 0.7725, 0.1938],
+          [0.0140, 0.4805, 0.4910]]]])
+lafs2 = tensor([[[[0.9729, 0.9046, 0.4340],
+          [0.0510, 0.9535, 0.7869]],
+
+         [[0.9491, 0.7526, 0.5721],
+        ...0055],
+          [0.6642, 0.8312, 0.2209]],
+
+         [[0.3459, 0.1145, 0.3934],
+          [0.4442, 0.7172, 0.8920]]]])
+th = 0.9, spatial_th = 1000, mutual = True
+dm = tensor([[4.6516, 4.5207, 4.5592, 4.6304, 4.5915],
+        [4.7784, 4.0739, 4.1834, 4.8252, 4.6959]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+________________ TestMatchFGINN.test_shape_two_way[cpu-6-2-32] _________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12eff610>, num_desc1 = 6
+num_desc2 = 2, dim = 32, device = device(type='cpu')
+
+    @pytest.mark.parametrize("num_desc1, num_desc2, dim", [(2, 4, 4), (2, 5, 128), (6, 2, 32)])
+    def test_shape_two_way(self, num_desc1, num_desc2, dim, device):
+        desc1 = torch.rand(num_desc1, dim, device=device)
+        desc2 = torch.rand(num_desc2, dim, device=device)
+        lafs1 = torch.rand(1, num_desc1, 2, 3, device=device)
+        lafs2 = torch.rand(1, num_desc2, 2, 3, device=device)
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.9, 1000, mutual=True)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:253: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.6529, 0.8680, 0.0357, 0.5200, 0.9765, 0.4300, 0.2479, 0.5559, 0.9570,
+         0.3030, 0.7639, 0.3685, 0.31...568, 0.8764, 0.1073, 0.3167, 0.8208, 0.0513, 0.8564, 0.4466, 0.9120,
+         0.5593, 0.1409, 0.3731, 0.0478, 0.3585]])
+desc2 = tensor([[0.7314, 0.6934, 0.4069, 0.5912, 0.8092, 0.5227, 0.4920, 0.8130, 0.6875,
+         0.5605, 0.3825, 0.8176, 0.05...705, 0.7426, 0.4776, 0.2091, 0.7265, 0.5422, 0.8810, 0.1984, 0.7040,
+         0.9361, 0.1857, 0.7747, 0.9151, 0.1777]])
+lafs1 = tensor([[[[0.7626, 0.3504, 0.4771],
+          [0.6337, 0.0026, 0.4570]],
+
+         [[0.8723, 0.4213, 0.0451],
+        ...3605],
+          [0.4290, 0.2272, 0.9317]],
+
+         [[0.0389, 0.9103, 0.8099],
+          [0.0207, 0.1744, 0.0906]]]])
+lafs2 = tensor([[[[0.9898, 0.6635, 0.3793],
+          [0.3128, 0.6875, 0.9923]],
+
+         [[0.9439, 0.4979, 0.4069],
+          [0.3710, 0.1241, 0.7985]]]])
+th = 0.9, spatial_th = 1000, mutual = True
+dm = tensor([[1.8112, 2.2177],
+        [2.0738, 2.3770],
+        [1.8736, 2.3020],
+        [2.0502, 2.4172],
+        [1.9203, 2.2849],
+        [2.1225, 2.1719]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+__________________ TestMatchFGINN.test_matching1[cpu-float32] __________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12eff8e0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_matching1(self, device, dtype):
+        desc1 = torch.tensor([[0, 0.0], [1, 1.001], [2, 2], [3, 3.0], [5, 5.0]], dtype=dtype, device=device)
+        desc2 = torch.tensor([[5, 5.0], [3, 3.0], [2.3, 2.4], [1, 1.001], [0, 0.0]], dtype=dtype, device=device)
+        lafs1 = laf_from_center_scale_ori(desc1[None])
+        lafs2 = laf_from_center_scale_ori(desc2[None])
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.8, 0.01)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:266: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.0000, 0.0000],
+        [1.0000, 1.0010],
+        [2.0000, 2.0000],
+        [3.0000, 3.0000],
+        [5.0000, 5.0000]])
+desc2 = tensor([[5.0000, 5.0000],
+        [3.0000, 3.0000],
+        [2.3000, 2.4000],
+        [1.0000, 1.0010],
+        [0.0000, 0.0000]])
+lafs1 = tensor([[[[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]],
+
+         [[1.0000, 0.0000, 1.0000],
+       ...00],
+          [-0.0000, 1.0000, 3.0000]],
+
+         [[1.0000, 0.0000, 5.0000],
+          [-0.0000, 1.0000, 5.0000]]]])
+lafs2 = tensor([[[[1.0000, 0.0000, 5.0000],
+          [-0.0000, 1.0000, 5.0000]],
+
+         [[1.0000, 0.0000, 3.0000],
+       ...00],
+          [-0.0000, 1.0000, 1.0010]],
+
+         [[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]]]])
+th = 0.8, spatial_th = 0.01, mutual = False
+dm = tensor([[7.0711, 4.2426, 3.3242, 1.4149, 0.0000],
+        [5.6561, 2.8277, 1.9098, 0.0000, 1.4149],
+        [4.2426, 1..., 1.4135, 2.8284],
+        [2.8284, 0.0000, 0.9220, 2.8277, 4.2426],
+        [0.0000, 2.8284, 3.7483, 5.6561, 7.0711]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+_______________ TestMatchFGINN.test_matching_mutual[cpu-float32] _______________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12effc10>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_matching_mutual(self, device, dtype):
+        desc1 = torch.tensor([[0, 0.1], [1, 1.001], [2, 2], [3, 3.0], [5, 5.0], [0.0, 0]], dtype=dtype, device=device)
+        desc2 = torch.tensor([[5, 5.0], [3, 3.0], [2.3, 2.4], [1, 1.001], [0, 0.0]], dtype=dtype, device=device)
+        lafs1 = laf_from_center_scale_ori(desc1[None])
+        lafs2 = laf_from_center_scale_ori(desc2[None])
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.8, 2.0, mutual=True)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.0000, 0.1000],
+        [1.0000, 1.0010],
+        [2.0000, 2.0000],
+        [3.0000, 3.0000],
+        [5.0000, 5.0000],
+        [0.0000, 0.0000]])
+desc2 = tensor([[5.0000, 5.0000],
+        [3.0000, 3.0000],
+        [2.3000, 2.4000],
+        [1.0000, 1.0010],
+        [0.0000, 0.0000]])
+lafs1 = tensor([[[[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.1000]],
+
+         [[1.0000, 0.0000, 1.0000],
+       ...00],
+          [-0.0000, 1.0000, 5.0000]],
+
+         [[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]]]])
+lafs2 = tensor([[[[1.0000, 0.0000, 5.0000],
+          [-0.0000, 1.0000, 5.0000]],
+
+         [[1.0000, 0.0000, 3.0000],
+       ...00],
+          [-0.0000, 1.0000, 1.0010]],
+
+         [[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]]]])
+th = 0.8, spatial_th = 2.0, mutual = True
+dm = tensor([[7.0007, 4.1725, 3.2527, 1.3460, 0.1000],
+        [5.6561, 2.8277, 1.9098, 0.0000, 1.4149],
+        [4.2426, 1..., 2.8277, 4.2426],
+        [0.0000, 2.8284, 3.7483, 5.6561, 7.0711],
+        [7.0711, 4.2426, 3.3242, 1.4149, 0.0000]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+___________________ TestMatchFGINN.test_nomatch[cpu-float32] ___________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12efff40>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_nomatch(self, device, dtype):
+        desc1 = torch.tensor([[0, 0.0]], dtype=dtype, device=device)
+        desc2 = torch.tensor([[5, 5.0]], dtype=dtype, device=device)
+        lafs1 = laf_from_center_scale_ori(desc1[None])
+        lafs2 = laf_from_center_scale_ori(desc2[None])
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.8)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:298: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0., 0.]]), desc2 = tensor([[5., 5.]])
+lafs1 = tensor([[[[1., 0., 0.],
+          [-0., 1., 0.]]]])
+lafs2 = tensor([[[[1., 0., 5.],
+          [-0., 1., 5.]]]]), th = 0.8
+spatial_th = 10.0, mutual = False, dm = tensor([[7.0711]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+__________________ TestMatchFGINN.test_matching2[cpu-float32] __________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12d2c2b0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_matching2(self, device, dtype):
+        desc1 = torch.tensor([[0, 0.0], [1, 1.001], [2, 2], [3, 3.0], [5, 5.0]], dtype=dtype, device=device)
+        desc2 = torch.tensor([[5, 5.0], [3, 3.0], [2.3, 2.4], [1, 1.001], [0, 0.0]], dtype=dtype, device=device)
+        lafs1 = laf_from_center_scale_ori(desc1[None])
+        lafs2 = laf_from_center_scale_ori(desc2[None])
+    
+>       dists, idxs = match_fginn(desc1, desc2, lafs1, lafs2, 0.8, 2.0)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:308: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.0000, 0.0000],
+        [1.0000, 1.0010],
+        [2.0000, 2.0000],
+        [3.0000, 3.0000],
+        [5.0000, 5.0000]])
+desc2 = tensor([[5.0000, 5.0000],
+        [3.0000, 3.0000],
+        [2.3000, 2.4000],
+        [1.0000, 1.0010],
+        [0.0000, 0.0000]])
+lafs1 = tensor([[[[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]],
+
+         [[1.0000, 0.0000, 1.0000],
+       ...00],
+          [-0.0000, 1.0000, 3.0000]],
+
+         [[1.0000, 0.0000, 5.0000],
+          [-0.0000, 1.0000, 5.0000]]]])
+lafs2 = tensor([[[[1.0000, 0.0000, 5.0000],
+          [-0.0000, 1.0000, 5.0000]],
+
+         [[1.0000, 0.0000, 3.0000],
+       ...00],
+          [-0.0000, 1.0000, 1.0010]],
+
+         [[1.0000, 0.0000, 0.0000],
+          [-0.0000, 1.0000, 0.0000]]]])
+th = 0.8, spatial_th = 2.0, mutual = False
+dm = tensor([[7.0711, 4.2426, 3.3242, 1.4149, 0.0000],
+        [5.6561, 2.8277, 1.9098, 0.0000, 1.4149],
+        [4.2426, 1..., 1.4135, 2.8284],
+        [2.8284, 0.0000, 0.9220, 2.8277, 4.2426],
+        [0.0000, 2.8284, 3.7483, 5.6561, 7.0711]])
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+______________________ TestMatchFGINN.test_gradcheck[cpu] ______________________
+
+self = <test_matching.TestMatchFGINN object at 0x7d8b12d2c580>
+device = device(type='cpu')
+
+    def test_gradcheck(self, device):
+        desc1 = torch.rand(5, 8, device=device, dtype=torch.float64)
+        desc2 = torch.rand(7, 8, device=device, dtype=torch.float64)
+        center1 = torch.rand(1, 5, 2, device=device, dtype=torch.float64)
+        center2 = torch.rand(1, 7, 2, device=device, dtype=torch.float64)
+        lafs1 = laf_from_center_scale_ori(center1)
+        lafs2 = laf_from_center_scale_ori(center2)
+>       self.gradcheck(match_fginn, (desc1, desc2, lafs1, lafs2, 0.8, 0.05), nondet_tol=1e-4)
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:325: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/feature/matching.py:199: in match_fginn
+    return match_fginn(desc1, desc2, lafs1, lafs2, th, spatial_th, mutual, dm)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+desc1 = tensor([[0.8383, 0.9706, 0.8864, 0.0156, 0.0945, 0.5639, 0.7606, 0.7665],
+        [0.9400, 0.6362, 0.7236, 0.7667, 0.3...     [0.6058, 0.6064, 0.2200, 0.3218, 0.8148, 0.0955, 0.5514, 0.3650]],
+       dtype=torch.float64, requires_grad=True)
+desc2 = tensor([[0.6732, 0.8453, 0.4830, 0.5073, 0.8523, 0.3137, 0.9620, 0.2999],
+        [0.2977, 0.7071, 0.7791, 0.6815, 0.9...     [0.3017, 0.6453, 0.8383, 0.7183, 0.5777, 0.2063, 0.9019, 0.4959]],
+       dtype=torch.float64, requires_grad=True)
+lafs1 = tensor([[[[1.0000, 0.0000, 0.7790],
+          [-0.0000, 1.0000, 0.3126]],
+
+         [[1.0000, 0.0000, 0.4958],
+       ...     [[1.0000, 0.0000, 0.4388],
+          [-0.0000, 1.0000, 0.8119]]]], dtype=torch.float64,
+       requires_grad=True)
+lafs2 = tensor([[[[1.0000, 0.0000, 0.8186],
+          [-0.0000, 1.0000, 0.9879]],
+
+         [[1.0000, 0.0000, 0.3207],
+       ...     [[1.0000, 0.0000, 0.5585],
+          [-0.0000, 1.0000, 0.8250]]]], dtype=torch.float64,
+       requires_grad=True)
+th = 0.8, spatial_th = 0.05, mutual = False
+dm = tensor([[1.1587, 1.5721, 1.5489, 1.5394, 1.2596, 1.0390, 1.1595],
+        [1.0947, 0.8931, 1.2082, 1.0951, 0.9193, 0.7...       [0.6222, 1.1761, 1.0776, 0.8929, 0.5514, 0.7530, 0.9176]],
+       dtype=torch.float64, grad_fn=<CdistBackward0>)
+
+    def match_fginn(desc1: Tensor, desc2: Tensor, lafs1: Tensor, lafs2: Tensor, th: float=0.8, spatial_th: float=10.0, mutual: bool=False, dm: Optional[Tensor]=None) -> Tuple[Tensor, Tensor]:
+        if dm is None:
+            dm = torch.cdist(desc1, desc2, p=2)
+        min_dist, min_idx = torch.min(dm, dim=1)
+        valid_matches = min_dist < th
+        if spatial_th is not None:
+>           spatial_dist = torch.cdist(lafs1[:, :2, 2], lafs2[:, :2, 2], p=2)
+E           IndexError: index 2 is out of bounds for dimension 2 with size 2
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:19: IndexError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu]
+======================== 11 failed, 1 skipped in 0.66s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'onnxrt', 'openxla', 'tvm', 'cudagraphs', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_jit[cpu-float32] SKIPPED
+
+======================== 11 passed, 1 skipped in 0.17s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'onnxrt', 'jit', 'openxla', 'cudagraphs', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_one_way[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_shape_two_way[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching_mutual[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_nomatch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_matching2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchFGINN::test_jit[cpu-float32] SKIPPED
+
+======================== 11 passed, 1 skipped in 0.20s =========================

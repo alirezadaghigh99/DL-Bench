@@ -1,0 +1,96 @@
+output file:
+processed_classes-pytorch-widedeepforward31.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] PASSED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] PASSED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] PASSED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] PASSED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] PASSED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] PASSED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] PASSED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] PASSED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] PASSED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+============================== 17 passed in 3.64s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] PASSED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] PASSED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] PASSED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] PASSED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] PASSED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] PASSED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] PASSED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] PASSED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] PASSED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+============================== 17 passed in 3.65s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] PASSED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] PASSED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] PASSED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] PASSED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] PASSED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] PASSED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] PASSED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] PASSED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] PASSED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+============================== 17 passed in 3.95s ==============================

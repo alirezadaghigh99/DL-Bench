@@ -1,0 +1,305 @@
+output file:
+processed_classes-kornia_compute_projection28.json
+function:
+_compute_projection
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] FAILED [ 64%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] FAILED [ 78%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] FAILED [ 71%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] FAILED [ 85%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'tvm', 'onnxrt', 'cudagraphs', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] PASSED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] PASSED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] FAILED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] FAILED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] FAILED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] FAILED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] PASSED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] PASSED [100%]
+
+=================================== FAILURES ===================================
+____________ TestDepthWarper.test_compute_projection[cpu-float32-1] ____________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x797be9efe8c0>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        warper.compute_projection_matrix(pinhole_src)
+    
+        # test compute_projection
+>       xy_projected = warper._compute_projection(0.0, 0.0, 1.0)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper(), x = 0.0, y = 0.0, invd = 1.0
+
+    def _compute_projection(self, x: float, y: float, invd: float) -> Tensor:
+        if self._dst_proj_src is None or self._pinhole_src is None:
+            raise ValueError('Projection matrix or source pinhole camera is not initialized.')
+        point_src = torch.tensor([x, y, 1.0], dtype=torch.float32)
+        depth = 1.0 / (invd + self.eps)
+        point_src_homogeneous = point_src * depth
+>       point_dst_homogeneous = self._dst_proj_src @ point_src_homogeneous
+E       RuntimeError: size mismatch, got input (4), mat (4x4), vec (3)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:243: RuntimeError
+____________ TestDepthWarper.test_compute_projection[cpu-float32-2] ____________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x797be9efda20>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        warper.compute_projection_matrix(pinhole_src)
+    
+        # test compute_projection
+>       xy_projected = warper._compute_projection(0.0, 0.0, 1.0)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper(), x = 0.0, y = 0.0, invd = 1.0
+
+    def _compute_projection(self, x: float, y: float, invd: float) -> Tensor:
+        if self._dst_proj_src is None or self._pinhole_src is None:
+            raise ValueError('Projection matrix or source pinhole camera is not initialized.')
+        point_src = torch.tensor([x, y, 1.0], dtype=torch.float32)
+        depth = 1.0 / (invd + self.eps)
+        point_src_homogeneous = point_src * depth
+>       point_dst_homogeneous = self._dst_proj_src @ point_src_homogeneous
+E       RuntimeError: size mismatch, got input (8), mat (8x4), vec (3)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:243: RuntimeError
+__________ TestDepthWarper.test_compute_subpixel_step[cpu-float32-1] ___________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x797be9efed70>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_subpixel_step(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        warper.compute_projection_matrix(pinhole_src)
+    
+        # test compute_subpixel_step
+>       subpixel_step = warper.compute_subpixel_step()
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/depth.py:256: in compute_subpixel_step
+    xy_m1 = self._compute_projection(self.width / 2, self.height / 2, 1.0 - delta_d)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper(), x = 2.5, y = 1.5, invd = 0.99
+
+    def _compute_projection(self, x: float, y: float, invd: float) -> Tensor:
+        if self._dst_proj_src is None or self._pinhole_src is None:
+            raise ValueError('Projection matrix or source pinhole camera is not initialized.')
+        point_src = torch.tensor([x, y, 1.0], dtype=torch.float32)
+        depth = 1.0 / (invd + self.eps)
+        point_src_homogeneous = point_src * depth
+>       point_dst_homogeneous = self._dst_proj_src @ point_src_homogeneous
+E       RuntimeError: size mismatch, got input (4), mat (4x4), vec (3)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:243: RuntimeError
+__________ TestDepthWarper.test_compute_subpixel_step[cpu-float32-2] ___________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x797be9efecb0>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_subpixel_step(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        warper.compute_projection_matrix(pinhole_src)
+    
+        # test compute_subpixel_step
+>       subpixel_step = warper.compute_subpixel_step()
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/depth.py:256: in compute_subpixel_step
+    xy_m1 = self._compute_projection(self.width / 2, self.height / 2, 1.0 - delta_d)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper(), x = 2.5, y = 1.5, invd = 0.99
+
+    def _compute_projection(self, x: float, y: float, invd: float) -> Tensor:
+        if self._dst_proj_src is None or self._pinhole_src is None:
+            raise ValueError('Projection matrix or source pinhole camera is not initialized.')
+        point_src = torch.tensor([x, y, 1.0], dtype=torch.float32)
+        depth = 1.0 / (invd + self.eps)
+        point_src_homogeneous = point_src * depth
+>       point_dst_homogeneous = self._dst_proj_src @ point_src_homogeneous
+E       RuntimeError: size mismatch, got input (8), mat (8x4), vec (3)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:243: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2]
+========================= 4 failed, 10 passed in 0.24s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'onnxrt', 'inductor', 'openxla', 'cudagraphs', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] PASSED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] PASSED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] PASSED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] PASSED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] PASSED [100%]
+
+============================== 14 passed in 0.16s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'inductor', 'jit', 'tvm', 'openxla', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] PASSED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] PASSED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] PASSED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] PASSED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] PASSED [100%]
+
+============================== 14 passed in 0.18s ==============================

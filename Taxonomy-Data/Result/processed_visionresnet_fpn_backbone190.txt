@@ -1,0 +1,179 @@
+output file:
+processed_visionresnet_fpn_backbone190.json
+function:
+resnet_fpn_backbone
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] FAILED', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]', '../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] FAILED', '../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] FAILED', '../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] FAILED', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]', 'FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]', '../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] FAILED', '../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 6 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] FAILED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] FAILED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] FAILED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] FAILED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] FAILED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] FAILED
+
+=================================== FAILURES ===================================
+____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[0-53] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[1-43] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[2-24] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[3-11] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+_____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[4-1] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+_____ TestModelsDetectionUtils.test_resnet_fpn_backbone_frozen_layers[5-0] _____
+../publishablew/vision/vision/test/test_models_detection_utils.py:43: in test_resnet_fpn_backbone_frozen_layers
+    model = backbone_utils.resnet_fpn_backbone("resnet50", weights=None, trainable_layers=train_layers)
+../publishablew/vision/vision/torchvision/models/_utils.py:142: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/_utils.py:228: in inner_wrapper
+    return builder(*args, **kwargs)
+../publishablew/vision/vision/torchvision/models/detection/backbone_utils.py:45: in resnet_fpn_backbone
+    from .temp import resnet_fpn_backbone
+../publishablew/vision/vision/torchvision/models/detection/temp.py:12: in <module>
+    from torchvision.models.detection.faster_rcnn import LastLevelMaxPool
+E   ImportError: cannot import name 'LastLevelMaxPool' from 'torchvision.models.detection.faster_rcnn' (/local/data0/moved_data/publishablew/vision/vision/torchvision/models/detection/faster_rcnn.py)
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+FAILED ../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+======================== 6 failed, 6 warnings in 0.15s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 6 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] PASSED
+
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 6 warnings in 1.32s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 6 items
+
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1] PASSED
+../publishablew/vision/vision/test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0] PASSED
+
+=============================== warnings summary ===============================
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[0-53]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[1-43]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[2-24]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[3-11]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[4-1]
+test/test_models_detection_utils.py::TestModelsDetectionUtils::test_resnet_fpn_backbone_frozen_layers[5-0]
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/models/_utils.py:135: UserWarning: Using 'backbone_name' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 6 warnings in 1.43s =========================

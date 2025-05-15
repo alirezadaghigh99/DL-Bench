@@ -1,0 +1,218 @@
+output file:
+processed_korniadraw_point2d293.json
+function:
+draw_point2d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32]', '../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'inductor', 'tvm', 'onnxrt', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_rgb[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_third_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_second_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dtype[cpu] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32] FAILED
+
+=================================== FAILURES ===================================
+______ TestDrawPoint.test_draw_point2d_with_mismatched_dims[cpu-float32] _______
+
+self = <test_draw.TestDrawPoint object at 0x7495dd2f1c90>, dtype = torch.float32
+device = device(type='cpu')
+
+    def test_draw_point2d_with_mismatched_dims(self, dtype, device):
+        """Test that we raise if the len of the color tensor != the # of image channels."""
+        points = torch.tensor([(1, 3), (2, 4)], device=device)
+        color = torch.tensor([100], dtype=dtype, device=device)
+        img = torch.zeros(3, 8, 8, dtype=dtype, device=device)
+>       with pytest.raises(Exception):
+E       Failed: DID NOT RAISE <class 'Exception'>
+
+../publishablew/kornia/kornia/tests/utils/test_draw.py:47: Failed
+____ TestDrawPoint.test_draw_point2d_with_singleton_color_dims[cpu-float32] ____
+
+self = <test_draw.TestDrawPoint object at 0x7495dd2f2020>, dtype = torch.float32
+device = device(type='cpu')
+
+    def test_draw_point2d_with_singleton_color_dims(self, dtype, device):
+        """Ensure that plotting behavior is consistent if we have a singleton dim for the color."""
+        points = torch.tensor([(1, 3), (2, 4)], device=device)
+        # Plot given a color tensor of shape [3]
+        color_vec = torch.tensor([5, 10, 15], dtype=torch.float32, device=device)
+        vec_img = torch.zeros(3, 8, 8, dtype=torch.uint8, device=device)
+        drawn_vec_img = draw_point2d(vec_img, points, color_vec)
+        # Plot given a color tensor of shape [3, 1]
+        color_mat = torch.unsqueeze(color_vec, dim=1)
+        mat_img = vec_img.clone()
+>       drawn_mat_img = draw_point2d(mat_img, points, color_mat)
+
+../publishablew/kornia/kornia/tests/utils/test_draw.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/utils/draw.py:8: in draw_point2d
+    return draw_point2d(image, points, color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[ 0,  0,  0,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0... 0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0,  0,  0],
+         [ 0,  0,  0,  0,  0,  0,  0,  0]]], dtype=torch.uint8)
+points = tensor([[1, 3],
+        [2, 4]])
+color = tensor([[ 5.],
+        [10.],
+        [15.]])
+
+    def draw_point2d(image, points, color):
+        """
+        Draws points on an image tensor with the specified color.
+    
+        Parameters:
+        - image: numpy.ndarray, the image tensor, either (H, W) for grayscale or (C, H, W) for multi-channel.
+        - points: list of tuples, each tuple is (x, y) representing the coordinates to be colored.
+        - color: numpy.ndarray or scalar, the color to set at the specified points. Should match the image's channels.
+    
+        Returns:
+        - numpy.ndarray, the modified image with points colored.
+        """
+        if image.ndim == 2:
+            H, W = image.shape
+            for x, y in points:
+                if 0 <= x < W and 0 <= y < H:
+                    image[y, x] = color
+        elif image.ndim == 3:
+            C, H, W = image.shape
+            for x, y in points:
+                if 0 <= x < W and 0 <= y < H:
+>                   image[:, y, x] = color
+E                   RuntimeError: expand(torch.FloatTensor{[3, 1]}, size=[3]): the number of sizes provided (1) must be greater or equal to the number of dimensions in the tensor (2)
+
+../publishablew/kornia/kornia/kornia/utils/temp.py:28: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32]
+========================= 2 failed, 4 passed in 0.33s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'openxla', 'inductor', 'cudagraphs', 'onnxrt', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_rgb[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_third_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_second_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dtype[cpu] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32] PASSED
+
+============================== 6 passed in 0.17s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'tvm', 'cudagraphs', 'onnxrt', None, 'openxla'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_rgb[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_third_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_grayscale_second_order[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_mismatched_dtype[cpu] PASSED
+../publishablew/kornia/kornia/tests/utils/test_draw.py::TestDrawPoint::test_draw_point2d_with_singleton_color_dims[cpu-float32] PASSED
+
+============================== 6 passed in 0.14s ===============================

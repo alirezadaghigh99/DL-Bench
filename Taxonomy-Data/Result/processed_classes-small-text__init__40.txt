@@ -1,0 +1,226 @@
+output file:
+processed_classes-small-text__init__40.json
+function:
+__init__
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific FAILED [ 66%]', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific', '../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding FAILED [100%]', '../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default FAILED [ 33%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 3 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default FAILED [ 33%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific FAILED [ 66%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding FAILED [100%]
+
+=================================== FAILURES ===================================
+_________________ KimCNNInitTest.test_init_parameters_default __________________
+
+self = <tests.unit.small_text.integrations.pytorch.models.test_kimcnn.KimCNNInitTest testMethod=test_init_parameters_default>
+
+    def test_init_parameters_default(self):
+    
+        vocab_size = 1000
+        max_seq_length = 50
+    
+        model = KimCNN(vocab_size, max_seq_length)
+    
+        pool_sizes = [(47, 1), (46, 1), (45, 1)]
+    
+        # Parameters
+>       self.assertEqual(100, model.out_channels)
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = KimCNN(
+  (embedding): Embedding(1000, 300, padding_idx=0)
+  (convs): ModuleList(
+    (0): Conv2d(1, 100, kernel_size=...ide=(1, 1))
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (fc): Linear(in_features=300, out_features=2, bias=True)
+)
+name = 'out_channels'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'KimCNN' object has no attribute 'out_channels'
+
+../publishablew/small-text/small-text/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_________________ KimCNNInitTest.test_init_parameters_specific _________________
+
+self = <tests.unit.small_text.integrations.pytorch.models.test_kimcnn.KimCNNInitTest testMethod=test_init_parameters_specific>
+
+    def test_init_parameters_specific(self):
+        vocab_size = 1000
+        max_seq_length = 50
+    
+        num_classes = 3
+        out_channels = 200
+        embed_dim = 150
+        padding_idx = 1
+        kernel_heights = [4, 5]
+        fc_dropout = 0.1
+        embedding_matrix = None
+        freeze_embedding_layer = True
+    
+        pool_sizes = [(46, 1), (45, 1)]
+    
+        model = KimCNN(vocab_size, max_seq_length, num_classes=num_classes,
+                       out_channels=out_channels, embed_dim=embed_dim, padding_idx=padding_idx,
+                       kernel_heights=kernel_heights, dropout=fc_dropout,
+                       embedding_matrix=embedding_matrix,
+                       freeze_embedding_layer=freeze_embedding_layer)
+    
+        # Parameters
+>       self.assertEqual(out_channels, model.out_channels)
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = KimCNN(
+  (embedding): Embedding(1000, 150, padding_idx=1)
+  (convs): ModuleList(
+    (0): Conv2d(1, 200, kernel_size=...ide=(1, 1))
+  )
+  (dropout): Dropout(p=0.1, inplace=False)
+  (fc): Linear(in_features=400, out_features=3, bias=True)
+)
+name = 'out_channels'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'KimCNN' object has no attribute 'out_channels'
+
+../publishablew/small-text/small-text/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+___________________ KimCNNInitTest.test_init_with_embedding ____________________
+
+self = <tests.unit.small_text.integrations.pytorch.models.test_kimcnn.KimCNNInitTest testMethod=test_init_with_embedding>
+
+    def test_init_with_embedding(self):
+    
+        vocab_size = 1000
+        max_seq_length = 50
+    
+        fake_embedding = torch.rand(1000, 100, device='cpu')
+    
+        pool_sizes = [(47, 1), (46, 1), (45, 1)]
+    
+        model = KimCNN(vocab_size, max_seq_length, embedding_matrix=fake_embedding)
+    
+        # Parameters
+>       self.assertEqual(100, model.out_channels)
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = KimCNN(
+  (embedding): Embedding(1000, 100, padding_idx=0)
+  (convs): ModuleList(
+    (0): Conv2d(1, 100, kernel_size=...ide=(1, 1))
+  )
+  (dropout): Dropout(p=0.5, inplace=False)
+  (fc): Linear(in_features=300, out_features=2, bias=True)
+)
+name = 'out_channels'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'KimCNN' object has no attribute 'out_channels'
+
+../publishablew/small-text/small-text/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=============================== warnings summary ===============================
+tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/integrations/pytorch/models/kimcnn.py:19: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    self.embedding = nn.Embedding.from_pretrained(torch.tensor(embedding_matrix, dtype=torch.float32), freeze=freeze_embedding_layer, padding_idx=padding_idx)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding
+========================= 3 failed, 1 warning in 1.69s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 3 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default PASSED [ 33%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific PASSED [ 66%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding PASSED [100%]
+
+============================== 3 passed in 1.45s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 3 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_default PASSED [ 33%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_parameters_specific PASSED [ 66%]
+../publishablew/small-text/small-text/tests/unit/small_text/integrations/pytorch/models/test_kimcnn.py::KimCNNInitTest::test_init_with_embedding PASSED [100%]
+
+============================== 3 passed in 1.51s ===============================

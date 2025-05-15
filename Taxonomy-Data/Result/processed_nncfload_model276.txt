@@ -1,0 +1,516 @@
+output file:
+processed_nncfload_model276.json
+function:
+load_model
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok FAILED', 'FAILED ../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok'}
+
+All Test Cases On Generated code:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 56 items
+
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok FAILED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_larger_to_smaller WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([1, 1, 2, 2])) and in model (torch.Size([2, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.bias",
+		"conv.weight". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_skip_padding_value WARNING:nncf:The optional parameter conv.nncf_padding_value is missing in the loaded state.
+INFO:nncf:Loaded 2/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_load_padding_value INFO:nncf:Loaded 3/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_smaller_to_larger WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([2, 1, 2, 2])) and in model (torch.Size([1, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([2])) and in model (torch.Size([1]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.bias",
+		"conv.weight". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__resume] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2-4__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Unexpected key(s):
+		"4". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__module.1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-module.2__TO__1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-module.2__TO__1-2.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.0.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.1.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-module.pre_ops.1.op.2__TO__module.pre_ops.0.op.1|OUTPUT-pre_ops.6.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-module.1__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[relu_0.op1-relu_0.op2__TO__relu_0|OUTPUT.op1-relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.RELU_0.op1-_nncf.external_quantizers.RELU_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0|OUTPUT.op1-_nncf.external_quantizers.relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op2-module._nncf.external_quantizers.relu_2.prx_op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_3.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0.op1-_nncf.external_quantizers.relu_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu__0|OUTPUT.op1-_nncf.external_quantizers.relu__0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+module.1
+2.2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+module.1
+2.2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume2] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume3] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[__TO__op1__resume] WARNING:nncf:The optional parameter op1 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op2.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2-prx.op2.sfx__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op1-prx.op2__TO__op1.sfx-prx.op1-prx.op2.sfx__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx_op1-prx_op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx_op1-prx_op2__TO__op1.sfx-prx_op1-prx.op2.sfx__resume] PASSED
+
+=================================== FAILURES ===================================
+___________________________ test_export_sq_11_is_ok ____________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-97/test_export_sq_11_is_ok0')
+
+    def test_export_sq_11_is_ok(tmp_path):
+        test_path = str(tmp_path.joinpath("test.onnx"))
+>       model = load_model("squeezenet1_1", pretrained=False)
+
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/examples/torch/common/model_loader.py:18: in load_model
+    return load_model(model, pretrained, num_classes, model_params, weights_path)
+../publishablew/nncf/nncf/examples/torch/common/temp.py:47: in load_model
+    model.classifier[-1] = torch.nn.Linear(model.classifier[-1].in_features, num_classes)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = AdaptiveAvgPool2d(output_size=(1, 1)), name = 'in_features'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'AdaptiveAvgPool2d' object has no attribute 'in_features'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=============================== warnings summary ===============================
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+    warnings.warn(
+
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+    warnings.warn(msg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok
+=================== 1 failed, 55 passed, 2 warnings in 1.58s ===================
+
+
+Final Test Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 56 items
+
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok Loading model: squeezenet1_1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_larger_to_smaller WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([1, 1, 2, 2])) and in model (torch.Size([2, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.bias",
+		"conv.weight". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_skip_padding_value WARNING:nncf:The optional parameter conv.nncf_padding_value is missing in the loaded state.
+INFO:nncf:Loaded 2/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_load_padding_value INFO:nncf:Loaded 3/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_smaller_to_larger WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([2, 1, 2, 2])) and in model (torch.Size([1, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([2])) and in model (torch.Size([1]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.bias",
+		"conv.weight". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__resume] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2-4__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Unexpected key(s):
+		"4". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__module.1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-module.2__TO__1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-module.2__TO__1-2.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.0.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.1.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-module.pre_ops.1.op.2__TO__module.pre_ops.0.op.1|OUTPUT-pre_ops.6.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-module.1__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[relu_0.op1-relu_0.op2__TO__relu_0|OUTPUT.op1-relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.RELU_0.op1-_nncf.external_quantizers.RELU_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0|OUTPUT.op1-_nncf.external_quantizers.relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op2-module._nncf.external_quantizers.relu_2.prx_op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_3.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0.op1-_nncf.external_quantizers.relu_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu__0|OUTPUT.op1-_nncf.external_quantizers.relu__0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+module.1
+2.2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+module.1
+2.2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume2] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume3] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[__TO__op1__resume] WARNING:nncf:The optional parameter op1 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op2.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2-prx.op2.sfx__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op1-prx.op2__TO__op1.sfx-prx.op1-prx.op2.sfx__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx_op1-prx_op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx_op1-prx_op2__TO__op1.sfx-prx_op1-prx.op2.sfx__resume] PASSED
+
+=============================== warnings summary ===============================
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+    warnings.warn(
+
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+    warnings.warn(msg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 56 passed, 2 warnings in 1.60s ========================
+
+
+Initial Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 56 items
+
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_export_sq_11_is_ok Loading model: squeezenet1_1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_larger_to_smaller WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([1, 1, 2, 2])) and in model (torch.Size([2, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.weight",
+		"conv.bias". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_skip_padding_value WARNING:nncf:The optional parameter conv.nncf_padding_value is missing in the loaded state.
+INFO:nncf:Loaded 2/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_can_load_padding_value INFO:nncf:Loaded 3/3 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_load_state_skips_not_matched_params__from_smaller_to_larger WARNING:nncf:Different size of value of 'conv.weight' in resuming dictionary (torch.Size([2, 1, 2, 2])) and in model (torch.Size([1, 1, 2, 2]))
+WARNING:nncf:Different size of value of 'conv.bias' in resuming dictionary (torch.Size([2])) and in model (torch.Size([1]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"conv.weight",
+		"conv.bias". 
+INFO:nncf:Loaded 0/2 parameters
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__resume] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2-4__TO__1-2-3] WARNING:nncf:Different size of value of '1' in resuming dictionary (torch.Size([1])) and in model (torch.Size([2]))
+ERROR:nncf:Error(s) when loading model parameters:
+	Size mismatched key(s):
+		"1". 
+	Unexpected key(s):
+		"4". 
+	Missing key(s):
+		"3". 
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__module.1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-module.2__TO__1-module.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-module.2__TO__1-2.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.0.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-pre_ops.1.op.2__TO__pre_ops.1.op.1-pre_ops.1.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1-1__TO__module.1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[pre_ops.0.op.1-module.pre_ops.1.op.2__TO__module.pre_ops.0.op.1|OUTPUT-pre_ops.6.op.2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__module.1-1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-module.1__TO__1__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[relu_0.op1-relu_0.op2__TO__relu_0|OUTPUT.op1-relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.RELU_0.op1-_nncf.external_quantizers.RELU_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0|OUTPUT.op1-_nncf.external_quantizers.relu_0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_1.op2-module._nncf.external_quantizers.relu_2.prx_op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.relu_0.op1-module._nncf.external_quantizers.relu_3.op1-module._nncf.external_quantizers.relu_2.op1__TO___nncf.external_quantizers.relu_0|OUTPUT;relu_2|OUTPUT;relu_1|OUTPUT.op1__resume] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu_0.op1-_nncf.external_quantizers.relu_0.op2__TO__conv2d.weight-RELUModule.weight-_nncf.external_quantizers.relu__0|OUTPUT.op1-_nncf.external_quantizers.relu__0|INPUT.op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume0] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2.2
+module.1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume0] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1-2__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1-2__TO__1__IGNORE__2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[1__TO__1__IGNORE__1__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module.1.1-2.2__TO__module.1-module.2__IGNORE__1-2.2__resume1] WARNING:nncf:Following parameters were skipped from matching checkpoint's keys:
+2.2
+module.1
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume2] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_1|OUTPUT.op1__resume3] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_1.op2-module._nncf.external_quantizers.RELU_2.prx_op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[module._nncf.external_quantizers.RELU_0.op1-module._nncf.external_quantizers.RELU_3.op1-module._nncf.external_quantizers.RELU_2.op1__TO___nncf.external_quantizers.RELU_0|OUTPUT;RELU_2|OUTPUT;RELU_1|OUTPUT.op1__resume1] WARNING:nncf:Unified parameters are detected in the compressed model, but all parameters are independent and separate in the loading checkpoint. The unified parameters will be initialized by one ofthe corresponding separate parameter in the checkpoint. That may slightly degrade the accuracy, but should allow to not start training compression from scratch with unified params.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[__TO__op1__resume] WARNING:nncf:The optional parameter op1 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op2.sfx__TO__op1.sfx-prx.op1-prx.op2__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx.op1-prx.op2-prx.op2.sfx__resume] WARNING:nncf:The optional parameter prx.op1 is missing in the loaded state.
+WARNING:nncf:The optional parameter prx.op2 is missing in the loaded state.
+PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx.op1-prx.op2__TO__op1.sfx-prx.op1-prx.op2.sfx__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx__TO__op1.sfx-prx_op1-prx_op2__resume] PASSED
+../publishablew/nncf/nncf/tests/torch/test_load_model_state.py::test_match_key[op1.sfx-prx_op1-prx_op2__TO__op1.sfx-prx_op1-prx.op2.sfx__resume] PASSED
+
+=============================== warnings summary ===============================
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+    warnings.warn(
+
+test_load_model_state.py::test_export_sq_11_is_ok
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+    warnings.warn(msg)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 56 passed, 2 warnings in 2.21s ========================

@@ -1,0 +1,353 @@
+output file:
+processed_pennylaneextract_tensors309.json
+function:
+extract_tensors
+Error Cases:
+ERROR: while parsing the following warning configuration:
+
+  error::pennylane.PennyLaneDeprecationWarning
+
+This error occurred:
+
+Traceback (most recent call last):
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/_pytest/config/__init__.py", line 1918, in parse_warning_filter
+    category: type[Warning] = _resolve_warning_category(category_)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/_pytest/config/__init__.py", line 1956, in _resolve_warning_category
+    m = __import__(module, None, None, [klass])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/__init__.py", line 142, in <module>
+    from pennylane.gradients import metric_tensor, adjoint_metric_tensor
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/gradients/__init__.py", line 349, in <module>
+    from .fisher import classical_fisher, quantum_fisher
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/gradients/fisher.py", line 20, in <module>
+    from pennylane.devices import DefaultQubit
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/devices/__init__.py", line 162, in <module>
+    from .default_qutrit_mixed import DefaultQutritMixed
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/devices/default_qutrit_mixed.py", line 44, in <module>
+    from .qutrit_mixed.simulate import simulate
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/devices/qutrit_mixed/__init__.py", line 34, in <module>
+    from .apply_operation import apply_operation
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/devices/qutrit_mixed/apply_operation.py", line 25, in <module>
+    from .utils import QUDIT_DIM, get_einsum_mapping, get_new_state_einsum_indices
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/devices/qutrit_mixed/utils.py", line 22, in <module>
+    alphabet_array = np.array(list(alphabet))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/numpy/wrapper.py", line 86, in _wrapped
+    tensor_args = list(extract_tensors(args))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/numpy/temp.py", line 22, in extract_tensors
+    yield from extract_tensors1(item)
+               ^^^^^^^^^^^^^^^^
+NameError: name 'extract_tensors1' is not defined
+
+
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 131 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_letters PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices_raises_too_few_wires PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices_raises_too_many_wires PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax_pauli_generated[True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax_pauli_generated[False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf_pauli_generated SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch_pauli_generated SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_unknown_interface PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_broadcasting PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[1-True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[1-False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[2-True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[2-False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[1-theta0-expected0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta1-expected1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta2-expected2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta3-expected3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta4-expected4] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_numpy[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_numpy[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_broadcasted_numpy[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_broadcasted_numpy[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_jax[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_jax[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_torch[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_torch[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_tf[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_tf[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_adjoint[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_adjoint[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta0-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[9.421-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta2-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta3-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_jax_jit SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_jax_jit_broadcasted SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_tf_function SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_numpy[DefaultQubit] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_autograd[DefaultQubit] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[None-1e-06-False-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[None-1e-06-True-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[10000-0.1-False-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[10000-0.1-True-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_torch[None-1e-06-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_torch[10000-0.1-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_tf[None-1e-06-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_tf[10000-0.1-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_has_matrix_false PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_has_grad_method PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_repr PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[YYY] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_jax SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_tf SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_torch SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-YYY] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-YYY] PASSED
+
+=============================== warnings summary ===============================
+ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_autograd
+  /local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/tracer.py:14: UserWarning: Output seems independent of input.
+    warnings.warn("Output seems independent of input.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 60 passed, 71 skipped, 1 warning in 1.85s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 131 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_letters PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices_raises_too_few_wires PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_matrices_raises_too_many_wires PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestPauliUtils::test_pauli_basis_strings[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[True-3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax[False-3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax_pauli_generated[True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_jax_pauli_generated[False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_tf_pauli_generated SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_torch_pauli_generated SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_unknown_interface PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGenerators::test_raises_broadcasting PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[1-True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[1-False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[2-True] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_jax[2-False] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_jacobian_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterGeneratorsDiffability::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_jax[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_tf[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[2] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_torch[3] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestGetOneParameterCoeffs::test_raises_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[1-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[2-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random[3-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_many_wires[tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[1-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-None] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_random_broadcasted[2-tf] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_single_param[3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[1-theta0-expected0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta1-expected1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta2-expected2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta3-expected3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases[2-theta4-expected4] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_compute_matrix_special_cases_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_numpy[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_numpy[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_broadcasted_numpy[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_broadcasted_numpy[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_jax[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_jax[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_torch[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_torch[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_tf[1-theta0] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_decomposition_tf[2-theta1] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_adjoint[1-theta0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_adjoint[2-theta1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta0-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[9.421-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta2-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_wrong_input_shape[theta3-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_jax_jit SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_jax_jit_broadcasted SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitary::test_tf_function SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_numpy[DefaultQubit] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_autograd[DefaultQubit] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[None-1e-06-False-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[None-1e-06-True-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[10000-0.1-False-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_jax[10000-0.1-True-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_torch[None-1e-06-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_torch[10000-0.1-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_tf[None-1e-06-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestSpecialUnitaryIntegration::test_qnode_tf[10000-0.1-DefaultQubit] SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_has_matrix_false PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_has_grad_method PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_repr PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero[YYY] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_autograd PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_jax SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_tf SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_torch SKIPPED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[1.2-YYY] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-X] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-IZ] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_nonzero[0.0001-YYY] PASSED
+
+=============================== warnings summary ===============================
+ops/qubit/test_special_unitary.py::TestTmpPauliRot::test_decomposition_at_zero_autograd
+  /local/data0/moved_data/publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/tracer.py:14: UserWarning: Output seems independent of input.
+    warnings.warn("Output seems independent of input.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 60 passed, 71 skipped, 1 warning in 2.03s ===================

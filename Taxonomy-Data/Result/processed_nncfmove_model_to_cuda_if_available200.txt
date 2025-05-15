@@ -1,0 +1,662 @@
+output file:
+processed_nncfmove_model_to_cuda_if_available200.json
+function:
+move_model_to_cuda_if_available
+Error Cases:
+2025-01-09 18:46:47.695992: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-01-09 18:46:47.703480: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-01-09 18:46:47.705704: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:46:47.712349: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 16 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_not_matched_add_node PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet18 INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/BasicBlock[0]/relu_0, END_NODE: ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0]]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18 FAILED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoPermute] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoPermute/permute_1] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[ChunkConcat] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: ChunkConcat/cat_0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesBeforeInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoBranchesBeforeInput/__add___0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesAfterInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: TwoBranchesAfterInput/custom_identity_0, END_NODE: TwoBranchesAfterInput/__add___0] [1, 3] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_validate_depth_config INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_change_depth_indicator INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+
+=================================== FAILURES ===================================
+____________ test_can_export_model_with_one_skipped_block_resnet18 _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-88/test_can_export_model_with_one0')
+
+    def test_can_export_model_with_one_skipped_block_resnet18(tmp_path):
+        model = ResNet18()
+        move_model_to_cuda_if_available(model)
+    
+        nncf_config = get_empty_config(input_sample_sizes=RESNET50_INPUT_SIZE)
+        skipped_blocks = [
+            BuildingBlock(
+                "ResNet/Sequential[layer1]/BasicBlock[0]/relu_0",
+                "ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0",
+            )
+        ]
+        orig_onnx_model_path = tmp_path / "resnet18.onnx"
+        onnx_model_without_block_path = tmp_path / "resnet18_with_one_skipped_block.onnx"
+    
+        compressed_model, ctrl = create_compressed_model_and_algo_for_test(model, nncf_config)
+        compressed_model.nncf.get_tracing_context().set_elastic_blocks(skipped_blocks)
+        # export model to onnx
+        ctx = compressed_model.nncf.get_tracing_context()
+>       ctrl.export_model(str(orig_onnx_model_path))
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py:223: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/common/compression.py:110: in export_model
+    backend = get_backend(self.model)
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:134: in get_backend
+    available_backends = get_available_backends()
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:46: in get_available_backends
+    importlib.import_module(module_name)
+/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:790: in exec_module
+    ???
+<frozen importlib._bootstrap>:228: in _call_with_frames_removed
+    ???
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/__init__.py:47: in <module>
+    from tensorflow._api.v2 import __internal__
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py:8: in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py:8: in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/core/ag_ctx.py:21: in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/__init__.py:17: in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/context_managers.py:19: in <module>
+    from tensorflow.python.framework import ops
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/framework/ops.py:5906: in <module>
+    ) -> Optional[Callable[[Any], message.Message]]:
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:433: in Optional
+    return Union[arg, type(None)]
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:421: in Union
+    parameters = _remove_dups_flatten(parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = (collections.abc.Callable[[typing.Any], google.protobuf.message.Message], <class 'NoneType'>)
+
+    def _remove_dups_flatten(parameters):
+        """An internal helper for Union creation and substitution: flatten Unions
+        among parameters, then remove duplicates.
+        """
+        # Flatten out Union[Union[...], ...].
+        params = []
+        for p in parameters:
+            if isinstance(p, _UnionGenericAlias):
+                params.extend(p.__args__)
+            elif isinstance(p, tuple) and len(p) > 0 and p[0] is Union:
+                params.extend(p[1:])
+            else:
+                params.append(p)
+        # Weed out strict duplicates, preserving the first of each occurrence.
+>       all_params = set(params)
+E       TypeError: unhashable type: 'list'
+
+/usr/local/lib/python3.9/typing.py:215: TypeError
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+nas/test_elastic_depth.py::test_not_matched_add_node
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel]
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet]
+nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+nas/test_elastic_depth.py::test_skip_one_block_resnet50
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped
+nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50
+nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow
+  /local/data0/moved_data/publishablew/nncf/nncf/nncf/torch/model_creation.py:105: FutureWarning: The 'nncf.torch.create_compressed_model' function is deprecated and will be removed in a future release.
+  To perform post training quantization (PTQ) or quantization aware training (QAT), use the new nncf.quantize() API:
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#post-training-quantization
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#training-time-quantization
+  Examples:
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/post_training_quantization/torch
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/quantization_aware_training/torch
+    warning_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+================== 1 failed, 15 passed, 10 warnings in 7.23s ===================
+
+
+Final Test Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 16 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_not_matched_add_node PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet18 INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/BasicBlock[0]/relu_0, END_NODE: ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0]]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18 FAILED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoPermute] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoPermute/permute_1] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[ChunkConcat] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: ChunkConcat/cat_0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesBeforeInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoBranchesBeforeInput/__add___0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesAfterInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: TwoBranchesAfterInput/custom_identity_0, END_NODE: TwoBranchesAfterInput/__add___0] [1, 3] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_validate_depth_config INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_change_depth_indicator INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+
+=================================== FAILURES ===================================
+____________ test_can_export_model_with_one_skipped_block_resnet18 _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-89/test_can_export_model_with_one0')
+
+    def test_can_export_model_with_one_skipped_block_resnet18(tmp_path):
+        model = ResNet18()
+        move_model_to_cuda_if_available(model)
+    
+        nncf_config = get_empty_config(input_sample_sizes=RESNET50_INPUT_SIZE)
+        skipped_blocks = [
+            BuildingBlock(
+                "ResNet/Sequential[layer1]/BasicBlock[0]/relu_0",
+                "ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0",
+            )
+        ]
+        orig_onnx_model_path = tmp_path / "resnet18.onnx"
+        onnx_model_without_block_path = tmp_path / "resnet18_with_one_skipped_block.onnx"
+    
+        compressed_model, ctrl = create_compressed_model_and_algo_for_test(model, nncf_config)
+        compressed_model.nncf.get_tracing_context().set_elastic_blocks(skipped_blocks)
+        # export model to onnx
+        ctx = compressed_model.nncf.get_tracing_context()
+>       ctrl.export_model(str(orig_onnx_model_path))
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py:223: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/common/compression.py:110: in export_model
+    backend = get_backend(self.model)
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:134: in get_backend
+    available_backends = get_available_backends()
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:46: in get_available_backends
+    importlib.import_module(module_name)
+/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:790: in exec_module
+    ???
+<frozen importlib._bootstrap>:228: in _call_with_frames_removed
+    ???
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/__init__.py:47: in <module>
+    from tensorflow._api.v2 import __internal__
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py:8: in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py:8: in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/core/ag_ctx.py:21: in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/__init__.py:17: in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/context_managers.py:19: in <module>
+    from tensorflow.python.framework import ops
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/framework/ops.py:5906: in <module>
+    ) -> Optional[Callable[[Any], message.Message]]:
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:433: in Optional
+    return Union[arg, type(None)]
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:421: in Union
+    parameters = _remove_dups_flatten(parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = (collections.abc.Callable[[typing.Any], google.protobuf.message.Message], <class 'NoneType'>)
+
+    def _remove_dups_flatten(parameters):
+        """An internal helper for Union creation and substitution: flatten Unions
+        among parameters, then remove duplicates.
+        """
+        # Flatten out Union[Union[...], ...].
+        params = []
+        for p in parameters:
+            if isinstance(p, _UnionGenericAlias):
+                params.extend(p.__args__)
+            elif isinstance(p, tuple) and len(p) > 0 and p[0] is Union:
+                params.extend(p[1:])
+            else:
+                params.append(p)
+        # Weed out strict duplicates, preserving the first of each occurrence.
+>       all_params = set(params)
+E       TypeError: unhashable type: 'list'
+
+/usr/local/lib/python3.9/typing.py:215: TypeError
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+nas/test_elastic_depth.py::test_not_matched_add_node
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel]
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet]
+nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+nas/test_elastic_depth.py::test_skip_one_block_resnet50
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped
+nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50
+nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow
+  /local/data0/moved_data/publishablew/nncf/nncf/nncf/torch/model_creation.py:105: FutureWarning: The 'nncf.torch.create_compressed_model' function is deprecated and will be removed in a future release.
+  To perform post training quantization (PTQ) or quantization aware training (QAT), use the new nncf.quantize() API:
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#post-training-quantization
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#training-time-quantization
+  Examples:
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/post_training_quantization/torch
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/quantization_aware_training/torch
+    warning_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+================== 1 failed, 15 passed, 10 warnings in 7.09s ===================
+
+
+Initial Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 16 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_not_matched_add_node PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet] PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet18 INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/BasicBlock[0]/relu_0, END_NODE: ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0]]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18 FAILED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_skip_one_block_resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50 PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoPermute] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoPermute/permute_1] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[ChunkConcat] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: ChunkConcat/cat_0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesBeforeInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: /nncf_model_input_0, END_NODE: TwoBranchesBeforeInput/__add___0] [0, 2] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_skip_trivial_block[TwoBranchesAfterInput] INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: TwoBranchesAfterInput/custom_identity_0, END_NODE: TwoBranchesAfterInput/__add___0] [1, 3] #ops=2]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_validate_depth_config INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_change_depth_indicator INFO:nncf:Blocks for skipping (changing the depth of model):
+INFO:nncf:
+[[START NODE: ResNet/Sequential[layer1]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2] [15, 26] #ops=11
+[START NODE: ResNet/Sequential[layer1]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer1]/Bottleneck[2]/relu_2] [26, 36] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2] [47, 58] #ops=11
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2] [58, 68] #ops=10
+[START NODE: ResNet/Sequential[layer2]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer2]/Bottleneck[3]/relu_2] [68, 78] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2] [89, 100] #ops=11
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2] [100, 110] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[2]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2] [110, 120] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[3]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2] [120, 130] #ops=10
+[START NODE: ResNet/Sequential[layer3]/Bottleneck[4]/relu_2, END_NODE: ResNet/Sequential[layer3]/Bottleneck[5]/relu_2] [130, 140] #ops=10
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[0]/__iadd___0, END_NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2] [151, 162] #ops=11
+[START NODE: ResNet/Sequential[layer4]/Bottleneck[1]/relu_2, END_NODE: ResNet/Sequential[layer4]/Bottleneck[2]/relu_2] [162, 172] #ops=10]
+
+
+INFO:nncf:Stage LR scheduler in use
+PASSED
+
+=================================== FAILURES ===================================
+____________ test_can_export_model_with_one_skipped_block_resnet18 _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-87/test_can_export_model_with_one0')
+
+    def test_can_export_model_with_one_skipped_block_resnet18(tmp_path):
+        model = ResNet18()
+        move_model_to_cuda_if_available(model)
+    
+        nncf_config = get_empty_config(input_sample_sizes=RESNET50_INPUT_SIZE)
+        skipped_blocks = [
+            BuildingBlock(
+                "ResNet/Sequential[layer1]/BasicBlock[0]/relu_0",
+                "ResNet/Sequential[layer1]/BasicBlock[0]/NNCFBatchNorm2d[bn2]/batch_norm_0",
+            )
+        ]
+        orig_onnx_model_path = tmp_path / "resnet18.onnx"
+        onnx_model_without_block_path = tmp_path / "resnet18_with_one_skipped_block.onnx"
+    
+        compressed_model, ctrl = create_compressed_model_and_algo_for_test(model, nncf_config)
+        compressed_model.nncf.get_tracing_context().set_elastic_blocks(skipped_blocks)
+        # export model to onnx
+        ctx = compressed_model.nncf.get_tracing_context()
+>       ctrl.export_model(str(orig_onnx_model_path))
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py:223: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/common/compression.py:110: in export_model
+    backend = get_backend(self.model)
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:134: in get_backend
+    available_backends = get_available_backends()
+../publishablew/nncf/nncf/nncf/common/utils/backend.py:46: in get_available_backends
+    importlib.import_module(module_name)
+/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1030: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1007: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:986: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:680: in _load_unlocked
+    ???
+<frozen importlib._bootstrap_external>:790: in exec_module
+    ???
+<frozen importlib._bootstrap>:228: in _call_with_frames_removed
+    ???
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/__init__.py:47: in <module>
+    from tensorflow._api.v2 import __internal__
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py:8: in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py:8: in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/core/ag_ctx.py:21: in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/__init__.py:17: in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/context_managers.py:19: in <module>
+    from tensorflow.python.framework import ops
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/framework/ops.py:5906: in <module>
+    ) -> Optional[Callable[[Any], message.Message]]:
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:433: in Optional
+    return Union[arg, type(None)]
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:421: in Union
+    parameters = _remove_dups_flatten(parameters)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = (collections.abc.Callable[[typing.Any], google.protobuf.message.Message], <class 'NoneType'>)
+
+    def _remove_dups_flatten(parameters):
+        """An internal helper for Union creation and substitution: flatten Unions
+        among parameters, then remove duplicates.
+        """
+        # Flatten out Union[Union[...], ...].
+        params = []
+        for p in parameters:
+            if isinstance(p, _UnionGenericAlias):
+                params.extend(p.__args__)
+            elif isinstance(p, tuple) and len(p) > 0 and p[0] is Union:
+                params.extend(p[1:])
+            else:
+                params.append(p)
+        # Weed out strict duplicates, preserving the first of each occurrence.
+>       all_params = set(params)
+E       TypeError: unhashable type: 'list'
+
+/usr/local/lib/python3.9/typing.py:215: TypeError
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+nas/test_elastic_depth.py::test_not_matched_add_node
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[DepthBasicConvTestModel]
+nas/test_elastic_depth.py::test_reproduce_error_with_parsing_node_id[BasicTestSuperNet]
+nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+nas/test_elastic_depth.py::test_skip_one_block_resnet50
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped
+nas/test_elastic_depth.py::test_correct_output_with_active_skipped_block
+nas/test_elastic_depth.py::test_correct_grad_when_block_skipped__resnet50
+nas/test_elastic_depth.py::test_check_dinamic_graph_not_grow
+  /local/data0/moved_data/publishablew/nncf/nncf/nncf/torch/model_creation.py:105: FutureWarning: The 'nncf.torch.create_compressed_model' function is deprecated and will be removed in a future release.
+  To perform post training quantization (PTQ) or quantization aware training (QAT), use the new nncf.quantize() API:
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#post-training-quantization
+   - https://github.com/openvinotoolkit/nncf?tab=readme-ov-file#training-time-quantization
+  Examples:
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/post_training_quantization/torch
+   - https://github.com/openvinotoolkit/nncf/tree/develop/examples/quantization_aware_training/torch
+    warning_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_depth.py::test_can_export_model_with_one_skipped_block_resnet18
+================== 1 failed, 15 passed, 10 warnings in 38.19s ==================

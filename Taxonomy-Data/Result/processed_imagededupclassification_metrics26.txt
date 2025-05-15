@@ -1,0 +1,198 @@
+output file:
+processed_imagededupclassification_metrics26.json
+function:
+classification_metrics
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED tests/test_evaluator.py::test_correct_values_all - ImportError: cannot...', 'tests/test_evaluator.py::test_correct_values_classification FAILED       [ 94%]', 'tests/test_evaluator.py::test_correct_values_all FAILED                  [100%]', 'FAILED tests/test_evaluator.py::test_correct_values_classification - ImportEr...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 19 items
+
+tests/test_evaluator.py::test__transpose_checker PASSED                  [  5%]
+tests/test_evaluator.py::test__check_map_correctness_extra_gt_vals PASSED [ 10%]
+tests/test_evaluator.py::test__check_map_correctness_extra_ret_vals PASSED [ 15%]
+tests/test_evaluator.py::test__check_map_correctness_different_keys PASSED [ 21%]
+tests/test_evaluator.py::test_default_returns_all_metrics PASSED         [ 26%]
+tests/test_evaluator.py::test_wrong_metric_raises_valueerror PASSED      [ 31%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[map] PASSED    [ 36%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[ndcg] PASSED   [ 42%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[jaccard] PASSED [ 47%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric PASSED [ 52%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[MAP] PASSED [ 57%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[Ndcg] PASSED [ 63%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[JacCard] PASSED [ 68%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric_mixed_case PASSED [ 73%]
+tests/test_evaluator.py::test_correct_values_ir[map-0.41666666666666663] PASSED [ 78%]
+tests/test_evaluator.py::test_correct_values_ir[ndcg-0.75] PASSED        [ 84%]
+tests/test_evaluator.py::test_correct_values_ir[jaccard-0.41666666666666663] PASSED [ 89%]
+tests/test_evaluator.py::test_correct_values_classification FAILED       [ 94%]
+tests/test_evaluator.py::test_correct_values_all FAILED                  [100%]
+
+=================================== FAILURES ===================================
+______________________ test_correct_values_classification ______________________
+
+    def test_correct_values_classification():
+        ground_truth, retrieved = return_ground_incorrect_retrievals()
+        expected_return = {
+            'precision': np.array([0.5, 1.0]),
+            'recall': np.array([1.0, 0.5]),
+            'f1_score': np.array([0.66666667, 0.66666667]),
+            'support': np.array([2, 4]),
+        }
+>       score = evaluate(ground_truth, retrieved, metric='classification')
+
+tests/test_evaluator.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/evaluation/evaluation.py:105: in evaluate
+    return classification_metrics(ground_truth_map, retrieved_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ground_truth = {'1': ['2', '3', '4'], '2': ['1', '3'], '3': ['1', '2'], '4': ['1']}
+retrieved = {'1': ['2', '3'], '2': ['1'], '3': ['1'], '4': []}
+
+    def classification_metrics(ground_truth: Dict, retrieved: Dict) -> np.ndarray:
+>       from .temp import classification_metrics
+E       ImportError: cannot import name 'classification_metrics' from 'imagededup.handlers.metrics.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/handlers/metrics/temp.py)
+
+imagededup/handlers/metrics/classification.py:45: ImportError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:21:22,335: INFO Validating ground truth map ..
+2025-01-22 14:21:22,335: INFO Ground truth map validated
+2025-01-22 14:21:22,335: INFO Validating retrieved map ..
+2025-01-22 14:21:22,335: INFO Duplicate map validated
+2025-01-22 14:21:22,335: INFO Validating ground truth map and retrieved map consistency..
+2025-01-22 14:21:22,335: INFO Ground truth map and retrieved map found to be consistent.
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.evaluation.evaluation:evaluation.py:44 Validating ground truth map ..
+INFO     imagededup.evaluation.evaluation:evaluation.py:53 Ground truth map validated
+INFO     imagededup.evaluation.evaluation:evaluation.py:55 Validating retrieved map ..
+INFO     imagededup.evaluation.evaluation:evaluation.py:62 Duplicate map validated
+INFO     imagededup.evaluation.evaluation:evaluation.py:64 Validating ground truth map and retrieved map consistency..
+INFO     imagededup.evaluation.evaluation:evaluation.py:71 Ground truth map and retrieved map found to be consistent.
+___________________________ test_correct_values_all ____________________________
+
+    def test_correct_values_all():
+        ground_truth, retrieved = return_ground_incorrect_retrievals()
+>       score = evaluate(ground_truth, retrieved)
+
+tests/test_evaluator.py:157: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/evaluation/evaluation.py:108: in evaluate
+    class_metrics = classification_metrics(ground_truth_map, retrieved_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ground_truth = {'1': ['2', '3', '4'], '2': ['1', '3'], '3': ['1', '2'], '4': ['1']}
+retrieved = {'1': ['2', '3'], '2': ['1'], '3': ['1'], '4': []}
+
+    def classification_metrics(ground_truth: Dict, retrieved: Dict) -> np.ndarray:
+>       from .temp import classification_metrics
+E       ImportError: cannot import name 'classification_metrics' from 'imagededup.handlers.metrics.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/handlers/metrics/temp.py)
+
+imagededup/handlers/metrics/classification.py:45: ImportError
+----------------------------- Captured stderr call -----------------------------
+2025-01-22 14:21:22,339: INFO Validating ground truth map ..
+2025-01-22 14:21:22,339: INFO Ground truth map validated
+2025-01-22 14:21:22,339: INFO Validating retrieved map ..
+2025-01-22 14:21:22,339: INFO Duplicate map validated
+2025-01-22 14:21:22,339: INFO Validating ground truth map and retrieved map consistency..
+2025-01-22 14:21:22,339: INFO Ground truth map and retrieved map found to be consistent.
+------------------------------ Captured log call -------------------------------
+INFO     imagededup.evaluation.evaluation:evaluation.py:44 Validating ground truth map ..
+INFO     imagededup.evaluation.evaluation:evaluation.py:53 Ground truth map validated
+INFO     imagededup.evaluation.evaluation:evaluation.py:55 Validating retrieved map ..
+INFO     imagededup.evaluation.evaluation:evaluation.py:62 Duplicate map validated
+INFO     imagededup.evaluation.evaluation:evaluation.py:64 Validating ground truth map and retrieved map consistency..
+INFO     imagededup.evaluation.evaluation:evaluation.py:71 Ground truth map and retrieved map found to be consistent.
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_evaluator.py::test_correct_values_classification - ImportEr...
+FAILED tests/test_evaluator.py::test_correct_values_all - ImportError: cannot...
+=================== 2 failed, 17 passed, 1 warning in 2.32s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 19 items
+
+tests/test_evaluator.py::test__transpose_checker PASSED                  [  5%]
+tests/test_evaluator.py::test__check_map_correctness_extra_gt_vals PASSED [ 10%]
+tests/test_evaluator.py::test__check_map_correctness_extra_ret_vals PASSED [ 15%]
+tests/test_evaluator.py::test__check_map_correctness_different_keys PASSED [ 21%]
+tests/test_evaluator.py::test_default_returns_all_metrics PASSED         [ 26%]
+tests/test_evaluator.py::test_wrong_metric_raises_valueerror PASSED      [ 31%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[map] PASSED    [ 36%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[ndcg] PASSED   [ 42%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[jaccard] PASSED [ 47%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric PASSED [ 52%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[MAP] PASSED [ 57%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[Ndcg] PASSED [ 63%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[JacCard] PASSED [ 68%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric_mixed_case PASSED [ 73%]
+tests/test_evaluator.py::test_correct_values_ir[map-0.41666666666666663] PASSED [ 78%]
+tests/test_evaluator.py::test_correct_values_ir[ndcg-0.75] PASSED        [ 84%]
+tests/test_evaluator.py::test_correct_values_ir[jaccard-0.41666666666666663] PASSED [ 89%]
+tests/test_evaluator.py::test_correct_values_classification PASSED       [ 94%]
+tests/test_evaluator.py::test_correct_values_all PASSED                  [100%]
+
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 19 passed, 1 warning in 2.33s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 19 items
+
+tests/test_evaluator.py::test__transpose_checker PASSED                  [  5%]
+tests/test_evaluator.py::test__check_map_correctness_extra_gt_vals PASSED [ 10%]
+tests/test_evaluator.py::test__check_map_correctness_extra_ret_vals PASSED [ 15%]
+tests/test_evaluator.py::test__check_map_correctness_different_keys PASSED [ 21%]
+tests/test_evaluator.py::test_default_returns_all_metrics PASSED         [ 26%]
+tests/test_evaluator.py::test_wrong_metric_raises_valueerror PASSED      [ 31%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[map] PASSED    [ 36%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[ndcg] PASSED   [ 42%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric[jaccard] PASSED [ 47%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric PASSED [ 52%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[MAP] PASSED [ 57%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[Ndcg] PASSED [ 63%]
+tests/test_evaluator.py::test_correct_call_to_mean_metric_mixed_cases[JacCard] PASSED [ 68%]
+tests/test_evaluator.py::test_correct_call_to_classification_metric_mixed_case PASSED [ 73%]
+tests/test_evaluator.py::test_correct_values_ir[map-0.41666666666666663] PASSED [ 78%]
+tests/test_evaluator.py::test_correct_values_ir[ndcg-0.75] PASSED        [ 84%]
+tests/test_evaluator.py::test_correct_values_ir[jaccard-0.41666666666666663] PASSED [ 89%]
+tests/test_evaluator.py::test_correct_values_classification PASSED       [ 94%]
+tests/test_evaluator.py::test_correct_values_all PASSED                  [100%]
+
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 19 passed, 1 warning in 2.26s =========================

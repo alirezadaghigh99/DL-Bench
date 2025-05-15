@@ -1,0 +1,1169 @@
+output file:
+processed_classes-pytorch3dcompose69.json
+function:
+compose
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_transforms.py::TestTransform::test_to FAILED     [ 23%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose', '../pytorch3d/tests/test_transforms.py::TestTransform::test_translate FAILED [ 27%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on', '../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on FAILED [ 16%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_scale - Att...', 'FAILED ../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z', '../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse FAILED [ 12%]', '../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail FAILED [  3%]', '../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z FAILED [ 86%]', '../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off FAILED [ 15%]', '../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle FAILED [ 13%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse - A...', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_translate', '../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 FAILED [  7%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_clone - Att...', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 - A...', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off', '../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose FAILED [ 66%]', '../pytorch3d/tests/test_transforms.py::TestTransform::test_stack FAILED  [ 21%]', '../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail FAILED [ 67%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_stack - Att...', '../pytorch3d/tests/test_transforms.py::TestTransform::test_clone FAILED  [  1%]', '../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose FAILED [ 72%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_to - Attrib...', '../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation FAILED [  4%]', '../pytorch3d/tests/test_transforms.py::TestTransform::test_scale FAILED  [ 18%]', 'FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate', '../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate FAILED [ 20%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone FAILED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail FAILED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation FAILED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 FAILED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse FAILED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle FAILED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off FAILED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on FAILED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale FAILED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate FAILED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack FAILED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to FAILED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate FAILED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose FAILED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail FAILED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose FAILED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z FAILED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________________ TestTransform.test_clone ___________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_clone>
+
+    def test_clone(self):
+        """
+        Check that cloned transformations contain different _matrix objects.
+        Also, the clone of a composed translation and rotation has to be
+        the same as composition of clones of translation and rotation.
+        """
+        tr = Translate(torch.FloatTensor([[1.0, 2.0, 3.0]]))
+        R = torch.FloatTensor([[0.0, 1.0, 0.0], [0.0, 0.0, 1.0], [1.0, 0.0, 0.0]])
+        R = Rotate(R)
+    
+        # check that the _matrix property of clones of
+        # both transforms are different
+        for t in (R, tr):
+            self.assertTrue(t._matrix is not t.clone()._matrix)
+    
+        # check that the _transforms lists of composition of R, tr contain
+        # different objects
+        t1 = Transform3d().compose(R, tr)
+        for t, t_clone in (t1._transforms, t1.clone()._transforms):
+            self.assertTrue(t is not t_clone)
+>           self.assertTrue(t._matrix is not t_clone._matrix)
+E           AttributeError: 'Tensor' object has no attribute '_matrix'
+
+../pytorch3d/tests/test_transforms.py:143: AttributeError
+_______________________ TestTransform.test_compose_fail ________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_compose_fail>
+
+    def test_compose_fail(self):
+        # Only composing Transform3d objects is possible
+        t1 = Scale(0.1, 0.1, 0.1)
+        with self.assertRaises(ValueError):
+>           t1.compose(torch.randn(100))
+
+../pytorch3d/tests/test_transforms.py:296: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def compose(self, *others: 'Transform3d') -> 'Transform3d':
+        for other in others:
+            if not isinstance(other, Transform3d):
+>               raise TypeError('All arguments must be instances of Transform3d')
+E               TypeError: All arguments must be instances of Transform3d
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:183: TypeError
+_____________________ TestTransform.test_dtype_propagation _____________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_dtype_propagation>
+
+    def test_dtype_propagation(self):
+        """
+        Check that a given dtype is correctly passed along to child
+        transformations.
+        """
+        # Use at least two dtypes so we avoid only testing on the
+        # default dtype.
+        for dtype in [torch.float32, torch.float64]:
+            R = torch.tensor(
+                [[0.0, 1.0, 0.0], [0.0, 0.0, 1.0], [1.0, 0.0, 0.0]],
+                dtype=dtype,
+            )
+            tf = (
+                Transform3d(dtype=dtype)
+                .rotate(R)
+                .rotate_axis_angle(
+                    R[0],
+                    "X",
+                )
+                .translate(3, 2, 1)
+                .scale(0.5)
+            )
+    
+            self.assertEqual(tf.dtype, dtype)
+            for inner_tf in tf._transforms:
+                self.assertEqual(inner_tf.dtype, dtype)
+    
+>           transformed = tf.transform_points(R)
+
+../pytorch3d/tests/test_transforms.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a1eb4c0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+__________________________ TestTransform.test_get_se3 __________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_get_se3>
+
+    def test_get_se3(self):
+        N = 16
+        random_rotations(N)
+        tr = Translate(torch.rand((N, 3)))
+        R = Rotate(random_rotations(N))
+        transform = Transform3d().compose(R, tr)
+>       se3_log = transform.get_se3_log()
+
+../pytorch3d/tests/test_transforms.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:260: in get_se3_log
+    return se3_log_map(self.get_matrix(), eps, cos_bound)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547beba67f0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+__________________________ TestTransform.test_inverse __________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_inverse>
+batch_size = 5
+
+    def test_inverse(self, batch_size=5):
+        device = torch.device("cuda:0")
+    
+        # generate a random chain of transforms
+        for _ in range(10):  # 10 different tries
+    
+            # list of transform matrices
+            ts = []
+    
+            for i in range(10):
+                choice = float(torch.rand(1))
+                if choice <= 1.0 / 3.0:
+                    t_ = Translate(
+                        torch.randn(
+                            (batch_size, 3), dtype=torch.float32, device=device
+                        ),
+                        device=device,
+                    )
+                elif choice <= 2.0 / 3.0:
+                    t_ = Rotate(
+                        so3_exp_map(
+                            torch.randn(
+                                (batch_size, 3), dtype=torch.float32, device=device
+                            )
+                        ),
+                        device=device,
+                    )
+                else:
+                    rand_t = torch.randn(
+                        (batch_size, 3), dtype=torch.float32, device=device
+                    )
+                    rand_t = rand_t.sign() * torch.clamp(rand_t.abs(), 0.2)
+                    t_ = Scale(rand_t, device=device)
+                ts.append(t_._matrix.clone())
+    
+                if i == 0:
+                    t = t_
+                else:
+                    t = t.compose(t_)
+    
+            # generate the inverse transformation in several possible ways
+>           m1 = t.inverse(invert_composed=True).get_matrix()
+
+../pytorch3d/tests/test_transforms.py:362: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:289: in inverse
+    tinv._matrix = torch.inverse(self.get_matrix())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a32f430>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+_____________________ TestTransform.test_rotate_axis_angle _____________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_rotate_axis_angle>
+
+    def test_rotate_axis_angle(self):
+        t = Transform3d().rotate_axis_angle(90.0, axis="Z")
+        points = torch.tensor([[0.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 1.0, 1.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [1.0, 0.0, 0.0], [1.0, 0.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:275: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547bec13fa0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+________________ TestTransform.test_rotate_check_rot_valid_off _________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_rotate_check_rot_valid_off>
+
+    @mock.patch.dict(os.environ, {"PYTORCH3D_CHECK_ROTATION_MATRICES": "0"}, clear=True)
+    def test_rotate_check_rot_valid_off(self):
+        R = so3_exp_map(torch.randn((1, 3)))
+        t = Transform3d().rotate(R)
+        points = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.5, 0.5, 0.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:222: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547bfda4880>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+_________________ TestTransform.test_rotate_check_rot_valid_on _________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_rotate_check_rot_valid_on>
+
+    @mock.patch.dict(os.environ, {"PYTORCH3D_CHECK_ROTATION_MATRICES": "1"}, clear=True)
+    def test_rotate_check_rot_valid_on(self):
+        R = so3_exp_map(torch.randn((1, 3)))
+        t = Transform3d().rotate(R)
+        points = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.5, 0.5, 0.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:205: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547bfd90790>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+___________________________ TestTransform.test_scale ___________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_scale>
+
+    def test_scale(self):
+        t = Transform3d().scale(2.0).scale(0.5, 0.25, 1.0)
+        points = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.5, 0.5, 0.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547beb9fcd0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+______________________ TestTransform.test_scale_translate ______________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_scale_translate>
+
+    def test_scale_translate(self):
+        t = Transform3d().scale(2, 1, 3).translate(1, 2, 3)
+        points = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.5, 0.5, 0.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:256: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x754709aa3640>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+___________________________ TestTransform.test_stack ___________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_stack>
+
+    def test_stack(self):
+        rotations = random_rotations(3)
+        transform3 = Transform3d().rotate(rotations).translate(torch.full((3, 3), 0.3))
+        transform1 = Scale(37)
+>       transform4 = transform1.stack(transform3)
+
+../pytorch3d/tests/test_transforms.py:475: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:313: in stack
+    matrix = torch.cat([t.get_matrix() for t in transforms], dim=0)
+../pytorch3d/pytorch3d/transforms/transform3d.py:313: in <listcomp>
+    matrix = torch.cat([t.get_matrix() for t in transforms], dim=0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a32fdf0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+____________________________ TestTransform.test_to _____________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_to>
+
+    def test_to(self):
+        tr = Translate(torch.FloatTensor([[1.0, 2.0, 3.0]]))
+        R = torch.FloatTensor([[0.0, 1.0, 0.0], [0.0, 0.0, 1.0], [1.0, 0.0, 0.0]])
+        R = Rotate(R)
+        t = Transform3d().compose(R, tr)
+    
+        cpu_device = torch.device("cpu")
+    
+        cpu_t = t.to("cpu")
+        self.assertEqual(cpu_device, cpu_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float32, cpu_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIs(t, cpu_t)
+    
+        cpu_t = t.to(cpu_device)
+        self.assertEqual(cpu_device, cpu_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float32, cpu_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIs(t, cpu_t)
+    
+        cpu_t = t.to(dtype=torch.float64, device=cpu_device)
+        self.assertEqual(cpu_device, cpu_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float64, cpu_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIsNot(t, cpu_t)
+    
+        cuda_device = torch.device("cuda:0")
+    
+        cuda_t = t.to("cuda:0")
+        self.assertEqual(cuda_device, cuda_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float32, cuda_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIsNot(t, cuda_t)
+    
+        cuda_t = t.to(cuda_device)
+        self.assertEqual(cuda_device, cuda_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float32, cuda_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIsNot(t, cuda_t)
+    
+        cuda_t = t.to(dtype=torch.float64, device=cuda_device)
+        self.assertEqual(cuda_device, cuda_t.device)
+        self.assertEqual(cpu_device, t.device)
+        self.assertEqual(torch.float64, cuda_t.dtype)
+        self.assertEqual(torch.float32, t.dtype)
+        self.assertIsNot(t, cuda_t)
+    
+        cpu_points = torch.rand(9, 3)
+        cuda_points = cpu_points.cuda()
+        for _ in range(3):
+            t = t.cpu()
+>           t.transform_points(cpu_points)
+
+../pytorch3d/tests/test_transforms.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a23f6d0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+_________________________ TestTransform.test_translate _________________________
+
+self = <tests.test_transforms.TestTransform testMethod=test_translate>
+
+    def test_translate(self):
+        t = Transform3d().translate(1, 2, 3)
+        points = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.5, 0.5, 0.0]]).view(
+            1, 3, 3
+        )
+        normals = torch.tensor(
+            [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [1.0, 1.0, 0.0]]
+        ).view(1, 3, 3)
+>       points_out = t.transform_points(points)
+
+../pytorch3d/tests/test_transforms.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/transform3d.py:346: in transform_points
+    composed_matrix = self.get_matrix()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x7547099dd0d0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+________________ TestTransformBroadcast.test_broadcast_compose _________________
+
+self = <tests.test_transforms.TestTransformBroadcast testMethod=test_broadcast_compose>
+
+    def test_broadcast_compose(self):
+        t1 = Scale(0.1, 0.1, 0.1)
+        N = 10
+        scale_n = torch.tensor([0.3] * N)
+        tN = Scale(scale_n)
+        t1N = t1.compose(tN)
+        self.assertTrue(t1._matrix.shape == (1, 4, 4))
+        self.assertTrue(tN._matrix.shape == (N, 4, 4))
+>       self.assertTrue(t1N.get_matrix().shape == (N, 4, 4))
+
+../pytorch3d/tests/test_transforms.py:942: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a33f4f0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+______________ TestTransformBroadcast.test_broadcast_compose_fail ______________
+
+self = <tests.test_transforms.TestTransformBroadcast testMethod=test_broadcast_compose_fail>
+
+    def test_broadcast_compose_fail(self):
+        # Cannot compose two transforms which have batch dimensions N and M
+        # other than the case where either N or M is 1
+        N = 10
+        M = 20
+        scale_n = torch.tensor([0.3] * N)
+        tN = Scale(scale_n)
+        x = torch.tensor([0.2] * M)
+        y = torch.tensor([0.3] * M)
+        z = torch.tensor([0.4] * M)
+        tM = Translate(x, y, z)
+>       t = tN.compose(tM)
+
+../pytorch3d/tests/test_transforms.py:957: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Scale object at 0x754709a23b20>
+others = (<pytorch3d.transforms.transform3d.Translate object at 0x754709a23bb0>,)
+other = <pytorch3d.transforms.transform3d.Translate object at 0x754709a23bb0>
+composed_matrix = tensor([[[0.3000, 0.0000, 0.0000, 0.0000],
+         [0.0000, 0.3000, 0.0000, 0.0000],
+         [0.0000, 0.0000, 0.3000....0000, 0.3000, 0.0000, 0.0000],
+         [0.0000, 0.0000, 0.3000, 0.0000],
+         [0.0000, 0.0000, 0.0000, 1.0000]]])
+
+    def compose(self, *others: 'Transform3d') -> 'Transform3d':
+        for other in others:
+            if not isinstance(other, Transform3d):
+                raise TypeError('All arguments must be instances of Transform3d')
+        composed_matrix = self._matrix.clone()
+        for other in others:
+>           composed_matrix = composed_matrix @ other._matrix
+E           RuntimeError: The size of tensor a (10) must match the size of tensor b (20) at non-singleton dimension 0
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:186: RuntimeError
+____________ TestTransformBroadcast.test_multiple_broadcast_compose ____________
+
+self = <tests.test_transforms.TestTransformBroadcast testMethod=test_multiple_broadcast_compose>
+
+    def test_multiple_broadcast_compose(self):
+        t1 = Scale(0.1, 0.1, 0.1)
+        t2 = Scale(0.2, 0.2, 0.2)
+        N = 10
+        scale_n = torch.tensor([0.3] * N)
+        tN = Scale(scale_n)
+        t1N2 = t1.compose(tN.compose(t2))
+>       composed_mat = t1N2.get_matrix()
+
+../pytorch3d/tests/test_transforms.py:968: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x754709a42df0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+________________ TestRotateAxisAngle.test_rotate_compose_x_y_z _________________
+
+self = <tests.test_transforms.TestRotateAxisAngle testMethod=test_rotate_compose_x_y_z>
+
+    def test_rotate_compose_x_y_z(self):
+        angle = torch.tensor(90.0)
+        t1 = RotateAxisAngle(angle=angle, axis="X")
+        t2 = RotateAxisAngle(angle=angle, axis="Y")
+        t3 = RotateAxisAngle(angle=angle, axis="Z")
+        t = t1.compose(t2, t3)
+        # fmt: off
+        matrix1 = torch.tensor(
+            [
+                [
+                    [1.0,  0.0, 0.0, 0.0],  # noqa: E241, E201
+                    [0.0,  0.0, 1.0, 0.0],  # noqa: E241, E201
+                    [0.0, -1.0, 0.0, 0.0],  # noqa: E241, E201
+                    [0.0,  0.0, 0.0, 1.0],  # noqa: E241, E201
+                ]
+            ],
+            dtype=torch.float32,
+        )
+        matrix2 = torch.tensor(
+            [
+                [
+                    [0.0, 0.0, -1.0, 0.0],  # noqa: E241, E201
+                    [0.0, 1.0,  0.0, 0.0],  # noqa: E241, E201
+                    [1.0, 0.0,  0.0, 0.0],  # noqa: E241, E201
+                    [0.0, 0.0,  0.0, 1.0],  # noqa: E241, E201
+                ]
+            ],
+            dtype=torch.float32,
+        )
+        matrix3 = torch.tensor(
+            [
+                [
+                    [ 0.0, 1.0, 0.0, 0.0],  # noqa: E241, E201
+                    [-1.0, 0.0, 0.0, 0.0],  # noqa: E241, E201
+                    [ 0.0, 0.0, 1.0, 0.0],  # noqa: E241, E201
+                    [ 0.0, 0.0, 0.0, 1.0],  # noqa: E241, E201
+                ]
+            ],
+            dtype=torch.float32,
+        )
+        # fmt: on
+        # order of transforms is t1 -> t2
+        matrix = torch.matmul(matrix1, torch.matmul(matrix2, matrix3))
+>       composed_matrix = t.get_matrix()
+
+../pytorch3d/tests/test_transforms.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.transforms.transform3d.Transform3d object at 0x75470a11c9a0>
+
+    def get_matrix(self) -> torch.Tensor:
+        """
+        Returns a 4×4 matrix corresponding to each transform in the batch.
+    
+        If the transform was composed from others, the matrix for the composite
+        transform will be returned.
+        For example, if self.transforms contains transforms t1, t2, and t3, and
+        given a set of points x, the following should be true:
+    
+        .. code-block:: python
+    
+            y1 = t1.compose(t2, t3).transform(x)
+            y2 = t3.transform(t2.transform(t1.transform(x)))
+            y1.get_matrix() == y2.get_matrix()
+    
+        Where necessary, those transforms are broadcast against each other.
+    
+        Returns:
+            A (N, 4, 4) batch of transformation matrices representing
+                the stored transforms. See the class documentation for the conventions.
+        """
+        composed_matrix = self._matrix.clone()
+        if len(self._transforms) > 0:
+            for other in self._transforms:
+>               other_matrix = other.get_matrix()
+E               AttributeError: 'Tensor' object has no attribute 'get_matrix'
+
+../pytorch3d/pytorch3d/transforms/transform3d.py:215: AttributeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_clone - Att...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 - A...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse - A...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_scale - Att...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_stack - Att...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_to - Attrib...
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransform::test_translate
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail
+FAILED ../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose
+FAILED ../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z
+======================== 17 failed, 48 passed in 2.04s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone PASSED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail PASSED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation PASSED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse PASSED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle PASSED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on PASSED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale PASSED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate PASSED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack PASSED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to PASSED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate PASSED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose PASSED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail PASSED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose PASSED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z PASSED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+============================== 65 passed in 1.43s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 65 items
+
+../pytorch3d/tests/test_transforms.py::TestTransform::test_clone PASSED  [  1%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_compose_fail PASSED [  3%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_dtype_propagation PASSED [  4%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_item PASSED [  6%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_get_se3 PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix PASSED [  9%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_init_with_custom_matrix_errors PASSED [ 10%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_inverse PASSED [ 12%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_axis_angle PASSED [ 13%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_off PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_rotate_check_rot_valid_on PASSED [ 16%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale PASSED  [ 18%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_scale_translate PASSED [ 20%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_stack PASSED  [ 21%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_to PASSED     [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_eps PASSED [ 24%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_transform_points_fail PASSED [ 26%]
+../pytorch3d/tests/test_transforms.py::TestTransform::test_translate PASSED [ 27%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [ 29%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 32%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 33%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 35%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 36%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 40%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 41%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 43%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 44%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [ 47%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_get_item PASSED   [ 49%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_inverse PASSED    [ 50%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_matrix PASSED [ 52%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_python_scalar PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_torch_scalar PASSED [ 55%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_single_vector PASSED [ 56%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_broadcast_grad PASSED [ 58%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_mixed_scalar PASSED [ 60%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_python_scalar PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_torch_scalar PASSED [ 63%]
+../pytorch3d/tests/test_transforms.py::TestScale::test_three_vector_broadcast PASSED [ 64%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose PASSED [ 66%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_compose_fail PASSED [ 67%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_normals PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_broadcast_transform_points PASSED [ 70%]
+../pytorch3d/tests/test_transforms.py::TestTransformBroadcast::test_multiple_broadcast_compose PASSED [ 72%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_get_item PASSED  [ 73%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_invalid_dimensions PASSED [ 75%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_inverse PASSED   [ 76%]
+../pytorch3d/tests/test_transforms.py::TestRotate::test_single_matrix PASSED [ 78%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_axis_fail PASSED [ 80%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_lower_case_axis PASSED [ 81%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_fail PASSED [ 83%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_angle_radians PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_compose_x_y_z PASSED [ 86%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_python_scalar PASSED [ 87%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_scalar PASSED [ 89%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_x_torch_tensor PASSED [ 90%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_python_scalar PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_scalar PASSED [ 93%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_y_torch_tensor PASSED [ 95%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_python_scalar PASSED [ 96%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_scalar PASSED [ 98%]
+../pytorch3d/tests/test_transforms.py::TestRotateAxisAngle::test_rotate_z_torch_tensor PASSED [100%]
+
+============================== 65 passed in 1.46s ==============================

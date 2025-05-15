@@ -1,0 +1,272 @@
+output file:
+processed_deepchemgenerate_global_features59.json
+function:
+generate_global_features
+Error Cases:
+2024-12-26 19:19:42.483328: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1735258782.495152  890474 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1735258782.498598  890474 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-26 19:19:42.511094: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+[19:19:44] WARNING: not removing hydrogen atom without neighbors
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized FAILED', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name FAILED', '../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc FAILED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized FAILED
+
+=================================== FAILURES ===================================
+______________ TestGlobalFeatureGenerator.test_generator_hydrogen ______________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_hydrogen>
+
+    def test_generator_hydrogen(self):
+        """
+        Test for generator when provided RDKit mol contains only Hydrogen atoms
+        """
+>       global_features = generate_global_features(self.mol[1],
+                                                   self.feature_generators[2])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x709235fc1c40>
+features_generators = ['morgan', '']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+____________ TestGlobalFeatureGenerator.test_generator_invalid_name ____________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_invalid_name>
+
+    def test_generator_invalid_name(self):
+        """
+        Test for generator when given name of feature generator is not in the list of available generators
+        """
+>       global_features = generate_global_features(self.mol[0],
+                                                   self.feature_generators[0])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x709234300f90>
+features_generators = ['']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+_______________ TestGlobalFeatureGenerator.test_generator_morgan _______________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_morgan>
+
+    def test_generator_morgan(self):
+        """
+        Test for generator when 'morgan' feature generator is provided
+        """
+>       global_features = generate_global_features(self.mol[0],
+                                                   self.feature_generators[1])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x7092343012a0>
+features_generators = ['morgan']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+____________ TestGlobalFeatureGenerator.test_generator_morgan_count ____________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_morgan_count>
+
+    def test_generator_morgan_count(self):
+        """
+        Test for generator when 'morgan_count' feature generator is provided
+        """
+>       global_features = generate_global_features(self.mol[2],
+                                                   self.feature_generators[4])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x7092343028f0>
+features_generators = ['morgan_count']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+____________ TestGlobalFeatureGenerator.test_generator_morgan_twice ____________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_morgan_twice>
+
+    def test_generator_morgan_twice(self):
+        """
+        Test for generator when names of multiple generators are provided
+        """
+>       global_features = generate_global_features(self.mol[0],
+                                                   self.feature_generators[3])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x7092343017e0>
+features_generators = ['morgan', 'morgan']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+______ TestGlobalFeatureGenerator.test_generator_morgan_with_invalid_name ______
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_morgan_with_invalid_name>
+
+    def test_generator_morgan_with_invalid_name(self):
+        """
+        Test for generator when 'morgan' feature generator and an unavailable generator name is provided
+        """
+>       global_features = generate_global_features(self.mol[0],
+                                                   self.feature_generators[2])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x709234302f80>
+features_generators = ['morgan', '']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+_____________ TestGlobalFeatureGenerator.test_generator_rdkit_desc _____________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_rdkit_desc>
+
+    def test_generator_rdkit_desc(self):
+        """
+        Test for generator when 'rdkit_desc' feature generator is provided
+        """
+>       global_features = generate_global_features(self.mol[2],
+                                                   self.feature_generators[5])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x709234301e00>
+features_generators = ['rdkit_desc']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+_______ TestGlobalFeatureGenerator.test_generator_rdkit_desc_normalized ________
+
+self = <deepchem.feat.tests.test_global_feature_generator_dmpnn.TestGlobalFeatureGenerator testMethod=test_generator_rdkit_desc_normalized>
+
+    def test_generator_rdkit_desc_normalized(self):
+        """
+        Test for generator when 'rdkit_desc_normalized' feature generator is provided
+        """
+>       global_features = generate_global_features(self.mol[2],
+                                                   self.feature_generators[6])
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+mol = <rdkit.Chem.rdchem.Mol object at 0x7092343026c0>
+features_generators = ['rdkit_desc_normalized']
+
+    def generate_global_features(mol: RDKitMol, features_generators: List[str]) -> np.ndarray:
+>       from .temp import generate_global_features
+E       ModuleNotFoundError: No module named 'deepchem.feat.molecule_featurizers.temp'
+
+../publishablew/deepchem/deepchem/deepchem/feat/molecule_featurizers/dmpnn_featurizer.py:221: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc
+FAILED ../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized
+============================== 8 failed in 4.14s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized PASSED
+
+============================== 8 passed in 4.06s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_hydrogen PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_invalid_name PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_count PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_twice PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_morgan_with_invalid_name PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc PASSED
+../publishablew/deepchem/deepchem/deepchem/feat/tests/test_global_feature_generator_dmpnn.py::TestGlobalFeatureGenerator::test_generator_rdkit_desc_normalized PASSED
+
+============================== 8 passed in 4.47s ===============================

@@ -1,0 +1,631 @@
+output file:
+processed_pennylane_walsh_hadamard_transform8.json
+function:
+_walsh_hadamard_transform
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2]', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1] FAILED', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1]', '../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 16 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2] FAILED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3] FAILED
+
+=================================== FAILURES ===================================
+_____ TestWalshHadamardTransform.test_compare_analytic_results[inp0-exp0] ______
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734239d8ff90>
+inp = array([1, 1, 1, 1]), exp = [1, 0, 0, 0]
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            ([1, 1, 1, 1], [1, 0, 0, 0]),
+            ([1, 1.5, 0.5, 1], [1, -0.25, 0.25, 0]),
+            ([1, 0, -1, 2.5], [0.625, -0.625, -0.125, 1.125]),
+        ],
+    )
+    def test_compare_analytic_results(self, inp, exp):
+        """Test against hard-coded results."""
+        inp = np.array(inp)
+        output = _walsh_hadamard_transform(inp)
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([2., 0., 0., 0.]), [1, 0, 0, 0])
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:384: AssertionError
+_____ TestWalshHadamardTransform.test_compare_analytic_results[inp1-exp1] ______
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b04250>
+inp = array([1. , 1.5, 0.5, 1. ]), exp = [1, -0.25, 0.25, 0]
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            ([1, 1, 1, 1], [1, 0, 0, 0]),
+            ([1, 1.5, 0.5, 1], [1, -0.25, 0.25, 0]),
+            ([1, 0, -1, 2.5], [0.625, -0.625, -0.125, 1.125]),
+        ],
+    )
+    def test_compare_analytic_results(self, inp, exp):
+        """Test against hard-coded results."""
+        inp = np.array(inp)
+        output = _walsh_hadamard_transform(inp)
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 2.00000000e+00, -5.00000000e-01,  5.00000000e-01,  5.55111512e-17]), [1, -0.25, 0.25, 0])
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:384: AssertionError
+_____ TestWalshHadamardTransform.test_compare_analytic_results[inp2-exp2] ______
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b044d0>
+inp = array([ 1. ,  0. , -1. ,  2.5]), exp = [0.625, -0.625, -0.125, 1.125]
+
+    @pytest.mark.parametrize(
+        "inp, exp",
+        [
+            ([1, 1, 1, 1], [1, 0, 0, 0]),
+            ([1, 1.5, 0.5, 1], [1, -0.25, 0.25, 0]),
+            ([1, 0, -1, 2.5], [0.625, -0.625, -0.125, 1.125]),
+        ],
+    )
+    def test_compare_analytic_results(self, inp, exp):
+        """Test against hard-coded results."""
+        inp = np.array(inp)
+        output = _walsh_hadamard_transform(inp)
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 1.25, -1.25, -0.25,  2.25]), [0.625, -0.625, -0.125, 1.125])
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:384: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[True-1] __________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b058d0>
+n = 1, provide_n = True, seed = 3838063485
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 0.90243469, -0.50426457]), array([ 0.63811769, -0.3565689 ]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[True-2] __________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b05b90>
+n = 2, provide_n = True, seed = 2431888616
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([0.97863844, 0.41723653, 0.44469556, 0.13974396]), array([0.48931922, 0.20861827, 0.22234778, 0.06987198]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[True-3] __________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b05e50>
+n = 3, provide_n = True, seed = 3128602072
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 1.43559124, -0.51239212,  0.36792184,  0.27606234, -0.5385109 ,\n        0.06632653, -0.18760012, -0.16328879]), array([ 0.50755815, -0.18115797,  0.13008001,  0.09760278, -0.19039236,\n        0.02344997, -0.06632666, -0.05773131]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[False-1] _________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b06110>
+n = 1, provide_n = False, seed = 1802076527
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([1.18557018, 0.216155  ]), array([0.83832471, 0.15284467]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[False-2] _________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b063d0>
+n = 2, provide_n = False, seed = 2767269502
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 1.18717114, -0.43886276,  0.1753965 ,  0.42189882]), array([ 0.59358557, -0.21943138,  0.08769825,  0.21094941]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_________ TestWalshHadamardTransform.test_compare_matrix_mult[False-3] _________
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b066d0>
+n = 3, provide_n = False, seed = 3784078914
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random(2**n)
+        output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+        h = np.array([[0.5, 0.5], [0.5, -0.5]])
+        h = reduce(np.kron, [h] * n)
+        exp = h @ inp
+>       assert qml.math.allclose(output, exp)
+E       AssertionError: assert False
+E        +  where False = <function allclose at 0x734274ba5d00>(array([ 1.84440166, -0.28697213,  0.10293667, -0.07986691, -0.1644399 ,\n        0.11235386,  0.15765536,  0.05653921]), array([ 0.65209446, -0.10145997,  0.03639361, -0.02823722, -0.05813829,\n        0.03972309,  0.05573959,  0.01998963]))
+E        +    where <function allclose at 0x734274ba5d00> = <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'>.allclose
+E        +      where <module 'pennylane.math' from '/local/data0/moved_data/publishablew/pennylane/pennylane/pennylane/math/__init__.py'> = qml.math
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:396: AssertionError
+_____ TestWalshHadamardTransform.test_compare_analytic_results_broadcasted _____
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b06cd0>
+
+    def test_compare_analytic_results_broadcasted(self):
+        """Test against hard-coded results."""
+        inp = np.array([[1, 1, 1, 1], [1, 1.5, 0.5, 1], [1, 0, -1, 2.5]])
+        exp = [[1, 0, 0, 0], [1, -0.25, 0.25, 0], [0.625, -0.625, -0.125, 1.125]]
+>       output = _walsh_hadamard_transform(inp)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:402: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[ 1. ,  1. ,  1. ,  1. ],
+       [ 1. ,  1.5,  0.5,  1. ],
+       [ 1. ,  0. , -1. ,  2.5]])
+n = None
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[True-1] ____
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b14310>
+n = 1, provide_n = True, seed = 2100462323
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.93287813, 0.13962754],
+       [0.80448052, 0.92920056],
+       [0.23948104, 0.68542779],
+       [0.17919804, 0.61745989],
+       [0.44913669, 0.2398554 ]])
+n = 1
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[True-2] ____
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b145d0>
+n = 2, provide_n = True, seed = 273615218
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.74525966, 0.39377197, 0.79397901, 0.32854643],
+       [0.40046964, 0.45826619, 0.29162439, 0.46641028],
+    ...25],
+       [0.1143603 , 0.57525868, 0.76017884, 0.42700809],
+       [0.44353663, 0.00529997, 0.47032684, 0.74847958]])
+n = 2
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[True-3] ____
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b14890>
+n = 3, provide_n = True, seed = 1200370626
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.70196117, 0.16409791, 0.43378728, 0.70672904, 0.63815094,
+        0.32227899, 0.87791944, 0.31629901],
+     ...047],
+       [0.78806771, 0.92466132, 0.20304896, 0.29208374, 0.1221504 ,
+        0.5915356 , 0.94403705, 0.830041  ]])
+n = 3
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[False-1] ___
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b14b50>
+n = 1, provide_n = False, seed = 3315233651
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.89031775, 0.76344947],
+       [0.78444386, 0.47987019],
+       [0.76745283, 0.5340341 ],
+       [0.36676864, 0.25001738],
+       [0.53074563, 0.44412336]])
+n = None
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[False-2] ___
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b14e10>
+n = 2, provide_n = False, seed = 1629987239
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.15862987, 0.61828138, 0.76404373, 0.66689766],
+       [0.69670144, 0.30893637, 0.6329903 , 0.93240977],
+    ...71],
+       [0.94912081, 0.97853683, 0.16088314, 0.95794808],
+       [0.26773715, 0.14927526, 0.80252555, 0.43816412]])
+n = None
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+___ TestWalshHadamardTransform.test_compare_matrix_mult_broadcasted[False-3] ___
+
+self = <test_matrix_ops.TestWalshHadamardTransform object at 0x734237b15110>
+n = 3, provide_n = False, seed = 637182400
+
+    @pytest.mark.parametrize("n", [1, 2, 3])
+    @pytest.mark.parametrize("provide_n", [True, False])
+    def test_compare_matrix_mult_broadcasted(self, n, provide_n, seed):
+        """Test against matrix multiplication for a few random inputs."""
+        rng = np.random.default_rng(seed)
+        inp = rng.random((5, 2**n))
+>       output = _walsh_hadamard_transform(inp, n=n if provide_n else None)
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/matrix_ops.py:20: in _walsh_hadamard_transform
+    return _walsh_hadamard_transform(D, n)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+D = array([[0.9781762 , 0.38182697, 0.82184611, 0.92540317, 0.6168063 ,
+        0.80159327, 0.29487138, 0.11606133],
+     ...051],
+       [0.9938782 , 0.54062047, 0.43091887, 0.00298519, 0.45790635,
+        0.07222516, 0.33494858, 0.72644545]])
+n = None
+
+    def _walsh_hadamard_transform(D, n=None):
+        """
+        Compute the Walsh-Hadamard Transform of a one-dimensional tensor or array D.
+    
+        Parameters:
+        - D: A one-dimensional numpy array or tensor. Its length must be a power of two.
+        - n: An optional integer representing the number of qubits or the size of the transform.
+             If not provided, it will be calculated based on the length of D.
+    
+        Returns:
+        - A numpy array of the same shape as D, transformed by the Walsh-Hadamard Transform.
+        """
+        D = np.asarray(D)
+        length = D.shape[0]
+        if length & length - 1 != 0:
+>           raise ValueError('The length of D must be a power of two.')
+E           ValueError: The length of D must be a power of two.
+
+../publishablew/pennylane/pennylane/pennylane/ops/qubit/temp.py:29: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2]
+FAILED ../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3]
+============================== 16 failed in 0.46s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 16 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3] PASSED
+
+============================== 16 passed in 0.03s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 16 items
+
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp0-exp0] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp1-exp1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results[inp2-exp2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[True-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult[False-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_analytic_results_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[True-3] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-1] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-2] PASSED
+../publishablew/pennylane/pennylane/tests/ops/qubit/test_matrix_ops.py::TestWalshHadamardTransform::test_compare_matrix_mult_broadcasted[False-3] PASSED
+
+============================== 16 passed in 0.03s ==============================

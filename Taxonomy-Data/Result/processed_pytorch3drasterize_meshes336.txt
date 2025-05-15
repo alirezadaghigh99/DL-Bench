@@ -1,0 +1,1174 @@
+output file:
+processed_pytorch3drasterize_meshes336.json
+function:
+rasterize_meshes
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive FAILED', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda', 'FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties FAILED', '../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 17 items
+
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cpu PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_compare_coarse_cpu_vs_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive FAILED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_python PASSED
+
+=================================== FAILURES ===================================
+___________________ TestRasterizeMeshes.test_bin_size_error ____________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_bin_size_error>
+
+    def test_bin_size_error(self):
+        meshes = ico_sphere(2)
+        image_size = 1024
+        bin_size = 16
+        with self.assertRaisesRegex(ValueError, "bin_size too small"):
+>           rasterize_meshes(meshes, image_size, 0.0, 2, bin_size)
+E           AssertionError: ValueError not raised
+
+../pytorch3d/tests/test_rasterize_meshes.py:466: AssertionError
+________________ TestRasterizeMeshes.test_cpp_vs_cuda_bary_clip ________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpp_vs_cuda_bary_clip>
+
+    def test_cpp_vs_cuda_bary_clip(self):
+        meshes = ico_sphere(2, device=torch.device("cpu"))
+        verts1, faces1 = meshes.get_mesh_verts_faces(0)
+        verts1.requires_grad = True
+        meshes1 = Meshes(verts=[verts1], faces=[faces1])
+        device = get_random_cuda_device()
+        verts2 = verts1.detach().to(device).requires_grad_(True)
+        faces2 = faces1.detach().clone().to(device)
+        meshes2 = Meshes(verts=[verts2], faces=[faces2])
+    
+        kwargs = {"image_size": 64, "clip_barycentric_coords": True}
+        fn1 = functools.partial(rasterize_meshes, meshes1, **kwargs)
+        fn2 = functools.partial(rasterize_meshes, meshes2, bin_size=0, **kwargs)
+        args = ()
+>       self._compare_impls(fn1, fn2, args, args, verts1, verts2, compare_grads=True)
+
+../pytorch3d/tests/test_rasterize_meshes.py:410: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpp_vs_cuda_bary_clip>
+fn1 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a7fc336700>, image_size=64, clip_barycentric_coords=True)
+fn2 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a7fc3366d0>, bin_size=0, image_size=64, clip_barycentric_coords=True)
+args1 = (), args2 = ()
+grad_var1 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ...2629,  0.1624, -0.9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], requires_grad=True)
+grad_var2 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ....9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], device='cuda:0', requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+__________ TestRasterizeMeshes.test_cpp_vs_cuda_naive_vs_cuda_binned ___________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpp_vs_cuda_naive_vs_cuda_binned>
+
+    def test_cpp_vs_cuda_naive_vs_cuda_binned(self):
+        # Make sure that the backward pass runs for all pathways
+        image_size = 64  # test is too slow for very large images.
+        N = 1
+        radius = 0.1**2
+        faces_per_pixel = 3
+    
+        grad_zbuf = torch.randn(N, image_size, image_size, faces_per_pixel)
+        grad_dist = torch.randn(N, image_size, image_size, faces_per_pixel)
+        grad_bary = torch.randn(N, image_size, image_size, faces_per_pixel, 3)
+    
+        device = torch.device("cpu")
+        meshes = ico_sphere(0, device)
+        verts, faces = meshes.get_mesh_verts_faces(0)
+        verts.requires_grad = True
+        meshes = Meshes(verts=[verts], faces=[faces])
+    
+        # Option I: CPU, naive
+        args = (meshes, image_size, radius, faces_per_pixel)
+>       idx1, zbuf1, bary1, dist1 = rasterize_meshes(*args)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:253: TypeError
+___________ TestRasterizeMeshes.test_cpp_vs_cuda_perspective_correct ___________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpp_vs_cuda_perspective_correct>
+
+    def test_cpp_vs_cuda_perspective_correct(self):
+        meshes = ico_sphere(2, device=torch.device("cpu"))
+        verts1, faces1 = meshes.get_mesh_verts_faces(0)
+        verts1.requires_grad = True
+        meshes1 = Meshes(verts=[verts1], faces=[faces1])
+        device = get_random_cuda_device()
+        verts2 = verts1.detach().to(device).requires_grad_(True)
+        faces2 = faces1.detach().clone().to(device)
+        meshes2 = Meshes(verts=[verts2], faces=[faces2])
+    
+        kwargs = {"image_size": 64, "perspective_correct": True}
+        fn1 = functools.partial(rasterize_meshes, meshes1, **kwargs)
+        fn2 = functools.partial(rasterize_meshes, meshes2, bin_size=0, **kwargs)
+        args = ()
+>       self._compare_impls(fn1, fn2, args, args, verts1, verts2, compare_grads=True)
+
+../pytorch3d/tests/test_rasterize_meshes.py:443: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpp_vs_cuda_perspective_correct>
+fn1 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a8b12a5b50>, image_size=64, perspective_correct=True)
+fn2 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a8b12a5c70>, bin_size=0, image_size=64, perspective_correct=True)
+args1 = (), args2 = ()
+grad_var1 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ...2629,  0.1624, -0.9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], requires_grad=True)
+grad_var2 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ....9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], device='cuda:0', requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+__________________ TestRasterizeMeshes.test_cpu_vs_cuda_naive __________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpu_vs_cuda_naive>
+
+    def test_cpu_vs_cuda_naive(self):
+        """
+        Compare naive versions of cuda and cpp
+        """
+    
+        torch.manual_seed(231)
+        image_size = 64
+        radius = 0.1**2
+        faces_per_pixel = 3
+        device = torch.device("cpu")
+        meshes_cpu = ico_sphere(0, device)
+        verts1, faces1 = meshes_cpu.get_mesh_verts_faces(0)
+        verts1.requires_grad = True
+        meshes_cpu = Meshes(verts=[verts1], faces=[faces1])
+    
+        device = get_random_cuda_device()
+        meshes_cuda = ico_sphere(0, device)
+        verts2, faces2 = meshes_cuda.get_mesh_verts_faces(0)
+        verts2.requires_grad = True
+        meshes_cuda = Meshes(verts=[verts2], faces=[faces2])
+    
+        barycentric_clip = True
+        args_cpu = (
+            meshes_cpu,
+            image_size,
+            radius,
+            faces_per_pixel,
+            None,
+            None,
+            False,
+            barycentric_clip,
+            False,
+        )
+        args_cuda = (
+            meshes_cuda,
+            image_size,
+            radius,
+            faces_per_pixel,
+            0,
+            0,
+            False,
+            barycentric_clip,
+            False,
+        )
+>       self._compare_impls(
+            rasterize_meshes,
+            rasterize_meshes,
+            args_cpu,
+            args_cuda,
+            verts1,
+            verts2,
+            compare_grads=True,
+        )
+
+../pytorch3d/tests/test_rasterize_meshes.py:218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cpu_vs_cuda_naive>
+fn1 = <function rasterize_meshes at 0x70a800d90040>
+fn2 = <function rasterize_meshes at 0x70a800d90040>
+args1 = (<pytorch3d.structures.meshes.Meshes object at 0x70a8b1309730>, 64, 0.010000000000000002, 3, None, None, ...)
+args2 = (<pytorch3d.structures.meshes.Meshes object at 0x70a8b13092b0>, 64, 0.010000000000000002, 3, 0, 0, ...)
+grad_var1 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ...8507,  0.0000,  0.5257],
+        [-0.8507,  0.0000, -0.5257],
+        [-0.8507,  0.0000,  0.5257]], requires_grad=True)
+grad_var2 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ....5257],
+        [-0.8507,  0.0000, -0.5257],
+        [-0.8507,  0.0000,  0.5257]], device='cuda:0', requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+______ TestRasterizeMeshes.test_cuda_naive_vs_binned_perspective_correct _______
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cuda_naive_vs_binned_perspective_correct>
+
+    def test_cuda_naive_vs_binned_perspective_correct(self):
+        device = get_random_cuda_device()
+        meshes = ico_sphere(2, device=device)
+        verts1, faces1 = meshes.get_mesh_verts_faces(0)
+        verts1.requires_grad = True
+        meshes1 = Meshes(verts=[verts1], faces=[faces1])
+        verts2 = verts1.detach().clone().requires_grad_(True)
+        faces2 = faces1.detach().clone()
+        meshes2 = Meshes(verts=[verts2], faces=[faces2])
+    
+        kwargs = {"image_size": 64, "perspective_correct": True}
+        fn1 = functools.partial(rasterize_meshes, meshes1, bin_size=0, **kwargs)
+        fn2 = functools.partial(rasterize_meshes, meshes2, bin_size=8, **kwargs)
+        args = ()
+>       self._compare_impls(fn1, fn2, args, args, verts1, verts2, compare_grads=True)
+
+../pytorch3d/tests/test_rasterize_meshes.py:459: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_cuda_naive_vs_binned_perspective_correct>
+fn1 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a7fc335b80>, bin_size=0, image_size=64, perspective_correct=True)
+fn2 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a7fc335e80>, bin_size=8, image_size=64, perspective_correct=True)
+args1 = (), args2 = ()
+grad_var1 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ....9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], device='cuda:0', requires_grad=True)
+grad_var2 = tensor([[-0.5257,  0.8507,  0.0000],
+        [ 0.5257,  0.8507,  0.0000],
+        [-0.5257, -0.8507,  0.0000],
+       ....9511],
+        [ 0.5257,  0.0000, -0.8506],
+        [-0.5257,  0.0000, -0.8506]], device='cuda:0', requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+____________________ TestRasterizeMeshes.test_order_of_ties ____________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_order_of_ties>
+
+    def test_order_of_ties(self):
+        # Tied faces are rasterized in index order
+        # We rasterize a mesh with many faces.
+        device = torch.device("cuda:0")
+        verts = -5 * torch.eye(3, dtype=torch.float32, device=device)[None]
+        faces = torch.arange(3, device=device, dtype=torch.int64).expand(1, 100, 3)
+        mesh = Meshes(verts=verts, faces=faces)
+    
+        R, T = look_at_view_transform(2.7, 0.0, 0.0)
+        cameras = FoVPerspectiveCameras(device=device, R=R, T=T)
+    
+        raster_settings = RasterizationSettings(
+            image_size=28, faces_per_pixel=100, bin_size=0
+        )
+        rasterizer = MeshRasterizer(raster_settings=raster_settings)
+    
+>       out = rasterizer(mesh, cameras=cameras)
+
+../pytorch3d/tests/test_rasterize_meshes.py:1181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/modules/module.py:1562: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = MeshRasterizer()
+meshes_world = <pytorch3d.structures.meshes.Meshes object at 0x70a8b12a5940>
+kwargs = {'cameras': FoVPerspectiveCameras()}
+meshes_proj = <pytorch3d.structures.meshes.Meshes object at 0x70a8b129ee80>
+raster_settings = RasterizationSettings(image_size=28, blur_radius=0.0, faces_per_pixel=100, bin_size=0, max_faces_opengl=10000000, max_...perspective_correct=None, clip_barycentric_coords=None, cull_backfaces=False, z_clip_value=None, cull_to_frustum=False)
+clip_barycentric_coords = False, cameras = FoVPerspectiveCameras()
+perspective_correct = True, z_clip = 0.5, znear = 1.0
+
+    def forward(self, meshes_world, **kwargs) -> Fragments:
+        """
+        Args:
+            meshes_world: a Meshes object representing a batch of meshes with
+                          coordinates in world space.
+        Returns:
+            Fragments: Rasterization outputs as a named tuple.
+        """
+        meshes_proj = self.transform(meshes_world, **kwargs)
+        raster_settings = kwargs.get("raster_settings", self.raster_settings)
+    
+        # By default, turn on clip_barycentric_coords if blur_radius > 0.
+        # When blur_radius > 0, a face can be matched to a pixel that is outside the
+        # face, resulting in negative barycentric coordinates.
+        clip_barycentric_coords = raster_settings.clip_barycentric_coords
+        if clip_barycentric_coords is None:
+            clip_barycentric_coords = raster_settings.blur_radius > 0.0
+    
+        # If not specified, infer perspective_correct and z_clip_value from the camera
+        cameras = kwargs.get("cameras", self.cameras)
+        if raster_settings.perspective_correct is not None:
+            perspective_correct = raster_settings.perspective_correct
+        else:
+            perspective_correct = cameras.is_perspective()
+        if raster_settings.z_clip_value is not None:
+            z_clip = raster_settings.z_clip_value
+        else:
+            znear = cameras.get_znear()
+            if isinstance(znear, torch.Tensor):
+                znear = znear.min().item()
+            z_clip = None if not perspective_correct or znear is None else znear / 2
+    
+        # By default, turn on clip_barycentric_coords if blur_radius > 0.
+        # When blur_radius > 0, a face can be matched to a pixel that is outside the
+        # face, resulting in negative barycentric coordinates.
+    
+>       pix_to_face, zbuf, bary_coords, dists = rasterize_meshes(
+            meshes_proj,
+            image_size=raster_settings.image_size,
+            blur_radius=raster_settings.blur_radius,
+            faces_per_pixel=raster_settings.faces_per_pixel,
+            bin_size=raster_settings.bin_size,
+            max_faces_per_bin=raster_settings.max_faces_per_bin,
+            clip_barycentric_coords=clip_barycentric_coords,
+            perspective_correct=perspective_correct,
+            cull_backfaces=raster_settings.cull_backfaces,
+            z_clip_value=z_clip,
+            cull_to_frustum=raster_settings.cull_to_frustum,
+        )
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/pytorch3d/renderer/mesh/rasterizer.py:254: TypeError
+_______________ TestRasterizeMeshes.test_python_vs_cpp_bary_clip _______________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpp_bary_clip>
+
+    def test_python_vs_cpp_bary_clip(self):
+        torch.manual_seed(232)
+        N = 2
+        V = 10
+        F = 5
+        verts1 = torch.randn(N, V, 3, requires_grad=True)
+        verts2 = verts1.detach().clone().requires_grad_(True)
+        faces = torch.randint(V, size=(N, F, 3))
+        meshes1 = Meshes(verts1, faces)
+        meshes2 = Meshes(verts2, faces)
+    
+        kwargs = {"image_size": 24, "clip_barycentric_coords": True}
+        fn1 = functools.partial(rasterize_meshes, meshes1, **kwargs)
+        fn2 = functools.partial(rasterize_meshes_python, meshes2, **kwargs)
+        args = ()
+>       self._compare_impls(fn1, fn2, args, args, verts1, verts2, compare_grads=True)
+
+../pytorch3d/tests/test_rasterize_meshes.py:394: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpp_bary_clip>
+fn1 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a8b1311370>, image_size=24, clip_barycentric_coords=True)
+fn2 = functools.partial(<function rasterize_meshes_python at 0x70a800d903a0>, <pytorch3d.structures.meshes.Meshes object at 0x70a8b1311280>, image_size=24, clip_barycentric_coords=True)
+args1 = (), args2 = ()
+grad_var1 = tensor([[[-1.6300,  1.5962, -0.1839],
+         [ 0.5574,  0.3608, -0.6041],
+         [ 3.3356,  0.0082, -0.1081],
+    ...1,  0.3808, -1.8421],
+         [-0.7352, -0.2496,  0.7058],
+         [-0.2862,  0.0831, -0.1324]]], requires_grad=True)
+grad_var2 = tensor([[[-1.6300,  1.5962, -0.1839],
+         [ 0.5574,  0.3608, -0.6041],
+         [ 3.3356,  0.0082, -0.1081],
+    ...1,  0.3808, -1.8421],
+         [-0.7352, -0.2496,  0.7058],
+         [-0.2862,  0.0831, -0.1324]]], requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+__________ TestRasterizeMeshes.test_python_vs_cpp_perspective_correct __________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpp_perspective_correct>
+
+    def test_python_vs_cpp_perspective_correct(self):
+        torch.manual_seed(232)
+        N = 2
+        V = 10
+        F = 5
+        verts1 = torch.randn(N, V, 3, requires_grad=True)
+        verts2 = verts1.detach().clone().requires_grad_(True)
+        faces = torch.randint(V, size=(N, F, 3))
+        meshes1 = Meshes(verts1, faces)
+        meshes2 = Meshes(verts2, faces)
+    
+        kwargs = {"image_size": 24, "perspective_correct": True}
+        fn1 = functools.partial(rasterize_meshes, meshes1, **kwargs)
+        fn2 = functools.partial(rasterize_meshes_python, meshes2, **kwargs)
+        args = ()
+>       self._compare_impls(fn1, fn2, args, args, verts1, verts2, compare_grads=True)
+
+../pytorch3d/tests/test_rasterize_meshes.py:427: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpp_perspective_correct>
+fn1 = functools.partial(<function rasterize_meshes at 0x70a800d90040>, <pytorch3d.structures.meshes.Meshes object at 0x70a8b1311910>, image_size=24, perspective_correct=True)
+fn2 = functools.partial(<function rasterize_meshes_python at 0x70a800d903a0>, <pytorch3d.structures.meshes.Meshes object at 0x70a7fa9c70a0>, image_size=24, perspective_correct=True)
+args1 = (), args2 = ()
+grad_var1 = tensor([[[-1.6300,  1.5962, -0.1839],
+         [ 0.5574,  0.3608, -0.6041],
+         [ 3.3356,  0.0082, -0.1081],
+    ...1,  0.3808, -1.8421],
+         [-0.7352, -0.2496,  0.7058],
+         [-0.2862,  0.0831, -0.1324]]], requires_grad=True)
+grad_var2 = tensor([[[-1.6300,  1.5962, -0.1839],
+         [ 0.5574,  0.3608, -0.6041],
+         [ 3.3356,  0.0082, -0.1081],
+    ...1,  0.3808, -1.8421],
+         [-0.7352, -0.2496,  0.7058],
+         [-0.2862,  0.0831, -0.1324]]], requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+>       idx1, zbuf1, bary1, dist1 = fn1(*args1)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:553: TypeError
+________________ TestRasterizeMeshes.test_python_vs_cpu_vs_cuda ________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpu_vs_cuda>
+
+    def test_python_vs_cpu_vs_cuda(self):
+        torch.manual_seed(231)
+        device = torch.device("cpu")
+        image_size = 32
+        blur_radius = 0.1**2
+        faces_per_pixel = 3
+    
+        for d in ["cpu", get_random_cuda_device()]:
+            device = torch.device(d)
+            compare_grads = True
+            # Mesh with a single face.
+            verts1 = torch.tensor(
+                [[0.0, 0.6, 0.1], [-0.7, -0.4, 0.5], [0.7, -0.4, 0.7]],
+                dtype=torch.float32,
+                requires_grad=True,
+                device=device,
+            )
+            faces1 = torch.tensor([[0, 1, 2]], dtype=torch.int64, device=device)
+            meshes1 = Meshes(verts=[verts1], faces=[faces1])
+            args1 = (meshes1, image_size, blur_radius, faces_per_pixel)
+            verts2 = verts1.detach().clone()
+            verts2.requires_grad = True
+            meshes2 = Meshes(verts=[verts2], faces=[faces1])
+            args2 = (meshes2, image_size, blur_radius, faces_per_pixel)
+>           self._compare_impls(
+                rasterize_meshes_python,
+                rasterize_meshes,
+                args1,
+                args2,
+                verts1,
+                verts2,
+                compare_grads=compare_grads,
+            )
+
+../pytorch3d/tests/test_rasterize_meshes.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_python_vs_cpu_vs_cuda>
+fn1 = <function rasterize_meshes_python at 0x70a800d903a0>
+fn2 = <function rasterize_meshes at 0x70a800d90040>
+args1 = (<pytorch3d.structures.meshes.Meshes object at 0x70a7fc335e80>, 32, 0.010000000000000002, 3)
+args2 = (<pytorch3d.structures.meshes.Meshes object at 0x70a7fc335c70>, 32, 0.010000000000000002, 3)
+grad_var1 = tensor([[ 0.0000,  0.6000,  0.1000],
+        [-0.7000, -0.4000,  0.5000],
+        [ 0.7000, -0.4000,  0.7000]], requires_grad=True)
+grad_var2 = tensor([[ 0.0000,  0.6000,  0.1000],
+        [-0.7000, -0.4000,  0.5000],
+        [ 0.7000, -0.4000,  0.7000]], requires_grad=True)
+compare_grads = True
+
+    def _compare_impls(
+        self,
+        fn1,
+        fn2,
+        args1,
+        args2,
+        grad_var1=None,
+        grad_var2=None,
+        compare_grads=False,
+    ):
+        idx1, zbuf1, bary1, dist1 = fn1(*args1)
+>       idx2, zbuf2, bary2, dist2 = fn2(*args2)
+E       TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:554: TypeError
+__________________ TestRasterizeMeshes.test_simple_cpu_naive ___________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cpu_naive>
+
+    def test_simple_cpu_naive(self):
+        n_threads = torch.get_num_threads()
+        torch.set_num_threads(1)  # single threaded
+>       self._test_simple_cpu_naive_instance()
+
+../pytorch3d/tests/test_rasterize_meshes.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_rasterize_meshes.py:40: in _test_simple_cpu_naive_instance
+    self._simple_triangle_raster(rasterize_meshes, device, bin_size=0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cpu_naive>
+raster_fn = <function rasterize_meshes at 0x70a800d90040>
+device = device(type='cpu'), bin_size = 0
+
+    def _simple_triangle_raster(self, raster_fn, device, bin_size=None):
+        image_size = 10
+    
+        # Mesh with a single non-symmetrical face - this will help
+        # check that the XY directions are correctly oriented.
+        verts0 = torch.tensor(
+            [[-0.3, -0.4, 0.1], [0.0, 0.6, 0.1], [0.9, -0.4, 0.1]],
+            dtype=torch.float32,
+            device=device,
+        )
+        faces0 = torch.tensor([[1, 0, 2]], dtype=torch.int64, device=device)
+    
+        # Mesh with two overlapping faces.
+        # fmt: off
+        verts1 = torch.tensor(
+            [
+                [-0.9, -0.2, 0.1],  # noqa: E241, E201
+                [ 0.0,  0.6, 0.1],  # noqa: E241, E201
+                [ 0.7, -0.4, 0.1],  # noqa: E241, E201
+                [-0.7,  0.4, 0.5],  # noqa: E241, E201
+                [ 0.0, -0.6, 0.5],  # noqa: E241, E201
+                [ 0.7,  0.4, 0.5],  # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt on
+        faces1 = torch.tensor(
+            [[1, 0, 2], [3, 4, 5]], dtype=torch.int64, device=device
+        )
+    
+        # Expected output tensors in the format with axes +X left, +Y up, +Z in
+        # k = 0, closest point.
+        # fmt off
+        expected_p2face_k0 = torch.tensor(
+            [
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1,  0, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  0,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1,  1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  2,  2,  1,  1,  1,  2, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1,  1, -1],  # noqa: E241, E201
+                    [-1, -1,  1,  1,  1,  2, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k0 = torch.tensor(
+            [
+                [
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1, 0.1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, 0.1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1]   # noqa: E241, E201
+                ],
+                [
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, 0.1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.5, 0.5, 0.1, 0.1, 0.1, 0.5,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.1, 0.1, 0.1, 0.5,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1]   # noqa: E241, E201
+                ]
+            ],
+            device=device,
+        )
+        # fmt: on
+    
+        meshes = Meshes(verts=[verts0, verts1], faces=[faces0, faces1])
+    
+        # k = 1, second closest point.
+        expected_p2face_k1 = expected_p2face_k0.clone()
+        expected_p2face_k1[0, :] = torch.ones_like(expected_p2face_k1[0, :]) * -1
+    
+        # fmt: off
+        expected_p2face_k1[1, :] = torch.tensor(
+            [
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]   # noqa: E241, E201
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k1 = expected_zbuf_k0.clone()
+        expected_zbuf_k1[0, :] = torch.ones_like(expected_zbuf_k1[0, :]) * -1
+        expected_zbuf_k1[1, :] = torch.tensor(
+            [
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.]   # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt: on
+    
+        #  Coordinate conventions +Y up, +Z in, +X left
+        if bin_size == -1:
+            # simple python, no bin_size
+            p2face, zbuf, bary, pix_dists = raster_fn(meshes, image_size, 0.0, 2)
+        else:
+>           p2face, zbuf, bary, pix_dists = raster_fn(
+                meshes, image_size, 0.0, 2, bin_size
+            )
+E           TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:996: TypeError
+_________________ TestRasterizeMeshes.test_simple_cuda_binned __________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cuda_binned>
+
+    def test_simple_cuda_binned(self):
+        device = get_random_cuda_device()
+>       self._simple_triangle_raster(rasterize_meshes, device, bin_size=5)
+
+../pytorch3d/tests/test_rasterize_meshes.py:66: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cuda_binned>
+raster_fn = <function rasterize_meshes at 0x70a800d90040>, device = 'cuda:0'
+bin_size = 5
+
+    def _simple_triangle_raster(self, raster_fn, device, bin_size=None):
+        image_size = 10
+    
+        # Mesh with a single non-symmetrical face - this will help
+        # check that the XY directions are correctly oriented.
+        verts0 = torch.tensor(
+            [[-0.3, -0.4, 0.1], [0.0, 0.6, 0.1], [0.9, -0.4, 0.1]],
+            dtype=torch.float32,
+            device=device,
+        )
+        faces0 = torch.tensor([[1, 0, 2]], dtype=torch.int64, device=device)
+    
+        # Mesh with two overlapping faces.
+        # fmt: off
+        verts1 = torch.tensor(
+            [
+                [-0.9, -0.2, 0.1],  # noqa: E241, E201
+                [ 0.0,  0.6, 0.1],  # noqa: E241, E201
+                [ 0.7, -0.4, 0.1],  # noqa: E241, E201
+                [-0.7,  0.4, 0.5],  # noqa: E241, E201
+                [ 0.0, -0.6, 0.5],  # noqa: E241, E201
+                [ 0.7,  0.4, 0.5],  # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt on
+        faces1 = torch.tensor(
+            [[1, 0, 2], [3, 4, 5]], dtype=torch.int64, device=device
+        )
+    
+        # Expected output tensors in the format with axes +X left, +Y up, +Z in
+        # k = 0, closest point.
+        # fmt off
+        expected_p2face_k0 = torch.tensor(
+            [
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1,  0, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  0,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1,  1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  2,  2,  1,  1,  1,  2, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1,  1, -1],  # noqa: E241, E201
+                    [-1, -1,  1,  1,  1,  2, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k0 = torch.tensor(
+            [
+                [
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1, 0.1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, 0.1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1]   # noqa: E241, E201
+                ],
+                [
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, 0.1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.5, 0.5, 0.1, 0.1, 0.1, 0.5,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.1, 0.1, 0.1, 0.5,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1]   # noqa: E241, E201
+                ]
+            ],
+            device=device,
+        )
+        # fmt: on
+    
+        meshes = Meshes(verts=[verts0, verts1], faces=[faces0, faces1])
+    
+        # k = 1, second closest point.
+        expected_p2face_k1 = expected_p2face_k0.clone()
+        expected_p2face_k1[0, :] = torch.ones_like(expected_p2face_k1[0, :]) * -1
+    
+        # fmt: off
+        expected_p2face_k1[1, :] = torch.tensor(
+            [
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]   # noqa: E241, E201
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k1 = expected_zbuf_k0.clone()
+        expected_zbuf_k1[0, :] = torch.ones_like(expected_zbuf_k1[0, :]) * -1
+        expected_zbuf_k1[1, :] = torch.tensor(
+            [
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.]   # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt: on
+    
+        #  Coordinate conventions +Y up, +Z in, +X left
+        if bin_size == -1:
+            # simple python, no bin_size
+            p2face, zbuf, bary, pix_dists = raster_fn(meshes, image_size, 0.0, 2)
+        else:
+>           p2face, zbuf, bary, pix_dists = raster_fn(
+                meshes, image_size, 0.0, 2, bin_size
+            )
+E           TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:996: TypeError
+__________________ TestRasterizeMeshes.test_simple_cuda_naive __________________
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cuda_naive>
+
+    def test_simple_cuda_naive(self):
+        device = get_random_cuda_device()
+>       self._simple_triangle_raster(rasterize_meshes, device, bin_size=0)
+
+../pytorch3d/tests/test_rasterize_meshes.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tests.test_rasterize_meshes.TestRasterizeMeshes testMethod=test_simple_cuda_naive>
+raster_fn = <function rasterize_meshes at 0x70a800d90040>, device = 'cuda:0'
+bin_size = 0
+
+    def _simple_triangle_raster(self, raster_fn, device, bin_size=None):
+        image_size = 10
+    
+        # Mesh with a single non-symmetrical face - this will help
+        # check that the XY directions are correctly oriented.
+        verts0 = torch.tensor(
+            [[-0.3, -0.4, 0.1], [0.0, 0.6, 0.1], [0.9, -0.4, 0.1]],
+            dtype=torch.float32,
+            device=device,
+        )
+        faces0 = torch.tensor([[1, 0, 2]], dtype=torch.int64, device=device)
+    
+        # Mesh with two overlapping faces.
+        # fmt: off
+        verts1 = torch.tensor(
+            [
+                [-0.9, -0.2, 0.1],  # noqa: E241, E201
+                [ 0.0,  0.6, 0.1],  # noqa: E241, E201
+                [ 0.7, -0.4, 0.1],  # noqa: E241, E201
+                [-0.7,  0.4, 0.5],  # noqa: E241, E201
+                [ 0.0, -0.6, 0.5],  # noqa: E241, E201
+                [ 0.7,  0.4, 0.5],  # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt on
+        faces1 = torch.tensor(
+            [[1, 0, 2], [3, 4, 5]], dtype=torch.int64, device=device
+        )
+    
+        # Expected output tensors in the format with axes +X left, +Y up, +Z in
+        # k = 0, closest point.
+        # fmt off
+        expected_p2face_k0 = torch.tensor(
+            [
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1,  0, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  0,  0,  0,  0,  0, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+                [
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1,  1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1,  2,  2,  1,  1,  1,  2, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1,  1,  1,  1,  1,  1,  1, -1],  # noqa: E241, E201
+                    [-1, -1,  1,  1,  1,  2, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                ],
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k0 = torch.tensor(
+            [
+                [
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1, 0.1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1, 0.1, 0.1, 0.1, 0.1, 0.1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1],  # noqa: E241, E201
+                    [-1,  -1,  -1,  -1,  -1,  -1, -1, -1, -1, -1]   # noqa: E241, E201
+                ],
+                [
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, -1,   -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1, 0.1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.5, 0.5, 0.1, 0.1, 0.1, 0.5,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, -1],  # noqa: E241, E201
+                    [-1, -1, 0.1, 0.1, 0.1, 0.5,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1],  # noqa: E241, E201
+                    [-1, -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1, -1]   # noqa: E241, E201
+                ]
+            ],
+            device=device,
+        )
+        # fmt: on
+    
+        meshes = Meshes(verts=[verts0, verts1], faces=[faces0, faces1])
+    
+        # k = 1, second closest point.
+        expected_p2face_k1 = expected_p2face_k0.clone()
+        expected_p2face_k1[0, :] = torch.ones_like(expected_p2face_k1[0, :]) * -1
+    
+        # fmt: off
+        expected_p2face_k1[1, :] = torch.tensor(
+            [
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1,  2,  2,  2,  2, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1,  2, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],  # noqa: E241, E201
+                [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]   # noqa: E241, E201
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+        expected_zbuf_k1 = expected_zbuf_k0.clone()
+        expected_zbuf_k1[0, :] = torch.ones_like(expected_zbuf_k1[0, :]) * -1
+        expected_zbuf_k1[1, :] = torch.tensor(
+            [
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  0.5,  0.5, 0.5,  0.5, -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  0.5,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.],  # noqa: E241, E201
+                [-1., -1., -1.,  -1.,  -1.,  -1., -1., -1., -1., -1.]   # noqa: E241, E201
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        # fmt: on
+    
+        #  Coordinate conventions +Y up, +Z in, +X left
+        if bin_size == -1:
+            # simple python, no bin_size
+            p2face, zbuf, bary, pix_dists = raster_fn(meshes, image_size, 0.0, 2)
+        else:
+>           p2face, zbuf, bary, pix_dists = raster_fn(
+                meshes, image_size, 0.0, 2, bin_size
+            )
+E           TypeError: cannot unpack non-iterable NoneType object
+
+../pytorch3d/tests/test_rasterize_meshes.py:996: TypeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned
+FAILED ../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive
+========================= 13 failed, 4 passed in 2.44s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 17 items
+
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cpu PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_compare_coarse_cpu_vs_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_python PASSED
+
+============================= 17 passed in 13.95s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 17 items
+
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_bin_size_error PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cpu PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_coarse_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_compare_coarse_cpu_vs_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_bary_clip PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_naive_vs_cuda_binned PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpp_vs_cuda_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cpu_vs_cuda_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_cuda_naive_vs_binned_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_order_of_ties PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_bary_clip PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpp_perspective_correct PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_python_vs_cpu_vs_cuda PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cpu_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_binned PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_cuda_naive PASSED
+../pytorch3d/tests/test_rasterize_meshes.py::TestRasterizeMeshes::test_simple_python PASSED
+
+============================= 17 passed in 14.24s ==============================

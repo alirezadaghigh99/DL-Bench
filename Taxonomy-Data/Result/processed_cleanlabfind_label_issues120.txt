@@ -1,0 +1,1195 @@
+output file:
+processed_cleanlabfind_label_issues120.json
+function:
+find_label_issues
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2]', 'FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_health_summary_multilabel', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1]', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None]', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10]', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 91 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_public_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_method PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[self_confidence] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[normalized_margin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_health_summary_multilabel ------------------------------------
+|  Generating a Cleanlab Dataset Health Summary|
+|   for your dataset with 7 examples |  Note, Cleanlab is not a medical doctor... yet.|
+------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+   Class Index  Label Issues  ...  Inverse Label Noise  Label Quality Score
+0            2             1  ...             0.000000             0.857143
+1            0             0  ...             0.142857             1.000000
+2            1             0  ...             0.000000             1.000000
+3            3             0  ...             0.000000             1.000000
+4            4             0  ...             0.000000             1.000000
+
+[5 rows x 6 columns]
+
+Common multilabel issues are
+-----------------------------------------------------------------------------------
+
+   Class Index  In Given Label  ...  Num Examples  Issue Probability
+0            0           False  ...             1           0.142857
+1            2            True  ...             1           0.142857
+2            0            True  ...             0           0.000000
+3            1            True  ...             0           0.000000
+4            1           False  ...             0           0.000000
+5            2           False  ...             0           0.000000
+6            3            True  ...             0           0.000000
+7            3           False  ...             0           0.000000
+8            4            True  ...             0           0.000000
+9            4           False  ...             0           0.000000
+
+[10 rows x 5 columns]
+
+FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of ids] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[3d array] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[scalar] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_stack_complement PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[Without probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[With probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_label_quality_scores_output PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[default] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class assignment configuration] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Handle more than 8 classes] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_cross_validated_multilabel_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues FAILED
+
+=================================== FAILURES ===================================
+______________________ test_multilabel_find_label_issues _______________________
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+
+    def test_multilabel_find_label_issues(data_multilabel):
+        labels, pred_probs = data_multilabel
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, return_indices_ranked_by="self_confidence"
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:394: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = 'self_confidence', rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: self_confidence
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+__________________ test_multilabel_min_examples_per_class[10] __________________
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+min_examples_per_class = 10
+
+    @pytest.mark.parametrize("min_examples_per_class", [10, 90])
+    def test_multilabel_min_examples_per_class(data_multilabel, min_examples_per_class):
+        labels, pred_probs = data_multilabel
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, min_examples_per_class=min_examples_per_class
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:427: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 10
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+__________________ test_multilabel_min_examples_per_class[90] __________________
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+min_examples_per_class = 90
+
+    @pytest.mark.parametrize("min_examples_per_class", [10, 90])
+    def test_multilabel_min_examples_per_class(data_multilabel, min_examples_per_class):
+        labels, pred_probs = data_multilabel
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, min_examples_per_class=min_examples_per_class
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:427: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 90
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+________________ test_multilabel_num_to_remove_per_class[None] _________________
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+num_to_remove_per_class = None
+
+    @pytest.mark.parametrize("num_to_remove_per_class", [None, [1, 1, 0, 0, 2], [1, 1, 0, 0, 1]])
+    def test_multilabel_num_to_remove_per_class(data_multilabel, num_to_remove_per_class):
+        labels, pred_probs = data_multilabel
+    
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, num_to_remove_per_class=num_to_remove_per_class
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:440: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+______ test_multilabel_num_to_remove_per_class[num_to_remove_per_class1] _______
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+num_to_remove_per_class = [1, 1, 0, 0, 2]
+
+    @pytest.mark.parametrize("num_to_remove_per_class", [None, [1, 1, 0, 0, 2], [1, 1, 0, 0, 1]])
+    def test_multilabel_num_to_remove_per_class(data_multilabel, num_to_remove_per_class):
+        labels, pred_probs = data_multilabel
+    
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, num_to_remove_per_class=num_to_remove_per_class
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:440: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = [1, 1, 0, 0, 2], min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+______ test_multilabel_num_to_remove_per_class[num_to_remove_per_class2] _______
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+num_to_remove_per_class = [1, 1, 0, 0, 1]
+
+    @pytest.mark.parametrize("num_to_remove_per_class", [None, [1, 1, 0, 0, 2], [1, 1, 0, 0, 1]])
+    def test_multilabel_num_to_remove_per_class(data_multilabel, num_to_remove_per_class):
+        labels, pred_probs = data_multilabel
+    
+>       issues = filter.find_label_issues(
+            labels=labels, pred_probs=pred_probs, num_to_remove_per_class=num_to_remove_per_class
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:440: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = [1, 1, 0, 0, 1], min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+_____________________ test_overall_multilabel_health_score _____________________
+
+data_multilabel = ([[0], [1], [2], [3], [4], [0], ...], array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1,...0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]]))
+
+    def test_overall_multilabel_health_score(data_multilabel):
+        labels, pred_probs = data_multilabel
+>       overall_label_health_score = overall_multilabel_health_score(
+            pred_probs=pred_probs, labels=labels
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:489: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/dataset.py:256: in overall_multilabel_health_score
+    issues = find_label_issues(
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [1], [2], [3], [4], [0], ...]
+pred_probs = array([[0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.9, 0.1, 0.1],
+       [0.1, 0.1... 0.1, 0.9, 0.1],
+       [0.1, 0.1, 0.1, 0.1, 0.9],
+       [0.9, 0.1, 0.1, 0.1, 0.1],
+       [0.1, 0.9, 0.1, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+________________________ test_health_summary_multilabel ________________________
+
+pred_probs_multilabel = array([[0.9, 0.1, 0. , 0.4, 0.1],
+       [0.7, 0.8, 0.2, 0.3, 0.1],
+       [0.9, 0.8, 0.4, 0.2, 0.1],
+       [0.1, 0.1, 0.8, 0.3, 0.1],
+       [0.4, 0.5, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.2, 0.1, 0.1],
+       [0.8, 0.1, 0.2, 0.1, 0.1]])
+labels_multilabel = [[0], [0, 1], [0, 1], [2], [0, 2, 3], [], ...]
+
+    def test_health_summary_multilabel(pred_probs_multilabel, labels_multilabel):
+>       health_summary_multilabel = multilabel_health_summary(
+            pred_probs=pred_probs_multilabel, labels=labels_multilabel
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:522: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/dataset.py:331: in multilabel_health_summary
+    health_score = overall_multilabel_health_score(
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/dataset.py:256: in overall_multilabel_health_score
+    issues = find_label_issues(
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[0], [0, 1], [0, 1], [2], [0, 2, 3], [], ...]
+pred_probs = array([[0.9, 0.1, 0. , 0.4, 0.1],
+       [0.7, 0.8, 0.2, 0.3, 0.1],
+       [0.9, 0.8, 0.4, 0.2, 0.1],
+       [0.1, 0.1, 0.8, 0.3, 0.1],
+       [0.4, 0.5, 0.1, 0.1, 0.1],
+       [0.1, 0.1, 0.2, 0.1, 0.1],
+       [0.8, 0.1, 0.2, 0.1, 0.1]])
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 1
+confident_joint = None, n_jobs = None, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+____________________ TestMultiLabel.test_find_label_issues _____________________
+
+self = <test_multilabel_classification.TestMultiLabel object at 0x7c3620881c90>
+
+    @given(cleanlab_data_strategy())
+>   @settings(deadline=20000)
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:783: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:787: in test_find_label_issues
+    is_issue = filter.find_label_issues(
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:13: in find_label_issues
+    return find_label_issues(labels, pred_probs, return_indices_ranked_by, rank_by_kwargs, filter_by, frac_noise, num_to_remove_per_class, min_examples_per_class, confident_joint, n_jobs, verbose, low_memory)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = [[], [], [], [1], [0], [], ...]
+pred_probs = array([[0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5],
+       [0.5, 0.5]], dtype=float32)
+return_indices_ranked_by = None, rank_by_kwargs = {}
+filter_by = 'prune_by_noise_rate', frac_noise = 1.0
+num_to_remove_per_class = None, min_examples_per_class = 1
+confident_joint = None, n_jobs = 1, verbose = False, low_memory = False
+
+    def find_label_issues(labels, pred_probs, return_indices_ranked_by='probability', rank_by_kwargs=None, filter_by='confident_joint', frac_noise=0.1, num_to_remove_per_class=None, min_examples_per_class=5, confident_joint=None, n_jobs=1, verbose=False, low_memory=False):
+        """
+        Identifies potentially mislabeled examples in a multi-label classification dataset.
+    
+        Parameters:
+        - labels: List of noisy labels for multi-label classification.
+        - pred_probs: Array of model-predicted class probabilities.
+        - return_indices_ranked_by: Specifies how to rank the identified examples with label issues.
+        - rank_by_kwargs: Optional keyword arguments for ranking.
+        - filter_by: Method to determine examples with label issues.
+        - frac_noise: Fraction of label issues to return.
+        - num_to_remove_per_class: Number of mislabeled examples to return per class.
+        - min_examples_per_class: Minimum number of examples required per class.
+        - confident_joint: Confident joint array for multi-label classification.
+        - n_jobs: Number of processing threads.
+        - verbose: Print multiprocessing information.
+        - low_memory: Flag for using limited memory.
+    
+        Returns:
+        - Array of indices of examples identified with label issues, sorted by the likelihood that all classes are correctly annotated for each example.
+        """
+    
+        def rank_examples_by_probability(labels, pred_probs, rank_by_kwargs):
+            correct_prob = np.prod(pred_probs * labels + (1 - pred_probs) * (1 - labels), axis=1)
+            return np.argsort(correct_prob)
+    
+        def filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class):
+            return np.arange(len(labels))
+        if filter_by == 'confident_joint' and confident_joint is not None:
+            indices = filter_confident_joint(labels, pred_probs, confident_joint, min_examples_per_class)
+        else:
+            indices = np.arange(len(labels))
+        if return_indices_ranked_by == 'probability':
+            ranked_indices = rank_examples_by_probability(labels[indices], pred_probs[indices], rank_by_kwargs)
+        else:
+>           raise ValueError(f'Unknown ranking method: {return_indices_ranked_by}')
+E           ValueError: Unknown ranking method: None
+E           Falsifying example: test_find_label_issues(
+E               self=<test_multilabel_classification.TestMultiLabel object at 0x7c3620881c90>,
+E               data=(array([[0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 0]], dtype=int8), array([[0, 0],
+E                       [0, 0],
+E                       [0, 0],
+E                       [0, 1],
+E                       [1, 0],
+E                       [0, 0],
+E                       [0, 1],
+E                       [0, 0],
+E                       [0, 1],
+E                       [0, 1]]), array([[0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5],
+E                       [0.5, 0.5]], dtype=float32)),  # or any other generated value
+E           )
+
+../publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/temp.py:44: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_health_summary_multilabel
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+========================= 9 failed, 82 passed in 7.64s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 91 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_public_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_method PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[self_confidence] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[normalized_margin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_health_summary_multilabel ------------------------------------
+|  Generating a Cleanlab Dataset Health Summary|
+|   for your dataset with 7 examples |  Note, Cleanlab is not a medical doctor... yet.|
+------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+   Class Index  Label Issues  ...  Inverse Label Noise  Label Quality Score
+0            2             1  ...             0.000000             0.857143
+1            0             0  ...             0.142857             1.000000
+2            1             0  ...             0.000000             1.000000
+3            3             0  ...             0.000000             1.000000
+4            4             0  ...             0.000000             1.000000
+
+[5 rows x 6 columns]
+
+Common multilabel issues are
+-----------------------------------------------------------------------------------
+
+   Class Index  In Given Label  ...  Num Examples  Issue Probability
+0            0           False  ...             1           0.142857
+1            2            True  ...             1           0.142857
+2            0            True  ...             0           0.000000
+3            1            True  ...             0           0.000000
+4            1           False  ...             0           0.000000
+5            2           False  ...             0           0.000000
+6            3            True  ...             0           0.000000
+7            3           False  ...             0           0.000000
+8            4            True  ...             0           0.000000
+9            4           False  ...             0           0.000000
+
+[10 rows x 5 columns]
+
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of ids] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[3d array] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[scalar] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_stack_complement PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[Without probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[With probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_label_quality_scores_output PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[default] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class assignment configuration] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Handle more than 8 classes] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_cross_validated_multilabel_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues PASSED
+
+=============================== warnings summary ===============================
+tests/test_multilabel_classification.py::test_multilabel_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:135: UserWarning: `rank_by_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`rank_by_kwargs` is not used when `low_memory=True`.")
+
+tests/test_multilabel_classification.py::test_multilabel_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:154: UserWarning: `n_jobs` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+tests/test_multilabel_classification.py: 14 warnings
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/filter.py:904: UserWarning: May not flag all label issues in class: 1, it has too few examples (see `min_examples_per_class` argument)
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 91 passed, 16 warnings in 5.33s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 91 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_public_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_callable[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[min] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[max] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[mean] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[median] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[exponential_moving_average] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_aggregator_score[softmin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_method PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestAggregator::test_invalid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[strict-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-min-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-max-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-mean-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-exponential_moving_average-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_call[-softmin-CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[SELF_CONFIDENCE] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[NORMALIZED_MARGIN] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_aggregate_kwargs[CONFIDENCE_WEIGHTED_ENTROPY] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultilabelScorer::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[self_confidence] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[normalized_margin] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_class_label_scorer_from_str[confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_common_multilabel_issues[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[10] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_min_examples_per_class[90] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_num_to_remove_per_class[num_to_remove_per_class2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_rank_classes_by_multilabel_quality[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_overall_multilabel_health_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_class_label_quality_scores PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_health_summary_multilabel ------------------------------------
+|  Generating a Cleanlab Dataset Health Summary|
+|   for your dataset with 7 examples |  Note, Cleanlab is not a medical doctor... yet.|
+------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+   Class Index  Label Issues  ...  Inverse Label Noise  Label Quality Score
+0            2             1  ...             0.000000             0.857143
+1            0             0  ...             0.142857             1.000000
+2            1             0  ...             0.000000             1.000000
+3            3             0  ...             0.000000             1.000000
+4            4             0  ...             0.000000             1.000000
+
+[5 rows x 6 columns]
+
+Common multilabel issues are
+-----------------------------------------------------------------------------------
+
+   Class Index  In Given Label  ...  Num Examples  Issue Probability
+0            0           False  ...             1           0.142857
+1            2            True  ...             1           0.142857
+2            0            True  ...             0           0.000000
+3            1            True  ...             0           0.000000
+4            1           False  ...             0           0.000000
+5            2           False  ...             0           0.000000
+6            3            True  ...             0           0.000000
+7            3           False  ...             0           0.000000
+8            4            True  ...             0           0.000000
+9            4           False  ...             0           0.000000
+
+[10 rows x 5 columns]
+
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of ids] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[lists of strings] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[3d array] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_is_multilabel_is_false[scalar] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_stack_complement PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[Without probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_onehot_num_classes[With probabilities] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_label_quality_scores_output PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[default] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class assignment configuration] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Missing class] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_multilabel_py[Handle more than 8 classes] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=3] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_split_generator_rare_configurations[K=4] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::test_get_cross_validated_multilabel_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues PASSED
+
+=============================== warnings summary ===============================
+tests/test_multilabel_classification.py::test_multilabel_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:135: UserWarning: `rank_by_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`rank_by_kwargs` is not used when `low_memory=True`.")
+
+tests/test_multilabel_classification.py::test_multilabel_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multilabel_classification/filter.py:154: UserWarning: `n_jobs` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/filter.py:904: UserWarning: May not flag all label issues in class: 1, it has too few examples (see `min_examples_per_class` argument)
+    warnings.warn(
+
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+tests/test_multilabel_classification.py::TestMultiLabel::test_find_label_issues
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/filter.py:904: UserWarning: May not flag all label issues in class: 0, it has too few examples (see `min_examples_per_class` argument)
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 91 passed, 19 warnings in 5.69s ========================

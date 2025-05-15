@@ -1,0 +1,186 @@
+output file:
+processed_cleanlabtemp_scale_pred_probs164.json
+function:
+temp_scale_pred_probs
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_convert_long_to_wide PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator 1
+[ 0. nan nan nan nan nan nan nan nan nan  2.  0.  0. nan nan nan nan  0.
+ nan nan  1. nan nan nan nan nan nan nan nan nan nan nan nan  1. nan nan
+  0. nan nan nan nan nan nan nan nan  1. nan  0. nan nan nan nan  0. nan
+ nan nan nan nan nan nan  0. nan nan  0. nan nan nan nan nan  0. nan nan
+ nan nan nan nan nan nan nan  1. nan nan nan nan nan nan nan  1. nan nan
+ nan nan nan  1. nan  1. nan nan nan nan nan nan nan  1. nan nan nan nan
+ nan  1. nan nan nan nan nan nan  1. nan nan nan nan nan nan nan nan nan
+ nan nan nan  2. nan nan nan nan  0.  2. nan  2.  2. nan nan  1. nan  2.
+ nan nan nan nan nan nan nan nan  2. nan nan  2. nan nan  2.  0.]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores_ensemble CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'crowdlab', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_missing_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_rare_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'majority_vote', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_consensus_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_impute_nonoverlaping_annotators Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_format_multiannotator_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_assert_valid_inputs_multiannotator_warnings PASSED
+
+=============================== warnings summary ===============================
+tests/test_multiannotator.py::test_label_quality_scores_multiannotator
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multiannotator.py:178: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    labels_multiannotator.replace({pd.NA: np.NaN}).astype(float).to_numpy()
+
+tests/test_multiannotator.py::test_format_multiannotator_labels
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/internal/multiannotator_utils.py:147: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    formatted_labels = labels.replace(label_map)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 2 warnings in 3.14s ========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_convert_long_to_wide PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator 1
+[ 0. nan nan nan nan nan nan nan nan nan  2.  0.  0. nan nan nan nan  0.
+ nan nan  1. nan nan nan nan nan nan nan nan nan nan nan nan  1. nan nan
+  0. nan nan nan nan nan nan nan nan  1. nan  0. nan nan nan nan  0. nan
+ nan nan nan nan nan nan  0. nan nan  0. nan nan nan nan nan  0. nan nan
+ nan nan nan nan nan nan nan  1. nan nan nan nan nan nan nan  1. nan nan
+ nan nan nan  1. nan  1. nan nan nan nan nan nan nan  1. nan nan nan nan
+ nan  1. nan nan nan nan nan nan  1. nan nan nan nan nan nan nan nan nan
+ nan nan nan  2. nan nan nan nan  0.  2. nan  2.  2. nan nan  1. nan  2.
+ nan nan nan nan nan nan nan nan  2. nan nan  2. nan nan  2.  0.]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores_ensemble CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'crowdlab', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_missing_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_rare_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'majority_vote', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_consensus_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_impute_nonoverlaping_annotators Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_format_multiannotator_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_assert_valid_inputs_multiannotator_warnings PASSED
+
+=============================== warnings summary ===============================
+tests/test_multiannotator.py::test_label_quality_scores_multiannotator
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multiannotator.py:178: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    labels_multiannotator.replace({pd.NA: np.NaN}).astype(float).to_numpy()
+
+tests/test_multiannotator.py::test_format_multiannotator_labels
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/internal/multiannotator_utils.py:246: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    formatted_labels = labels.replace(label_map)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 2 warnings in 2.95s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_convert_long_to_wide PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator 1
+[ 0. nan nan nan nan nan nan nan nan nan  2.  0.  0. nan nan nan nan  0.
+ nan nan  1. nan nan nan nan nan nan nan nan nan nan nan nan  1. nan nan
+  0. nan nan nan nan nan nan nan nan  1. nan  0. nan nan nan nan  0. nan
+ nan nan nan nan nan nan  0. nan nan  0. nan nan nan nan nan  0. nan nan
+ nan nan nan nan nan nan nan  1. nan nan nan nan nan nan nan  1. nan nan
+ nan nan nan  1. nan  1. nan nan nan nan nan nan nan  1. nan nan nan nan
+ nan  1. nan nan nan nan nan nan  1. nan nan nan nan nan nan nan nan nan
+ nan nan nan  2. nan nan nan nan  0.  2. nan  2.  2. nan nan  1. nan  2.
+ nan nan nan nan nan nan nan nan  2. nan nan  2. nan nan  2.  0.]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_label_quality_scores_multiannotator_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_active_learning_scores_ensemble CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'crowdlab', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [1, 2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_single_label_active_learning_ensemble PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_missing_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [2]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_rare_class CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'majority_vote', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+CAUTION: Number of unique classes has been reduced from the original data when establishing consensus labels using consensus method 'best_quality', likely due to some classes being rarely annotated. If training a classifier on these consensus labels, it will never see any of the omitted classes unless you manually replace some of the consensus labels.
+Classes in the original data but not in consensus labels: [0]
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_get_consensus_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_impute_nonoverlaping_annotators Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+Annotator(s) [0] did not annotate any examples that overlap with other annotators,                 
+using the average annotator agreeement among other annotators as this annotator's agreement.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_format_multiannotator_labels PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multiannotator.py::test_assert_valid_inputs_multiannotator_warnings PASSED
+
+=============================== warnings summary ===============================
+tests/test_multiannotator.py::test_label_quality_scores_multiannotator
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/multiannotator.py:178: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    labels_multiannotator.replace({pd.NA: np.NaN}).astype(float).to_numpy()
+
+tests/test_multiannotator.py::test_format_multiannotator_labels
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/internal/multiannotator_utils.py:246: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    formatted_labels = labels.replace(label_map)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 2 warnings in 3.16s ========================

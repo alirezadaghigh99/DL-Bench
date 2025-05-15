@@ -1,0 +1,202 @@
+output file:
+processed_pytorch3dcubify169.json
+function:
+cubify
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats FAILED', '../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty FAILED', 'FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_align - ImportErro...', '../pytorch3d/tests/test_cubify.py::TestCubify::test_align FAILED', '../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify FAILED', 'FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify - ImportErr...', 'FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats', 'FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty - ImportE...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_cubify.py::TestCubify::test_align FAILED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty FAILED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify FAILED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats FAILED
+
+=================================== FAILURES ===================================
+____________________________ TestCubify.test_align _____________________________
+
+self = <tests.test_cubify.TestCubify testMethod=test_align>
+
+    def test_align(self):
+        N, V = 1, 2
+        device = torch.device("cuda:0")
+        voxels = torch.ones((N, V, V, V), dtype=torch.float32, device=device)
+    
+        # topleft align
+>       mesh = cubify(voxels, 0.5)
+
+../pytorch3d/tests/test_cubify.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+../pytorch3d/pytorch3d/ops/cubify.py:45: in cubify
+    from .temp import cubify
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional
+    import torch
+    import torch.nn.functional as F
+    from pytorch3d.common.compat import meshgrid_ij
+    import torch
+    from pytorch3d.structures import Meshes
+>   from pytorch3d.ops import cubify1
+E   ImportError: cannot import name 'cubify1' from 'pytorch3d.ops' (/local/data0/moved_data/pytorch3d/pytorch3d/ops/__init__.py)
+
+../pytorch3d/pytorch3d/ops/temp.py:7: ImportError
+___________________________ TestCubify.test_allempty ___________________________
+
+self = <tests.test_cubify.TestCubify testMethod=test_allempty>
+
+    def test_allempty(self):
+        N, V = 32, 14
+        device = torch.device("cuda:0")
+        voxels = torch.zeros((N, V, V, V), dtype=torch.float32, device=device)
+>       meshes = cubify(voxels, 0.5)
+
+../pytorch3d/tests/test_cubify.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+../pytorch3d/pytorch3d/ops/cubify.py:45: in cubify
+    from .temp import cubify
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional
+    import torch
+    import torch.nn.functional as F
+    from pytorch3d.common.compat import meshgrid_ij
+    import torch
+    from pytorch3d.structures import Meshes
+>   from pytorch3d.ops import cubify1
+E   ImportError: cannot import name 'cubify1' from 'pytorch3d.ops' (/local/data0/moved_data/pytorch3d/pytorch3d/ops/__init__.py)
+
+../pytorch3d/pytorch3d/ops/temp.py:7: ImportError
+____________________________ TestCubify.test_cubify ____________________________
+
+self = <tests.test_cubify.TestCubify testMethod=test_cubify>
+
+    def test_cubify(self):
+        N, V = 4, 2
+        device = torch.device("cuda:0")
+        voxels = torch.zeros((N, V, V, V), dtype=torch.float32, device=device)
+    
+        # 1st example: (top left corner, znear) is on
+        voxels[0, 0, 0, 0] = 1.0
+        # 2nd example: all are on
+        voxels[1] = 1.0
+        # 3rd example: empty
+        # 4th example
+        voxels[3, :, :, 1] = 1.0
+        voxels[3, 1, 1, 0] = 1.0
+    
+        # compute cubify
+>       meshes = cubify(voxels, 0.5)
+
+../pytorch3d/tests/test_cubify.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+../pytorch3d/pytorch3d/ops/cubify.py:45: in cubify
+    from .temp import cubify
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional
+    import torch
+    import torch.nn.functional as F
+    from pytorch3d.common.compat import meshgrid_ij
+    import torch
+    from pytorch3d.structures import Meshes
+>   from pytorch3d.ops import cubify1
+E   ImportError: cannot import name 'cubify1' from 'pytorch3d.ops' (/local/data0/moved_data/pytorch3d/pytorch3d/ops/__init__.py)
+
+../pytorch3d/pytorch3d/ops/temp.py:7: ImportError
+______________________ TestCubify.test_cubify_with_feats _______________________
+
+self = <tests.test_cubify.TestCubify testMethod=test_cubify_with_feats>
+
+    def test_cubify_with_feats(self):
+        N, V = 3, 2
+        device = torch.device("cuda:0")
+        voxels = torch.zeros((N, V, V, V), dtype=torch.float32, device=device)
+        feats = torch.zeros((N, 3, V, V, V), dtype=torch.float32, device=device)
+        # fill the feats with red color
+        feats[:, 0, :, :, :] = 255
+    
+        # 1st example: (top left corner, znear) is on
+        voxels[0, 0, 0, 0] = 1.0
+        # the color is set to green
+        feats[0, :, 0, 0, 0] = torch.Tensor([0, 255, 0])
+        # 2nd example: all are on
+        voxels[1] = 1.0
+    
+        # 3rd example
+        voxels[2, :, :, 1] = 1.0
+        voxels[2, 1, 1, 0] = 1.0
+        # the color is set to yellow and blue respectively
+        feats[2, 1, :, :, 1] = 255
+        feats[2, :, 1, 1, 0] = torch.Tensor([0, 0, 255])
+>       meshes = cubify(voxels, 0.5, feats=feats, align="center")
+
+../pytorch3d/tests/test_cubify.py:339: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+../pytorch3d/pytorch3d/ops/cubify.py:45: in cubify
+    from .temp import cubify
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional
+    import torch
+    import torch.nn.functional as F
+    from pytorch3d.common.compat import meshgrid_ij
+    import torch
+    from pytorch3d.structures import Meshes
+>   from pytorch3d.ops import cubify1
+E   ImportError: cannot import name 'cubify1' from 'pytorch3d.ops' (/local/data0/moved_data/pytorch3d/pytorch3d/ops/__init__.py)
+
+../pytorch3d/pytorch3d/ops/temp.py:7: ImportError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_align - ImportErro...
+FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty - ImportE...
+FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify - ImportErr...
+FAILED ../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats
+============================== 4 failed in 1.19s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_cubify.py::TestCubify::test_align PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats PASSED
+
+============================== 4 passed in 1.39s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_cubify.py::TestCubify::test_align PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_allempty PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify PASSED
+../pytorch3d/tests/test_cubify.py::TestCubify::test_cubify_with_feats PASSED
+
+============================== 4 passed in 2.92s ===============================

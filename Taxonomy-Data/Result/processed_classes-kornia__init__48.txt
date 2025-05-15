@@ -1,0 +1,194 @@
+output file:
+processed_classes-kornia__init__48.json
+function:
+__init__
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32]', '../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32] FAILED [  5%]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'onnxrt', 'tvm', 'cudagraphs', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32] FAILED [  5%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_normalize[cpu-float32] PASSED [ 11%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_broadcast_normalize[cpu-float32] PASSED [ 17%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_int_input[cpu-float32] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_float_input[cpu-float32] PASSED [ 29%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_batch_normalize[cpu-float32] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_jit[cpu-float32] SKIPPED [ 41%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_gradcheck[cpu] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_single_value[cpu-float32] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_module[cpu-float32] PASSED [ 58%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean0-std0] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[1.0-0.5] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean2-std2] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean0-std0] PASSED [ 82%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean1-std1] PASSED [ 88%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_cardinality[cpu-float32] SKIPPED [ 94%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_exception[cpu-float32] SKIPPED [100%]
+
+=================================== FAILURES ===================================
+____________________ TestNormalize.test_smoke[cpu-float32] _____________________
+
+self = <test_normalize.TestNormalize object at 0x72ec4dae5480>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_smoke(self, device, dtype):
+        mean = [0.5]
+        std = [0.1]
+        repr = "Normalize(mean=tensor([[0.5000]]), std=tensor([[0.1000]]))"
+>       assert str(kornia.enhance.Normalize(mean, std)) == repr
+E       AssertionError: assert 'Normalize(me...or([0.1000]))' == 'Normalize(me...([[0.1000]]))'
+E         
+E         - Normalize(mean=tensor([[0.5000]]), std=tensor([[0.1000]]))
+E         ?                        -       -               -       -
+E         + Normalize(mean=tensor([0.5000]), std=tensor([0.1000]))
+
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py:14: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32]
+=================== 1 failed, 13 passed, 3 skipped in 0.24s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'inductor', 'openxla', 'onnxrt', 'tvm', None, 'jit'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32] PASSED [  5%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_normalize[cpu-float32] PASSED [ 11%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_broadcast_normalize[cpu-float32] PASSED [ 17%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_int_input[cpu-float32] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_float_input[cpu-float32] PASSED [ 29%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_batch_normalize[cpu-float32] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_jit[cpu-float32] SKIPPED [ 41%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_gradcheck[cpu] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_single_value[cpu-float32] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_module[cpu-float32] PASSED [ 58%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean0-std0] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[1.0-0.5] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean2-std2] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean0-std0] PASSED [ 82%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean1-std1] PASSED [ 88%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_cardinality[cpu-float32] SKIPPED [ 94%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_exception[cpu-float32] SKIPPED [100%]
+
+======================== 14 passed, 3 skipped in 0.20s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'openxla', 'cudagraphs', 'onnxrt', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 17 items
+
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_smoke[cpu-float32] PASSED [  5%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_normalize[cpu-float32] PASSED [ 11%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_broadcast_normalize[cpu-float32] PASSED [ 17%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_int_input[cpu-float32] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_float_input[cpu-float32] PASSED [ 29%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_batch_normalize[cpu-float32] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_jit[cpu-float32] SKIPPED [ 41%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_gradcheck[cpu] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_single_value[cpu-float32] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_module[cpu-float32] PASSED [ 58%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean0-std0] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[1.0-0.5] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_different_parameter_types[mean2-std2] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean0-std0] PASSED [ 82%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_random_normalize_invalid_parameter_shape[mean1-std1] PASSED [ 88%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_cardinality[cpu-float32] SKIPPED [ 94%]
+../publishablew/kornia/kornia/tests/enhance/test_normalize.py::TestNormalize::test_exception[cpu-float32] SKIPPED [100%]
+
+======================== 14 passed, 3 skipped in 0.25s =========================

@@ -1,0 +1,580 @@
+output file:
+processed_korniamotion_from_essential_choose_solution220.json
+function:
+motion_from_essential_choose_solution
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'tvm', 'onnxrt', 'cudagraphs', None, 'inductor'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 11 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu] FAILED
+
+=================================== FAILURES ===================================
+________ TestMotionFromEssentialChooseSolution.test_smoke[cpu-float32] _________
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fa650>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_smoke(self, device, dtype):
+        E_mat = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        x1 = torch.rand(1, 1, 2, device=device, dtype=dtype)
+        x2 = torch.rand(1, 1, 2, device=device, dtype=dtype)
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1, x2)
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:417: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+______ TestMotionFromEssentialChooseSolution.test_shape[cpu-float32-1-3] _______
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fab00>
+batch_size = 1, num_points = 3, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 3), (2, 3), (2, 8), (3, 2)])
+    def test_shape(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        E_mat = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=dtype)  # check for broadcasting
+        x1 = torch.rand(B, N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(B, 1, 2, device=device, dtype=dtype)  # check for broadcasting
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1, x2)
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+______ TestMotionFromEssentialChooseSolution.test_shape[cpu-float32-2-3] _______
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282faa40>
+batch_size = 2, num_points = 3, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 3), (2, 3), (2, 8), (3, 2)])
+    def test_shape(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        E_mat = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=dtype)  # check for broadcasting
+        x1 = torch.rand(B, N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(B, 1, 2, device=device, dtype=dtype)  # check for broadcasting
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1, x2)
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+______ TestMotionFromEssentialChooseSolution.test_shape[cpu-float32-2-8] _______
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fae00>
+batch_size = 2, num_points = 8, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 3), (2, 3), (2, 8), (3, 2)])
+    def test_shape(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        E_mat = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=dtype)  # check for broadcasting
+        x1 = torch.rand(B, N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(B, 1, 2, device=device, dtype=dtype)  # check for broadcasting
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1, x2)
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+______ TestMotionFromEssentialChooseSolution.test_shape[cpu-float32-3-2] _______
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282faec0>
+batch_size = 3, num_points = 2, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 3), (2, 3), (2, 8), (3, 2)])
+    def test_shape(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        E_mat = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(B, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=dtype)  # check for broadcasting
+        x1 = torch.rand(B, N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(B, 1, 2, device=device, dtype=dtype)  # check for broadcasting
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1, x2)
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:430: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+_______ TestMotionFromEssentialChooseSolution.test_masking[cpu-float32] ________
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fb190>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_masking(self, device, dtype):
+        E_mat = torch.rand(2, 3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(2, 3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(2, 3, 3, device=device, dtype=dtype)
+        x1 = torch.rand(2, 10, 2, device=device, dtype=dtype)
+        x2 = torch.rand(2, 10, 2, device=device, dtype=dtype)
+    
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1[:, 1:-1, :], x2[:, 1:-1, :])
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:442: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+_____ TestMotionFromEssentialChooseSolution.test_unbatched[cpu-float32-10] _____
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fb580>
+num_points = 10, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("num_points", [10, 15, 20])
+    def test_unbatched(self, num_points, device, dtype):
+        N = num_points
+        E_mat = torch.rand(3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(3, 3, device=device, dtype=dtype)
+        x1 = torch.rand(N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(N, 2, device=device, dtype=dtype)
+    
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1[1:-1, :], x2[1:-1, :])
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+_____ TestMotionFromEssentialChooseSolution.test_unbatched[cpu-float32-15] _____
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fb4c0>
+num_points = 15, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("num_points", [10, 15, 20])
+    def test_unbatched(self, num_points, device, dtype):
+        N = num_points
+        E_mat = torch.rand(3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(3, 3, device=device, dtype=dtype)
+        x1 = torch.rand(N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(N, 2, device=device, dtype=dtype)
+    
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1[1:-1, :], x2[1:-1, :])
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+_____ TestMotionFromEssentialChooseSolution.test_unbatched[cpu-float32-20] _____
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fb7c0>
+num_points = 20, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("num_points", [10, 15, 20])
+    def test_unbatched(self, num_points, device, dtype):
+        N = num_points
+        E_mat = torch.rand(3, 3, device=device, dtype=dtype)
+        K1 = torch.rand(3, 3, device=device, dtype=dtype)
+        K2 = torch.rand(3, 3, device=device, dtype=dtype)
+        x1 = torch.rand(N, 2, device=device, dtype=dtype)
+        x2 = torch.rand(N, 2, device=device, dtype=dtype)
+    
+>       R, t, X = epi.motion_from_essential_choose_solution(E_mat, K1, K2, x1[1:-1, :], x2[1:-1, :])
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+_______ TestMotionFromEssentialChooseSolution.test_two_view[cpu-float32] _______
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fba90>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_two_view(self, device, dtype):
+        scene = generate_two_view_random_scene(device, dtype)
+    
+        E_mat = epi.essential_from_Rt(scene["R1"], scene["t1"], scene["R2"], scene["t2"])
+    
+        R, t = epi.relative_camera_motion(scene["R1"], scene["t1"], scene["R2"], scene["t2"])
+        t = torch.nn.functional.normalize(t, dim=1)
+    
+>       R_hat, t_hat, _ = epi.motion_from_essential_choose_solution(
+            E_mat, scene["K1"], scene["K2"], scene["x1"], scene["x2"]
+        )
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:482: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+__________ TestMotionFromEssentialChooseSolution.test_gradcheck[cpu] ___________
+
+self = <test_essential.TestMotionFromEssentialChooseSolution object at 0x70c7282fbd60>
+device = device(type='cpu')
+
+    def test_gradcheck(self, device):
+        E_mat = torch.rand(1, 3, 3, device=device, dtype=torch.float64, requires_grad=True)
+        K1 = torch.rand(1, 3, 3, device=device, dtype=torch.float64)
+        K2 = torch.rand(1, 3, 3, device=device, dtype=torch.float64)
+        x1 = torch.rand(1, 2, 2, device=device, dtype=torch.float64)
+        x2 = torch.rand(1, 2, 2, device=device, dtype=torch.float64)
+    
+>       self.gradcheck(
+            epi.motion_from_essential_choose_solution,
+            (E_mat, K1, K2, x1, x2),
+            requires_grad=(True, False, False, False, False),
+        )
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py:496: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/essential.py:259: in motion_from_essential_choose_solution
+    from .temp import motion_from_essential_choose_solution
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Optional, Tuple
+    import torch
+    from kornia.core import eye, ones_like, stack, where, zeros
+    from kornia.core.check import KORNIA_CHECK, KORNIA_CHECK_SAME_SHAPE, KORNIA_CHECK_SHAPE
+    from kornia.geometry import solvers
+    from kornia.utils import eye_like, vec_like
+    from kornia.utils.helpers import _torch_solve_cast, _torch_svd_cast
+    from .numeric import cross_product_matrix, matrix_cofactor_tensor
+    from .projection import depth_from_point, projection_from_KRt
+    from .triangulation import triangulate_points
+    import numpy as np
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:12: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu]
+============================== 11 failed in 0.58s ==============================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'onnxrt', 'tvm', 'cudagraphs', 'openxla', None, 'jit'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 11 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu] PASSED
+
+============================== 11 passed in 0.20s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'inductor', 'tvm', 'jit', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 11 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-1-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-2-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_shape[cpu-float32-3-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_masking[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-15] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_unbatched[cpu-float32-20] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_two_view[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_essential.py::TestMotionFromEssentialChooseSolution::test_gradcheck[cpu] PASSED
+
+============================== 11 passed in 0.24s ==============================

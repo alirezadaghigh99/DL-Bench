@@ -1,55 +1,232 @@
-# DL-Bench-Data
+# DL-Bench: Deep Learning Benchmark Framework
 
-Here is the data and code for DLEval project.
-You can find the data and types and classifications in the .zip files
-DLEval
-Categories of Code Stages and Tasks in Machine Learning
-Pre/post Processing
-Code in the pre or post-processing stage often manipulates data (input or output). For example, pre-processing code cleans or augments input data, whereas post-processing code augments output data for visualization. Due to the ambiguity at the function level, we have a combined category for pre and post-processing code [Wen et al., 2020].
+<div align="center">
+  <img src="https://img.shields.io/badge/DL--Bench-Deep%20Learning%20Benchmark-blue?style=for-the-badge" alt="DL-Bench"/>
+  <br>
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python" alt="Python 3.8+"/>
+  <img src="https://img.shields.io/badge/PyTorch-Supported-orange?style=flat-square&logo=pytorch" alt="PyTorch"/>
+  <img src="https://img.shields.io/badge/TensorFlow-Supported-orange?style=flat-square&logo=tensorflow" alt="TensorFlow"/>
+  <img src="https://img.shields.io/badge/LLMs-Multiple-green?style=flat-square" alt="Multiple LLMs"/>
+</div>
 
-Model Construction
-This stage defines the network architecture and sets up the computational graph for deep learning models, including defining layers, activation functions, and layer connections. Examples include defining CNN architectures and forward pass logic. Loss functions are part of this stage, but optimization steps are in the training phase [Howard et al., 2019].
+<p align="center">A comprehensive framework for benchmarking Large Language Models on real-world deep learning tasks</p>
 
-Training
-The training stage optimizes the model's parameters using a loss function and optimization algorithm. This includes backpropagation and weight updates. Code for gradient descent using optimizers like Adam or SGD and looping over epochs and batches falls under this stage [Diederik et al., 2014].
+---
 
-Inference
-Inference code is used to generate labels based on a trained model. It processes new input data and outputs results, such as classifications or detections, without changing model parameters. This stage emphasizes speed and efficiency for real-time deployment [Kirillov et al., 2019].
+## 📋 Overview
 
-Evaluation & Metrics
-Code in this stage assesses the performance of a trained model using various metrics. It involves running the model on a validation/test dataset and comparing predictions to ground truth labels to measure accuracy, precision, recall, F1-score, etc. [Wu et al., 2020].
+DL-Bench is a comprehensive evaluation framework designed to benchmark Large Language Models (LLMs) on practical deep learning tasks. Unlike other coding benchmarks, DL-Bench focuses specifically on the deep learning domain, covering the entire ML pipeline from data preprocessing to model deployment.
 
-Categories of Machine Learning Tasks
-Classification
-Classification tasks involve assigning input data to categories or classes. For example, models using softmax activation in the final layer for outputs like "dog" or "cat" fall under this category. Categorical cross-entropy loss is a common indicator.
+The benchmark consists of real-world deep learning problems extracted from popular frameworks and libraries, providing a realistic assessment of LLMs' capabilities in addressing deep learning challenges.
 
-Regression
-Regression tasks predict continuous values. Code indicating regression tasks often has linear activation functions in the final layer.
+## 🏆 Key Features
 
-Object Detection
-Detection tasks identify objects and their locations within images. Code that outputs bounding boxes and class labels (e.g., YOLO, Faster R-CNN) and employs anchor boxes or non-maximum suppression is indicative of detection tasks.
+- **End-to-End Pipeline Coverage**: Tasks spanning preprocessing, model construction, training, evaluation, and inference
+- **Multiple LLM Support**: Integration with OpenAI, Anthropic, Mistral, Llama, DeepSeek, Qwen, and more
+- **Advanced Prompting Techniques**: Zero-shot, few-shot, chain-of-thought, and self-planning approaches
+- **Comprehensive Testing Framework**: Automated evaluation against real-world test cases
+- **Cross-Repository Compatibility**: Works with 30+ machine learning repositories
+- **Fine-grained Categorization**: ML stage-specific evaluation and comparison
 
-Image Segmentation
-Segmentation tasks assign labels to each pixel in an image. Code involving semantic or instance segmentation (e.g., U-Net, Mask R-CNN) where the output is a mask with pixel-level classifications is a common example.
+## 📁 Project Structure
 
-Time Series Prediction
-These tasks forecast future values using historical data. Code involving recurrent neural networks (RNNs), LSTM, GRU models, and loss functions like mean absolute error (MAE) or MSE is typical.
+### 📂 `/data`
+- **DL-Bench-Enriched-Processed-Sorted.csv** - The main dataset containing deep learning tasks, bugs, and solutions, carefully curated and categorized.
 
-Recommendation
-Recommendation tasks suggest items or actions based on user data. Code implementing collaborative or content-based filtering algorithms, matrix factorization, or deep learning-based models for recommendations falls into this category.
+### 📂 `/src`
 
-General
-Code that is versatile and applicable to multiple ML tasks without being exclusive to a specific one is labeled as General.
+#### 📂 `/LLM`
+- **call.py** - Unified interface for multiple LLM providers:
+  - OpenAI (GPT-4o, o3-mini)
+  - Anthropic (Claude 3.5 Sonnet via AWS Bedrock)
+  - Mistral (Mixtral-8x22b)
+  - Llama (v3-70B)
+  - DeepSeek-v3
+  - Qwen
+  - Gemini (support included)
+- **function_extractor.py** - Extracts function definitions from source code files.
 
-Input Types in Machine Learning
-Image
-Processing for image data includes steps like resizing, normalization, and data augmentation. Code that resizes images (e.g., 224x224 for CNNs), normalizes pixel values, or applies augmentations (flipping, cropping, noise addition) typically signals image data [Krizhevsky et al., 2012].
+#### 📂 `/bug taxonomy`
+- Classification framework for deep learning bugs.
 
-Text
-Text processing involves tokenization, n-gram generation, stemming, lemmatization, and embeddings. Code that handles these processes and converts text into vectors (e.g., using TF-IDF, Word2Vec, BERT) indicates text data [Liu et al., 2018].
+#### 📂 `/category_training`
+- **category_training.py** - BERT-based classifier for categorizing tasks into different ML pipeline stages.
+- **ds1000_training_result.csv** - Results from training on the DS1000 dataset.
 
-Structured Array
-Tabular data, where rows represent data points and columns represent features, is processed by normalization, one-hot encoding, or handling missing values. Code that reads CSVs into DataFrames and applies these techniques indicates structured array data, commonly used in regression or classification tasks [Chen et al., 2016].
+#### 📂 `/prompts`
+Implements advanced prompting strategies:
 
-Others
-When input data does not match typical types (image, text, structured array), it is labeled as Others. This includes input such as model parameters or hyperparameters. For example, def __init__(self, weight, bias=None) initializing model components without direct input data processing falls under this label.
+- **few_shot.py** - Few-shot prompting with various selection strategies.
+- **few_shot_cot.py** - Chain-of-thought with few-shot examples.
+- **self_planning.py** - Two-step approach where LLM plans before implementation.
+- **shots_for_cot.py** - Example shots for chain-of-thought prompting.
+- **shots_for_few.py** - Example shots for few-shot prompting.
+- **techniques.py** - Common prompting technique utilities.
+- **zero_shot_cot.py** - Zero-shot chain-of-thought implementation.
+
+#### 📂 `/test_removal`
+- **remving.py** - Removes incorrect or problematic test cases from the benchmark.
+
+#### 📂 `/tester`
+- **parse_run_combined.py** - **Main entry point** for the benchmark evaluation:
+  - Processes both function and class implementations
+  - Extracts code from LLM responses
+  - Routes to appropriate test runners
+  - Records results with comprehensive metadata
+- **parse_run_class.py** - Runner specialized for class-based tasks.
+- **parse_run_function.py** - Runner specialized for function-based tasks.
+- **replacer_class.py** & **replacer_function.py** - Utilities for replacing implementations.
+- **test_runner_class.py** & **test_runner_function.py** - Execute tests on LLM-generated code.
+- **anaylytic.py** - Analysis utilities for benchmark results.
+- **miss.py** - Handling for missing or failed test cases.
+- **train_test_splitting.py** - Utilities for dataset splitting.
+
+## 🚀 Getting Started
+
+### Prerequisites
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Benchmark
+```bash
+# Main benchmark execution
+python src/tester/parse_run_combined.py
+
+# For specific LLM and prompting technique
+python src/LLM/call.py
+```
+
+## 🧠 Prompting Techniques
+
+DL-Bench implements numerous prompting strategies to evaluate different interaction methods:
+
+### Zero-shot Approaches
+- **Standard Zero-shot**: Direct task prompting without examples
+- **Zero-shot CoT**: Adds "Let's generate the code step by step" to encourage reasoning
+
+### Few-shot Approaches
+- **Standard Few-shot**: Includes 4 examples before the main prompt
+- **Category-based Few-shot**: Examples from same ML pipeline stage
+- **Cross-category Few-shot**: Examples from different ML stages
+- **External Few-shot**: Examples from outside the benchmark
+- **Repository-based Few-shot**: Examples from same/different repositories
+
+### Advanced Techniques
+- **Chain-of-Thought**: Multiple variations encouraging step-by-step reasoning
+- **Self-planning**: Two-stage process with planning then implementation
+- **Guided Approaches**: Includes specific warnings about common bugs
+- **Classifier-based**: Uses trained classifier to determine optimal examples
+
+## 📊 Benchmark Coverage
+
+DL-Bench evaluates performance across the entire ML pipeline:
+
+| Stage | Description | Examples |
+|-------|-------------|----------|
+| **Pre/Post-Processing** | Data loading, transformation, augmentation | Image resizing, normalization, data formatting |
+| **Model Construction** | Architecture design, layer configuration | Creating network layers, defining model architecture |
+| **Training** | Loss functions, optimizers, training loops | Custom loss functions, training procedures |
+| **Evaluation** | Metrics, validation procedures | Accuracy calculation, evaluation metrics |
+| **Inference** | Prediction, deployment | Model prediction, inference optimization |
+
+## 🧪 Test Execution Process
+
+1. **Input Processing**: Parse JSON files containing problem definitions
+2. **LLM Querying**: Generate solution using specified LLM and prompting technique
+3. **Code Extraction**: Extract Python code from LLM response
+4. **Test Execution**: Run extracted code against test cases
+5. **Result Collection**: Record success/failure and metadata
+
+## 📈 Example Results
+
+The benchmark produces detailed results showing how different LLMs and prompting techniques perform across ML stages:
+
+```
+# Sample output format
+{
+  "test_result": "PASS",  // or error code
+  "file_path": "example_file.json",
+  "stage": "model_construction",
+  "task": "create_convolution_layer",
+  "data": "image"
+}
+```
+
+## 💻 Example Usage
+
+### Testing with Different LLMs
+```python
+from src.LLM.call import process_file_data
+
+# Test with different LLMs
+result_openai = process_file_data(prompt, llm="openai-4o")
+result_claude = process_file_data(prompt, llm="antropic")
+result_llama = process_file_data(prompt, llm="llama")
+```
+
+### Using Different Prompting Techniques
+```python
+from src.prompts.few_shot import few_shot_using_same_or_different_category
+from src.prompts.zero_shot_cot import ZeroShotCoT
+
+# Create few-shot prompt
+few_shot_prompt = few_shot_using_same_or_different_category(
+    prompt, example1, example2, example3, example4, category="train", is_same=True
+)
+
+# Create zero-shot CoT prompt
+zero_shot_cot = ZeroShotCoT("dlbench", "4o", "zero_cot")
+cot_prompt = zero_shot_cot.form_technique_prompt(prompt)
+```
+
+### Running Tests for a Specific Repository
+```python
+from src.tester.parse_run_combined import process_function_file
+
+# Process function files for PyTorch repository
+process_function_file(
+    file_path="path/to/test.json",
+    folder_path="results/output",
+    BASE_PATH="/path/to/base",
+    r="pytorch",
+    llm="openai-4o_new",
+    technique="zeroshot",
+    version="v2"
+)
+```
+
+## 🧠 Category Classification
+
+DL-Bench includes a BERT-based classifier for categorizing deep learning tasks:
+
+- Fine-tuned on deep learning function descriptions
+- Categorizes tasks into ML pipeline stages
+- Used to select relevant few-shot examples
+- Improves performance by matching examples with similar tasks
+
+## 🔍 Supported Repositories
+
+DL-Bench works with 30+ machine learning repositories, including:
+
+- PyTorch
+- PyTorch3D
+- scikit-learn
+- Kornia
+- neurodiffeq
+- GPflow
+- DeepReg
+- deepchem
+- And many more...
+
+## 👥 Contributors
+
+- Project maintained by the DL-Bench team
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<p align="center">DL-Bench: Advancing LLM evaluation in deep learning</p>

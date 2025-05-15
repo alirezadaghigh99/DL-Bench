@@ -1,0 +1,310 @@
+output file:
+processed_classes-korniaforward57.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32] FAILED [ 85%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32]', '../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32] FAILED [ 57%]', 'FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32]', '../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32] FAILED [ 71%]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', None, 'tvm', 'inductor', 'openxla', 'onnxrt', 'jit'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32] FAILED [ 57%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32] FAILED [ 71%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32] FAILED [ 85%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_gradcheck[cpu] PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________ TestAdjustHue.test_hue_one[cpu-float32] ____________________
+
+self = <test_adjust.TestAdjustHue object at 0x76de482f30d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_hue_one(self, device, dtype):
+        data = torch.tensor(
+            [[[0.5, 0.5], [0.5, 0.5]], [[0.5, 0.5], [0.5, 0.5]], [[0.25, 0.25], [0.25, 0.25]]],
+            device=device,
+            dtype=dtype,
+        )  # 3x2x2
+    
+        expected = data.clone()
+    
+        f = kornia.enhance.AdjustHue(0.0)
+>       self.assert_close(f(data), expected)
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/adjust.py:937: in forward
+    hsv = self.rgb_to_hsv(input)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = AdjustHue(), name = 'rgb_to_hsv'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'AdjustHue' object has no attribute 'rgb_to_hsv'
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1931: AttributeError
+________________ TestAdjustHue.test_hue_one_batch[cpu-float32] _________________
+
+self = <test_adjust.TestAdjustHue object at 0x76de482f3400>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_hue_one_batch(self, device, dtype):
+        data = torch.tensor(
+            [
+                [[[0.5, 0.5], [0.5, 0.5]], [[0.5, 0.5], [0.5, 0.5]], [[0.25, 0.25], [0.25, 0.25]]],
+                [[[0.5, 0.5], [0.5, 0.5]], [[0.5, 0.5], [0.5, 0.5]], [[0.25, 0.25], [0.25, 0.25]]],
+            ],
+            device=device,
+            dtype=dtype,
+        )  # 2x3x2x2
+    
+        expected = data
+        f = kornia.enhance.AdjustHue(torch.tensor([0, 0]))
+>       self.assert_close(f(data), expected)
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/adjust.py:937: in forward
+    hsv = self.rgb_to_hsv(input)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = AdjustHue(), name = 'rgb_to_hsv'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'AdjustHue' object has no attribute 'rgb_to_hsv'
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1931: AttributeError
+________________ TestAdjustHue.test_hue_flip_batch[cpu-float32] ________________
+
+self = <test_adjust.TestAdjustHue object at 0x76de482f3730>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_hue_flip_batch(self, device, dtype):
+        data = torch.tensor(
+            [
+                [[[0.5, 0.5], [0.5, 0.5]], [[0.5, 0.5], [0.5, 0.5]], [[0.25, 0.25], [0.25, 0.25]]],
+                [[[0.5, 0.5], [0.5, 0.5]], [[0.5, 0.5], [0.5, 0.5]], [[0.25, 0.25], [0.25, 0.25]]],
+            ],
+            device=device,
+            dtype=dtype,
+        )  # 2x3x2x2
+    
+        pi_t = torch.tensor([-pi, pi], device=device, dtype=dtype)
+        f = kornia.enhance.AdjustHue(pi_t)
+    
+>       result = f(data)
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/enhance/adjust.py:937: in forward
+    hsv = self.rgb_to_hsv(input)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = AdjustHue(), name = 'rgb_to_hsv'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'AdjustHue' object has no attribute 'rgb_to_hsv'
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32]
+========================= 3 failed, 4 passed in 0.53s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'openxla', 'jit', 'cudagraphs', None, 'inductor'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_gradcheck[cpu] PASSED [100%]
+
+============================== 7 passed in 0.17s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'onnxrt', 'jit', 'cudagraphs', 'openxla', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_cardinality[cpu-float32-shape2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one[cpu-float32] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_one_batch[cpu-float32] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_hue_flip_batch[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/enhance/test_adjust.py::TestAdjustHue::test_gradcheck[cpu] PASSED [100%]
+
+============================== 7 passed in 0.72s ===============================

@@ -1,0 +1,464 @@
+output file:
+processed_pytorch3d_apply_similarity_transform305.json
+function:
+_apply_similarity_transform
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh FAILED', 'FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh', 'FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation', '../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh FAILED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs FAILED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation FAILED
+
+=================================== FAILURES ===================================
+______________________ TestICP.test_compare_with_trimesh _______________________
+
+self = <tests.test_points_alignment.TestICP testMethod=test_compare_with_trimesh>
+
+    def test_compare_with_trimesh(self):
+        """
+        Compares the outputs of `iterative_closest_point` with the results
+        of `trimesh.registration.icp` from the `trimesh` python package:
+        https://github.com/mikedh/trimesh
+    
+        We have run `trimesh.registration.icp` on several random problems
+        with different point cloud sizes. The results of trimesh, together with
+        the randomly generated input clouds are loaded in the constructor of
+        this class and this test compares the loaded results to our runs.
+        """
+        for n_points_X in (10, 20, 50, 100):
+            for n_points_Y in (10, 20, 50, 100):
+>               self._compare_with_trimesh(n_points_X=n_points_X, n_points_Y=n_points_Y)
+
+../pytorch3d/tests/test_points_alignment.py:257: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_points_alignment.py:283: in _compare_with_trimesh
+    ) = points_alignment.iterative_closest_point(
+../pytorch3d/pytorch3d/ops/points_alignment.py:104: in iterative_closest_point
+    Xt = _apply_similarity_transform(Xt_init, R, T, s)
+../pytorch3d/pytorch3d/ops/points_alignment.py:218: in _apply_similarity_transform
+    return _apply_similarity_transform(X, R, T, s)
+../pytorch3d/pytorch3d/ops/temp.py:30: in _apply_similarity_transform
+    scaled_rotated_X = np.einsum('bij,bkj->bki', R, X) * s[:, np.newaxis, np.newaxis]
+<__array_function__ internals>:200: in einsum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/einsumfunc.py:1371: in einsum
+    return c_einsum(*operands, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[ 0.9933, -0.1147, -0.0155],
+         [ 0.1115,  0.9123,  0.3941],
+         [-0.0310, -0.3932,  0.9189]],
+
+  ...9732, -0.2226,  0.0573],
+         [ 0.2240,  0.9744, -0.0199],
+         [-0.0514,  0.0322,  0.9982]]], device='cuda:0')
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+______________________ TestICP.test_heterogeneous_inputs _______________________
+
+self = <tests.test_points_alignment.TestICP testMethod=test_heterogeneous_inputs>
+batch_size = 7
+
+    def test_heterogeneous_inputs(self, batch_size=7):
+        """
+        Tests whether we get the same result when running ICP on
+        a set of randomly-sized Pointclouds and on their padded versions.
+        """
+    
+        torch.manual_seed(4)
+        device = torch.device("cuda:0")
+    
+        for estimate_scale in (True, False):
+            for max_n_points in (10, 30, 100):
+                # initialize ground truth point clouds
+                X_pcl, Y_pcl = [
+                    TestCorrespondingPointsAlignment.init_point_cloud(
+                        batch_size=batch_size,
+                        n_points=max_n_points,
+                        dim=3,
+                        device=device,
+                        use_pointclouds=True,
+                        random_pcl_size=True,
+                    )
+                    for _ in range(2)
+                ]
+    
+                # get the padded versions and their num of points
+                X_padded = X_pcl.points_padded()
+                Y_padded = Y_pcl.points_padded()
+                n_points_X = X_pcl.num_points_per_cloud()
+                n_points_Y = Y_pcl.num_points_per_cloud()
+    
+                # run icp with Pointlouds inputs
+                (
+                    _,
+                    _,
+                    Xt_pcl,
+                    (R_pcl, T_pcl, s_pcl),
+                    _,
+>               ) = points_alignment.iterative_closest_point(
+                    X_pcl,
+                    Y_pcl,
+                    estimate_scale=estimate_scale,
+                    allow_reflection=False,
+                    verbose=False,
+                    max_iterations=100,
+                )
+
+../pytorch3d/tests/test_points_alignment.py:200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/ops/points_alignment.py:104: in iterative_closest_point
+    Xt = _apply_similarity_transform(Xt_init, R, T, s)
+../pytorch3d/pytorch3d/ops/points_alignment.py:218: in _apply_similarity_transform
+    return _apply_similarity_transform(X, R, T, s)
+../pytorch3d/pytorch3d/ops/temp.py:30: in _apply_similarity_transform
+    scaled_rotated_X = np.einsum('bij,bkj->bki', R, X) * s[:, np.newaxis, np.newaxis]
+<__array_function__ internals>:200: in einsum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/einsumfunc.py:1371: in einsum
+    return c_einsum(*operands, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[ 0.7786,  0.6271, -0.0252],
+         [-0.6276,  0.7783, -0.0220],
+         [ 0.0058,  0.0329,  0.9994]],
+
+  ...8510, -0.1387, -0.5065],
+         [ 0.3967,  0.8017,  0.4471],
+         [ 0.3440, -0.5814,  0.7373]]], device='cuda:0')
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+_______________________ TestICP.test_init_transformation _______________________
+
+self = <tests.test_points_alignment.TestICP testMethod=test_init_transformation>
+batch_size = 10
+
+    def test_init_transformation(self, batch_size=10):
+        """
+        First runs a full ICP on a random problem. Then takes a given point
+        in the history of ICP iteration transformations, initializes
+        a second run of ICP with this transformation and checks whether
+        both runs ended with the same solution.
+        """
+    
+        device = torch.device("cuda:0")
+    
+        for dim in (2, 3, 11):
+            for n_points_X in (30, 100):
+                for n_points_Y in (30, 100):
+                    # initialize ground truth point clouds
+                    X, Y = [
+                        TestCorrespondingPointsAlignment.init_point_cloud(
+                            batch_size=batch_size,
+                            n_points=n_points,
+                            dim=dim,
+                            device=device,
+                            use_pointclouds=False,
+                            random_pcl_size=True,
+                        )
+                        for n_points in (n_points_X, n_points_Y)
+                    ]
+    
+                    # run full icp
+                    (
+                        converged,
+                        _,
+                        Xt,
+                        (R, T, s),
+                        t_hist,
+>                   ) = points_alignment.iterative_closest_point(
+                        X,
+                        Y,
+                        estimate_scale=False,
+                        allow_reflection=False,
+                        verbose=False,
+                        max_iterations=100,
+                    )
+
+../pytorch3d/tests/test_points_alignment.py:125: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/ops/points_alignment.py:104: in iterative_closest_point
+    Xt = _apply_similarity_transform(Xt_init, R, T, s)
+../pytorch3d/pytorch3d/ops/points_alignment.py:218: in _apply_similarity_transform
+    return _apply_similarity_transform(X, R, T, s)
+../pytorch3d/pytorch3d/ops/temp.py:30: in _apply_similarity_transform
+    scaled_rotated_X = np.einsum('bij,bkj->bki', R, X) * s[:, np.newaxis, np.newaxis]
+<__array_function__ internals>:200: in einsum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/einsumfunc.py:1371: in einsum
+    return c_einsum(*operands, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[ 1.0000,  0.0035],
+         [-0.0035,  1.0000]],
+
+        [[ 0.9983,  0.0584],
+         [-0.0584,  0.9983]],..., -0.0541],
+         [ 0.0541,  0.9985]],
+
+        [[ 0.9968, -0.0800],
+         [ 0.0800,  0.9968]]], device='cuda:0')
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+=============================== warnings summary ===============================
+tests/test_points_alignment.py::TestICP::test_compare_with_trimesh
+tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+tests/test_points_alignment.py::TestICP::test_init_transformation
+  /local/data0/moved_data/pytorch3d/tests/test_points_alignment.py:48: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    self.trimesh_results = torch.load(trimesh_results_path)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh
+FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation
+======================== 3 failed, 3 warnings in 1.43s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh PASSED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs FAILED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation PASSED
+
+=================================== FAILURES ===================================
+______________________ TestICP.test_heterogeneous_inputs _______________________
+
+self = <tests.test_points_alignment.TestICP testMethod=test_heterogeneous_inputs>
+batch_size = 7
+
+    def test_heterogeneous_inputs(self, batch_size=7):
+        """
+        Tests whether we get the same result when running ICP on
+        a set of randomly-sized Pointclouds and on their padded versions.
+        """
+    
+        torch.manual_seed(4)
+        device = torch.device("cuda:0")
+    
+        for estimate_scale in (True, False):
+            for max_n_points in (10, 30, 100):
+                # initialize ground truth point clouds
+                X_pcl, Y_pcl = [
+                    TestCorrespondingPointsAlignment.init_point_cloud(
+                        batch_size=batch_size,
+                        n_points=max_n_points,
+                        dim=3,
+                        device=device,
+                        use_pointclouds=True,
+                        random_pcl_size=True,
+                    )
+                    for _ in range(2)
+                ]
+    
+                # get the padded versions and their num of points
+                X_padded = X_pcl.points_padded()
+                Y_padded = Y_pcl.points_padded()
+                n_points_X = X_pcl.num_points_per_cloud()
+                n_points_Y = Y_pcl.num_points_per_cloud()
+    
+                # run icp with Pointlouds inputs
+                (
+                    _,
+                    _,
+                    Xt_pcl,
+                    (R_pcl, T_pcl, s_pcl),
+                    _,
+                ) = points_alignment.iterative_closest_point(
+                    X_pcl,
+                    Y_pcl,
+                    estimate_scale=estimate_scale,
+                    allow_reflection=False,
+                    verbose=False,
+                    max_iterations=100,
+                )
+                Xt_pcl = Xt_pcl.points_padded()
+    
+                # run icp with tensor inputs on each element
+                # of the batch separately
+                icp_results = [
+                    points_alignment.iterative_closest_point(
+                        X_[None, :n_X, :],
+                        Y_[None, :n_Y, :],
+                        estimate_scale=estimate_scale,
+                        allow_reflection=False,
+                        verbose=False,
+                        max_iterations=100,
+                    )
+                    for X_, Y_, n_X, n_Y in zip(
+                        X_padded, Y_padded, n_points_X, n_points_Y
+                    )
+                ]
+    
+                # parse out the transformation results
+                R, T, s = [
+                    torch.cat([x.RTs[i] for x in icp_results], dim=0) for i in range(3)
+                ]
+    
+                # check that both sets of transforms are the same
+                atol = 1e-5
+>               self.assertClose(R_pcl, R, atol=atol)
+
+../pytorch3d/tests/test_points_alignment.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 1.4095808267593384. Max relative diff 9.08298397064209 Shape (7, 3, 3). At (4, 0, 0).
+=============================== warnings summary ===============================
+tests/test_points_alignment.py::TestICP::test_compare_with_trimesh
+tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+tests/test_points_alignment.py::TestICP::test_init_transformation
+  /local/data0/moved_data/pytorch3d/tests/test_points_alignment.py:48: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    self.trimesh_results = torch.load(trimesh_results_path)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+=================== 1 failed, 2 passed, 3 warnings in 1.89s ====================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_compare_with_trimesh PASSED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs FAILED
+../pytorch3d/tests/test_points_alignment.py::TestICP::test_init_transformation PASSED
+
+=================================== FAILURES ===================================
+______________________ TestICP.test_heterogeneous_inputs _______________________
+
+self = <tests.test_points_alignment.TestICP testMethod=test_heterogeneous_inputs>
+batch_size = 7
+
+    def test_heterogeneous_inputs(self, batch_size=7):
+        """
+        Tests whether we get the same result when running ICP on
+        a set of randomly-sized Pointclouds and on their padded versions.
+        """
+    
+        torch.manual_seed(4)
+        device = torch.device("cuda:0")
+    
+        for estimate_scale in (True, False):
+            for max_n_points in (10, 30, 100):
+                # initialize ground truth point clouds
+                X_pcl, Y_pcl = [
+                    TestCorrespondingPointsAlignment.init_point_cloud(
+                        batch_size=batch_size,
+                        n_points=max_n_points,
+                        dim=3,
+                        device=device,
+                        use_pointclouds=True,
+                        random_pcl_size=True,
+                    )
+                    for _ in range(2)
+                ]
+    
+                # get the padded versions and their num of points
+                X_padded = X_pcl.points_padded()
+                Y_padded = Y_pcl.points_padded()
+                n_points_X = X_pcl.num_points_per_cloud()
+                n_points_Y = Y_pcl.num_points_per_cloud()
+    
+                # run icp with Pointlouds inputs
+                (
+                    _,
+                    _,
+                    Xt_pcl,
+                    (R_pcl, T_pcl, s_pcl),
+                    _,
+                ) = points_alignment.iterative_closest_point(
+                    X_pcl,
+                    Y_pcl,
+                    estimate_scale=estimate_scale,
+                    allow_reflection=False,
+                    verbose=False,
+                    max_iterations=100,
+                )
+                Xt_pcl = Xt_pcl.points_padded()
+    
+                # run icp with tensor inputs on each element
+                # of the batch separately
+                icp_results = [
+                    points_alignment.iterative_closest_point(
+                        X_[None, :n_X, :],
+                        Y_[None, :n_Y, :],
+                        estimate_scale=estimate_scale,
+                        allow_reflection=False,
+                        verbose=False,
+                        max_iterations=100,
+                    )
+                    for X_, Y_, n_X, n_Y in zip(
+                        X_padded, Y_padded, n_points_X, n_points_Y
+                    )
+                ]
+    
+                # parse out the transformation results
+                R, T, s = [
+                    torch.cat([x.RTs[i] for x in icp_results], dim=0) for i in range(3)
+                ]
+    
+                # check that both sets of transforms are the same
+                atol = 1e-5
+>               self.assertClose(R_pcl, R, atol=atol)
+
+../pytorch3d/tests/test_points_alignment.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 1.4095808267593384. Max relative diff 9.08298397064209 Shape (7, 3, 3). At (4, 0, 0).
+=============================== warnings summary ===============================
+tests/test_points_alignment.py::TestICP::test_compare_with_trimesh
+tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+tests/test_points_alignment.py::TestICP::test_init_transformation
+  /local/data0/moved_data/pytorch3d/tests/test_points_alignment.py:48: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    self.trimesh_results = torch.load(trimesh_results_path)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_points_alignment.py::TestICP::test_heterogeneous_inputs
+=================== 1 failed, 2 passed, 3 warnings in 1.85s ====================

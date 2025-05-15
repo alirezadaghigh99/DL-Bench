@@ -1,0 +1,168 @@
+output file:
+processed_small-text_adapted_cohen_kappa_score34.json
+function:
+_adapted_cohen_kappa_score
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels', '../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights FAILED', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights', '../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight FAILED', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight', '../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels FAILED', '../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights FAILED', '../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 6 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_with_perfect_agreement PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights FAILED
+
+=================================== FAILURES ===================================
+___________ TestAdaptedCohenKappScore.test_without_perfect_agreement ___________
+
+self = <tests.unit.small_text.stopping_criteria.test_kappa.TestAdaptedCohenKappScore testMethod=test_without_perfect_agreement>
+
+    def test_without_perfect_agreement(self):
+        self.assertEqual(0.0, _adapted_cohen_kappa_score(np.array([0, 0, 0, 0, 0]), np.array([1, 1, 1, 1, 1])))
+        self.assertAlmostEqual(0.166,
+                               _adapted_cohen_kappa_score(np.array([0, 0, 0, 1, 1]), np.array([0, 1, 0, 1, 0])),
+                               places=2)
+>       self.assertEqual(-0.25, _adapted_cohen_kappa_score(np.array([0, 1, 1, 1, 1]), np.array([1, 1, 1, 1, 0])))
+E       AssertionError: -0.25 != -0.24999999999999983
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py:16: AssertionError
+_____ TestAdaptedCohenKappScore.test_without_perfect_agreement_and_labels ______
+
+self = <tests.unit.small_text.stopping_criteria.test_kappa.TestAdaptedCohenKappScore testMethod=test_without_perfect_agreement_and_labels>
+
+    def test_without_perfect_agreement_and_labels(self):
+        self.assertAlmostEqual(0.444,
+                               _adapted_cohen_kappa_score(np.array([0, 1, 1, 2, 1]), np.array([0, 1, 2, 2, 0])),
+                               places=2)
+    
+>       self.assertAlmostEqual(0.399,
+                               _adapted_cohen_kappa_score(
+                                   np.array([0, 1, 1, 2, 1]),
+                                   np.array([0, 1, 2, 2, 0]),
+                                   labels=[1, 2]
+                               ),
+                               places=2)
+E       AssertionError: 0.399 != 0.4444444444444445 within 2 places (0.045444444444444454 difference)
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py:62: AssertionError
+__ TestAdaptedCohenKappScore.test_without_perfect_agreement_and_sample_weight __
+
+self = <tests.unit.small_text.stopping_criteria.test_kappa.TestAdaptedCohenKappScore testMethod=test_without_perfect_agreement_and_sample_weight>
+
+    def test_without_perfect_agreement_and_sample_weight(self):
+        self.assertAlmostEqual(0.615,
+                               _adapted_cohen_kappa_score(np.array([0, 1, 1, 1, 0]), np.array([0, 1, 0, 1, 0])),
+                               places=2)
+    
+>       self.assertAlmostEqual(0.932,
+                               _adapted_cohen_kappa_score(
+                                   np.array([0, 1, 1, 1, 0]),
+                                   np.array([0, 1, 0, 1, 0]),
+                                   sample_weight=[0.1, 1.0, 0.1, 1.0, 1.0]
+                               ),
+                               places=2)
+E       AssertionError: 0.932 != 0.6153846153846155 within 2 places (0.3166153846153845 difference)
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py:36: AssertionError
+_ TestAdaptedCohenKappScore.test_without_perfect_agreement_and_sample_weights __
+
+self = <tests.unit.small_text.stopping_criteria.test_kappa.TestAdaptedCohenKappScore testMethod=test_without_perfect_agreement_and_sample_weights>
+
+    def test_without_perfect_agreement_and_sample_weights(self):
+        self.assertAlmostEqual(0.615,
+                               _adapted_cohen_kappa_score(np.array([0, 1, 1, 1, 0]), np.array([0, 1, 0, 1, 0])),
+                               places=2)
+    
+>       self.assertAlmostEqual(0.932,
+                               _adapted_cohen_kappa_score(
+                                   np.array([0, 1, 1, 1, 0]),
+                                   np.array([0, 1, 0, 1, 0]),
+                                   sample_weight=[0.1, 1.0, 0.1, 1.0, 1.0]
+                               ),
+                               places=2)
+E       AssertionError: 0.932 != 0.6153846153846155 within 2 places (0.3166153846153845 difference)
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py:23: AssertionError
+_____ TestAdaptedCohenKappScore.test_without_perfect_agreement_and_weights _____
+
+self = <tests.unit.small_text.stopping_criteria.test_kappa.TestAdaptedCohenKappScore testMethod=test_without_perfect_agreement_and_weights>
+
+    def test_without_perfect_agreement_and_weights(self):
+        self.assertAlmostEqual(0.444,
+                               _adapted_cohen_kappa_score(np.array([0, 1, 1, 2, 1]), np.array([0, 1, 2, 2, 0])),
+                               places=2)
+    
+>       self.assertAlmostEqual(0.666,
+                               _adapted_cohen_kappa_score(
+                                   np.array([0, 1, 1, 2, 1]),
+                                   np.array([0, 1, 2, 2, 0]),
+                                   weights='quadratic'
+                               ),
+                               places=2)
+E       AssertionError: 0.666 != 0.4444444444444445 within 2 places (0.22155555555555556 difference)
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py:49: AssertionError
+=============================== warnings summary ===============================
+tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_with_perfect_agreement
+  /local/data0/moved_data/publishablew/small-text/small-text/venv/lib/python3.11/site-packages/sklearn/metrics/_classification.py:409: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights
+==================== 5 failed, 1 passed, 1 warning in 1.69s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 6 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_with_perfect_agreement PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights PASSED
+
+============================== 6 passed in 1.58s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 6 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_with_perfect_agreement PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_labels PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weight PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_sample_weights PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/stopping_criteria/test_kappa.py::TestAdaptedCohenKappScore::test_without_perfect_agreement_and_weights PASSED
+
+============================== 6 passed in 1.70s ===============================

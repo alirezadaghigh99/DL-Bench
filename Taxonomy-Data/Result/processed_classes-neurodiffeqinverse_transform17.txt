@@ -1,0 +1,135 @@
+output file:
+processed_classes-neurodiffeqinverse_transform17.json
+function:
+inverse_transform
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 5 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_fcnn PASSED [ 20%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_resnet PASSED [ 40%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_monomial_nn PASSED [ 60%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_swish PASSED [ 80%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx FAILED [100%]
+
+=================================== FAILURES ===================================
+__________________________________ test_APTx ___________________________________
+
+    def test_APTx():
+        x = torch.rand(10, 5)
+    
+        f = APTx()
+        print(list(f.parameters()))
+        assert len(list(f.parameters())) == 0
+>       assert torch.isclose(f(x),  (1 + torch.nn.Tanh()(x))*x ).all()
+E       AssertionError: assert tensor(False, device='cuda:0')
+E        +  where tensor(False, device='cuda:0') = <built-in method all of Tensor object at 0x73affcb88b30>()
+E        +    where <built-in method all of Tensor object at 0x73affcb88b30> = tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0').all
+E        +      where tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0') = <built-in method isclose of type object at 0x73b112cd0240>(tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0'), ((1 + tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0')) * tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0')))
+E        +        where <built-in method isclose of type object at 0x73b112cd0240> = torch.isclose
+E        +        and   tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0') = APTx()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +        and   tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0') = Tanh()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +          where Tanh() = <class 'torch.nn.modules.activation.Tanh'>()
+E        +            where <class 'torch.nn.modules.activation.Tanh'> = <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'>.Tanh
+E        +              where <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'> = torch.nn
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py:160: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[]
+=========================== short test summary info ============================
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx
+========================= 1 failed, 4 passed in 2.12s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 5 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_fcnn PASSED [ 20%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_resnet PASSED [ 40%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_monomial_nn PASSED [ 60%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_swish PASSED [ 80%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx FAILED [100%]
+
+=================================== FAILURES ===================================
+__________________________________ test_APTx ___________________________________
+
+    def test_APTx():
+        x = torch.rand(10, 5)
+    
+        f = APTx()
+        print(list(f.parameters()))
+        assert len(list(f.parameters())) == 0
+>       assert torch.isclose(f(x),  (1 + torch.nn.Tanh()(x))*x ).all()
+E       AssertionError: assert tensor(False, device='cuda:0')
+E        +  where tensor(False, device='cuda:0') = <built-in method all of Tensor object at 0x7d57dfb88ef0>()
+E        +    where <built-in method all of Tensor object at 0x7d57dfb88ef0> = tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0').all
+E        +      where tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0') = <built-in method isclose of type object at 0x7d58f5cd0240>(tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0'), ((1 + tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0')) * tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0')))
+E        +        where <built-in method isclose of type object at 0x7d58f5cd0240> = torch.isclose
+E        +        and   tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0') = APTx()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +        and   tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0') = Tanh()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +          where Tanh() = <class 'torch.nn.modules.activation.Tanh'>()
+E        +            where <class 'torch.nn.modules.activation.Tanh'> = <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'>.Tanh
+E        +              where <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'> = torch.nn
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py:160: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[]
+=========================== short test summary info ============================
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx
+========================= 1 failed, 4 passed in 2.05s ==========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 5 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_fcnn PASSED [ 20%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_resnet PASSED [ 40%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_monomial_nn PASSED [ 60%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_swish PASSED [ 80%]
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx FAILED [100%]
+
+=================================== FAILURES ===================================
+__________________________________ test_APTx ___________________________________
+
+    def test_APTx():
+        x = torch.rand(10, 5)
+    
+        f = APTx()
+        print(list(f.parameters()))
+        assert len(list(f.parameters())) == 0
+>       assert torch.isclose(f(x),  (1 + torch.nn.Tanh()(x))*x ).all()
+E       AssertionError: assert tensor(False, device='cuda:0')
+E        +  where tensor(False, device='cuda:0') = <built-in method all of Tensor object at 0x7c8acf488ef0>()
+E        +    where <built-in method all of Tensor object at 0x7c8acf488ef0> = tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0').all
+E        +      where tensor([[False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False],\n        [False, False, False, False, False]], device='cuda:0') = <built-in method isclose of type object at 0x7c8be56d0240>(tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0'), ((1 + tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0')) * tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0')))
+E        +        where <built-in method isclose of type object at 0x7c8be56d0240> = torch.isclose
+E        +        and   tensor([[0.2836, 0.5139, 0.6827, 0.0019, 0.3843],\n        [0.5668, 0.1326, 0.8794, 0.2254, 0.0233],\n        [0.4986, 0.2721, 0.7436, 0.4098, 0.6187],\n        [0.3422, 0.7933, 0.0836, 0.1354, 0.6693],\n        [0.2118, 0.1609, 0.6221, 0.3513, 0.2964],\n        [0.3143, 0.0884, 0.7579, 0.5525, 0.4100],\n        [0.5625, 0.1300, 0.5400, 0.5450, 0.0146],\n        [0.7312, 0.3714, 0.2041, 0.3063, 0.0553],\n        [0.3604, 0.1193, 0.3955, 0.0983, 0.0886],\n        [0.1732, 0.8569, 0.7571, 0.2631, 0.1396]], device='cuda:0') = APTx()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +        and   tensor([[0.3874, 0.5737, 0.6730, 0.0037, 0.4778],\n        [0.6077, 0.2149, 0.7611, 0.3272, 0.0445],\n        [0.5634, 0.3761, 0.7030, 0.4983, 0.6383],\n        [0.4419, 0.7256, 0.1450, 0.2186, 0.6660],\n        [0.3121, 0.2515, 0.6402, 0.4499, 0.3998],\n        [0.4167, 0.1522, 0.7097, 0.5987, 0.4984],\n        [0.6050, 0.2114, 0.5908, 0.5940, 0.0285],\n        [0.6971, 0.4670, 0.3033, 0.4093, 0.1001],\n        [0.4578, 0.1967, 0.4869, 0.1670, 0.1525],\n        [0.2668, 0.7522, 0.7094, 0.3670, 0.2241]], device='cuda:0') = Tanh()(tensor([[0.4088, 0.6531, 0.8161, 0.0037, 0.5201],\n        [0.7052, 0.2183, 0.9987, 0.3397, 0.0446],\n        [0.6379, 0.3955, 0.8733, 0.5470, 0.7553],\n        [0.4746, 0.9194, 0.1460, 0.2222, 0.8035],\n        [0.3229, 0.2571, 0.7586, 0.4846, 0.4234],\n        [0.4437, 0.1534, 0.8866, 0.6911, 0.5472],\n        [0.7009, 0.2147, 0.6789, 0.6838, 0.0285],\n        [0.8617, 0.5063, 0.3132, 0.4348, 0.1005],\n        [0.4945, 0.1993, 0.5320, 0.1686, 0.1537],\n        [0.2734, 0.9781, 0.8859, 0.3849, 0.2280]], device='cuda:0'))
+E        +          where Tanh() = <class 'torch.nn.modules.activation.Tanh'>()
+E        +            where <class 'torch.nn.modules.activation.Tanh'> = <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'>.Tanh
+E        +              where <module 'torch.nn' from '/local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/lib/python3.11/site-packages/torch/nn/__init__.py'> = torch.nn
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py:160: AssertionError
+----------------------------- Captured stdout call -----------------------------
+[]
+=========================== short test summary info ============================
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_networks.py::test_APTx
+========================= 1 failed, 4 passed in 14.75s =========================

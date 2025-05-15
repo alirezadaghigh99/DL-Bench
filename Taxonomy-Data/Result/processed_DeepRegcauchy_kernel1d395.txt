@@ -1,0 +1,141 @@
+output file:
+processed_DeepRegcauchy_kernel1d395.json
+function:
+cauchy_kernel1d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] - assert False', 'FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] - assert False', 'test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] FAILED          [100%]', 'test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] FAILED            [ 66%]', 'FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] - assert False', 'test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] FAILED            [ 33%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 3 items
+
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] FAILED            [ 33%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] FAILED            [ 66%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] FAILED          [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_cauchy_kernel1d[1] ____________________________
+
+sigma = 1
+
+    @pytest.mark.parametrize("sigma", [1, 3, 2.2])
+    def test_cauchy_kernel1d(sigma):
+        """
+        Testing the 1-D cauchy kernel
+        :param sigma: float
+        :return:
+        """
+        tail = int(sigma * 5)
+        expected = [1 / ((x / sigma) ** 2 + 1) for x in range(-tail, tail + 1)]
+        expected = expected / np.sum(expected)
+        got = cauchy_kernel1d(sigma)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(8,), dtype=float32, numpy=\narray([0.02212389, 0.03761062, 0.07522124, 0.1880531 , 0.3761062 ,\n       0.1880531 , 0.07522124, 0.03761062], dtype=float32)>, array([0.01376295, 0.02104922, 0.03578368, 0.07156736, 0.17891839,\n       0.35783679, 0.17891839, 0.07156736, 0.03578368, 0.02104922,\n       0.01376295]))
+
+test/unit/test_loss_kernel.py:27: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2025-01-21 15:43:01.856997: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2025-01-21 15:43:02.004138: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2025-01-21 15:43:02.013041: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: NVIDIA GeForce RTX 3060 computeCapability: 8.6
+coreClock: 1.777GHz coreCount: 28 deviceMemorySize: 11.64GiB deviceMemoryBandwidth: 335.32GiB/s
+2025-01-21 15:43:02.013154: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:02.013220: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcublas.so.10'; dlerror: libcublas.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:02.029855: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2025-01-21 15:43:02.030177: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2025-01-21 15:43:02.030257: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcusolver.so.10'; dlerror: libcusolver.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:02.030323: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcusparse.so.10'; dlerror: libcusparse.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:02.030385: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:02.030394: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2025-01-21 15:43:02.030639: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-01-21 15:43:02.034843: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 3393635000 Hz
+2025-01-21 15:43:02.035408: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x444c400 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-01-21 15:43:02.035426: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2025-01-21 15:43:02.036159: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2025-01-21 15:43:02.036172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      
+___________________________ test_cauchy_kernel1d[3] ____________________________
+
+sigma = 3
+
+    @pytest.mark.parametrize("sigma", [1, 3, 2.2])
+    def test_cauchy_kernel1d(sigma):
+        """
+        Testing the 1-D cauchy kernel
+        :param sigma: float
+        :return:
+        """
+        tail = int(sigma * 5)
+        expected = [1 / ((x / sigma) ** 2 + 1) for x in range(-tail, tail + 1)]
+        expected = expected / np.sum(expected)
+        got = cauchy_kernel1d(sigma)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(20,), dtype=float32, numpy=\narray([0.01076023, 0.01303184, 0.01606665, 0.02022181, 0.02606367,\n    ...204 , 0.06515918, 0.04691461,\n       0.03449604, 0.02606367, 0.02022181, 0.01606665, 0.01303184],\n      dtype=float32)>, array([0.00464621, 0.00530348, 0.00610794, 0.00710597, 0.00836318,\n       0.00997443, 0.01208015, 0.01489333, 0.018745...1874506, 0.01489333, 0.01208015,\n       0.00997443, 0.00836318, 0.00710597, 0.00610794, 0.00530348,\n       0.00464621]))
+
+test/unit/test_loss_kernel.py:27: AssertionError
+__________________________ test_cauchy_kernel1d[2.2] ___________________________
+
+sigma = 2.2
+
+    @pytest.mark.parametrize("sigma", [1, 3, 2.2])
+    def test_cauchy_kernel1d(sigma):
+        """
+        Testing the 1-D cauchy kernel
+        :param sigma: float
+        :return:
+        """
+        tail = int(sigma * 5)
+        expected = [1 / ((x / sigma) ** 2 + 1) for x in range(-tail, tail + 1)]
+        expected = expected / np.sum(expected)
+        got = cauchy_kernel1d(sigma)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(14,), dtype=float32, numpy=\narray([0.01614573, 0.02128517, 0.02913158, 0.0417124 , 0.06280971,\n    ...0.14885041, 0.17960462, 0.14885041, 0.09833556,\n       0.06280971, 0.0417124 , 0.02913158, 0.02128517], dtype=float32)>, array([0.00632558, 0.00759262, 0.00927319, 0.0115632 , 0.01478475,\n       0.01949096, 0.02667596, 0.0381963 , 0.057515...5751523,\n       0.0381963 , 0.02667596, 0.01949096, 0.01478475, 0.0115632 ,\n       0.00927319, 0.00759262, 0.00632558]))
+
+test/unit/test_loss_kernel.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] - assert False
+FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] - assert False
+FAILED test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] - assert False
+============================== 3 failed in 1.48s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 3 items
+
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] PASSED            [ 33%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] PASSED            [ 66%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] PASSED          [100%]
+
+============================== 3 passed in 1.32s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 3 items
+
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[1] PASSED            [ 33%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[3] PASSED            [ 66%]
+test/unit/test_loss_kernel.py::test_cauchy_kernel1d[2.2] PASSED          [100%]
+
+============================== 3 passed in 1.18s ===============================

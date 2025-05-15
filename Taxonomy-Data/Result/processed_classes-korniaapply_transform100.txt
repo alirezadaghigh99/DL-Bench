@@ -1,0 +1,134 @@
+output file:
+processed_classes-korniaapply_transform100.json
+function:
+apply_transform
+Error Cases:
+ImportError while loading conftest '/local/data0/moved_data/publishablew/kornia/kornia/conftest.py'.
+../publishablew/kornia/kornia/conftest.py:10: in <module>
+    import kornia
+../publishablew/kornia/kornia/kornia/__init__.py:8: in <module>
+    from . import (
+../publishablew/kornia/kornia/kornia/augmentation/__init__.py:2: in <module>
+    from kornia.augmentation import auto, container
+../publishablew/kornia/kornia/kornia/augmentation/auto/__init__.py:1: in <module>
+    from .autoaugment import AutoAugment
+../publishablew/kornia/kornia/kornia/augmentation/auto/autoaugment/__init__.py:1: in <module>
+    from .autoaugment import AutoAugment
+../publishablew/kornia/kornia/kornia/augmentation/auto/autoaugment/autoaugment.py:5: in <module>
+    from kornia.augmentation.auto.base import SUBPOLICY_CONFIG, PolicyAugmentBase
+../publishablew/kornia/kornia/kornia/augmentation/auto/base.py:5: in <module>
+    from kornia.augmentation.auto.operations.base import OperationBase
+../publishablew/kornia/kornia/kornia/augmentation/auto/operations/__init__.py:3: in <module>
+    from .policy import PolicySequential
+../publishablew/kornia/kornia/kornia/augmentation/auto/operations/policy.py:7: in <module>
+    from kornia.augmentation.container.base import ImageSequentialBase, TransformMatrixMinIn
+../publishablew/kornia/kornia/kornia/augmentation/container/__init__.py:1: in <module>
+    from kornia.augmentation.container.augment import AugmentationSequential
+../publishablew/kornia/kornia/kornia/augmentation/container/augment.py:6: in <module>
+    from kornia.augmentation._2d.base import RigidAffineAugmentationBase2D
+../publishablew/kornia/kornia/kornia/augmentation/_2d/__init__.py:2: in <module>
+    from kornia.augmentation._2d.intensity import *
+../publishablew/kornia/kornia/kornia/augmentation/_2d/intensity/__init__.py:36: in <module>
+    from kornia.augmentation._2d.intensity.saturation import RandomSaturation
+../publishablew/kornia/kornia/kornia/augmentation/_2d/intensity/saturation.py:8: in <module>
+    class RandomSaturation(IntensityAugmentationBase2D):
+../publishablew/kornia/kornia/kornia/augmentation/_2d/intensity/saturation.py:58: in RandomSaturation
+    def apply_transform(self, input: torch.Tensor, params: Dict[str, torch.Tensor], flags: Dict[str, Any], transform: Optional[torch.Tensor]=None) -> torch.Tensor:
+E   NameError: name 'torch' is not defined
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'jit', 'onnxrt', 'openxla', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_smoke XFAIL [ 14%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation_identity[cpu-float32] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_same_on_batch[cpu-float32] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation[cpu-float32] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_sequential[cpu-float32] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation_batch_sequential[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_gradcheck[cpu] SKIPPED [100%]
+
+=================== 5 passed, 1 skipped, 1 xfailed in 0.37s ====================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'cudagraphs', 'jit', 'openxla', 'tvm', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_smoke XFAIL [ 14%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation_identity[cpu-float32] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_same_on_batch[cpu-float32] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation[cpu-float32] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_sequential[cpu-float32] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_random_saturation_batch_sequential[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRandomSaturation::test_gradcheck[cpu] SKIPPED [100%]
+
+=================== 5 passed, 1 skipped, 1 xfailed in 0.44s ====================

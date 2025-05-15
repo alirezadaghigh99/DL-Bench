@@ -1,0 +1,245 @@
+output file:
+processed_classes-korniaproject14.json
+function:
+project
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32] FAILED [ 95%]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'cudagraphs', 'inductor', 'onnxrt', 'tvm', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 20 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_smoke[cpu-float32-1] PASSED [  5%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-1] PASSED [ 10%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-2] PASSED [ 15%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-5] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_gradcheck[cpu-1] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-1] PASSED [ 30%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-2] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-5] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-1] PASSED [ 45%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-2] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-5] PASSED [ 55%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_gradcheck[cpu-1] SKIPPED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_smoke[cpu-float32] PASSED [ 65%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes[cpu-float32] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_translation_setters[cpu-float32] PASSED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes_batch2[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale_inplace[cpu-float32] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32] FAILED [ 95%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_device[cpu-float32] PASSED [100%]
+
+=================================== FAILURES ===================================
+___ TestPinholeCamera.test_pinhole_camera_project_and_unproject[cpu-float32] ___
+
+self = <test_pinhole.TestPinholeCamera object at 0x7e5ff04ff5b0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_pinhole_camera_project_and_unproject(self, device, dtype):
+        batch_size = 5
+        n = 2  # Point per batch
+        height, width = 4, 6
+        fx, fy, cx, cy = 1, 2, width / 2, height / 2
+        alpha, beta, gamma = 0.0, 0.0, 0.4
+        tx, ty, tz = 0, 0, 3
+    
+        intrinsics = self._create_intrinsics(batch_size, fx, fy, cx, cy, device=device, dtype=dtype)
+        extrinsics = self._create_extrinsics_with_rotation(
+            batch_size, alpha, beta, gamma, tx, ty, tz, device=device, dtype=dtype
+        )
+    
+        height = torch.ones(batch_size, device=device, dtype=dtype) * height
+        width = torch.ones(batch_size, device=device, dtype=dtype) * width
+    
+        pinhole = kornia.geometry.camera.PinholeCamera(intrinsics, extrinsics, height, width)
+    
+        point_3d = torch.rand((batch_size, n, 3), device=device, dtype=dtype)
+    
+        depth = point_3d[..., -1:] + tz
+    
+>       point_2d = pinhole.project(point_3d)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x7e5ff032aaa0>
+point_3d = tensor([[[0.3907, 0.5420, 0.2419],
+         [0.5952, 0.1354, 0.2390]],
+
+        [[0.8003, 0.8264, 0.1203],
+         [0..., 0.0896],
+         [0.1114, 0.5002, 0.8385]],
+
+        [[0.8228, 0.8420, 0.1711],
+         [0.1916, 0.3588, 0.5685]]])
+
+    def project(self, point_3d: Tensor) -> Tensor:
+        if point_3d.shape[-1] != 4:
+            ones = torch.ones((*point_3d.shape[:-1], 1), device=point_3d.device, dtype=point_3d.dtype)
+            point_3d_homogeneous = torch.cat((point_3d, ones), dim=-1)
+        else:
+            point_3d_homogeneous = point_3d
+>       point_camera = torch.matmul(point_3d_homogeneous, self._extrinsics.T)
+E       RuntimeError: The size of tensor a (5) must match the size of tensor b (4) at non-singleton dimension 0
+
+../publishablew/kornia/kornia/kornia/geometry/camera/pinhole.py:278: RuntimeError
+=============================== warnings summary ===============================
+tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/camera/pinhole.py:278: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3683.)
+    point_camera = torch.matmul(point_3d_homogeneous, self._extrinsics.T)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32]
+============== 1 failed, 18 passed, 1 skipped, 1 warning in 0.39s ==============
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'onnxrt', 'inductor', 'cudagraphs', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 20 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_smoke[cpu-float32-1] PASSED [  5%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-1] PASSED [ 10%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-2] PASSED [ 15%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-5] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_gradcheck[cpu-1] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-1] PASSED [ 30%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-2] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-5] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-1] PASSED [ 45%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-2] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-5] PASSED [ 55%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_gradcheck[cpu-1] SKIPPED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_smoke[cpu-float32] PASSED [ 65%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes[cpu-float32] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_translation_setters[cpu-float32] PASSED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes_batch2[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale_inplace[cpu-float32] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_device[cpu-float32] PASSED [100%]
+
+======================== 19 passed, 1 skipped in 0.34s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'onnxrt', 'openxla', 'inductor', 'cudagraphs', None, 'tvm'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 20 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_smoke[cpu-float32-1] PASSED [  5%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-1] PASSED [ 10%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-2] PASSED [ 15%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_consistency[cpu-float32-5] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestCam2Pixel::test_gradcheck[cpu-1] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-1] PASSED [ 30%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-2] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_smoke[cpu-float32-5] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-1] PASSED [ 45%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-2] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_consistency[cpu-float32-5] PASSED [ 55%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPixel2Cam::test_gradcheck[cpu-1] SKIPPED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_smoke[cpu-float32] PASSED [ 65%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes[cpu-float32] PASSED [ 70%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_translation_setters[cpu-float32] PASSED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_attributes_batch2[cpu-float32] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale[cpu-float32] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_scale_inplace[cpu-float32] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_project_and_unproject[cpu-float32] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/geometry/camera/test_pinhole.py::TestPinholeCamera::test_pinhole_camera_device[cpu-float32] PASSED [100%]
+
+======================== 19 passed, 1 skipped in 0.40s =========================

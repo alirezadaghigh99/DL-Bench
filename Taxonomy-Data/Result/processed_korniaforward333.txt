@@ -1,0 +1,242 @@
+output file:
+processed_korniaforward333.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'onnxrt', 'openxla', 'cudagraphs', None, 'inductor'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_smoke PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_onnx[cpu-float32] SKIPPED
+
+=================================== FAILURES ===================================
+______________________ TestSTE.test_function[cpu-float32] ______________________
+
+self = <test_ste.TestSTE object at 0x75a5958a39d0>, device = device(type='cpu')
+dtype = torch.float32
+
+    def test_function(self, device, dtype):
+        data = torch.randn(4, requires_grad=True, device=device, dtype=dtype)
+        output = torch.sign(data)
+        loss = output.mean()
+        loss.backward()
+        assert_close(data.grad, torch.tensor([0.0, 0.0, 0.0, 0.0], device=device, dtype=dtype))
+    
+>       out_est = STEFunction.apply(data, output, F.hardtanh)
+
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/function.py:575: in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<torch.autograd.function.STEFunctionBackward object at 0x75a595a1fbc0>, tensor([-0.4026,  1.5807,  1.5166, -1.0202], requires_grad=True), tensor([-1.,  1.,  1., -1.], grad_fn=<SignBackward0>), <function hardtanh at 0x75a67abb9f30>)
+kwargs = {}
+
+    @staticmethod
+    def forward(*args: Any, **kwargs: Any) -> Any:
+        r"""Define the forward of the custom autograd Function.
+    
+        This function is to be overridden by all subclasses.
+        There are two ways to define forward:
+    
+        Usage 1 (Combined forward and ctx)::
+    
+            @staticmethod
+            def forward(ctx: Any, *args: Any, **kwargs: Any) -> Any:
+                pass
+    
+        - It must accept a context ctx as the first argument, followed by any
+          number of arguments (tensors or other types).
+        - See :ref:`combining-forward-context` for more details
+    
+        Usage 2 (Separate forward and ctx)::
+    
+            @staticmethod
+            def forward(*args: Any, **kwargs: Any) -> Any:
+                pass
+    
+            @staticmethod
+            def setup_context(ctx: Any, inputs: Tuple[Any, ...], output: Any) -> None:
+                pass
+    
+        - The forward no longer accepts a ctx argument.
+        - Instead, you must also override the :meth:`torch.autograd.Function.setup_context`
+          staticmethod to handle setting up the ``ctx`` object.
+          ``output`` is the output of the forward, ``inputs`` are a Tuple of inputs
+          to the forward.
+        - See :ref:`extending-autograd` for more details
+    
+        The context can be used to store arbitrary data that can be then
+        retrieved during the backward pass. Tensors should not be stored
+        directly on `ctx` (though this is not currently enforced for
+        backward compatibility). Instead, tensors should be saved either with
+        :func:`ctx.save_for_backward` if they are intended to be used in
+        ``backward`` (equivalently, ``vjp``) or :func:`ctx.save_for_forward`
+        if they are intended to be used for in ``jvp``.
+        """
+>       raise NotImplementedError(
+            "You must implement the forward function for custom autograd.Function."
+        )
+E       NotImplementedError: You must implement the forward function for custom autograd.Function.
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/function.py:387: NotImplementedError
+_______________________ TestSTE.test_module[cpu-float32] _______________________
+
+self = <test_ste.TestSTE object at 0x75a5958ec070>, device = device(type='cpu')
+dtype = torch.float32
+
+    def test_module(self, device, dtype):
+        data = torch.randn(1, 1, 4, 4, requires_grad=True, device=device, dtype=dtype)
+        estimator = StraightThroughEstimator(K.RandomPosterize(3, p=1.0), grad_fn=F.hardtanh)
+>       out = estimator(data)
+
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = StraightThroughEstimator(target_fn=RandomPosterize(bits=3, p=1.0, p_batch=1.0, same_on_batch=False), grad_fn=<function hardtanh at 0x75a67abb9f30>)
+input = tensor([[[[-1.3941,  0.6563, -1.8108,  0.6569],
+          [ 0.3600, -0.9035,  0.2961,  0.4105],
+          [-0.5124, -0.4419,  0.6445,  0.2955],
+          [-0.2894, -0.0142, -0.2408,  0.1035]]]], requires_grad=True)
+
+    def forward(self, input: Tensor) -> Tensor:
+>       from .temp import forward
+E       ImportError: cannot import name 'forward' from 'kornia.grad_estimator.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/grad_estimator/temp.py)
+
+../publishablew/kornia/kornia/kornia/grad_estimator/ste.py:99: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32]
+==================== 2 failed, 1 passed, 2 skipped in 0.37s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'onnxrt', 'jit', 'tvm', 'cudagraphs', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_smoke PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_onnx[cpu-float32] SKIPPED
+
+========================= 3 passed, 2 skipped in 0.14s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'cudagraphs', 'tvm', 'inductor', 'openxla', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_smoke PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_function[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_module[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/grad_estimator/test_ste.py::TestSTE::test_onnx[cpu-float32] SKIPPED
+
+========================= 3 passed, 2 skipped in 0.15s =========================

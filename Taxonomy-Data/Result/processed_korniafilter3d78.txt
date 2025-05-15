@@ -1,0 +1,1557 @@
+output file:
+processed_korniafilter3d78.json
+function:
+filter3d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'cudagraphs', 'openxla', 'tvm', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 22 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_module SKIPPED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False] FAILED
+
+=================================== FAILURES ===================================
+______________ TestFilter3D.test_smoke[cpu-float32-True-constant] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c4901d80>
+border_type = 'constant', normalized = True, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.3492, 0.7836, 0.6720],
+          [0.2915, 0.4646, 0.7095],
+          [0.2775, 0.2612, 0.5391]],
+
+        ...8309]],
+
+         [[0.5988, 0.2597, 0.7480],
+          [0.1019, 0.5436, 0.8075],
+          [0.6181, 0.4678, 0.3580]]]])
+border_type = 'constant', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+______________ TestFilter3D.test_smoke[cpu-float32-True-reflect] _______________
+
+self = <test_filters.TestFilter3D object at 0x7145c4901ba0>
+border_type = 'reflect', normalized = True, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.2502, 0.4546, 0.7917],
+          [0.5129, 0.6662, 0.0801],
+          [0.7496, 0.4915, 0.6975]],
+
+        ...1421]],
+
+         [[0.6896, 0.9471, 0.3842],
+          [0.9445, 0.8063, 0.0297],
+          [0.7248, 0.1745, 0.1871]]]])
+border_type = 'reflect', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_smoke[cpu-float32-True-replicate] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c49020e0>
+border_type = 'replicate', normalized = True, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.5243, 0.2712, 0.7344],
+          [0.6534, 0.5351, 0.3593],
+          [0.2470, 0.5386, 0.2897]],
+
+        ...8333]],
+
+         [[0.9082, 0.4230, 0.2787],
+          [0.3243, 0.3881, 0.5819],
+          [0.2937, 0.9442, 0.8667]]]])
+border_type = 'replicate', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+______________ TestFilter3D.test_smoke[cpu-float32-True-circular] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c49021a0>
+border_type = 'circular', normalized = True, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.3148, 0.5744, 0.7932],
+          [0.0719, 0.9903, 0.9876],
+          [0.8313, 0.9326, 0.3098]],
+
+        ...8614]],
+
+         [[0.9016, 0.8579, 0.1383],
+          [0.0914, 0.6954, 0.7895],
+          [0.2371, 0.5707, 0.7840]]]])
+border_type = 'circular', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_smoke[cpu-float32-False-constant] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902260>
+border_type = 'constant', normalized = False, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.2195, 0.3788, 0.4918],
+          [0.9269, 0.8530, 0.0762],
+          [0.2421, 0.8932, 0.8287]],
+
+        ...1625]],
+
+         [[0.0575, 0.9653, 0.9818],
+          [0.4526, 0.2127, 0.8696],
+          [0.8306, 0.7178, 0.4660]]]])
+border_type = 'constant', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+______________ TestFilter3D.test_smoke[cpu-float32-False-reflect] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902320>
+border_type = 'reflect', normalized = False, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.5557, 0.0629, 0.5975],
+          [0.2613, 0.0137, 0.1602],
+          [0.1537, 0.9678, 0.1990]],
+
+        ...5912]],
+
+         [[0.4320, 0.1724, 0.8560],
+          [0.0270, 0.2195, 0.5736],
+          [0.9967, 0.1138, 0.5353]]]])
+border_type = 'reflect', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_smoke[cpu-float32-False-replicate] _____________
+
+self = <test_filters.TestFilter3D object at 0x7145c49023e0>
+border_type = 'replicate', normalized = False, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.1388, 0.8991, 0.7982],
+          [0.4367, 0.1865, 0.9646],
+          [0.7275, 0.4788, 0.2831]],
+
+        ...7866]],
+
+         [[0.3985, 0.3052, 0.6369],
+          [0.8874, 0.6015, 0.6718],
+          [0.9313, 0.3787, 0.9386]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_smoke[cpu-float32-False-circular] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c49024a0>
+border_type = 'circular', normalized = False, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_smoke(self, border_type, normalized, device, dtype):
+        if torch_version_le(1, 9, 1) and border_type == "reflect":
+            pytest.skip(reason="Reflect border is not implemented for 3D on torch < 1.9.1")
+    
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(1, 1, 6, 7, 8, device=device, dtype=dtype)
+>       actual = filter3d(data, kernel, border_type, normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:381: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ... 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]])
+kernel = tensor([[[[2.3748e-01, 9.7224e-01, 6.8040e-02],
+          [8.7777e-01, 7.5804e-01, 9.6196e-02],
+          [5.8640e-02,...10e-01, 1.9450e-01],
+          [8.9425e-01, 9.9186e-01, 3.9595e-01],
+          [5.6719e-01, 8.9265e-01, 2.4224e-01]]]])
+border_type = 'circular', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________ TestFilter3D.test_cardinality[cpu-float32-2] _________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902830>, batch_size = 2
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [2, 3, 6, 8])
+    def test_cardinality(self, batch_size, device, dtype):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(batch_size, 3, 6, 7, 8, device=device, dtype=dtype)
+>       assert filter3d(data, kernel).shape == data.shape
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:390: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.0017, 0.2715, 0.3783],
+          [0.8449, 0.3977, 0.9711],
+          [0.2324, 0.6969, 0.4834]],
+
+        ...1699]],
+
+         [[0.3970, 0.0487, 0.7124],
+          [0.8133, 0.1659, 0.3398],
+          [0.5396, 0.7900, 0.6381]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________ TestFilter3D.test_cardinality[cpu-float32-3] _________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902770>, batch_size = 3
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [2, 3, 6, 8])
+    def test_cardinality(self, batch_size, device, dtype):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(batch_size, 3, 6, 7, 8, device=device, dtype=dtype)
+>       assert filter3d(data, kernel).shape == data.shape
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:390: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.2051, 0.8155, 0.8751],
+          [0.6065, 0.9052, 0.0648],
+          [0.9255, 0.3775, 0.3713]],
+
+        ...5864]],
+
+         [[0.1557, 0.3550, 0.5543],
+          [0.7933, 0.5879, 0.0924],
+          [0.6211, 0.2679, 0.0164]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________ TestFilter3D.test_cardinality[cpu-float32-6] _________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902ad0>, batch_size = 6
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [2, 3, 6, 8])
+    def test_cardinality(self, batch_size, device, dtype):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(batch_size, 3, 6, 7, 8, device=device, dtype=dtype)
+>       assert filter3d(data, kernel).shape == data.shape
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:390: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.9523, 0.3807, 0.1586],
+          [0.2368, 0.6314, 0.0549],
+          [0.6763, 0.1846, 0.0628]],
+
+        ...6345]],
+
+         [[0.1576, 0.9546, 0.7227],
+          [0.7226, 0.2942, 0.9833],
+          [0.8386, 0.2139, 0.6497]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________ TestFilter3D.test_cardinality[cpu-float32-8] _________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902b90>, batch_size = 8
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [2, 3, 6, 8])
+    def test_cardinality(self, batch_size, device, dtype):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(batch_size, 3, 6, 7, 8, device=device, dtype=dtype)
+>       assert filter3d(data, kernel).shape == data.shape
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:390: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.8964, 0.7645, 0.7238],
+          [0.6306, 0.8898, 0.6114],
+          [0.3999, 0.4955, 0.0734]],
+
+        ...7531]],
+
+         [[0.2879, 0.9058, 0.8762],
+          [0.0768, 0.2815, 0.8501],
+          [0.5078, 0.3987, 0.6984]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________________ TestFilter3D.test_exception __________________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4902d40>
+
+    def test_exception(self):
+        k = torch.ones(1, 1, 1, 1)
+        data = torch.ones(1, 1, 1, 1, 1)
+        with pytest.raises(TypeError) as errinfo:
+>           filter3d(1, k)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:396: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = 1, kernel = tensor([[[[1.]]]]), border_type = 'replicate'
+normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+__________________ TestFilter3D.test_mean_filter[cpu-float32] __________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4903040>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_mean_filter(self, device, dtype):
+        kernel = torch.ones(1, 3, 3, 3, device=device, dtype=dtype)
+        sample = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        expected = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+>       actual = filter3d(sample, kernel)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:481: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0.,...0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.]]]]])
+kernel = tensor([[[[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+____________ TestFilter3D.test_mean_filter_2batch_2ch[cpu-float32] _____________
+
+self = <test_filters.TestFilter3D object at 0x7145c4903370>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_mean_filter_2batch_2ch(self, device, dtype):
+        kernel = torch.ones(1, 3, 3, 3, device=device, dtype=dtype)
+        sample = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+        sample = sample.expand(2, 2, -1, -1, -1)
+    
+        expected = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 5.0, 5.0, 5.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+        expected = expected.expand(2, 2, -1, -1, -1)
+    
+>       actual = filter3d(sample, kernel)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:552: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0.,...0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.]]]]])
+kernel = tensor([[[[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+____________ TestFilter3D.test_normalized_mean_filter[cpu-float32] _____________
+
+self = <test_filters.TestFilter3D object at 0x7145c49036a0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_normalized_mean_filter(self, device, dtype):
+        kernel = torch.ones(1, 3, 3, 3, device=device, dtype=dtype)
+        sample = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+        sample = sample.expand(2, 2, -1, -1, -1)
+    
+        nv = 5.0 / 27  # normalization value
+        expected = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, nv, nv, nv, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+        expected = expected.expand(2, 2, -1, -1, -1)
+    
+>       actual = filter3d(sample, kernel, normalized=True)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:624: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0.,...0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.]]]]])
+kernel = tensor([[[[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]]]])
+border_type = 'replicate', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_______________ TestFilter3D.test_even_sized_filter[cpu-float32] _______________
+
+self = <test_filters.TestFilter3D object at 0x7145c49039d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_even_sized_filter(self, device, dtype):
+        kernel = torch.ones(1, 2, 2, 2, device=device, dtype=dtype)
+        sample = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        expected = torch.tensor(
+            [
+                [
+                    [
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 0.0, 0.0],
+                            [0.0, 5.0, 5.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                        [
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                            [0.0, 0.0, 0.0, 0.0, 0.0],
+                        ],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+>       actual = filter3d(sample, kernel)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:694: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0.,...0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.],
+           [0., 0., 0., 0., 0.]]]]])
+kernel = tensor([[[[1., 1.],
+          [1., 1.]],
+
+         [[1., 1.],
+          [1., 1.]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_________________ TestFilter3D.test_noncontiguous[cpu-float32] _________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4903d00>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_noncontiguous(self, device, dtype):
+        batch_size = 3
+        inp = torch.rand(3, 5, 5, 5, device=device, dtype=dtype).expand(batch_size, -1, -1, -1, -1)
+        kernel = torch.ones(1, 2, 2, 2, device=device, dtype=dtype)
+    
+>       actual = filter3d(inp, kernel)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:702: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[0.8809, 0.8871, 0.4366, 0.4072, 0.5618],
+           [0.0136, 0.2497, 0.2833, 0.6857, 0.3191],
+           [... 0.4357],
+           [0.7604, 0.7221, 0.5680, 0.7519, 0.7170],
+           [0.1920, 0.7199, 0.0729, 0.9512, 0.6728]]]]])
+kernel = tensor([[[[1., 1.],
+          [1., 1.]],
+
+         [[1., 1.],
+          [1., 1.]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_______________________ TestFilter3D.test_gradcheck[cpu] _______________________
+
+self = <test_filters.TestFilter3D object at 0x7145c4903fd0>
+device = device(type='cpu')
+
+    def test_gradcheck(self, device):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=torch.float64)
+        sample = torch.ones(1, 1, 6, 7, 8, device=device, dtype=torch.float64)
+    
+        # evaluate function gradient
+>       self.gradcheck(filter3d, (sample, kernel), nondet_tol=1e-8)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:710: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., ..., 1., 1., 1., 1., 1.],
+           [1., 1., 1., 1., 1., 1., 1., 1.]]]]], dtype=torch.float64,
+       requires_grad=True)
+kernel = tensor([[[[0.2790, 0.8010, 0.9421],
+          [0.6409, 0.3230, 0.4834],
+          [0.0892, 0.9858, 0.5377]],
+
+        ...0],
+          [0.3448, 0.6049, 0.1570],
+          [0.6091, 0.7551, 0.7173]]]], dtype=torch.float64, requires_grad=True)
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_dynamo[cpu-float32-inductor-True] ______________
+
+self = <test_filters.TestFilter3D object at 0x7145c4930640>, normalized = True
+device = device(type='cpu'), dtype = torch.float32
+torch_optimizer = functools.partial(<function compile at 0x714699fe1a20>, backend='inductor')
+
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_dynamo(self, normalized, device, dtype, torch_optimizer):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(2, 3, 4, 10, 10, device=device, dtype=dtype)
+        op = filter3d
+        op_optimized = torch_optimizer(op)
+    
+>       expected = op(data, kernel, normalized=normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:722: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.4372, 0.4099, 0.3456],
+          [0.5320, 0.4405, 0.3629],
+          [0.0390, 0.0587, 0.4432]],
+
+        ...5138]],
+
+         [[0.9656, 0.4366, 0.2469],
+          [0.0483, 0.3370, 0.8771],
+          [0.7420, 0.7558, 0.0452]]]])
+border_type = 'replicate', normalized = True
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+_____________ TestFilter3D.test_dynamo[cpu-float32-inductor-False] _____________
+
+self = <test_filters.TestFilter3D object at 0x7145c49305b0>, normalized = False
+device = device(type='cpu'), dtype = torch.float32
+torch_optimizer = functools.partial(<function compile at 0x714699fe1a20>, backend='inductor')
+
+    @pytest.mark.parametrize("normalized", [True, False])
+    def test_dynamo(self, normalized, device, dtype, torch_optimizer):
+        kernel = torch.rand(1, 3, 3, 3, device=device, dtype=dtype)
+        data = torch.ones(2, 3, 4, 10, 10, device=device, dtype=dtype)
+        op = filter3d
+        op_optimized = torch_optimizer(op)
+    
+>       expected = op(data, kernel, normalized=normalized)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:722: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:142: in filter3d
+    return filter3d(input, kernel, border_type, normalized)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1....., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.],
+           [1., 1., 1.,  ..., 1., 1., 1.]]]]])
+kernel = tensor([[[[0.5778, 0.0681, 0.6291],
+          [0.9914, 0.0277, 0.0589],
+          [0.5189, 0.9254, 0.7359]],
+
+        ...7854]],
+
+         [[0.0749, 0.8324, 0.6316],
+          [0.3582, 0.5021, 0.3170],
+          [0.3580, 0.0467, 0.5226]]]])
+border_type = 'replicate', normalized = False
+
+    def filter3d(input, kernel, border_type='reflect', normalized=False):
+        """
+        Convolves a 3D kernel with a given input tensor.
+    
+        Parameters:
+        - input (torch.Tensor): Input tensor of shape (B, C, D, H, W).
+        - kernel (torch.Tensor): Kernel tensor of shape (kD, kH, kW).
+        - border_type (str): Padding mode ('reflect', 'replicate', 'constant', 'circular').
+        - normalized (bool): If True, normalize the kernel using L1 norm.
+    
+        Returns:
+        - torch.Tensor: Convolved tensor of the same shape as input (B, C, D, H, W).
+        """
+>       assert kernel.dim() == 3, 'Kernel must be a 3D tensor'
+E       AssertionError: Kernel must be a 3D tensor
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:22: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False]
+======================== 21 failed, 1 skipped in 0.79s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'jit', 'cudagraphs', 'tvm', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 22 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_module SKIPPED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False] PASSED
+
+======================== 21 passed, 1 skipped in 2.05s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'onnxrt', 'inductor', 'openxla', 'tvm', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 22 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_smoke[cpu-float32-False-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-6] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_cardinality[cpu-float32-8] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_exception PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_mean_filter_2batch_2ch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_normalized_mean_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_even_sized_filter[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_noncontiguous[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_module SKIPPED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-True] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter3D::test_dynamo[cpu-float32-inductor-False] PASSED
+
+======================== 21 passed, 1 skipped in 2.29s =========================

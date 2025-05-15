@@ -1,0 +1,479 @@
+output file:
+processed_pyroblock_diag_embed383.json
+function:
+block_diag_embed
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 6 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1] FAILED
+
+=================================== FAILURES ===================================
+__________________ test_block_diag[mat_size0-2-batch_shape0] ___________________
+
+batch_shape = torch.Size([]), mat_size = torch.Size([2, 2]), block_size = 2
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+        mat_embed = block_diag_embed(mat)
+        mat_embed_diag = block_diagonal(mat_embed, block_size)
+>       assert_equal(mat_embed_diag, mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[-0.1115,  0.1204],
+         [-0.1115,  0.1204]],
+
+        [[-0.9724, -0.7550],
+         [-0.9724, -0.7550]]])
+b = tensor([[[-0.1115,  0.1204],
+         [-0.3696, -0.2404]],
+
+        [[-1.1969,  0.2093],
+         [-0.9724, -0.7550]]])
+prec = 1e-05
+msg = 'tensor([[[-0.1115,  0.1204],\n         [-0.1115,  0.1204]],\n\n        [[-0.9724, -0.7550],\n         [-0.9724, -0.75...r([[[-0.1115,  0.1204],\n         [-0.3696, -0.2404]],\n\n        [[-1.1969,  0.2093],\n         [-0.9724, -0.7550]]])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+        assert a.size() == b.size(), msg
+        if isinstance(prec, numbers.Number) and prec == 0:
+            assert (a == b).all(), msg
+            return
+        if a.numel() == 0 and b.numel() == 0:
+            return
+        b = b.type_as(a)
+        b = b.cuda(device=a.get_device()) if a.is_cuda else b.cpu()
+        if not a.dtype.is_floating_point:
+            assert (a == b).all(), msg
+            return
+        # check that NaNs are in the same locations
+        nan_mask = a != a
+        assert torch.equal(nan_mask, b != b), msg
+        diff = a - b
+        diff[a == b] = 0  # handle inf
+        diff[nan_mask] = 0
+        if diff.is_signed():
+            diff = diff.abs()
+        if isinstance(prec, torch.Tensor):
+            assert (diff <= prec).all(), msg
+        else:
+            max_err = diff.max().item()
+>           assert max_err <= prec, msg
+E           AssertionError: tensor([[[-0.1115,  0.1204],
+E                    [-0.1115,  0.1204]],
+E           
+E                   [[-0.9724, -0.7550],
+E                    [-0.9724, -0.7550]]]) vs tensor([[[-0.1115,  0.1204],
+E                    [-0.3696, -0.2404]],
+E           
+E                   [[-1.1969,  0.2093],
+E                    [-0.9724, -0.7550]]])
+
+../publishablew/pyro/pyro/tests/common.py:170: AssertionError
+__________________ test_block_diag[mat_size0-2-batch_shape1] ___________________
+
+batch_shape = torch.Size([7]), mat_size = torch.Size([2, 2]), block_size = 2
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+        mat_embed = block_diag_embed(mat)
+        mat_embed_diag = block_diagonal(mat_embed, block_size)
+>       assert_equal(mat_embed_diag, mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[[ 0.9098,  0.1538],
+          [ 0.9098,  0.1538]],
+
+         [[ 0.4648, -1.0580],
+          [ 0.4648, -1.058...   [[[ 0.2395,  0.5696],
+          [ 0.2395,  0.5696]],
+
+         [[ 0.2171,  1.3690],
+          [ 0.2171,  1.3690]]]])
+b = tensor([[[[ 0.9098,  0.1538],
+          [ 0.6344,  0.3665]],
+
+         [[ 0.3767,  0.2252],
+          [ 0.4648, -1.058...   [[[ 0.2395,  0.5696],
+          [ 0.3293,  0.1652]],
+
+         [[-1.6648,  2.2198],
+          [ 0.2171,  1.3690]]]])
+prec = 1e-05
+msg = 'tensor([[[[ 0.9098,  0.1538],\n          [ 0.9098,  0.1538]],\n\n         [[ 0.4648, -1.0580],\n          [ 0.4648, -...[ 0.2395,  0.5696],\n          [ 0.3293,  0.1652]],\n\n         [[-1.6648,  2.2198],\n          [ 0.2171,  1.3690]]]])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+        assert a.size() == b.size(), msg
+        if isinstance(prec, numbers.Number) and prec == 0:
+            assert (a == b).all(), msg
+            return
+        if a.numel() == 0 and b.numel() == 0:
+            return
+        b = b.type_as(a)
+        b = b.cuda(device=a.get_device()) if a.is_cuda else b.cpu()
+        if not a.dtype.is_floating_point:
+            assert (a == b).all(), msg
+            return
+        # check that NaNs are in the same locations
+        nan_mask = a != a
+        assert torch.equal(nan_mask, b != b), msg
+        diff = a - b
+        diff[a == b] = 0  # handle inf
+        diff[nan_mask] = 0
+        if diff.is_signed():
+            diff = diff.abs()
+        if isinstance(prec, torch.Tensor):
+            assert (diff <= prec).all(), msg
+        else:
+            max_err = diff.max().item()
+>           assert max_err <= prec, msg
+E           AssertionError: tensor([[[[ 0.9098,  0.1538],
+E                     [ 0.9098,  0.1538]],
+E           
+E                    [[ 0.4648, -1.0580],
+E                     [ 0.4648, -1.0580]]],
+E           
+E           
+E                   [[[-0.3048,  0.0572],
+E                     [-0.3048,  0.0572]],
+E           
+E                    [[ 1.2815,  0.6294],
+E                     [ 1.2815,  0.6294]]],
+E           
+E           
+E                   [[[-1.5169, -0.7768],
+E                     [-1.5169, -0.7768]],
+E           
+E                    [[-1.0334,  0.1820],
+E                     [-1.0334,  0.1820]]],
+E           
+E           
+E                   [[[-0.6457,  0.4280],
+E                     [-0.6457,  0.4280]],
+E           
+E                    [[-1.1132,  0.9542],
+E                     [-1.1132,  0.9542]]],
+E           
+E           
+E                   [[[ 0.6298,  0.0847],
+E                     [ 0.6298,  0.0847]],
+E           
+E                    [[-0.0374, -1.5155],
+E                     [-0.0374, -1.5155]]],
+E           
+E           
+E                   [[[ 0.2638, -0.6327],
+E                     [ 0.2638, -0.6327]],
+E           
+E                    [[ 1.7876,  1.0033],
+E                     [ 1.7876,  1.0033]]],
+E           
+E           
+E                   [[[ 0.2395,  0.5696],
+E                     [ 0.2395,  0.5696]],
+E           
+E                    [[ 0.2171,  1.3690],
+E                     [ 0.2171,  1.3690]]]]) vs tensor([[[[ 0.9098,  0.1538],
+E                     [ 0.6344,  0.3665]],
+E           
+E                    [[ 0.3767,  0.2252],
+E                     [ 0.4648, -1.0580]]],
+E           
+E           
+E                   [[[-0.3048,  0.0572],
+E                     [-1.1788,  0.2451]],
+E           
+E                    [[ 1.0664,  1.1940],
+E                     [ 1.2815,  0.6294]]],
+E           
+E           
+E                   [[[-1.5169, -0.7768],
+E                     [ 1.2984, -0.6320]],
+E           
+E                    [[-0.7536,  0.0974],
+E                     [-1.0334,  0.1820]]],
+E           
+E           
+E                   [[[-0.6457,  0.4280],
+E                     [-0.4844,  0.0673]],
+E           
+E                    [[-0.1259,  1.4190],
+E                     [-1.1132,  0.9542]]],
+E           
+E           
+E                   [[[ 0.6298,  0.0847],
+E                     [ 0.1440, -1.1005]],
+E           
+E                    [[ 0.1829,  1.3409],
+E                     [-0.0374, -1.5155]]],
+E           
+E           
+E                   [[[ 0.2638, -0.6327],
+E                     [ 2.3189,  0.9049]],
+E           
+E                    [[ 0.1957, -2.7479],
+E                     [ 1.7876,  1.0033]]],
+E           
+E           
+E                   [[[ 0.2395,  0.5696],
+E                     [ 0.3293,  0.1652]],
+E           
+E                    [[-1.6648,  2.2198],
+E                     [ 0.2171,  1.3690]]]])
+
+../publishablew/pyro/pyro/tests/common.py:170: AssertionError
+__________________ test_block_diag[mat_size1-1-batch_shape0] ___________________
+
+batch_shape = torch.Size([]), mat_size = torch.Size([3, 1]), block_size = 1
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+>       mat_embed = block_diag_embed(mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:26: in block_diag_embed
+    return block_diag_embed(mat)
+../publishablew/pyro/pyro/pyro/ops/temp.py:20: in block_diag_embed
+    block_diag = block_diag.reshape(*batch_dims, B * M, B * N)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.utils._device.DeviceContext object at 0x7e37db301690>
+func = <method 'reshape' of 'torch._C.TensorBase' objects>, types = ()
+args = (tensor([[[[-0.1115],
+          [ 0.1204],
+          [-0.3696]],
+
+         [[-0.1115],
+          [ 0.1204],
+          [-0.3696]],
+
+         [[-0.1115],
+          [ 0.1204],
+          [-0.3696]]]]), 3, 1)
+kwargs = {}
+
+    def __torch_function__(self, func, types, args=(), kwargs=None):
+        kwargs = kwargs or {}
+        if func in _device_constructors() and kwargs.get('device') is None:
+            kwargs['device'] = self.device
+>       return func(*args, **kwargs)
+E       RuntimeError: shape '[3, 1]' is invalid for input of size 9
+
+../publishablew/pyro/pyro/venv/lib/python3.11/site-packages/torch/utils/_device.py:106: RuntimeError
+__________________ test_block_diag[mat_size1-1-batch_shape1] ___________________
+
+batch_shape = torch.Size([7]), mat_size = torch.Size([3, 1]), block_size = 1
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+>       mat_embed = block_diag_embed(mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:26: in block_diag_embed
+    return block_diag_embed(mat)
+../publishablew/pyro/pyro/pyro/ops/temp.py:20: in block_diag_embed
+    block_diag = block_diag.reshape(*batch_dims, B * M, B * N)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.utils._device.DeviceContext object at 0x7e37db301690>
+func = <method 'reshape' of 'torch._C.TensorBase' objects>, types = ()
+args = (tensor([[[[[ 0.9098],
+           [ 0.1538],
+           [ 0.6344]],
+
+          [[ 0.9098],
+           [ 0.1538],
+     ...     [-0.0791],
+           [ 1.0618]],
+
+          [[ 1.4130],
+           [-0.0791],
+           [ 1.0618]]]]]), 7, 3, 1)
+kwargs = {}
+
+    def __torch_function__(self, func, types, args=(), kwargs=None):
+        kwargs = kwargs or {}
+        if func in _device_constructors() and kwargs.get('device') is None:
+            kwargs['device'] = self.device
+>       return func(*args, **kwargs)
+E       RuntimeError: shape '[7, 3, 1]' is invalid for input of size 63
+
+../publishablew/pyro/pyro/venv/lib/python3.11/site-packages/torch/utils/_device.py:106: RuntimeError
+__________________ test_block_diag[mat_size2-3-batch_shape0] ___________________
+
+batch_shape = torch.Size([]), mat_size = torch.Size([6, 3]), block_size = 3
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+>       mat_embed = block_diag_embed(mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:26: in block_diag_embed
+    return block_diag_embed(mat)
+../publishablew/pyro/pyro/pyro/ops/temp.py:19: in block_diag_embed
+    block_diag = mat.unsqueeze(-3) * eye
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.utils._device.DeviceContext object at 0x7e37db301690>
+func = <method 'mul' of 'torch._C.TensorBase' objects>, types = ()
+args = (tensor([[[[ 0.9098,  0.1538,  0.6344],
+          [ 0.3665,  0.3767,  0.2252],
+          [ 0.4648, -1.0580, -0.3048],
+...    [0., 0., 0.],
+          [1., 1., 1.]],
+
+         [[0., 0., 0.],
+          [0., 0., 0.],
+          [1., 1., 1.]]]]))
+kwargs = {}
+
+    def __torch_function__(self, func, types, args=(), kwargs=None):
+        kwargs = kwargs or {}
+        if func in _device_constructors() and kwargs.get('device') is None:
+            kwargs['device'] = self.device
+>       return func(*args, **kwargs)
+E       RuntimeError: The size of tensor a (6) must match the size of tensor b (3) at non-singleton dimension 2
+
+../publishablew/pyro/pyro/venv/lib/python3.11/site-packages/torch/utils/_device.py:106: RuntimeError
+__________________ test_block_diag[mat_size2-3-batch_shape1] ___________________
+
+batch_shape = torch.Size([7]), mat_size = torch.Size([6, 3]), block_size = 3
+
+    @pytest.mark.parametrize("batch_shape", [torch.Size([]), torch.Size([7])])
+    @pytest.mark.parametrize(
+        "mat_size,block_size",
+        [(torch.Size([2, 2]), 2), (torch.Size([3, 1]), 1), (torch.Size([6, 3]), 3)],
+    )
+    def test_block_diag(batch_shape, mat_size, block_size):
+        mat = torch.randn(batch_shape + (block_size,) + mat_size)
+>       mat_embed = block_diag_embed(mat)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:26: in block_diag_embed
+    return block_diag_embed(mat)
+../publishablew/pyro/pyro/pyro/ops/temp.py:19: in block_diag_embed
+    block_diag = mat.unsqueeze(-3) * eye
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.utils._device.DeviceContext object at 0x7e37db301690>
+func = <method 'mul' of 'torch._C.TensorBase' objects>, types = ()
+args = (tensor([[[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01],
+           [ 3.6655e-01,  3.7665e-01,  2.2516e-01],
+           [ ...    [0., 0., 0.],
+          [1., 1., 1.]],
+
+         [[0., 0., 0.],
+          [0., 0., 0.],
+          [1., 1., 1.]]]]))
+kwargs = {}
+
+    def __torch_function__(self, func, types, args=(), kwargs=None):
+        kwargs = kwargs or {}
+        if func in _device_constructors() and kwargs.get('device') is None:
+            kwargs['device'] = self.device
+>       return func(*args, **kwargs)
+E       RuntimeError: The size of tensor a (6) must match the size of tensor b (3) at non-singleton dimension 3
+
+../publishablew/pyro/pyro/venv/lib/python3.11/site-packages/torch/utils/_device.py:106: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1]
+============================== 6 failed in 0.37s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 6 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1] PASSED
+
+============================== 6 passed in 0.29s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 6 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size0-2-batch_shape1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size1-1-batch_shape1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_block_diag[mat_size2-3-batch_shape1] PASSED
+
+============================== 6 passed in 0.32s ===============================

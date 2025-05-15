@@ -1,0 +1,212 @@
+output file:
+processed_pytorch3dso3_exp_map61.json
+function:
+so3_exp_map
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp FAILED', '../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log FAILED', 'FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable - torch.jit.f...', 'FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_determinant - AssertionE...', 'FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp', '../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable FAILED', 'FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log - ...', '../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err FAILED', '../pytorch3d/tests/test_so3.py::TestSO3::test_determinant FAILED', 'FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 12 items
+
+../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err FAILED
+../pytorch3d/tests/test_so3.py::TestSO3::test_cross PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_determinant FAILED
+../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable FAILED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_bound PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_relative_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_to_log_to_exp PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log FAILED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp FAILED
+
+=================================== FAILURES ===================================
+_____________________ TestSO3.test_bad_so3_input_value_err _____________________
+
+self = <tests.test_so3.TestSO3 testMethod=test_bad_so3_input_value_err>
+
+    def test_bad_so3_input_value_err(self):
+        """
+        Tests whether `so3_exp_map` and `so3_log_map` correctly return
+        a ValueError if called with an argument of incorrect shape or, in case
+        of `so3_exp_map`, unexpected trace.
+        """
+        device = torch.device("cuda:0")
+        log_rot = torch.randn(size=[5, 4], device=device)
+        with self.assertRaises(ValueError) as err:
+            so3_exp_map(log_rot)
+>       self.assertTrue("Input tensor shape has to be Nx3." in str(err.exception))
+E       AssertionError: False is not true
+
+../pytorch3d/tests/test_so3.py:93: AssertionError
+___________________________ TestSO3.test_determinant ___________________________
+
+self = <tests.test_so3.TestSO3 testMethod=test_determinant>
+
+    def test_determinant(self):
+        """
+        Tests whether the determinants of 3x3 rotation matrices produced
+        by `so3_exp_map` are (almost) equal to 1.
+        """
+        log_rot = TestSO3.init_log_rot(batch_size=30)
+        Rs = so3_exp_map(log_rot)
+        dets = torch.det(Rs)
+>       self.assertClose(dets, torch.ones_like(dets), atol=1e-4)
+
+../pytorch3d/tests/test_so3.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.00026684999465942383. Max relative diff 0.00026684999465942383 Shape (30,). At (8,).
+___________________________ TestSO3.test_scriptable ____________________________
+
+self = <tests.test_so3.TestSO3 testMethod=test_scriptable>
+
+    @unittest.skipIf(LooseVersion(torch.__version__) < "1.9", "recent torchscript only")
+    def test_scriptable(self):
+>       torch.jit.script(so3_exp_map)
+
+../pytorch3d/tests/test_so3.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/_script.py:1432: in script
+    return _script_impl(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/_script.py:1201: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/frontend.py:373: in get_jit_def
+    return build_def(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/frontend.py:434: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/frontend.py:196: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/frontend.py:196: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x774773d36820>
+ctx = <torch._sources.SourceContext object at 0x77473cfecae0>
+node = <_ast.ImportFrom object at 0x77473cfdc1c0>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/pytorch3d/pytorch3d/transforms/so3.py", line 83
+E           def so3_exp_map(log_rot: torch.Tensor, eps: float=0.0001) -> torch.Tensor:
+E               from .temp import so3_exp_map
+E               ~~~~ <--- HERE
+E               return so3_exp_map(log_rot, eps)
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/jit/frontend.py:406: UnsupportedNodeError
+______________________ TestSO3.test_so3_log_to_exp_to_log ______________________
+
+self = <tests.test_so3.TestSO3 testMethod=test_so3_log_to_exp_to_log>
+batch_size = 100
+
+    def test_so3_log_to_exp_to_log(self, batch_size: int = 100):
+        """
+        Check that `so3_log_map(so3_exp_map(log_rot))==log_rot` for
+        a randomly generated batch of rotation matrix logarithms `log_rot`.
+        """
+        log_rot = TestSO3.init_log_rot(batch_size=batch_size)
+        # check also the singular cases where rot. angle = 0
+        log_rot[:1] = 0
+        log_rot_ = so3_log_map(so3_exp_map(log_rot))
+>       self.assertClose(log_rot, log_rot_, atol=1e-4)
+
+../pytorch3d/tests/test_so3.py:181: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.0002467632293701172. Max relative diff 0.00018094645929522812 Shape (100, 3). At (6, 2).
+__________________ TestSO3.test_so3_log_to_exp_to_log_to_exp ___________________
+
+self = <tests.test_so3.TestSO3 testMethod=test_so3_log_to_exp_to_log_to_exp>
+batch_size = 100
+
+    def test_so3_log_to_exp_to_log_to_exp(self, batch_size: int = 100):
+        """
+        Check that
+        `so3_exp_map(so3_log_map(so3_exp_map(log_rot)))
+        == so3_exp_map(log_rot)`
+        for a randomly generated batch of rotation matrix logarithms `log_rot`.
+        Unlike `test_so3_log_to_exp_to_log`, this test checks the
+        correctness of converting a `log_rot` which contains values > math.pi.
+        """
+        log_rot = 2.0 * TestSO3.init_log_rot(batch_size=batch_size)
+        # check also the singular cases where rot. angle = {0, 2pi}
+        log_rot[:2] = 0
+        log_rot[1, 0] = 2.0 * math.pi - 1e-6
+        rot = so3_exp_map(log_rot, eps=1e-4)
+        rot_ = so3_exp_map(so3_log_map(rot, eps=1e-4, cos_bound=1e-6), eps=1e-6)
+        self.assertClose(rot, rot_, atol=0.01)
+        angles = so3_relative_angle(rot, rot_, cos_bound=1e-6)
+>       self.assertClose(angles, torch.zeros_like(angles), atol=0.01)
+
+../pytorch3d/tests/test_so3.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.016500916332006454. Shape (100,). At (29,).
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err
+FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_determinant - AssertionE...
+FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable - torch.jit.f...
+FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log - ...
+FAILED ../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp
+========================= 5 failed, 7 passed in 1.53s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 12 items
+
+../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_cross PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_determinant PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_bound PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_relative_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_to_log_to_exp PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp PASSED
+
+============================== 12 passed in 1.47s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 12 items
+
+../pytorch3d/tests/test_so3.py::TestSO3::test_bad_so3_input_value_err PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_cross PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_determinant PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_scriptable PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_bound PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_cos_relative_angle PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_exp_to_log_to_exp PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_singularity PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log PASSED
+../pytorch3d/tests/test_so3.py::TestSO3::test_so3_log_to_exp_to_log_to_exp PASSED
+
+============================== 12 passed in 1.47s ==============================

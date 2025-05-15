@@ -1,0 +1,91 @@
+output file:
+processed_GPflowgauss_kl44.json
+function:
+gauss_kl
+Error Cases:
+2025-01-09 18:43:16.678066: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1736466196.689610 2792293 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1736466196.693236 2792293 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:43:16.705593: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0000 00:00:1736466199.169045 2792293 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9248 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 4 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-1] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 2 warnings in 0.51s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 4 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-1] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 2 warnings in 0.54s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 4 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[True-1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_kullback_leiblers.py::test_oned[False-1] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 2 warnings in 0.65s =========================

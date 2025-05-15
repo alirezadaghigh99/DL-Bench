@@ -1,0 +1,149 @@
+output file:
+processed_visionto_pil_image152.json
+function:
+to_pil_image
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3]', 'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1]', 'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1]', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3] FAILED', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1] FAILED', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3] FAILED', 'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4]', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4] FAILED', 'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3]', 'FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4]', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4] FAILED', '../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_errors PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype0] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype2] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4] FAILED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor_errors PASSED
+
+=================================== FAILURES ===================================
+________________________ TestToTensor.test_to_tensor[1] ________________________
+../publishablew/vision/vision/test/test_transforms.py:218: in test_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+________________________ TestToTensor.test_to_tensor[3] ________________________
+../publishablew/vision/vision/test/test_transforms.py:218: in test_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+________________________ TestToTensor.test_to_tensor[4] ________________________
+../publishablew/vision/vision/test/test_transforms.py:218: in test_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+______________________ TestToTensor.test_pil_to_tensor[1] ______________________
+../publishablew/vision/vision/test/test_transforms.py:274: in test_pil_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+______________________ TestToTensor.test_pil_to_tensor[3] ______________________
+../publishablew/vision/vision/test/test_transforms.py:274: in test_pil_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+______________________ TestToTensor.test_pil_to_tensor[4] ______________________
+../publishablew/vision/vision/test/test_transforms.py:274: in test_pil_to_tensor
+    img = transforms.ToPILImage()(input_data)
+../publishablew/vision/vision/torchvision/transforms/transforms.py:234: in __call__
+    return F.to_pil_image(pic, self.mode)
+../publishablew/vision/vision/torchvision/transforms/functional.py:192: in to_pil_image
+    return to_pil_image(pic, mode)
+../publishablew/vision/vision/torchvision/transforms/temp.py:42: in to_pil_image
+    return to_pil_image1(pic, mode=mode)
+E   NameError: name 'to_pil_image1' is not defined
+=========================== short test summary info ============================
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1]
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3]
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4]
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1]
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3]
+FAILED ../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4]
+========================= 6 failed, 5 passed in 1.19s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_errors PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype0] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype2] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor_errors PASSED
+
+============================== 11 passed in 0.34s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 11 items
+
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[3] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor[4] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_errors PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype0] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_to_tensor_with_other_default_dtypes[dtype2] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[1] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[3] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor[4] PASSED
+../publishablew/vision/vision/test/test_transforms.py::TestToTensor::test_pil_to_tensor_errors PASSED
+
+============================== 11 passed in 0.35s ==============================

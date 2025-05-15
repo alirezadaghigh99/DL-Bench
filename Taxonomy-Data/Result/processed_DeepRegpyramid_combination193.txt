@@ -1,0 +1,183 @@
+output file:
+processed_DeepRegpyramid_combination193.json
+function:
+pyramid_combination
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_1d - Module...', 'FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_error_len', 'FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_2d - Module...', 'test/unit/test_layer_util.py::TestPyramidCombination::test_1d FAILED     [ 25%]', 'test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim FAILED [ 75%]', 'test/unit/test_layer_util.py::TestPyramidCombination::test_2d FAILED     [ 50%]', 'test/unit/test_layer_util.py::TestPyramidCombination::test_error_len FAILED [100%]', 'FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_layer_util.py::TestPyramidCombination::test_1d FAILED     [ 25%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_2d FAILED     [ 50%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim FAILED [ 75%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_len FAILED [100%]
+
+=================================== FAILURES ===================================
+________________________ TestPyramidCombination.test_1d ________________________
+
+self = <test.unit.test_layer_util.TestPyramidCombination object at 0x7e154d982910>
+
+    def test_1d(self):
+        weights = tf.constant(np.array([[0.2]], dtype=np.float32))
+        values = tf.constant(np.array([[1], [2]], dtype=np.float32))
+    
+        # expected = 1 * 0.2 + 2 * 2
+        expected = tf.constant(np.array([1.8], dtype=np.float32))
+        got = layer_util.pyramid_combination(
+>           values=values, weight_floor=weights, weight_ceil=1 - weights
+        )
+
+test/unit/test_layer_util.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:62: in pyramid_combination
+    from .temp import pyramid_combination
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    from typing import List, Tuple, Union
+    import numpy as np
+    import tensorflow as tf
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+deepreg/model/temp.py:5: ModuleNotFoundError
+________________________ TestPyramidCombination.test_2d ________________________
+
+self = <test.unit.test_layer_util.TestPyramidCombination object at 0x7e154d829650>
+
+    def test_2d(self):
+        weights = tf.constant(np.array([[0.2], [0.3]], dtype=np.float32))
+        values = tf.constant(
+            np.array(
+                [
+                    [1],  # value at corner (0, 0), weight = 0.2 * 0.3
+                    [2],  # value at corner (0, 1), weight = 0.2 * 0.7
+                    [3],  # value at corner (1, 0), weight = 0.8 * 0.3
+                    [4],  # value at corner (1, 1), weight = 0.8 * 0.7
+                ],
+                dtype=np.float32,
+            )
+        )
+        # expected = 1 * 0.2 * 0.3
+        #          + 2 * 0.2 * 0.7
+        #          + 3 * 0.8 * 0.3
+        #          + 4 * 0.8 * 0.7
+        expected = tf.constant(np.array([3.3], dtype=np.float32))
+        got = layer_util.pyramid_combination(
+>           values=values, weight_floor=weights, weight_ceil=1 - weights
+        )
+
+test/unit/test_layer_util.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:62: in pyramid_combination
+    from .temp import pyramid_combination
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    from typing import List, Tuple, Union
+    import numpy as np
+    import tensorflow as tf
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+deepreg/model/temp.py:5: ModuleNotFoundError
+____________________ TestPyramidCombination.test_error_dim _____________________
+
+self = <test.unit.test_layer_util.TestPyramidCombination object at 0x7e154e03db50>
+
+    def test_error_dim(self):
+        weights = tf.constant(np.array([[[0.2]], [[0.2]]], dtype=np.float32))
+        values = tf.constant(np.array([[1], [2]], dtype=np.float32))
+        with pytest.raises(ValueError) as err_info:
+            layer_util.pyramid_combination(
+>               values=values, weight_floor=weights, weight_ceil=1 - weights
+            )
+
+test/unit/test_layer_util.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:62: in pyramid_combination
+    from .temp import pyramid_combination
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    from typing import List, Tuple, Union
+    import numpy as np
+    import tensorflow as tf
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+deepreg/model/temp.py:5: ModuleNotFoundError
+____________________ TestPyramidCombination.test_error_len _____________________
+
+self = <test.unit.test_layer_util.TestPyramidCombination object at 0x7e1566b4cdd0>
+
+    def test_error_len(self):
+        weights = tf.constant(np.array([[0.2]], dtype=np.float32))
+        values = tf.constant(np.array([[1]], dtype=np.float32))
+        with pytest.raises(ValueError) as err_info:
+            layer_util.pyramid_combination(
+>               values=values, weight_floor=weights, weight_ceil=1 - weights
+            )
+
+test/unit/test_layer_util.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:62: in pyramid_combination
+    from .temp import pyramid_combination
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    from typing import List, Tuple, Union
+    import numpy as np
+    import tensorflow as tf
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+deepreg/model/temp.py:5: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_1d - Module...
+FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_2d - Module...
+FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim
+FAILED test/unit/test_layer_util.py::TestPyramidCombination::test_error_len
+============================== 4 failed in 1.60s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_layer_util.py::TestPyramidCombination::test_1d PASSED     [ 25%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_2d PASSED     [ 50%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim PASSED [ 75%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_len PASSED [100%]
+
+============================== 4 passed in 1.28s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_layer_util.py::TestPyramidCombination::test_1d PASSED     [ 25%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_2d PASSED     [ 50%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_dim PASSED [ 75%]
+test/unit/test_layer_util.py::TestPyramidCombination::test_error_len PASSED [100%]
+
+============================== 4 passed in 1.22s ===============================

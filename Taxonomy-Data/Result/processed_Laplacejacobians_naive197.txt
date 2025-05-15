@@ -1,0 +1,593 @@
+output file:
+processed_Laplacejacobians_naive197.json
+function:
+jacobians_naive
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface]', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface] FAILED', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface] FAILED', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface] FAILED', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface] FAILED', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface]', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface]', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface]', '../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface] FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface] FAILED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[BackPackInterface] PASSED
+
+=================================== FAILURES ===================================
+_______________ test_jacobians_singleoutput[CurvatureInterface] ________________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.curvature.CurvatureInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = singleoutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 101]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                  ^ ^^^^
+E         + torch.Size([200, 1, 101])
+E         ?                  ^^^^ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:59: AssertionError
+__________________ test_jacobians_singleoutput[AsdlInterface] __________________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.asdl.AsdlInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = singleoutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 101]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                  ^ ^^^^
+E         + torch.Size([200, 1, 101])
+E         ?                  ^^^^ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:59: AssertionError
+________________ test_jacobians_singleoutput[BackPackInterface] ________________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.backpack.BackPackInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = singleoutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 101]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                  ^ ^^^^
+E         + torch.Size([200, 1, 101])
+E         ?                  ^^^^ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:59: AssertionError
+________________ test_jacobians_multioutput[CurvatureInterface] ________________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.curvature.CurvatureInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = multioutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 122]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                   --  ^
+E         + torch.Size([200, 2, 122])
+E         ?                     ^^^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:73: AssertionError
+__________________ test_jacobians_multioutput[AsdlInterface] ___________________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.asdl.AsdlInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = multioutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 122]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                   --  ^
+E         + torch.Size([200, 2, 122])
+E         ?                     ^^^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:73: AssertionError
+________________ test_jacobians_multioutput[BackPackInterface] _________________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.backpack.BackPackInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = multioutput_model
+        backend = backend_cls(model, "classification")
+        Js, f = backend.jacobians(X)
+        Js_naive, f_naive = jacobians_naive(model, X)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 122]) == torch.Size([200, 200, 3])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 3])
+E         ?                   --  ^
+E         + torch.Size([200, 2, 122])
+E         ?                     ^^^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:73: AssertionError
+__________ test_last_layer_jacobians_singleoutput[CurvatureInterface] __________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.curvature.CurvatureInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = FeatureExtractor(singleoutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 21]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   ^^^^^^
+E         + torch.Size([200, 1, 21])
+E         ?                  +++ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:88: AssertionError
+____________ test_last_layer_jacobians_singleoutput[AsdlInterface] _____________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.asdl.AsdlInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = FeatureExtractor(singleoutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 21]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   ^^^^^^
+E         + torch.Size([200, 1, 21])
+E         ?                  +++ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:88: AssertionError
+__________ test_last_layer_jacobians_singleoutput[BackPackInterface] ___________
+
+singleoutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=1, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.backpack.BackPackInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_singleoutput(singleoutput_model, X, backend_cls):
+        model = FeatureExtractor(singleoutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 1, 21]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 1 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   ^^^^^^
+E         + torch.Size([200, 1, 21])
+E         ?                  +++ ^
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:88: AssertionError
+__________ test_last_layer_jacobians_multioutput[CurvatureInterface] ___________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.curvature.CurvatureInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = FeatureExtractor(multioutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 42]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   --   -
+E         + torch.Size([200, 2, 42])
+E         ?                     +
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:103: AssertionError
+_____________ test_last_layer_jacobians_multioutput[AsdlInterface] _____________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.asdl.AsdlInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = FeatureExtractor(multioutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 42]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   --   -
+E         + torch.Size([200, 2, 42])
+E         ?                     +
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:103: AssertionError
+___________ test_last_layer_jacobians_multioutput[BackPackInterface] ___________
+
+multioutput_model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+X = tensor([[-8.3996e-01,  1.4799e-01, -7.6018e-01],
+        [-7.5407e-01, -8.8915e-01, -1.0300e+00],
+        [ 1.1966e+00...4e+00, -5.7150e-01],
+        [ 3.5002e-01,  6.7761e-01,  2.2537e+00],
+        [ 1.6888e+00, -8.5980e-01, -9.0062e-01]])
+backend_cls = <class 'laplace.curvature.backpack.BackPackInterface'>
+
+    @pytest.mark.parametrize(
+        "backend_cls", [CurvatureInterface, AsdlInterface, BackPackInterface]
+    )
+    def test_last_layer_jacobians_multioutput(multioutput_model, X, backend_cls):
+        model = FeatureExtractor(multioutput_model)
+        backend = backend_cls(model, "classification")
+        Js, f = backend.last_layer_jacobians(X)
+        _, phi = model.forward_with_features(X)
+        Js_naive, f_naive = jacobians_naive(model.last_layer, phi)
+>       assert Js.shape == Js_naive.shape
+E       assert torch.Size([200, 2, 42]) == torch.Size([200, 200, 20])
+E         
+E         At index 1 diff: 2 != 200
+E         
+E         Full diff:
+E         - torch.Size([200, 200, 20])
+E         ?                   --   -
+E         + torch.Size([200, 2, 42])
+E         ?                     +
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py:103: AssertionError
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+tests/test_jacobians.py::test_linear_jacobians[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1827: FutureWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+    self._maybe_warn_non_full_backward_hook(args, result, grad_fn)
+
+tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: Using backward() with create_graph=True will create a reference cycle between the parameter and its gradient which can cause a memory leak. We recommend using autograd.grad when creating the graph to avoid this. If you have to use this function, make sure to reset the .grad fields of your parameters to None after use to break the cycle and avoid the leak. (Triggered internally at ../torch/csrc/autograd/engine.cpp:1201.)
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface]
+FAILED ../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface]
+================== 12 failed, 11 passed, 6 warnings in 2.53s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[BackPackInterface] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+tests/test_jacobians.py::test_linear_jacobians[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1827: FutureWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+    self._maybe_warn_non_full_backward_hook(args, result, grad_fn)
+
+tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: Using backward() with create_graph=True will create a reference cycle between the parameter and its gradient which can cause a memory leak. We recommend using autograd.grad when creating the graph to avoid this. If you have to use this function, make sure to reset the .grad fields of your parameters to None after use to break the cycle and avoid the leak. (Triggered internally at ../torch/csrc/autograd/engine.cpp:1201.)
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 23 passed, 6 warnings in 2.56s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 23 items
+
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_linear_jacobians[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[AsdlInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_last_layer_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_jacobians_multioutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_singleoutput[BackPackInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[CurvatureInterface] PASSED
+../publishablew/Laplace/Laplace/tests/test_jacobians.py::test_backprop_last_layer_jacobians_multioutput[BackPackInterface] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+tests/test_jacobians.py::test_linear_jacobians[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_singleoutput[AsdlInterface]
+tests/test_jacobians.py::test_jacobians_multioutput[AsdlInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1827: FutureWarning: Using a non-full backward hook when the forward contains multiple autograd Nodes is deprecated and will be removed in future versions. This hook will be missing some grad_input. Please use register_full_backward_hook to get the documented behavior.
+    self._maybe_warn_non_full_backward_hook(args, result, grad_fn)
+
+tests/test_jacobians.py::test_backprop_jacobians_singleoutput[BackPackInterface]
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: Using backward() with create_graph=True will create a reference cycle between the parameter and its gradient which can cause a memory leak. We recommend using autograd.grad when creating the graph to avoid this. If you have to use this function, make sure to reset the .grad fields of your parameters to None after use to break the cycle and avoid the leak. (Triggered internally at ../torch/csrc/autograd/engine.cpp:1201.)
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 23 passed, 6 warnings in 3.14s ========================

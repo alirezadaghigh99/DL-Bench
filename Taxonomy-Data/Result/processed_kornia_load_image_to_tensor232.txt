@@ -1,0 +1,1401 @@
+output file:
+processed_kornia_load_image_to_tensor232.json
+function:
+_load_image_to_tensor
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg]', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg]', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg] FAILED', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png]', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke FAILED', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg] FAILED', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg]', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg]', 'FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu]', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png] FAILED', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu] FAILED', '../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'inductor', 'cudagraphs', 'onnxrt', 'openxla', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 13 items
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg] FAILED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_write_image[cpu-3-jpg] PASSED
+
+=================================== FAILURES ===================================
+____________________________ TestIoImage.test_smoke ____________________________
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/test_smoke0/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=5x4 at 0x746F40F02440>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00370>
+tmp_path = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/test_smoke0')
+
+    def test_smoke(self, tmp_path: Path) -> None:
+        height, width = 4, 5
+        img_th: Tensor = create_random_img8_torch(height, width, 3)
+    
+        file_path = tmp_path / "image.jpg"
+        write_image(str(file_path), img_th)
+    
+        assert file_path.is_file()
+    
+>       img_load: Tensor = load_image(str(file_path), ImageLoadType.UNCHANGED)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/test_smoke0/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+_________________________ TestIoImage.test_device[cpu] _________________________
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F40FF7640>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00610>
+device = device(type='cpu')
+png_image = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+
+    def test_device(self, device, png_image: Path) -> None:
+        file_path = Path(png_image)
+    
+        assert file_path.is_file()
+    
+>       img_th: Tensor = load_image(file_path, ImageLoadType.UNCHANGED, str(device))
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F40FF89A0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00ca0>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'png', channels = 3, load_type = <ImageLoadType.GRAY8: 1>
+expected_type = torch.uint8, expected_channels = 1
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=1800x1173 at 0x746F40910D00>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00b80>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'jpg', channels = 3, load_type = <ImageLoadType.GRAY8: 1>
+expected_type = torch.uint8, expected_channels = 1
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png] ___
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F409554E0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00c40>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'png', channels = 3, load_type = <ImageLoadType.GRAY32: 4>
+expected_type = torch.float32, expected_channels = 1
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg] ___
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=1800x1173 at 0x746F40FB3CA0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f00910>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'jpg', channels = 3, load_type = <ImageLoadType.GRAY32: 4>
+expected_type = torch.float32, expected_channels = 1
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+____ TestIoImage.test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F40FB35E0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f01150>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'png', channels = 3, load_type = <ImageLoadType.RGB8: 2>
+expected_type = torch.uint8, expected_channels = 3
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+____ TestIoImage.test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=1800x1173 at 0x746F40912E00>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f01210>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'jpg', channels = 3, load_type = <ImageLoadType.RGB8: 2>
+expected_type = torch.uint8, expected_channels = 3
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F40907460>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f012d0>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'png', channels = 3, load_type = <ImageLoadType.RGBA8: 3>
+expected_type = torch.uint8, expected_channels = 4
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=1800x1173 at 0x746F40FB3DF0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f01390>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'jpg', channels = 3, load_type = <ImageLoadType.RGBA8: 3>
+expected_type = torch.uint8, expected_channels = 4
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=410x243 at 0x746F409267D0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f01450>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'png', channels = 3, load_type = <ImageLoadType.RGB32: 5>
+expected_type = torch.float32, expected_channels = 3
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+___ TestIoImage.test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg] ____
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+>               img_tensor = K.image_to_tensor(img, keepdim=False)
+
+../publishablew/kornia/kornia/kornia/io/temp.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = <PIL.Image.Image image mode=RGB size=1800x1173 at 0x746F4093E7A0>
+keepdim = False
+
+    def image_to_tensor(image: Any, keepdim: bool = True) -> Tensor:
+        """Convert a numpy image to a PyTorch 4d tensor image.
+    
+        Args:
+            image: image of the form :math:`(H, W, C)`, :math:`(H, W)` or
+                :math:`(B, H, W, C)`.
+            keepdim: If ``False`` unsqueeze the input image to match the shape
+                :math:`(B, H, W, C)`.
+    
+        Returns:
+            tensor of the form :math:`(B, C, H, W)` if keepdim is ``False``,
+                :math:`(C, H, W)` otherwise.
+    
+        Example:
+            >>> img = np.ones((3, 3))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 3, 3])
+    
+            >>> img = np.ones((4, 4, 1))
+            >>> image_to_tensor(img).shape
+            torch.Size([1, 4, 4])
+    
+            >>> img = np.ones((4, 4, 3))
+            >>> image_to_tensor(img, keepdim=False).shape
+            torch.Size([1, 3, 4, 4])
+        """
+>       if len(image.shape) > 4 or len(image.shape) < 2:
+E       AttributeError: 'Image' object has no attribute 'shape'. Did you mean: 'save'?
+
+../publishablew/kornia/kornia/kornia/utils/image.py:36: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_io_image.TestIoImage object at 0x746f40f01510>
+images_fn = {'jpg': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg'), 'png': PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data0/image.png')}
+ext = 'jpg', channels = 3, load_type = <ImageLoadType.RGB32: 5>
+expected_type = torch.float32, expected_channels = 3
+
+    @pytest.mark.parametrize("ext", ["png", "jpg"])
+    @pytest.mark.parametrize(
+        "channels,load_type,expected_type,expected_channels",
+        [
+            # NOTE: these tests which should write and load images with channel size != 3, didn't do it
+            # (1, ImageLoadType.GRAY8, torch.uint8, 1),
+            (3, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (4, ImageLoadType.GRAY8, torch.uint8, 1),
+            # (1, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.GRAY32, torch.float32, 1),
+            # (4, ImageLoadType.GRAY32, torch.float32, 1),
+            (3, ImageLoadType.RGB8, torch.uint8, 3),
+            # (1, ImageLoadType.RGB8, torch.uint8, 3),
+            (3, ImageLoadType.RGBA8, torch.uint8, 4),
+            # (1, ImageLoadType.RGB32, torch.float32, 3),
+            (3, ImageLoadType.RGB32, torch.float32, 3),
+        ],
+    )
+    def test_load_image(self, images_fn, ext, channels, load_type, expected_type, expected_channels):
+        file_path = images_fn[ext]
+    
+        assert file_path.is_file()
+    
+>       img = load_image(file_path, load_type)
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/io/io.py:67: in load_image
+    image: Tensor = _load_image_to_tensor(path_file, device)
+../publishablew/kornia/kornia/kornia/io/io.py:22: in _load_image_to_tensor
+    return _load_image_to_tensor(path_file, device)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path_file = PosixPath('/tmp/pytest-of-aliredaq/pytest-41/data1/image.jpg')
+device = 'cpu'
+
+    def _load_image_to_tensor(path_file: Path, device: torch.device) -> torch.Tensor:
+        if not path_file.exists():
+            raise FileNotFoundError(f'The file {path_file} does not exist.')
+        try:
+            with Image.open(path_file) as img:
+                img = img.convert('RGB')
+                img_tensor = K.image_to_tensor(img, keepdim=False)
+        except Exception as e:
+>           raise ValueError(f'Error loading image: {e}')
+E           ValueError: Error loading image: 'Image' object has no attribute 'shape'
+
+../publishablew/kornia/kornia/kornia/io/temp.py:22: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png]
+FAILED ../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg]
+========================= 12 failed, 1 passed in 1.14s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'onnxrt', 'inductor', 'openxla', 'tvm', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 13 items
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_write_image[cpu-3-jpg] PASSED
+
+============================== 13 passed in 0.75s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'inductor', 'onnxrt', 'cudagraphs', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 13 items
+
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_smoke PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_device[cpu] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY8-expected_type0-1-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.GRAY32-expected_type1-1-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB8-expected_type2-3-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGBA8-expected_type3-4-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-png] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_load_image[3-ImageLoadType.RGB32-expected_type4-3-jpg] PASSED
+../publishablew/kornia/kornia/tests/io/test_io_image.py::TestIoImage::test_write_image[cpu-3-jpg] PASSED
+
+============================== 13 passed in 1.39s ==============================

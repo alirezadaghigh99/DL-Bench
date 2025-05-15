@@ -1,0 +1,230 @@
+output file:
+processed_korniatotal_variation29.json
+function:
+total_variation
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'jit', 'openxla', 'onnxrt', None, 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 18 items
+
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred2] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-sum-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1] FAILED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_dynamo[cpu-float32-inductor] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_module[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_gradcheck[cpu] PASSED
+
+=================================== FAILURES ===================================
+_______ TestTotalVariation.test_tv_reduction[cpu-float32-mean-expected1] _______
+
+self = <test_total_variation.TestTotalVariation object at 0x7e12230ee770>
+device = device(type='cpu'), dtype = torch.float32, reduction = 'mean'
+expected = tensor(1)
+
+    @pytest.mark.parametrize("reduction, expected", [("sum", torch.tensor(20)), ("mean", torch.tensor(1))])
+    def test_tv_reduction(self, device, dtype, reduction, expected):
+        pred, _ = torch_meshgrid([torch.arange(5), torch.arange(5)], "ij")
+        pred = pred.to(device, dtype)
+        actual = kornia.losses.total_variation(pred, reduction=reduction)
+>       self.assert_close(actual, expected.to(device, dtype), rtol=1e-3, atol=1e-3)
+
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor(0.8000), expected = tensor(1.), rtol = 0.001, atol = 0.001
+kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Scalars are not close!
+E       
+E       Expected 1.0 but got 0.800000011920929.
+E       Absolute difference: 0.19999998807907104 (up to 0.001 allowed)
+E       Relative difference: 0.19999998807907104 (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1]
+========================= 1 failed, 17 passed in 2.06s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'tvm', 'cudagraphs', 'openxla', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 18 items
+
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred2] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-sum-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_dynamo[cpu-float32-inductor] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_module[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_gradcheck[cpu] PASSED
+
+============================== 18 passed in 1.96s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'cudagraphs', 'inductor', 'openxla', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 18 items
+
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_constant_int[cpu-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_3d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred0-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_4d[cpu-float32-pred1-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_shapes[cpu-float32-pred2] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-sum-expected0] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_reduction[cpu-float32-mean-expected1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_tv_on_invalid_types[cpu-float32-pred1] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_dynamo[cpu-float32-inductor] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_module[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/losses/test_total_variation.py::TestTotalVariation::test_gradcheck[cpu] PASSED
+
+============================== 18 passed in 2.18s ==============================

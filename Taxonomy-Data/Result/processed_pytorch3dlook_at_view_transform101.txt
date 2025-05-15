@@ -1,0 +1,238 @@
+output file:
+processed_pytorch3dlook_at_view_transform101.json
+function:
+look_at_view_transform
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw', '../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll FAILED', 'FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll', '../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw FAILED', 'FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up', 'FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch', '../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up FAILED', '../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up FAILED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch FAILED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll FAILED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw FAILED
+
+=================================== FAILURES ===================================
+____________________ TestCameraUtils.test_invert_eye_at_up _____________________
+
+self = <tests.test_camera_utils.TestCameraUtils testMethod=test_invert_eye_at_up>
+
+    def test_invert_eye_at_up(self):
+        # Generate random cameras and check we can reconstruct their eye, at,
+        # and up vectors.
+        N = 13
+        eye = torch.rand(N, 3)
+        at = torch.rand(N, 3)
+        up = torch.rand(N, 3)
+    
+>       R, T = look_at_view_transform(eye=eye, at=at, up=up)
+
+../pytorch3d/tests/test_camera_utils.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dist = 1.0, elev = 0.0, azim = 0.0, degrees = True
+eye = tensor([[0.8823, 0.9150, 0.3829],
+        [0.9593, 0.3904, 0.6009],
+        [0.2566, 0.7936, 0.9408],
+        [0.1332,...0.5472, 0.0062],
+        [0.9516, 0.0753, 0.8860],
+        [0.5832, 0.3376, 0.8090],
+        [0.5779, 0.9040, 0.5547]])
+at = tensor([[0.3423, 0.6343, 0.3644],
+        [0.7104, 0.9464, 0.7890],
+        [0.2814, 0.7886, 0.5895],
+        [0.7539,...0.2036, 0.2018],
+        [0.2018, 0.9497, 0.6666],
+        [0.9811, 0.0874, 0.0041],
+        [0.1088, 0.1637, 0.7025]])
+up = tensor([[0.6790, 0.9155, 0.2418],
+        [0.1591, 0.7653, 0.2979],
+        [0.8035, 0.3813, 0.7860],
+        [0.1115,...0.0758, 0.2247],
+        [0.0624, 0.1816, 0.9998],
+        [0.5944, 0.6541, 0.0337],
+        [0.1716, 0.3336, 0.5782]])
+device = 'cpu'
+
+    def look_at_view_transform(dist: _BatchFloatType=1.0, elev: _BatchFloatType=0.0, azim: _BatchFloatType=0.0, degrees: bool=True, eye: Optional[Union[Sequence, torch.Tensor]]=None, at=((0, 0, 0),), up=((0, 1, 0),), device: Device='cpu') -> Tuple[torch.Tensor, torch.Tensor]:
+>       from .temp import look_at_view_transform
+E       ImportError: cannot import name 'look_at_view_transform' from 'pytorch3d.renderer.temp' (/local/data0/moved_data/pytorch3d/pytorch3d/renderer/temp.py)
+
+../pytorch3d/pytorch3d/renderer/cameras.py:1162: ImportError
+__________________ TestCameraUtils.test_rotate_on_spot_pitch ___________________
+
+self = <tests.test_camera_utils.TestCameraUtils testMethod=test_rotate_on_spot_pitch>
+
+    def test_rotate_on_spot_pitch(self):
+        N = 14
+        eye = torch.rand(N, 3)
+        at = torch.rand(N, 3)
+        up = torch.rand(N, 3)
+    
+>       R, T = look_at_view_transform(eye=eye, at=at, up=up)
+
+../pytorch3d/tests/test_camera_utils.py:126: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dist = 1.0, elev = 0.0, azim = 0.0, degrees = True
+eye = tensor([[0.8823, 0.9150, 0.3829],
+        [0.9593, 0.3904, 0.6009],
+        [0.2566, 0.7936, 0.9408],
+        [0.1332,...0.0753, 0.8860],
+        [0.5832, 0.3376, 0.8090],
+        [0.5779, 0.9040, 0.5547],
+        [0.3423, 0.6343, 0.3644]])
+at = tensor([[0.7104, 0.9464, 0.7890],
+        [0.2814, 0.7886, 0.5895],
+        [0.7539, 0.1952, 0.0050],
+        [0.3068,...0.0874, 0.0041],
+        [0.1088, 0.1637, 0.7025],
+        [0.6790, 0.9155, 0.2418],
+        [0.1591, 0.7653, 0.2979]])
+up = tensor([[0.8035, 0.3813, 0.7860],
+        [0.1115, 0.2477, 0.6524],
+        [0.6057, 0.3725, 0.7980],
+        [0.8399,...0.3336, 0.5782],
+        [0.0600, 0.2846, 0.2007],
+        [0.5014, 0.3139, 0.4654],
+        [0.1612, 0.1568, 0.2083]])
+device = 'cpu'
+
+    def look_at_view_transform(dist: _BatchFloatType=1.0, elev: _BatchFloatType=0.0, azim: _BatchFloatType=0.0, degrees: bool=True, eye: Optional[Union[Sequence, torch.Tensor]]=None, at=((0, 0, 0),), up=((0, 1, 0),), device: Device='cpu') -> Tuple[torch.Tensor, torch.Tensor]:
+>       from .temp import look_at_view_transform
+E       ImportError: cannot import name 'look_at_view_transform' from 'pytorch3d.renderer.temp' (/local/data0/moved_data/pytorch3d/pytorch3d/renderer/temp.py)
+
+../pytorch3d/pytorch3d/renderer/cameras.py:1162: ImportError
+___________________ TestCameraUtils.test_rotate_on_spot_roll ___________________
+
+self = <tests.test_camera_utils.TestCameraUtils testMethod=test_rotate_on_spot_roll>
+
+    def test_rotate_on_spot_roll(self):
+        N = 14
+        eye = torch.rand(N, 3)
+        at = torch.rand(N, 3)
+        up = torch.rand(N, 3)
+    
+>       R, T = look_at_view_transform(eye=eye, at=at, up=up)
+
+../pytorch3d/tests/test_camera_utils.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dist = 1.0, elev = 0.0, azim = 0.0, degrees = True
+eye = tensor([[0.8823, 0.9150, 0.3829],
+        [0.9593, 0.3904, 0.6009],
+        [0.2566, 0.7936, 0.9408],
+        [0.1332,...0.0753, 0.8860],
+        [0.5832, 0.3376, 0.8090],
+        [0.5779, 0.9040, 0.5547],
+        [0.3423, 0.6343, 0.3644]])
+at = tensor([[0.7104, 0.9464, 0.7890],
+        [0.2814, 0.7886, 0.5895],
+        [0.7539, 0.1952, 0.0050],
+        [0.3068,...0.0874, 0.0041],
+        [0.1088, 0.1637, 0.7025],
+        [0.6790, 0.9155, 0.2418],
+        [0.1591, 0.7653, 0.2979]])
+up = tensor([[0.8035, 0.3813, 0.7860],
+        [0.1115, 0.2477, 0.6524],
+        [0.6057, 0.3725, 0.7980],
+        [0.8399,...0.3336, 0.5782],
+        [0.0600, 0.2846, 0.2007],
+        [0.5014, 0.3139, 0.4654],
+        [0.1612, 0.1568, 0.2083]])
+device = 'cpu'
+
+    def look_at_view_transform(dist: _BatchFloatType=1.0, elev: _BatchFloatType=0.0, azim: _BatchFloatType=0.0, degrees: bool=True, eye: Optional[Union[Sequence, torch.Tensor]]=None, at=((0, 0, 0),), up=((0, 1, 0),), device: Device='cpu') -> Tuple[torch.Tensor, torch.Tensor]:
+>       from .temp import look_at_view_transform
+E       ImportError: cannot import name 'look_at_view_transform' from 'pytorch3d.renderer.temp' (/local/data0/moved_data/pytorch3d/pytorch3d/renderer/temp.py)
+
+../pytorch3d/pytorch3d/renderer/cameras.py:1162: ImportError
+___________________ TestCameraUtils.test_rotate_on_spot_yaw ____________________
+
+self = <tests.test_camera_utils.TestCameraUtils testMethod=test_rotate_on_spot_yaw>
+
+    def test_rotate_on_spot_yaw(self):
+        N = 14
+        eye = torch.rand(N, 3)
+        at = torch.rand(N, 3)
+        up = torch.rand(N, 3)
+    
+>       R, T = look_at_view_transform(eye=eye, at=at, up=up)
+
+../pytorch3d/tests/test_camera_utils.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dist = 1.0, elev = 0.0, azim = 0.0, degrees = True
+eye = tensor([[0.8823, 0.9150, 0.3829],
+        [0.9593, 0.3904, 0.6009],
+        [0.2566, 0.7936, 0.9408],
+        [0.1332,...0.0753, 0.8860],
+        [0.5832, 0.3376, 0.8090],
+        [0.5779, 0.9040, 0.5547],
+        [0.3423, 0.6343, 0.3644]])
+at = tensor([[0.7104, 0.9464, 0.7890],
+        [0.2814, 0.7886, 0.5895],
+        [0.7539, 0.1952, 0.0050],
+        [0.3068,...0.0874, 0.0041],
+        [0.1088, 0.1637, 0.7025],
+        [0.6790, 0.9155, 0.2418],
+        [0.1591, 0.7653, 0.2979]])
+up = tensor([[0.8035, 0.3813, 0.7860],
+        [0.1115, 0.2477, 0.6524],
+        [0.6057, 0.3725, 0.7980],
+        [0.8399,...0.3336, 0.5782],
+        [0.0600, 0.2846, 0.2007],
+        [0.5014, 0.3139, 0.4654],
+        [0.1612, 0.1568, 0.2083]])
+device = 'cpu'
+
+    def look_at_view_transform(dist: _BatchFloatType=1.0, elev: _BatchFloatType=0.0, azim: _BatchFloatType=0.0, degrees: bool=True, eye: Optional[Union[Sequence, torch.Tensor]]=None, at=((0, 0, 0),), up=((0, 1, 0),), device: Device='cpu') -> Tuple[torch.Tensor, torch.Tensor]:
+>       from .temp import look_at_view_transform
+E       ImportError: cannot import name 'look_at_view_transform' from 'pytorch3d.renderer.temp' (/local/data0/moved_data/pytorch3d/pytorch3d/renderer/temp.py)
+
+../pytorch3d/pytorch3d/renderer/cameras.py:1162: ImportError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up
+FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch
+FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll
+FAILED ../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw
+============================== 4 failed in 1.00s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw PASSED
+
+============================== 4 passed in 0.94s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_invert_eye_at_up PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_pitch PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_roll PASSED
+../pytorch3d/tests/test_camera_utils.py::TestCameraUtils::test_rotate_on_spot_yaw PASSED
+
+============================== 4 passed in 0.97s ===============================

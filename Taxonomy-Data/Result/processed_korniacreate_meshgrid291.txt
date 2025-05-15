@@ -1,0 +1,165 @@
+output file:
+processed_korniacreate_meshgrid291.json
+function:
+create_meshgrid
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'tvm', 'onnxrt', 'openxla', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 7 passed, 1 skipped, 1 warning in 0.18s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'cudagraphs', 'inductor', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 7 passed, 1 skipped, 1 warning in 0.17s ====================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'cudagraphs', 'jit', 'inductor', 'openxla', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 7 passed, 1 skipped, 1 warning in 0.16s ====================

@@ -1,0 +1,269 @@
+output file:
+processed_pytorch3dapply_blurpool_on_weights289.json
+function:
+apply_blurpool_on_weights
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights', '../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple FAILED', 'FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights', '../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights FAILED', 'FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple', '../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights FAILED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights FAILED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple FAILED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple_use_bins PASSED
+
+=================================== FAILURES ===================================
+______________ TestRayPointRefiner.test_apply_blurpool_on_weights ______________
+
+self = <tests.implicitron.test_ray_point_refiner.TestRayPointRefiner testMethod=test_apply_blurpool_on_weights>
+
+    def test_apply_blurpool_on_weights(self):
+        weights = torch.tensor(
+            [
+                [0.5, 0.6, 0.7],
+                [0.5, 0.3, 0.9],
+            ]
+        )
+        expected_weights = 0.5 * torch.tensor(
+            [
+                [0.5 + 0.6, 0.6 + 0.7, 0.7 + 0.7],
+                [0.5 + 0.5, 0.5 + 0.9, 0.9 + 0.9],
+            ]
+        )
+        out_weights = apply_blurpool_on_weights(weights)
+>       self.assertTrue(torch.allclose(out_weights, expected_weights))
+E       AssertionError: False is not true
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py:152: AssertionError
+__________ TestRayPointRefiner.test_shapes_apply_blurpool_on_weights ___________
+
+self = <tests.implicitron.test_ray_point_refiner.TestRayPointRefiner testMethod=test_shapes_apply_blurpool_on_weights>
+
+    def test_shapes_apply_blurpool_on_weights(self):
+        weights = torch.randn((5, 4, 3, 2, 1))
+>       out_weights = apply_blurpool_on_weights(weights)
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/implicitron/models/renderer/ray_point_refiner.py:91: in apply_blurpool_on_weights
+    return apply_blurpool_on_weights(weights)
+../pytorch3d/pytorch3d/implicitron/models/renderer/temp.py:13: in apply_blurpool_on_weights
+    padded_weights = F.pad(weights, (1, 1), mode='reflect')
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[[-0.8188],
+           [ 0.1249]],
+
+          [[ 1.2120],
+           [ 2.0525]],
+
+          [[-0.6638],
+    ...,
+           [ 0.7487]],
+
+          [[ 0.5702],
+           [-0.8581]],
+
+          [[ 1.7466],
+           [-1.5081]]]]])
+pad = (1, 1), mode = 'reflect', value = None
+
+    def pad(input: Tensor, pad: List[int], mode: str = "constant", value: Optional[float] = None) -> Tensor:
+        r"""
+    pad(input, pad, mode="constant", value=None) -> Tensor
+    
+    Pads tensor.
+    
+    Padding size:
+        The padding size by which to pad some dimensions of :attr:`input`
+        are described starting from the last dimension and moving forward.
+        :math:`\left\lfloor\frac{\text{len(pad)}}{2}\right\rfloor` dimensions
+        of ``input`` will be padded.
+        For example, to pad only the last dimension of the input tensor, then
+        :attr:`pad` has the form
+        :math:`(\text{padding\_left}, \text{padding\_right})`;
+        to pad the last 2 dimensions of the input tensor, then use
+        :math:`(\text{padding\_left}, \text{padding\_right},`
+        :math:`\text{padding\_top}, \text{padding\_bottom})`;
+        to pad the last 3 dimensions, use
+        :math:`(\text{padding\_left}, \text{padding\_right},`
+        :math:`\text{padding\_top}, \text{padding\_bottom}`
+        :math:`\text{padding\_front}, \text{padding\_back})`.
+    
+    Padding mode:
+        See :class:`torch.nn.CircularPad2d`, :class:`torch.nn.ConstantPad2d`,
+        :class:`torch.nn.ReflectionPad2d`, and :class:`torch.nn.ReplicationPad2d`
+        for concrete examples on how each of the padding modes works. Constant
+        padding is implemented for arbitrary dimensions. Circular, replicate and
+        reflection padding are implemented for padding the last 3 dimensions of a
+        4D or 5D input tensor, the last 2 dimensions of a 3D or 4D input tensor,
+        or the last dimension of a 2D or 3D input tensor.
+    
+    Note:
+        When using the CUDA backend, this operation may induce nondeterministic
+        behaviour in its backward pass that is not easily switched off.
+        Please see the notes on :doc:`/notes/randomness` for background.
+    
+    Args:
+        input (Tensor): N-dimensional tensor
+        pad (tuple): m-elements tuple, where
+            :math:`\frac{m}{2} \leq` input dimensions and :math:`m` is even.
+        mode: ``'constant'``, ``'reflect'``, ``'replicate'`` or ``'circular'``.
+            Default: ``'constant'``
+        value: fill value for ``'constant'`` padding. Default: ``0``
+    
+    Examples::
+    
+        >>> t4d = torch.empty(3, 3, 4, 2)
+        >>> p1d = (1, 1) # pad last dim by 1 on each side
+        >>> out = F.pad(t4d, p1d, "constant", 0)  # effectively zero padding
+        >>> print(out.size())
+        torch.Size([3, 3, 4, 4])
+        >>> p2d = (1, 1, 2, 2) # pad last dim by (1, 1) and 2nd to last by (2, 2)
+        >>> out = F.pad(t4d, p2d, "constant", 0)
+        >>> print(out.size())
+        torch.Size([3, 3, 8, 4])
+        >>> t4d = torch.empty(3, 3, 4, 2)
+        >>> p3d = (0, 1, 2, 1, 3, 3) # pad by (0, 1), (2, 1), and (3, 3)
+        >>> out = F.pad(t4d, p3d, "constant", 0)
+        >>> print(out.size())
+        torch.Size([3, 9, 7, 3])
+    
+    """
+        if has_torch_function_unary(input):
+            return handle_torch_function(
+                torch.nn.functional.pad, (input,), input, pad, mode=mode, value=value)
+        if not torch.jit.is_scripting():
+            if torch.are_deterministic_algorithms_enabled() and input.is_cuda:
+                if mode == 'replicate':
+                    # Use slow decomp whose backward will be in terms of index_put.
+                    # importlib is required because the import cannot be top level
+                    # (cycle) and cannot be nested (TS doesn't support)
+                    return importlib.import_module('torch._decomp.decompositions')._replication_pad(
+                        input, pad
+                    )
+>       return torch._C._nn.pad(input, pad, mode, value)
+E       NotImplementedError: Only 2D, 3D, 4D, 5D padding with non-constant padding are supported for now
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/functional.py:4552: NotImplementedError
+_______________________ TestRayPointRefiner.test_simple ________________________
+
+self = <tests.implicitron.test_ray_point_refiner.TestRayPointRefiner testMethod=test_simple>
+
+    def test_simple(self):
+        length = 15
+        n_pts_per_ray = 10
+    
+        for add_input_samples, use_blurpool in product([False, True], [False, True]):
+            ray_point_refiner = RayPointRefiner(
+                n_pts_per_ray=n_pts_per_ray,
+                random_sampling=False,
+                add_input_samples=add_input_samples,
+                blurpool_weights=use_blurpool,
+            )
+            lengths = torch.arange(length, dtype=torch.float32).expand(3, 25, length)
+            bundle = ImplicitronRayBundle(
+                lengths=lengths,
+                origins=None,
+                directions=None,
+                xys=None,
+                camera_ids=None,
+                camera_counts=None,
+            )
+            weights = torch.ones(3, 25, length)
+>           refined = ray_point_refiner(bundle, weights)
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/modules/module.py:1562: in _call_impl
+    return forward_call(*args, **kwargs)
+../pytorch3d/pytorch3d/implicitron/models/renderer/ray_point_refiner.py:65: in forward
+    ray_weights = apply_blurpool_on_weights(ray_weights)
+../pytorch3d/pytorch3d/implicitron/models/renderer/ray_point_refiner.py:91: in apply_blurpool_on_weights
+    return apply_blurpool_on_weights(weights)
+../pytorch3d/pytorch3d/implicitron/models/renderer/temp.py:14: in apply_blurpool_on_weights
+    max_pooled_weights = F.max_pool1d(padded_weights.unsqueeze(1), kernel_size=2, stride=1).squeeze(1)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_jit_internal.py:503: in fn
+    return if_false(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1.,  ..., 1., 1., 1.],
+          [1., 1., 1.,  ..., 1., 1., 1.],
+          [1., 1., 1.,  ..., 1., 1... [1., 1., 1.,  ..., 1., 1., 1.],
+          [1., 1., 1.,  ..., 1., 1., 1.],
+          [1., 1., 1.,  ..., 1., 1., 1.]]]])
+kernel_size = 2, stride = 1, padding = 0, dilation = 1, ceil_mode = False
+return_indices = False
+
+    def _max_pool1d(
+        input: Tensor, kernel_size: BroadcastingList1[int],
+        stride: Optional[BroadcastingList1[int]] = None,
+        padding: BroadcastingList1[int] = 0,
+        dilation: BroadcastingList1[int] = 1,
+        ceil_mode: bool = False,
+        return_indices: bool = False
+    ) -> Tensor:
+        if has_torch_function_unary(input):
+            return handle_torch_function(
+                max_pool1d,
+                (input,),
+                input,
+                kernel_size,
+                stride=stride,
+                padding=padding,
+                dilation=dilation,
+                ceil_mode=ceil_mode,
+                return_indices=return_indices,
+            )
+        if stride is None:
+            stride = torch.jit.annotate(List[int], [])
+>       return torch.max_pool1d(input, kernel_size, stride, padding, dilation, ceil_mode)
+E       RuntimeError: max_pool1d: Expected 2D or 3D (batch mode) tensor with optional 0 dim batch size for input, but got:[3, 1, 25, 17]
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/nn/functional.py:710: RuntimeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights
+FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights
+FAILED ../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple
+========================= 3 failed, 1 passed in 1.18s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple_use_bins PASSED
+
+============================== 4 passed in 0.96s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 4 items
+
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_apply_blurpool_on_weights PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_shapes_apply_blurpool_on_weights PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple PASSED
+../pytorch3d/tests/implicitron/test_ray_point_refiner.py::TestRayPointRefiner::test_simple_use_bins PASSED
+
+============================== 4 passed in 1.36s ===============================

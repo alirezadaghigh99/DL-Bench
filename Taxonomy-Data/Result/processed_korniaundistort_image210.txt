@@ -1,0 +1,375 @@
+output file:
+processed_korniaundistort_image210.json
+function:
+undistort_image
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'openxla', 'cudagraphs', 'inductor', None, 'jit'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu] FAILED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_dynamo[cpu-float32-inductor] XFAIL
+
+=================================== FAILURES ===================================
+__________________ TestUndistortImage.test_shape[cpu-float32] __________________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484f9300>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_shape(self, device, dtype):
+        im = torch.rand(1, 3, 5, 5, device=device, dtype=dtype)
+        K = torch.rand(3, 3, device=device, dtype=dtype)
+        distCoeff = torch.rand(4, device=device, dtype=dtype)
+    
+>       imu = undistort_image(im, K, distCoeff)
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:255: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+___________ TestUndistortImage.test_shape_minimum_dims[cpu-float32] ____________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484f96f0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_shape_minimum_dims(self, device, dtype):
+        im = torch.rand(3, 5, 5, device=device, dtype=dtype)
+        K = torch.rand(3, 3, device=device, dtype=dtype)
+        distCoeff = torch.rand(4, device=device, dtype=dtype)
+    
+>       imu = undistort_image(im, K, distCoeff)
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:263: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+____________ TestUndistortImage.test_shape_extra_dims[cpu-float32] _____________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484f9a20>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_shape_extra_dims(self, device, dtype):
+        im = torch.rand(1, 1, 3, 5, 5, device=device, dtype=dtype).tile(3, 2, 1, 1, 1)
+        K = torch.rand(1, 1, 3, 3, device=device, dtype=dtype).tile(3, 2, 1, 1)
+        distCoeff = torch.rand(1, 1, 4, device=device, dtype=dtype).tile(3, 2, 1)
+    
+>       imu = undistort_image(im, K, distCoeff)
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+________________ TestUndistortImage.test_exception[cpu-float32] ________________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484f9d50>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_exception(self, device, dtype):
+        with pytest.raises(ValueError):
+            im = torch.rand(5, 5, device=device, dtype=dtype)
+            K = torch.rand(3, 3, device=device, dtype=dtype)
+            distCoeff = torch.rand(4, device=device, dtype=dtype)
+>           undistort_image(im, K, distCoeff)
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:280: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+_________________ TestUndistortImage.test_opencv[cpu-float32] __________________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484fa080>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_opencv(self, device, dtype):
+        im = torch.tensor(
+            [
+                [
+                    [
+                        [116, 75, 230, 5, 32],
+                        [9, 182, 97, 213, 3],
+                        [91, 10, 33, 141, 230],
+                        [229, 63, 221, 244, 61],
+                        [19, 137, 23, 59, 227],
+                    ]
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        K = torch.tensor([[2, 0, 2], [0, 2, 2], [0, 0, 1]], device=device, dtype=dtype)
+    
+        dist = torch.tensor([0.2290, 0.9565, 0.0083, 0.0475], device=device, dtype=dtype)
+    
+        # Expected output generated with OpenCV:
+        # import cv2
+        # imu_expected = cv2.undistort(np.uint8(im[0,0].numpy()), K.numpy(), dist.numpy())
+        imu_expected = torch.tensor(
+            [[[[0, 0, 0, 0, 0], [0, 124, 112, 82, 0], [0, 13, 33, 158, 0], [0, 108, 197, 150, 0], [0, 0, 0, 0, 0]]]],
+            device=device,
+            dtype=dtype,
+        )
+    
+>       imu = undistort_image(im / 255.0, K, dist)
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:336: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+____________________ TestUndistortImage.test_gradcheck[cpu] ____________________
+
+self = <test_undistort.TestUndistortImage object at 0x7ed8484f9ea0>
+device = device(type='cpu')
+
+    def test_gradcheck(self, device):
+        im = torch.rand(1, 1, 15, 15, device=device, dtype=torch.float64, requires_grad=True)
+        K = torch.rand(3, 3, device=device, dtype=torch.float64)
+        distCoeff = torch.rand(4, device=device, dtype=torch.float64)
+    
+>       self.gradcheck(undistort_image, (im, K, distCoeff), requires_grad=(True, False, False))
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py:344: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/geometry/calibration/undistort.py:79: in undistort_image
+    from .temp import undistort_image
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import annotations
+    from typing import Optional
+    import torch
+    from kornia.core import stack
+    from kornia.core.check import KORNIA_CHECK_SHAPE
+    from kornia.geometry.linalg import transform_points
+    from kornia.geometry.transform import remap
+    from kornia.utils import create_meshgrid
+    from .distort import distort_points, tilt_projection
+    import torch
+>   import cv2
+E   ModuleNotFoundError: No module named 'cv2'
+
+../publishablew/kornia/kornia/kornia/geometry/calibration/temp.py:11: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu]
+========================= 6 failed, 1 xfailed in 0.41s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'cudagraphs', 'openxla', 'inductor', 'onnxrt', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_dynamo[cpu-float32-inductor] XPASS
+
+========================= 6 passed, 1 xpassed in 2.44s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'jit', 'cudagraphs', 'inductor', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 7 items
+
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_minimum_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_shape_extra_dims[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_opencv[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/calibration/test_undistort.py::TestUndistortImage::test_dynamo[cpu-float32-inductor] XPASS
+
+========================= 6 passed, 1 xpassed in 2.70s =========================

@@ -1,0 +1,207 @@
+output file:
+processed_korniatensor_to_image126.json
+function:
+tensor_to_image
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1]', 'FAILED ../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2]', '../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'cudagraphs', 'onnxrt', 'inductor', 'jit', None, 'tvm'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape0-expected0] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1] FAILED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2] FAILED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape3-expected3] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape4-expected4] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape5-expected5] PASSED
+
+=================================== FAILURES ===================================
+_______________ test_tensor_to_image[cpu-input_shape1-expected1] _______________
+
+device = device(type='cpu'), input_shape = (1, 4, 4), expected = (4, 4)
+
+    @pytest.mark.parametrize(
+        "input_shape, expected",
+        [
+            ((4, 4), (4, 4)),
+            ((1, 4, 4), (4, 4)),
+            ((1, 1, 4, 4), (4, 4)),
+            ((3, 4, 4), (4, 4, 3)),
+            ((2, 3, 4, 4), (2, 4, 4, 3)),
+            ((1, 3, 4, 4), (4, 4, 3)),
+        ],
+    )
+    def test_tensor_to_image(device, input_shape, expected):
+        tensor = torch.ones(input_shape).to(device)
+        image = kornia.utils.tensor_to_image(tensor)
+>       assert image.shape == expected
+E       assert (4, 4, 1) == (4, 4)
+E         
+E         Left contains one more item: 1
+E         
+E         Full diff:
+E           (
+E               4,
+E               4,
+E         +     1,
+E           )
+
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py:52: AssertionError
+_______________ test_tensor_to_image[cpu-input_shape2-expected2] _______________
+
+device = device(type='cpu'), input_shape = (1, 1, 4, 4), expected = (4, 4)
+
+    @pytest.mark.parametrize(
+        "input_shape, expected",
+        [
+            ((4, 4), (4, 4)),
+            ((1, 4, 4), (4, 4)),
+            ((1, 1, 4, 4), (4, 4)),
+            ((3, 4, 4), (4, 4, 3)),
+            ((2, 3, 4, 4), (2, 4, 4, 3)),
+            ((1, 3, 4, 4), (4, 4, 3)),
+        ],
+    )
+    def test_tensor_to_image(device, input_shape, expected):
+        tensor = torch.ones(input_shape).to(device)
+        image = kornia.utils.tensor_to_image(tensor)
+>       assert image.shape == expected
+E       assert (4, 4, 1) == (4, 4)
+E         
+E         Left contains one more item: 1
+E         
+E         Full diff:
+E           (
+E               4,
+E               4,
+E         +     1,
+E           )
+
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py:52: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1]
+FAILED ../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2]
+========================= 2 failed, 4 passed in 0.18s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'tvm', 'jit', 'onnxrt', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape0-expected0] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape3-expected3] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape4-expected4] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape5-expected5] PASSED
+
+============================== 6 passed in 0.13s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'cudagraphs', 'onnxrt', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 6 items
+
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape0-expected0] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape1-expected1] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape2-expected2] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape3-expected3] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape4-expected4] PASSED
+../publishablew/kornia/kornia/tests/utils/test_image_utils.py::test_tensor_to_image[cpu-input_shape5-expected5] PASSED
+
+============================== 6 passed in 0.14s ===============================

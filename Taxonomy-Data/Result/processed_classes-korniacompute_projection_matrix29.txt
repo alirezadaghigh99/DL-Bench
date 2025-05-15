@@ -1,0 +1,732 @@
+output file:
+processed_classes-korniacompute_projection_matrix29.json
+function:
+compute_projection_matrix
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] FAILED [ 64%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] FAILED [ 35%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] FAILED [ 14%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] FAILED [ 78%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] FAILED [ 57%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] FAILED [ 50%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] FAILED [ 42%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] FAILED [ 85%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] FAILED [ 21%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] FAILED [100%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] FAILED [ 92%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] FAILED [  7%]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] FAILED [ 28%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] FAILED [ 71%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'jit', 'inductor', 'onnxrt', None, 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] FAILED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] FAILED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] FAILED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] FAILED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] FAILED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] FAILED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] FAILED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] FAILED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] FAILED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] FAILED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] FAILED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] FAILED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] FAILED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] FAILED [100%]
+
+=================================== FAILURES ===================================
+________ TestDepthWarper.test_compute_projection_matrix[cpu-float32-1] _________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff58a0>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection_matrix(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+    
+        # create warper
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        assert warper._dst_proj_src is None
+    
+        # initialize projection matrices
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743ff74c0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+________ TestDepthWarper.test_compute_projection_matrix[cpu-float32-2] _________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff5810>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection_matrix(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+    
+        # create warper
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+        assert warper._dst_proj_src is None
+    
+        # initialize projection matrices
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743fbed70>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+________ TestDepthWarper.test_warp_grid_offset_x1_depth1[cpu-float32-1] ________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff5d50>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_grid_offset_x1_depth1(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743ff4700>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+________ TestDepthWarper.test_warp_grid_offset_x1_depth1[cpu-float32-2] ________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff5c90>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_grid_offset_x1_depth1(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743fbef50>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+_______ TestDepthWarper.test_warp_grid_offset_x1y1_depth1[cpu-float32-1] _______
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff6200>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_grid_offset_x1y1_depth1(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+        pinhole_dst.ty += 1.0  # apply offset to ty
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743fbee00>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+_______ TestDepthWarper.test_warp_grid_offset_x1y1_depth1[cpu-float32-2] _______
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff6140>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_grid_offset_x1y1_depth1(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+        pinhole_dst.ty += 1.0  # apply offset to ty
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743fbebc0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+_________ TestDepthWarper.test_warp_tensor_offset_x1y1[cpu-float32-1] __________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff66b0>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_tensor_offset_x1y1(self, batch_size, device, dtype):
+        channels, height, width = 3, 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+        pinhole_dst.ty += 1.0  # apply offset to ty
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x7087439568c0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+_________ TestDepthWarper.test_warp_tensor_offset_x1y1[cpu-float32-2] __________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff65f0>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_warp_tensor_offset_x1y1(self, batch_size, device, dtype):
+        channels, height, width = 3, 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+        pinhole_dst.tx += 1.0  # apply offset to tx
+        pinhole_dst.ty += 1.0  # apply offset to ty
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743fbf700>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+____________ TestDepthWarper.test_compute_projection[cpu-float32-1] ____________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff6920>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x7087439a7e80>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+____________ TestDepthWarper.test_compute_projection[cpu-float32-2] ____________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff5a80>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_projection(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743ff7940>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+__________ TestDepthWarper.test_compute_subpixel_step[cpu-float32-1] ___________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff6dd0>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_subpixel_step(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x7087439544f0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+__________ TestDepthWarper.test_compute_subpixel_step[cpu-float32-2] ___________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff6d10>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_compute_subpixel_step(self, batch_size, device, dtype):
+        height, width = 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # create warper, initialize projection matrices and warp grid
+        warper = kornia.geometry.depth.DepthWarper(pinhole_dst, height, width)
+>       warper.compute_projection_matrix(pinhole_src)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x70874395b5e0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+____________________ TestDepthWarper.test_gradcheck[cpu-1] _____________________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff71f0>
+batch_size = 1, device = device(type='cpu')
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_gradcheck(self, batch_size, device):
+        dtype = torch.float64
+        # prepare data
+        channels, height, width = 3, 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create patch to warp
+        img_dst = torch.ones(batch_size, channels, height, width, device=device, dtype=dtype)
+    
+        # evaluate function gradient
+>       self.gradcheck(kornia.geometry.depth.depth_warp, (pinhole_dst, pinhole_src, depth_src, img_dst, height, width))
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/geometry/depth.py:334: in depth_warp
+    warper.compute_projection_matrix(pinhole_src)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743999cf0>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+>       R_dst, t_dst = self._pinhole_dst.extrinsics
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:233: ValueError
+____________________ TestDepthWarper.test_gradcheck[cpu-2] _____________________
+
+self = <tests.geometry.test_depth_warper.TestDepthWarper object at 0x708743ff7160>
+batch_size = 2, device = device(type='cpu')
+
+    @pytest.mark.parametrize("batch_size", (1, 2))
+    def test_gradcheck(self, batch_size, device):
+        dtype = torch.float64
+        # prepare data
+        channels, height, width = 3, 3, 5  # output shape
+        pinhole_src, pinhole_dst = self._create_pinhole_pair(batch_size, device, dtype)
+    
+        # initialize depth to one
+        depth_src = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+    
+        # create patch to warp
+        img_dst = torch.ones(batch_size, channels, height, width, device=device, dtype=dtype)
+    
+        # evaluate function gradient
+>       self.gradcheck(kornia.geometry.depth.depth_warp, (pinhole_dst, pinhole_src, depth_src, img_dst, height, width))
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/geometry/depth.py:334: in depth_warp
+    warper.compute_projection_matrix(pinhole_src)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = DepthWarper()
+pinhole_src = <kornia.geometry.camera.pinhole.PinholeCamera object at 0x708743895630>
+
+    def compute_projection_matrix(self, pinhole_src: PinholeCamera) -> DepthWarper:
+        if not isinstance(self._pinhole_dst, PinholeCamera):
+            raise TypeError(f'Member self._pinhole_dst expected to be of class PinholeCamera. Got {type(self._pinhole_dst)}')
+        if not isinstance(pinhole_src, PinholeCamera):
+            raise TypeError(f'Argument pinhole_src expected to be of class PinholeCamera. Got {type(pinhole_src)}')
+        self._pinhole_src = pinhole_src
+        K_dst = self._pinhole_dst.intrinsics
+        K_src = pinhole_src.intrinsics
+        R_dst, t_dst = self._pinhole_dst.extrinsics
+        R_src, t_src = pinhole_src.extrinsics
+        R_src_to_dst = R_dst @ R_src.T
+        t_src_to_dst = t_dst - R_src_to_dst @ t_src
+        T_src_to_dst = torch.eye(4, device=K_dst.device, dtype=K_dst.dtype)
+>       T_src_to_dst[:3, :3] = R_src_to_dst
+E       RuntimeError: The expanded size of the tensor (3) must match the existing size (4) at non-singleton dimension 1.  Target sizes: [3, 3].  Tensor sizes: [4, 4]
+
+../publishablew/kornia/kornia/kornia/geometry/depth.py:238: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2]
+============================== 14 failed in 0.52s ==============================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'cudagraphs', 'jit', 'inductor', None, 'openxla'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] PASSED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] PASSED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] PASSED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] PASSED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] PASSED [100%]
+
+============================== 14 passed in 0.22s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'tvm', 'openxla', 'onnxrt', 'cudagraphs', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-1] PASSED [  7%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection_matrix[cpu-float32-2] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-1] PASSED [ 21%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1_depth1[cpu-float32-2] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-1] PASSED [ 35%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_grid_offset_x1y1_depth1[cpu-float32-2] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-1] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_warp_tensor_offset_x1y1[cpu-float32-2] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-1] PASSED [ 64%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_projection[cpu-float32-2] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-1] PASSED [ 78%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_compute_subpixel_step[cpu-float32-2] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-1] PASSED [ 92%]
+../publishablew/kornia/kornia/tests/geometry/test_depth_warper.py::TestDepthWarper::test_gradcheck[cpu-2] PASSED [100%]
+
+============================== 14 passed in 0.21s ==============================

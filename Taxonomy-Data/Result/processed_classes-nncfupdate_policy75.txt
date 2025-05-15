@@ -1,0 +1,331 @@
+output file:
+processed_classes-nncfupdate_policy75.json
+function:
+update_policy
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False] FAILED [ 25%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True] FAILED [ 50%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True] FAILED [ 75%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False] FAILED [100%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 4 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False] FAILED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True] FAILED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True] FAILED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False] FAILED [100%]
+
+=================================== FAILURES ===================================
+____ test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False] _____
+
+test_vector = {'bs': 4, 'discount': 1.0, 'is_ma': False, 'policy_loss': -0.3665157, ...}
+mocker = <pytest_mock.plugin.MockerFixture object at 0x75aca115da60>
+_seed = None
+
+    @pytest.mark.parametrize(
+        "test_vector",
+        TEST_REFERENCES,
+        ids=[
+            "batch_size_{}-discount_factor_{}-moving_avg_{}".format(d["bs"], d["discount"], d["is_ma"])
+            for d in TEST_REFERENCES
+        ],
+    )
+    def test_update_policy(test_vector, mocker, _seed):
+        batch_size, discount, is_movingavg, ref_policy_loss, ref_value_loss = test_vector.values()
+    
+        mocked_trace = mocker.patch("nncf.torch.automl.agent.ddpg.memory.SequentialMemory.sample_and_split")
+        # state_batch, action_batch, reward_batch, next_state_batch, terminal_batch
+        mocked_trace.return_value = (
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, N_ACTION)),
+            np.ones((batch_size, SCALAR_ONE)),
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, SCALAR_ONE)),
+        )
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "bsize": batch_size,
+            "discount": discount,
+            "window_length": SCALAR_ONE,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) / 2 for state, param in ddpg.actor.state_dict().items()})
+        ddpg.actor_target.load_state_dict(
+            {state: torch.ones_like(param) for state, param in ddpg.actor_target.state_dict().items()}
+        )
+    
+        ddpg.moving_average = is_movingavg
+>       ddpg.update_policy()
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:119: in update_policy
+    states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:157: in sample
+    batch_idxs = sample_batch_indexes(0, self.nb_entries - 1, size=batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:50: in sample_batch_indexes
+    batch_idxs = np.random.random_integers(low, high - 1, size=size)
+numpy/random/mtrand.pyx:1382: in numpy.random.mtrand.RandomState.random_integers
+    ???
+numpy/random/mtrand.pyx:782: in numpy.random.mtrand.RandomState.randint
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   ValueError: high <= 0
+
+numpy/random/_bounded_integers.pyx:1334: ValueError
+----------------------------- Captured stdout call -----------------------------
+WARNING:nncf:Not enough entries to sample without replacement. Consider increasing your warm-up phase to avoid oversampling!
+_____ test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True] _____
+
+test_vector = {'bs': 4, 'discount': 0.9, 'is_ma': True, 'policy_loss': -0.3568782, ...}
+mocker = <pytest_mock.plugin.MockerFixture object at 0x75aca1063d90>
+_seed = None
+
+    @pytest.mark.parametrize(
+        "test_vector",
+        TEST_REFERENCES,
+        ids=[
+            "batch_size_{}-discount_factor_{}-moving_avg_{}".format(d["bs"], d["discount"], d["is_ma"])
+            for d in TEST_REFERENCES
+        ],
+    )
+    def test_update_policy(test_vector, mocker, _seed):
+        batch_size, discount, is_movingavg, ref_policy_loss, ref_value_loss = test_vector.values()
+    
+        mocked_trace = mocker.patch("nncf.torch.automl.agent.ddpg.memory.SequentialMemory.sample_and_split")
+        # state_batch, action_batch, reward_batch, next_state_batch, terminal_batch
+        mocked_trace.return_value = (
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, N_ACTION)),
+            np.ones((batch_size, SCALAR_ONE)),
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, SCALAR_ONE)),
+        )
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "bsize": batch_size,
+            "discount": discount,
+            "window_length": SCALAR_ONE,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) / 2 for state, param in ddpg.actor.state_dict().items()})
+        ddpg.actor_target.load_state_dict(
+            {state: torch.ones_like(param) for state, param in ddpg.actor_target.state_dict().items()}
+        )
+    
+        ddpg.moving_average = is_movingavg
+>       ddpg.update_policy()
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:119: in update_policy
+    states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:157: in sample
+    batch_idxs = sample_batch_indexes(0, self.nb_entries - 1, size=batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:50: in sample_batch_indexes
+    batch_idxs = np.random.random_integers(low, high - 1, size=size)
+numpy/random/mtrand.pyx:1382: in numpy.random.mtrand.RandomState.random_integers
+    ???
+numpy/random/mtrand.pyx:782: in numpy.random.mtrand.RandomState.randint
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   ValueError: high <= 0
+
+numpy/random/_bounded_integers.pyx:1334: ValueError
+----------------------------- Captured stdout call -----------------------------
+WARNING:nncf:Not enough entries to sample without replacement. Consider increasing your warm-up phase to avoid oversampling!
+_____ test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True] _____
+
+test_vector = {'bs': 8, 'discount': 1.0, 'is_ma': True, 'policy_loss': -0.3616864, ...}
+mocker = <pytest_mock.plugin.MockerFixture object at 0x75aca1078c40>
+_seed = None
+
+    @pytest.mark.parametrize(
+        "test_vector",
+        TEST_REFERENCES,
+        ids=[
+            "batch_size_{}-discount_factor_{}-moving_avg_{}".format(d["bs"], d["discount"], d["is_ma"])
+            for d in TEST_REFERENCES
+        ],
+    )
+    def test_update_policy(test_vector, mocker, _seed):
+        batch_size, discount, is_movingavg, ref_policy_loss, ref_value_loss = test_vector.values()
+    
+        mocked_trace = mocker.patch("nncf.torch.automl.agent.ddpg.memory.SequentialMemory.sample_and_split")
+        # state_batch, action_batch, reward_batch, next_state_batch, terminal_batch
+        mocked_trace.return_value = (
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, N_ACTION)),
+            np.ones((batch_size, SCALAR_ONE)),
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, SCALAR_ONE)),
+        )
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "bsize": batch_size,
+            "discount": discount,
+            "window_length": SCALAR_ONE,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) / 2 for state, param in ddpg.actor.state_dict().items()})
+        ddpg.actor_target.load_state_dict(
+            {state: torch.ones_like(param) for state, param in ddpg.actor_target.state_dict().items()}
+        )
+    
+        ddpg.moving_average = is_movingavg
+>       ddpg.update_policy()
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:119: in update_policy
+    states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:157: in sample
+    batch_idxs = sample_batch_indexes(0, self.nb_entries - 1, size=batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:50: in sample_batch_indexes
+    batch_idxs = np.random.random_integers(low, high - 1, size=size)
+numpy/random/mtrand.pyx:1382: in numpy.random.mtrand.RandomState.random_integers
+    ???
+numpy/random/mtrand.pyx:782: in numpy.random.mtrand.RandomState.randint
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   ValueError: high <= 0
+
+numpy/random/_bounded_integers.pyx:1334: ValueError
+----------------------------- Captured stdout call -----------------------------
+WARNING:nncf:Not enough entries to sample without replacement. Consider increasing your warm-up phase to avoid oversampling!
+____ test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False] _____
+
+test_vector = {'bs': 8, 'discount': 0.8, 'is_ma': False, 'policy_loss': -0.3665157, ...}
+mocker = <pytest_mock.plugin.MockerFixture object at 0x75aca104d700>
+_seed = None
+
+    @pytest.mark.parametrize(
+        "test_vector",
+        TEST_REFERENCES,
+        ids=[
+            "batch_size_{}-discount_factor_{}-moving_avg_{}".format(d["bs"], d["discount"], d["is_ma"])
+            for d in TEST_REFERENCES
+        ],
+    )
+    def test_update_policy(test_vector, mocker, _seed):
+        batch_size, discount, is_movingavg, ref_policy_loss, ref_value_loss = test_vector.values()
+    
+        mocked_trace = mocker.patch("nncf.torch.automl.agent.ddpg.memory.SequentialMemory.sample_and_split")
+        # state_batch, action_batch, reward_batch, next_state_batch, terminal_batch
+        mocked_trace.return_value = (
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, N_ACTION)),
+            np.ones((batch_size, SCALAR_ONE)),
+            np.ones((batch_size, N_STATE)),
+            np.ones((batch_size, SCALAR_ONE)),
+        )
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "bsize": batch_size,
+            "discount": discount,
+            "window_length": SCALAR_ONE,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) / 2 for state, param in ddpg.actor.state_dict().items()})
+        ddpg.actor_target.load_state_dict(
+            {state: torch.ones_like(param) for state, param in ddpg.actor_target.state_dict().items()}
+        )
+    
+        ddpg.moving_average = is_movingavg
+>       ddpg.update_policy()
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:119: in update_policy
+    states, actions, rewards, next_states, dones = self.memory.sample(self.batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:157: in sample
+    batch_idxs = sample_batch_indexes(0, self.nb_entries - 1, size=batch_size)
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:50: in sample_batch_indexes
+    batch_idxs = np.random.random_integers(low, high - 1, size=size)
+numpy/random/mtrand.pyx:1382: in numpy.random.mtrand.RandomState.random_integers
+    ???
+numpy/random/mtrand.pyx:782: in numpy.random.mtrand.RandomState.randint
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   ???
+E   ValueError: high <= 0
+
+numpy/random/_bounded_integers.pyx:1334: ValueError
+----------------------------- Captured stdout call -----------------------------
+WARNING:nncf:Not enough entries to sample without replacement. Consider increasing your warm-up phase to avoid oversampling!
+=============================== warnings summary ===============================
+automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False]
+automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True]
+automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True]
+automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False]
+  /local/data0/moved_data/publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/memory.py:50: DeprecationWarning: This function is deprecated. Please call randint(0, -2 + 1) instead
+    batch_idxs = np.random.random_integers(low, high - 1, size=size)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False]
+======================== 4 failed, 4 warnings in 1.54s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 4 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False] PASSED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True] PASSED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True] PASSED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False] PASSED [100%]
+
+============================== 4 passed in 1.64s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 4 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_1.0-moving_avg_False] PASSED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_4-discount_factor_0.9-moving_avg_True] PASSED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_1.0-moving_avg_True] PASSED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_update_policy[batch_size_8-discount_factor_0.8-moving_avg_False] PASSED [100%]
+
+============================== 4 passed in 1.82s ===============================

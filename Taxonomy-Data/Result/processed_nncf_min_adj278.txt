@@ -1,0 +1,55 @@
+output file:
+processed_nncf_min_adj278.json
+function:
+_min_adj
+Error Cases:
+2025-01-09 18:50:04.429283: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-01-09 18:50:04.441889: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-01-09 18:50:04.445483: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:50:04.455596: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ImportError while loading conftest '/local/data0/moved_data/publishablew/nncf/nncf/tests/tensorflow/conftest.py'.
+../publishablew/nncf/nncf/tests/tensorflow/conftest.py:19: in <module>
+    import tensorflow as tf
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/__init__.py:47: in <module>
+    from tensorflow._api.v2 import __internal__
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/__init__.py:8: in <module>
+    from tensorflow._api.v2.__internal__ import autograph
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/_api/v2/__internal__/autograph/__init__.py:8: in <module>
+    from tensorflow.python.autograph.core.ag_ctx import control_status_ctx # line: 34
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/core/ag_ctx.py:21: in <module>
+    from tensorflow.python.autograph.utils import ag_logging
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/__init__.py:17: in <module>
+    from tensorflow.python.autograph.utils.context_managers import control_dependency_on_returns
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/autograph/utils/context_managers.py:19: in <module>
+    from tensorflow.python.framework import ops
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/tensorflow/python/framework/ops.py:5906: in <module>
+    ) -> Optional[Callable[[Any], message.Message]]:
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:433: in Optional
+    return Union[arg, type(None)]
+/usr/local/lib/python3.9/typing.py:243: in inner
+    return func(*args, **kwds)
+/usr/local/lib/python3.9/typing.py:316: in __getitem__
+    return self._getitem(self, parameters)
+/usr/local/lib/python3.9/typing.py:421: in Union
+    parameters = _remove_dups_flatten(parameters)
+/usr/local/lib/python3.9/typing.py:215: in _remove_dups_flatten
+    all_params = set(params)
+E   TypeError: unhashable type: 'list'
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+
+
+Final Test Result:
+
+
+Initial Result:

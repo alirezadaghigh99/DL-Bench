@@ -1,0 +1,269 @@
+output file:
+processed_pytorch3dse3_exp_map150.json
+function:
+se3_exp_map
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp - ...', '../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp FAILED', 'FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation', 'FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed', '../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log FAILED', '../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation FAILED', 'FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format - ...', '../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format FAILED', '../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed FAILED', 'FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log - ...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 9 items
+
+../pytorch3d/tests/test_se3.py::TestSE3::test_bad_se3_input_value_err PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed FAILED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format FAILED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp FAILED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation FAILED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log FAILED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_zero_translation PASSED
+
+=================================== FAILURES ===================================
+____________________ TestSE3.test_compare_with_precomputed _____________________
+
+self = <tests.test_se3.TestSE3 testMethod=test_compare_with_precomputed>
+
+    def test_compare_with_precomputed(self):
+        """
+        Compare the outputs against precomputed results.
+        """
+        self.assertClose(
+            se3_log_map(self.precomputed_transform),
+            self.precomputed_log_transform,
+            atol=1e-4,
+        )
+>       self.assertClose(
+            self.precomputed_transform,
+            se3_exp_map(self.precomputed_log_transform),
+            atol=1e-4,
+        )
+
+../pytorch3d/tests/test_se3.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 2.540800094604492. Shape (10, 4, 4). At (4, 3, 2).
+______________________ TestSE3.test_se3_exp_output_format ______________________
+
+self = <tests.test_se3.TestSE3 testMethod=test_se3_exp_output_format>
+batch_size = 100
+
+    def test_se3_exp_output_format(self, batch_size: int = 100):
+        """
+        Check that the output of `se3_exp_map` is a valid SE3 matrix.
+        """
+        transform = se3_exp_map(TestSE3.init_log_transform(batch_size=batch_size))
+        R = transform[:, :3, :3]
+        T = transform[:, 3, :3]
+        rest = transform[:, :, 3]
+        Rdet = R.det()
+    
+        # check det(R)==1
+        self.assertClose(Rdet, torch.ones_like(Rdet), atol=1e-4)
+    
+        # check that the translation is a finite vector
+        self.assertTrue(torch.isfinite(T).all())
+    
+        # check last column == [0,0,0,1]
+        last_col = rest.new_zeros(batch_size, 4)
+        last_col[:, -1] = 1.0
+>       self.assertClose(rest, last_col)
+
+../pytorch3d/tests/test_se3.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 2.6673707962036133. Shape (100, 4). At (80, 2).
+______________________ TestSE3.test_se3_exp_to_log_to_exp ______________________
+
+self = <tests.test_se3.TestSE3 testMethod=test_se3_exp_to_log_to_exp>
+batch_size = 10000
+
+    def test_se3_exp_to_log_to_exp(self, batch_size: int = 10000):
+        """
+        Check that `se3_exp_map(se3_log_map(A))==A` for
+        a batch of randomly generated SE(3) matrices `A`.
+        """
+        transform = TestSE3.init_transform(batch_size=batch_size)
+        # Limit test transforms to those not around the singularity where
+        # the rotation angle~=pi.
+        nonsingular = so3_rotation_angle(transform[:, :3, :3]) < 3.134
+        transform = transform[nonsingular]
+        transform_ = se3_exp_map(
+            se3_log_map(transform, eps=1e-8, cos_bound=0.0), eps=1e-8
+        )
+>       self.assertClose(transform, transform_, atol=0.02)
+
+../pytorch3d/tests/test_se3.py:271: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 4.153900623321533. Shape (9969, 4, 4). At (1793, 3, 1).
+____________________ TestSE3.test_se3_exp_zero_translation _____________________
+
+self = <tests.test_se3.TestSE3 testMethod=test_se3_exp_zero_translation>
+batch_size = 100
+
+    def test_se3_exp_zero_translation(self, batch_size: int = 100):
+        """
+        Check that `se3_exp_map` with zero translation gives
+        the same result as corresponding `so3_exp_map`.
+        """
+        log_transform = TestSE3.init_log_transform(batch_size=batch_size)
+        log_transform[:, :3] *= 0.0
+        transform = se3_exp_map(log_transform, eps=1e-8)
+        transform_so3 = so3_exp_map(log_transform[:, 3:], eps=1e-8)
+>       self.assertClose(
+            transform[:, :3, :3], transform_so3.permute(0, 2, 1), atol=1e-4
+        )
+
+../pytorch3d/tests/test_se3.py:237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 1.9982212781906128. Max relative diff 238.45899963378906 Shape (100, 3, 3). At (80, 1, 1).
+______________________ TestSE3.test_se3_log_to_exp_to_log ______________________
+
+self = <tests.test_se3.TestSE3 testMethod=test_se3_log_to_exp_to_log>
+batch_size = 100
+
+    def test_se3_log_to_exp_to_log(self, batch_size: int = 100):
+        """
+        Check that `se3_log_map(se3_exp_map(log_transform))==log_transform`
+        for a randomly generated batch of SE(3) matrix logarithms `log_transform`.
+        """
+        log_transform = TestSE3.init_log_transform(batch_size=batch_size)
+>       log_transform_ = se3_log_map(se3_exp_map(log_transform, eps=1e-8), eps=1e-8)
+
+../pytorch3d/tests/test_se3.py:279: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+transform = tensor([[[-0.5572,  0.2039,  0.8050,  0.8798],
+         [ 0.0739,  0.9777, -0.1964, -1.9592],
+         [-0.8271, -0.04...5102],
+         [ 0.5380,  0.1812,  0.8232, -0.0880],
+         [ 0.0000,  0.0000,  0.0000,  1.0000]]], device='cuda:0')
+eps = 1e-08, cos_bound = 0.0001
+
+    def se3_log_map(transform: torch.Tensor, eps: float=0.0001, cos_bound: float=0.0001) -> torch.Tensor:
+        """
+        Convert a batch of 4x4 transformation matrices `transform`
+        to a batch of 6-dimensional SE(3) logarithms of the SE(3) matrices.
+        See e.g. [1], Sec 9.4.2. for more detailed description.
+    
+        A SE(3) matrix has the following form:
+            ```
+            [ R 0 ]
+            [ T 1 ] ,
+            ```
+        where `R` is an orthonormal 3x3 rotation matrix and `T` is a 3-D translation vector.
+        SE(3) matrices are commonly used to represent rigid motions or camera extrinsics.
+    
+        In the SE(3) logarithmic representation SE(3) matrices are
+        represented as 6-dimensional vectors `[log_translation | log_rotation]`,
+        i.e. a concatenation of two 3D vectors `log_translation` and `log_rotation`.
+    
+        The conversion from the 4x4 SE(3) matrix `transform` to the
+        6D representation `log_transform = [log_translation | log_rotation]`
+        is done as follows:
+            ```
+            log_transform = log(transform)
+            log_translation = log_transform[3, :3]
+            log_rotation = inv_hat(log_transform[:3, :3])
+            ```
+        where `log` is the matrix logarithm
+        and `inv_hat` is the inverse of the Hat operator [2].
+    
+        Note that for any valid 4x4 `transform` matrix, the following identity holds:
+        ```
+        se3_exp_map(se3_log_map(transform)) == transform
+        ```
+    
+        The conversion has a singularity around `(transform=I)` which is handled
+        by clamping controlled with the `eps` and `cos_bound` arguments.
+    
+        Args:
+            transform: batch of SE(3) matrices of shape `(minibatch, 4, 4)`.
+            eps: A threshold for clipping the squared norm of the rotation logarithm
+                to avoid division by zero in the singular case.
+            cos_bound: Clamps the cosine of the rotation angle to
+                [-1 + cos_bound, 3 - cos_bound] to avoid non-finite outputs.
+                The non-finite outputs can be caused by passing small rotation angles
+                to the `acos` function in `so3_rotation_angle` of `so3_log_map`.
+    
+        Returns:
+            Batch of logarithms of input SE(3) matrices
+            of shape `(minibatch, 6)`.
+    
+        Raises:
+            ValueError if `transform` is of incorrect shape.
+            ValueError if `R` has an unexpected trace.
+    
+        [1] https://jinyongjeong.github.io/Download/SE3/jlblanco2010geometry3d_techrep.pdf
+        [2] https://en.wikipedia.org/wiki/Hat_operator
+        """
+        if transform.ndim != 3:
+            raise ValueError('Input tensor shape has to be (N, 4, 4).')
+        N, dim1, dim2 = transform.shape
+        if dim1 != 4 or dim2 != 4:
+            raise ValueError('Input tensor shape has to be (N, 4, 4).')
+        if not torch.allclose(transform[:, :3, 3], torch.zeros_like(transform[:, :3, 3])):
+>           raise ValueError('All elements of `transform[:, :3, 3]` should be 0.')
+E           ValueError: All elements of `transform[:, :3, 3]` should be 0.
+
+../pytorch3d/pytorch3d/transforms/se3.py:134: ValueError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed
+FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format - ...
+FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp - ...
+FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation
+FAILED ../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log - ...
+========================= 5 failed, 4 passed in 1.43s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 9 items
+
+../pytorch3d/tests/test_se3.py::TestSE3::test_bad_se3_input_value_err PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_zero_translation PASSED
+
+============================== 9 passed in 1.38s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 9 items
+
+../pytorch3d/tests/test_se3.py::TestSE3::test_bad_se3_input_value_err PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_compare_with_precomputed PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_output_format PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_to_log_to_exp PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_exp_zero_translation PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_singularity PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_to_exp_to_log PASSED
+../pytorch3d/tests/test_se3.py::TestSE3::test_se3_log_zero_translation PASSED
+
+============================== 9 passed in 1.45s ===============================

@@ -1,0 +1,509 @@
+output file:
+processed_scikit-learndict_learning189.json
+function:
+dict_learning
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-lars]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-lars] I: Seeding RNGs with 1988341264
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd] FAILED
+
+=================================== FAILURES ===================================
+_____________ test_dict_learning_dtype_match[float32-float32-lars] _____________
+
+data_type = <class 'numpy.float32'>, expected_type = <class 'numpy.float32'>
+method = 'lars'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+______________ test_dict_learning_dtype_match[float32-float32-cd] ______________
+
+data_type = <class 'numpy.float32'>, expected_type = <class 'numpy.float32'>
+method = 'cd'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+_____________ test_dict_learning_dtype_match[float64-float64-lars] _____________
+
+data_type = <class 'numpy.float64'>, expected_type = <class 'numpy.float64'>
+method = 'lars'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+______________ test_dict_learning_dtype_match[float64-float64-cd] ______________
+
+data_type = <class 'numpy.float64'>, expected_type = <class 'numpy.float64'>
+method = 'cd'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+______________ test_dict_learning_dtype_match[int32-float64-lars] ______________
+
+data_type = <class 'numpy.int32'>, expected_type = <class 'numpy.float64'>
+method = 'lars'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+_______________ test_dict_learning_dtype_match[int32-float64-cd] _______________
+
+data_type = <class 'numpy.int32'>, expected_type = <class 'numpy.float64'>
+method = 'cd'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+______________ test_dict_learning_dtype_match[int64-float64-lars] ______________
+
+data_type = <class 'numpy.int64'>, expected_type = <class 'numpy.float64'>
+method = 'lars'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+_______________ test_dict_learning_dtype_match[int64-float64-cd] _______________
+
+data_type = <class 'numpy.int64'>, expected_type = <class 'numpy.float64'>
+method = 'cd'
+
+    @pytest.mark.parametrize("method", ("lars", "cd"))
+    @pytest.mark.parametrize(
+        "data_type, expected_type",
+        (
+            (np.float32, np.float32),
+            (np.float64, np.float64),
+            (np.int32, np.float64),
+            (np.int64, np.float64),
+        ),
+    )
+    def test_dict_learning_dtype_match(data_type, expected_type, method):
+        # Verify output matrix dtype
+        rng = np.random.RandomState(0)
+        n_components = 8
+>       code, dictionary, _ = dict_learning(
+            X.astype(data_type),
+            n_components=n_components,
+            alpha=1,
+            random_state=rng,
+            method=method,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:815: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:558: in dict_learning
+    from .temp import dict_learning
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import itertools
+    import sys
+    import time
+    from numbers import Integral, Real
+    import numpy as np
+    from joblib import effective_n_jobs
+    from scipy import linalg
+    from ..base import BaseEstimator, ClassNamePrefixFeaturesOutMixin, TransformerMixin, _fit_context
+    from ..linear_model import Lars, Lasso, LassoLars, orthogonal_mp_gram
+    from ..utils import check_array, check_random_state, gen_batches, gen_even_slices
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import randomized_svd, row_norms, svd_flip
+    from ..utils.parallel import Parallel, delayed
+    from ..utils.validation import check_is_fitted, validate_data
+>   from sklearn.decomposition import dict_learning1
+E   ImportError: cannot import name 'dict_learning1' from 'sklearn.decomposition' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/decomposition/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:15: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-lars]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd]
+============================== 8 failed in 0.86s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-lars] I: Seeding RNGs with 190201219
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd] PASSED
+
+============================== 8 passed in 0.55s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-lars] I: Seeding RNGs with 210222197
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float32-float32-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[float64-float64-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int32-float64-cd] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-lars] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_dtype_match[int64-float64-cd] PASSED
+
+============================== 8 passed in 0.54s ===============================

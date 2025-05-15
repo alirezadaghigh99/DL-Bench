@@ -1,0 +1,582 @@
+output file:
+processed_korniaremap215.json
+function:
+remap
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'cudagraphs', 'jit', 'openxla', 'onnxrt', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=================================== FAILURES ===================================
+______________ TestRemap.test_shift_batch_broadcast[cpu-float32] _______________
+
+self = <test_imgwarp.TestRemap object at 0x7e927c8f3430>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_shift_batch_broadcast(self, device, dtype):
+        height, width = 3, 4
+        inp = torch.tensor(
+            [[[[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]]], device=device, dtype=dtype
+        ).repeat(2, 1, 1, 1)
+        expected = torch.tensor(
+            [[[[1.0, 1.0, 1.0, 0.0], [1.0, 1.0, 1.0, 0.0], [0.0, 0.0, 0.0, 0.0]]]], device=device, dtype=dtype
+        ).repeat(2, 1, 1, 1)
+    
+        grid = kornia.utils.create_meshgrid(height, width, normalized_coordinates=False, device=device).to(dtype)
+        grid += 1.0  # apply shift in both x/y direction
+    
+>       input_warped = kornia.geometry.remap(inp, grid[..., 0], grid[..., 1], align_corners=True)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py:583: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/transform/imgwarp.py:322: in remap
+    return remap(image, map_x, map_y, mode, padding_mode, align_corners, normalized_coordinates)
+../publishablew/kornia/kornia/kornia/geometry/transform/temp.py:38: in remap
+    remapped_image = F.grid_sample(image, grid, mode=mode, padding_mode=padding_mode, align_corners=align_corners)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]],
+
+
+        [[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]])
+grid = tensor([[[[-0.3333,  0.0000],
+          [ 0.3333,  0.0000],
+          [ 1.0000,  0.0000],
+          [ 1.6667,  0.0000]...      [[-0.3333,  2.0000],
+          [ 0.3333,  2.0000],
+          [ 1.0000,  2.0000],
+          [ 1.6667,  2.0000]]]])
+mode = 'bilinear', padding_mode = 'zeros', align_corners = True
+
+    def grid_sample(
+        input: Tensor,
+        grid: Tensor,
+        mode: str = "bilinear",
+        padding_mode: str = "zeros",
+        align_corners: Optional[bool] = None,
+    ) -> Tensor:
+        r"""Compute grid sample.
+    
+        Given an :attr:`input` and a flow-field :attr:`grid`, computes the
+        ``output`` using :attr:`input` values and pixel locations from :attr:`grid`.
+    
+        Currently, only spatial (4-D) and volumetric (5-D) :attr:`input` are
+        supported.
+    
+        In the spatial (4-D) case, for :attr:`input` with shape
+        :math:`(N, C, H_\text{in}, W_\text{in})` and :attr:`grid` with shape
+        :math:`(N, H_\text{out}, W_\text{out}, 2)`, the output will have shape
+        :math:`(N, C, H_\text{out}, W_\text{out})`.
+    
+        For each output location ``output[n, :, h, w]``, the size-2 vector
+        ``grid[n, h, w]`` specifies :attr:`input` pixel locations ``x`` and ``y``,
+        which are used to interpolate the output value ``output[n, :, h, w]``.
+        In the case of 5D inputs, ``grid[n, d, h, w]`` specifies the
+        ``x``, ``y``, ``z`` pixel locations for interpolating
+        ``output[n, :, d, h, w]``. :attr:`mode` argument specifies ``nearest`` or
+        ``bilinear`` interpolation method to sample the input pixels.
+    
+        :attr:`grid` specifies the sampling pixel locations normalized by the
+        :attr:`input` spatial dimensions. Therefore, it should have most values in
+        the range of ``[-1, 1]``. For example, values ``x = -1, y = -1`` is the
+        left-top pixel of :attr:`input`, and values  ``x = 1, y = 1`` is the
+        right-bottom pixel of :attr:`input`.
+    
+        If :attr:`grid` has values outside the range of ``[-1, 1]``, the corresponding
+        outputs are handled as defined by :attr:`padding_mode`. Options are
+    
+            * ``padding_mode="zeros"``: use ``0`` for out-of-bound grid locations,
+            * ``padding_mode="border"``: use border values for out-of-bound grid locations,
+            * ``padding_mode="reflection"``: use values at locations reflected by
+              the border for out-of-bound grid locations. For location far away
+              from the border, it will keep being reflected until becoming in bound,
+              e.g., (normalized) pixel location ``x = -3.5`` reflects by border ``-1``
+              and becomes ``x' = 1.5``, then reflects by border ``1`` and becomes
+              ``x'' = -0.5``.
+    
+        Note:
+            This function is often used in conjunction with :func:`affine_grid`
+            to build `Spatial Transformer Networks`_ .
+    
+        Note:
+            When using the CUDA backend, this operation may induce nondeterministic
+            behaviour in its backward pass that is not easily switched off.
+            Please see the notes on :doc:`/notes/randomness` for background.
+    
+        Note:
+            NaN values in :attr:`grid` would be interpreted as ``-1``.
+    
+        Args:
+            input (Tensor): input of shape :math:`(N, C, H_\text{in}, W_\text{in})` (4-D case)
+                            or :math:`(N, C, D_\text{in}, H_\text{in}, W_\text{in})` (5-D case)
+            grid (Tensor): flow-field of shape :math:`(N, H_\text{out}, W_\text{out}, 2)` (4-D case)
+                           or :math:`(N, D_\text{out}, H_\text{out}, W_\text{out}, 3)` (5-D case)
+            mode (str): interpolation mode to calculate output values
+                ``'bilinear'`` | ``'nearest'`` | ``'bicubic'``. Default: ``'bilinear'``
+                Note: ``mode='bicubic'`` supports only 4-D input.
+                When ``mode='bilinear'`` and the input is 5-D, the interpolation mode
+                used internally will actually be trilinear. However, when the input is 4-D,
+                the interpolation mode will legitimately be bilinear.
+            padding_mode (str): padding mode for outside grid values
+                ``'zeros'`` | ``'border'`` | ``'reflection'``. Default: ``'zeros'``
+            align_corners (bool, optional): Geometrically, we consider the pixels of the
+                input  as squares rather than points.
+                If set to ``True``, the extrema (``-1`` and ``1``) are considered as referring
+                to the center points of the input's corner pixels. If set to ``False``, they
+                are instead considered as referring to the corner points of the input's corner
+                pixels, making the sampling more resolution agnostic.
+                This option parallels the ``align_corners`` option in
+                :func:`interpolate`, and so whichever option is used here
+                should also be used there to resize the input image before grid sampling.
+                Default: ``False``
+    
+        Returns:
+            output (Tensor): output Tensor
+    
+        .. _`Spatial Transformer Networks`:
+            https://arxiv.org/abs/1506.02025
+    
+        .. warning::
+            When ``align_corners = True``, the grid positions depend on the pixel
+            size relative to the input image size, and so the locations sampled by
+            :func:`grid_sample` will differ for the same input given at different
+            resolutions (that is, after being upsampled or downsampled).
+            The default behavior up to version 1.2.0 was ``align_corners = True``.
+            Since then, the default behavior has been changed to ``align_corners = False``,
+            in order to bring it in line with the default for :func:`interpolate`.
+    
+        .. note::
+            ``mode='bicubic'`` is implemented using the `cubic convolution algorithm`_ with :math:`\alpha=-0.75`.
+            The constant :math:`\alpha` might be different from packages to packages.
+            For example, `PIL`_ and `OpenCV`_ use -0.5 and -0.75 respectively.
+            This algorithm may "overshoot" the range of values it's interpolating.
+            For example, it may produce negative values or values greater than 255 when interpolating input in [0, 255].
+            Clamp the results with :func:`torch.clamp` to ensure they are within the valid range.
+        .. _`cubic convolution algorithm`: https://en.wikipedia.org/wiki/Bicubic_interpolation
+        .. _`PIL`: https://github.com/python-pillow/Pillow/blob/4634eafe3c695a014267eefdce830b4a825beed7/src/libImaging/Resample.c#L51
+        .. _`OpenCV`: https://github.com/opencv/opencv/blob/f345ed564a06178670750bad59526cfa4033be55/modules/imgproc/src/resize.cpp#L908
+        """
+        if has_torch_function_variadic(input, grid):
+            return handle_torch_function(
+                grid_sample,
+                (input, grid),
+                input,
+                grid,
+                mode=mode,
+                padding_mode=padding_mode,
+                align_corners=align_corners,
+            )
+        if mode != "bilinear" and mode != "nearest" and mode != "bicubic":
+            raise ValueError(
+                f"nn.functional.grid_sample(): expected mode to be 'bilinear', 'nearest' or 'bicubic', but got: '{mode}'"
+            )
+        if (
+            padding_mode != "zeros"
+            and padding_mode != "border"
+            and padding_mode != "reflection"
+        ):
+            raise ValueError(
+                "nn.functional.grid_sample(): expected padding_mode "
+                "to be 'zeros', 'border', or 'reflection', "
+                f"but got: '{padding_mode}'"
+            )
+    
+        if mode == "bilinear":
+            mode_enum = 0
+        elif mode == "nearest":
+            mode_enum = 1
+        else:  # mode == 'bicubic'
+            mode_enum = 2
+    
+        if padding_mode == "zeros":
+            padding_mode_enum = 0
+        elif padding_mode == "border":
+            padding_mode_enum = 1
+        else:  # padding_mode == 'reflection'
+            padding_mode_enum = 2
+    
+        if align_corners is None:
+            warnings.warn(
+                "Default grid_sample and affine_grid behavior has changed "
+                "to align_corners=False since 1.3.0. Please specify "
+                "align_corners=True if the old behavior is desired. "
+                "See the documentation of grid_sample for details."
+            )
+            align_corners = False
+    
+>       return torch.grid_sampler(input, grid, mode_enum, padding_mode_enum, align_corners)
+E       RuntimeError: grid_sampler(): expected grid and input to have same batch size, but got input with sizes [2, 1, 3, 4] and grid with sizes [1, 3, 4, 2]
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4910: RuntimeError
+______________ TestRemap.test_normalized_coordinates[cpu-float32] ______________
+
+self = <test_imgwarp.TestRemap object at 0x7e927c8f3760>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_normalized_coordinates(self, device, dtype):
+        height, width = 3, 4
+        normalized_coordinates = True
+        inp = torch.tensor(
+            [[[[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]]], device=device, dtype=dtype
+        ).repeat(2, 1, 1, 1)
+        expected = torch.tensor(
+            [[[[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]]]], device=device, dtype=dtype
+        ).repeat(2, 1, 1, 1)
+    
+        grid = kornia.utils.create_meshgrid(
+            height, width, normalized_coordinates=normalized_coordinates, device=device
+        ).to(dtype)
+    
+        # Normalized input coordinates
+>       input_warped = kornia.geometry.remap(
+            inp, grid[..., 0], grid[..., 1], align_corners=True, normalized_coordinates=normalized_coordinates
+        )
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py:601: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/transform/imgwarp.py:322: in remap
+    return remap(image, map_x, map_y, mode, padding_mode, align_corners, normalized_coordinates)
+../publishablew/kornia/kornia/kornia/geometry/transform/temp.py:38: in remap
+    remapped_image = F.grid_sample(image, grid, mode=mode, padding_mode=padding_mode, align_corners=align_corners)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]],
+
+
+        [[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]])
+grid = tensor([[[[-1.0000, -1.0000],
+          [-0.3333, -1.0000],
+          [ 0.3333, -1.0000],
+          [ 1.0000, -1.0000]...      [[-1.0000,  1.0000],
+          [-0.3333,  1.0000],
+          [ 0.3333,  1.0000],
+          [ 1.0000,  1.0000]]]])
+mode = 'bilinear', padding_mode = 'zeros', align_corners = True
+
+    def grid_sample(
+        input: Tensor,
+        grid: Tensor,
+        mode: str = "bilinear",
+        padding_mode: str = "zeros",
+        align_corners: Optional[bool] = None,
+    ) -> Tensor:
+        r"""Compute grid sample.
+    
+        Given an :attr:`input` and a flow-field :attr:`grid`, computes the
+        ``output`` using :attr:`input` values and pixel locations from :attr:`grid`.
+    
+        Currently, only spatial (4-D) and volumetric (5-D) :attr:`input` are
+        supported.
+    
+        In the spatial (4-D) case, for :attr:`input` with shape
+        :math:`(N, C, H_\text{in}, W_\text{in})` and :attr:`grid` with shape
+        :math:`(N, H_\text{out}, W_\text{out}, 2)`, the output will have shape
+        :math:`(N, C, H_\text{out}, W_\text{out})`.
+    
+        For each output location ``output[n, :, h, w]``, the size-2 vector
+        ``grid[n, h, w]`` specifies :attr:`input` pixel locations ``x`` and ``y``,
+        which are used to interpolate the output value ``output[n, :, h, w]``.
+        In the case of 5D inputs, ``grid[n, d, h, w]`` specifies the
+        ``x``, ``y``, ``z`` pixel locations for interpolating
+        ``output[n, :, d, h, w]``. :attr:`mode` argument specifies ``nearest`` or
+        ``bilinear`` interpolation method to sample the input pixels.
+    
+        :attr:`grid` specifies the sampling pixel locations normalized by the
+        :attr:`input` spatial dimensions. Therefore, it should have most values in
+        the range of ``[-1, 1]``. For example, values ``x = -1, y = -1`` is the
+        left-top pixel of :attr:`input`, and values  ``x = 1, y = 1`` is the
+        right-bottom pixel of :attr:`input`.
+    
+        If :attr:`grid` has values outside the range of ``[-1, 1]``, the corresponding
+        outputs are handled as defined by :attr:`padding_mode`. Options are
+    
+            * ``padding_mode="zeros"``: use ``0`` for out-of-bound grid locations,
+            * ``padding_mode="border"``: use border values for out-of-bound grid locations,
+            * ``padding_mode="reflection"``: use values at locations reflected by
+              the border for out-of-bound grid locations. For location far away
+              from the border, it will keep being reflected until becoming in bound,
+              e.g., (normalized) pixel location ``x = -3.5`` reflects by border ``-1``
+              and becomes ``x' = 1.5``, then reflects by border ``1`` and becomes
+              ``x'' = -0.5``.
+    
+        Note:
+            This function is often used in conjunction with :func:`affine_grid`
+            to build `Spatial Transformer Networks`_ .
+    
+        Note:
+            When using the CUDA backend, this operation may induce nondeterministic
+            behaviour in its backward pass that is not easily switched off.
+            Please see the notes on :doc:`/notes/randomness` for background.
+    
+        Note:
+            NaN values in :attr:`grid` would be interpreted as ``-1``.
+    
+        Args:
+            input (Tensor): input of shape :math:`(N, C, H_\text{in}, W_\text{in})` (4-D case)
+                            or :math:`(N, C, D_\text{in}, H_\text{in}, W_\text{in})` (5-D case)
+            grid (Tensor): flow-field of shape :math:`(N, H_\text{out}, W_\text{out}, 2)` (4-D case)
+                           or :math:`(N, D_\text{out}, H_\text{out}, W_\text{out}, 3)` (5-D case)
+            mode (str): interpolation mode to calculate output values
+                ``'bilinear'`` | ``'nearest'`` | ``'bicubic'``. Default: ``'bilinear'``
+                Note: ``mode='bicubic'`` supports only 4-D input.
+                When ``mode='bilinear'`` and the input is 5-D, the interpolation mode
+                used internally will actually be trilinear. However, when the input is 4-D,
+                the interpolation mode will legitimately be bilinear.
+            padding_mode (str): padding mode for outside grid values
+                ``'zeros'`` | ``'border'`` | ``'reflection'``. Default: ``'zeros'``
+            align_corners (bool, optional): Geometrically, we consider the pixels of the
+                input  as squares rather than points.
+                If set to ``True``, the extrema (``-1`` and ``1``) are considered as referring
+                to the center points of the input's corner pixels. If set to ``False``, they
+                are instead considered as referring to the corner points of the input's corner
+                pixels, making the sampling more resolution agnostic.
+                This option parallels the ``align_corners`` option in
+                :func:`interpolate`, and so whichever option is used here
+                should also be used there to resize the input image before grid sampling.
+                Default: ``False``
+    
+        Returns:
+            output (Tensor): output Tensor
+    
+        .. _`Spatial Transformer Networks`:
+            https://arxiv.org/abs/1506.02025
+    
+        .. warning::
+            When ``align_corners = True``, the grid positions depend on the pixel
+            size relative to the input image size, and so the locations sampled by
+            :func:`grid_sample` will differ for the same input given at different
+            resolutions (that is, after being upsampled or downsampled).
+            The default behavior up to version 1.2.0 was ``align_corners = True``.
+            Since then, the default behavior has been changed to ``align_corners = False``,
+            in order to bring it in line with the default for :func:`interpolate`.
+    
+        .. note::
+            ``mode='bicubic'`` is implemented using the `cubic convolution algorithm`_ with :math:`\alpha=-0.75`.
+            The constant :math:`\alpha` might be different from packages to packages.
+            For example, `PIL`_ and `OpenCV`_ use -0.5 and -0.75 respectively.
+            This algorithm may "overshoot" the range of values it's interpolating.
+            For example, it may produce negative values or values greater than 255 when interpolating input in [0, 255].
+            Clamp the results with :func:`torch.clamp` to ensure they are within the valid range.
+        .. _`cubic convolution algorithm`: https://en.wikipedia.org/wiki/Bicubic_interpolation
+        .. _`PIL`: https://github.com/python-pillow/Pillow/blob/4634eafe3c695a014267eefdce830b4a825beed7/src/libImaging/Resample.c#L51
+        .. _`OpenCV`: https://github.com/opencv/opencv/blob/f345ed564a06178670750bad59526cfa4033be55/modules/imgproc/src/resize.cpp#L908
+        """
+        if has_torch_function_variadic(input, grid):
+            return handle_torch_function(
+                grid_sample,
+                (input, grid),
+                input,
+                grid,
+                mode=mode,
+                padding_mode=padding_mode,
+                align_corners=align_corners,
+            )
+        if mode != "bilinear" and mode != "nearest" and mode != "bicubic":
+            raise ValueError(
+                f"nn.functional.grid_sample(): expected mode to be 'bilinear', 'nearest' or 'bicubic', but got: '{mode}'"
+            )
+        if (
+            padding_mode != "zeros"
+            and padding_mode != "border"
+            and padding_mode != "reflection"
+        ):
+            raise ValueError(
+                "nn.functional.grid_sample(): expected padding_mode "
+                "to be 'zeros', 'border', or 'reflection', "
+                f"but got: '{padding_mode}'"
+            )
+    
+        if mode == "bilinear":
+            mode_enum = 0
+        elif mode == "nearest":
+            mode_enum = 1
+        else:  # mode == 'bicubic'
+            mode_enum = 2
+    
+        if padding_mode == "zeros":
+            padding_mode_enum = 0
+        elif padding_mode == "border":
+            padding_mode_enum = 1
+        else:  # padding_mode == 'reflection'
+            padding_mode_enum = 2
+    
+        if align_corners is None:
+            warnings.warn(
+                "Default grid_sample and affine_grid behavior has changed "
+                "to align_corners=False since 1.3.0. Please specify "
+                "align_corners=True if the old behavior is desired. "
+                "See the documentation of grid_sample for details."
+            )
+            align_corners = False
+    
+>       return torch.grid_sampler(input, grid, mode_enum, padding_mode_enum, align_corners)
+E       RuntimeError: grid_sampler(): expected grid and input to have same batch size, but got input with sizes [2, 1, 3, 4] and grid with sizes [1, 3, 4, 2]
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4910: RuntimeError
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32]
+============== 2 failed, 5 passed, 1 skipped, 1 warning in 0.39s ===============
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'openxla', 'inductor', 'jit', 'onnxrt', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 7 passed, 1 skipped, 1 warning in 0.17s ====================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'tvm', 'cudagraphs', 'openxla', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_shift_batch_broadcast[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_normalized_coordinates[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/transform/test_imgwarp.py::TestRemap::test_dynamo[cpu-float32-inductor] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/transform/test_imgwarp.py::TestRemap::test_different_size[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/functional.py:4902: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 7 passed, 1 skipped, 1 warning in 0.28s ====================

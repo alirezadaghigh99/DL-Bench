@@ -1,0 +1,881 @@
+output file:
+processed_GPflowmultivariate_normal392.json
+function:
+multivariate_normal
+Error Cases:
+2025-01-09 18:42:47.259223: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1736466167.270343 2791651 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1736466167.273897 2791651 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:42:47.285844: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0000 00:00:1736466169.774436 2791651 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9289 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1]', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1] FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0]', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0] FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1]', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 8 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1] FAILED
+
+=================================== FAILURES ===================================
+__________________ test_multivariate_normal[cov_sqrt0-mu0-x0] __________________
+
+x = array([[-0.64568429,  0.88319463,  0.38518118, -0.41364563, -0.49660367,
+         0.34898409,  1.26799218,  0.86427831...3572, -0.07205726,  0.75483497,  1.39601678,
+        -0.28679857,  0.56443635, -0.76989167, -2.39075313, -0.21992105]])
+mu = array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.62818823,
+        -0.20535695,  0.54329675, -0.68048617...4895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])
+cov_sqrt = array([[-0.17726852, -0.03174971, -1.57244209,  0.28552252],
+       [ 0.16159058,  0.11145204, -0.21120462,  0.7810400...    [-1.024107  ,  0.07447312, -0.68194581, -1.76423787],
+       [ 0.58257083,  0.71158046,  0.69136395, -0.13182312]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:33: in multivariate_normal
+    mvn = tfd.MultivariateNormalTriL(loc=mu, scale_tril=L)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_tril.py:228: in __init__
+    super(MultivariateNormalTriL, self).__init__(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:195: in __init__
+    batch_shape, event_shape = distribution_util.shapes_from_loc_and_scale(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+loc = <tf.Tensor: shape=(4, 10), dtype=float64, numpy=
+array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.628188...895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])>
+scale = <tensorflow.python.ops.linalg.linear_operator_lower_triangular.LinearOperatorLowerTriangular object at 0x7679ed742510>
+name = 'shapes_from_loc_and_scale'
+
+    def shapes_from_loc_and_scale(loc, scale, name='shapes_from_loc_and_scale'):
+      """Infer distribution batch and event shapes from a location and scale.
+    
+      Location and scale family distributions determine their batch/event shape by
+      broadcasting the `loc` and `scale` args.  This helper does that broadcast,
+      statically if possible.
+    
+      Batch shape broadcasts as per the normal rules.
+      We allow the `loc` event shape to broadcast up to that of `scale`.  We do not
+      allow `scale`'s event shape to change.  Therefore, the last dimension of `loc`
+      must either be size `1`, or the same as `scale.range_dimension`.
+    
+      See `MultivariateNormalLinearOperator` for a usage example.
+    
+      Args:
+        loc: `Tensor` (already converted to tensor) or `None`. If `None`, or
+          `rank(loc)==0`, both batch and event shape are determined by `scale`.
+        scale:  A `LinearOperator` instance.
+        name:  A string name to prepend to created ops.
+    
+      Returns:
+        batch_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+        event_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+    
+      Raises:
+        ValueError:  If the last dimension of `loc` is determined statically to be
+          different than the range of `scale`.
+      """
+      if loc is not None and tensorshape_util.rank(loc.shape) == 0:
+        loc = None  # scalar loc is irrelevant to determining batch/event shape.
+      with tf.name_scope(name):
+        # Get event shape.
+        event_size = tf.compat.dimension_value(scale.range_dimension)
+        if event_size is None:
+          event_size = scale.range_dimension_tensor()
+        event_size_ = tf.get_static_value(ps.convert_to_shape_tensor(event_size))
+        loc_event_size_ = (None if loc is None
+                           else tf.compat.dimension_value(loc.shape[-1]))
+    
+        if event_size_ is not None and loc_event_size_ is not None:
+          # Static check that event shapes match.
+          if loc_event_size_ != 1 and loc_event_size_ != event_size_:
+>           raise ValueError(
+                'Event size of `scale` ({}) could not be broadcast up to that '
+E               ValueError: Event size of `scale` (4) could not be broadcast up to that of `loc` (10).
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:130: ValueError
+__________________ test_multivariate_normal[cov_sqrt0-mu0-x1] __________________
+
+x = array([[ 1.36329806],
+       [-0.85381166],
+       [ 0.47588925],
+       [-0.30835704]])
+mu = array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.62818823,
+        -0.20535695,  0.54329675, -0.68048617...4895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])
+cov_sqrt = array([[-0.17726852, -0.03174971, -1.57244209,  0.28552252],
+       [ 0.16159058,  0.11145204, -0.21120462,  0.7810400...    [-1.024107  ,  0.07447312, -0.68194581, -1.76423787],
+       [ 0.58257083,  0.71158046,  0.69136395, -0.13182312]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:33: in multivariate_normal
+    mvn = tfd.MultivariateNormalTriL(loc=mu, scale_tril=L)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_tril.py:228: in __init__
+    super(MultivariateNormalTriL, self).__init__(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:195: in __init__
+    batch_shape, event_shape = distribution_util.shapes_from_loc_and_scale(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+loc = <tf.Tensor: shape=(4, 10), dtype=float64, numpy=
+array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.628188...895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])>
+scale = <tensorflow.python.ops.linalg.linear_operator_lower_triangular.LinearOperatorLowerTriangular object at 0x7679ec25d890>
+name = 'shapes_from_loc_and_scale'
+
+    def shapes_from_loc_and_scale(loc, scale, name='shapes_from_loc_and_scale'):
+      """Infer distribution batch and event shapes from a location and scale.
+    
+      Location and scale family distributions determine their batch/event shape by
+      broadcasting the `loc` and `scale` args.  This helper does that broadcast,
+      statically if possible.
+    
+      Batch shape broadcasts as per the normal rules.
+      We allow the `loc` event shape to broadcast up to that of `scale`.  We do not
+      allow `scale`'s event shape to change.  Therefore, the last dimension of `loc`
+      must either be size `1`, or the same as `scale.range_dimension`.
+    
+      See `MultivariateNormalLinearOperator` for a usage example.
+    
+      Args:
+        loc: `Tensor` (already converted to tensor) or `None`. If `None`, or
+          `rank(loc)==0`, both batch and event shape are determined by `scale`.
+        scale:  A `LinearOperator` instance.
+        name:  A string name to prepend to created ops.
+    
+      Returns:
+        batch_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+        event_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+    
+      Raises:
+        ValueError:  If the last dimension of `loc` is determined statically to be
+          different than the range of `scale`.
+      """
+      if loc is not None and tensorshape_util.rank(loc.shape) == 0:
+        loc = None  # scalar loc is irrelevant to determining batch/event shape.
+      with tf.name_scope(name):
+        # Get event shape.
+        event_size = tf.compat.dimension_value(scale.range_dimension)
+        if event_size is None:
+          event_size = scale.range_dimension_tensor()
+        event_size_ = tf.get_static_value(ps.convert_to_shape_tensor(event_size))
+        loc_event_size_ = (None if loc is None
+                           else tf.compat.dimension_value(loc.shape[-1]))
+    
+        if event_size_ is not None and loc_event_size_ is not None:
+          # Static check that event shapes match.
+          if loc_event_size_ != 1 and loc_event_size_ != event_size_:
+>           raise ValueError(
+                'Event size of `scale` ({}) could not be broadcast up to that '
+E               ValueError: Event size of `scale` (4) could not be broadcast up to that of `loc` (10).
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:130: ValueError
+__________________ test_multivariate_normal[cov_sqrt0-mu1-x0] __________________
+
+x = array([[-0.64568429,  0.88319463,  0.38518118, -0.41364563, -0.49660367,
+         0.34898409,  1.26799218,  0.86427831...3572, -0.07205726,  0.75483497,  1.39601678,
+        -0.28679857,  0.56443635, -0.76989167, -2.39075313, -0.21992105]])
+mu = array([[-0.65580921],
+       [ 0.16305266],
+       [-0.77288459],
+       [-0.81236716]])
+cov_sqrt = array([[-0.17726852, -0.03174971, -1.57244209,  0.28552252],
+       [ 0.16159058,  0.11145204, -0.21120462,  0.7810400...    [-1.024107  ,  0.07447312, -0.68194581, -1.76423787],
+       [ 0.58257083,  0.71158046,  0.69136395, -0.13182312]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:34: in multivariate_normal
+    log_prob = mvn.log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1287: in log_prob
+    return self._call_log_prob(value, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1269: in _call_log_prob
+    return self._log_prob(value, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:1350: in _fn
+    return fn(*args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:243: in _log_prob
+    return super(MultivariateNormalLinearOperator, self)._log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:364: in _log_prob
+    log_prob, _ = self.experimental_local_measure(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:611: in experimental_local_measure
+    x = self.bijector.inverse(y, **bijector_kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:614: in _inverse
+    return self._call_walk_inverse(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:352: in _call_walk_inverse
+    return self._walk_inverse(step_fn, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/chain.py:150: in _walk_inverse
+    y = step_fn(bij, y, **kwargs.get(bij.name, {}))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:615: in <lambda>
+    lambda b, y, **kwargs: b.inverse(y, **kwargs),
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/scale_matvec_linear_operator.py:54: in _inverse
+    return self.scale.solvevec(y, adjoint=self.adjoint)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/ops/linalg/linear_operator.py:1075: in solvevec
+    self.shape, self_dim).assert_is_compatible_with(rhs.shape[-1])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Dimension(4), other = 10
+
+    def assert_is_compatible_with(self, other):
+      """Raises an exception if `other` is not compatible with this Dimension.
+    
+      Args:
+        other: Another Dimension.
+    
+      Raises:
+        ValueError: If `self` and `other` are not compatible (see
+          is_compatible_with).
+      """
+      if not self.is_compatible_with(other):
+>       raise ValueError("Dimensions %s and %s are not compatible" %
+                         (self, other))
+E       ValueError: Dimensions 4 and 10 are not compatible
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/framework/tensor_shape.py:303: ValueError
+__________________ test_multivariate_normal[cov_sqrt0-mu1-x1] __________________
+
+x = array([[ 1.36329806],
+       [-0.85381166],
+       [ 0.47588925],
+       [-0.30835704]])
+mu = array([[-0.65580921],
+       [ 0.16305266],
+       [-0.77288459],
+       [-0.81236716]])
+cov_sqrt = array([[-0.17726852, -0.03174971, -1.57244209,  0.28552252],
+       [ 0.16159058,  0.11145204, -0.21120462,  0.7810400...    [-1.024107  ,  0.07447312, -0.68194581, -1.76423787],
+       [ 0.58257083,  0.71158046,  0.69136395, -0.13182312]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:34: in multivariate_normal
+    log_prob = mvn.log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1287: in log_prob
+    return self._call_log_prob(value, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1269: in _call_log_prob
+    return self._log_prob(value, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:1350: in _fn
+    return fn(*args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:243: in _log_prob
+    return super(MultivariateNormalLinearOperator, self)._log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:364: in _log_prob
+    log_prob, _ = self.experimental_local_measure(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:611: in experimental_local_measure
+    x = self.bijector.inverse(y, **bijector_kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:614: in _inverse
+    return self._call_walk_inverse(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:352: in _call_walk_inverse
+    return self._walk_inverse(step_fn, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/chain.py:150: in _walk_inverse
+    y = step_fn(bij, y, **kwargs.get(bij.name, {}))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:615: in <lambda>
+    lambda b, y, **kwargs: b.inverse(y, **kwargs),
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/scale_matvec_linear_operator.py:54: in _inverse
+    return self.scale.solvevec(y, adjoint=self.adjoint)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/ops/linalg/linear_operator.py:1075: in solvevec
+    self.shape, self_dim).assert_is_compatible_with(rhs.shape[-1])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Dimension(4), other = 1
+
+    def assert_is_compatible_with(self, other):
+      """Raises an exception if `other` is not compatible with this Dimension.
+    
+      Args:
+        other: Another Dimension.
+    
+      Raises:
+        ValueError: If `self` and `other` are not compatible (see
+          is_compatible_with).
+      """
+      if not self.is_compatible_with(other):
+>       raise ValueError("Dimensions %s and %s are not compatible" %
+                         (self, other))
+E       ValueError: Dimensions 4 and 1 are not compatible
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/framework/tensor_shape.py:303: ValueError
+__________________ test_multivariate_normal[cov_sqrt1-mu0-x0] __________________
+
+x = array([[-0.64568429,  0.88319463,  0.38518118, -0.41364563, -0.49660367,
+         0.34898409,  1.26799218,  0.86427831...3572, -0.07205726,  0.75483497,  1.39601678,
+        -0.28679857,  0.56443635, -0.76989167, -2.39075313, -0.21992105]])
+mu = array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.62818823,
+        -0.20535695,  0.54329675, -0.68048617...4895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])
+cov_sqrt = array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:33: in multivariate_normal
+    mvn = tfd.MultivariateNormalTriL(loc=mu, scale_tril=L)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_tril.py:228: in __init__
+    super(MultivariateNormalTriL, self).__init__(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:195: in __init__
+    batch_shape, event_shape = distribution_util.shapes_from_loc_and_scale(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+loc = <tf.Tensor: shape=(4, 10), dtype=float64, numpy=
+array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.628188...895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])>
+scale = <tensorflow.python.ops.linalg.linear_operator_lower_triangular.LinearOperatorLowerTriangular object at 0x7679e43b6410>
+name = 'shapes_from_loc_and_scale'
+
+    def shapes_from_loc_and_scale(loc, scale, name='shapes_from_loc_and_scale'):
+      """Infer distribution batch and event shapes from a location and scale.
+    
+      Location and scale family distributions determine their batch/event shape by
+      broadcasting the `loc` and `scale` args.  This helper does that broadcast,
+      statically if possible.
+    
+      Batch shape broadcasts as per the normal rules.
+      We allow the `loc` event shape to broadcast up to that of `scale`.  We do not
+      allow `scale`'s event shape to change.  Therefore, the last dimension of `loc`
+      must either be size `1`, or the same as `scale.range_dimension`.
+    
+      See `MultivariateNormalLinearOperator` for a usage example.
+    
+      Args:
+        loc: `Tensor` (already converted to tensor) or `None`. If `None`, or
+          `rank(loc)==0`, both batch and event shape are determined by `scale`.
+        scale:  A `LinearOperator` instance.
+        name:  A string name to prepend to created ops.
+    
+      Returns:
+        batch_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+        event_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+    
+      Raises:
+        ValueError:  If the last dimension of `loc` is determined statically to be
+          different than the range of `scale`.
+      """
+      if loc is not None and tensorshape_util.rank(loc.shape) == 0:
+        loc = None  # scalar loc is irrelevant to determining batch/event shape.
+      with tf.name_scope(name):
+        # Get event shape.
+        event_size = tf.compat.dimension_value(scale.range_dimension)
+        if event_size is None:
+          event_size = scale.range_dimension_tensor()
+        event_size_ = tf.get_static_value(ps.convert_to_shape_tensor(event_size))
+        loc_event_size_ = (None if loc is None
+                           else tf.compat.dimension_value(loc.shape[-1]))
+    
+        if event_size_ is not None and loc_event_size_ is not None:
+          # Static check that event shapes match.
+          if loc_event_size_ != 1 and loc_event_size_ != event_size_:
+>           raise ValueError(
+                'Event size of `scale` ({}) could not be broadcast up to that '
+E               ValueError: Event size of `scale` (4) could not be broadcast up to that of `loc` (10).
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:130: ValueError
+__________________ test_multivariate_normal[cov_sqrt1-mu0-x1] __________________
+
+x = array([[ 1.36329806],
+       [-0.85381166],
+       [ 0.47588925],
+       [-0.30835704]])
+mu = array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.62818823,
+        -0.20535695,  0.54329675, -0.68048617...4895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])
+cov_sqrt = array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:33: in multivariate_normal
+    mvn = tfd.MultivariateNormalTriL(loc=mu, scale_tril=L)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_tril.py:228: in __init__
+    super(MultivariateNormalTriL, self).__init__(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/decorator.py:232: in fun
+    return caller(func, *(extras + args), **kw)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:342: in wrapped_init
+    default_init(self_, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:195: in __init__
+    batch_shape, event_shape = distribution_util.shapes_from_loc_and_scale(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+loc = <tf.Tensor: shape=(4, 10), dtype=float64, numpy=
+array([[ 0.83812913,  1.80219837, -0.96548006,  1.55081883, -0.628188...895,  1.88951824, -0.40703797,  0.6647078 ,
+        -0.43859779, -0.34386925,  0.53083276, -1.46062712,  1.68187717]])>
+scale = <tensorflow.python.ops.linalg.linear_operator_lower_triangular.LinearOperatorLowerTriangular object at 0x7679ec284450>
+name = 'shapes_from_loc_and_scale'
+
+    def shapes_from_loc_and_scale(loc, scale, name='shapes_from_loc_and_scale'):
+      """Infer distribution batch and event shapes from a location and scale.
+    
+      Location and scale family distributions determine their batch/event shape by
+      broadcasting the `loc` and `scale` args.  This helper does that broadcast,
+      statically if possible.
+    
+      Batch shape broadcasts as per the normal rules.
+      We allow the `loc` event shape to broadcast up to that of `scale`.  We do not
+      allow `scale`'s event shape to change.  Therefore, the last dimension of `loc`
+      must either be size `1`, or the same as `scale.range_dimension`.
+    
+      See `MultivariateNormalLinearOperator` for a usage example.
+    
+      Args:
+        loc: `Tensor` (already converted to tensor) or `None`. If `None`, or
+          `rank(loc)==0`, both batch and event shape are determined by `scale`.
+        scale:  A `LinearOperator` instance.
+        name:  A string name to prepend to created ops.
+    
+      Returns:
+        batch_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+        event_shape:  `TensorShape` (if broadcast is done statically), or `Tensor`.
+    
+      Raises:
+        ValueError:  If the last dimension of `loc` is determined statically to be
+          different than the range of `scale`.
+      """
+      if loc is not None and tensorshape_util.rank(loc.shape) == 0:
+        loc = None  # scalar loc is irrelevant to determining batch/event shape.
+      with tf.name_scope(name):
+        # Get event shape.
+        event_size = tf.compat.dimension_value(scale.range_dimension)
+        if event_size is None:
+          event_size = scale.range_dimension_tensor()
+        event_size_ = tf.get_static_value(ps.convert_to_shape_tensor(event_size))
+        loc_event_size_ = (None if loc is None
+                           else tf.compat.dimension_value(loc.shape[-1]))
+    
+        if event_size_ is not None and loc_event_size_ is not None:
+          # Static check that event shapes match.
+          if loc_event_size_ != 1 and loc_event_size_ != event_size_:
+>           raise ValueError(
+                'Event size of `scale` ({}) could not be broadcast up to that '
+E               ValueError: Event size of `scale` (4) could not be broadcast up to that of `loc` (10).
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:130: ValueError
+__________________ test_multivariate_normal[cov_sqrt1-mu1-x0] __________________
+
+x = array([[-0.64568429,  0.88319463,  0.38518118, -0.41364563, -0.49660367,
+         0.34898409,  1.26799218,  0.86427831...3572, -0.07205726,  0.75483497,  1.39601678,
+        -0.28679857,  0.56443635, -0.76989167, -2.39075313, -0.21992105]])
+mu = array([[-0.65580921],
+       [ 0.16305266],
+       [-0.77288459],
+       [-0.81236716]])
+cov_sqrt = array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:34: in multivariate_normal
+    log_prob = mvn.log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1287: in log_prob
+    return self._call_log_prob(value, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1269: in _call_log_prob
+    return self._log_prob(value, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:1350: in _fn
+    return fn(*args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:243: in _log_prob
+    return super(MultivariateNormalLinearOperator, self)._log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:364: in _log_prob
+    log_prob, _ = self.experimental_local_measure(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:611: in experimental_local_measure
+    x = self.bijector.inverse(y, **bijector_kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:614: in _inverse
+    return self._call_walk_inverse(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:352: in _call_walk_inverse
+    return self._walk_inverse(step_fn, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/chain.py:150: in _walk_inverse
+    y = step_fn(bij, y, **kwargs.get(bij.name, {}))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:615: in <lambda>
+    lambda b, y, **kwargs: b.inverse(y, **kwargs),
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/scale_matvec_linear_operator.py:54: in _inverse
+    return self.scale.solvevec(y, adjoint=self.adjoint)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/ops/linalg/linear_operator.py:1075: in solvevec
+    self.shape, self_dim).assert_is_compatible_with(rhs.shape[-1])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Dimension(4), other = 10
+
+    def assert_is_compatible_with(self, other):
+      """Raises an exception if `other` is not compatible with this Dimension.
+    
+      Args:
+        other: Another Dimension.
+    
+      Raises:
+        ValueError: If `self` and `other` are not compatible (see
+          is_compatible_with).
+      """
+      if not self.is_compatible_with(other):
+>       raise ValueError("Dimensions %s and %s are not compatible" %
+                         (self, other))
+E       ValueError: Dimensions 4 and 10 are not compatible
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/framework/tensor_shape.py:303: ValueError
+__________________ test_multivariate_normal[cov_sqrt1-mu1-x1] __________________
+
+x = array([[ 1.36329806],
+       [-0.85381166],
+       [ 0.47588925],
+       [-0.30835704]])
+mu = array([[-0.65580921],
+       [ 0.16305266],
+       [-0.77288459],
+       [-0.81236716]])
+cov_sqrt = array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+
+    @pytest.mark.parametrize("x", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("mu", [randn(4, 10), randn(4, 1)])
+    @pytest.mark.parametrize("cov_sqrt", [randn(4, 4), np.eye(4)])
+    def test_multivariate_normal(x: AnyNDArray, mu: AnyNDArray, cov_sqrt: AnyNDArray) -> None:
+        cov = np.dot(cov_sqrt, cov_sqrt.T)
+        L = np.linalg.cholesky(cov)
+    
+>       gp_result = logdensities.multivariate_normal(x, mu, L)
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py:120: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/logdensities.py:50: in multivariate_normal
+    return multivariate_normal(x, mu, L)
+../publishablew/GPflow/GPflow/gpflow/temp.py:15: in wrapper
+    return func(*func_args, **func_kwargs)
+../publishablew/GPflow/GPflow/gpflow/temp.py:34: in multivariate_normal
+    log_prob = mvn.log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1287: in log_prob
+    return self._call_log_prob(value, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/distribution.py:1269: in _call_log_prob
+    return self._log_prob(value, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/distribution_util.py:1350: in _fn
+    return fn(*args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/mvn_linear_operator.py:243: in _log_prob
+    return super(MultivariateNormalLinearOperator, self)._log_prob(x)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:364: in _log_prob
+    log_prob, _ = self.experimental_local_measure(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/distributions/transformed_distribution.py:611: in experimental_local_measure
+    x = self.bijector.inverse(y, **bijector_kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:614: in _inverse
+    return self._call_walk_inverse(
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:352: in _call_walk_inverse
+    return self._walk_inverse(step_fn, *args, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/chain.py:150: in _walk_inverse
+    y = step_fn(bij, y, **kwargs.get(bij.name, {}))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/composition.py:615: in <lambda>
+    lambda b, y, **kwargs: b.inverse(y, **kwargs),
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1390: in inverse
+    return self._call_inverse(y, name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/bijector.py:1370: in _call_inverse
+    return self._cache.inverse(y, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:347: in inverse
+    return self._lookup(y, self._inverse_name, self._forward_name, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:493: in _lookup
+    self._invoke(input, forward_name, kwargs, attrs))
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/internal/cache_util.py:532: in _invoke
+    return getattr(self.bijector, fn_name)(input, **kwargs)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/bijectors/scale_matvec_linear_operator.py:54: in _inverse
+    return self.scale.solvevec(y, adjoint=self.adjoint)
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/ops/linalg/linear_operator.py:1075: in solvevec
+    self.shape, self_dim).assert_is_compatible_with(rhs.shape[-1])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Dimension(4), other = 1
+
+    def assert_is_compatible_with(self, other):
+      """Raises an exception if `other` is not compatible with this Dimension.
+    
+      Args:
+        other: Another Dimension.
+    
+      Raises:
+        ValueError: If `self` and `other` are not compatible (see
+          is_compatible_with).
+      """
+      if not self.is_compatible_with(other):
+>       raise ValueError("Dimensions %s and %s are not compatible" %
+                         (self, other))
+E       ValueError: Dimensions 4 and 1 are not compatible
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/framework/tensor_shape.py:303: ValueError
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1]
+======================== 8 failed, 2 warnings in 1.59s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 8 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 2 warnings in 0.57s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 8 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu0-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt0-mu1-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu0-x1] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/test_logdensities.py::test_multivariate_normal[cov_sqrt1-mu1-x1] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 2 warnings in 1.34s =========================

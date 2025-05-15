@@ -1,0 +1,311 @@
+output file:
+processed_stanzabuild_charlm_vocab47.json
+function:
+build_charlm_vocab
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model', 'FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab', '../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab FAILED', '../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab', 'FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab', '../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab FAILED', '../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 8 items
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab FAILED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_dir_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab FAILED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab FAILED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model FAILED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_load_model PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_save_load_model PASSED
+
+=================================== FAILURES ===================================
+___________________ TestCharModel.test_single_file_xz_vocab ____________________
+
+self = <stanza.tests.common.test_char_model.TestCharModel object at 0x7159a653a850>
+
+    def test_single_file_xz_vocab(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            sample_file = os.path.join(tempdir, "text.txt.xz")
+            with lzma.open(sample_file, "wt", encoding="utf-8") as fout:
+                fout.write(fake_text_1)
+>           vocab = char_model.build_charlm_vocab(sample_file)
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/common/char_model.py:69: in build_charlm_vocab
+    return build_charlm_vocab(path, cutoff)
+../publishablew/stanza/stanza/stanza/models/common/temp.py:35: in build_charlm_vocab
+    for line in f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7159a6541a10>
+input = b'\xfd7zXZ\x00\x00\x04\xe6\xd6\xb4F\x02\x00!\x01\x16\x00\x00\x00t/\xe5\xa3\x01\x00*\nUnban mox opal!\nI hate watching Peppa Pig\n\x00\x00i\xf3\xf4\x0e\xdfT\xf4\x7f\x00\x01C+\xadPnW\x1f\xb6\xf3}\x01\x00\x00\x00\x00\x04YZ'
+final = False
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfd in position 0: invalid start byte
+
+<frozen codecs>:322: UnicodeDecodeError
+___________________ TestCharModel.test_multiple_files_vocab ____________________
+
+self = <stanza.tests.common.test_char_model.TestCharModel object at 0x7159a653b610>
+
+    def test_multiple_files_vocab(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            sample_file = os.path.join(tempdir, "t1.txt")
+            with open(sample_file, "w", encoding="utf-8") as fout:
+                fout.write(fake_text_1)
+            sample_file = os.path.join(tempdir, "t2.txt.xz")
+            with lzma.open(sample_file, "wt", encoding="utf-8") as fout:
+                fout.write(fake_text_2)
+>           vocab = char_model.build_charlm_vocab(tempdir)
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/common/char_model.py:69: in build_charlm_vocab
+    return build_charlm_vocab(path, cutoff)
+../publishablew/stanza/stanza/stanza/models/common/temp.py:35: in build_charlm_vocab
+    for line in f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7159a65aa010>
+input = b'\xfd7zXZ\x00\x00\x04\xe6\xd6\xb4F\x02\x00!\x01\x16\x00\x00\x00t/\xe5\xa3\x01\x00\x17\nThis is plastic cheese\n\x00\xd8\xa2\xabf\x8e\xa5\xae;\x00\x010\x18\x8e\x1b\xac\xec\x1f\xb6\xf3}\x01\x00\x00\x00\x00\x04YZ'
+final = False
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfd in position 0: invalid start byte
+
+<frozen codecs>:322: UnicodeDecodeError
+_______________________ TestCharModel.test_cutoff_vocab ________________________
+
+self = <stanza.tests.common.test_char_model.TestCharModel object at 0x7159a653bcd0>
+
+    def test_cutoff_vocab(self):
+        with tempfile.TemporaryDirectory() as tempdir:
+            sample_file = os.path.join(tempdir, "t1.txt")
+            with open(sample_file, "w", encoding="utf-8") as fout:
+                fout.write(fake_text_1)
+            sample_file = os.path.join(tempdir, "t2.txt.xz")
+            with lzma.open(sample_file, "wt", encoding="utf-8") as fout:
+                fout.write(fake_text_2)
+    
+>           vocab = char_model.build_charlm_vocab(tempdir, cutoff=2)
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/common/char_model.py:69: in build_charlm_vocab
+    return build_charlm_vocab(path, cutoff)
+../publishablew/stanza/stanza/stanza/models/common/temp.py:35: in build_charlm_vocab
+    for line in f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x715a89d38150>
+input = b'\xfd7zXZ\x00\x00\x04\xe6\xd6\xb4F\x02\x00!\x01\x16\x00\x00\x00t/\xe5\xa3\x01\x00\x17\nThis is plastic cheese\n\x00\xd8\xa2\xabf\x8e\xa5\xae;\x00\x010\x18\x8e\x1b\xac\xec\x1f\xb6\xf3}\x01\x00\x00\x00\x00\x04YZ'
+final = False
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfd in position 0: invalid start byte
+
+<frozen codecs>:322: UnicodeDecodeError
+________________________ TestCharModel.test_build_model ________________________
+
+self = <stanza.tests.common.test_char_model.TestCharModel object at 0x7159a65403d0>
+
+    def test_build_model(self):
+        """
+        Test the whole thing on a small dataset for an iteration or two
+        """
+        with tempfile.TemporaryDirectory() as tempdir:
+            eval_file = os.path.join(tempdir, "en_test.dev.txt")
+            with open(eval_file, "w", encoding="utf-8") as fout:
+                fout.write(fake_text_1)
+            train_file = os.path.join(tempdir, "en_test.train.txt")
+            with open(train_file, "w", encoding="utf-8") as fout:
+                for i in range(1000):
+                    fout.write(fake_text_1)
+                    fout.write("\n")
+                    fout.write(fake_text_2)
+                    fout.write("\n")
+            save_name = 'en_test.forward.pt'
+            vocab_save_name = 'en_text.vocab.pt'
+            checkpoint_save_name = 'en_text.checkpoint.pt'
+            args = ['--train_file', train_file,
+                    '--eval_file', eval_file,
+                    '--eval_steps', '0', # eval once per opoch
+                    '--epochs', '2',
+                    '--cutoff', '1',
+                    '--batch_size', '%d' % len(fake_text_1),
+                    '--shorthand', 'en_test',
+                    '--save_dir', tempdir,
+                    '--save_name', save_name,
+                    '--vocab_save_name', vocab_save_name,
+                    '--checkpoint_save_name', checkpoint_save_name]
+            args = charlm.parse_args(args)
+>           charlm.train(args)
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = {'anneal': 0.25, 'batch_size': 43, 'bptt_size': 250, 'char_dropout': 0.05, ...}
+
+    def train(args):
+        utils.log_training_args(args, logger)
+        model_file = build_model_filename(args)
+    
+        vocab_file = args['save_dir'] + '/' + args['vocab_save_name'] if args['vocab_save_name'] is not None \
+            else '{}/{}_vocab.pt'.format(args['save_dir'], args['shorthand'])
+    
+        if args['checkpoint']:
+            checkpoint_file = utils.checkpoint_name(args['save_dir'], model_file, args['checkpoint_save_name'])
+        else:
+            checkpoint_file = None
+    
+        if os.path.exists(vocab_file):
+            logger.info('Loading existing vocab file')
+            vocab = load_char_vocab(vocab_file)
+        else:
+            logger.info('Building and saving vocab')
+            vocab = {'char': build_charlm_vocab(args['train_file'] if args['train_dir'] is None else args['train_dir'], cutoff=args['cutoff'])}
+>           torch.save(vocab['char'].state_dict(), vocab_file)
+E           AttributeError: 'list' object has no attribute 'state_dict'
+
+../publishablew/stanza/stanza/stanza/models/charlm.py:229: AttributeError
+------------------------------ Captured log call -------------------------------
+INFO     stanza:utils.py:575 ARGS USED AT TRAINING TIME:
+anneal: 0.25
+batch_size: 43
+bptt_size: 250
+char_dropout: 0.05
+char_emb_dim: 100
+char_hidden_dim: 1024
+char_num_layers: 1
+char_rec_dropout: 0.0
+char_unit_dropout: 1e-05
+checkpoint: True
+checkpoint_save_name: en_text.checkpoint.pt
+cutoff: 1
+device: cuda
+direction: forward
+epochs: 2
+eval_file: /tmp/tmpzlnh05o8/en_test.dev.txt
+eval_steps: 0
+lr0: 5
+max_grad_norm: 0.25
+mode: train
+momentum: 0.0
+patience: 1
+report_steps: 50
+save_dir: /tmp/tmpzlnh05o8
+save_name: en_test.forward.pt
+seed: 1234
+shorthand: en_test
+summary: False
+train_dir: None
+train_file: /tmp/tmpzlnh05o8/en_test.train.txt
+vocab_save_name: en_text.vocab.pt
+wandb: False
+wandb_name: None
+weight_decay: 0.0
+
+INFO     stanza:charlm.py:227 Building and saving vocab
+=============================== warnings summary ===============================
+common/test_char_model.py::TestCharModel::test_load_model
+common/test_char_model.py::TestCharModel::test_save_load_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:233: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab
+FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab
+FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab
+FAILED ../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model
+=================== 4 failed, 4 passed, 2 warnings in 1.41s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 8 items
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_dir_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_load_model PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_save_load_model PASSED
+
+=============================== warnings summary ===============================
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/venv/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+    warnings.warn(
+
+common/test_char_model.py::TestCharModel::test_build_model
+common/test_char_model.py::TestCharModel::test_load_model
+common/test_char_model.py::TestCharModel::test_save_load_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:345: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/charlm.py:209: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    return {'char': CharVocab.load_state_dict(torch.load(vocab_file, lambda storage, loc: storage))}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 6 warnings in 3.28s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 8 items
+
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_xz_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_single_file_dir_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_multiple_files_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_cutoff_vocab PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_build_model PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_load_model PASSED
+../publishablew/stanza/stanza/stanza/tests/common/test_char_model.py::TestCharModel::test_save_load_model PASSED
+
+=============================== warnings summary ===============================
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/venv/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+    warnings.warn(
+
+common/test_char_model.py::TestCharModel::test_build_model
+common/test_char_model.py::TestCharModel::test_load_model
+common/test_char_model.py::TestCharModel::test_save_load_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:271: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/common/char_model.py:345: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    state = torch.load(filename, lambda storage, loc: storage)
+
+common/test_char_model.py::TestCharModel::test_build_model
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/charlm.py:209: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    return {'char': CharVocab.load_state_dict(torch.load(vocab_file, lambda storage, loc: storage))}
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 6 warnings in 3.68s =========================

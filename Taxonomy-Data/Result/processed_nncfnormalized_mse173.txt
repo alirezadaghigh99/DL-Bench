@@ -1,0 +1,195 @@
+output file:
+processed_nncfnormalized_mse173.json
+function:
+normalized_mse
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf
+configfile: pyproject.toml
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 35 items
+
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[zero_nmse_when_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[trivial] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[not_symmetric] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[simple_graph-ref_groups0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[graph_with_shapeof-ref_groups1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.TENSORFLOW-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-False-callable] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn_error PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[True-0.1] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[False-4.833333] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_sequential_calculation_ranking_score INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_all_same INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_different INFO:nncf:NMSE metric is used to rank quantizers
+INFO:nncf:Elapsed Time: 00:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[5-reference_values0-approximate_values0-expected_indices0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[0-reference_values1-approximate_values1-expected_indices1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[10-reference_values2-approximate_values2-expected_indices2] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[3-reference_values3-approximate_values3-expected_indices3] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[1-reference_values4-approximate_values4-expected_indices4] PASSED
+
+============================== 35 passed in 0.06s ==============================
+
+
+Final Test Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf
+configfile: pyproject.toml
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 35 items
+
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[zero_nmse_when_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[trivial] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[not_symmetric] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[simple_graph-ref_groups0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[graph_with_shapeof-ref_groups1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.TENSORFLOW-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-False-callable] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn_error PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[True-0.1] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[False-4.833333] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_sequential_calculation_ranking_score INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_all_same INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_different INFO:nncf:NMSE metric is used to rank quantizers
+INFO:nncf:Elapsed Time: 00:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[5-reference_values0-approximate_values0-expected_indices0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[0-reference_values1-approximate_values1-expected_indices1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[10-reference_values2-approximate_values2-expected_indices2] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[3-reference_values3-approximate_values3-expected_indices3] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[1-reference_values4-approximate_values4-expected_indices4] PASSED
+
+============================== 35 passed in 0.06s ==============================
+
+
+Initial Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf
+configfile: pyproject.toml
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 35 items
+
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[zero_nmse_when_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[trivial] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_normalized_mse[not_symmetric] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_different] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[sort_stable] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_equal] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_zero] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[simple] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[all_negative] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_equals_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_get_subset_indices_pot_version[subset_size_greater_than_num_errors] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[simple_graph-ref_groups0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_find_groups_of_quantizers_to_rank[graph_with_shapeof-ref_groups1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.TENSORFLOW-True-sub] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn[BackendType.OPENVINO-False-callable] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_create_ranking_fn_error PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[True-0.1] INFO:nncf:ORIGINAL metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_calculate_ranking_score[False-4.833333] INFO:nncf:NMSE metric is used to rank quantizers
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_sequential_calculation_ranking_score INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_all_same INFO:nncf:NMSE metric is used to rank quantizers
+Calculating ranking scores ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 3/3 • 0:00:00 • 0:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_rank_groups_of_quantizers_score_different INFO:nncf:NMSE metric is used to rank quantizers
+INFO:nncf:Elapsed Time: 00:00:00
+INFO:nncf:Elapsed Time: 00:00:00
+PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[5-reference_values0-approximate_values0-expected_indices0] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[0-reference_values1-approximate_values1-expected_indices1] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[10-reference_values2-approximate_values2-expected_indices2] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[3-reference_values3-approximate_values3-expected_indices3] PASSED
+../publishablew/nncf/nncf/tests/common/accuracy_control/test_ranking.py::test_select_subset[1-reference_values4-approximate_values4-expected_indices4] PASSED
+
+============================== 35 passed in 0.13s ==============================

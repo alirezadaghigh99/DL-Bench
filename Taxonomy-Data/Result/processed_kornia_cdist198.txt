@@ -1,0 +1,418 @@
+output file:
+processed_kornia_cdist198.json
+function:
+_cdist
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn]', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn] FAILED', '../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'onnxrt', 'jit', 'cudagraphs', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 23 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching1[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_nomatch[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching2[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn] FAILED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn] FAILED
+
+=================================== FAILURES ===================================
+____________________ TestMatchSMNN.test_jit[cpu-float32-nn] ____________________
+
+self = <test_matching.TestMatchSMNN object at 0x7ce160d0cd30>, match_type = 'nn'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    @pytest.mark.parametrize("match_type", ["nn", "snn", "mnn", "smnn"])
+    def test_jit(self, match_type, device, dtype):
+        desc1 = torch.rand(5, 8, device=device, dtype=dtype)
+        desc2 = torch.rand(7, 8, device=device, dtype=dtype)
+        matcher = DescriptorMatcher(match_type, 0.8).to(device)
+>       matcher_jit = torch.jit.script(DescriptorMatcher(match_type, 0.8).to(device))
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1147: in _script_impl
+    return torch.jit._recursive.create_script_module(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:557: in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:634: in create_script_module_impl
+    create_methods_and_properties_from_stubs(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:466: in create_methods_and_properties_from_stubs
+    concrete_type._create_methods_and_properties(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:1002: in try_compile_fn
+    return torch.jit.script(fn, _rcb=rcb)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1205: in _script_impl
+    fn = torch._C._jit_script_compile(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:1002: in try_compile_fn
+    return torch.jit.script(fn, _rcb=rcb)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1205: in _script_impl
+    fn = torch._C._jit_script_compile(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:1002: in try_compile_fn
+    return torch.jit.script(fn, _rcb=rcb)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7ce23b98bd30>
+ctx = <torch._sources.SourceContext object at 0x7ce24b51a750>
+node = <ast.ImportFrom object at 0x7ce160d0ea40>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/feature/matching.py", line 11
+E           def _cdist(d1: Tensor, d2: Tensor) -> Tensor:
+E               from .temp import _cdist
+E               ~~~~ <--- HERE
+E               return _cdist(d1, d2)
+E           '_get_lazy_distance_matrix' is being compiled since it was called from 'match_nn'
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/feature/matching.py", line 75
+E               if len(desc1) == 0 or len(desc2) == 0:
+E                   return _no_match(desc1)
+E               distance_matrix = _get_lazy_distance_matrix(desc1, desc2, dm)
+E               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+E               match_dists, idxs_in_2 = torch.min(distance_matrix, dim=1)
+E               idxs_in1 = torch.arange(0, idxs_in_2.size(0), device=idxs_in_2.device)
+E           'match_nn' is being compiled since it was called from 'DescriptorMatcher.forward'
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/feature/matching.py", line 291
+E                   """
+E                   if self.match_mode == 'nn':
+E                       out = match_nn(desc1, desc2)
+E                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~ <--- HERE
+E                   elif self.match_mode == 'mnn':
+E                       out = match_mnn(desc1, desc2)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+___________________ TestMatchSMNN.test_jit[cpu-float32-snn] ____________________
+
+self = <test_matching.TestMatchSMNN object at 0x7ce160d0cc70>
+match_type = 'snn', device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    @pytest.mark.parametrize("match_type", ["nn", "snn", "mnn", "smnn"])
+    def test_jit(self, match_type, device, dtype):
+        desc1 = torch.rand(5, 8, device=device, dtype=dtype)
+        desc2 = torch.rand(7, 8, device=device, dtype=dtype)
+        matcher = DescriptorMatcher(match_type, 0.8).to(device)
+>       matcher_jit = torch.jit.script(DescriptorMatcher(match_type, 0.8).to(device))
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1147: in _script_impl
+    return torch.jit._recursive.create_script_module(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:557: in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:634: in create_script_module_impl
+    create_methods_and_properties_from_stubs(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+concrete_type = <torch.ConcreteModuleType object at 0x7ce161207a70>
+method_stubs = [ScriptMethodStub(resolution_callback=<function createResolutionCallbackFromEnv.<locals>.<lambda> at 0x7ce1607969e0>, ..._views.Def object at 0x7ce161368eb0>, original_method=<bound method DescriptorMatcher.forward of DescriptorMatcher()>)]
+property_stubs = []
+
+    def create_methods_and_properties_from_stubs(
+        concrete_type, method_stubs, property_stubs
+    ):
+        method_defs = [m.def_ for m in method_stubs]
+        method_rcbs = [m.resolution_callback for m in method_stubs]
+        method_defaults = [get_default_args(m.original_method) for m in method_stubs]
+    
+        property_defs = [p.def_ for p in property_stubs]
+        property_rcbs = [p.resolution_callback for p in property_stubs]
+    
+>       concrete_type._create_methods_and_properties(
+            property_defs, property_rcbs, method_defs, method_rcbs, method_defaults
+        )
+E       RuntimeError: Can't redefine method: forward on class: __torch__.kornia.feature.matching.DescriptorMatcher (of Python compilation unit at: 0x5d1f7cd15ab0)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:466: RuntimeError
+___________________ TestMatchSMNN.test_jit[cpu-float32-mnn] ____________________
+
+self = <test_matching.TestMatchSMNN object at 0x7ce160d0cfd0>
+match_type = 'mnn', device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    @pytest.mark.parametrize("match_type", ["nn", "snn", "mnn", "smnn"])
+    def test_jit(self, match_type, device, dtype):
+        desc1 = torch.rand(5, 8, device=device, dtype=dtype)
+        desc2 = torch.rand(7, 8, device=device, dtype=dtype)
+        matcher = DescriptorMatcher(match_type, 0.8).to(device)
+>       matcher_jit = torch.jit.script(DescriptorMatcher(match_type, 0.8).to(device))
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1147: in _script_impl
+    return torch.jit._recursive.create_script_module(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:557: in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:634: in create_script_module_impl
+    create_methods_and_properties_from_stubs(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+concrete_type = <torch.ConcreteModuleType object at 0x7ce161207a70>
+method_stubs = [ScriptMethodStub(resolution_callback=<function createResolutionCallbackFromEnv.<locals>.<lambda> at 0x7ce16054e050>, ..._views.Def object at 0x7ce161106cb0>, original_method=<bound method DescriptorMatcher.forward of DescriptorMatcher()>)]
+property_stubs = []
+
+    def create_methods_and_properties_from_stubs(
+        concrete_type, method_stubs, property_stubs
+    ):
+        method_defs = [m.def_ for m in method_stubs]
+        method_rcbs = [m.resolution_callback for m in method_stubs]
+        method_defaults = [get_default_args(m.original_method) for m in method_stubs]
+    
+        property_defs = [p.def_ for p in property_stubs]
+        property_rcbs = [p.resolution_callback for p in property_stubs]
+    
+>       concrete_type._create_methods_and_properties(
+            property_defs, property_rcbs, method_defs, method_rcbs, method_defaults
+        )
+E       RuntimeError: Can't redefine method: forward on class: __torch__.kornia.feature.matching.DescriptorMatcher (of Python compilation unit at: 0x5d1f7cd15ab0)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:466: RuntimeError
+___________________ TestMatchSMNN.test_jit[cpu-float32-smnn] ___________________
+
+self = <test_matching.TestMatchSMNN object at 0x7ce160d0d090>
+match_type = 'smnn', device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    @pytest.mark.parametrize("match_type", ["nn", "snn", "mnn", "smnn"])
+    def test_jit(self, match_type, device, dtype):
+        desc1 = torch.rand(5, 8, device=device, dtype=dtype)
+        desc2 = torch.rand(7, 8, device=device, dtype=dtype)
+        matcher = DescriptorMatcher(match_type, 0.8).to(device)
+>       matcher_jit = torch.jit.script(DescriptorMatcher(match_type, 0.8).to(device))
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1147: in _script_impl
+    return torch.jit._recursive.create_script_module(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:557: in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:634: in create_script_module_impl
+    create_methods_and_properties_from_stubs(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+concrete_type = <torch.ConcreteModuleType object at 0x7ce161207a70>
+method_stubs = [ScriptMethodStub(resolution_callback=<function createResolutionCallbackFromEnv.<locals>.<lambda> at 0x7ce16054fc70>, ..._views.Def object at 0x7ce1613375f0>, original_method=<bound method DescriptorMatcher.forward of DescriptorMatcher()>)]
+property_stubs = []
+
+    def create_methods_and_properties_from_stubs(
+        concrete_type, method_stubs, property_stubs
+    ):
+        method_defs = [m.def_ for m in method_stubs]
+        method_rcbs = [m.resolution_callback for m in method_stubs]
+        method_defaults = [get_default_args(m.original_method) for m in method_stubs]
+    
+        property_defs = [p.def_ for p in property_stubs]
+        property_rcbs = [p.resolution_callback for p in property_stubs]
+    
+>       concrete_type._create_methods_and_properties(
+            property_defs, property_rcbs, method_defs, method_rcbs, method_defaults
+        )
+E       RuntimeError: Can't redefine method: forward on class: __torch__.kornia.feature.matching.DescriptorMatcher (of Python compilation unit at: 0x5d1f7cd15ab0)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_recursive.py:466: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn]
+========================= 4 failed, 19 passed in 0.51s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'cudagraphs', 'jit', 'onnxrt', 'tvm', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 23 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching1[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_nomatch[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching2[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn] PASSED
+
+============================== 23 passed in 0.27s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', None, 'tvm', 'onnxrt', 'inductor', 'openxla', 'jit', 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 23 items
+
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-4-4] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-2-5-128] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_shape[cpu-6-2-32] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching1[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_nomatch[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_matching2[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-nn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-snn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-mnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-10] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-10-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_empty_nocrash[cpu-float32-smnn-0-0] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-nn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-snn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-mnn] PASSED
+../publishablew/kornia/kornia/tests/feature/test_matching.py::TestMatchSMNN::test_jit[cpu-float32-smnn] PASSED
+
+============================== 23 passed in 0.31s ==============================

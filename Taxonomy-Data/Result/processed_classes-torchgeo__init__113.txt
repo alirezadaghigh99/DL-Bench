@@ -1,0 +1,246 @@
+output file:
+processed_classes-torchgeo__init__113.json
+function:
+__init__
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes FAILED [ 50%]', '../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters FAILED [100%]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels', '../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels FAILED [ 25%]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size', '../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size FAILED [ 75%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 4 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels FAILED [ 25%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes FAILED [ 50%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size FAILED [ 75%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters FAILED [100%]
+
+=================================== FAILURES ===================================
+___________________________ TestFCN.test_in_channels ___________________________
+
+self = <tests.models.test_fcn.TestFCN object at 0x7865cb9a2050>
+
+    def test_in_channels(self) -> None:
+        model = FCN(in_channels=5, classes=4, num_filters=10)
+        x = torch.randn(2, 5, 64, 64)
+>       model(x)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/torchgeo/torchgeo/torchgeo/models/fcn.py:19: in forward
+    x = self.backbone(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FCN(
+  (layer1): Sequential(
+    (0): Conv2d(5, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyR...    (0): Conv2d(10, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+)
+name = 'backbone'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'FCN' object has no attribute 'backbone'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_____________________________ TestFCN.test_classes _____________________________
+
+self = <tests.models.test_fcn.TestFCN object at 0x7865c7d09110>
+
+    def test_classes(self) -> None:
+        model = FCN(in_channels=5, classes=4, num_filters=10)
+        x = torch.randn(2, 5, 64, 64)
+>       y = model(x)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/torchgeo/torchgeo/torchgeo/models/fcn.py:19: in forward
+    x = self.backbone(x)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FCN(
+  (layer1): Sequential(
+    (0): Conv2d(5, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyR...    (0): Conv2d(10, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+)
+name = 'backbone'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'FCN' object has no attribute 'backbone'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+___________________________ TestFCN.test_model_size ____________________________
+
+self = <tests.models.test_fcn.TestFCN object at 0x7865c7d09790>
+
+    def test_model_size(self) -> None:
+        model = FCN(in_channels=5, classes=4, num_filters=10)
+    
+>       assert len(model.backbone) == 10
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FCN(
+  (layer1): Sequential(
+    (0): Conv2d(5, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyR...    (0): Conv2d(10, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+)
+name = 'backbone'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'FCN' object has no attribute 'backbone'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+__________________________ TestFCN.test_model_filters __________________________
+
+self = <tests.models.test_fcn.TestFCN object at 0x7865c7d09ed0>
+
+    def test_model_filters(self) -> None:
+        model = FCN(in_channels=5, classes=4, num_filters=10)
+    
+        conv_layers = [
+>           model.backbone[0],
+            model.backbone[2],
+            model.backbone[4],
+            model.backbone[6],
+            model.backbone[8],
+        ]
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = FCN(
+  (layer1): Sequential(
+    (0): Conv2d(5, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyR...    (0): Conv2d(10, 4, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+)
+name = 'backbone'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'FCN' object has no attribute 'backbone'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters
+============================== 4 failed in 1.42s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 4 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels PASSED [ 25%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes PASSED [ 50%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size PASSED [ 75%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters PASSED [100%]
+
+============================== 4 passed in 1.27s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 4 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_in_channels PASSED [ 25%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_classes PASSED [ 50%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_size PASSED [ 75%]
+../publishablew/torchgeo/torchgeo/tests/models/test_fcn.py::TestFCN::test_model_filters PASSED [100%]
+
+============================== 4 passed in 1.28s ===============================

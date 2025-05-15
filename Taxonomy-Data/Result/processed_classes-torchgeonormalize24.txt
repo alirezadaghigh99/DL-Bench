@@ -1,0 +1,180 @@
+output file:
+processed_classes-torchgeonormalize24.json
+function:
+normalize
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 7 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_in_channels PASSED [ 14%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_num_features PASSED [ 28%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_untrainable PASSED [ 42%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_biases PASSED [ 57%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_seed PASSED [ 71%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical FAILED [ 85%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical_no_dataset PASSED [100%]
+
+=================================== FAILURES ===================================
+____________________________ TestRCF.test_empirical ____________________________
+
+self = <tests.models.test_rcf.TestRCF object at 0x781f68f44dd0>
+
+    def test_empirical(self) -> None:
+        root = os.path.join('tests', 'data', 'eurosat')
+>       ds = EuroSAT(root=root, bands=EuroSAT.rgb_bands, split='train')
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:141: in __init__
+    self._verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'EuroSAT' object has no attribute 'imgs'") raised in repr()] EuroSAT object at 0x781f68f5c1d0>
+
+    def _verify(self) -> None:
+        """Verify the integrity of the dataset."""
+        # Check if the files already exist
+        filepath = os.path.join(self.root, self.base_dir)
+        if os.path.exists(filepath):
+            return
+    
+        # Check if zip file already exists (if so then extract)
+        if self._check_integrity():
+            self._extract()
+            return
+    
+        # Check if the user requested to download the dataset
+        if not self.download:
+>           raise DatasetNotFoundError(self)
+E           torchgeo.datasets.errors.DatasetNotFoundError: Dataset not found in `root='tests/data/eurosat'` and `download=False`, either specify a different `root` or use `download=True` to automatically download the dataset.
+
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:201: DatasetNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical
+========================= 1 failed, 6 passed in 1.35s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 7 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_in_channels PASSED [ 14%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_num_features PASSED [ 28%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_untrainable PASSED [ 42%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_biases PASSED [ 57%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_seed PASSED [ 71%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical FAILED [ 85%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical_no_dataset PASSED [100%]
+
+=================================== FAILURES ===================================
+____________________________ TestRCF.test_empirical ____________________________
+
+self = <tests.models.test_rcf.TestRCF object at 0x7cea4e72dd90>
+
+    def test_empirical(self) -> None:
+        root = os.path.join('tests', 'data', 'eurosat')
+>       ds = EuroSAT(root=root, bands=EuroSAT.rgb_bands, split='train')
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:141: in __init__
+    self._verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'EuroSAT' object has no attribute 'imgs'") raised in repr()] EuroSAT object at 0x7cea4e743e90>
+
+    def _verify(self) -> None:
+        """Verify the integrity of the dataset."""
+        # Check if the files already exist
+        filepath = os.path.join(self.root, self.base_dir)
+        if os.path.exists(filepath):
+            return
+    
+        # Check if zip file already exists (if so then extract)
+        if self._check_integrity():
+            self._extract()
+            return
+    
+        # Check if the user requested to download the dataset
+        if not self.download:
+>           raise DatasetNotFoundError(self)
+E           torchgeo.datasets.errors.DatasetNotFoundError: Dataset not found in `root='tests/data/eurosat'` and `download=False`, either specify a different `root` or use `download=True` to automatically download the dataset.
+
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:201: DatasetNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical
+========================= 1 failed, 6 passed in 1.36s ==========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 7 items
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_in_channels PASSED [ 14%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_num_features PASSED [ 28%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_untrainable PASSED [ 42%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_biases PASSED [ 57%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_seed PASSED [ 71%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical FAILED [ 85%]
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical_no_dataset PASSED [100%]
+
+=================================== FAILURES ===================================
+____________________________ TestRCF.test_empirical ____________________________
+
+self = <tests.models.test_rcf.TestRCF object at 0x7b137b7ffed0>
+
+    def test_empirical(self) -> None:
+        root = os.path.join('tests', 'data', 'eurosat')
+>       ds = EuroSAT(root=root, bands=EuroSAT.rgb_bands, split='train')
+
+../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:141: in __init__
+    self._verify()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <[AttributeError("'EuroSAT' object has no attribute 'imgs'") raised in repr()] EuroSAT object at 0x7b137b31ba50>
+
+    def _verify(self) -> None:
+        """Verify the integrity of the dataset."""
+        # Check if the files already exist
+        filepath = os.path.join(self.root, self.base_dir)
+        if os.path.exists(filepath):
+            return
+    
+        # Check if zip file already exists (if so then extract)
+        if self._check_integrity():
+            self._extract()
+            return
+    
+        # Check if the user requested to download the dataset
+        if not self.download:
+>           raise DatasetNotFoundError(self)
+E           torchgeo.datasets.errors.DatasetNotFoundError: Dataset not found in `root='tests/data/eurosat'` and `download=False`, either specify a different `root` or use `download=True` to automatically download the dataset.
+
+../publishablew/torchgeo/torchgeo/torchgeo/datasets/eurosat.py:201: DatasetNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_rcf.py::TestRCF::test_empirical
+========================= 1 failed, 6 passed in 1.41s ==========================

@@ -1,0 +1,581 @@
+output file:
+processed_pfrlcompute_policy_gradient_full_correction318.json
+function:
+compute_policy_gradient_full_correction
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax]', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax] FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax]', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax] FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax]', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax] FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax]', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax]', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax] FAILED', '../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax] FAILED', 'FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 32 items
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax] FAILED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Softmax] SKIPPED
+
+=================================== FAILURES ===================================
+__ TestDegenerateDistribution.test_full_correction_term[0-True-True-Softmax] ___
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680d8510>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 0
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[0-True-False-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680d8990>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 0
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[0-False-True-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680d9210>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 0
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+_ TestDegenerateDistribution.test_full_correction_term[0-False-False-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680cfe50>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 0
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[1-True-True-Softmax] ___
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e0490>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 1
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[1-True-False-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e0990>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 1
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[1-False-True-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e0e90>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 1
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+_ TestDegenerateDistribution.test_full_correction_term[1-False-False-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e1390>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 1
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+__ TestDegenerateDistribution.test_full_correction_term[10-True-True-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e1890>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 10
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+_ TestDegenerateDistribution.test_full_correction_term[10-True-False-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e1dd0>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(probs: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 10
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+_ TestDegenerateDistribution.test_full_correction_term[10-False-True-Softmax] __
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e23d0>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(probs: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 10
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+_ TestDegenerateDistribution.test_full_correction_term[10-False-False-Softmax] _
+
+self = <test_acer.TestDegenerateDistribution object at 0x7657680e29d0>
+
+    def test_full_correction_term(self):
+        if self.distrib_type == "Gaussian":
+            pytest.skip()
+        if self.truncation_threshold is None:
+            pytest.skip()
+>       correction_term = acer.compute_policy_gradient_full_correction(
+            self.pi, self.mu, self.action_value, 0, self.truncation_threshold
+        )
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pfrl/pfrl/pfrl/agents/acer.py:26: in compute_policy_gradient_full_correction
+    return compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+action_distrib = Categorical(logits: torch.Size([1, 2]))
+action_distrib_mu = Categorical(logits: torch.Size([1, 2]))
+action_value = DiscreteActionValue greedy_actions:[1] q_values:[[1. 3.]], v = 0
+truncation_threshold = 10
+
+    def compute_policy_gradient_full_correction(action_distrib, action_distrib_mu, action_value, v, truncation_threshold):
+        assert isinstance(action_distrib, torch.distributions.Categorical), 'action_distrib must be a torch.distributions.Categorical'
+        assert isinstance(action_distrib_mu, torch.distributions.Categorical), 'action_distrib_mu must be a torch.distributions.Categorical'
+>       assert isinstance(action_value, torch.Tensor), 'action_value must be a torch.Tensor'
+E       AssertionError: action_value must be a torch.Tensor
+
+../publishablew/pfrl/pfrl/pfrl/agents/temp.py:17: AssertionError
+=============================== warnings summary ===============================
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax]
+FAILED ../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax]
+================== 12 failed, 20 skipped, 2 warnings in 1.24s ==================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 32 items
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax] correction_term tensor([1.1921e-07])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax] correction_term tensor([1.3863])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax] correction_term tensor([1.1921e-07])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax] correction_term tensor([1.3863])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax] correction_term tensor([1.0397])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax] correction_term tensor([5.9605e-08])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax] correction_term tensor([1.0397])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Softmax] SKIPPED
+
+=============================== warnings summary ===============================
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 12 passed, 20 skipped, 2 warnings in 1.02s ==================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 32 items
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-True-Softmax] correction_term tensor([1.1921e-07])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-True-False-Softmax] correction_term tensor([1.3863])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-True-Softmax] correction_term tensor([1.1921e-07])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[0-False-False-Softmax] correction_term tensor([1.3863])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-True-False-Softmax] correction_term tensor([1.0397])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-True-Softmax] correction_term tensor([5.9605e-08])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[1-False-False-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-True-False-Softmax] correction_term tensor([1.0397])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-True-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[10-False-False-Softmax] correction_term tensor([-0.])
+PASSED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-True-False-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-True-Softmax] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Gaussian] SKIPPED
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py::TestDegenerateDistribution::test_full_correction_term[None-False-False-Softmax] SKIPPED
+
+=============================== warnings summary ===============================
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:326: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+../publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/agents_tests/test_acer.py:333: PytestUnknownMarkWarning: Unknown pytest.mark.async_ - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.async_
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 12 passed, 20 skipped, 2 warnings in 1.03s ==================

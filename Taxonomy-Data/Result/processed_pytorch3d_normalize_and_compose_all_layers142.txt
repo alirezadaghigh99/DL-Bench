@@ -1,0 +1,299 @@
+output file:
+processed_pytorch3d_normalize_and_compose_all_layers142.json
+function:
+_normalize_and_compose_all_layers
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies FAILED', '../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color FAILED', '../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque FAILED', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies FAILED
+
+=================================== FAILURES ===================================
+____________ TestNormalizeAndComposeAllLayers.test_background_color ____________
+
+self = <tests.test_splatter_blend.TestNormalizeAndComposeAllLayers testMethod=test_background_color>
+
+    def test_background_color(self):
+        # Background should always have alpha=0, and the chosen RGB.
+        N, H, W = 2, 3, 4
+        # Make a mask with background in the zeroth row of the first image.
+        bg_mask = torch.zeros([N, H, W, 1, 1])
+        bg_mask[0, :, 0] = 1
+    
+        bg_color = torch.tensor([0.2, 0.3, 0.4])
+    
+        color_layers = torch.rand((N, H, W, 4, 3)) * (1 - bg_mask)
+        color_weights = torch.rand((N, H, W, 1, 3)) * (1 - bg_mask)
+    
+>       colors = _normalize_and_compose_all_layers(
+            bg_color, color_layers, color_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:587: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:190: in _normalize_and_compose_all_layers
+    return _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+background_color = tensor([0.2000, 0.3000, 0.4000])
+splatted_colors_per_occlusion_layer = tensor([[[[[0.0000, 0.0000, 0.0000],
+           [0.0000, 0.0000, 0.0000],
+           [0.0000, 0.0000, 0.0000],
+       ...32],
+           [0.9445, 0.1149, 0.2370],
+           [0.8608, 0.8135, 0.3218],
+           [0.4067, 0.8748, 0.6917]]]]])
+splatted_weights_per_occlusion_layer = tensor([[[[[0.0000e+00, 0.0000e+00, 0.0000e+00]],
+
+          [[3.5363e-01, 3.2508e-01, 3.8000e-01]],
+
+          [[3.36... 1.7627e-02]],
+
+          [[2.7891e-01, 5.1613e-01, 4.9882e-01]],
+
+          [[5.1710e-01, 6.8016e-01, 7.9933e-01]]]]])
+
+    def _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer):
+        background_color = torch.tensor(background_color, dtype=torch.float32)
+        N, H, W, _, _ = splatted_colors_per_occlusion_layer.shape
+        output_colors = torch.zeros((N, H, W, 4), dtype=torch.float32)
+        output_colors[..., :3] = background_color
+        for i in range(3):
+            colors = splatted_colors_per_occlusion_layer[..., i, :]
+            weights = splatted_weights_per_occlusion_layer[..., i]
+            normalized_colors = torch.where(weights > 0, colors / weights, colors)
+            alpha = normalized_colors[..., 3:4]
+>           output_colors[..., :3] = alpha * normalized_colors[..., :3] + (1 - alpha) * output_colors[..., :3]
+E           RuntimeError: The size of tensor a (0) must match the size of tensor b (3) at non-singleton dimension 3
+
+../pytorch3d/pytorch3d/renderer/temp.py:21: RuntimeError
+___________ TestNormalizeAndComposeAllLayers.test_compositing_opaque ___________
+
+self = <tests.test_splatter_blend.TestNormalizeAndComposeAllLayers testMethod=test_compositing_opaque>
+
+    def test_compositing_opaque(self):
+        # When all colors are opaque, only the foreground layer should be visible.
+        N, H, W = 2, 3, 4
+        color_layers = torch.rand((N, H, W, 4, 3))
+        color_layers[..., 3, :] = 1.0
+        color_weights = torch.ones((N, H, W, 1, 3))
+    
+>       out_colors = _normalize_and_compose_all_layers(
+            torch.tensor([0.0, 0.0, 0.0]), color_layers, color_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:605: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:190: in _normalize_and_compose_all_layers
+    return _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+background_color = tensor([0., 0., 0.])
+splatted_colors_per_occlusion_layer = tensor([[[[[0.6447, 0.4673, 0.6120],
+           [0.2232, 0.8040, 0.7760],
+           [0.8558, 0.2150, 0.6078],
+       ...82],
+           [0.9536, 0.6177, 0.2061],
+           [0.1401, 0.3414, 0.1162],
+           [1.0000, 1.0000, 1.0000]]]]])
+splatted_weights_per_occlusion_layer = tensor([[[[[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]]],
+
+
+        ... 1.]]],
+
+
+         [[[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]]]]])
+
+    def _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer):
+        background_color = torch.tensor(background_color, dtype=torch.float32)
+        N, H, W, _, _ = splatted_colors_per_occlusion_layer.shape
+        output_colors = torch.zeros((N, H, W, 4), dtype=torch.float32)
+        output_colors[..., :3] = background_color
+        for i in range(3):
+            colors = splatted_colors_per_occlusion_layer[..., i, :]
+            weights = splatted_weights_per_occlusion_layer[..., i]
+            normalized_colors = torch.where(weights > 0, colors / weights, colors)
+            alpha = normalized_colors[..., 3:4]
+>           output_colors[..., :3] = alpha * normalized_colors[..., :3] + (1 - alpha) * output_colors[..., :3]
+E           RuntimeError: The size of tensor a (0) must match the size of tensor b (3) at non-singleton dimension 3
+
+../pytorch3d/pytorch3d/renderer/temp.py:21: RuntimeError
+_______ TestNormalizeAndComposeAllLayers.test_compositing_transparencies _______
+
+self = <tests.test_splatter_blend.TestNormalizeAndComposeAllLayers testMethod=test_compositing_transparencies>
+
+    def test_compositing_transparencies(self):
+        # When foreground layer is transparent and surface and bg are semi-transparent,
+        # we should return a  mix of the two latter.
+        N, H, W = 2, 3, 4
+        color_layers = torch.rand((N, H, W, 4, 3))
+        color_layers[..., 3, 0] = 0.1  # fg
+        color_layers[..., 3, 1] = 0.2  # surface
+        color_layers[..., 3, 2] = 0.3  # bg
+        color_weights = torch.ones((N, H, W, 1, 3))
+    
+>       out_colors = _normalize_and_compose_all_layers(
+            torch.tensor([0.0, 0.0, 0.0]), color_layers, color_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:620: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:190: in _normalize_and_compose_all_layers
+    return _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+background_color = tensor([0., 0., 0.])
+splatted_colors_per_occlusion_layer = tensor([[[[[0.6577, 0.2760, 0.4817],
+           [0.7765, 0.3275, 0.4620],
+           [0.4339, 0.0470, 0.3287],
+       ...18],
+           [0.1047, 0.2260, 0.2311],
+           [0.8737, 0.5223, 0.2090],
+           [0.1000, 0.2000, 0.3000]]]]])
+splatted_weights_per_occlusion_layer = tensor([[[[[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]]],
+
+
+        ... 1.]]],
+
+
+         [[[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]],
+
+          [[1., 1., 1.]]]]])
+
+    def _normalize_and_compose_all_layers(background_color, splatted_colors_per_occlusion_layer, splatted_weights_per_occlusion_layer):
+        background_color = torch.tensor(background_color, dtype=torch.float32)
+        N, H, W, _, _ = splatted_colors_per_occlusion_layer.shape
+        output_colors = torch.zeros((N, H, W, 4), dtype=torch.float32)
+        output_colors[..., :3] = background_color
+        for i in range(3):
+            colors = splatted_colors_per_occlusion_layer[..., i, :]
+            weights = splatted_weights_per_occlusion_layer[..., i]
+            normalized_colors = torch.where(weights > 0, colors / weights, colors)
+            alpha = normalized_colors[..., 3:4]
+>           output_colors[..., :3] = alpha * normalized_colors[..., :3] + (1 - alpha) * output_colors[..., :3]
+E           RuntimeError: The size of tensor a (0) must match the size of tensor b (3) at non-singleton dimension 3
+
+../pytorch3d/pytorch3d/renderer/temp.py:21: RuntimeError
+=============================== warnings summary ===============================
+tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color
+tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque
+tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies
+  /local/data0/moved_data/pytorch3d/pytorch3d/renderer/temp.py:12: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    background_color = torch.tensor(background_color, dtype=torch.float32)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies
+=================== 3 failed, 16 passed, 3 warnings in 1.38s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.23s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.24s ==============================

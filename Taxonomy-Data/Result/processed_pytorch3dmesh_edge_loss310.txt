@@ -1,0 +1,152 @@
+output file:
+processed_pytorch3dmesh_edge_loss310.json
+function:
+mesh_edge_loss
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output', 'FAILED ../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes', '../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes FAILED', '../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes FAILED
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output FAILED
+
+=================================== FAILURES ===================================
+______________________ TestMeshEdgeLoss.test_empty_meshes ______________________
+
+self = <tests.test_mesh_edge_loss.TestMeshEdgeLoss testMethod=test_empty_meshes>
+
+    def test_empty_meshes(self):
+        device = torch.device("cuda:0")
+        target_length = 0
+        N = 10
+        V = 32
+        verts_list = []
+        faces_list = []
+        for _ in range(N):
+            vn = torch.randint(3, high=V, size=(1,))[0].item()
+            verts = torch.rand((vn, 3), dtype=torch.float32, device=device)
+            faces = torch.tensor([], dtype=torch.int64, device=device)
+            verts_list.append(verts)
+            faces_list.append(faces)
+        mesh = Meshes(verts=verts_list, faces=faces_list)
+>       loss = mesh_edge_loss(mesh, target_length=target_length)
+
+../pytorch3d/tests/test_mesh_edge_loss.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/mesh_edge_loss.py:5: in mesh_edge_loss
+    return mesh_edge_loss(meshes, target_length)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+meshes = <pytorch3d.structures.meshes.Meshes object at 0x797358559f40>
+target_length = 0
+
+    def mesh_edge_loss(meshes: Meshes, target_length: float) -> torch.Tensor:
+        if len(meshes) == 0:
+            return torch.tensor(0.0, device=meshes.device)
+        total_loss = 0.0
+        num_meshes = len(meshes)
+        for mesh in meshes:
+            edges = mesh.edges_packed()
+            verts = mesh.verts_packed()
+            edge_lengths = torch.norm(verts[edges[:, 0]] - verts[edges[:, 1]], dim=1)
+            num_edges = edge_lengths.shape[0]
+>           weight = 1.0 / num_edges
+E           ZeroDivisionError: float division by zero
+
+../pytorch3d/pytorch3d/loss/temp.py:15: ZeroDivisionError
+_________________ TestMeshEdgeLoss.test_mesh_edge_loss_output __________________
+
+self = <tests.test_mesh_edge_loss.TestMeshEdgeLoss testMethod=test_mesh_edge_loss_output>
+
+    def test_mesh_edge_loss_output(self):
+        """
+        Check outputs of tensorized and iterative implementations are the same.
+        """
+        device = torch.device("cuda:0")
+        target_length = 0.5
+        num_meshes = 10
+        num_verts = 32
+        num_faces = 64
+    
+        verts_list = []
+        faces_list = []
+        valid = torch.randint(2, size=(num_meshes,))
+    
+        for n in range(num_meshes):
+            if valid[n]:
+                vn = torch.randint(3, high=num_verts, size=(1,))[0].item()
+                fn = torch.randint(vn, high=num_faces, size=(1,))[0].item()
+                verts = torch.rand((vn, 3), dtype=torch.float32, device=device)
+                faces = torch.randint(
+                    vn, size=(fn, 3), dtype=torch.int64, device=device
+                )
+            else:
+                verts = torch.tensor([], dtype=torch.float32, device=device)
+                faces = torch.tensor([], dtype=torch.int64, device=device)
+            verts_list.append(verts)
+            faces_list.append(faces)
+        meshes = Meshes(verts=verts_list, faces=faces_list)
+>       loss = mesh_edge_loss(meshes, target_length=target_length)
+
+../pytorch3d/tests/test_mesh_edge_loss.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/mesh_edge_loss.py:5: in mesh_edge_loss
+    return mesh_edge_loss(meshes, target_length)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+meshes = <pytorch3d.structures.meshes.Meshes object at 0x79735851f0d0>
+target_length = 0.5
+
+    def mesh_edge_loss(meshes: Meshes, target_length: float) -> torch.Tensor:
+        if len(meshes) == 0:
+            return torch.tensor(0.0, device=meshes.device)
+        total_loss = 0.0
+        num_meshes = len(meshes)
+        for mesh in meshes:
+            edges = mesh.edges_packed()
+            verts = mesh.verts_packed()
+            edge_lengths = torch.norm(verts[edges[:, 0]] - verts[edges[:, 1]], dim=1)
+            num_edges = edge_lengths.shape[0]
+>           weight = 1.0 / num_edges
+E           ZeroDivisionError: float division by zero
+
+../pytorch3d/pytorch3d/loss/temp.py:15: ZeroDivisionError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes
+FAILED ../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output
+============================== 2 failed in 1.32s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes PASSED
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output PASSED
+
+============================== 2 passed in 1.35s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_empty_meshes PASSED
+../pytorch3d/tests/test_mesh_edge_loss.py::TestMeshEdgeLoss::test_mesh_edge_loss_output PASSED
+
+============================== 2 passed in 1.33s ===============================

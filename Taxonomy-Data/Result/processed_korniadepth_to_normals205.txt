@@ -1,0 +1,271 @@
+output file:
+processed_korniadepth_to_normals205.json
+function:
+depth_to_normals
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'cudagraphs', 'openxla', 'inductor', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 10 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_gradcheck[cpu] PASSED
+
+=================================== FAILURES ===================================
+____________ TestDepthToNormals.test_simple_normalized[cpu-float32] ____________
+
+self = <tests.geometry.test_depth.TestDepthToNormals object at 0x7b56a4b02a10>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_simple_normalized(self, device, dtype):
+        # this is for default normalize_points=False
+        depth = 2 * torch.tensor(
+            [[[[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]]]], device=device, dtype=dtype
+        )
+    
+        camera_matrix = torch.tensor([[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]], device=device, dtype=dtype)
+    
+        normals_expected = torch.tensor(
+            [
+                [
+                    [
+                        [0.3432, 0.4861, 0.7628],
+                        [0.2873, 0.4260, 0.6672],
+                        [0.2284, 0.3683, 0.5596],
+                        [0.1695, 0.2980, 0.4496],
+                    ],
+                    [
+                        [0.3432, 0.2873, 0.2363],
+                        [0.4861, 0.4260, 0.3785],
+                        [0.8079, 0.7261, 0.6529],
+                        [0.8948, 0.8237, 0.7543],
+                    ],
+                    [
+                        [0.8743, 0.8253, 0.6019],
+                        [0.8253, 0.7981, 0.6415],
+                        [0.5432, 0.5807, 0.5105],
+                        [0.4129, 0.4824, 0.4784],
+                    ],
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        normals = kornia.geometry.depth.depth_to_normals(depth, camera_matrix, normalize_points=True)
+>       self.assert_close(normals, normals_expected, rtol=1e-3, atol=1e-3)
+
+../publishablew/kornia/kornia/tests/geometry/test_depth.py:217: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[[0., 0., 0.],
+          [0., 0., 0.],
+          [0., 0., 0.],
+          [0., 0., 0.]],
+
+         [[0., 0., 0...     [0., 0., 0.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.],
+          [1., 1., 1.]]]])
+expected = tensor([[[[0.3432, 0.4861, 0.7628],
+          [0.2873, 0.4260, 0.6672],
+          [0.2284, 0.3683, 0.5596],
+          ...0.6019],
+          [0.8253, 0.7981, 0.6415],
+          [0.5432, 0.5807, 0.5105],
+          [0.4129, 0.4824, 0.4784]]]])
+rtol = 0.001, atol = 0.001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 36 / 36 (100.0%)
+E       Greatest absolute difference: 0.8948000073432922 at index (0, 1, 3, 0) (up to 0.001 allowed)
+E       Greatest relative difference: 1.4218939542770386 at index (0, 2, 3, 0) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+=============================== warnings summary ===============================
+tests/geometry/test_depth.py::TestDepthToNormals::test_smoke[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/functional.py:534: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3595.)
+    return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32]
+==================== 1 failed, 9 passed, 1 warning in 0.23s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'cudagraphs', 'inductor', 'jit', 'onnxrt', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 10 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_gradcheck[cpu] PASSED
+
+=============================== warnings summary ===============================
+tests/geometry/test_depth.py: 15 warnings
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/depth.py:192: DeprecationWarning: Since kornia 0.8.0 the `depth_to_3d` is deprecated in favor of `depth_to_3d_v2`. This function will be replaced with the `depth_to_3d_v2` behaviour, where the that does not require the creation of a meshgrid. The return shape can be not backward compatible between these implementations.
+    xyz: Tensor = depth_to_3d(depth, camera_matrix, normalize_points)  # Bx3xHxW
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 15 warnings in 0.17s ========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'onnxrt', 'tvm', 'cudagraphs', 'jit', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 10 items
+
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_shapes_broadcast[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_simple_normalized[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_depth.py::TestDepthToNormals::test_gradcheck[cpu] PASSED
+
+=============================== warnings summary ===============================
+tests/geometry/test_depth.py: 15 warnings
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/depth.py:192: DeprecationWarning: Since kornia 0.8.0 the `depth_to_3d` is deprecated in favor of `depth_to_3d_v2`. This function will be replaced with the `depth_to_3d_v2` behaviour, where the that does not require the creation of a meshgrid. The return shape can be not backward compatible between these implementations.
+    xyz: Tensor = depth_to_3d(depth, camera_matrix, normalize_points)  # Bx3xHxW
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 15 warnings in 0.21s ========================

@@ -1,0 +1,691 @@
+output file:
+processed_classes-cleanlabpredict23.json
+function:
+predict
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] FAILED [ 52%]', '../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf FAILED [  6%]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf FAILED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] FAILED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] PASSED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] PASSED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] PASSED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats PASSED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_cl_default_clf ______________________________
+
+    def test_cl_default_clf():
+        cl = CleanLearning()  # default clf is LogisticRegression
+        X_train_og = deepcopy(HIGH_DIM_DATA["X_train"])
+        cl.fit(HIGH_DIM_DATA["X_train"], HIGH_DIM_DATA["labels_train"])
+    
+        # assert result has the correct length
+>       result = cl.predict(HIGH_DIM_DATA["X_test"])
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:177: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:485: in predict
+    class_predictions = self.clf.predict(X)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/linear_model/_base.py:382: in predict
+    scores = self.decision_function(X)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/linear_model/_base.py:363: in decision_function
+    X = self._validate_data(X, accept_sparse="csr", reset=False)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/base.py:633: in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+array = array([[[0.69803922, 0.02352941, 0.78823529, ..., 0.36470588,
+         0.01568627, 0.51372549],
+        [0.42352941, 0...1372549, 0.89803922],
+        [0.37647059, 0.08235294, 0.30588235, ..., 0.94117647,
+         0.70980392, 0.31764706]]])
+accept_sparse = 'csr'
+
+    def check_array(
+        array,
+        accept_sparse=False,
+        *,
+        accept_large_sparse=True,
+        dtype="numeric",
+        order=None,
+        copy=False,
+        force_writeable=False,
+        force_all_finite=True,
+        ensure_2d=True,
+        allow_nd=False,
+        ensure_min_samples=1,
+        ensure_min_features=1,
+        estimator=None,
+        input_name="",
+    ):
+        """Input validation on an array, list, sparse matrix or similar.
+    
+        By default, the input is checked to be a non-empty 2D array containing
+        only finite values. If the dtype of the array is object, attempt
+        converting to float, raising on failure.
+    
+        Parameters
+        ----------
+        array : object
+            Input object to check / convert.
+    
+        accept_sparse : str, bool or list/tuple of str, default=False
+            String[s] representing allowed sparse matrix formats, such as 'csc',
+            'csr', etc. If the input is sparse but not in the allowed format,
+            it will be converted to the first listed format. True allows the input
+            to be any format. False means that a sparse matrix input will
+            raise an error.
+    
+        accept_large_sparse : bool, default=True
+            If a CSR, CSC, COO or BSR sparse matrix is supplied and accepted by
+            accept_sparse, accept_large_sparse=False will cause it to be accepted
+            only if its indices are stored with a 32-bit dtype.
+    
+            .. versionadded:: 0.20
+    
+        dtype : 'numeric', type, list of type or None, default='numeric'
+            Data type of result. If None, the dtype of the input is preserved.
+            If "numeric", dtype is preserved unless array.dtype is object.
+            If dtype is a list of types, conversion on the first type is only
+            performed if the dtype of the input is not in the list.
+    
+        order : {'F', 'C'} or None, default=None
+            Whether an array will be forced to be fortran or c-style.
+            When order is None (default), then if copy=False, nothing is ensured
+            about the memory layout of the output array; otherwise (copy=True)
+            the memory layout of the returned array is kept as close as possible
+            to the original array.
+    
+        copy : bool, default=False
+            Whether a forced copy will be triggered. If copy=False, a copy might
+            be triggered by a conversion.
+    
+        force_writeable : bool, default=False
+            Whether to force the output array to be writeable. If True, the returned array
+            is guaranteed to be writeable, which may require a copy. Otherwise the
+            writeability of the input array is preserved.
+    
+            .. versionadded:: 1.6
+    
+        force_all_finite : bool or 'allow-nan', default=True
+            Whether to raise an error on np.inf, np.nan, pd.NA in array. The
+            possibilities are:
+    
+            - True: Force all values of array to be finite.
+            - False: accepts np.inf, np.nan, pd.NA in array.
+            - 'allow-nan': accepts only np.nan and pd.NA values in array. Values
+              cannot be infinite.
+    
+            .. versionadded:: 0.20
+               ``force_all_finite`` accepts the string ``'allow-nan'``.
+    
+            .. versionchanged:: 0.23
+               Accepts `pd.NA` and converts it into `np.nan`
+    
+        ensure_2d : bool, default=True
+            Whether to raise a value error if array is not 2D.
+    
+        allow_nd : bool, default=False
+            Whether to allow array.ndim > 2.
+    
+        ensure_min_samples : int, default=1
+            Make sure that the array has a minimum number of samples in its first
+            axis (rows for a 2D array). Setting to 0 disables this check.
+    
+        ensure_min_features : int, default=1
+            Make sure that the 2D array has some minimum number of features
+            (columns). The default value of 1 rejects empty datasets.
+            This check is only enforced when the input data has effectively 2
+            dimensions or is originally 1D and ``ensure_2d`` is True. Setting to 0
+            disables this check.
+    
+        estimator : str or estimator instance, default=None
+            If passed, include the name of the estimator in warning messages.
+    
+        input_name : str, default=""
+            The data name used to construct the error message. In particular
+            if `input_name` is "X" and the data has NaN values and
+            allow_nan is False, the error message will link to the imputer
+            documentation.
+    
+            .. versionadded:: 1.1.0
+    
+        Returns
+        -------
+        array_converted : object
+            The converted and validated array.
+    
+        Examples
+        --------
+        >>> from sklearn.utils.validation import check_array
+        >>> X = [[1, 2, 3], [4, 5, 6]]
+        >>> X_checked = check_array(X)
+        >>> X_checked
+        array([[1, 2, 3], [4, 5, 6]])
+        """
+        if isinstance(array, np.matrix):
+            raise TypeError(
+                "np.matrix is not supported. Please convert to a numpy array with "
+                "np.asarray. For more information see: "
+                "https://numpy.org/doc/stable/reference/generated/numpy.matrix.html"
+            )
+    
+        xp, is_array_api_compliant = get_namespace(array)
+    
+        # store reference to original array to check if copy is needed when
+        # function returns
+        array_orig = array
+    
+        # store whether originally we wanted numeric dtype
+        dtype_numeric = isinstance(dtype, str) and dtype == "numeric"
+    
+        dtype_orig = getattr(array, "dtype", None)
+        if not is_array_api_compliant and not hasattr(dtype_orig, "kind"):
+            # not a data type (e.g. a column named dtype in a pandas DataFrame)
+            dtype_orig = None
+    
+        # check if the object contains several dtypes (typically a pandas
+        # DataFrame), and store them. If not, store None.
+        dtypes_orig = None
+        pandas_requires_conversion = False
+        # track if we have a Series-like object to raise a better error message
+        type_if_series = None
+        if hasattr(array, "dtypes") and hasattr(array.dtypes, "__array__"):
+            # throw warning if columns are sparse. If all columns are sparse, then
+            # array.sparse exists and sparsity will be preserved (later).
+            with suppress(ImportError):
+                from pandas import SparseDtype
+    
+                def is_sparse(dtype):
+                    return isinstance(dtype, SparseDtype)
+    
+                if not hasattr(array, "sparse") and array.dtypes.apply(is_sparse).any():
+                    warnings.warn(
+                        "pandas.DataFrame with sparse columns found."
+                        "It will be converted to a dense numpy array."
+                    )
+    
+            dtypes_orig = list(array.dtypes)
+            pandas_requires_conversion = any(
+                _pandas_dtype_needs_early_conversion(i) for i in dtypes_orig
+            )
+            if all(isinstance(dtype_iter, np.dtype) for dtype_iter in dtypes_orig):
+                dtype_orig = np.result_type(*dtypes_orig)
+            elif pandas_requires_conversion and any(d == object for d in dtypes_orig):
+                # Force object if any of the dtypes is an object
+                dtype_orig = object
+    
+        elif (_is_extension_array_dtype(array) or hasattr(array, "iloc")) and hasattr(
+            array, "dtype"
+        ):
+            # array is a pandas series
+            type_if_series = type(array)
+            pandas_requires_conversion = _pandas_dtype_needs_early_conversion(array.dtype)
+            if isinstance(array.dtype, np.dtype):
+                dtype_orig = array.dtype
+            else:
+                # Set to None to let array.astype work out the best dtype
+                dtype_orig = None
+    
+        if dtype_numeric:
+            if (
+                dtype_orig is not None
+                and hasattr(dtype_orig, "kind")
+                and dtype_orig.kind == "O"
+            ):
+                # if input is object, convert to float.
+                dtype = xp.float64
+            else:
+                dtype = None
+    
+        if isinstance(dtype, (list, tuple)):
+            if dtype_orig is not None and dtype_orig in dtype:
+                # no dtype conversion required
+                dtype = None
+            else:
+                # dtype conversion required. Let's select the first element of the
+                # list of accepted types.
+                dtype = dtype[0]
+    
+        if pandas_requires_conversion:
+            # pandas dataframe requires conversion earlier to handle extension dtypes with
+            # nans
+            # Use the original dtype for conversion if dtype is None
+            new_dtype = dtype_orig if dtype is None else dtype
+            array = array.astype(new_dtype)
+            # Since we converted here, we do not need to convert again later
+            dtype = None
+    
+        if force_all_finite not in (True, False, "allow-nan"):
+            raise ValueError(
+                'force_all_finite should be a bool or "allow-nan". Got {!r} instead'.format(
+                    force_all_finite
+                )
+            )
+    
+        if dtype is not None and _is_numpy_namespace(xp):
+            # convert to dtype object to conform to Array API to be use `xp.isdtype` later
+            dtype = np.dtype(dtype)
+    
+        estimator_name = _check_estimator_name(estimator)
+        context = " by %s" % estimator_name if estimator is not None else ""
+    
+        # When all dataframe columns are sparse, convert to a sparse array
+        if hasattr(array, "sparse") and array.ndim > 1:
+            with suppress(ImportError):
+                from pandas import SparseDtype  # noqa: F811
+    
+                def is_sparse(dtype):
+                    return isinstance(dtype, SparseDtype)
+    
+                if array.dtypes.apply(is_sparse).all():
+                    # DataFrame.sparse only supports `to_coo`
+                    array = array.sparse.to_coo()
+                    if array.dtype == np.dtype("object"):
+                        unique_dtypes = set([dt.subtype.name for dt in array_orig.dtypes])
+                        if len(unique_dtypes) > 1:
+                            raise ValueError(
+                                "Pandas DataFrame with mixed sparse extension arrays "
+                                "generated a sparse matrix with object dtype which "
+                                "can not be converted to a scipy sparse matrix."
+                                "Sparse extension arrays should all have the same "
+                                "numeric type."
+                            )
+    
+        if sp.issparse(array):
+            _ensure_no_complex_data(array)
+            array = _ensure_sparse_format(
+                array,
+                accept_sparse=accept_sparse,
+                dtype=dtype,
+                copy=copy,
+                force_all_finite=force_all_finite,
+                accept_large_sparse=accept_large_sparse,
+                estimator_name=estimator_name,
+                input_name=input_name,
+            )
+            if ensure_2d and array.ndim < 2:
+                raise ValueError(
+                    f"Expected 2D input, got input with shape {array.shape}.\n"
+                    "Reshape your data either using array.reshape(-1, 1) if "
+                    "your data has a single feature or array.reshape(1, -1) "
+                    "if it contains a single sample."
+                )
+        else:
+            # If np.array(..) gives ComplexWarning, then we convert the warning
+            # to an error. This is needed because specifying a non complex
+            # dtype to the function converts complex to real dtype,
+            # thereby passing the test made in the lines following the scope
+            # of warnings context manager.
+            with warnings.catch_warnings():
+                try:
+                    warnings.simplefilter("error", ComplexWarning)
+                    if dtype is not None and xp.isdtype(dtype, "integral"):
+                        # Conversion float -> int should not contain NaN or
+                        # inf (numpy#14412). We cannot use casting='safe' because
+                        # then conversion float -> int would be disallowed.
+                        array = _asarray_with_order(array, order=order, xp=xp)
+                        if xp.isdtype(array.dtype, ("real floating", "complex floating")):
+                            _assert_all_finite(
+                                array,
+                                allow_nan=False,
+                                msg_dtype=dtype,
+                                estimator_name=estimator_name,
+                                input_name=input_name,
+                            )
+                        array = xp.astype(array, dtype, copy=False)
+                    else:
+                        array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+                except ComplexWarning as complex_warning:
+                    raise ValueError(
+                        "Complex data not supported\n{}\n".format(array)
+                    ) from complex_warning
+    
+            # It is possible that the np.array(..) gave no warning. This happens
+            # when no dtype conversion happened, for example dtype = None. The
+            # result is that np.array(..) produces an array of complex dtype
+            # and we need to catch and raise exception for such cases.
+            _ensure_no_complex_data(array)
+    
+            if ensure_2d:
+                # If input is scalar raise error
+                if array.ndim == 0:
+                    raise ValueError(
+                        "Expected 2D array, got scalar array instead:\narray={}.\n"
+                        "Reshape your data either using array.reshape(-1, 1) if "
+                        "your data has a single feature or array.reshape(1, -1) "
+                        "if it contains a single sample.".format(array)
+                    )
+                # If input is 1D raise error
+                if array.ndim == 1:
+                    # If input is a Series-like object (eg. pandas Series or polars Series)
+                    if type_if_series is not None:
+                        msg = (
+                            f"Expected a 2-dimensional container but got {type_if_series} "
+                            "instead. Pass a DataFrame containing a single row (i.e. "
+                            "single sample) or a single column (i.e. single feature) "
+                            "instead."
+                        )
+                    else:
+                        msg = (
+                            f"Expected 2D array, got 1D array instead:\narray={array}.\n"
+                            "Reshape your data either using array.reshape(-1, 1) if "
+                            "your data has a single feature or array.reshape(1, -1) "
+                            "if it contains a single sample."
+                        )
+                    raise ValueError(msg)
+    
+            if dtype_numeric and hasattr(array.dtype, "kind") and array.dtype.kind in "USV":
+                raise ValueError(
+                    "dtype='numeric' is not compatible with arrays of bytes/strings."
+                    "Convert your data to numeric values explicitly instead."
+                )
+            if not allow_nd and array.ndim >= 3:
+>               raise ValueError(
+                    "Found array with dim %d. %s expected <= 2."
+                    % (array.ndim, estimator_name)
+                )
+E               ValueError: Found array with dim 3. LogisticRegression expected <= 2.
+
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/utils/validation.py:1058: ValueError
+_______________________ test_pred_and_pred_proba[sparse] _______________________
+TypeError: float() argument must be a string or a real number, not 'csr_matrix'
+
+The above exception was the direct cause of the following exception:
+
+format = 'sparse'
+
+    @pytest.mark.parametrize("format", list(DATA_FORMATS.keys()))
+    def test_pred_and_pred_proba(format):
+        data = DATA_FORMATS[format]
+        cl = CleanLearning()
+        cl.fit(data["X_train"], data["labels"])
+        n = np.shape(data["true_labels_test"])[0]
+        m = len(np.unique(data["true_labels_test"]))
+>       pred = cl.predict(data["X_test"])
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:563: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:485: in predict
+    class_predictions = self.clf.predict(X)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/linear_model/_base.py:382: in predict
+    scores = self.decision_function(X)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/linear_model/_base.py:363: in decision_function
+    X = self._validate_data(X, accept_sparse="csr", reset=False)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/base.py:633: in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/utils/validation.py:1012: in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+array = array(<Compressed Sparse Row sparse matrix of dtype 'float64'
+	with 400 stored elements and shape (200, 2)>, dtype=object)
+dtype = dtype('float64'), order = None, copy = None
+
+    def _asarray_with_order(
+        array, dtype=None, order=None, copy=None, *, xp=None, device=None
+    ):
+        """Helper to support the order kwarg only for NumPy-backed arrays
+    
+        Memory layout parameter `order` is not exposed in the Array API standard,
+        however some input validation code in scikit-learn needs to work both
+        for classes and functions that will leverage Array API only operations
+        and for code that inherently relies on NumPy backed data containers with
+        specific memory layout constraints (e.g. our own Cython code). The
+        purpose of this helper is to make it possible to share code for data
+        container validation without memory copies for both downstream use cases:
+        the `order` parameter is only enforced if the input array implementation
+        is NumPy based, otherwise `order` is just silently ignored.
+        """
+        xp, _ = get_namespace(array, xp=xp)
+        if _is_numpy_namespace(xp):
+            # Use NumPy API to support order
+            if copy is True:
+                array = numpy.array(array, order=order, dtype=dtype)
+            else:
+>               array = numpy.asarray(array, order=order, dtype=dtype)
+E               ValueError: setting an array element with a sequence.
+
+../publishablew/cleanlab/cleanlab/venv/lib/python3.11/site-packages/sklearn/utils/_array_api.py:745: ValueError
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:625: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f'`find_label_issues_kwargs` is not used when `low_memory=True`.')
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:629: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f'`{arg_name}` is not used when `low_memory=True`.')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse]
+================== 2 failed, 57 passed, 2 warnings in 16.00s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf PASSED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] PASSED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] PASSED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] PASSED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] PASSED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats PASSED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:810: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`find_label_issues_kwargs` is not used when `low_memory=True`.")
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:818: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 59 passed, 2 warnings in 15.85s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf PASSED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] PASSED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] PASSED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] PASSED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] PASSED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats PASSED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:810: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`find_label_issues_kwargs` is not used when `low_memory=True`.")
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:818: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 59 passed, 2 warnings in 27.79s ========================

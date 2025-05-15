@@ -1,0 +1,929 @@
+output file:
+processed_torchgeovit_small_patch16_224139.json
+function:
+vit_small_patch16_224
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] FAILED', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] FAILED', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] FAILED', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] FAILED', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO]', '../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] FAILED', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO]', 'FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 49 items / 12 deselected / 37 selected
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] FAILED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+
+=================================== FAILURES ===================================
+___ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] ____
+
+f = ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dff010>
+mocked_weights = ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+__ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] ___
+
+f = ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dff290>
+mocked_weights = ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+___ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] ___
+
+f = ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dff510>
+mocked_weights = ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+__ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] __
+
+f = ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dff790>
+mocked_weights = ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+___ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] ____
+
+f = ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dffa50>
+mocked_weights = ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+__ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] ___
+
+f = ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801dffd50>
+mocked_weights = ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+_ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] _
+
+f = ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908090>
+mocked_weights = ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+_ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] _
+
+f = ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908390>
+mocked_weights = ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+___ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] ____
+
+f = ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908690>
+mocked_weights = ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+__ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] ___
+
+f = ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908950>
+mocked_weights = ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+____ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO] ____
+
+f = ViTSmall16_Weights.SENTINEL2_ALL_DINO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908a90>
+mocked_weights = ViTSmall16_Weights.SENTINEL2_ALL_DINO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+____ TestViTSmall16.test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] ____
+
+f = ViTSmall16_Weights.SENTINEL2_ALL_MOCO
+
+    def _check_seekable(f) -> bool:
+        def raise_err_msg(patterns, e):
+            for p in patterns:
+                if p in str(e):
+                    msg = (
+                        str(e)
+                        + ". You can only torch.load from a file that is seekable."
+                        + " Please pre-load the data into a buffer like io.BytesIO and"
+                        + " try to load from it instead."
+                    )
+                    raise type(e)(msg)
+            raise e
+    
+        try:
+>           f.seek(f.tell())
+E           AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:757: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.models.test_vit.TestViTSmall16 object at 0x722801908cd0>
+mocked_weights = ViTSmall16_Weights.SENTINEL2_ALL_MOCO
+
+    def test_vit_weights(self, mocked_weights: WeightsEnum) -> None:
+>       vit_small_patch16_224(weights=mocked_weights)
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/torchgeo/torchgeo/torchgeo/models/vit.py:36: in vit_small_patch16_224
+    return vit_small_patch16_224(weights)
+../publishablew/torchgeo/torchgeo/torchgeo/models/temp.py:23: in vit_small_patch16_224
+    state_dict = torch.load(pretrained_weights, map_location='cpu')
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:1319: in load
+    with _open_file_like(f, "rb") as opened_file:
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:664: in _open_file_like
+    return _open_buffer_reader(name_or_buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:649: in __init__
+    _check_seekable(buffer)
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:760: in _check_seekable
+    raise_err_msg(["seek", "tell"], e)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+patterns = ['seek', 'tell']
+e = AttributeError("'ViTSmall16_Weights' object has no attribute 'seek'")
+
+    def raise_err_msg(patterns, e):
+        for p in patterns:
+            if p in str(e):
+                msg = (
+                    str(e)
+                    + ". You can only torch.load from a file that is seekable."
+                    + " Please pre-load the data into a buffer like io.BytesIO and"
+                    + " try to load from it instead."
+                )
+>               raise type(e)(msg)
+E               AttributeError: 'ViTSmall16_Weights' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.
+
+../publishablew/torchgeo/torchgeo/venv/lib/python3.11/site-packages/torch/serialization.py:753: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO]
+FAILED ../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO]
+================ 12 failed, 25 passed, 12 deselected in 12.79s =================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 49 items / 12 deselected / 37 selected
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+
+====================== 37 passed, 12 deselected in 12.57s ======================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/torchgeo/torchgeo/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/torchgeo/torchgeo
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2
+collecting ... collected 49 items / 12 deselected / 37 selected
+
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_vit_weights[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_bands[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_TM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_ETM_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_TIRS_TOA_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_MOCO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.LANDSAT_OLI_SR_SIMCLR] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_DINO] PASSED
+../publishablew/torchgeo/torchgeo/tests/models/test_vit.py::TestViTSmall16::test_transforms[ViTSmall16_Weights.SENTINEL2_ALL_MOCO] PASSED
+
+====================== 37 passed, 12 deselected in 12.77s ======================

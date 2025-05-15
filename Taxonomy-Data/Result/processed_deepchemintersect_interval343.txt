@@ -1,0 +1,84 @@
+output file:
+processed_deepchemintersect_interval343.json
+function:
+intersect_interval
+Error Cases:
+2024-12-26 19:20:15.012361: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1735258815.023442  890802 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1735258815.026830  890802 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-26 19:20:15.039253: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 10 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_hash PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_get_face_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersect_interval PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersection PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_make_box PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_merge_overlapping_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_point_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_union PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_volume PASSED
+
+============================== 10 passed in 4.03s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 10 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_hash PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_get_face_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersect_interval PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersection PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_make_box PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_merge_overlapping_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_point_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_union PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_volume PASSED
+
+============================== 10 passed in 3.99s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 10 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_box_hash PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_get_face_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersect_interval PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_intersection PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_make_box PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_merge_overlapping_boxes PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_point_containment PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_union PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_coordinate_box_utils.py::TestCoordinateBoxUtils::test_volume PASSED
+
+============================== 10 passed in 4.27s ==============================

@@ -1,0 +1,329 @@
+output file:
+processed_classes-lightlyforward34.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue FAILED [100%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda', '../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1 FAILED [ 71%]', '../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d FAILED [ 57%]', '../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda FAILED [ 85%]', '../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass FAILED [ 42%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 7 items
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed PASSED [ 14%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed_dist_not_available PASSED [ 28%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass FAILED [ 42%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d FAILED [ 57%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1 FAILED [ 71%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda FAILED [ 85%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue FAILED [100%]
+
+=================================== FAILURES ===================================
+____________________ TestSwaVLossUnitTest.test_forward_pass ____________________
+
+self = <test_SwaVLoss.TestSwaVLossUnitTest testMethod=test_forward_pass>
+
+    def test_forward_pass(self):
+        n = 32
+        n_high_res = 2
+        high_res = [torch.eye(32, 32) for i in range(n_high_res)]
+    
+        for n_low_res in range(6):
+            for sinkhorn_iterations in range(3):
+                criterion = SwaVLoss(sinkhorn_iterations=sinkhorn_iterations)
+                low_res = [torch.eye(n, n) for i in range(n_low_res)]
+    
+                with self.subTest(
+                    msg=f"n_low_res={n_low_res}, sinkhorn_iterations={sinkhorn_iterations}"
+                ):
+>                   loss = criterion(high_res, low_res)
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SwaVLoss()
+high_resolution_outputs = [tensor([[1., 0., 0.,  ..., 0., 0., 0.],
+        [0., 1., 0.,  ..., 0., 0., 0.],
+        [0., 0., 1.,  ..., 0., 0., 0....      [0., 0., 0.,  ..., 1., 0., 0.],
+        [0., 0., 0.,  ..., 0., 1., 0.],
+        [0., 0., 0.,  ..., 0., 0., 1.]])]
+low_resolution_outputs = [], queue_outputs = None
+
+    def forward(self, high_resolution_outputs: List[torch.Tensor], low_resolution_outputs: List[torch.Tensor], queue_outputs: List[torch.Tensor]=None) -> torch.Tensor:
+        num_views = len(high_resolution_outputs)
+        total_loss = 0.0
+        count = 0
+        for i in range(num_views):
+            for j in range(num_views):
+                if i != j:
+                    z_i = high_resolution_outputs[i]
+>                   q_j = low_resolution_outputs[j]
+E                   IndexError: list index out of range
+
+../publishablew/lightly/lightly/lightly/loss/swav_loss.py:112: IndexError
+__________________ TestSwaVLossUnitTest.test_forward_pass_1d ___________________
+
+self = <test_SwaVLoss.TestSwaVLossUnitTest testMethod=test_forward_pass_1d>
+
+    def test_forward_pass_1d(self):
+        n = 32
+        n_high_res = 2
+        high_res = [torch.eye(n, 1) for i in range(n_high_res)]
+    
+        for n_low_res in range(6):
+            for sinkhorn_iterations in range(3):
+                criterion = SwaVLoss(sinkhorn_iterations=sinkhorn_iterations)
+                low_res = [torch.eye(n, 1) for i in range(n_low_res)]
+    
+                with self.subTest(
+                    msg=f"n_low_res={n_low_res}, sinkhorn_iterations={sinkhorn_iterations}"
+                ):
+>                   loss = criterion(high_res, low_res)
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SwaVLoss()
+high_resolution_outputs = [tensor([[1.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+     ...[0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.],
+        [0.]])]
+low_resolution_outputs = [], queue_outputs = None
+
+    def forward(self, high_resolution_outputs: List[torch.Tensor], low_resolution_outputs: List[torch.Tensor], queue_outputs: List[torch.Tensor]=None) -> torch.Tensor:
+        num_views = len(high_resolution_outputs)
+        total_loss = 0.0
+        count = 0
+        for i in range(num_views):
+            for j in range(num_views):
+                if i != j:
+                    z_i = high_resolution_outputs[i]
+>                   q_j = low_resolution_outputs[j]
+E                   IndexError: list index out of range
+
+../publishablew/lightly/lightly/lightly/loss/swav_loss.py:112: IndexError
+_________________ TestSwaVLossUnitTest.test_forward_pass_bsz_1 _________________
+
+self = <test_SwaVLoss.TestSwaVLossUnitTest testMethod=test_forward_pass_bsz_1>
+
+    def test_forward_pass_bsz_1(self):
+        n = 32
+        n_high_res = 2
+        high_res = [torch.eye(1, n) for i in range(n_high_res)]
+    
+        for n_low_res in range(6):
+            for sinkhorn_iterations in range(3):
+                criterion = SwaVLoss(sinkhorn_iterations=sinkhorn_iterations)
+                low_res = [torch.eye(1, n) for i in range(n_low_res)]
+    
+                with self.subTest(
+                    msg=f"n_low_res={n_low_res}, sinkhorn_iterations={sinkhorn_iterations}"
+                ):
+>                   loss = criterion(high_res, low_res)
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SwaVLoss()
+high_resolution_outputs = [tensor([[1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., 0., 0., 0., 0., 0., 0.,...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]])]
+low_resolution_outputs = [], queue_outputs = None
+
+    def forward(self, high_resolution_outputs: List[torch.Tensor], low_resolution_outputs: List[torch.Tensor], queue_outputs: List[torch.Tensor]=None) -> torch.Tensor:
+        num_views = len(high_resolution_outputs)
+        total_loss = 0.0
+        count = 0
+        for i in range(num_views):
+            for j in range(num_views):
+                if i != j:
+                    z_i = high_resolution_outputs[i]
+>                   q_j = low_resolution_outputs[j]
+E                   IndexError: list index out of range
+
+../publishablew/lightly/lightly/lightly/loss/swav_loss.py:112: IndexError
+_________________ TestSwaVLossUnitTest.test_forward_pass_cuda __________________
+
+self = <test_SwaVLoss.TestSwaVLossUnitTest testMethod=test_forward_pass_cuda>
+
+    @unittest.skipUnless(torch.cuda.is_available(), "skip")
+    def test_forward_pass_cuda(self):
+        n = 32
+        n_high_res = 2
+        high_res = [torch.eye(n, n).cuda() for i in range(n_high_res)]
+    
+        for n_low_res in range(6):
+            for sinkhorn_iterations in range(3):
+                criterion = SwaVLoss(sinkhorn_iterations=sinkhorn_iterations)
+                low_res = [torch.eye(n, n).cuda() for i in range(n_low_res)]
+    
+                with self.subTest(
+                    msg=f"n_low_res={n_low_res}, sinkhorn_iterations={sinkhorn_iterations}"
+                ):
+>                   loss = criterion(high_res, low_res)
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py:112: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SwaVLoss()
+high_resolution_outputs = [tensor([[1., 0., 0.,  ..., 0., 0., 0.],
+        [0., 1., 0.,  ..., 0., 0., 0.],
+        [0., 0., 1.,  ..., 0., 0., 0....,  ..., 1., 0., 0.],
+        [0., 0., 0.,  ..., 0., 1., 0.],
+        [0., 0., 0.,  ..., 0., 0., 1.]], device='cuda:0')]
+low_resolution_outputs = [], queue_outputs = None
+
+    def forward(self, high_resolution_outputs: List[torch.Tensor], low_resolution_outputs: List[torch.Tensor], queue_outputs: List[torch.Tensor]=None) -> torch.Tensor:
+        num_views = len(high_resolution_outputs)
+        total_loss = 0.0
+        count = 0
+        for i in range(num_views):
+            for j in range(num_views):
+                if i != j:
+                    z_i = high_resolution_outputs[i]
+>                   q_j = low_resolution_outputs[j]
+E                   IndexError: list index out of range
+
+../publishablew/lightly/lightly/lightly/loss/swav_loss.py:112: IndexError
+_________________ TestSwaVLossUnitTest.test_forward_pass_queue _________________
+
+self = <test_SwaVLoss.TestSwaVLossUnitTest testMethod=test_forward_pass_queue>
+
+    def test_forward_pass_queue(self):
+        n = 32
+        n_high_res = 2
+        high_res = [torch.eye(32, 32) for i in range(n_high_res)]
+        queue_length = 128
+        queue = [torch.eye(128, 32) for i in range(n_high_res)]
+    
+        for n_low_res in range(6):
+            for sinkhorn_iterations in range(3):
+                criterion = SwaVLoss(sinkhorn_iterations=sinkhorn_iterations)
+                low_res = [torch.eye(n, n) for i in range(n_low_res)]
+    
+                with self.subTest(
+                    msg=f"n_low_res={n_low_res}, sinkhorn_iterations={sinkhorn_iterations}"
+                ):
+>                   loss = criterion(high_res, low_res, queue)
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = SwaVLoss()
+high_resolution_outputs = [tensor([[1., 0., 0.,  ..., 0., 0., 0.],
+        [0., 1., 0.,  ..., 0., 0., 0.],
+        [0., 0., 1.,  ..., 0., 0., 0....      [0., 0., 0.,  ..., 1., 0., 0.],
+        [0., 0., 0.,  ..., 0., 1., 0.],
+        [0., 0., 0.,  ..., 0., 0., 1.]])]
+low_resolution_outputs = []
+queue_outputs = [tensor([[1., 0., 0.,  ..., 0., 0., 0.],
+        [0., 1., 0.,  ..., 0., 0., 0.],
+        [0., 0., 1.,  ..., 0., 0., 0....      [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.],
+        [0., 0., 0.,  ..., 0., 0., 0.]])]
+
+    def forward(self, high_resolution_outputs: List[torch.Tensor], low_resolution_outputs: List[torch.Tensor], queue_outputs: List[torch.Tensor]=None) -> torch.Tensor:
+        num_views = len(high_resolution_outputs)
+        total_loss = 0.0
+        count = 0
+        for i in range(num_views):
+            for j in range(num_views):
+                if i != j:
+                    z_i = high_resolution_outputs[i]
+>                   q_j = low_resolution_outputs[j]
+E                   IndexError: list index out of range
+
+../publishablew/lightly/lightly/lightly/loss/swav_loss.py:112: IndexError
+=========================== short test summary info ============================
+FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass
+FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d
+FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1
+FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda
+FAILED ../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue
+========================= 5 failed, 2 passed in 2.95s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 7 items
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed PASSED [ 14%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed_dist_not_available PASSED [ 28%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass PASSED [ 42%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d PASSED [ 57%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1 PASSED [ 71%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda PASSED [ 85%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue PASSED [100%]
+
+============================== 7 passed in 2.61s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 7 items
+
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed PASSED [ 14%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestNTXentLoss::test__sinkhorn_gather_distributed_dist_not_available PASSED [ 28%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass PASSED [ 42%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_1d PASSED [ 57%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_bsz_1 PASSED [ 71%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_cuda PASSED [ 85%]
+../publishablew/lightly/lightly/tests/loss/test_SwaVLoss.py::TestSwaVLossUnitTest::test_forward_pass_queue PASSED [100%]
+
+============================== 7 passed in 2.67s ===============================

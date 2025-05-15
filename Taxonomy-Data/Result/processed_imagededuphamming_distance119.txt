@@ -1,0 +1,548 @@
+output file:
+processed_imagededuphamming_distance119.json
+function:
+hamming_distance
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'tests/test_hashing.py::test_hamming_distance FAILED                      [  2%]', 'tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] FAILED [ 61%]', 'FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2]', 'FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3]', 'FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0]', 'tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] FAILED [ 60%]', 'tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] FAILED [ 62%]', 'FAILED tests/test_hashing.py::test_hamming_distance - assert 1.0 == 2', 'tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] FAILED [ 58%]', 'FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance FAILED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath PASSED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath PASSED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive PASSED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive PASSED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths PASSED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals PASSED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory PASSED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default PASSED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers PASSED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] FAILED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] FAILED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] FAILED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] FAILED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict PASSED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes PASSED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images PASSED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness PASSED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score PASSED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing PASSED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile PASSED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir PASSED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir PASSED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile PASSED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true PASSED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false PASSED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true PASSED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false PASSED         [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_hamming_distance _____________________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x70e801d68f50>
+
+    def test_hamming_distance(hasher):
+        # Put two numbers and check if hamming distance is correct
+        number_1 = '1a'
+        number_2 = '1f'
+        hamdist = hasher.hamming_distance(number_1, number_2)
+>       assert hamdist == 2
+E       assert 1.0 == 2
+
+tests/test_hashing.py:42: AssertionError
+_____________ TestCommon.test_hash_distinct_images[encode_image0] ______________
+
+self = <test_hashing.TestCommon object at 0x70e801d64510>
+hash_function = <bound method Hashing.encode_image of <imagededup.methods.hashing.PHash object at 0x70e801d30510>>
+
+    def test_hash_distinct_images(self, hash_function):
+        # Put in distinct images and check that hamming distance between hashes is large
+        hash_im_1 = hash_function(PATH_SINGLE_IMAGE)
+        hash_im_2 = hash_function(p.parent / 'data/mixed_images/ukbench09268.jpg')
+        hamdist = Hashing.hamming_distance(hash_im_1, hash_im_2)
+>       assert hamdist > 20
+E       assert 15.0 > 20
+
+tests/test_hashing.py:669: AssertionError
+_____________ TestCommon.test_hash_distinct_images[encode_image1] ______________
+
+self = <test_hashing.TestCommon object at 0x70e801d64790>
+hash_function = <bound method Hashing.encode_image of <imagededup.methods.hashing.DHash object at 0x70e801d30c90>>
+
+    def test_hash_distinct_images(self, hash_function):
+        # Put in distinct images and check that hamming distance between hashes is large
+        hash_im_1 = hash_function(PATH_SINGLE_IMAGE)
+        hash_im_2 = hash_function(p.parent / 'data/mixed_images/ukbench09268.jpg')
+        hamdist = Hashing.hamming_distance(hash_im_1, hash_im_2)
+>       assert hamdist > 20
+E       assert 14.0 > 20
+
+tests/test_hashing.py:669: AssertionError
+_____________ TestCommon.test_hash_distinct_images[encode_image2] ______________
+
+self = <test_hashing.TestCommon object at 0x70e801d64a10>
+hash_function = <bound method Hashing.encode_image of <imagededup.methods.hashing.AHash object at 0x70e801d30910>>
+
+    def test_hash_distinct_images(self, hash_function):
+        # Put in distinct images and check that hamming distance between hashes is large
+        hash_im_1 = hash_function(PATH_SINGLE_IMAGE)
+        hash_im_2 = hash_function(p.parent / 'data/mixed_images/ukbench09268.jpg')
+        hamdist = Hashing.hamming_distance(hash_im_1, hash_im_2)
+>       assert hamdist > 20
+E       assert 13.0 > 20
+
+tests/test_hashing.py:669: AssertionError
+_____________ TestCommon.test_hash_distinct_images[encode_image3] ______________
+
+self = <test_hashing.TestCommon object at 0x70e801d64c90>
+hash_function = <bound method Hashing.encode_image of <imagededup.methods.hashing.WHash object at 0x70e801d30790>>
+
+    def test_hash_distinct_images(self, hash_function):
+        # Put in distinct images and check that hamming distance between hashes is large
+        hash_im_1 = hash_function(PATH_SINGLE_IMAGE)
+        hash_im_2 = hash_function(p.parent / 'data/mixed_images/ukbench09268.jpg')
+        hamdist = Hashing.hamming_distance(hash_im_1, hash_im_2)
+>       assert hamdist > 20
+E       assert 14.0 > 20
+
+tests/test_hashing.py:669: AssertionError
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:247: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_hamming_distance - assert 1.0 == 2
+FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0]
+FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1]
+FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2]
+FAILED tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3]
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+=================== 6 failed, 79 passed, 4 warnings in 6.95s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance PASSED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath PASSED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath PASSED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive PASSED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive PASSED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths PASSED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals PASSED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory PASSED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default PASSED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers PASSED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] PASSED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] PASSED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] PASSED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] PASSED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict PASSED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes PASSED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images PASSED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness PASSED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score PASSED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing PASSED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile PASSED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir PASSED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir PASSED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile PASSED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true PASSED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false PASSED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true PASSED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false PASSED         [100%]
+
+=================================== FAILURES ===================================
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:317: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+=================== 1 failed, 84 passed, 4 warnings in 6.59s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance PASSED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath PASSED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath PASSED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive PASSED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive PASSED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths PASSED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals PASSED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory PASSED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default PASSED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers PASSED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] PASSED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] PASSED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] PASSED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] PASSED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict PASSED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes PASSED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images PASSED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness PASSED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score PASSED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing PASSED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile PASSED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir PASSED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir PASSED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile PASSED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true PASSED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false PASSED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true PASSED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false PASSED         [100%]
+
+=================================== FAILURES ===================================
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:317: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+=================== 1 failed, 84 passed, 4 warnings in 7.02s ===================

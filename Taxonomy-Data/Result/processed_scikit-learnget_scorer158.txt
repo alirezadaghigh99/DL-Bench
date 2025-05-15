@@ -1,0 +1,121 @@
+output file:
+processed_scikit-learnget_scorer158.json
+function:
+get_scorer
+Error Cases:
+ERROR: found no collectors for /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores
+
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 0 items / 2 errors
+
+==================================== ERRORS ====================================
+_________ ERROR collecting sklearn/metrics/tests/test_score_objects.py _________
+ImportError while importing test module '/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py:1407: in <module>
+    get_scorer("accuracy"),
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/_scorer.py:272: in get_scorer
+    from .temp import get_scorer
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/temp.py:17: in <module>
+    from sklearn.metrics import get_scorer1 as sklearn_get_scorer
+E   ImportError: cannot import name 'get_scorer1' from 'sklearn.metrics' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/__init__.py)
+_________ ERROR collecting sklearn/metrics/tests/test_score_objects.py _________
+ImportError while importing test module '/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py:1407: in <module>
+    get_scorer("accuracy"),
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/_scorer.py:272: in get_scorer
+    from .temp import get_scorer
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/temp.py:17: in <module>
+    from sklearn.metrics import get_scorer1 as sklearn_get_scorer
+E   ImportError: cannot import name 'get_scorer1' from 'sklearn.metrics' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/__init__.py)
+=========================== short test summary info ============================
+ERROR ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py
+ERROR ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py
+============================== 2 errors in 0.55s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 18 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1-f1_score] I: Seeding RNGs with 1529196760
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_weighted-metric1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_macro-metric2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_micro-metric3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision-precision_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_weighted-metric5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_macro-metric6] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_micro-metric7] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall-recall_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_weighted-metric9] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_macro-metric10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_micro-metric11] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard-jaccard_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_weighted-metric13] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_macro-metric14] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_micro-metric15] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[top_k_accuracy-top_k_accuracy_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[matthews_corrcoef-matthews_corrcoef] PASSED
+
+======================== 18 passed, 2 warnings in 0.40s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 18 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1-f1_score] I: Seeding RNGs with 1931671156
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_weighted-metric1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_macro-metric2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[f1_micro-metric3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision-precision_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_weighted-metric5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_macro-metric6] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[precision_micro-metric7] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall-recall_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_weighted-metric9] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_macro-metric10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[recall_micro-metric11] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard-jaccard_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_weighted-metric13] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_macro-metric14] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[jaccard_micro-metric15] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[top_k_accuracy-top_k_accuracy_score] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/tests/test_score_objects.py::test_classification_binary_scores[matthews_corrcoef-matthews_corrcoef] PASSED
+
+======================== 18 passed, 2 warnings in 0.41s ========================

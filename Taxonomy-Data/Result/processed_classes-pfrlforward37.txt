@@ -1,0 +1,78 @@
+output file:
+processed_classes-pfrlforward37.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_batch_axis PASSED [ 20%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large PASSED [ 40%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_cpu PASSED [ 60%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_gpu PASSED [ 80%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_until PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py:53: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    np.testing.assert_allclose(x, en.inverse(torch.tensor(enx)), rtol=1e-4)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 5 passed, 1 warning in 2.71s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_batch_axis PASSED [ 20%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large PASSED [ 40%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_cpu PASSED [ 60%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_gpu PASSED [ 80%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_until PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py:53: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    np.testing.assert_allclose(x, en.inverse(torch.tensor(enx)), rtol=1e-4)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 5 passed, 1 warning in 2.66s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pfrl/pfrl/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pfrl/pfrl
+configfile: pytest.ini
+collecting ... collected 5 items
+
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_batch_axis PASSED [ 20%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large PASSED [ 40%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_cpu PASSED [ 60%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_small_gpu PASSED [ 80%]
+../publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_until PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/nn_tests/test_empirical_normalization.py::TestEmpiricalNormalization::test_large
+  /local/data0/moved_data/publishablew/pfrl/pfrl/tests/nn_tests/test_empirical_normalization.py:53: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+    np.testing.assert_allclose(x, en.inverse(torch.tensor(enx)), rtol=1e-4)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 5 passed, 1 warning in 2.88s =========================

@@ -1,0 +1,783 @@
+output file:
+processed_korniaraw_to_rgb353.json
+function:
+raw_to_rgb
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2]', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'cudagraphs', 'inductor', 'tvm', 'onnxrt', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32] FAILED
+
+=================================== FAILURES ===================================
+_____________________ TestRawToRgb.test_smoke[cpu-float32] _____________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c909120>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_smoke(self, device, dtype):
+        C, H, W = 1, 4, 6
+        img = torch.rand(C, H, W, device=device, dtype=dtype)
+>       assert isinstance(kornia.color.raw_to_rgb(img, kornia.color.CFA.BG), torch.Tensor)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[0.3101, 0.8686, 0.5348, 0.7083, 0.7257, 0.9882],
+         [0.9647, 0.8976, 0.9548, 0.1295, 0.8593, 0.2761],
+         [0.6499, 0.5329, 0.5842, 0.5711, 0.7040, 0.4824],
+         [0.5836, 0.0293, 0.5015, 0.5861, 0.1403, 0.6721]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+>           raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+E           ValueError: Input size must have a shape of (*, 1, H, W). Got torch.Size([1, 4, 6]).
+
+../publishablew/kornia/kornia/kornia/color/temp.py:15: ValueError
+_______________ TestRawToRgb.test_cardinality[cpu-float32-1-6-4] _______________
+
+self = <test_raw.TestRawToRgb object at 0x71722c9095d0>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 1, height = 6
+width = 4
+
+    @pytest.mark.parametrize("batch_size, height, width", [(1, 6, 4), (2, 2, 4), (3, 4, 2)])
+    def test_cardinality(self, device, dtype, batch_size, height, width):
+        img = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+>       assert kornia.color.raw_to_rgb(img, kornia.color.CFA.BG).shape == (batch_size, 3, height, width)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+_______________ TestRawToRgb.test_cardinality[cpu-float32-2-2-4] _______________
+
+self = <test_raw.TestRawToRgb object at 0x71722c909510>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 2, height = 2
+width = 4
+
+    @pytest.mark.parametrize("batch_size, height, width", [(1, 6, 4), (2, 2, 4), (3, 4, 2)])
+    def test_cardinality(self, device, dtype, batch_size, height, width):
+        img = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+>       assert kornia.color.raw_to_rgb(img, kornia.color.CFA.BG).shape == (batch_size, 3, height, width)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.]]],
+
+
+        [[[1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+_______________ TestRawToRgb.test_cardinality[cpu-float32-3-4-2] _______________
+
+self = <test_raw.TestRawToRgb object at 0x71722c9098d0>
+device = device(type='cpu'), dtype = torch.float32, batch_size = 3, height = 4
+width = 2
+
+    @pytest.mark.parametrize("batch_size, height, width", [(1, 6, 4), (2, 2, 4), (3, 4, 2)])
+    def test_cardinality(self, device, dtype, batch_size, height, width):
+        img = torch.ones(batch_size, 1, height, width, device=device, dtype=dtype)
+>       assert kornia.color.raw_to_rgb(img, kornia.color.CFA.BG).shape == (batch_size, 3, height, width)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[1., 1.],
+          [1., 1.],
+          [1., 1.],
+          [1., 1.]]],
+
+
+        [[[1., 1.],
+          [1.,...   [1., 1.],
+          [1., 1.]]],
+
+
+        [[[1., 1.],
+          [1., 1.],
+          [1., 1.],
+          [1., 1.]]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+________________ TestRawToRgb.test_forth_and_back[cpu-float32] _________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c909ed0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_forth_and_back(self, device, dtype):  # skipcq: PYL-R0201
+        data = torch.rand(1, 80, 80, device=device, dtype=dtype)
+        raw = kornia.color.rgb_to_raw
+        rgb = kornia.color.raw_to_rgb
+    
+        for x in kornia.color.CFA:
+>           data_out = raw(rgb(data, cfa=x), cfa=x)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[0.2519, 0.0314, 0.8402,  ..., 0.7928, 0.4830, 0.8369],
+         [0.0918, 0.6879, 0.7559,  ..., 0.0066, 0.106...6539, 0.8846, 0.0317,  ..., 0.8436, 0.5426, 0.2233],
+         [0.0648, 0.1066, 0.2537,  ..., 0.7896, 0.3757, 0.0302]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+>           raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+E           ValueError: Input size must have a shape of (*, 1, H, W). Got torch.Size([1, 80, 80]).
+
+../publishablew/kornia/kornia/kornia/color/temp.py:15: ValueError
+_______________ TestRawToRgb.test_cfas_not_the_same[cpu-float32] _______________
+
+self = <test_raw.TestRawToRgb object at 0x71722c909300>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_cfas_not_the_same(self, device, dtype):  # skipcq: PYL-R0201
+        data = torch.rand(1, 16, 16, device=device, dtype=dtype)
+>       assert (
+            torch.max(
+                kornia.color.raw_to_rgb(data, kornia.color.CFA.BG) - kornia.color.raw_to_rgb(data, kornia.color.CFA.RG)
+            )
+            > 0.0
+        )
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[0.6705, 0.9677, 0.5061, 0.5230, 0.6471, 0.9868, 0.1272, 0.4280,
+          0.0028, 0.0347, 0.7234, 0.1719, 0....2, 0.2550, 0.8230, 0.6774, 0.5468, 0.7505,
+          0.3060, 0.8182, 0.5984, 0.8752, 0.0310, 0.7148, 0.7823, 0.5960]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+>           raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+E           ValueError: Input size must have a shape of (*, 1, H, W). Got torch.Size([1, 16, 16]).
+
+../publishablew/kornia/kornia/kornia/color/temp.py:15: ValueError
+__________________ TestRawToRgb.test_functional[cpu-float32] ___________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c90a2f0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_functional(self, device, dtype):  # skipcq: PYL-R0201
+        data = torch.tensor(
+            [[[1, 0.5, 0.2, 0.4], [0.75, 0.25, 0.8, 0.3], [0.65, 0.15, 0.7, 0.2], [0.55, 0.5, 0.6, 0.1]]],
+            device=device,
+            dtype=dtype,
+        )
+        # checked by hand as correct interpolation. Note the ugly replication that happens for Red on the last column
+        # and row. We shall accept to live with that
+        expected = torch.tensor(
+            [
+                [
+                    [1.0000, 0.6000, 0.2000, 0.2000],
+                    [0.8250, 0.6375, 0.4500, 0.4500],
+                    [0.6500, 0.6750, 0.7000, 0.7000],
+                    [0.6500, 0.6750, 0.7000, 0.7000],
+                ],
+                [
+                    [0.6250, 0.5000, 0.6250, 0.4000],
+                    [0.7500, 0.5500, 0.8000, 0.5500],
+                    [0.4000, 0.1500, 0.4375, 0.2000],
+                    [0.5500, 0.3625, 0.6000, 0.4000],
+                ],
+                [
+                    [0.2500, 0.2500, 0.2750, 0.3000],
+                    [0.2500, 0.2500, 0.2750, 0.3000],
+                    [0.3750, 0.3750, 0.2875, 0.2000],
+                    [0.5000, 0.5000, 0.3000, 0.1000],
+                ],
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+>       img_rgb = kornia.color.raw_to_rgb(data, kornia.color.raw.CFA.BG)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[1.0000, 0.5000, 0.2000, 0.4000],
+         [0.7500, 0.2500, 0.8000, 0.3000],
+         [0.6500, 0.1500, 0.7000, 0.2000],
+         [0.5500, 0.5000, 0.6000, 0.1000]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+>           raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+E           ValueError: Input size must have a shape of (*, 1, H, W). Got torch.Size([1, 4, 4]).
+
+../publishablew/kornia/kornia/kornia/color/temp.py:15: ValueError
+_________________ TestRawToRgb.test_cfa_on_rolled[cpu-float32] _________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c90a620>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_cfa_on_rolled(self, device, dtype):  # skipcq: PYL-R0201
+        data = torch.rand(1, 1, 8, 8, device=device, dtype=dtype)
+>       bgres = kornia.color.raw_to_rgb(data, kornia.color.raw.CFA.BG)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[0.1858, 0.9999, 0.1037, 0.4626, 0.3879, 0.4596, 0.3280, 0.1751],
+          [0.6863, 0.6445, 0.7232, 0.9377,...0.0407, 0.9774, 0.1066, 0.9076, 0.5701],
+          [0.5259, 0.8769, 0.7444, 0.9150, 0.7471, 0.9139, 0.9416, 0.5718]]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+___________________ TestRawToRgb.test_gradcheck[cpu-float32] ___________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c90a950>
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.grad()
+    def test_gradcheck(self, device, dtype):
+        B, C, H, W = 2, 1, 4, 4
+        img = torch.ones(B, C, H, W, device=device, dtype=torch.float64, requires_grad=True)
+>       assert gradcheck(kornia.color.raw_to_rgb, (img, kornia.color.raw.CFA.BG), raise_exception=True, fast_mode=True)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2074: in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]],
+
+
+  ...  [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]], dtype=torch.float64, requires_grad=True)
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+______________________ TestRawToRgb.test_jit[cpu-float32] ______________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c90ac80>
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    def test_jit(self, device, dtype):
+        if version.parse(torch.__version__) < version.parse("1.7.0"):
+            warnings.warn(
+                "This test is not compatible with pytorch < 1.7.0. This message will be removed as soon as we do not "
+                "support pytorch 1.6.0. `rgb_to_hls()` method for pytorch < 1.7.0 version cannot be compiled with JIT.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            return
+        B, C, H, W = 2, 1, 4, 4
+        img = torch.ones(B, C, H, W, device=device, dtype=dtype)
+        op = kornia.color.raw_to_rgb
+>       op_jit = torch.jit.script(op)
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:143: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7173075b7d30>
+ctx = <torch._sources.SourceContext object at 0x71722c9f7510>
+node = <ast.ImportFrom object at 0x71722c3cd1b0>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/color/raw.py", line 31
+E           def raw_to_rgb(image: torch.Tensor, cfa: CFA) -> torch.Tensor:
+E               from .temp import raw_to_rgb
+E               ~~~~ <--- HERE
+E               return raw_to_rgb(image, cfa)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+____________________ TestRawToRgb.test_module[cpu-float32] _____________________
+
+self = <test_raw.TestRawToRgb object at 0x71722c90afb0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_module(self, device, dtype):
+        B, C, H, W = 2, 1, 4, 4
+        img = torch.ones(B, C, H, W, device=device, dtype=dtype)
+        raw_ops = kornia.color.RawToRgb(kornia.color.raw.CFA.BG).to(device, dtype)
+        raw_fcn = kornia.color.raw_to_rgb
+>       assert_close(raw_ops(img), raw_fcn(img, kornia.color.raw.CFA.BG))
+
+../publishablew/kornia/kornia/tests/color/test_raw.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/kornia/kornia/kornia/color/raw.py:219: in forward
+    return raw_to_rgb(image, cfa=self.cfa)
+../publishablew/kornia/kornia/kornia/color/raw.py:32: in raw_to_rgb
+    return raw_to_rgb(image, cfa)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+image = tensor([[[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]],
+
+
+        [[[1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.],
+          [1., 1., 1., 1.]]]])
+cfa = <CFA.BG: 0>
+
+    def raw_to_rgb(image: torch.Tensor, cfa: str) -> torch.Tensor:
+        if not isinstance(image, torch.Tensor):
+            raise TypeError(f'Input type is not a torch.Tensor. Got {type(image)}.')
+        if image.ndim != 4 or image.shape[1] != 1:
+            raise ValueError(f'Input size must have a shape of (*, 1, H, W). Got {image.shape}.')
+        _, _, H, W = image.shape
+        if H % 2 != 0 or W % 2 != 0:
+            raise ValueError(f'Input H&W must be evenly divisible by 2. Got {image.shape}.')
+        kernel_red_blue = torch.tensor([[0.25, 0.5, 0.25], [0.5, 1.0, 0.5], [0.25, 0.5, 0.25]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        kernel_green = torch.tensor([[0, 0.25, 0], [0.25, 1.0, 0.25], [0, 0.25, 0]], dtype=image.dtype, device=image.device).view(1, 1, 3, 3)
+        R = torch.zeros_like(image)
+        G = torch.zeros_like(image)
+        B = torch.zeros_like(image)
+        if cfa == 'BG':
+            B[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            R[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GB':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            B[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            R[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'RG':
+            R[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            G[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            G[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            B[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        elif cfa == 'GR':
+            G[:, :, 0::2, 0::2] = image[:, :, 0::2, 0::2]
+            R[:, :, 0::2, 1::2] = image[:, :, 0::2, 1::2]
+            B[:, :, 1::2, 0::2] = image[:, :, 1::2, 0::2]
+            G[:, :, 1::2, 1::2] = image[:, :, 1::2, 1::2]
+        else:
+>           raise ValueError(f'Unsupported CFA configuration: {cfa}')
+E           ValueError: Unsupported CFA configuration: CFA.BG
+
+../publishablew/kornia/kornia/kornia/color/temp.py:45: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32]
+========================= 11 failed, 1 passed in 0.48s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'cudagraphs', 'tvm', 'openxla', 'onnxrt', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32] PASSED
+
+============================== 12 passed in 0.29s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'openxla', 'tvm', 'jit', 'inductor', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-1-6-4] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-2-2-4] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cardinality[cpu-float32-3-4-2] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_forth_and_back[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfas_not_the_same[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_functional[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_cfa_on_rolled[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_raw.py::TestRawToRgb::test_module[cpu-float32] PASSED
+
+============================== 12 passed in 0.33s ==============================

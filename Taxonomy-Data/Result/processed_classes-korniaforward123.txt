@@ -1,0 +1,186 @@
+output file:
+processed_classes-korniaforward123.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'cudagraphs', 'openxla', 'jit', 'inductor', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-concat] PASSED [  4%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-cart] PASSED [  9%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-polar] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-concat] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-cart] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-polar] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-lw] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-lw] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-lw] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-pcawt] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-pcawt] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-pcawt] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-1] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-3] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-7] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_print[cpu] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_toy[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-None] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-lw] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-pca] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_jit[cpu-float32] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.34s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'openxla', 'inductor', 'tvm', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-concat] PASSED [  4%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-cart] PASSED [  9%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-polar] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-concat] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-cart] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-polar] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-lw] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-lw] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-lw] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-pcawt] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-pcawt] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-pcawt] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-1] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-3] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-7] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_print[cpu] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_toy[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-None] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-lw] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-pca] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_jit[cpu-float32] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.34s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'inductor', 'tvm', 'openxla', 'jit', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-concat] PASSED [  4%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-cart] PASSED [  9%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-9-polar] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-concat] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-cart] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_shape[cpu-32-polar] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-lw] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-lw] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-lw] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-concat-pcawt] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-cart-pcawt] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_whitened_shape[cpu-9-polar-pcawt] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-1] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-3] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_batch_shape[cpu-7] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_print[cpu] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_toy[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-None] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-lw] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_gradcheck[cpu-pca] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/feature/test_mkd.py::TestMKDDescriptor::test_jit[cpu-float32] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.49s =========================

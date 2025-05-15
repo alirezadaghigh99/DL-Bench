@@ -1,0 +1,255 @@
+output file:
+processed_korniaquaternion_to_axis_angle111.json
+function:
+quaternion_to_axis_angle
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu]', '../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'cudagraphs', 'openxla', 'onnxrt', 'jit', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_unit_quaternion[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_x_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_y_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_z_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_y[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_z[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu] FAILED
+
+=================================== FAILURES ===================================
+________________ TestQuaternionToAngleAxis.test_gradcheck[cpu] _________________
+
+self = <tests.geometry.test_conversions.TestQuaternionToAngleAxis object at 0x709d94544c10>
+device = device(type='cpu')
+
+    def test_gradcheck(self, device):
+        dtype = torch.float64
+        eps = torch.finfo(dtype).eps
+        quaternion = torch.tensor((1.0, 0.0, 0.0, 0.0), device=device, dtype=dtype) + eps
+        # evaluate function gradient
+>       self.gradcheck(partial(kornia.geometry.conversions.quaternion_to_axis_angle), (quaternion,))
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py:178: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:143: in gradcheck
+    return gradcheck(func, inputs, raise_exception=raise_exception, fast_mode=fast_mode, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2052: in gradcheck
+    return _gradcheck_helper(**args)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:2081: in _gradcheck_helper
+    _gradcheck_real_imag(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:1491: in _gradcheck_real_imag
+    gradcheck_fn(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:1925: in _fast_gradcheck
+    _check_analytical_numerical_equal(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+all_analytical = [[tensor(nan, dtype=torch.float64)]]
+all_numerical = [[tensor(1.7901, dtype=torch.float64)]], complex_indices = None
+tupled_inputs = (tensor([1.0000e+00, 2.2204e-16, 2.2204e-16, 2.2204e-16], dtype=torch.float64,
+       requires_grad=True),)
+outputs = (tensor([0., 0., 0.], dtype=torch.float64, grad_fn=<MulBackward0>),)
+func = functools.partial(<function quaternion_to_axis_angle at 0x709e019d4940>)
+all_v = [tensor([0.8618, 0.5010, 0.0788], dtype=torch.float64)]
+all_u = [tensor([0.2540, 0.8291, 0.3186, 0.3829], dtype=torch.float64)]
+rtol = 0.001, atol = 1e-05, eps = 1e-06, test_imag = False
+
+    def _check_analytical_numerical_equal(
+        all_analytical,
+        all_numerical,
+        complex_indices,
+        tupled_inputs,
+        outputs,
+        func,
+        all_v,
+        all_u,
+        rtol,
+        atol,
+        eps,
+        test_imag,
+        *,
+        is_forward_ad=False,
+    ):
+        for i, all_numerical_for_input_i in enumerate(all_numerical):
+            for j, n in enumerate(all_numerical_for_input_i):
+                # Forward AD generates the transpose of what this function expects
+                if is_forward_ad:
+                    a = all_analytical[i][j]
+                else:
+                    a = all_analytical[j][i]
+                n = n.to(device=a.device)
+                updated_atol = _adjusted_atol(atol, all_u[i], all_v[j] if all_v else None)
+                if not _allclose_with_type_promotion(a, n.to(a.device), rtol, updated_atol):
+                    jacobians_str = _run_slow_mode_and_get_error(
+                        func, tupled_inputs, outputs, i, j, rtol, atol, eps, is_forward_ad
+                    )
+>                   raise GradcheckError(
+                        _get_notallclose_msg(
+                            a, n, j, i, complex_indices, test_imag, is_forward_ad
+                        )
+                        + jacobians_str
+                    )
+E                   torch.autograd.gradcheck.GradcheckError: Jacobian mismatch for output 0 with respect to input 0,
+E                   numerical:tensor(1.7901, dtype=torch.float64)
+E                   analytical:tensor(nan, dtype=torch.float64)
+E                   
+E                   The above quantities relating the numerical and analytical jacobians are computed 
+E                   in fast mode. See: https://github.com/pytorch/pytorch/issues/53876 for more background 
+E                   about fast mode. Below, we recompute numerical and analytical jacobians in slow mode:
+E                   
+E                   Numerical:
+E                    tensor([[0.0000, 0.0000, 0.0000],
+E                           [1.9802, 0.0000, 0.0000],
+E                           [0.0000, 1.9802, 0.0000],
+E                           [0.0000, 0.0000, 1.9802]], dtype=torch.float64)
+E                   Analytical:
+E                   tensor([[nan, nan, nan],
+E                           [nan, nan, nan],
+E                           [nan, nan, nan],
+E                           [nan, nan, nan]], dtype=torch.float64)
+E                   
+E                   The max per-element difference (slow mode) is: nan.
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/autograd/gradcheck.py:1854: GradcheckError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu]
+========================= 1 failed, 11 passed in 0.37s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'onnxrt', 'tvm', 'jit', 'inductor', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_unit_quaternion[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_x_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_y_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_z_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_y[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_z[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu] PASSED
+
+============================== 12 passed in 0.17s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'jit', 'tvm', 'openxla', 'onnxrt', None, 'inductor'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_smoke_batch[cpu-float32-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_unit_quaternion[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_x_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_y_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_z_rotation[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_y[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_small_angle_z[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_conversions.py::TestQuaternionToAngleAxis::test_gradcheck[cpu] PASSED
+
+============================== 12 passed in 0.21s ==============================

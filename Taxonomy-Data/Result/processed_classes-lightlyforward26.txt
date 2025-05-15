@@ -1,0 +1,484 @@
+output file:
+processed_classes-lightlyforward26.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp FAILED [ 80%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda FAILED [ 70%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d FAILED [ 40%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values FAILED [100%]', 'FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding FAILED [ 90%]', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda FAILED [ 50%]', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank FAILED [ 60%]', '../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass FAILED [ 30%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 10 items
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed PASSED [ 10%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed_dist_not_available PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass FAILED [ 30%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d FAILED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda FAILED [ 50%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank FAILED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda FAILED [ 70%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp FAILED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding FAILED [ 90%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values FAILED [100%]
+
+=================================== FAILURES ===================================
+___________________ TestNTXentLossUnitTest.test_forward_pass ___________________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass>
+
+    def test_forward_pass(self):
+        loss = NTXentLoss(memory_bank_size=0)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 32))
+            batch_2 = torch.randn((bsz, 32))
+    
+            # symmetry
+>           l1 = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[ 1.7942, -0.2383,  1.6849, -0.6513,  0.0867,  0.1244, -0.1511, -0.1707,
+         -0.2174,  0.8264, -0.7031,  ...  1.4165, -0.6563,  0.1141,  1.6765,
+          1.6856,  0.5189, -1.1875,  0.3648,  1.8232,  1.2089,  1.2146, -0.2245]])
+out1 = tensor([[ 0.9025,  1.7785,  0.2221,  1.2715, -0.0475, -0.0114,  0.9398,  1.8356,
+         -0.3662,  1.2902,  0.3964, -...  0.0094, -0.8126,  0.5297,  1.4713,
+          0.0789,  1.0703,  0.4184, -0.5057, -0.8105, -1.2176, -1.7023, -0.5821]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+_________________ TestNTXentLossUnitTest.test_forward_pass_1d __________________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass_1d>
+
+    def test_forward_pass_1d(self):
+        loss = NTXentLoss(memory_bank_size=0)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 1))
+            batch_2 = torch.randn((bsz, 1))
+    
+            # symmetry
+>           l1 = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[1.4301]]), out1 = tensor([[0.9064]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+________________ TestNTXentLossUnitTest.test_forward_pass_cuda _________________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass_cuda>
+
+    @unittest.skipUnless(torch.cuda.is_available(), "No cuda")
+    def test_forward_pass_cuda(self):
+        loss = NTXentLoss(memory_bank_size=0)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 32)).cuda()
+            batch_2 = torch.randn((bsz, 32)).cuda()
+    
+            # symmetry
+>           l1 = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[ 0.5554, -0.3824,  0.6140, -0.5058, -0.4840,  0.5939, -1.0263,  0.6200,
+         -1.8178,  0.0904,  0.3359, -...76, -0.3962,
+          2.1992, -0.3051, -0.3780,  0.0964,  0.0570, -0.8451,  1.4907,  0.7772]],
+       device='cuda:0')
+out1 = tensor([[-0.3803,  1.4222, -1.4228,  1.3675,  1.2521,  0.2023, -0.2071,  0.2549,
+          0.3720,  0.3147, -1.4446,  ...27, -0.1258,
+         -1.0283,  0.1087,  0.4929,  0.3387, -0.3468,  0.1431, -0.1917,  1.5430]],
+       device='cuda:0')
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+_____________ TestNTXentLossUnitTest.test_forward_pass_memory_bank _____________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass_memory_bank>
+
+    def test_forward_pass_memory_bank(self):
+        loss = NTXentLoss(memory_bank_size=64)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 32))
+            batch_2 = torch.randn((bsz, 32))
+>           l = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[-0.8880, -0.8675, -0.4868, -0.4104, -1.8360, -1.2600,  1.4875,  2.2239,
+         -2.5834,  0.7330, -0.8849,  ...  0.6796,  0.2819, -0.5770,  1.2715,
+         -0.4730,  1.3277, -0.9361, -0.7232,  0.9363, -1.5806, -0.7779, -0.2903]])
+out1 = tensor([[-0.9154, -0.3510, -1.2982, -0.3463, -0.1149,  1.1534, -0.0839, -0.4415,
+          1.1926,  0.2540, -0.9234,  ...  1.3317,  0.2892,  1.3496, -0.5839,
+          0.6811, -2.7635, -0.1806, -1.3321,  1.2874,  1.4415, -0.4125, -0.2912]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+__________ TestNTXentLossUnitTest.test_forward_pass_memory_bank_cuda ___________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass_memory_bank_cuda>
+
+    @unittest.skipUnless(torch.cuda.is_available(), "No cuda")
+    def test_forward_pass_memory_bank_cuda(self):
+        loss = NTXentLoss(memory_bank_size=64)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 32)).cuda()
+            batch_2 = torch.randn((bsz, 32)).cuda()
+>           l = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[-2.1787, -0.9194,  0.5947,  0.6502, -0.5256, -0.2388,  0.7891,  1.4030,
+          0.7490, -0.5341,  0.0252, -...06, -0.5684,
+          1.6897, -1.7501, -0.7770,  0.5251, -0.7999,  1.0655, -0.7412, -0.3631]],
+       device='cuda:0')
+out1 = tensor([[ 0.3623,  0.8893,  0.0153,  1.2002, -0.6091,  1.4535,  0.3178, -0.2317,
+          0.3106, -0.2183,  0.7095, -...03,  0.0056,
+         -1.0674, -1.0307,  0.2060, -0.4768, -1.2983, -0.8620, -0.1280,  0.0132]],
+       device='cuda:0')
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+______________ TestNTXentLossUnitTest.test_forward_pass_neg_temp _______________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_forward_pass_neg_temp>
+
+    def test_forward_pass_neg_temp(self):
+        loss = NTXentLoss(temperature=-1.0, memory_bank_size=0)
+        for bsz in range(1, 20):
+            batch_1 = torch.randn((bsz, 32))
+            batch_2 = torch.randn((bsz, 32))
+    
+            # symmetry
+>           l1 = loss(batch_1, batch_2)
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[-1.0003,  0.3668, -1.1714, -1.6614,  0.2145,  0.5216,  1.7983,  0.7443,
+          0.7799,  0.9615, -0.1720,  ...  0.5105,  0.3433,  1.7208, -0.0542,
+         -1.2759,  0.7206,  0.1240, -0.2175, -1.5336, -1.7703, -1.0468, -0.1354]])
+out1 = tensor([[-1.2565,  0.7065,  0.5193, -1.0016, -0.3347,  1.7679, -1.1119,  0.7907,
+         -0.1098,  0.1507,  1.0173,  ... -0.3090,  2.8161, -0.1325,  0.4118,
+         -1.2577,  1.5360,  1.0207, -0.7180, -0.5095,  0.5710,  0.5109,  0.1763]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+____________ TestNTXentLossUnitTest.test_with_correlated_embedding _____________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_with_correlated_embedding>
+
+    def test_with_correlated_embedding(self):
+        for n_samples in [1, 2, 8, 16]:
+            for memory_bank_size in [0, 1, 2, 8, 15, 16, 17]:
+                for temperature in [0.1, 1, 7]:
+                    for gather_distributed in [False, True]:
+                        out0 = np.random.random((n_samples, 1))
+                        out1 = np.random.random((n_samples, 1))
+                        out0 = np.concatenate([out0, 2 * out0], axis=1)
+                        out1 = np.concatenate([out1, 2 * out1], axis=1)
+                        out0 = torch.FloatTensor(out0)
+                        out1 = torch.FloatTensor(out1)
+                        out0.requires_grad = True
+    
+                        with self.subTest(
+                            msg=(
+                                f"n_samples: {n_samples}, memory_bank_size: {memory_bank_size},"
+                                f"temperature: {temperature}, gather_distributed: {gather_distributed}"
+                            )
+                        ):
+                            loss_function = NTXentLoss(
+                                temperature=temperature,
+                                memory_bank_size=memory_bank_size,
+                            )
+                            if memory_bank_size > 0:
+                                for i in range(int(memory_bank_size / n_samples) + 2):
+                                    # fill the memory bank over multiple rounds
+                                    loss = float(loss_function(out0, out1))
+                                expected_loss = -1 * np.log(1 / (memory_bank_size + 1))
+                            else:
+>                               loss = float(loss_function(out0, out1))
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[0.0328, 0.0656]], requires_grad=True)
+out1 = tensor([[0.7318, 1.4636]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+___________________ TestNTXentLossUnitTest.test_with_values ____________________
+
+self = <test_NTXentLoss.TestNTXentLossUnitTest testMethod=test_with_values>
+
+    def test_with_values(self):
+        for n_samples in [1, 2, 4]:
+            for dimension in [1, 2, 16, 64]:
+                for temperature in [0.1, 1, 10]:
+                    for gather_distributed in [False, True]:
+                        out0 = np.random.normal(0, 1, size=(n_samples, dimension))
+                        out1 = np.random.normal(0, 1, size=(n_samples, dimension))
+                        with self.subTest(
+                            msg=(
+                                f"out0.shape={out0.shape}, temperature={temperature}, "
+                                f"gather_distributed={gather_distributed}"
+                            )
+                        ):
+                            out0 = torch.FloatTensor(out0)
+                            out1 = torch.FloatTensor(out1)
+    
+                            loss_function = NTXentLoss(
+                                temperature=temperature,
+                                gather_distributed=gather_distributed,
+                            )
+>                           l1 = float(loss_function(out0, out1))
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/lightly/lightly/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = NTXentLoss(
+  (cross_entropy): CrossEntropyLoss()
+)
+out0 = tensor([[0.8178]]), out1 = tensor([[-0.2326]])
+
+    def forward(self, out0: torch.Tensor, out1: torch.Tensor) -> torch.Tensor:
+>       out0 = F.normalize(out0, p=2, dim=1, eps=self.eps)
+E       NameError: name 'F' is not defined
+
+../publishablew/lightly/lightly/lightly/loss/ntx_ent_loss.py:82: NameError
+=============================== warnings summary ===============================
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=64' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+FAILED ../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values
+=================== 8 failed, 2 passed, 2 warnings in 2.92s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 10 items
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed PASSED [ 10%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed_dist_not_available PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass PASSED [ 30%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d PASSED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda PASSED [ 50%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank PASSED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda PASSED [ 70%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp PASSED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding PASSED [ 90%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=64' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=1' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=2' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=8' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=15' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=16' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=17' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py: 144 warnings
+  /local/data0/moved_data/publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:66: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    out0 = np.array(out0)
+
+tests/loss/test_NTXentLoss.py: 144 warnings
+  /local/data0/moved_data/publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:67: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    out1 = np.array(out1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 296 warnings in 2.93s =======================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/lightly/lightly/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/lightly/lightly
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, mock-3.14.0
+collecting ... collected 10 items
+
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed PASSED [ 10%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLoss::test__gather_distributed_dist_not_available PASSED [ 20%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass PASSED [ 30%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_1d PASSED [ 40%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_cuda PASSED [ 50%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank PASSED [ 60%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda PASSED [ 70%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_neg_temp PASSED [ 80%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding PASSED [ 90%]
+../publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_values PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_forward_pass_memory_bank_cuda
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=64' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=1' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=2' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=8' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=15' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=16' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py::TestNTXentLossUnitTest::test_with_correlated_embedding
+  /local/data0/moved_data/publishablew/lightly/lightly/lightly/models/modules/memory_bank.py:89: UserWarning: Memory bank size 'size=17' does not specify feature dimension. It is recommended to set the feature dimension with 'size=(n, dim)' when creating the memory bank. Distributed training might fail if the feature dimension is not set.
+    warnings.warn(
+
+tests/loss/test_NTXentLoss.py: 144 warnings
+  /local/data0/moved_data/publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:66: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    out0 = np.array(out0)
+
+tests/loss/test_NTXentLoss.py: 144 warnings
+  /local/data0/moved_data/publishablew/lightly/lightly/tests/loss/test_NTXentLoss.py:67: DeprecationWarning: __array__ implementation doesn't accept a copy keyword, so passing copy=False failed. __array__ must implement 'dtype' and 'copy' keyword arguments. To learn more, see the migration guide https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword
+    out1 = np.array(out1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 296 warnings in 3.09s =======================

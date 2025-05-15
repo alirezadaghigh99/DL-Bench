@@ -1,0 +1,160 @@
+output file:
+processed_nncfdo_conv2d300.json
+function:
+do_conv2d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_custom_transition_matrix', 'FAILED', 'FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_intermediate_value'}
+
+All Test Cases On Generated code:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 7 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_odd_value PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_less_than_minimum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_more_than_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_intermediate_value INFO:nncf:Stage LR scheduler in use
+FAILED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_output_shape INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_custom_transition_matrix INFO:nncf:Stage LR scheduler in use
+FAILED
+
+=================================== FAILURES ===================================
+_________________ test_elastic_kernel_with_intermediate_value __________________
+
+    def test_elastic_kernel_with_intermediate_value():
+        kernel_handler, supernet = create_single_conv_kernel_supernet()
+    
+        device = next(iter(supernet.parameters())).device
+        input_ = torch.ones([1, 1, 5, 5]).to(device)
+        conv = supernet.conv
+        kernel_handler.activate_subnet_for_config([3])
+        actual_output = supernet(input_)
+    
+        ref_padding = 1
+        ref_weights = conv.weight[:, :, 1:4, 1:4]
+        ref_output = do_conv2d(conv, input_, padding=ref_padding, weight=ref_weights)
+    
+>       assert torch.equal(actual_output, ref_output)
+E       AssertionError: assert False
+E        +  where False = <function _VariableFunctionsClass.equal at 0x759ef59c6670>(tensor([[[[-4., -6., -6., -6., -5.],\n          [-6., -8., -8., -8., -6.],\n          [-6., -8., -8., -8., -6.],\n          [-6., -8., -8., -8., -6.],\n          [-5., -6., -6., -6., -4.]]]], device='cuda:0',\n       grad_fn=<ConvolutionBackward0>), tensor([[[[ -8., -11., -14., -12., -10.],\n          [-11., -14., -18., -15., -12.],\n          [-14., -18., -22., -18., -14.],\n          [-12., -15., -18., -14., -11.],\n          [-10., -12., -14., -11.,  -8.]]]], device='cuda:0',\n       grad_fn=<ConvolutionBackward0>))
+E        +    where <function _VariableFunctionsClass.equal at 0x759ef59c6670> = torch.equal
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py:76: AssertionError
+______________ test_elastic_kernel_with_custom_transition_matrix _______________
+
+    def test_elastic_kernel_with_custom_transition_matrix():
+        kernel_handler, supernet = create_single_conv_kernel_supernet()
+        device = next(iter(supernet.parameters())).device
+        custom_transition_matrix = torch.ones([3**2, 3**2]).to(device)
+    
+        elastic_kernel_op = kernel_handler._elastic_kernel_ops[0]
+        elastic_kernel_op.__setattr__(f"{5}to{3}_matrix", Parameter(custom_transition_matrix))
+        input_ = torch.ones([1, 1, 5, 5]).to(device)
+        conv = supernet.conv
+    
+        kernel_handler.activate_subnet_for_config([3])
+        actual_output = supernet(input_)
+    
+        ref_padding = 1
+        ref_weights = ref_kernel_transform(conv.weight, transition_matrix=custom_transition_matrix)
+        ref_output = do_conv2d(conv, input_, padding=ref_padding, weight=ref_weights)
+>       assert torch.equal(actual_output, ref_output)
+E       AssertionError: assert False
+E        +  where False = <function _VariableFunctionsClass.equal at 0x759ef59c6670>(tensor([[[[-26., -38., -38., -38., -26.],\n          [-38., -56., -56., -56., -38.],\n          [-38., -56., -56., -56., -38.],\n          [-38., -56., -56., -56., -38.],\n          [-26., -38., -38., -38., -26.]]]], device='cuda:0',\n       grad_fn=<ConvolutionBackward0>), tensor([[[[ -8., -11., -14., -12., -10.],\n          [-11., -14., -18., -15., -12.],\n          [-14., -18., -22., -18., -14.],\n          [-12., -15., -18., -14., -11.],\n          [-10., -12., -14., -11.,  -8.]]]], device='cuda:0',\n       grad_fn=<ConvolutionBackward0>))
+E        +    where <function _VariableFunctionsClass.equal at 0x759ef59c6670> = torch.equal
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py:111: AssertionError
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_intermediate_value
+FAILED ../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_custom_transition_matrix
+==================== 2 failed, 5 passed, 1 warning in 2.13s ====================
+
+
+Final Test Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 7 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_odd_value PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_less_than_minimum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_more_than_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_intermediate_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_output_shape INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_custom_transition_matrix INFO:nncf:Stage LR scheduler in use
+PASSED
+
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 7 passed, 1 warning in 1.85s =========================
+
+
+Initial Result:
+INFO:nncf:NNCF initialized successfully. Supported frameworks detected: torch, tensorflow, onnx
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 7 items
+
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_odd_value PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_less_than_minimum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_more_than_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_maximum_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_intermediate_value INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_output_shape INFO:nncf:Stage LR scheduler in use
+PASSED
+../publishablew/nncf/nncf/tests/torch/nas/test_elastic_kernel.py::test_elastic_kernel_with_custom_transition_matrix INFO:nncf:Stage LR scheduler in use
+PASSED
+
+=============================== warnings summary ===============================
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964
+  /local/data0/moved_data/publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+  If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 7 passed, 1 warning in 2.12s =========================

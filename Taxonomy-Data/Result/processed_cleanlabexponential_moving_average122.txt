@@ -1,0 +1,172 @@
+output file:
+processed_cleanlabexponential_moving_average122.json
+function:
+exponential_moving_average
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha FAILED', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0]', '../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 5 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha FAILED
+
+=================================== FAILURES ===================================
+______________ TestExponentialMovingAverage.test_valid_alpha[0.5] ______________
+
+self = <test_multilabel_classification.TestExponentialMovingAverage object at 0x77bfe0a054d0>
+alpha = 0.5
+
+    @pytest.mark.parametrize("alpha", [0.5, None])
+    def test_valid_alpha(self, alpha):
+        # Test valid alpha values
+        for x, expected_ema in zip(
+            [
+                np.ones(5).reshape(1, -1),
+                np.array([[0.1, 0.2, 0.3]]),
+                np.array([x / 10 for x in range(1, 7)]).reshape(2, 3),
+            ],
+            [1, 0.175, np.array([0.175, 0.475])],
+        ):
+            ema = ml_scorer.exponential_moving_average(x, alpha=alpha)
+>           assert np.allclose(ema, expected_ema, atol=1e-4)
+E           assert False
+E            +  where False = <function allclose at 0x77c03adb0670>(array([[0.1, 0.2, 0.3]]), 0.175, atol=0.0001)
+E            +    where <function allclose at 0x77c03adb0670> = np.allclose
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:714: AssertionError
+_____________ TestExponentialMovingAverage.test_valid_alpha[None] ______________
+
+self = <test_multilabel_classification.TestExponentialMovingAverage object at 0x77bfe0a05610>
+alpha = None
+
+    @pytest.mark.parametrize("alpha", [0.5, None])
+    def test_valid_alpha(self, alpha):
+        # Test valid alpha values
+        for x, expected_ema in zip(
+            [
+                np.ones(5).reshape(1, -1),
+                np.array([[0.1, 0.2, 0.3]]),
+                np.array([x / 10 for x in range(1, 7)]).reshape(2, 3),
+            ],
+            [1, 0.175, np.array([0.175, 0.475])],
+        ):
+            ema = ml_scorer.exponential_moving_average(x, alpha=alpha)
+>           assert np.allclose(ema, expected_ema, atol=1e-4)
+E           assert False
+E            +  where False = <function allclose at 0x77c03adb0670>(array([[0.1, 0.2, 0.3]]), 0.175, atol=0.0001)
+E            +    where <function allclose at 0x77c03adb0670> = np.allclose
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:714: AssertionError
+__________ TestExponentialMovingAverage.test_alpha_boundary[alpha=0] ___________
+
+self = <test_multilabel_classification.TestExponentialMovingAverage object at 0x77bfe0a05f50>
+alpha = 0, expected_ema = 0.3
+
+    @pytest.mark.parametrize(
+        "alpha,expected_ema",
+        [[0, 0.3], [1, 0.1]],
+        ids=["alpha=0", "alpha=1"],
+    )
+    def test_alpha_boundary(self, alpha, expected_ema):
+        # alpha = 0(1) should return the largest(smallest) value
+        X = np.array([[0.1, 0.2, 0.3]])
+        ema = ml_scorer.exponential_moving_average(X, alpha=alpha)
+>       assert np.allclose(ema, expected_ema, atol=1e-4)
+E       assert False
+E        +  where False = <function allclose at 0x77c03adb0670>(array([[0.1, 0.2, 0.3]]), 0.3, atol=0.0001)
+E        +    where <function allclose at 0x77c03adb0670> = np.allclose
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:725: AssertionError
+__________ TestExponentialMovingAverage.test_alpha_boundary[alpha=1] ___________
+
+self = <test_multilabel_classification.TestExponentialMovingAverage object at 0x77bfe0a06090>
+alpha = 1, expected_ema = 0.1
+
+    @pytest.mark.parametrize(
+        "alpha,expected_ema",
+        [[0, 0.3], [1, 0.1]],
+        ids=["alpha=0", "alpha=1"],
+    )
+    def test_alpha_boundary(self, alpha, expected_ema):
+        # alpha = 0(1) should return the largest(smallest) value
+        X = np.array([[0.1, 0.2, 0.3]])
+        ema = ml_scorer.exponential_moving_average(X, alpha=alpha)
+>       assert np.allclose(ema, expected_ema, atol=1e-4)
+E       assert False
+E        +  where False = <function allclose at 0x77c03adb0670>(array([[0.1, 0.2, 0.3]]), 0.1, atol=0.0001)
+E        +    where <function allclose at 0x77c03adb0670> = np.allclose
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:725: AssertionError
+_______________ TestExponentialMovingAverage.test_invalid_alpha ________________
+
+self = <test_multilabel_classification.TestExponentialMovingAverage object at 0x77bfe0a06590>
+
+    def test_invalid_alpha(self):
+        # Test that the exponential moving average raises an error
+        # when alpha is not in the interval [0, 1].
+        partial_error_msg = r"alpha must be in the interval \[0, 1\]"
+        for alpha in [-0.5, 1.5]:
+>           with pytest.raises(ValueError, match=partial_error_msg):
+E           Failed: DID NOT RAISE <class 'ValueError'>
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py:732: Failed
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha
+============================== 5 failed in 0.73s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 5 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha PASSED
+
+============================== 5 passed in 0.58s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 5 items
+
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[0.5] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_valid_alpha[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_alpha_boundary[alpha=1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_multilabel_classification.py::TestExponentialMovingAverage::test_invalid_alpha PASSED
+
+============================== 5 passed in 0.57s ===============================

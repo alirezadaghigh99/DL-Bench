@@ -1,0 +1,234 @@
+output file:
+processed_classes-nncfcalculate92.json
+function:
+calculate
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d] FAILED [100%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear]', '../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d] FAILED [ 88%]', '../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear] FAILED [ 77%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d]', 'FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 9 items
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFLinear] PASSED [ 11%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConv2d] PASSED [ 22%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConvTranspose2d] PASSED [ 33%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFLinear] PASSED [ 44%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConv2d] PASSED [ 55%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConvTranspose2d] PASSED [ 66%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear] FAILED [ 77%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d] FAILED [ 88%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d] FAILED [100%]
+
+=================================== FAILURES ===================================
+___________ TestSparseModules.test_calc_loss[not_frozen-NNCFLinear] ____________
+
+self = <tests.torch.sparsity.rb.test_components.TestSparseModules object at 0x7ad321a0e670>
+module = <class 'nncf.torch.layers.NNCFLinear'>, frozen = False, raising = False
+
+    @pytest.mark.parametrize(
+        ("frozen", "raising"), ((None, True), (True, True), (False, False)), ids=("default", "frozen", "not_frozen")
+    )
+    def test_calc_loss(self, module, frozen, raising):
+        model = sparse_model(module, frozen)
+        sw = model.sparsifier
+        assert sw.frozen is (True if frozen is None else frozen)
+        loss = SparseLoss([model.sparsifier])
+        try:
+>           assert loss() == 0
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/dynamic_graph/wrappers.py:145: in wrapped
+    return module_call(self, *args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/nncf/nncf/nncf/torch/compression_method_api.py:67: in forward
+    return self.calculate()
+../publishablew/nncf/nncf/nncf/torch/sparsity/rb/loss.py:32: in calculate
+    total_loss += layer.sparse_loss
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = RBSparsifyingWeight(), name = 'sparse_loss'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'RBSparsifyingWeight' object has no attribute 'sparse_loss'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+___________ TestSparseModules.test_calc_loss[not_frozen-NNCFConv2d] ____________
+
+self = <tests.torch.sparsity.rb.test_components.TestSparseModules object at 0x7ad321a0e730>
+module = <class 'nncf.torch.layers.NNCFConv2d'>, frozen = False, raising = False
+
+    @pytest.mark.parametrize(
+        ("frozen", "raising"), ((None, True), (True, True), (False, False)), ids=("default", "frozen", "not_frozen")
+    )
+    def test_calc_loss(self, module, frozen, raising):
+        model = sparse_model(module, frozen)
+        sw = model.sparsifier
+        assert sw.frozen is (True if frozen is None else frozen)
+        loss = SparseLoss([model.sparsifier])
+        try:
+>           assert loss() == 0
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/dynamic_graph/wrappers.py:145: in wrapped
+    return module_call(self, *args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/nncf/nncf/nncf/torch/compression_method_api.py:67: in forward
+    return self.calculate()
+../publishablew/nncf/nncf/nncf/torch/sparsity/rb/loss.py:32: in calculate
+    total_loss += layer.sparse_loss
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = RBSparsifyingWeight(), name = 'sparse_loss'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'RBSparsifyingWeight' object has no attribute 'sparse_loss'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_______ TestSparseModules.test_calc_loss[not_frozen-NNCFConvTranspose2d] _______
+
+self = <tests.torch.sparsity.rb.test_components.TestSparseModules object at 0x7ad321a0e7f0>
+module = <class 'nncf.torch.layers.NNCFConvTranspose2d'>, frozen = False
+raising = False
+
+    @pytest.mark.parametrize(
+        ("frozen", "raising"), ((None, True), (True, True), (False, False)), ids=("default", "frozen", "not_frozen")
+    )
+    def test_calc_loss(self, module, frozen, raising):
+        model = sparse_model(module, frozen)
+        sw = model.sparsifier
+        assert sw.frozen is (True if frozen is None else frozen)
+        loss = SparseLoss([model.sparsifier])
+        try:
+>           assert loss() == 0
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/dynamic_graph/wrappers.py:145: in wrapped
+    return module_call(self, *args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/nncf/nncf/nncf/torch/compression_method_api.py:67: in forward
+    return self.calculate()
+../publishablew/nncf/nncf/nncf/torch/sparsity/rb/loss.py:32: in calculate
+    total_loss += layer.sparse_loss
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = RBSparsifyingWeight(), name = 'sparse_loss'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'RBSparsifyingWeight' object has no attribute 'sparse_loss'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear]
+FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d]
+FAILED ../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d]
+========================= 3 failed, 6 passed in 1.74s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 9 items
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFLinear] PASSED [ 11%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConv2d] PASSED [ 22%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConvTranspose2d] PASSED [ 33%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFLinear] PASSED [ 44%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConv2d] PASSED [ 55%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConvTranspose2d] PASSED [ 66%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear] PASSED [ 77%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d] PASSED [ 88%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d] PASSED [100%]
+
+============================== 9 passed in 1.25s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 9 items
+
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFLinear] PASSED [ 11%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConv2d] PASSED [ 22%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[default-NNCFConvTranspose2d] PASSED [ 33%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFLinear] PASSED [ 44%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConv2d] PASSED [ 55%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[frozen-NNCFConvTranspose2d] PASSED [ 66%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFLinear] PASSED [ 77%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConv2d] PASSED [ 88%]
+../publishablew/nncf/nncf/tests/torch/sparsity/rb/test_components.py::TestSparseModules::test_calc_loss[not_frozen-NNCFConvTranspose2d] PASSED [100%]
+
+============================== 9 passed in 6.04s ===============================

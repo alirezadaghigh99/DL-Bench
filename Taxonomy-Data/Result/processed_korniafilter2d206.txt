@@ -1,0 +1,749 @@
+output file:
+processed_korniafilter2d206.json
+function:
+filter2d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant]', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular] FAILED', '../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect]', 'FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'openxla', 'onnxrt', 'jit', 'cudagraphs', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate] FAILED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular] FAILED
+
+=================================== FAILURES ===================================
+___________ TestFilter2D.test_smoke[cpu-float32-valid-True-constant] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72ee9e0>
+border_type = 'constant', normalized = True, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.1474, 0.0621, 0.0009],
+          [0.1327, 0.0984, 0.1885],
+          [0.1110, 0.0715, 0.1875]]]])
+border_type = 'constant', normalized = True, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+___________ TestFilter2D.test_smoke[cpu-float32-valid-True-reflect] ____________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eeaa0>
+border_type = 'reflect', normalized = True, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.0328, 0.0885, 0.0378],
+          [0.0725, 0.1922, 0.0363],
+          [0.1901, 0.2331, 0.1167]]]])
+border_type = 'reflect', normalized = True, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+__________ TestFilter2D.test_smoke[cpu-float32-valid-True-replicate] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eeb60>
+border_type = 'replicate', normalized = True, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.0276, 0.1346, 0.0794],
+          [0.1690, 0.1225, 0.0564],
+          [0.1122, 0.1518, 0.1464]]]])
+border_type = 'replicate', normalized = True, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+___________ TestFilter2D.test_smoke[cpu-float32-valid-True-circular] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eec20>
+border_type = 'circular', normalized = True, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.0694, 0.0416, 0.1388],
+          [0.1675, 0.1590, 0.1543],
+          [0.0474, 0.0840, 0.1380]]]])
+border_type = 'circular', normalized = True, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+__________ TestFilter2D.test_smoke[cpu-float32-valid-False-constant] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eece0>
+border_type = 'constant', normalized = False, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.4668, 0.7130, 0.7505],
+          [0.8414, 0.2864, 0.2690],
+          [0.2542, 0.5517, 0.6886]]]])
+border_type = 'constant', normalized = False, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+___________ TestFilter2D.test_smoke[cpu-float32-valid-False-reflect] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eeda0>
+border_type = 'reflect', normalized = False, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.0293, 0.9311, 0.0912],
+          [0.7263, 0.9419, 0.4678],
+          [0.5323, 0.5952, 0.4695]]]])
+border_type = 'reflect', normalized = False, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+__________ TestFilter2D.test_smoke[cpu-float32-valid-False-replicate] __________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eee60>
+border_type = 'replicate', normalized = False, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.3034, 0.3474, 0.0082],
+          [0.0544, 0.4129, 0.6993],
+          [0.5699, 0.8091, 0.1945]]]])
+border_type = 'replicate', normalized = False, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+__________ TestFilter2D.test_smoke[cpu-float32-valid-False-circular] ___________
+
+self = <test_filters.TestFilter2D object at 0x7a82a72eef20>
+border_type = 'circular', normalized = False, padding = 'valid'
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("border_type", ["constant", "reflect", "replicate", "circular"])
+    @pytest.mark.parametrize("normalized", [True, False])
+    @pytest.mark.parametrize("padding", ["same", "valid"])
+    def test_smoke(self, border_type, normalized, padding, device, dtype):
+        kernel = torch.rand(1, 3, 3, device=device, dtype=dtype)
+        _, height, width = kernel.shape
+        sample = torch.ones(1, 1, 7, 8, device=device, dtype=dtype)
+        b, c, h, w = sample.shape
+    
+>       actual = filter2d(sample, kernel, border_type, normalized, padding)
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/filters/filter.py:26: in filter2d
+    return filter2d(input, kernel, border_type, normalized, padding, behaviour)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1.,...1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.],
+          [1., 1., 1., 1., 1., 1., 1., 1.]]]])
+kernel = tensor([[[[0.0552, 0.4897, 0.9836],
+          [0.5019, 0.7322, 0.8463],
+          [0.6758, 0.1277, 0.6115]]]])
+border_type = 'circular', normalized = False, padding = 'valid'
+behaviour = 'corr'
+
+    def filter2d(input, kernel, border_type='constant', normalized=False, padding='same', behaviour='corr'):
+        if len(input.shape) != 4:
+            raise ValueError('Input tensor must have shape (B, C, H, W)')
+        if len(kernel.shape) not in [3]:
+            raise ValueError('Kernel must have shape (1, kH, kW) or (B, kH, kW)')
+        B, C, H, W = input.shape
+        kB, kH, kW = kernel.shape
+        if normalized:
+            kernel = kernel / kernel.sum(dim=(-2, -1), keepdim=True)
+        if padding == 'same':
+            pad_h = (kH - 1) // 2
+            pad_w = (kW - 1) // 2
+        elif padding == 'valid':
+            pad_h = 0
+            pad_w = 0
+        else:
+            raise ValueError("Padding must be 'same' or 'valid'")
+        if border_type == 'constant':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='constant', value=0)
+        elif border_type == 'reflect':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='reflect')
+        elif border_type == 'replicate':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='replicate')
+        elif border_type == 'circular':
+            input_padded = F.pad(input, (pad_w, pad_w, pad_h, pad_h), mode='circular')
+        else:
+            raise ValueError("Invalid border_type. Expected 'constant', 'reflect', 'replicate', or 'circular'.")
+        if behaviour == 'conv':
+            kernel = torch.flip(kernel, dims=(-2, -1))
+        kernel = kernel.expand(B, C, kH, kW)
+        output = torch.zeros_like(input)
+        for b in range(B):
+            for c in range(C):
+>               output[b, c] = F.conv2d(input_padded[b, c].unsqueeze(0).unsqueeze(0), kernel[b, c].unsqueeze(0).unsqueeze(0), padding=0).squeeze()
+E               RuntimeError: The expanded size of the tensor (8) must match the existing size (6) at non-singleton dimension 1.  Target sizes: [7, 8].  Tensor sizes: [5, 6]
+
+../publishablew/kornia/kornia/kornia/filters/temp.py:42: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate]
+FAILED ../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular]
+========================= 8 failed, 8 passed in 0.38s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'inductor', 'onnxrt', 'openxla', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular] PASSED
+
+============================== 16 passed in 0.18s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'onnxrt', 'inductor', 'cudagraphs', 'jit', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-same-False-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-True-circular] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-constant] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-reflect] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-replicate] PASSED
+../publishablew/kornia/kornia/tests/filters/test_filters.py::TestFilter2D::test_smoke[cpu-float32-valid-False-circular] PASSED
+
+============================== 16 passed in 0.21s ==============================

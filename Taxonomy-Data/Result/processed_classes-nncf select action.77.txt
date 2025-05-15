@@ -1,0 +1,594 @@
+output file:
+processed_classes-nncf select action.77.json
+function:
+select_action
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100] FAILED [ 37%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000] FAILED [ 50%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10] FAILED [ 25%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10] FAILED [ 75%]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100] FAILED [ 87%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0] FAILED [ 62%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000] FAILED [100%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000]', '../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0] FAILED [ 12%]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10]', 'FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 8 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0] FAILED [ 12%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10] FAILED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100] FAILED [ 37%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000] FAILED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0] FAILED [ 62%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10] FAILED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100] FAILED [ 87%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000] FAILED [100%]
+
+=================================== FAILURES ===================================
+_____________ test_select_action[actor_with_noise_True-episode_0] ______________
+
+episode_action_pair = (0, [0.71018179, 0.82288581]), decay_epsilon = True
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_____________ test_select_action[actor_with_noise_True-episode_10] _____________
+
+episode_action_pair = (10, [0.72084132, 0.82954315]), decay_epsilon = True
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+____________ test_select_action[actor_with_noise_True-episode_100] _____________
+
+episode_action_pair = (100, [0.81406932, 0.88682551]), decay_epsilon = True
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+____________ test_select_action[actor_with_noise_True-episode_1000] ____________
+
+episode_action_pair = (1000, [0.99795472, 0.99875519]), decay_epsilon = True
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_____________ test_select_action[actor_with_noise_False-episode_0] _____________
+
+episode_action_pair = (0, [0.71018179, 0.82288581]), decay_epsilon = False
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+____________ test_select_action[actor_with_noise_False-episode_10] _____________
+
+episode_action_pair = (10, [0.72084132, 0.82954315]), decay_epsilon = False
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+____________ test_select_action[actor_with_noise_False-episode_100] ____________
+
+episode_action_pair = (100, [0.81406932, 0.88682551]), decay_epsilon = False
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+___________ test_select_action[actor_with_noise_False-episode_1000] ____________
+
+episode_action_pair = (1000, [0.99795472, 0.99875519]), decay_epsilon = False
+_seed = None
+
+    @pytest.mark.parametrize(
+        "episode_action_pair",
+        EPISODE_NOISY_ACTION_TUPLES,
+        ids=["_".join(["episode", str(e)]) for e, _ in EPISODE_NOISY_ACTION_TUPLES],
+    )
+    @pytest.mark.parametrize(
+        "decay_epsilon", [True, False], ids=["_".join(["actor_with_noise", str(b)]) for b in [True, False]]
+    )
+    def test_select_action(episode_action_pair, decay_epsilon, _seed):
+        episode, reference_action = episode_action_pair
+    
+        hparams = {
+            "hidden1": N_HIDDEN_NODE,
+            "hidden2": N_HIDDEN_NODE,
+            "init_delta": 0.5,
+            "delta_decay": 0.99,
+            "warmup_iter_number": 5,
+        }
+    
+        ddpg = DDPG(N_STATE, N_ACTION, hparam_override=hparams)
+        ddpg.actor.load_state_dict({state: torch.ones_like(param) for state, param in ddpg.actor.state_dict().items()})
+    
+        s_t = [1.0] * N_STATE
+>       selected_action = ddpg.select_action(s_t, episode, decay_epsilon)
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nncf/nncf/nncf/torch/automl/agent/ddpg/ddpg.py:165: in select_action
+    action = self.actor.predict(s_t)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Actor(
+  (fc1): Linear(in_features=5, out_features=3, bias=True)
+  (fc2): Linear(in_features=3, out_features=3, bias=True)
+  (fc3): Linear(in_features=3, out_features=2, bias=True)
+  (relu): ReLU()
+  (sigmoid): Sigmoid()
+)
+name = 'predict'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'Actor' object has no attribute 'predict'
+
+../publishablew/nncf/nncf/venv/lib/python3.9/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100]
+FAILED ../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000]
+============================== 8 failed in 1.71s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 8 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0] PASSED [ 12%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10] PASSED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100] PASSED [ 37%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000] PASSED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0] PASSED [ 62%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10] PASSED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100] PASSED [ 87%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000] PASSED [100%]
+
+============================== 8 passed in 1.65s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/nncf/nncf/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nncf/nncf/tests/torch
+configfile: pytest.ini
+plugins: mock-3.14.0, dependency-0.6.0
+collecting ... collected 8 items
+
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_0] PASSED [ 12%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_10] PASSED [ 25%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_100] PASSED [ 37%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_True-episode_1000] PASSED [ 50%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_0] PASSED [ 62%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_10] PASSED [ 75%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_100] PASSED [ 87%]
+../publishablew/nncf/nncf/tests/torch/automl/test_ddpg.py::test_select_action[actor_with_noise_False-episode_1000] PASSED [100%]
+
+============================== 8 passed in 1.79s ===============================

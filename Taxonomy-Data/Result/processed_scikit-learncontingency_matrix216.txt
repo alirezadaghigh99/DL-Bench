@@ -1,0 +1,1588 @@
+output file:
+processed_scikit-learncontingency_matrix216.json
+function:
+contingency_matrix
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score', '../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score', '../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 44 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input I: Seeding RNGs with 2057469865
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_generalized_average PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_homogeneous_but_not_complete_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_complete_but_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_not_complete_and_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_beta_parameter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_mutual_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_expected_mutual_info_overflow PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_exactly_zero_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_v_measure_and_mutual_information PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true0-labels_pred0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true1-labels_pred1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true2-labels_pred2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true3-labels_pred3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true4-labels_pred4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_check_clustering_error PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[min] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[arithmetic] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[geometric] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[max] PASSED
+
+=================================== FAILURES ===================================
+______________________ test_error_messages_on_wrong_input ______________________
+
+    def test_error_messages_on_wrong_input():
+        for score_func in score_funcs:
+            expected = (
+                r"Found input variables with inconsistent numbers " r"of samples: \[2, 3\]"
+            )
+            with pytest.raises(ValueError, match=expected):
+>               score_func([0, 1], [1, 1, 1])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:366: in adjusted_rand_score
+    (tn, fp), (fn, tp) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1], labels_pred = [1, 1, 1]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+_____________________________ test_perfect_matches _____________________________
+
+    def test_perfect_matches():
+        for score_func in score_funcs:
+>           assert score_func([], []) == pytest.approx(1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:366: in adjusted_rand_score
+    (tn, fp), (fn, tp) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [], labels_pred = []
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+_________________________ test_non_consecutive_labels __________________________
+
+    def test_non_consecutive_labels():
+        # regression tests for labels with gaps
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 2, 2, 2], [0, 1, 0, 1, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 1, 1, 1], [0, 4, 0, 4, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+>       ari_1 = adjusted_rand_score([0, 0, 0, 1, 1, 1], [0, 1, 0, 1, 2, 2])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:366: in adjusted_rand_score
+    (tn, fp), (fn, tp) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 0, 0, 1, 1, 1], labels_pred = [0, 1, 0, 1, 2, 2]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+__________________________ test_adjustment_for_chance __________________________
+
+    def test_adjustment_for_chance():
+        # Check that adjusted scores are almost zero on random labels
+        n_clusters_range = [2, 10, 50, 90]
+        n_samples = 100
+        n_runs = 10
+    
+>       scores = uniform_labelings_scores(
+            adjusted_rand_score, n_samples, n_clusters_range, n_runs
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:177: in uniform_labelings_scores
+    scores[i, j] = score_func(labels_a, labels_b)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:366: in adjusted_rand_score
+    (tn, fp), (fn, tp) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0,
+       1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,...1,
+       1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0])
+labels_pred = array([0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0,
+       1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0,...0,
+       1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+_____________ test_int_overflow_mutual_info_fowlkes_mallows_score ______________
+
+    def test_int_overflow_mutual_info_fowlkes_mallows_score():
+        # Test overflow in mutual_info_classif and fowlkes_mallows_score
+        x = np.array(
+            [1] * (52632 + 2529)
+            + [2] * (14660 + 793)
+            + [3] * (3271 + 204)
+            + [4] * (814 + 39)
+            + [5] * (316 + 20)
+        )
+        y = np.array(
+            [0] * 52632
+            + [1] * 2529
+            + [0] * 14660
+            + [1] * 793
+            + [0] * 3271
+            + [1] * 204
+            + [0] * 814
+            + [1] * 39
+            + [0] * 316
+            + [1] * 20
+        )
+    
+        assert_all_finite(mutual_info_score(x, y))
+>       assert_all_finite(fowlkes_mallows_score(x, y))
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:255: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([1, 1, 1, ..., 5, 5, 5])
+labels_pred = array([0, 0, 0, ..., 1, 1, 1])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like'], 'sparse': ['boolean']}, prefer_skip_nested_validation=True)
+    def fowlkes_mallows_score(labels_true, labels_pred, *, sparse=False):
+        """Measure the similarity of two clusterings of a set of points.
+    
+        .. versionadded:: 0.18
+    
+        The Fowlkes-Mallows index (FMI) is defined as the geometric mean between of
+        the precision and recall::
+    
+            FMI = TP / sqrt((TP + FP) * (TP + FN))
+    
+        Where ``TP`` is the number of **True Positive** (i.e. the number of pairs of
+        points that belong to the same cluster in both ``labels_true`` and
+        ``labels_pred``), ``FP`` is the number of **False Positive** (i.e. the
+        number of pairs of points that belong to the same cluster in
+        ``labels_pred`` but not in ``labels_true``) and ``FN`` is the number of
+        **False Negative** (i.e. the number of pairs of points that belong to the
+        same cluster in ``labels_true`` but not in ``labels_pred``).
+    
+        The score ranges from 0 to 1. A high value indicates a good similarity
+        between two clusters.
+    
+        Read more in the :ref:`User Guide <fowlkes_mallows_scores>`.
+    
+        Parameters
+        ----------
+        labels_true : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        labels_pred : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        sparse : bool, default=False
+            Compute contingency matrix internally with sparse matrix.
+    
+        Returns
+        -------
+        score : float
+           The resulting Fowlkes-Mallows score.
+    
+        References
+        ----------
+        .. [1] `E. B. Fowkles and C. L. Mallows, 1983. "A method for comparing two
+           hierarchical clusterings". Journal of the American Statistical
+           Association
+           <https://www.tandfonline.com/doi/abs/10.1080/01621459.1983.10478008>`_
+    
+        .. [2] `Wikipedia entry for the Fowlkes-Mallows Index
+               <https://en.wikipedia.org/wiki/Fowlkes-Mallows_index>`_
+    
+        Examples
+        --------
+    
+        Perfect labelings are both homogeneous and complete, hence have
+        score 1.0::
+    
+          >>> from sklearn.metrics.cluster import fowlkes_mallows_score
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [0, 0, 1, 1])
+          np.float64(1.0)
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [1, 1, 0, 0])
+          np.float64(1.0)
+    
+        If classes members are completely split across different clusters,
+        the assignment is totally random, hence the FMI is null::
+    
+          >>> fowlkes_mallows_score([0, 0, 0, 0], [0, 1, 2, 3])
+          0.0
+        """
+        labels_true, labels_pred = check_clusterings(labels_true, labels_pred)
+        n_samples, = labels_true.shape
+        c = contingency_matrix(labels_true, labels_pred, sparse=True)
+        c = c.astype(np.int64, copy=False)
+>       tk = np.dot(c.data, c.data) - n_samples
+E       ValueError: shapes (5,2) and (5,2) not aligned: 2 (dim 1) != 5 (dim 0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:1046: ValueError
+___________________________ test_contingency_matrix ____________________________
+
+    def test_contingency_matrix():
+        labels_a = np.array([1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3])
+        labels_b = np.array([1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 3, 1, 3, 3, 3, 2, 2])
+        C = contingency_matrix(labels_a, labels_b)
+        C2 = np.histogram2d(labels_a, labels_b, bins=(np.arange(1, 5), np.arange(1, 5)))[0]
+        assert_array_almost_equal(C, C2)
+        C = contingency_matrix(labels_a, labels_b, eps=0.1)
+>       assert_array_almost_equal(C, C2 + 0.1)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:285: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.9/contextlib.py:79: in inner
+    return func(*args, **kwds)
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_array_almost_equal.<locals>.compare at 0x77f8e9539d30>, array([[5, 1, 0],
+       [1, 4, 1],
+       [0, 2, 3]]), array([[5.1, 1.1, 0.1],
+       [1.1, 4.1, 1.1],
+       [0.1, 2.1, 3.1]]))
+kwds = {'err_msg': '', 'header': 'Arrays are not almost equal to 6 decimals', 'precision': 6, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not almost equal to 6 decimals
+E           
+E           Mismatched elements: 9 / 9 (100%)
+E           Max absolute difference among violations: 0.1
+E           Max relative difference among violations: 1.
+E            ACTUAL: array([[5, 1, 0],
+E                  [1, 4, 1],
+E                  [0, 2, 3]])
+E            DESIRED: array([[5.1, 1.1, 0.1],
+E                  [1.1, 4.1, 1.1],
+E                  [0.1, 2.1, 3.1]])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+________________________ test_contingency_matrix_sparse ________________________
+
+    def test_contingency_matrix_sparse():
+        labels_a = np.array([1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3])
+        labels_b = np.array([1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 3, 1, 3, 3, 3, 2, 2])
+        C = contingency_matrix(labels_a, labels_b)
+>       C_sparse = contingency_matrix(labels_a, labels_b, sparse=True).toarray()
+E       AttributeError: 'numpy.ndarray' object has no attribute 'toarray'
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:292: AttributeError
+__________________________ test_fowlkes_mallows_score __________________________
+
+    def test_fowlkes_mallows_score():
+        # General case
+>       score = fowlkes_mallows_score([0, 0, 0, 1, 1, 1], [0, 0, 1, 1, 2, 2])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:339: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 0, 0, 1, 1, 1]), labels_pred = array([0, 0, 1, 1, 2, 2])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like'], 'sparse': ['boolean']}, prefer_skip_nested_validation=True)
+    def fowlkes_mallows_score(labels_true, labels_pred, *, sparse=False):
+        """Measure the similarity of two clusterings of a set of points.
+    
+        .. versionadded:: 0.18
+    
+        The Fowlkes-Mallows index (FMI) is defined as the geometric mean between of
+        the precision and recall::
+    
+            FMI = TP / sqrt((TP + FP) * (TP + FN))
+    
+        Where ``TP`` is the number of **True Positive** (i.e. the number of pairs of
+        points that belong to the same cluster in both ``labels_true`` and
+        ``labels_pred``), ``FP`` is the number of **False Positive** (i.e. the
+        number of pairs of points that belong to the same cluster in
+        ``labels_pred`` but not in ``labels_true``) and ``FN`` is the number of
+        **False Negative** (i.e. the number of pairs of points that belong to the
+        same cluster in ``labels_true`` but not in ``labels_pred``).
+    
+        The score ranges from 0 to 1. A high value indicates a good similarity
+        between two clusters.
+    
+        Read more in the :ref:`User Guide <fowlkes_mallows_scores>`.
+    
+        Parameters
+        ----------
+        labels_true : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        labels_pred : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        sparse : bool, default=False
+            Compute contingency matrix internally with sparse matrix.
+    
+        Returns
+        -------
+        score : float
+           The resulting Fowlkes-Mallows score.
+    
+        References
+        ----------
+        .. [1] `E. B. Fowkles and C. L. Mallows, 1983. "A method for comparing two
+           hierarchical clusterings". Journal of the American Statistical
+           Association
+           <https://www.tandfonline.com/doi/abs/10.1080/01621459.1983.10478008>`_
+    
+        .. [2] `Wikipedia entry for the Fowlkes-Mallows Index
+               <https://en.wikipedia.org/wiki/Fowlkes-Mallows_index>`_
+    
+        Examples
+        --------
+    
+        Perfect labelings are both homogeneous and complete, hence have
+        score 1.0::
+    
+          >>> from sklearn.metrics.cluster import fowlkes_mallows_score
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [0, 0, 1, 1])
+          np.float64(1.0)
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [1, 1, 0, 0])
+          np.float64(1.0)
+    
+        If classes members are completely split across different clusters,
+        the assignment is totally random, hence the FMI is null::
+    
+          >>> fowlkes_mallows_score([0, 0, 0, 0], [0, 1, 2, 3])
+          0.0
+        """
+        labels_true, labels_pred = check_clusterings(labels_true, labels_pred)
+        n_samples, = labels_true.shape
+        c = contingency_matrix(labels_true, labels_pred, sparse=True)
+        c = c.astype(np.int64, copy=False)
+>       tk = np.dot(c.data, c.data) - n_samples
+E       ValueError: shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:1046: ValueError
+____________________ test_fowlkes_mallows_score_properties _____________________
+
+    def test_fowlkes_mallows_score_properties():
+        # handcrafted example
+        labels_a = np.array([0, 0, 0, 1, 1, 2])
+        labels_b = np.array([1, 1, 2, 2, 0, 0])
+        expected = 1.0 / np.sqrt((1.0 + 3.0) * (1.0 + 2.0))
+        # FMI = TP / sqrt((TP + FP) * (TP + FN))
+    
+>       score_original = fowlkes_mallows_score(labels_a, labels_b)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:358: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 0, 0, 1, 1, 2]), labels_pred = array([1, 1, 2, 2, 0, 0])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like'], 'sparse': ['boolean']}, prefer_skip_nested_validation=True)
+    def fowlkes_mallows_score(labels_true, labels_pred, *, sparse=False):
+        """Measure the similarity of two clusterings of a set of points.
+    
+        .. versionadded:: 0.18
+    
+        The Fowlkes-Mallows index (FMI) is defined as the geometric mean between of
+        the precision and recall::
+    
+            FMI = TP / sqrt((TP + FP) * (TP + FN))
+    
+        Where ``TP`` is the number of **True Positive** (i.e. the number of pairs of
+        points that belong to the same cluster in both ``labels_true`` and
+        ``labels_pred``), ``FP`` is the number of **False Positive** (i.e. the
+        number of pairs of points that belong to the same cluster in
+        ``labels_pred`` but not in ``labels_true``) and ``FN`` is the number of
+        **False Negative** (i.e. the number of pairs of points that belong to the
+        same cluster in ``labels_true`` but not in ``labels_pred``).
+    
+        The score ranges from 0 to 1. A high value indicates a good similarity
+        between two clusters.
+    
+        Read more in the :ref:`User Guide <fowlkes_mallows_scores>`.
+    
+        Parameters
+        ----------
+        labels_true : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        labels_pred : array-like of shape (n_samples,), dtype=int
+            A clustering of the data into disjoint subsets.
+    
+        sparse : bool, default=False
+            Compute contingency matrix internally with sparse matrix.
+    
+        Returns
+        -------
+        score : float
+           The resulting Fowlkes-Mallows score.
+    
+        References
+        ----------
+        .. [1] `E. B. Fowkles and C. L. Mallows, 1983. "A method for comparing two
+           hierarchical clusterings". Journal of the American Statistical
+           Association
+           <https://www.tandfonline.com/doi/abs/10.1080/01621459.1983.10478008>`_
+    
+        .. [2] `Wikipedia entry for the Fowlkes-Mallows Index
+               <https://en.wikipedia.org/wiki/Fowlkes-Mallows_index>`_
+    
+        Examples
+        --------
+    
+        Perfect labelings are both homogeneous and complete, hence have
+        score 1.0::
+    
+          >>> from sklearn.metrics.cluster import fowlkes_mallows_score
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [0, 0, 1, 1])
+          np.float64(1.0)
+          >>> fowlkes_mallows_score([0, 0, 1, 1], [1, 1, 0, 0])
+          np.float64(1.0)
+    
+        If classes members are completely split across different clusters,
+        the assignment is totally random, hence the FMI is null::
+    
+          >>> fowlkes_mallows_score([0, 0, 0, 0], [0, 1, 2, 3])
+          0.0
+        """
+        labels_true, labels_pred = check_clusterings(labels_true, labels_pred)
+        n_samples, = labels_true.shape
+        c = contingency_matrix(labels_true, labels_pred, sparse=True)
+        c = c.astype(np.int64, copy=False)
+        tk = np.dot(c.data, c.data) - n_samples
+        pk = np.sum(np.asarray(c.sum(axis=0)).ravel() ** 2) - n_samples
+        qk = np.sum(np.asarray(c.sum(axis=1)).ravel() ** 2) - n_samples
+>       return np.sqrt(tk / pk) * np.sqrt(tk / qk) if tk != 0.0 else 0.0
+E       ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:1049: ValueError
+__________________ test_pair_confusion_matrix_fully_dispersed __________________
+
+    def test_pair_confusion_matrix_fully_dispersed():
+        # edge case: every element is its own cluster
+        N = 100
+        clustering1 = list(range(N))
+        clustering2 = clustering1
+        expected = np.array([[N * (N - 1), 0], [0, 0]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1, 2, 3, 4, 5, ...], labels_pred = [0, 1, 2, 3, 4, 5, ...]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+__________________ test_pair_confusion_matrix_single_cluster ___________________
+
+    def test_pair_confusion_matrix_single_cluster():
+        # edge case: only one cluster
+        N = 100
+        clustering1 = np.zeros((N,))
+        clustering2 = clustering1
+        expected = np.array([[0, 0], [0, N * (N - 1)]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:420: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+labels_pred = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+__________________________ test_pair_confusion_matrix __________________________
+
+    def test_pair_confusion_matrix():
+        # regular case: different non-trivial clusterings
+        n = 10
+        N = n**2
+        clustering1 = np.hstack([[i + 1] * n for i in range(n)])
+        clustering2 = np.hstack([[i + 1] * (n + 1) for i in range(n)])[:N]
+        # basic quadratic implementation
+        expected = np.zeros(shape=(2, 2), dtype=np.int64)
+        for i in range(len(clustering1)):
+            for j in range(len(clustering2)):
+                if i != j:
+                    same_cluster_1 = int(clustering1[i] == clustering1[j])
+                    same_cluster_2 = int(clustering2[i] == clustering2[j])
+                    expected[same_cluster_1, same_cluster_2] += 1
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:437: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
+        2,  2,  2,  3,  3,  3,  3,  3,  3, ... 8,  8,  8,  8,  8,  8,  8,  8,  9,  9,  9,  9,  9,
+        9,  9,  9,  9,  9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
+labels_pred = array([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,
+        2,  2,  2,  2,  2,  3,  3,  3,  3, ... 7,  7,  7,  7,  7,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 10])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+____________ test_rand_score_edge_cases[clustering10-clustering20] _____________
+
+clustering1 = [0, 1, 2, 3, 4, 5, ...], clustering2 = [0, 1, 2, 3, 4, 5, ...]
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:264: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1, 2, 3, 4, 5, ...], labels_pred = [0, 1, 2, 3, 4, 5, ...]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+____________ test_rand_score_edge_cases[clustering11-clustering21] _____________
+
+clustering1 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+clustering2 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:264: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+labels_pred = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+_______________________________ test_rand_score ________________________________
+
+    def test_rand_score():
+        # regular case: different non-trivial clusterings
+        clustering1 = [0, 0, 0, 1, 1, 1]
+        clustering2 = [0, 1, 0, 1, 2, 2]
+        # pair confusion matrix
+        D11 = 2 * 2  # ordered pairs (1, 3), (5, 6)
+        D10 = 2 * 4  # ordered pairs (1, 2), (2, 3), (4, 5), (4, 6)
+        D01 = 2 * 1  # ordered pair (2, 4)
+        D00 = 5 * 6 - D11 - D01 - D10  # the remaining pairs
+        # rand score
+        expected_numerator = D00 + D11
+        expected_denominator = D00 + D01 + D10 + D11
+        expected = expected_numerator / expected_denominator
+>       assert_allclose(rand_score(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:463: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:264: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 0, 0, 1, 1, 1], labels_pred = [0, 1, 0, 1, 2, 2]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+______________________ test_adjusted_rand_score_overflow _______________________
+
+    def test_adjusted_rand_score_overflow():
+        """Check that large amount of data will not lead to overflow in
+        `adjusted_rand_score`.
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/20305
+        """
+        rng = np.random.RandomState(0)
+        y_true = rng.randint(0, 2, 100_000, dtype=np.int8)
+        y_pred = rng.randint(0, 2, 100_000, dtype=np.int8)
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           adjusted_rand_score(y_true, y_pred)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:477: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:366: in adjusted_rand_score
+    (tn, fp), (fn, tp) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 0, 1, ..., 1, 0, 0], dtype=int8)
+labels_pred = array([0, 1, 1, ..., 1, 0, 0], dtype=int8)
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:126: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow
+=================== 16 failed, 20 passed, 8 skipped in 0.76s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 44 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input I: Seeding RNGs with 511827481
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_generalized_average PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_homogeneous_but_not_complete_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_complete_but_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_not_complete_and_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_beta_parameter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_mutual_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_expected_mutual_info_overflow PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_exactly_zero_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_v_measure_and_mutual_information PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true0-labels_pred0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true1-labels_pred1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true2-labels_pred2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true3-labels_pred3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true4-labels_pred4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_check_clustering_error PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[min] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[arithmetic] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[geometric] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[max] PASSED
+
+=================================== FAILURES ===================================
+______________________ test_error_messages_on_wrong_input ______________________
+
+    def test_error_messages_on_wrong_input():
+        for score_func in score_funcs:
+            expected = (
+                r"Found input variables with inconsistent numbers " r"of samples: \[2, 3\]"
+            )
+            with pytest.raises(ValueError, match=expected):
+>               score_func([0, 1], [1, 1, 1])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1], labels_pred = [1, 1, 1]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+_____________________________ test_perfect_matches _____________________________
+
+    def test_perfect_matches():
+        for score_func in score_funcs:
+>           assert score_func([], []) == pytest.approx(1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [], labels_pred = []
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+_________________________ test_non_consecutive_labels __________________________
+
+    def test_non_consecutive_labels():
+        # regression tests for labels with gaps
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 2, 2, 2], [0, 1, 0, 1, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 1, 1, 1], [0, 4, 0, 4, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+>       ari_1 = adjusted_rand_score([0, 0, 0, 1, 1, 1], [0, 1, 0, 1, 2, 2])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 0, 0, 1, 1, 1], labels_pred = [0, 1, 0, 1, 2, 2]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+__________________________ test_adjustment_for_chance __________________________
+
+    def test_adjustment_for_chance():
+        # Check that adjusted scores are almost zero on random labels
+        n_clusters_range = [2, 10, 50, 90]
+        n_samples = 100
+        n_runs = 10
+    
+>       scores = uniform_labelings_scores(
+            adjusted_rand_score, n_samples, n_clusters_range, n_runs
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:177: in uniform_labelings_scores
+    scores[i, j] = score_func(labels_a, labels_b)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0,
+       1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,...1,
+       1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0])
+labels_pred = array([0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0,
+       1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0,...0,
+       1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+__________________ test_pair_confusion_matrix_fully_dispersed __________________
+
+    def test_pair_confusion_matrix_fully_dispersed():
+        # edge case: every element is its own cluster
+        N = 100
+        clustering1 = list(range(N))
+        clustering2 = clustering1
+        expected = np.array([[N * (N - 1), 0], [0, 0]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1, 2, 3, 4, 5, ...], labels_pred = [0, 1, 2, 3, 4, 5, ...]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+__________________ test_pair_confusion_matrix_single_cluster ___________________
+
+    def test_pair_confusion_matrix_single_cluster():
+        # edge case: only one cluster
+        N = 100
+        clustering1 = np.zeros((N,))
+        clustering2 = clustering1
+        expected = np.array([[0, 0], [0, N * (N - 1)]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:420: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+labels_pred = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+__________________________ test_pair_confusion_matrix __________________________
+
+    def test_pair_confusion_matrix():
+        # regular case: different non-trivial clusterings
+        n = 10
+        N = n**2
+        clustering1 = np.hstack([[i + 1] * n for i in range(n)])
+        clustering2 = np.hstack([[i + 1] * (n + 1) for i in range(n)])[:N]
+        # basic quadratic implementation
+        expected = np.zeros(shape=(2, 2), dtype=np.int64)
+        for i in range(len(clustering1)):
+            for j in range(len(clustering2)):
+                if i != j:
+                    same_cluster_1 = int(clustering1[i] == clustering1[j])
+                    same_cluster_2 = int(clustering2[i] == clustering2[j])
+                    expected[same_cluster_1, same_cluster_2] += 1
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:437: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,  2,
+        2,  2,  2,  3,  3,  3,  3,  3,  3, ... 8,  8,  8,  8,  8,  8,  8,  8,  9,  9,  9,  9,  9,
+        9,  9,  9,  9,  9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])
+labels_pred = array([ 1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  2,  2,  2,  2,  2,  2,
+        2,  2,  2,  2,  2,  3,  3,  3,  3, ... 7,  7,  7,  7,  7,  8,  8,  8,  8,  8,  8,  8,  8,
+        8,  8,  8,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  9, 10])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+____________ test_rand_score_edge_cases[clustering10-clustering20] _____________
+
+clustering1 = [0, 1, 2, 3, 4, 5, ...], clustering2 = [0, 1, 2, 3, 4, 5, ...]
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 1, 2, 3, 4, 5, ...], labels_pred = [0, 1, 2, 3, 4, 5, ...]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+____________ test_rand_score_edge_cases[clustering11-clustering21] _____________
+
+clustering1 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+clustering2 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+labels_pred = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+_______________________________ test_rand_score ________________________________
+
+    def test_rand_score():
+        # regular case: different non-trivial clusterings
+        clustering1 = [0, 0, 0, 1, 1, 1]
+        clustering2 = [0, 1, 0, 1, 2, 2]
+        # pair confusion matrix
+        D11 = 2 * 2  # ordered pairs (1, 3), (5, 6)
+        D10 = 2 * 4  # ordered pairs (1, 2), (2, 3), (4, 5), (4, 6)
+        D01 = 2 * 1  # ordered pair (2, 4)
+        D00 = 5 * 6 - D11 - D01 - D10  # the remaining pairs
+        # rand score
+        expected_numerator = D00 + D11
+        expected_denominator = D00 + D01 + D10 + D11
+        expected = expected_numerator / expected_denominator
+>       assert_allclose(rand_score(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:463: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = [0, 0, 0, 1, 1, 1], labels_pred = [0, 1, 0, 1, 2, 2]
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+______________________ test_adjusted_rand_score_overflow _______________________
+
+    def test_adjusted_rand_score_overflow():
+        """Check that large amount of data will not lead to overflow in
+        `adjusted_rand_score`.
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/20305
+        """
+        rng = np.random.RandomState(0)
+        y_true = rng.randint(0, 2, 100_000, dtype=np.int8)
+        y_pred = rng.randint(0, 2, 100_000, dtype=np.int8)
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           adjusted_rand_score(y_true, y_pred)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:477: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels_true = array([0, 0, 1, ..., 1, 0, 0], dtype=int8)
+labels_pred = array([0, 1, 1, ..., 1, 0, 0], dtype=int8)
+
+    @validate_params({'labels_true': ['array-like'], 'labels_pred': ['array-like']}, prefer_skip_nested_validation=True)
+    def pair_confusion_matrix(labels_true, labels_pred):
+>       from .temp import pair_confusion_matrix
+E       ImportError: cannot import name 'pair_confusion_matrix' from 'sklearn.metrics.cluster.temp' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/temp.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:121: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow
+=================== 11 failed, 25 passed, 8 skipped in 0.59s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 44 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input I: Seeding RNGs with 257932117
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_generalized_average PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_homogeneous_but_not_complete_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_complete_but_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_not_complete_and_not_homogeneous_labeling PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_beta_parameter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_mutual_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_expected_mutual_info_overflow PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_int_overflow_mutual_info_fowlkes_mallows_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_entropy_array_api[torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_contingency_matrix_sparse PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_exactly_zero_info_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_v_measure_and_mutual_information PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_fowlkes_mallows_score_properties PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true0-labels_pred0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true1-labels_pred1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true2-labels_pred2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true3-labels_pred3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_mutual_info_score_positive_constant_label[labels_true4-labels_pred4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_check_clustering_error PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[min] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[arithmetic] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[geometric] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_normalized_mutual_info_score_bounded[max] PASSED
+
+=================================== FAILURES ===================================
+______________________ test_error_messages_on_wrong_input ______________________
+
+    def test_error_messages_on_wrong_input():
+        for score_func in score_funcs:
+            expected = (
+                r"Found input variables with inconsistent numbers " r"of samples: \[2, 3\]"
+            )
+            with pytest.raises(ValueError, match=expected):
+>               score_func([0, 1], [1, 1, 1])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+_____________________________ test_perfect_matches _____________________________
+
+    def test_perfect_matches():
+        for score_func in score_funcs:
+>           assert score_func([], []) == pytest.approx(1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+_________________________ test_non_consecutive_labels __________________________
+
+    def test_non_consecutive_labels():
+        # regression tests for labels with gaps
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 2, 2, 2], [0, 1, 0, 1, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+        h, c, v = homogeneity_completeness_v_measure([0, 0, 0, 1, 1, 1], [0, 4, 0, 4, 2, 2])
+        assert_almost_equal(h, 0.67, 2)
+        assert_almost_equal(c, 0.42, 2)
+        assert_almost_equal(v, 0.52, 2)
+    
+>       ari_1 = adjusted_rand_score([0, 0, 0, 1, 1, 1], [0, 1, 0, 1, 2, 2])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+__________________________ test_adjustment_for_chance __________________________
+
+    def test_adjustment_for_chance():
+        # Check that adjusted scores are almost zero on random labels
+        n_clusters_range = [2, 10, 50, 90]
+        n_samples = 100
+        n_runs = 10
+    
+>       scores = uniform_labelings_scores(
+            adjusted_rand_score, n_samples, n_clusters_range, n_runs
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:187: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:177: in uniform_labelings_scores
+    scores[i, j] = score_func(labels_a, labels_b)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded in comparison
+!!! Recursion detected (same locals & position)
+__________________ test_pair_confusion_matrix_fully_dispersed __________________
+
+    def test_pair_confusion_matrix_fully_dispersed():
+        # edge case: every element is its own cluster
+        N = 100
+        clustering1 = list(range(N))
+        clustering2 = clustering1
+        expected = np.array([[N * (N - 1), 0], [0, 0]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:411: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+__________________ test_pair_confusion_matrix_single_cluster ___________________
+
+    def test_pair_confusion_matrix_single_cluster():
+        # edge case: only one cluster
+        N = 100
+        clustering1 = np.zeros((N,))
+        clustering2 = clustering1
+        expected = np.array([[0, 0], [0, N * (N - 1)]])
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:420: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+__________________________ test_pair_confusion_matrix __________________________
+
+    def test_pair_confusion_matrix():
+        # regular case: different non-trivial clusterings
+        n = 10
+        N = n**2
+        clustering1 = np.hstack([[i + 1] * n for i in range(n)])
+        clustering2 = np.hstack([[i + 1] * (n + 1) for i in range(n)])[:N]
+        # basic quadratic implementation
+        expected = np.zeros(shape=(2, 2), dtype=np.int64)
+        for i in range(len(clustering1)):
+            for j in range(len(clustering2)):
+                if i != j:
+                    same_cluster_1 = int(clustering1[i] == clustering1[j])
+                    same_cluster_2 = int(clustering2[i] == clustering2[j])
+                    expected[same_cluster_1, same_cluster_2] += 1
+>       assert_array_equal(pair_confusion_matrix(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:437: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+____________ test_rand_score_edge_cases[clustering10-clustering20] _____________
+
+clustering1 = [0, 1, 2, 3, 4, 5, ...], clustering2 = [0, 1, 2, 3, 4, 5, ...]
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+____________ test_rand_score_edge_cases[clustering11-clustering21] _____________
+
+clustering1 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+clustering2 = array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., ...0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+
+    @pytest.mark.parametrize(
+        "clustering1, clustering2",
+        [(list(range(100)), list(range(100))), (np.zeros((100,)), np.zeros((100,)))],
+    )
+    def test_rand_score_edge_cases(clustering1, clustering2):
+        # edge case 1: every element is its own cluster
+        # edge case 2: only one cluster
+>       assert_allclose(rand_score(clustering1, clustering2), 1.0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:447: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+_______________________________ test_rand_score ________________________________
+
+    def test_rand_score():
+        # regular case: different non-trivial clusterings
+        clustering1 = [0, 0, 0, 1, 1, 1]
+        clustering2 = [0, 1, 0, 1, 2, 2]
+        # pair confusion matrix
+        D11 = 2 * 2  # ordered pairs (1, 3), (5, 6)
+        D10 = 2 * 4  # ordered pairs (1, 2), (2, 3), (4, 5), (4, 6)
+        D01 = 2 * 1  # ordered pair (2, 4)
+        D00 = 5 * 6 - D11 - D01 - D10  # the remaining pairs
+        # rand score
+        expected_numerator = D00 + D11
+        expected_denominator = D00 + D01 + D10 + D11
+        expected = expected_numerator / expected_denominator
+>       assert_allclose(rand_score(clustering1, clustering2), expected)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:463: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:259: in rand_score
+    contingency = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+______________________ test_adjusted_rand_score_overflow _______________________
+
+    def test_adjusted_rand_score_overflow():
+        """Check that large amount of data will not lead to overflow in
+        `adjusted_rand_score`.
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/20305
+        """
+        rng = np.random.RandomState(0)
+        y_true = rng.randint(0, 2, 100_000, dtype=np.int8)
+        y_pred = rng.randint(0, 2, 100_000, dtype=np.int8)
+        with warnings.catch_warnings():
+            warnings.simplefilter("error", RuntimeWarning)
+>           adjusted_rand_score(y_true, y_pred)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py:477: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:361: in adjusted_rand_score
+    ((tn, fp), (fn, tp)) = pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/_supervised.py:122: in pair_confusion_matrix
+    return pair_confusion_matrix(labels_true, labels_pred)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+E   RecursionError: maximum recursion depth exceeded while calling a Python object
+!!! Recursion detected (same locals & position)
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_error_messages_on_wrong_input
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_perfect_matches
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_non_consecutive_labels
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjustment_for_chance
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_fully_dispersed
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix_single_cluster
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_pair_confusion_matrix
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering10-clustering20]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score_edge_cases[clustering11-clustering21]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_rand_score
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/metrics/cluster/tests/test_supervised.py::test_adjusted_rand_score_overflow
+=================== 11 failed, 25 passed, 8 skipped in 0.74s ===================

@@ -1,0 +1,1148 @@
+output file:
+processed_korniafind_homography_lines_dlt114.json
+function:
+find_homography_lines_dlt
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4]', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5]', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4]', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1]', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'inductor', 'cudagraphs', 'onnxrt', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 19 items
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_gradcheck[cpu] PASSED
+
+=================================== FAILURES ===================================
+____________ TestFindHomographyFromLinesDLT.test_smoke[cpu-float32] ____________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cfe0b0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_smoke(self, device, dtype):
+        points1st = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points1end = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points2st = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points2end = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        weights = torch.ones(1, 4, device=device, dtype=dtype)
+        ls1 = torch.stack([points1st, points1end], dim=2)
+        ls2 = torch.stack([points2st, points2end], dim=2)
+>       H = find_homography_lines_dlt(ls1, ls2, weights)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:260: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[[0.6850, 0.2504],
+          [0.8835, 0.8505]],
+
+         [[0.1604, 0.7558],
+          [0.8610, 0.7153]],
+
+         [[0.0154, 0.5042],
+          [0.2991, 0.5008]],
+
+         [[0.3034, 0.8765],
+          [0.8153, 0.3539]]]])
+ls2 = tensor([[[[0.5971, 0.1402],
+          [0.1060, 0.3996]],
+
+         [[0.6296, 0.1317],
+          [0.1976, 0.2356]],
+
+         [[0.5867, 0.2021],
+          [0.5696, 0.0764]],
+
+         [[0.0689, 0.4392],
+          [0.8579, 0.1131]]]])
+weights = tensor([[1., 1., 1., 1.]])
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+        B, N, _, _ = ls1.shape
+        if weights is None:
+            weights = torch.ones((B, N), dtype=ls1.dtype, device=ls1.device)
+    
+        def line_to_homogeneous(l):
+            p1, p2 = (l[:, :, 0, :], l[:, :, 1, :])
+            return torch.cross(torch.cat([p1, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), torch.cat([p2, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), dim=-1)
+        L1 = line_to_homogeneous(ls1)
+        L2 = line_to_homogeneous(ls2)
+        A = torch.zeros((B, 2 * N, 9), dtype=ls1.dtype, device=ls1.device)
+        for i in range(N):
+            l1 = L1[:, i, :]
+            l2 = L2[:, i, :]
+            w = weights[:, i].unsqueeze(-1)
+            A[:, 2 * i, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+            A[:, 2 * i + 1, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+        _, _, V = torch.svd(A)
+>       H = V[:, -1, :].reshape(B, 3, 3)
+E       RuntimeError: shape '[1, 3, 3]' is invalid for input of size 8
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:42: RuntimeError
+___________ TestFindHomographyFromLinesDLT.test_smoke2[cpu-float32] ____________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cfe4a0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_smoke2(self, device, dtype):
+        points1st = torch.rand(4, 2, device=device, dtype=dtype)
+        points1end = torch.rand(4, 2, device=device, dtype=dtype)
+        points2st = torch.rand(4, 2, device=device, dtype=dtype)
+        points2end = torch.rand(4, 2, device=device, dtype=dtype)
+        ls1 = torch.stack([points1st, points1end], dim=1)
+        ls2 = torch.stack([points2st, points2end], dim=1)
+>       H = find_homography_lines_dlt(ls1, ls2, None)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:270: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[0.9422, 0.7929],
+         [0.2320, 0.8207]],
+
+        [[0.8862, 0.6021],
+         [0.4547, 0.2468]],
+
+        [[0.3452, 0.5748],
+         [0.3228, 0.6174]],
+
+        [[0.3432, 0.0808],
+         [0.7015, 0.5221]]])
+ls2 = tensor([[[0.7000, 0.0190],
+         [0.4492, 0.4797]],
+
+        [[0.7142, 0.9487],
+         [0.8550, 0.1419]],
+
+        [[0.6707, 0.2099],
+         [0.7544, 0.5033]],
+
+        [[0.6475, 0.1545],
+         [0.4370, 0.4806]]])
+weights = None
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+>       B, N, _, _ = ls1.shape
+E       ValueError: not enough values to unpack (expected 4, got 3)
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:25: ValueError
+___________ TestFindHomographyFromLinesDLT.test_nocrash[cpu-float32] ___________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cfe7d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_nocrash(self, device, dtype):
+        points1st = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points1end = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points2st = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        points2end = torch.rand(1, 4, 2, device=device, dtype=dtype)
+        weights = torch.ones(1, 4, device=device, dtype=dtype)
+        points1st[0, 0, 0] = float("nan")
+        ls1 = torch.stack([points1st, points1end], dim=2)
+        ls2 = torch.stack([points2st, points2end], dim=2)
+>       H = find_homography_lines_dlt(ls1, ls2, weights)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:282: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[[   nan, 0.7385],
+          [0.9373, 0.6234]],
+
+         [[0.7591, 0.8380],
+          [0.2025, 0.8776]],
+
+         [[0.3487, 0.9005],
+          [0.3106, 0.7973]],
+
+         [[0.0372, 0.7576],
+          [0.2841, 0.7997]]]])
+ls2 = tensor([[[[0.3990, 0.6891],
+          [0.9866, 0.3169]],
+
+         [[0.3478, 0.4709],
+          [0.4134, 0.1082]],
+
+         [[0.5444, 0.0921],
+          [0.5940, 0.2904]],
+
+         [[0.1785, 0.4998],
+          [0.7964, 0.2673]]]])
+weights = tensor([[1., 1., 1., 1.]])
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+        B, N, _, _ = ls1.shape
+        if weights is None:
+            weights = torch.ones((B, N), dtype=ls1.dtype, device=ls1.device)
+    
+        def line_to_homogeneous(l):
+            p1, p2 = (l[:, :, 0, :], l[:, :, 1, :])
+            return torch.cross(torch.cat([p1, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), torch.cat([p2, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), dim=-1)
+        L1 = line_to_homogeneous(ls1)
+        L2 = line_to_homogeneous(ls2)
+        A = torch.zeros((B, 2 * N, 9), dtype=ls1.dtype, device=ls1.device)
+        for i in range(N):
+            l1 = L1[:, i, :]
+            l2 = L2[:, i, :]
+            w = weights[:, i].unsqueeze(-1)
+            A[:, 2 * i, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+            A[:, 2 * i + 1, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+>       _, _, V = torch.svd(A)
+E       torch._C._LinAlgError: linalg.svd: (Batch element 0): The algorithm failed to converge because the input matrix contained non-finite values.
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:41: _LinAlgError
+__________ TestFindHomographyFromLinesDLT.test_shape[cpu-float32-1-4] __________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cfebc0>
+batch_size = 1, num_points = 4, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 4), (2, 5), (3, 6)])
+    def test_shape(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        points1st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points1end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        weights = torch.ones(B, N, device=device, dtype=dtype)
+        ls1 = torch.stack([points1st, points1end], dim=2)
+        ls2 = torch.stack([points2st, points2end], dim=2)
+>       H = find_homography_lines_dlt(ls1, ls2, weights)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:295: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[[0.5902, 0.3082],
+          [0.6853, 0.1653]],
+
+         [[0.0280, 0.8975],
+          [0.5260, 0.0148]],
+
+         [[0.9187, 0.6799],
+          [0.3752, 0.0523]],
+
+         [[0.6606, 0.0634],
+          [0.3232, 0.3550]]]])
+ls2 = tensor([[[[0.1701, 0.0627],
+          [0.2767, 0.6129]],
+
+         [[0.9709, 0.3987],
+          [0.8692, 0.2323]],
+
+         [[0.8013, 0.4192],
+          [0.5916, 0.7645]],
+
+         [[0.2121, 0.9910],
+          [0.7826, 0.2579]]]])
+weights = tensor([[1., 1., 1., 1.]])
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+        B, N, _, _ = ls1.shape
+        if weights is None:
+            weights = torch.ones((B, N), dtype=ls1.dtype, device=ls1.device)
+    
+        def line_to_homogeneous(l):
+            p1, p2 = (l[:, :, 0, :], l[:, :, 1, :])
+            return torch.cross(torch.cat([p1, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), torch.cat([p2, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), dim=-1)
+        L1 = line_to_homogeneous(ls1)
+        L2 = line_to_homogeneous(ls2)
+        A = torch.zeros((B, 2 * N, 9), dtype=ls1.dtype, device=ls1.device)
+        for i in range(N):
+            l1 = L1[:, i, :]
+            l2 = L2[:, i, :]
+            w = weights[:, i].unsqueeze(-1)
+            A[:, 2 * i, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+            A[:, 2 * i + 1, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+        _, _, V = torch.svd(A)
+>       H = V[:, -1, :].reshape(B, 3, 3)
+E       RuntimeError: shape '[1, 3, 3]' is invalid for input of size 8
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:42: RuntimeError
+_____ TestFindHomographyFromLinesDLT.test_shape_noweights[cpu-float32-1-4] _____
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cff1f0>
+batch_size = 1, num_points = 4, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 4), (2, 5), (3, 6)])
+    def test_shape_noweights(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        points1st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points1end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        ls1 = torch.stack([points1st, points1end], dim=2)
+        ls2 = torch.stack([points2st, points2end], dim=2)
+>       H = find_homography_lines_dlt(ls1, ls2, None)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:307: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[[0.5324, 0.2977],
+          [0.6892, 0.6549]],
+
+         [[0.4750, 0.8765],
+          [0.6100, 0.8726]],
+
+         [[0.9134, 0.3993],
+          [0.9241, 0.7640]],
+
+         [[0.2962, 0.4704],
+          [0.3026, 0.3107]]]])
+ls2 = tensor([[[[0.3628, 0.8887],
+          [0.5524, 0.1736]],
+
+         [[0.1062, 0.6588],
+          [0.0704, 0.7905]],
+
+         [[0.9344, 0.9831],
+          [0.7660, 0.3430]],
+
+         [[0.7426, 0.4188],
+          [0.9490, 0.8545]]]])
+weights = tensor([[1., 1., 1., 1.]])
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+        B, N, _, _ = ls1.shape
+        if weights is None:
+            weights = torch.ones((B, N), dtype=ls1.dtype, device=ls1.device)
+    
+        def line_to_homogeneous(l):
+            p1, p2 = (l[:, :, 0, :], l[:, :, 1, :])
+            return torch.cross(torch.cat([p1, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), torch.cat([p2, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), dim=-1)
+        L1 = line_to_homogeneous(ls1)
+        L2 = line_to_homogeneous(ls2)
+        A = torch.zeros((B, 2 * N, 9), dtype=ls1.dtype, device=ls1.device)
+        for i in range(N):
+            l1 = L1[:, i, :]
+            l2 = L2[:, i, :]
+            w = weights[:, i].unsqueeze(-1)
+            A[:, 2 * i, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+            A[:, 2 * i + 1, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+        _, _, V = torch.svd(A)
+>       H = V[:, -1, :].reshape(B, 3, 3)
+E       RuntimeError: shape '[1, 3, 3]' is invalid for input of size 8
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:42: RuntimeError
+____ TestFindHomographyFromLinesDLT.test_points_noweights[cpu-float32-1-4] _____
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cff820>
+batch_size = 1, num_points = 4, device = device(type='cpu')
+dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size, num_points", [(1, 4), (2, 5), (3, 6)])
+    def test_points_noweights(self, batch_size, num_points, device, dtype):
+        B, N = batch_size, num_points
+        points1st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points1end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2st = torch.rand(B, N, 2, device=device, dtype=dtype)
+        points2end = torch.rand(B, N, 2, device=device, dtype=dtype)
+        weights = torch.ones(B, N, device=device, dtype=dtype)
+        ls1 = torch.stack([points1st, points1end], dim=2)
+        ls2 = torch.stack([points2st, points2end], dim=2)
+>       H_noweights = find_homography_lines_dlt(ls1, ls2, None)
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:320: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/homography.py:211: in find_homography_lines_dlt
+    return find_homography_lines_dlt(ls1, ls2, weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ls1 = tensor([[[[0.6133, 0.5418],
+          [0.9053, 0.4049]],
+
+         [[0.0190, 0.5137],
+          [0.7657, 0.7028]],
+
+         [[0.4256, 0.9036],
+          [0.1763, 0.7978]],
+
+         [[0.7498, 0.6577],
+          [0.2377, 0.0120]]]])
+ls2 = tensor([[[[0.7534, 0.9912],
+          [0.1558, 0.5176]],
+
+         [[0.9867, 0.0732],
+          [0.6394, 0.6310]],
+
+         [[0.2042, 0.1521],
+          [0.7223, 0.1518]],
+
+         [[0.7537, 0.8251],
+          [0.1044, 0.4292]]]])
+weights = tensor([[1., 1., 1., 1.]])
+
+    def find_homography_lines_dlt(ls1, ls2, weights=None):
+        """
+        Computes the homography matrix using the DLT formulation for line correspondences.
+    
+        Parameters:
+        - ls1: Tensor of shape (B, N, 2, 2) representing the first set of line segments.
+        - ls2: Tensor of shape (B, N, 2, 2) representing the second set of line segments.
+        - weights: Optional tensor of shape (B, N) representing weights for each line correspondence.
+    
+        Returns:
+        - homographies: Tensor of shape (B, 3, 3) representing the computed homography matrices.
+        """
+        B, N, _, _ = ls1.shape
+        if weights is None:
+            weights = torch.ones((B, N), dtype=ls1.dtype, device=ls1.device)
+    
+        def line_to_homogeneous(l):
+            p1, p2 = (l[:, :, 0, :], l[:, :, 1, :])
+            return torch.cross(torch.cat([p1, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), torch.cat([p2, torch.ones((B, N, 1), dtype=l.dtype, device=l.device)], dim=-1), dim=-1)
+        L1 = line_to_homogeneous(ls1)
+        L2 = line_to_homogeneous(ls2)
+        A = torch.zeros((B, 2 * N, 9), dtype=ls1.dtype, device=ls1.device)
+        for i in range(N):
+            l1 = L1[:, i, :]
+            l2 = L2[:, i, :]
+            w = weights[:, i].unsqueeze(-1)
+            A[:, 2 * i, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+            A[:, 2 * i + 1, :] = w * torch.cat([l1[:, 0:1] * l2, l1[:, 1:2] * l2, l1[:, 2:3] * l2], dim=-1)
+        _, _, V = torch.svd(A)
+>       H = V[:, -1, :].reshape(B, 3, 3)
+E       RuntimeError: shape '[1, 3, 3]' is invalid for input of size 8
+
+../publishablew/kornia/kornia/kornia/geometry/temp.py:42: RuntimeError
+_______ TestFindHomographyFromLinesDLT.test_clean_points[cpu-float32-1] ________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cffe50>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt(ls1, ls2, None)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:347: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[    74201.7266,   -286790.4375],
+         [   796736.8125, -10835098.0000],
+         [   135254.9844,  -1275...   51362.5938,   -295934.4688],
+         [    96170.0391,   -619811.9375],
+         [   441279.8750,  -6847276.0000]]])
+expected = tensor([[[0.0036, 1.8357],
+         [0.0560, 0.0102],
+         [0.0465, 0.7629],
+         [0.0299, 1.7774],
+         [... 0.0854],
+         [0.1044, 1.3634],
+         [0.1038, 1.7511],
+         [0.0218, 1.2836],
+         [0.0945, 0.0069]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 20 / 20 (100.0%)
+E       Greatest absolute difference: 10835098.0 at index (0, 1, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 1058202240.0 at index (0, 1, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+_______ TestFindHomographyFromLinesDLT.test_clean_points[cpu-float32-2] ________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61cffd90>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt(ls1, ls2, None)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:347: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[   989034.8125,  -2819215.7500],
+         [  3939579.7500,  -9722506.0000],
+         [  1272946.5000,  -5870...   11853.0293,    344187.1250],
+         [    12444.4033,    364433.6250],
+         [    21379.0449,    429300.5312]]])
+expected = tensor([[[0.2436, 0.1558],
+         [0.0601, 0.0419],
+         [1.5128, 0.0298],
+         [1.1527, 0.2160],
+         [... 0.6060],
+         [0.9624, 0.0854],
+         [0.5817, 1.0249],
+         [0.6381, 0.8286],
+         [0.9142, 0.0614]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 40 / 40 (100.0%)
+E       Greatest absolute difference: 10277960.0 at index (0, 4, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 296357952.0 at index (0, 4, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+_______ TestFindHomographyFromLinesDLT.test_clean_points[cpu-float32-5] ________
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61b300d0>
+batch_size = 5, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt(ls1, ls2, None)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:347: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[-9.1090e+04, -4.6231e+05],
+         [-2.5856e+05, -8.0916e+05],
+         [-2.7444e+05, -9.0782e+05],
+       ...e+06],
+         [-8.2682e+03, -2.5887e+05],
+         [-8.4227e+04, -7.7767e+06],
+         [ 5.7161e+03,  7.9499e+05]]])
+expected = tensor([[[0.1988, 0.0971],
+         [0.2155, 1.1201],
+         [0.1912, 1.3524],
+         [0.1939, 0.6547],
+         [... 0.0361],
+         [0.0893, 0.0808],
+         [0.1513, 0.0843],
+         [0.0734, 0.0815],
+         [0.0649, 0.1084]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 100 / 100 (100.0%)
+E       Greatest absolute difference: 24047490.0 at index (2, 1, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 136800176.0 at index (3, 6, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+_____ TestFindHomographyFromLinesDLT.test_clean_points_iter[cpu-float32-1] _____
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61b30460>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points_iter(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt_iterated(ls1, ls2, None, 5)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[  -50917.5508,   120013.0625],
+         [  -68305.8281,    25345.7598],
+         [ -278778.5000,   529980.00...    [  -98355.9609,   108849.8359],
+         [ -117173.6875,   291411.5000],
+         [  -81387.7031,    83635.2578]]])
+expected = tensor([[[0.7169, 0.0338],
+         [0.7007, 0.3413],
+         [0.2882, 0.1766],
+         [0.2863, 0.1595],
+         [... 0.2221],
+         [0.7531, 0.3027],
+         [0.5354, 0.2520],
+         [0.4794, 0.0578],
+         [0.6047, 0.2408]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 20 / 20 (100.0%)
+E       Greatest absolute difference: 2136960.0 at index (0, 4, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 9966467.0 at index (0, 4, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+_____ TestFindHomographyFromLinesDLT.test_clean_points_iter[cpu-float32-2] _____
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61b303a0>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points_iter(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt_iterated(ls1, ls2, None, 5)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[ 4.0055e+06,  1.4202e+07],
+         [ 5.3676e+05,  1.6510e+06],
+         [ 4.5130e+04,  3.1797e+05],
+       ...e+05],
+         [ 1.0013e+05, -1.0281e+06],
+         [ 2.6858e+05, -1.6920e+06],
+         [ 2.3377e+07, -9.8591e+07]]])
+expected = tensor([[[0.1634, 0.0703],
+         [0.2041, 0.3333],
+         [0.5700, 0.1341],
+         [0.1606, 0.3062],
+         [... 0.1733],
+         [0.2152, 0.7828],
+         [0.2776, 0.7579],
+         [0.4434, 0.7138],
+         [0.6628, 0.1910]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 40 / 40 (100.0%)
+E       Greatest absolute difference: 98591256.0 at index (1, 9, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 516239328.0 at index (1, 9, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+_____ TestFindHomographyFromLinesDLT.test_clean_points_iter[cpu-float32-5] _____
+
+self = <tests.geometry.test_homography.TestFindHomographyFromLinesDLT object at 0x7c5f61b306a0>
+batch_size = 5, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 5])
+    def test_clean_points_iter(self, batch_size, device, dtype):
+        # generate input data
+        points_src_st = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+        points_src_end = torch.rand(batch_size, 10, 2, device=device, dtype=dtype)
+    
+        H = kornia.eye_like(3, points_src_st)
+        H = H * 0.3 * torch.rand_like(H)
+        H = H / H[:, 2:3, 2:3]
+        points_dst_st = kornia.geometry.transform_points(H, points_src_st)
+        points_dst_end = kornia.geometry.transform_points(H, points_src_end)
+    
+        ls1 = torch.stack([points_src_st, points_src_end], axis=2)
+        ls2 = torch.stack([points_dst_st, points_dst_end], axis=2)
+        # compute transform from source to target
+        dst_homo_src = find_homography_lines_dlt_iterated(ls1, ls2, None, 5)
+        rtol = 1e-3
+        atol = 1e-4
+        if dtype not in (torch.float32, torch.float64):
+            rtol = 5e-3
+            atol = 1e-3
+>       self.assert_close(
+            kornia.geometry.transform_points(dst_homo_src, points_src_st), points_dst_st, rtol=rtol, atol=atol
+        )
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py:372: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[-2.3065e+05, -1.0663e+05],
+         [-1.6251e+06, -5.9196e+06],
+         [-2.3809e+05,  1.8616e+04],
+       ...e+05],
+         [-3.2475e+05, -3.8583e+05],
+         [-2.7289e+05, -7.2605e+05],
+         [-2.0106e+05, -7.1860e+05]]])
+expected = tensor([[[1.5113e+00, 5.3866e-01],
+         [1.0667e+00, 1.1636e+00],
+         [1.9850e+00, 4.8207e-01],
+         [9.1...2.2879e-01],
+         [1.8817e-02, 1.6749e+00],
+         [2.7266e-02, 6.7642e-01],
+         [2.4197e-02, 1.4922e-01]]])
+rtol = 0.001, atol = 0.0001, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 100 / 100 (100.0%)
+E       Greatest absolute difference: 7553856.5 at index (2, 7, 1) (up to 0.0001 allowed)
+E       Greatest relative difference: 70295896.0 at index (3, 5, 1) (up to 0.001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5]
+========================= 12 failed, 7 passed in 0.49s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'inductor', 'jit', 'tvm', 'cudagraphs', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 19 items
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_gradcheck[cpu] PASSED
+
+=============================== warnings summary ===============================
+tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/homography.py:309: RuntimeWarning: SVD did not converge
+    warnings.warn("SVD did not converge", RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 19 passed, 1 warning in 0.23s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'onnxrt', 'jit', 'inductor', 'tvm', None, 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 19 items
+
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_smoke2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_shape_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-1-4] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-2-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_points_noweights[cpu-float32-3-6] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_clean_points_iter[cpu-float32-5] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_gradcheck[cpu] PASSED
+
+=============================== warnings summary ===============================
+tests/geometry/test_homography.py::TestFindHomographyFromLinesDLT::test_nocrash[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/homography.py:309: RuntimeWarning: SVD did not converge
+    warnings.warn("SVD did not converge", RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 19 passed, 1 warning in 0.22s =========================

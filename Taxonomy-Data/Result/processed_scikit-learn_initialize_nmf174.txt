@@ -1,0 +1,739 @@
+output file:
+processed_scikit-learn_initialize_nmf174.json
+function:
+_initialize_nmf
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[-0.5]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 7 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[-0.5] I: Seeding RNGs with 29137559
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5] FAILED
+
+=================================== FAILURES ===================================
+___________________ test_nmf_minibatchnmf_equivalence[-0.5] ____________________
+
+beta_loss = -0.5
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+_____________________ test_nmf_minibatchnmf_equivalence[0] _____________________
+
+beta_loss = 0
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+____________________ test_nmf_minibatchnmf_equivalence[0.5] ____________________
+
+beta_loss = 0.5
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+_____________________ test_nmf_minibatchnmf_equivalence[1] _____________________
+
+beta_loss = 1
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+____________________ test_nmf_minibatchnmf_equivalence[1.5] ____________________
+
+beta_loss = 1.5
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+_____________________ test_nmf_minibatchnmf_equivalence[2] _____________________
+
+beta_loss = 2
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+____________________ test_nmf_minibatchnmf_equivalence[2.5] ____________________
+
+beta_loss = 2.5
+
+    @pytest.mark.parametrize("beta_loss", [-0.5, 0, 0.5, 1, 1.5, 2, 2.5])
+    def test_nmf_minibatchnmf_equivalence(beta_loss):
+        # Test that MiniBatchNMF is equivalent to NMF when batch_size = n_samples and
+        # forget_factor 0.0 (stopping criterion put aside)
+        rng = np.random.mtrand.RandomState(42)
+        X = np.abs(rng.randn(48, 5))
+    
+        nmf = NMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            solver="mu",
+            random_state=0,
+            tol=0,
+        )
+        mbnmf = MiniBatchNMF(
+            n_components=5,
+            beta_loss=beta_loss,
+            random_state=0,
+            tol=0,
+            max_no_improvement=None,
+            batch_size=X.shape[0],
+            forget_factor=0.0,
+        )
+>       W = nmf.fit_transform(X)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py:860: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1198: in fit_transform
+    W, H, n_iter = self._fit_transform(X, W=W, H=H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:1247: in _fit_transform
+    W, H = self._check_w_h(X, W, H, update_H)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:874: in _check_w_h
+    W, H = _initialize_nmf(X, self._n_components, init=self.init, random_state=self.random_state)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_nmf.py:161: in _initialize_nmf
+    return _initialize_nmf(X, n_components, init, eps, random_state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[0.49671415, 0.1382643 , 0.64768854, 1.52302986, 0.23415337],
+       [0.23413696, 1.57921282, 0.76743473, 0.469... 0.21645859, 0.04557184, 0.65160035, 2.14394409],
+       [0.63391902, 2.02514259, 0.18645431, 0.66178646, 0.85243333]])
+n_components = 5, init = None, eps = 1e-06, random_state = 0
+
+    def _initialize_nmf(X, n_components, init=None, eps=1e-06, random_state=None):
+        n_samples, n_features = X.shape
+        rng = check_random_state(random_state)
+        if init == 'random':
+            W = rng.rand(n_samples, n_components)
+            H = rng.rand(n_components, n_features)
+            W[W < eps] = 0
+            H[H < eps] = 0
+            return (W, H)
+        elif init in {'nndsvd', 'nndsvda', 'nndsvdar'}:
+            svd = TruncatedSVD(n_components=n_components, random_state=random_state)
+            U = svd.fit_transform(X)
+            S = svd.singular_values_
+            V = svd.components_
+            W = np.zeros((n_samples, n_components))
+            H = np.zeros((n_components, n_features))
+            W[:, 0] = np.sqrt(S[0]) * np.abs(U[:, 0])
+            H[0, :] = np.sqrt(S[0]) * np.abs(V[0, :])
+            for j in range(1, n_components):
+                x, y = (U[:, j], V[j, :])
+                xp, xn = (np.maximum(x, 0), np.maximum(-x, 0))
+                yp, yn = (np.maximum(y, 0), np.maximum(-y, 0))
+                xpnorm, xnnorm = (np.linalg.norm(xp), np.linalg.norm(xn))
+                ypnorm, ynnorm = (np.linalg.norm(yp), np.linalg.norm(yn))
+                m = xpnorm * ypnorm
+                n = xnnorm * ynnorm
+                if m > n:
+                    W[:, j] = np.sqrt(S[j] * m) * xp / xpnorm
+                    H[j, :] = np.sqrt(S[j] * m) * yp / ypnorm
+                else:
+                    W[:, j] = np.sqrt(S[j] * n) * xn / xnnorm
+                    H[j, :] = np.sqrt(S[j] * n) * yn / ynnorm
+            if init == 'nndsvda':
+                W[W < eps] = eps
+                H[H < eps] = eps
+            elif init == 'nndsvdar':
+                W[W < eps] = rng.rand(np.sum(W < eps)) * eps
+                H[H < eps] = rng.rand(np.sum(H < eps)) * eps
+            return (W, H)
+        else:
+>           raise ValueError("Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.")
+E           ValueError: Invalid init parameter. Choose from {'random', 'nndsvd', 'nndsvda', 'nndsvdar'}.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:63: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[-0.5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5]
+============================== 7 failed in 0.73s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 7 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[-0.5] I: Seeding RNGs with 1227954935
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5] PASSED
+
+============================== 7 passed in 0.43s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 7 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[-0.5] I: Seeding RNGs with 776787960
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[0.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[1.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_nmf.py::test_nmf_minibatchnmf_equivalence[2.5] PASSED
+
+============================== 7 passed in 0.43s ===============================

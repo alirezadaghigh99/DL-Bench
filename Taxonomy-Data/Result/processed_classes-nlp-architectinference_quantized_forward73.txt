@@ -1,0 +1,525 @@
+output file:
+processed_classes-nlp-architectinference_quantized_forward73.json
+function:
+inference_quantized_forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema', '../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema FAILED [ 72%]', '../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias FAILED [ 40%]', '../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference FAILED [ 60%]', '../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias FAILED [ 36%]', 'FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias', 'FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference', 'FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.17, pytest-7.4.4, pluggy-1.2.0 -- /local/data0/moved_data/publishablew/nlp-architect/nlp-architect/nvenv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nlp-architect/nlp-architect
+configfile: pytest.ini
+collecting ... collected 25 items
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_backward PASSED [  4%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_forward PASSED [  8%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_backward PASSED [ 12%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_forward PASSED [ 16%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization PASSED [ 20%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization_data_parallel PASSED [ 24%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_with_bias PASSED [ 28%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_without_bias PASSED [ 32%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias FAILED [ 36%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias FAILED [ 40%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_none_quantized_linear PASSED [ 44%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_restrict_loading_to_train_model PASSED [ 48%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay PASSED [ 52%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel FAILED [ 56%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference FAILED [ 60%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_train_block_when_loading_quantized_model PASSED [ 64%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_dynamic PASSED [ 68%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema FAILED [ 72%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_delay_quantization_start PASSED [ 76%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_export_to_8bit PASSED [ 80%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_load_from_8bit PASSED [ 84%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantization_turned_off PASSED [ 88%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_backward PASSED [ 92%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_inference_forward PASSED [ 96%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_training_forward PASSED [100%]
+
+=================================== FAILURES ===================================
+_____________ QuantizedLinearTest.test_import_from_8bit_with_bias ______________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_import_from_8bit_with_bias>
+
+    def test_import_from_8bit_with_bias(self):
+        # QuantizationMode dynamic
+        exporter = QuantizedLinear(10, 5, mode="dynamic")
+        exporter.eval()
+        exporter.mode_8bit = True
+        state_dict = exporter.state_dict()
+        exporter.mode_8bit = False
+        importer = QuantizedLinear(10, 5, mode="dynamic")
+        self.assertTrue((exporter.weight != importer.weight).any())
+        self.assertTrue((exporter.bias != importer.bias).any())
+        importer.eval()
+        importer.load_state_dict(state_dict, strict=False)
+        x = torch.randn(3, 10)
+>       self.assertTrue((exporter(x) == importer(x)).all())
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:299: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:89: in forward
+    out = self.inference_quantized_forward(input)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:194: in inference_quantized_forward
+    input_quantized = self.quantize(input, self.activation_bits, self.input_thresh.item())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = QuantizedLinear(in_features=10, out_features=5, bias=True, mode=QuantizationMode.DYNAMIC, weight_bits=8, activation_bits=8, accumulation_bits=32, ema_decay=0.9999, requantize_output=True)
+name = 'quantize'
+
+    def __getattr__(self, name):
+        if '_parameters' in self.__dict__:
+            _parameters = self.__dict__['_parameters']
+            if name in _parameters:
+                return _parameters[name]
+        if '_buffers' in self.__dict__:
+            _buffers = self.__dict__['_buffers']
+            if name in _buffers:
+                return _buffers[name]
+        if '_modules' in self.__dict__:
+            modules = self.__dict__['_modules']
+            if name in modules:
+                return modules[name]
+        raise AttributeError("'{}' object has no attribute '{}'".format(
+>           type(self).__name__, name))
+E       AttributeError: 'QuantizedLinear' object has no attribute 'quantize'
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:576: AttributeError
+____________ QuantizedLinearTest.test_import_from_8bit_without_bias ____________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_import_from_8bit_without_bias>
+
+    def test_import_from_8bit_without_bias(self):
+        exporter = QuantizedLinear(10, 5, bias=False, mode="dynamic")
+        exporter.eval()
+        exporter.mode_8bit = True
+        state_dict = exporter.state_dict()
+        exporter.mode_8bit = False
+        importer = QuantizedLinear(10, 5, bias=False, mode="dynamic")
+        self.assertTrue((exporter.weight != importer.weight).any())
+        importer.eval()
+        importer.load_state_dict(state_dict, strict=False)
+        x = torch.randn(3, 10)
+>       self.assertTrue((exporter(x) == importer(x)).all())
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:284: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:89: in forward
+    out = self.inference_quantized_forward(input)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:194: in inference_quantized_forward
+    input_quantized = self.quantize(input, self.activation_bits, self.input_thresh.item())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = QuantizedLinear(in_features=10, out_features=5, bias=False, mode=QuantizationMode.DYNAMIC, weight_bits=8, activation_bits=8, accumulation_bits=32, ema_decay=0.9999, requantize_output=True)
+name = 'quantize'
+
+    def __getattr__(self, name):
+        if '_parameters' in self.__dict__:
+            _parameters = self.__dict__['_parameters']
+            if name in _parameters:
+                return _parameters[name]
+        if '_buffers' in self.__dict__:
+            _buffers = self.__dict__['_buffers']
+            if name in _buffers:
+                return _buffers[name]
+        if '_modules' in self.__dict__:
+            modules = self.__dict__['_modules']
+            if name in modules:
+                return modules[name]
+        raise AttributeError("'{}' object has no attribute '{}'".format(
+>           type(self).__name__, name))
+E       AttributeError: 'QuantizedLinear' object has no attribute 'quantize'
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:576: AttributeError
+_______ QuantizedLinearTest.test_start_quantization_delay_data_parallel ________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_start_quantization_delay_data_parallel>
+
+    def test_start_quantization_delay_data_parallel(self):
+        if not torch.cuda.is_available():
+            return
+        quantization_delay = 2
+        qlinear = QuantizedLinear(10, 5, start_step=quantization_delay, mode="DYNAMIC")
+        linear = nn.Linear(10, 5)
+        linear.weight.data = qlinear.weight
+        linear.bias.data = qlinear.bias
+        qlinear = nn.DataParallel(qlinear).cuda()
+        linear = nn.DataParallel(linear).cuda()
+        for _ in range(quantization_delay):
+            x = torch.randn(3, 10).cuda()
+>           qy = qlinear(x)
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py:150: in forward
+    return self.module(*inputs[0], **kwargs[0])
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:86: in forward
+    out = super().forward(input)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/linear.py:87: in forward
+    return F.linear(input, self.weight, self.bias)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[ 0.6067, -0.5252,  0.0639, -0.3842,  0.3360, -0.4469, -1.3854,  0.8377,
+         -1.5807,  1.4329],
+        [... [ 0.4577,  0.1853,  0.4796, -0.2747, -0.2989,  1.5080, -1.8750,  0.5931,
+          0.6437, -0.7243]], device='cuda:0')
+weight = Parameter containing:
+tensor([[-0.0860, -0.0956, -0.1062,  0.0640, -0.3015, -0.1875,  0.0014,  0.2723,
+         -0.078... 0.1606, -0.1642,  0.0777, -0.2132,  0.1747,  0.2473,
+         -0.1315, -0.0764]], device='cuda:0', requires_grad=True)
+bias = Parameter containing:
+tensor([ 0.2557, -0.0356, -0.3155, -0.0211, -0.1487], device='cuda:0',
+       requires_grad=True)
+
+    def linear(input, weight, bias=None):
+        # type: (Tensor, Tensor, Optional[Tensor]) -> Tensor
+        r"""
+        Applies a linear transformation to the incoming data: :math:`y = xA^T + b`.
+    
+        Shape:
+    
+            - Input: :math:`(N, *, in\_features)` where `*` means any number of
+              additional dimensions
+            - Weight: :math:`(out\_features, in\_features)`
+            - Bias: :math:`(out\_features)`
+            - Output: :math:`(N, *, out\_features)`
+        """
+        if input.dim() == 2 and bias is not None:
+            # fused op is marginally faster
+>           ret = torch.addmm(bias, input, weight.t())
+E           RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/functional.py:1370: RuntimeError
+_____________ QuantizedLinearTest.test_static_quantized_inference ______________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_static_quantized_inference>
+
+    def test_static_quantized_inference(self):
+        qlinear = QuantizedLinear(10, 5, mode="EMA")
+        weight = qlinear.weight.data.detach()
+        weight_scale = get_dynamic_scale(weight, 8)
+        weight_int = quantize_np(weight, weight_scale, 8)
+        self.assertTrue((weight_int == torch.round(weight_int)).all())
+        self.assertTrue(weight_int.abs().max() <= 127)
+        x = torch.randn(3, 10) * 2 ** 0.5 - 0.36
+        x_thresh = 3.0
+        output_thresh = 2.3
+        output_scale = 127.0 / output_thresh
+        x_scale = 127.0 / x_thresh
+        qlinear.input_thresh = torch.tensor(x_thresh)
+        qlinear.output_thresh = torch.tensor(output_thresh)
+        x_int = quantize_np(x, x_scale, 8)
+        self.assertTrue((x_int == torch.round(x_int)).all())
+        self.assertTrue(x_int.abs().max() <= 127)
+        bias = qlinear.bias.data
+        bias_scale = x_scale * weight_scale
+        bias_int = quantize_np(bias, bias_scale, 32)
+        self.assertTrue((bias_int == torch.round(bias_int)).all())
+        self.assertTrue(bias_int.abs().max() <= 2 ** (32 - 1) - 1)
+        output_int = x_int @ weight_int.t() + bias_int
+        output_int = torch.clamp(output_int, -(2 ** (32 - 1) - 1), 2 ** (32 - 1) - 1)
+        output = torch.round(output_int / bias_scale * output_scale).clamp(-127, 127) / output_scale
+        qlinear.eval()
+>       qlinear_output = qlinear(x)
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:89: in forward
+    out = self.inference_quantized_forward(input)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:194: in inference_quantized_forward
+    input_quantized = self.quantize(input, self.activation_bits, self.input_thresh.item())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = QuantizedLinear(in_features=10, out_features=5, bias=True, mode=QuantizationMode.EMA, weight_bits=8, activation_bits=8, accumulation_bits=32, ema_decay=0.9999, requantize_output=True)
+name = 'quantize'
+
+    def __getattr__(self, name):
+        if '_parameters' in self.__dict__:
+            _parameters = self.__dict__['_parameters']
+            if name in _parameters:
+                return _parameters[name]
+        if '_buffers' in self.__dict__:
+            _buffers = self.__dict__['_buffers']
+            if name in _buffers:
+                return _buffers[name]
+        if '_modules' in self.__dict__:
+            modules = self.__dict__['_modules']
+            if name in modules:
+                return modules[name]
+        raise AttributeError("'{}' object has no attribute '{}'".format(
+>           type(self).__name__, name))
+E       AttributeError: 'QuantizedLinear' object has no attribute 'quantize'
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:576: AttributeError
+_______ QuantizedLinearTest.test_training_and_inference_differences_ema ________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_training_and_inference_differences_ema>
+
+    def test_training_and_inference_differences_ema(self):
+        qlinear = QuantizedLinear(10, 5, mode="EMA", bias=False)
+        x = torch.randn(3, 10) * 2 + 0.1
+        y = qlinear(x)
+        qlinear.eval()
+>       y_hat = qlinear(x)
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:207: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:89: in forward
+    out = self.inference_quantized_forward(input)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:194: in inference_quantized_forward
+    input_quantized = self.quantize(input, self.activation_bits, self.input_thresh.item())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = QuantizedLinear(in_features=10, out_features=5, bias=False, mode=QuantizationMode.EMA, weight_bits=8, activation_bits=8, accumulation_bits=32, ema_decay=0.9999, requantize_output=True)
+name = 'quantize'
+
+    def __getattr__(self, name):
+        if '_parameters' in self.__dict__:
+            _parameters = self.__dict__['_parameters']
+            if name in _parameters:
+                return _parameters[name]
+        if '_buffers' in self.__dict__:
+            _buffers = self.__dict__['_buffers']
+            if name in _buffers:
+                return _buffers[name]
+        if '_modules' in self.__dict__:
+            modules = self.__dict__['_modules']
+            if name in modules:
+                return modules[name]
+        raise AttributeError("'{}' object has no attribute '{}'".format(
+>           type(self).__name__, name))
+E       AttributeError: 'QuantizedLinear' object has no attribute 'quantize'
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:576: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema
+========================= 5 failed, 20 passed in 2.27s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.17, pytest-7.4.4, pluggy-1.2.0 -- /local/data0/moved_data/publishablew/nlp-architect/nlp-architect/nvenv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nlp-architect/nlp-architect
+configfile: pytest.ini
+collecting ... collected 25 items
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_backward PASSED [  4%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_forward PASSED [  8%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_backward PASSED [ 12%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_forward PASSED [ 16%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization PASSED [ 20%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization_data_parallel PASSED [ 24%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_with_bias PASSED [ 28%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_without_bias PASSED [ 32%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias PASSED [ 36%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias PASSED [ 40%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_none_quantized_linear PASSED [ 44%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_restrict_loading_to_train_model PASSED [ 48%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay PASSED [ 52%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel FAILED [ 56%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference PASSED [ 60%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_train_block_when_loading_quantized_model PASSED [ 64%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_dynamic PASSED [ 68%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema PASSED [ 72%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_delay_quantization_start PASSED [ 76%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_export_to_8bit PASSED [ 80%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_load_from_8bit PASSED [ 84%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantization_turned_off PASSED [ 88%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_backward PASSED [ 92%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_inference_forward PASSED [ 96%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_training_forward PASSED [100%]
+
+=================================== FAILURES ===================================
+_______ QuantizedLinearTest.test_start_quantization_delay_data_parallel ________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_start_quantization_delay_data_parallel>
+
+    def test_start_quantization_delay_data_parallel(self):
+        if not torch.cuda.is_available():
+            return
+        quantization_delay = 2
+        qlinear = QuantizedLinear(10, 5, start_step=quantization_delay, mode="DYNAMIC")
+        linear = nn.Linear(10, 5)
+        linear.weight.data = qlinear.weight
+        linear.bias.data = qlinear.bias
+        qlinear = nn.DataParallel(qlinear).cuda()
+        linear = nn.DataParallel(linear).cuda()
+        for _ in range(quantization_delay):
+            x = torch.randn(3, 10).cuda()
+>           qy = qlinear(x)
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py:150: in forward
+    return self.module(*inputs[0], **kwargs[0])
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:122: in forward
+    out = super().forward(input)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/linear.py:87: in forward
+    return F.linear(input, self.weight, self.bias)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[-0.4923,  0.0955, -0.7388,  1.5020, -2.2192,  0.8687, -0.1077, -0.4809,
+         -0.2621,  0.3226],
+        [... [-0.3987,  0.7958,  0.4161, -0.6580,  0.9573, -0.1519,  0.9370,  0.2117,
+          0.2296, -1.6568]], device='cuda:0')
+weight = Parameter containing:
+tensor([[-0.3133, -0.1907, -0.0532,  0.1532, -0.2797,  0.2391,  0.0031,  0.0358,
+         -0.042... 0.1820, -0.3151,  0.0186, -0.1344, -0.0854,  0.3093,
+          0.3068, -0.1424]], device='cuda:0', requires_grad=True)
+bias = Parameter containing:
+tensor([ 0.1875,  0.1372,  0.2849,  0.2683, -0.0108], device='cuda:0',
+       requires_grad=True)
+
+    def linear(input, weight, bias=None):
+        # type: (Tensor, Tensor, Optional[Tensor]) -> Tensor
+        r"""
+        Applies a linear transformation to the incoming data: :math:`y = xA^T + b`.
+    
+        Shape:
+    
+            - Input: :math:`(N, *, in\_features)` where `*` means any number of
+              additional dimensions
+            - Weight: :math:`(out\_features, in\_features)`
+            - Bias: :math:`(out\_features)`
+            - Output: :math:`(N, *, out\_features)`
+        """
+        if input.dim() == 2 and bias is not None:
+            # fused op is marginally faster
+>           ret = torch.addmm(bias, input, weight.t())
+E           RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/functional.py:1370: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel
+========================= 1 failed, 24 passed in 2.17s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.17, pytest-7.4.4, pluggy-1.2.0 -- /local/data0/moved_data/publishablew/nlp-architect/nlp-architect/nvenv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/nlp-architect/nlp-architect
+configfile: pytest.ini
+collecting ... collected 25 items
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_backward PASSED [  4%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::FakeLinearQuantizationWithSTETester::test_quantization_forward PASSED [  8%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_backward PASSED [ 12%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_dynamic_quantized_linear_forward PASSED [ 16%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization PASSED [ 20%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_ema_quantization_data_parallel PASSED [ 24%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_with_bias PASSED [ 28%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_export_to_8bit_without_bias PASSED [ 32%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_with_bias PASSED [ 36%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_import_from_8bit_without_bias PASSED [ 40%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_none_quantized_linear PASSED [ 44%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_restrict_loading_to_train_model PASSED [ 48%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay PASSED [ 52%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel FAILED [ 56%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_static_quantized_inference PASSED [ 60%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_train_block_when_loading_quantized_model PASSED [ 64%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_dynamic PASSED [ 68%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_training_and_inference_differences_ema PASSED [ 72%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_delay_quantization_start PASSED [ 76%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_export_to_8bit PASSED [ 80%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_load_from_8bit PASSED [ 84%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantization_turned_off PASSED [ 88%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_backward PASSED [ 92%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_inference_forward PASSED [ 96%]
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedEmbeddingTest::test_quantized_embedding_training_forward PASSED [100%]
+
+=================================== FAILURES ===================================
+_______ QuantizedLinearTest.test_start_quantization_delay_data_parallel ________
+
+self = <tests.test_quantization.QuantizedLinearTest testMethod=test_start_quantization_delay_data_parallel>
+
+    def test_start_quantization_delay_data_parallel(self):
+        if not torch.cuda.is_available():
+            return
+        quantization_delay = 2
+        qlinear = QuantizedLinear(10, 5, start_step=quantization_delay, mode="DYNAMIC")
+        linear = nn.Linear(10, 5)
+        linear.weight.data = qlinear.weight
+        linear.bias.data = qlinear.bias
+        qlinear = nn.DataParallel(qlinear).cuda()
+        linear = nn.DataParallel(linear).cuda()
+        for _ in range(quantization_delay):
+            x = torch.randn(3, 10).cuda()
+>           qy = qlinear(x)
+
+../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py:150: in forward
+    return self.module(*inputs[0], **kwargs[0])
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/module.py:532: in __call__
+    result = self.forward(*input, **kwargs)
+../publishablew/nlp-architect/nlp-architect/nlp_architect/nn/torch/quantization.py:122: in forward
+    out = super().forward(input)
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/modules/linear.py:87: in forward
+    return F.linear(input, self.weight, self.bias)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([[ 1.1024,  1.1533, -1.5508, -0.3893, -1.0495,  0.6146,  0.1890,  1.1529,
+          0.8040, -1.0551],
+        [... [ 1.6897,  0.6649,  0.1379, -1.3590,  1.8956,  0.9749, -1.9224, -1.4441,
+          0.1064, -0.5630]], device='cuda:0')
+weight = Parameter containing:
+tensor([[ 0.0874,  0.0868, -0.1896,  0.2540, -0.2153,  0.1571,  0.0326, -0.0698,
+          0.075... 0.1737, -0.2286,  0.0204, -0.1122,  0.0314, -0.0551,
+          0.0732,  0.0074]], device='cuda:0', requires_grad=True)
+bias = Parameter containing:
+tensor([-0.0372,  0.0532,  0.0294,  0.2970,  0.1628], device='cuda:0',
+       requires_grad=True)
+
+    def linear(input, weight, bias=None):
+        # type: (Tensor, Tensor, Optional[Tensor]) -> Tensor
+        r"""
+        Applies a linear transformation to the incoming data: :math:`y = xA^T + b`.
+    
+        Shape:
+    
+            - Input: :math:`(N, *, in\_features)` where `*` means any number of
+              additional dimensions
+            - Weight: :math:`(out\_features, in\_features)`
+            - Bias: :math:`(out\_features)`
+            - Output: :math:`(N, *, out\_features)`
+        """
+        if input.dim() == 2 and bias is not None:
+            # fused op is marginally faster
+>           ret = torch.addmm(bias, input, weight.t())
+E           RuntimeError: CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+
+../publishablew/nlp-architect/nlp-architect/nvenv/lib/python3.7/site-packages/torch/nn/functional.py:1370: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/nlp-architect/nlp-architect/tests/test_quantization.py::QuantizedLinearTest::test_start_quantization_delay_data_parallel
+========================= 1 failed, 24 passed in 2.17s =========================

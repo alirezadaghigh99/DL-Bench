@@ -1,0 +1,662 @@
+output file:
+processed_classes-pytorch-widedeepforward32.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] FAILED [ 35%]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] FAILED [ 23%]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] FAILED [ 11%]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] FAILED [ 47%]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] FAILED [ 17%]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] FAILED [ 58%]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] FAILED [ 41%]', 'FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] FAILED [ 29%]', '../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] FAILED [ 52%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] FAILED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] FAILED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] FAILED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] FAILED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] FAILED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] FAILED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] FAILED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] FAILED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] FAILED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_tabnet_output[None] ___________________________
+
+cont_norm_layer = None
+
+    @pytest.mark.parametrize(
+        "cont_norm_layer",
+        [
+            None,
+            "batchnorm",
+            "layernorm",
+        ],
+    )
+    def test_tabnet_output(cont_norm_layer):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            cont_norm_layer=cont_norm_layer,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+________________________ test_tabnet_output[batchnorm] _________________________
+
+cont_norm_layer = 'batchnorm'
+
+    @pytest.mark.parametrize(
+        "cont_norm_layer",
+        [
+            None,
+            "batchnorm",
+            "layernorm",
+        ],
+    )
+    def test_tabnet_output(cont_norm_layer):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            cont_norm_layer=cont_norm_layer,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+________________________ test_tabnet_output[layernorm] _________________________
+
+cont_norm_layer = 'layernorm'
+
+    @pytest.mark.parametrize(
+        "cont_norm_layer",
+        [
+            None,
+            "batchnorm",
+            "layernorm",
+        ],
+    )
+    def test_tabnet_output(cont_norm_layer):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            cont_norm_layer=cont_norm_layer,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+______________________ test_tabnet_embed_continuos[True] _______________________
+
+embed_continuous = True
+
+    @pytest.mark.parametrize(
+        "embed_continuous",
+        [
+            True,
+            False,
+        ],
+    )
+    def test_tabnet_embed_continuos(embed_continuous):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            embed_continuous=embed_continuous,
+            embed_continuous_method="standard" if embed_continuous else None,
+            cont_embed_dim=4 if embed_continuous else None,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+______________________ test_tabnet_embed_continuos[False] ______________________
+
+embed_continuous = False
+
+    @pytest.mark.parametrize(
+        "embed_continuous",
+        [
+            True,
+            False,
+        ],
+    )
+    def test_tabnet_embed_continuos(embed_continuous):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            embed_continuous=embed_continuous,
+            embed_continuous_method="standard" if embed_continuous else None,
+            cont_embed_dim=4 if embed_continuous else None,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+__________________________ test_mask_type[sparsemax] ___________________________
+
+mask_type = 'sparsemax'
+
+    @pytest.mark.parametrize(
+        "mask_type",
+        [
+            "sparsemax",
+            "entmax",
+        ],
+    )
+    def test_mask_type(mask_type):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            mask_type=mask_type,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+____________________________ test_mask_type[entmax] ____________________________
+
+mask_type = 'entmax'
+
+    @pytest.mark.parametrize(
+        "mask_type",
+        [
+            "sparsemax",
+            "entmax",
+        ],
+    )
+    def test_mask_type(mask_type):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            mask_type=mask_type,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:104: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...s=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Entmax15()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_____________________________ test_ghost_bn[True] ______________________________
+
+ghost_bn = True
+
+    @pytest.mark.parametrize(
+        "ghost_bn",
+        [
+            True,
+            False,
+        ],
+    )
+    def test_ghost_bn(ghost_bn):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            ghost_bn=ghost_bn,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+_____________________________ test_ghost_bn[False] _____________________________
+
+ghost_bn = False
+
+    @pytest.mark.parametrize(
+        "ghost_bn",
+        [
+            True,
+            False,
+        ],
+    )
+    def test_ghost_bn(ghost_bn):
+        model = TabNet(
+            column_idx={k: v for v, k in enumerate(colnames)},
+            cat_embed_input=embed_input,
+            continuous_cols=colnames[n_cols:],
+            ghost_bn=ghost_bn,
+        )
+>       out1, out2 = model(X_tab)
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../publishablew/pytorch-widedeep/pytorch-widedeep/pytorch_widedeep/models/tabular/tabnet/tab_net.py:161: in forward
+    embedded_features = self.get_embeddings(X)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = TabNet(
+  (cat_embed): DiffSizeCatEmbeddings(
+    (embed_layers): ModuleDict(
+      (emb_layer_a): Embedding(6, 1, pad...m1d(4, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        (mask): Sparsemax()
+      )
+    )
+  )
+)
+name = 'get_embeddings'
+
+    def __getattr__(self, name: str) -> Any:
+        if "_parameters" in self.__dict__:
+            _parameters = self.__dict__["_parameters"]
+            if name in _parameters:
+                return _parameters[name]
+        if "_buffers" in self.__dict__:
+            _buffers = self.__dict__["_buffers"]
+            if name in _buffers:
+                return _buffers[name]
+        if "_modules" in self.__dict__:
+            modules = self.__dict__["_modules"]
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(
+            f"'{type(self).__name__}' object has no attribute '{name}'"
+        )
+E       AttributeError: 'TabNet' object has no attribute 'get_embeddings'
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/venv/lib/python3.11/site-packages/torch/nn/modules/module.py:1931: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True]
+FAILED ../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False]
+========================= 9 failed, 8 passed in 4.28s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] PASSED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] PASSED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] PASSED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] PASSED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] PASSED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] PASSED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] PASSED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] PASSED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] PASSED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+============================== 17 passed in 3.60s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-widedeep/pytorch-widedeep
+plugins: Faker-33.1.0
+collecting ... collected 17 items
+
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_embeddings_have_padding PASSED [  5%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[None] PASSED [ 11%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[batchnorm] PASSED [ 17%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_output[layernorm] PASSED [ 23%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[True] PASSED [ 29%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_tabnet_embed_continuos[False] PASSED [ 35%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[sparsemax] PASSED [ 41%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_mask_type[entmax] PASSED [ 47%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[True] PASSED [ 52%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_ghost_bn[False] PASSED [ 58%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_forward_masks PASSED [ 64%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-False] PASSED [ 70%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-True-True] PASSED [ 76%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-False] PASSED [ 82%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[False-True-True] PASSED [ 88%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False0] PASSED [ 94%]
+../publishablew/pytorch-widedeep/pytorch-widedeep/tests/test_model_components/test_mc_tab_tabnet.py::test_create_explain_matrix[True-False-False1] PASSED [100%]
+
+============================== 17 passed in 3.91s ==============================

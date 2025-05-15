@@ -1,0 +1,146 @@
+output file:
+processed_pytorch3dacos_linear_extrapolation319.json
+function:
+acos_linear_extrapolation
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos', '../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient FAILED', '../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos FAILED', 'FAILED ../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos FAILED
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient FAILED
+
+=================================== FAILURES ===================================
+____________________ TestAcosLinearExtrapolation.test_acos _____________________
+
+self = <tests.test_acos_linear_extrapolation.TestAcosLinearExtrapolation testMethod=test_acos>
+batch_size = 10000
+
+    def test_acos(self, batch_size: int = 10000):
+        """
+        Tests whether the function returns correct outputs
+        inside/outside the bounds.
+        """
+        x = TestAcosLinearExtrapolation.init_acos_boundary_values(batch_size)
+        bounds = 1 - 10.0 ** torch.linspace(-1, -5, 5)
+        for lower_bound in -bounds:
+            for upper_bound in bounds:
+                if upper_bound < lower_bound:
+                    continue
+>               self._one_acos_test(x, float(lower_bound), float(upper_bound))
+
+../pytorch3d/tests/test_acos_linear_extrapolation.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_acos_linear_extrapolation.py:87: in _one_acos_test
+    y = acos_linear_extrapolation(x, [lower_bound, upper_bound])
+../pytorch3d/pytorch3d/transforms/math.py:8: in acos_linear_extrapolation
+    return acos_linear_extrapolation(x, bounds)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([ 0.2259, -0.9799, -0.2032,  ...,  0.9986,  0.9888,  0.9980],
+       device='cuda:0', requires_grad=True)
+bounds = [-0.8999999761581421, 0.8999999761581421]
+
+    def acos_linear_extrapolation(x: torch.Tensor, bounds: Tuple[float, float]) -> torch.Tensor:
+        lower_bound, upper_bound = bounds
+        if not -1 < lower_bound < 1 or not -1 < upper_bound < 1:
+            raise ValueError('Bounds must be within the range (-1, 1).')
+        if lower_bound > upper_bound:
+            raise ValueError('Lower bound must be less than or equal to the upper bound.')
+        result = torch.empty_like(x)
+        within_bounds = (x >= lower_bound) & (x <= upper_bound)
+        result[within_bounds] = torch.acos(x[within_bounds])
+        below_lower_bound = x < lower_bound
+        if below_lower_bound.any():
+            acos_lower = torch.acos(torch.tensor(lower_bound))
+>           slope_lower = -torch.sqrt(1 - lower_bound ** 2)
+E           TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../pytorch3d/pytorch3d/transforms/temp.py:18: TypeError
+_______________ TestAcosLinearExtrapolation.test_finite_gradient _______________
+
+self = <tests.test_acos_linear_extrapolation.TestAcosLinearExtrapolation testMethod=test_finite_gradient>
+batch_size = 10000
+
+    def test_finite_gradient(self, batch_size: int = 10000):
+        """
+        Tests whether gradients stay finite close to the bounds.
+        """
+        x = TestAcosLinearExtrapolation.init_acos_boundary_values(batch_size)
+        x.requires_grad = True
+        bounds = 1 - 10.0 ** torch.linspace(-1, -5, 5)
+        for lower_bound in -bounds:
+            for upper_bound in bounds:
+                if upper_bound < lower_bound:
+                    continue
+                x.grad = None
+>               y = acos_linear_extrapolation(
+                    x,
+                    [float(lower_bound), float(upper_bound)],
+                )
+
+../pytorch3d/tests/test_acos_linear_extrapolation.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/transforms/math.py:8: in acos_linear_extrapolation
+    return acos_linear_extrapolation(x, bounds)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([ 0.2259, -0.9799, -0.2032,  ...,  0.9986,  0.9888,  0.9980],
+       device='cuda:0', requires_grad=True)
+bounds = [-0.8999999761581421, 0.8999999761581421]
+
+    def acos_linear_extrapolation(x: torch.Tensor, bounds: Tuple[float, float]) -> torch.Tensor:
+        lower_bound, upper_bound = bounds
+        if not -1 < lower_bound < 1 or not -1 < upper_bound < 1:
+            raise ValueError('Bounds must be within the range (-1, 1).')
+        if lower_bound > upper_bound:
+            raise ValueError('Lower bound must be less than or equal to the upper bound.')
+        result = torch.empty_like(x)
+        within_bounds = (x >= lower_bound) & (x <= upper_bound)
+        result[within_bounds] = torch.acos(x[within_bounds])
+        below_lower_bound = x < lower_bound
+        if below_lower_bound.any():
+            acos_lower = torch.acos(torch.tensor(lower_bound))
+>           slope_lower = -torch.sqrt(1 - lower_bound ** 2)
+E           TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../pytorch3d/pytorch3d/transforms/temp.py:18: TypeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos
+FAILED ../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient
+============================== 2 failed in 1.27s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos PASSED
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient PASSED
+
+============================== 2 passed in 1.60s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 2 items
+
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_acos PASSED
+../pytorch3d/tests/test_acos_linear_extrapolation.py::TestAcosLinearExtrapolation::test_finite_gradient PASSED
+
+============================== 2 passed in 1.73s ===============================

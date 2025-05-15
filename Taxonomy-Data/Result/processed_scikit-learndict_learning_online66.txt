@@ -1,0 +1,277 @@
+output file:
+processed_scikit-learndict_learning_online66.json
+function:
+dict_learning_online
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True]', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-False]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 4 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-False] I: Seeding RNGs with 793049419
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True] FAILED
+
+=================================== FAILURES ===================================
+______________ test_dict_learning_online_positivity[False-False] _______________
+
+positive_code = False, positive_dict = False
+
+    @pytest.mark.parametrize("positive_code", [False, True])
+    @pytest.mark.parametrize("positive_dict", [False, True])
+    def test_dict_learning_online_positivity(positive_code, positive_dict):
+        rng = np.random.RandomState(0)
+        n_components = 8
+    
+>       code, dictionary = dict_learning_online(
+            X,
+            n_components=n_components,
+            batch_size=4,
+            method="cd",
+            alpha=1,
+            random_state=rng,
+            positive_dict=positive_dict,
+            positive_code=positive_code,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:390: in dict_learning_online
+    return dict_learning_online(X, n_components)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 1.76405235,  0.40015721,  0.97873798,  2.2408932 ,  1.86755799,
+        -0.97727788,  0.95008842, -0.15135721...     [ 1.13940068, -1.23482582,  0.40234164, -0.68481009, -0.87079715,
+        -0.57884966, -0.31155253,  0.05616534]])
+n_components = 8, alpha = 1, max_iter = 100, return_code = True
+dict_init = None, callback = None, batch_size = 256, verbose = False
+shuffle = True, n_jobs = None, method = 'lars'
+random_state = RandomState(MT19937) at 0x7976C8C13040, positive_dict = False
+positive_code = False, method_max_iter = 1000, tol = 0.001
+max_no_improvement = 10
+
+    def dict_learning_online(X, n_components=2, alpha=1, max_iter=100, return_code=True, dict_init=None, callback=None, batch_size=256, verbose=False, shuffle=True, n_jobs=None, method='lars', random_state=None, positive_dict=False, positive_code=False, method_max_iter=1000, tol=0.001, max_no_improvement=10):
+        n_samples, n_features = X.shape
+        random_state = check_random_state(random_state)
+        if dict_init is None:
+            _, S, Vt = randomized_svd(X, n_components)
+            dictionary = Vt
+        else:
+            dictionary = dict_init
+        if shuffle:
+>           X = shuffle(X, random_state=random_state)
+E           TypeError: 'bool' object is not callable
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:30: TypeError
+_______________ test_dict_learning_online_positivity[False-True] _______________
+
+positive_code = True, positive_dict = False
+
+    @pytest.mark.parametrize("positive_code", [False, True])
+    @pytest.mark.parametrize("positive_dict", [False, True])
+    def test_dict_learning_online_positivity(positive_code, positive_dict):
+        rng = np.random.RandomState(0)
+        n_components = 8
+    
+>       code, dictionary = dict_learning_online(
+            X,
+            n_components=n_components,
+            batch_size=4,
+            method="cd",
+            alpha=1,
+            random_state=rng,
+            positive_dict=positive_dict,
+            positive_code=positive_code,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:390: in dict_learning_online
+    return dict_learning_online(X, n_components)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 1.76405235,  0.40015721,  0.97873798,  2.2408932 ,  1.86755799,
+        -0.97727788,  0.95008842, -0.15135721...     [ 1.13940068, -1.23482582,  0.40234164, -0.68481009, -0.87079715,
+        -0.57884966, -0.31155253,  0.05616534]])
+n_components = 8, alpha = 1, max_iter = 100, return_code = True
+dict_init = None, callback = None, batch_size = 256, verbose = False
+shuffle = True, n_jobs = None, method = 'lars'
+random_state = RandomState(MT19937) at 0x7976C8C13040, positive_dict = False
+positive_code = False, method_max_iter = 1000, tol = 0.001
+max_no_improvement = 10
+
+    def dict_learning_online(X, n_components=2, alpha=1, max_iter=100, return_code=True, dict_init=None, callback=None, batch_size=256, verbose=False, shuffle=True, n_jobs=None, method='lars', random_state=None, positive_dict=False, positive_code=False, method_max_iter=1000, tol=0.001, max_no_improvement=10):
+        n_samples, n_features = X.shape
+        random_state = check_random_state(random_state)
+        if dict_init is None:
+            _, S, Vt = randomized_svd(X, n_components)
+            dictionary = Vt
+        else:
+            dictionary = dict_init
+        if shuffle:
+>           X = shuffle(X, random_state=random_state)
+E           TypeError: 'bool' object is not callable
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:30: TypeError
+_______________ test_dict_learning_online_positivity[True-False] _______________
+
+positive_code = False, positive_dict = True
+
+    @pytest.mark.parametrize("positive_code", [False, True])
+    @pytest.mark.parametrize("positive_dict", [False, True])
+    def test_dict_learning_online_positivity(positive_code, positive_dict):
+        rng = np.random.RandomState(0)
+        n_components = 8
+    
+>       code, dictionary = dict_learning_online(
+            X,
+            n_components=n_components,
+            batch_size=4,
+            method="cd",
+            alpha=1,
+            random_state=rng,
+            positive_dict=positive_dict,
+            positive_code=positive_code,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:390: in dict_learning_online
+    return dict_learning_online(X, n_components)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 1.76405235,  0.40015721,  0.97873798,  2.2408932 ,  1.86755799,
+        -0.97727788,  0.95008842, -0.15135721...     [ 1.13940068, -1.23482582,  0.40234164, -0.68481009, -0.87079715,
+        -0.57884966, -0.31155253,  0.05616534]])
+n_components = 8, alpha = 1, max_iter = 100, return_code = True
+dict_init = None, callback = None, batch_size = 256, verbose = False
+shuffle = True, n_jobs = None, method = 'lars'
+random_state = RandomState(MT19937) at 0x7976C8C13040, positive_dict = False
+positive_code = False, method_max_iter = 1000, tol = 0.001
+max_no_improvement = 10
+
+    def dict_learning_online(X, n_components=2, alpha=1, max_iter=100, return_code=True, dict_init=None, callback=None, batch_size=256, verbose=False, shuffle=True, n_jobs=None, method='lars', random_state=None, positive_dict=False, positive_code=False, method_max_iter=1000, tol=0.001, max_no_improvement=10):
+        n_samples, n_features = X.shape
+        random_state = check_random_state(random_state)
+        if dict_init is None:
+            _, S, Vt = randomized_svd(X, n_components)
+            dictionary = Vt
+        else:
+            dictionary = dict_init
+        if shuffle:
+>           X = shuffle(X, random_state=random_state)
+E           TypeError: 'bool' object is not callable
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:30: TypeError
+_______________ test_dict_learning_online_positivity[True-True] ________________
+
+positive_code = True, positive_dict = True
+
+    @pytest.mark.parametrize("positive_code", [False, True])
+    @pytest.mark.parametrize("positive_dict", [False, True])
+    def test_dict_learning_online_positivity(positive_code, positive_dict):
+        rng = np.random.RandomState(0)
+        n_components = 8
+    
+>       code, dictionary = dict_learning_online(
+            X,
+            n_components=n_components,
+            batch_size=4,
+            method="cd",
+            alpha=1,
+            random_state=rng,
+            positive_dict=positive_dict,
+            positive_code=positive_code,
+        )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/_dict_learning.py:390: in dict_learning_online
+    return dict_learning_online(X, n_components)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+X = array([[ 1.76405235,  0.40015721,  0.97873798,  2.2408932 ,  1.86755799,
+        -0.97727788,  0.95008842, -0.15135721...     [ 1.13940068, -1.23482582,  0.40234164, -0.68481009, -0.87079715,
+        -0.57884966, -0.31155253,  0.05616534]])
+n_components = 8, alpha = 1, max_iter = 100, return_code = True
+dict_init = None, callback = None, batch_size = 256, verbose = False
+shuffle = True, n_jobs = None, method = 'lars'
+random_state = RandomState(MT19937) at 0x7976C8C13040, positive_dict = False
+positive_code = False, method_max_iter = 1000, tol = 0.001
+max_no_improvement = 10
+
+    def dict_learning_online(X, n_components=2, alpha=1, max_iter=100, return_code=True, dict_init=None, callback=None, batch_size=256, verbose=False, shuffle=True, n_jobs=None, method='lars', random_state=None, positive_dict=False, positive_code=False, method_max_iter=1000, tol=0.001, max_no_improvement=10):
+        n_samples, n_features = X.shape
+        random_state = check_random_state(random_state)
+        if dict_init is None:
+            _, S, Vt = randomized_svd(X, n_components)
+            dictionary = Vt
+        else:
+            dictionary = dict_init
+        if shuffle:
+>           X = shuffle(X, random_state=random_state)
+E           TypeError: 'bool' object is not callable
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/temp.py:30: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-False]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True]
+============================== 4 failed in 0.68s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 4 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-False] I: Seeding RNGs with 1248549503
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True] PASSED
+
+============================== 4 passed in 0.47s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 4 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-False] I: Seeding RNGs with 1593049671
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[False-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/decomposition/tests/test_dict_learning.py::test_dict_learning_online_positivity[True-True] PASSED
+
+============================== 4 passed in 0.90s ===============================

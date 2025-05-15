@@ -1,0 +1,1734 @@
+output file:
+processed_visionnms36.json
+function:
+nms
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_input_errors', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_input_errors', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_ref[0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_batched_nms_implementations[0]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[9]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[0]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_qnms[1-0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_qnms[1-0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[1]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.8]', 'FAILED', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_batched_nms_implementations[0]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_batched_nms_implementations[0]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[3]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_qnms[1-0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[4]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_input_errors', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_ref[0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_ref[0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[6]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[7]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_batched_nms_implementations[0]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[cuda]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_input_errors', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast[dtype0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_ref[0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_input_errors', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.8]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_qnms[1-0-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.2]', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.5]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 130 items
+
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_input_errors Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[0] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[1] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[3] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[4] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[6] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[7] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[9] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_batched_nms_implementations[0] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_batched_nms_implementations[0] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_batched_nms_implementations[0] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_batched_nms_implementations[0] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_input_errors Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_input_errors Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_input_errors Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_input_errors Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_ref[0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_ref[0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_ref[0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_ref[0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_qnms[1-0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_qnms[1-0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_qnms[1-0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_qnms[1-0-0.2] Using torchvision.ops.nms for non-maximum suppression.
+FAILED
+
+=================================== FAILURES ===================================
+_________________________ TestNMS.test_nms_ref[0-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[0-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[0-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[1-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[1-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[1-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[2-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[2-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[2-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[3-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[3-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[3-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[4-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[4-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[4-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[5-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[5-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[5-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[6-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[6-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[6-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[7-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[7-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[7-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[8-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[8-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[8-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[9-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[9-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_nms_ref[9-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________________ TestNMS.test_nms_input_errors _________________________
+../publishablew/vision/vision/test/test_ops.py:799: in test_nms_input_errors
+    ops.nms(torch.rand(4), torch.rand(3), 0.5)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________________________ TestNMS.test_qnms[1-0-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________________________ TestNMS.test_qnms[1-0-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________________________ TestNMS.test_qnms[1-0-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[2-50-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[2-50-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[2-50-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[3-10-0.2] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[3-10-0.5] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________________ TestNMS.test_qnms[3-10-0.8] __________________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________________ TestNMS.test_nms_gpu[0.2-cuda] ________________________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________________ TestNMS.test_nms_gpu[0.5-cuda] ________________________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________________ TestNMS.test_nms_gpu[0.8-cuda] ________________________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype0-0.2] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype0-0.5] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype0-0.8] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype1-0.2] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype1-0.5] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________________ TestNMS.test_autocast[dtype1-0.8] _______________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype0-0.2] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype0-0.5] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype0-0.8] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype1-0.2] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype1-0.5] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________________ TestNMS.test_autocast_cpu[dtype1-0.8] _____________________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________________ TestNMS.test_nms_float16[cuda] ________________________
+../publishablew/vision/vision/test/test_ops.py:890: in test_nms_float16
+    keep32 = ops.nms(boxes, scores, iou_thres)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[0] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[1] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[2] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[3] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[4] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[5] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[6] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[7] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[8] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_batched_nms_implementations[9] __________________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________ TestNMS.test_schema__test_autocast[dtype0-0.2] ________________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________ TestNMS.test_autograd_registration__test_autocast[dtype0-0.2] _________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_faketensor__test_autocast[dtype0-0.2] ______________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________ TestNMS.test_aot_dispatch_dynamic__test_autocast[dtype0-0.2] _________
+../publishablew/vision/vision/test/test_ops.py:860: in test_autocast
+    self.test_nms_gpu(iou=iou, dtype=dtype, device="cuda")
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype0-0.2] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype0-0.5] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype0-0.8] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype1-0.2] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype1-0.5] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______________ TestNMS.test_schema__test_autocast_cpu[dtype1-0.8] ______________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype0-0.2] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype0-0.5] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype0-0.8] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype1-0.2] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype1-0.5] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+______ TestNMS.test_autograd_registration__test_autocast_cpu[dtype1-0.8] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype0-0.2] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype0-0.5] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype0-0.8] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype1-0.2] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype1-0.5] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_faketensor__test_autocast_cpu[dtype1-0.8] ____________
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______ TestNMS.test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8] _______
+../publishablew/vision/vision/test/test_ops.py:867: in test_autocast_cpu
+    keep_ref_float = ops.nms(boxes.to(dtype).float(), scores.to(dtype).float(), iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___________ TestNMS.test_schema__test_batched_nms_implementations[0] ___________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___ TestNMS.test_autograd_registration__test_batched_nms_implementations[0] ____
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________ TestNMS.test_faketensor__test_batched_nms_implementations[0] _________
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____ TestNMS.test_aot_dispatch_dynamic__test_batched_nms_implementations[0] ____
+../publishablew/vision/vision/test/test_ops.py:909: in test_batched_nms_implementations
+    keep_vanilla = ops.boxes._batched_nms_vanilla(boxes, scores, idxs, iou_threshold)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_trace.py:1444: in wrapper
+    return fn(*args, **kwargs)
+../publishablew/vision/vision/torchvision/ops/boxes.py:85: in _batched_nms_vanilla
+    curr_keep_indices = nms(boxes[curr_indices], scores[curr_indices], iou_threshold)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_schema__test_nms_float16[cuda] __________________
+../publishablew/vision/vision/test/test_ops.py:890: in test_nms_float16
+    keep32 = ops.nms(boxes, scores, iou_thres)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________ TestNMS.test_autograd_registration__test_nms_float16[cuda] __________
+../publishablew/vision/vision/test/test_ops.py:890: in test_nms_float16
+    keep32 = ops.nms(boxes, scores, iou_thres)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______________ TestNMS.test_faketensor__test_nms_float16[cuda] ________________
+../publishablew/vision/vision/test/test_ops.py:890: in test_nms_float16
+    keep32 = ops.nms(boxes, scores, iou_thres)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________ TestNMS.test_aot_dispatch_dynamic__test_nms_float16[cuda] ___________
+../publishablew/vision/vision/test/test_ops.py:890: in test_nms_float16
+    keep32 = ops.nms(boxes, scores, iou_thres)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_schema__test_nms_gpu[0.2-cuda] __________________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________ TestNMS.test_autograd_registration__test_nms_gpu[0.2-cuda] __________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_______________ TestNMS.test_faketensor__test_nms_gpu[0.2-cuda] ________________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________ TestNMS.test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda] ___________
+../publishablew/vision/vision/test/test_ops.py:844: in test_nms_gpu
+    r_cpu = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________________ TestNMS.test_schema__test_nms_input_errors __________________
+../publishablew/vision/vision/test/test_ops.py:799: in test_nms_input_errors
+    ops.nms(torch.rand(4), torch.rand(3), 0.5)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+__________ TestNMS.test_autograd_registration__test_nms_input_errors ___________
+../publishablew/vision/vision/test/test_ops.py:799: in test_nms_input_errors
+    ops.nms(torch.rand(4), torch.rand(3), 0.5)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+________________ TestNMS.test_faketensor__test_nms_input_errors ________________
+../publishablew/vision/vision/test/test_ops.py:799: in test_nms_input_errors
+    ops.nms(torch.rand(4), torch.rand(3), 0.5)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___________ TestNMS.test_aot_dispatch_dynamic__test_nms_input_errors ___________
+../publishablew/vision/vision/test/test_ops.py:799: in test_nms_input_errors
+    ops.nms(torch.rand(4), torch.rand(3), 0.5)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___________________ TestNMS.test_schema__test_nms_ref[0-0.2] ___________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___________ TestNMS.test_autograd_registration__test_nms_ref[0-0.2] ____________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_faketensor__test_nms_ref[0-0.2] _________________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_aot_dispatch_dynamic__test_nms_ref[0-0.2] ____________
+../publishablew/vision/vision/test/test_ops.py:794: in test_nms_ref
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+___________________ TestNMS.test_schema__test_qnms[1-0-0.2] ____________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_autograd_registration__test_qnms[1-0-0.2] ____________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+_________________ TestNMS.test_faketensor__test_qnms[1-0-0.2] __________________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+____________ TestNMS.test_aot_dispatch_dynamic__test_qnms[1-0-0.2] _____________
+../publishablew/vision/vision/test/test_ops.py:824: in test_qnms
+    keep = ops.nms(boxes, scores, iou)
+../publishablew/vision/vision/torchvision/ops/boxes.py:12: in nms
+    return nms(boxes, scores, iou_threshold)
+../publishablew/vision/vision/torchvision/ops/temp.py:27: in nms
+    keep_indices = torchvision.ops.nms1(boxes, scores, iou_threshold)
+E   AttributeError: module 'torchvision.ops' has no attribute 'nms1'
+=============================== warnings summary ===============================
+test/test_ops.py: 10 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:859: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+    with torch.cuda.amp.autocast():
+
+test/test_ops.py: 30 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:866: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+    with torch.cpu.amp.autocast():
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_input_errors
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[0]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[1]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[3]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[4]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[6]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[7]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[9]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_batched_nms_implementations[0]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_batched_nms_implementations[0]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_batched_nms_implementations[0]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_batched_nms_implementations[0]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_input_errors
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_input_errors
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_input_errors
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_input_errors
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_ref[0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_ref[0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_ref[0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_ref[0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_qnms[1-0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_qnms[1-0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_qnms[1-0-0.2]
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_qnms[1-0-0.2]
+================= 118 failed, 12 skipped, 40 warnings in 7.42s =================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 130 items
+
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[1] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[3] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[4] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[6] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[7] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[9] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_qnms[1-0-0.2] PASSED
+
+=============================== warnings summary ===============================
+test/test_ops.py: 10 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:859: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+    with torch.cuda.amp.autocast():
+
+test/test_ops.py: 30 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:866: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+    with torch.cpu.amp.autocast():
+
+test/test_ops.py: 75 warnings
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/_meta_registrations.py:173: FutureWarning: `create_unbacked_symint` is deprecated, please use `new_dynamic_size` instead
+    num_to_keep = ctx.create_unbacked_symint()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 118 passed, 12 skipped, 115 warnings in 3.29s =================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 130 items
+
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[2-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[3-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[4-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[5-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[6-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[7-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[8-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_ref[9-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[1-0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[2-50-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_qnms[3-10-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.5-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_gpu[0.8-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[1] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[3] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[4] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[6] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[7] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_batched_nms_implementations[9] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype0-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.5] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_autocast_cpu[dtype1-0.8] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_batched_nms_implementations[0] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_float16[mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-cuda] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_gpu[0.2-mps] SKIPPED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_input_errors PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_nms_ref[0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_schema__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_autograd_registration__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_faketensor__test_qnms[1-0-0.2] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestNMS::test_aot_dispatch_dynamic__test_qnms[1-0-0.2] PASSED
+
+=============================== warnings summary ===============================
+test/test_ops.py: 10 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:859: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+    with torch.cuda.amp.autocast():
+
+test/test_ops.py: 30 warnings
+  /local/data0/moved_data/publishablew/vision/vision/test/test_ops.py:866: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+    with torch.cpu.amp.autocast():
+
+test/test_ops.py: 75 warnings
+  /local/data0/moved_data/publishablew/vision/vision/torchvision/_meta_registrations.py:173: FutureWarning: `create_unbacked_symint` is deprecated, please use `new_dynamic_size` instead
+    num_to_keep = ctx.create_unbacked_symint()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================ 118 passed, 12 skipped, 115 warnings in 3.53s =================

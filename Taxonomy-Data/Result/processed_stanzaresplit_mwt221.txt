@@ -1,0 +1,163 @@
+output file:
+processed_stanzaresplit_mwt221.json
+function:
+resplit_mwt
+Error Cases:
+
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.9.0.json:   0%|          | 0.00/48.5k [00:00<?, ?B/s]
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.9.0.json: 392kB [00:00, 14.9MB/s]                    
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens', '../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens FAILED', '../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 2 items
+
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens FAILED
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens FAILED
+
+=================================== FAILURES ===================================
+___________________________ test_resplit_keep_tokens ___________________________
+
+pipeline = <stanza.pipeline.core.Pipeline object at 0x7db72b987b90>
+
+    def test_resplit_keep_tokens(pipeline):
+        """
+        Test splitting with enforced token boundaries
+        """
+        tokens = [["I", "can't", "believe", "it"], ["I can't", "sleep"]]
+>       doc = resplit_mwt(tokens, pipeline)
+
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/mwt/utils.py:20: in resplit_mwt
+    return resplit_mwt(tokens, pipeline, keep_tokens)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tokens = [['I', "can't", 'believe', 'it'], ["I can't", 'sleep']]
+pipeline = <stanza.pipeline.core.Pipeline object at 0x7db72b987b90>
+keep_tokens = True
+
+    def resplit_mwt(tokens, pipeline, keep_tokens):
+        if 'tokenize' not in pipeline.processors or 'mwt' not in pipeline.processors:
+            raise ValueError("The pipeline must contain both 'tokenize' and 'mwt' processors.")
+        doc = Document([], text=None)
+        for sentence in tokens:
+>           doc.add_sentence(sentence)
+E           AttributeError: 'Document' object has no attribute 'add_sentence'
+
+../publishablew/stanza/stanza/stanza/models/mwt/temp.py:13: AttributeError
+------------------------------ Captured log setup ------------------------------
+INFO     stanza:core.py:207 Checking for updates to resources.json in case models have been updated.  Note: this behavior can be turned off with download_method=None or download_method=DownloadMethod.REUSE_RESOURCES
+INFO     stanza:common.py:161 Downloaded file to /local/data0/moved_data/Organized_benchmark/stanza_test/models/resources.json
+INFO     stanza:core.py:271 Loading these models for language: en (English):
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | gum     |
+| mwt       | gum     |
+=======================
+
+INFO     stanza:core.py:290 Using device: cuda
+INFO     stanza:core.py:296 Loading: tokenize
+INFO     stanza:core.py:296 Loading: mwt
+INFO     stanza:core.py:348 Done loading processors!
+_________________________ test_resplit_no_keep_tokens __________________________
+
+pipeline = <stanza.pipeline.core.Pipeline object at 0x7db72b987b90>
+
+    def test_resplit_no_keep_tokens(pipeline):
+        """
+        Test splitting without enforced token boundaries
+        """
+        tokens = [["I", "can't", "believe", "it"], ["I can't", "sleep"]]
+>       doc = resplit_mwt(tokens, pipeline, keep_tokens=False)
+
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/stanza/stanza/stanza/models/mwt/utils.py:20: in resplit_mwt
+    return resplit_mwt(tokens, pipeline, keep_tokens)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tokens = [['I', "can't", 'believe', 'it'], ["I can't", 'sleep']]
+pipeline = <stanza.pipeline.core.Pipeline object at 0x7db72b987b90>
+keep_tokens = False
+
+    def resplit_mwt(tokens, pipeline, keep_tokens):
+        if 'tokenize' not in pipeline.processors or 'mwt' not in pipeline.processors:
+            raise ValueError("The pipeline must contain both 'tokenize' and 'mwt' processors.")
+        doc = Document([], text=None)
+        for sentence in tokens:
+>           doc.add_sentence(sentence)
+E           AttributeError: 'Document' object has no attribute 'add_sentence'
+
+../publishablew/stanza/stanza/stanza/models/mwt/temp.py:13: AttributeError
+=============================== warnings summary ===============================
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/tokenization/trainer.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/mwt/trainer.py:201: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens
+FAILED ../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens
+======================== 2 failed, 2 warnings in 2.08s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 2 items
+
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens PASSED
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens PASSED
+
+=============================== warnings summary ===============================
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/tokenization/trainer.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/mwt/trainer.py:201: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 2 passed, 2 warnings in 2.26s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 2 items
+
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_keep_tokens PASSED
+../publishablew/stanza/stanza/stanza/tests/mwt/test_utils.py::test_resplit_no_keep_tokens PASSED
+
+=============================== warnings summary ===============================
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/tokenization/trainer.py:82: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+mwt/test_utils.py::test_resplit_keep_tokens
+  /local/data0/moved_data/publishablew/stanza/stanza/stanza/models/mwt/trainer.py:201: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    checkpoint = torch.load(filename, lambda storage, loc: storage)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 2 passed, 2 warnings in 2.49s =========================

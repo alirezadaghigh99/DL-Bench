@@ -1,0 +1,231 @@
+output file:
+processed_pennylane321.json
+function:
+allequal
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 60 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-tensorflow] SKIPPED
+
+======================== 24 passed, 36 skipped in 0.05s ========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 60 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-tensorflow] SKIPPED
+
+======================== 24 passed, 36 skipped in 0.05s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 60 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_single_density_matrix[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_batched_density_matrices[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_no_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_over_all_wires[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_invalid_wire_selection[complex128-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex64-tensorflow] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-numpy] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-autograd] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-jax] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-torch] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestPartialTrace::test_partial_trace_single_matrix[complex128-tensorflow] SKIPPED
+
+======================== 24 passed, 36 skipped in 0.06s ========================

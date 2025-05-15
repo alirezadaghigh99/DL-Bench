@@ -1,0 +1,82 @@
+output file:
+processed_visiongaussian_noise_image271.json
+function:
+gaussian_noise_image
+Error Cases:
+ImportError while loading conftest '/local/data0/moved_data/publishablew/vision/vision/test/conftest.py'.
+../publishablew/vision/vision/test/conftest.py:7: in <module>
+    from common_utils import (
+../publishablew/vision/vision/test/common_utils.py:24: in <module>
+    from torchvision.transforms.v2.functional import to_image, to_pil_image
+../publishablew/vision/vision/torchvision/transforms/v2/__init__.py:3: in <module>
+    from . import functional  # usort: skip
+../publishablew/vision/vision/torchvision/transforms/v2/functional/__init__.py:25: in <module>
+    from ._color import (
+../publishablew/vision/vision/torchvision/transforms/v2/functional/_color.py:12: in <module>
+    from ._misc import _num_value_bits, to_dtype_image
+../publishablew/vision/vision/torchvision/transforms/v2/functional/_misc.py:149: in <module>
+    @_register_kernel_internal(gaussian_noise, torch.Tensor)
+../publishablew/vision/vision/torchvision/transforms/v2/functional/_utils.py:40: in _register_kernel_internal
+    raise ValueError(f"Functional {functional} already has a kernel registered for type {input_type}.")
+E   ValueError: Functional <function gaussian_noise at 0x7ddcccffc680> already has a kernel registered for type <class 'torch.Tensor'>.
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 14 items
+
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise-Tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise_image-Image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise_video-Video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_bad_input PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_clip PASSED
+
+============================== 14 passed in 0.25s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 14 items
+
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_kernel[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise-Tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise_image-Image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_functional_signature[gaussian_noise_video-Video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_image_tensor] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_image] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_transform[make_video] PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_bad_input PASSED
+../publishablew/vision/vision/test/test_transforms_v2.py::TestGaussianNoise::test_clip PASSED
+
+============================== 14 passed in 0.27s ==============================

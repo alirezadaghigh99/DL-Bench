@@ -1,0 +1,346 @@
+output file:
+processed_DeepReg_deconv_output_padding283.json
+function:
+_deconv_output_padding
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5]', 'FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1]', 'test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0] FAILED [ 56%]', 'FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0]', 'FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0]', 'test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0] FAILED [ 18%]', 'test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5] FAILED [100%]', 'test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1] FAILED [ 37%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 16 items
+
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-5-3-1-same-0] PASSED [  6%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-1-valid-0] PASSED [ 12%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0] FAILED [ 18%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-6-3-1-same-1] PASSED [ 25%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-8-3-1-valid-1] PASSED [ 31%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1] FAILED [ 37%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-9-3-2-same-0] PASSED [ 43%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-11-3-2-valid-0] PASSED [ 50%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0] FAILED [ 56%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d_err PASSED [ 62%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[5-9-3-2-same-0] PASSED [ 68%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape1-output_shape1-3-2-same-expected1] PASSED [ 75%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape2-output_shape2-3-2-same-expected2] PASSED [ 81%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape3-output_shape3-kernel_size3-2-same-expected3] PASSED [ 87%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape4-output_shape4-3-stride4-same-expected4] PASSED [ 93%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5] FAILED [100%]
+
+=================================== FAILURES ===================================
+_______________ TestDeconvOutputPadding.test_1d[5-3-3-1-full-0] ________________
+
+self = <test.unit.test_layer_util.TestDeconvOutputPadding object at 0x79dde7e51810>
+input_shape = 5, output_shape = 3, kernel_size = 3, stride = 1, padding = 'full'
+expected = 0
+
+    @pytest.mark.parametrize(
+        ("input_shape", "output_shape", "kernel_size", "stride", "padding", "expected"),
+        [
+            (5, 5, 3, 1, "same", 0),
+            (5, 7, 3, 1, "valid", 0),
+            (5, 3, 3, 1, "full", 0),
+            (5, 6, 3, 1, "same", 1),
+            (5, 8, 3, 1, "valid", 1),
+            (5, 4, 3, 1, "full", 1),
+            (5, 9, 3, 2, "same", 0),
+            (5, 11, 3, 2, "valid", 0),
+            (5, 7, 3, 2, "full", 0),
+        ],
+    )
+    def test_1d(
+        self,
+        input_shape: int,
+        output_shape: int,
+        kernel_size: int,
+        stride: int,
+        padding: str,
+        expected: int,
+    ):
+        """
+        Test _deconv_output_padding by verifying output
+    
+        :param input_shape: shape of Conv3DTranspose input tensor
+        :param output_shape: shape of Conv3DTranspose output tensor
+        :param kernel_size: kernel size of Conv3DTranspose layer
+        :param stride: stride of Conv3DTranspose layer
+        :param padding: padding of Conv3DTranspose layer
+        :param expected: expected output padding for Conv3DTranspose layer
+        """
+        got = layer_util._deconv_output_padding(
+>           input_shape, output_shape, kernel_size, stride, padding
+        )
+
+test/unit/test_layer_util.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:300: in _deconv_output_padding
+    return _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input_shape = 5, output_shape = 3, kernel_size = 3, stride = 1, padding = 'full'
+
+    def _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding):
+        if padding not in {'same', 'valid', 'full'}:
+            raise ValueError(f'Unknown padding type: {padding}')
+        if padding == 'same':
+            expected_output_length = (input_shape - 1) * stride + 1
+        elif padding == 'valid':
+            expected_output_length = (input_shape - 1) * stride + kernel_size
+        elif padding == 'full':
+            expected_output_length = (input_shape - 1) * stride + 2 * (kernel_size - 1) + 1
+        output_padding = output_shape - expected_output_length
+        if output_padding < 0:
+>           raise ValueError('Calculated output shape is larger than the desired output shape. Check the parameters.')
+E           ValueError: Calculated output shape is larger than the desired output shape. Check the parameters.
+
+deepreg/model/temp.py:16: ValueError
+_______________ TestDeconvOutputPadding.test_1d[5-4-3-1-full-1] ________________
+
+self = <test.unit.test_layer_util.TestDeconvOutputPadding object at 0x79dde84fde10>
+input_shape = 5, output_shape = 4, kernel_size = 3, stride = 1, padding = 'full'
+expected = 1
+
+    @pytest.mark.parametrize(
+        ("input_shape", "output_shape", "kernel_size", "stride", "padding", "expected"),
+        [
+            (5, 5, 3, 1, "same", 0),
+            (5, 7, 3, 1, "valid", 0),
+            (5, 3, 3, 1, "full", 0),
+            (5, 6, 3, 1, "same", 1),
+            (5, 8, 3, 1, "valid", 1),
+            (5, 4, 3, 1, "full", 1),
+            (5, 9, 3, 2, "same", 0),
+            (5, 11, 3, 2, "valid", 0),
+            (5, 7, 3, 2, "full", 0),
+        ],
+    )
+    def test_1d(
+        self,
+        input_shape: int,
+        output_shape: int,
+        kernel_size: int,
+        stride: int,
+        padding: str,
+        expected: int,
+    ):
+        """
+        Test _deconv_output_padding by verifying output
+    
+        :param input_shape: shape of Conv3DTranspose input tensor
+        :param output_shape: shape of Conv3DTranspose output tensor
+        :param kernel_size: kernel size of Conv3DTranspose layer
+        :param stride: stride of Conv3DTranspose layer
+        :param padding: padding of Conv3DTranspose layer
+        :param expected: expected output padding for Conv3DTranspose layer
+        """
+        got = layer_util._deconv_output_padding(
+>           input_shape, output_shape, kernel_size, stride, padding
+        )
+
+test/unit/test_layer_util.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:300: in _deconv_output_padding
+    return _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input_shape = 5, output_shape = 4, kernel_size = 3, stride = 1, padding = 'full'
+
+    def _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding):
+        if padding not in {'same', 'valid', 'full'}:
+            raise ValueError(f'Unknown padding type: {padding}')
+        if padding == 'same':
+            expected_output_length = (input_shape - 1) * stride + 1
+        elif padding == 'valid':
+            expected_output_length = (input_shape - 1) * stride + kernel_size
+        elif padding == 'full':
+            expected_output_length = (input_shape - 1) * stride + 2 * (kernel_size - 1) + 1
+        output_padding = output_shape - expected_output_length
+        if output_padding < 0:
+>           raise ValueError('Calculated output shape is larger than the desired output shape. Check the parameters.')
+E           ValueError: Calculated output shape is larger than the desired output shape. Check the parameters.
+
+deepreg/model/temp.py:16: ValueError
+_______________ TestDeconvOutputPadding.test_1d[5-7-3-2-full-0] ________________
+
+self = <test.unit.test_layer_util.TestDeconvOutputPadding object at 0x79dde5deb950>
+input_shape = 5, output_shape = 7, kernel_size = 3, stride = 2, padding = 'full'
+expected = 0
+
+    @pytest.mark.parametrize(
+        ("input_shape", "output_shape", "kernel_size", "stride", "padding", "expected"),
+        [
+            (5, 5, 3, 1, "same", 0),
+            (5, 7, 3, 1, "valid", 0),
+            (5, 3, 3, 1, "full", 0),
+            (5, 6, 3, 1, "same", 1),
+            (5, 8, 3, 1, "valid", 1),
+            (5, 4, 3, 1, "full", 1),
+            (5, 9, 3, 2, "same", 0),
+            (5, 11, 3, 2, "valid", 0),
+            (5, 7, 3, 2, "full", 0),
+        ],
+    )
+    def test_1d(
+        self,
+        input_shape: int,
+        output_shape: int,
+        kernel_size: int,
+        stride: int,
+        padding: str,
+        expected: int,
+    ):
+        """
+        Test _deconv_output_padding by verifying output
+    
+        :param input_shape: shape of Conv3DTranspose input tensor
+        :param output_shape: shape of Conv3DTranspose output tensor
+        :param kernel_size: kernel size of Conv3DTranspose layer
+        :param stride: stride of Conv3DTranspose layer
+        :param padding: padding of Conv3DTranspose layer
+        :param expected: expected output padding for Conv3DTranspose layer
+        """
+        got = layer_util._deconv_output_padding(
+>           input_shape, output_shape, kernel_size, stride, padding
+        )
+
+test/unit/test_layer_util.py:302: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+deepreg/model/layer_util.py:300: in _deconv_output_padding
+    return _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input_shape = 5, output_shape = 7, kernel_size = 3, stride = 2, padding = 'full'
+
+    def _deconv_output_padding(input_shape, output_shape, kernel_size, stride, padding):
+        if padding not in {'same', 'valid', 'full'}:
+            raise ValueError(f'Unknown padding type: {padding}')
+        if padding == 'same':
+            expected_output_length = (input_shape - 1) * stride + 1
+        elif padding == 'valid':
+            expected_output_length = (input_shape - 1) * stride + kernel_size
+        elif padding == 'full':
+            expected_output_length = (input_shape - 1) * stride + 2 * (kernel_size - 1) + 1
+        output_padding = output_shape - expected_output_length
+        if output_padding < 0:
+>           raise ValueError('Calculated output shape is larger than the desired output shape. Check the parameters.')
+E           ValueError: Calculated output shape is larger than the desired output shape. Check the parameters.
+
+deepreg/model/temp.py:16: ValueError
+_ TestDeconvOutputPadding.test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5] _
+
+self = <test.unit.test_layer_util.TestDeconvOutputPadding object at 0x79dde5dfd910>
+input_shape = (5, 5), output_shape = (9, 10), kernel_size = (3, 4), stride = 2
+padding = 'same', expected = (0, 2)
+
+    @pytest.mark.parametrize(
+        ("input_shape", "output_shape", "kernel_size", "stride", "padding", "expected"),
+        [
+            (5, 9, 3, 2, "same", 0),
+            ((5, 5), (9, 10), 3, 2, "same", (0, 1)),
+            ((5, 5, 6), (9, 10, 12), 3, 2, "same", (0, 1, 1)),
+            ((5, 5), (9, 10), (3, 3), 2, "same", (0, 1)),
+            ((5, 5), (9, 10), 3, (2, 2), "same", (0, 1)),
+            ((5, 5), (9, 10), (3, 4), 2, "same", (0, 2)),
+        ],
+    )
+    def test_n_dim(
+        self,
+        input_shape: Union[Tuple[int, ...], int],
+        output_shape: Union[Tuple[int, ...], int],
+        kernel_size: Union[Tuple[int, ...], int],
+        stride: Union[Tuple[int, ...], int],
+        padding: str,
+        expected: Union[Tuple[int, ...], int],
+    ):
+        """
+        Test deconv_output_padding by verifying output
+    
+        :param input_shape: shape of Conv3DTranspose input tensor
+        :param output_shape: shape of Conv3DTranspose output tensor
+        :param kernel_size: kernel size of Conv3DTranspose layer
+        :param stride: stride of Conv3DTranspose layer
+        :param padding: padding of Conv3DTranspose layer
+        :param expected: expected output padding for Conv3DTranspose layer
+        """
+        got = layer_util.deconv_output_padding(
+            input_shape, output_shape, kernel_size, stride, padding
+        )
+>       assert got == expected
+E       assert (0, 1) == (0, 2)
+E         At index 1 diff: 1 != 2
+E         Full diff:
+E         - (0, 2)
+E         ?     ^
+E         + (0, 1)
+E         ?     ^
+
+test/unit/test_layer_util.py:345: AssertionError
+=========================== short test summary info ============================
+FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0]
+FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1]
+FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0]
+FAILED test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5]
+========================= 4 failed, 12 passed in 1.60s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 16 items
+
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-5-3-1-same-0] PASSED [  6%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-1-valid-0] PASSED [ 12%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0] PASSED [ 18%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-6-3-1-same-1] PASSED [ 25%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-8-3-1-valid-1] PASSED [ 31%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1] PASSED [ 37%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-9-3-2-same-0] PASSED [ 43%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-11-3-2-valid-0] PASSED [ 50%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0] PASSED [ 56%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d_err PASSED [ 62%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[5-9-3-2-same-0] PASSED [ 68%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape1-output_shape1-3-2-same-expected1] PASSED [ 75%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape2-output_shape2-3-2-same-expected2] PASSED [ 81%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape3-output_shape3-kernel_size3-2-same-expected3] PASSED [ 87%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape4-output_shape4-3-stride4-same-expected4] PASSED [ 93%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5] PASSED [100%]
+
+============================== 16 passed in 1.36s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 16 items
+
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-5-3-1-same-0] PASSED [  6%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-1-valid-0] PASSED [ 12%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-3-3-1-full-0] PASSED [ 18%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-6-3-1-same-1] PASSED [ 25%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-8-3-1-valid-1] PASSED [ 31%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-4-3-1-full-1] PASSED [ 37%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-9-3-2-same-0] PASSED [ 43%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-11-3-2-valid-0] PASSED [ 50%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d[5-7-3-2-full-0] PASSED [ 56%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_1d_err PASSED [ 62%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[5-9-3-2-same-0] PASSED [ 68%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape1-output_shape1-3-2-same-expected1] PASSED [ 75%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape2-output_shape2-3-2-same-expected2] PASSED [ 81%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape3-output_shape3-kernel_size3-2-same-expected3] PASSED [ 87%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape4-output_shape4-3-stride4-same-expected4] PASSED [ 93%]
+test/unit/test_layer_util.py::TestDeconvOutputPadding::test_n_dim[input_shape5-output_shape5-kernel_size5-2-same-expected5] PASSED [100%]
+
+============================== 16 passed in 1.30s ==============================

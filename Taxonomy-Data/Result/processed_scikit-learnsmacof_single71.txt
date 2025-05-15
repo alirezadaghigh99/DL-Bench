@@ -1,0 +1,212 @@
+output file:
+processed_scikit-learnsmacof_single71.json
+function:
+_smacof_single
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[0.5]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2]', '../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 3 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[0.5] I: Seeding RNGs with 1082862422
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2] FAILED
+
+=================================== FAILURES ===================================
+___________________________ test_normed_stress[0.5] ____________________________
+
+k = 0.5
+
+    @pytest.mark.parametrize("k", [0.5, 1.5, 2])
+    def test_normed_stress(k):
+        """Test that non-metric MDS normalized stress is scale-invariant."""
+        sim = np.array([[0, 5, 3, 4], [5, 0, 2, 2], [3, 2, 0, 1], [4, 2, 1, 0]])
+    
+>       X1, stress1 = mds.smacof(sim, metric=False, max_iter=5, random_state=0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:279: in smacof
+    pos, stress, n_iter_ = _smacof_single(dissimilarities, metric=metric, n_components=n_components, init=init, max_iter=max_iter, verbose=verbose, eps=eps, random_state=random_state, normalized_stress=normalized_stress)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:18: in _smacof_single
+    return _smacof_single(dissimilarities, metric, n_components, init, max_iter, verbose, eps, random_state, normalized_stress)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dissimilarities = array([[0, 5, 3, 4],
+       [5, 0, 2, 2],
+       [3, 2, 0, 1],
+       [4, 2, 1, 0]])
+metric = False, n_components = 2, init = None, max_iter = 5, verbose = 0
+eps = 0.001, random_state = RandomState(MT19937) at 0x7021DBB49740
+normalized_stress = True
+
+    def _smacof_single(dissimilarities, metric=True, n_components=2, init=None, max_iter=300, verbose=0, eps=0.001, random_state=None, normalized_stress=False):
+        n_samples = dissimilarities.shape[0]
+        random_state = check_random_state(random_state)
+        if init is None:
+            X = random_state.rand(n_samples, n_components)
+        else:
+            X = init
+        old_stress = None
+        dissimilarities = np.asarray(dissimilarities)
+        for it in range(max_iter):
+            distances = euclidean_distances(X)
+            np.fill_diagonal(distances, 1)
+            if metric:
+                disparities = dissimilarities
+            else:
+                disparities = np.copy(dissimilarities)
+>               disparities[disparities == 0] = np.nan
+E               ValueError: cannot convert float NaN to integer
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/temp.py:32: ValueError
+___________________________ test_normed_stress[1.5] ____________________________
+
+k = 1.5
+
+    @pytest.mark.parametrize("k", [0.5, 1.5, 2])
+    def test_normed_stress(k):
+        """Test that non-metric MDS normalized stress is scale-invariant."""
+        sim = np.array([[0, 5, 3, 4], [5, 0, 2, 2], [3, 2, 0, 1], [4, 2, 1, 0]])
+    
+>       X1, stress1 = mds.smacof(sim, metric=False, max_iter=5, random_state=0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:279: in smacof
+    pos, stress, n_iter_ = _smacof_single(dissimilarities, metric=metric, n_components=n_components, init=init, max_iter=max_iter, verbose=verbose, eps=eps, random_state=random_state, normalized_stress=normalized_stress)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:18: in _smacof_single
+    return _smacof_single(dissimilarities, metric, n_components, init, max_iter, verbose, eps, random_state, normalized_stress)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dissimilarities = array([[0, 5, 3, 4],
+       [5, 0, 2, 2],
+       [3, 2, 0, 1],
+       [4, 2, 1, 0]])
+metric = False, n_components = 2, init = None, max_iter = 5, verbose = 0
+eps = 0.001, random_state = RandomState(MT19937) at 0x7021DBB49B40
+normalized_stress = True
+
+    def _smacof_single(dissimilarities, metric=True, n_components=2, init=None, max_iter=300, verbose=0, eps=0.001, random_state=None, normalized_stress=False):
+        n_samples = dissimilarities.shape[0]
+        random_state = check_random_state(random_state)
+        if init is None:
+            X = random_state.rand(n_samples, n_components)
+        else:
+            X = init
+        old_stress = None
+        dissimilarities = np.asarray(dissimilarities)
+        for it in range(max_iter):
+            distances = euclidean_distances(X)
+            np.fill_diagonal(distances, 1)
+            if metric:
+                disparities = dissimilarities
+            else:
+                disparities = np.copy(dissimilarities)
+>               disparities[disparities == 0] = np.nan
+E               ValueError: cannot convert float NaN to integer
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/temp.py:32: ValueError
+____________________________ test_normed_stress[2] _____________________________
+
+k = 2
+
+    @pytest.mark.parametrize("k", [0.5, 1.5, 2])
+    def test_normed_stress(k):
+        """Test that non-metric MDS normalized stress is scale-invariant."""
+        sim = np.array([[0, 5, 3, 4], [5, 0, 2, 2], [3, 2, 0, 1], [4, 2, 1, 0]])
+    
+>       X1, stress1 = mds.smacof(sim, metric=False, max_iter=5, random_state=0)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:279: in smacof
+    pos, stress, n_iter_ = _smacof_single(dissimilarities, metric=metric, n_components=n_components, init=init, max_iter=max_iter, verbose=verbose, eps=eps, random_state=random_state, normalized_stress=normalized_stress)
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/_mds.py:18: in _smacof_single
+    return _smacof_single(dissimilarities, metric, n_components, init, max_iter, verbose, eps, random_state, normalized_stress)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+dissimilarities = array([[0, 5, 3, 4],
+       [5, 0, 2, 2],
+       [3, 2, 0, 1],
+       [4, 2, 1, 0]])
+metric = False, n_components = 2, init = None, max_iter = 5, verbose = 0
+eps = 0.001, random_state = RandomState(MT19937) at 0x7021D944E040
+normalized_stress = True
+
+    def _smacof_single(dissimilarities, metric=True, n_components=2, init=None, max_iter=300, verbose=0, eps=0.001, random_state=None, normalized_stress=False):
+        n_samples = dissimilarities.shape[0]
+        random_state = check_random_state(random_state)
+        if init is None:
+            X = random_state.rand(n_samples, n_components)
+        else:
+            X = init
+        old_stress = None
+        dissimilarities = np.asarray(dissimilarities)
+        for it in range(max_iter):
+            distances = euclidean_distances(X)
+            np.fill_diagonal(distances, 1)
+            if metric:
+                disparities = dissimilarities
+            else:
+                disparities = np.copy(dissimilarities)
+>               disparities[disparities == 0] = np.nan
+E               ValueError: cannot convert float NaN to integer
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/temp.py:32: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[0.5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2]
+============================== 3 failed in 0.39s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 3 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[0.5] I: Seeding RNGs with 2098894182
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2] PASSED
+
+============================== 3 passed in 0.43s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 3 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[0.5] I: Seeding RNGs with 63144763
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[1.5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/manifold/tests/test_mds.py::test_normed_stress[2] PASSED
+
+============================== 3 passed in 0.40s ===============================

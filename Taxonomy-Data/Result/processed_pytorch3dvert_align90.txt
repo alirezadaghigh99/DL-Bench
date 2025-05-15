@@ -1,0 +1,124 @@
+output file:
+processed_pytorch3dvert_align90.json
+function:
+vert_align
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts FAILED', 'FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes', 'FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds', '../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes FAILED', '../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds FAILED', 'FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes FAILED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds FAILED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts FAILED
+
+=================================== FAILURES ===================================
+__________________ TestVertAlign.test_vert_align_with_meshes ___________________
+
+self = <tests.test_vert_align.TestVertAlign testMethod=test_vert_align_with_meshes>
+
+    def test_vert_align_with_meshes(self):
+        """
+        Test vert align vs naive implementation with meshes.
+        """
+        meshes = TestVertAlign.init_meshes(10, 1000, 3000)
+        feats = TestVertAlign.init_feats(10, 256)
+    
+        # feats in list
+        out = vert_align(feats, meshes, return_packed=True)
+        naive_out = TestVertAlign.vert_align_naive(feats, meshes, return_packed=True)
+>       self.assertClose(out, naive_out)
+
+../pytorch3d/tests/test_vert_align.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.9550298452377319. Max relative diff 702.8245239257812 Shape (10000, 512). At (8671, 173).
+________________ TestVertAlign.test_vert_align_with_pointclouds ________________
+
+self = <tests.test_vert_align.TestVertAlign testMethod=test_vert_align_with_pointclouds>
+
+    def test_vert_align_with_pointclouds(self):
+        """
+        Test vert align vs naive implementation with meshes.
+        """
+        pointclouds = TestVertAlign.init_pointclouds(10, 1000)
+        feats = TestVertAlign.init_feats(10, 256)
+    
+        # feats in list
+        out = vert_align(feats, pointclouds, return_packed=True)
+        naive_out = TestVertAlign.vert_align_naive(
+            feats, pointclouds, return_packed=True
+        )
+>       self.assertClose(out, naive_out)
+
+../pytorch3d/tests/test_vert_align.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.9562284350395203. Max relative diff 513.2293090820312 Shape (10000, 512). At (6581, 70).
+___________________ TestVertAlign.test_vert_align_with_verts ___________________
+
+self = <tests.test_vert_align.TestVertAlign testMethod=test_vert_align_with_verts>
+
+    def test_vert_align_with_verts(self):
+        """
+        Test vert align vs naive implementation with verts as tensor.
+        """
+        feats = TestVertAlign.init_feats(10, 256)
+        verts = (
+            torch.rand((10, 100, 3), dtype=torch.float32, device=feats[0].device) * 2.0
+            - 1.0
+        )
+    
+        # feats in list
+        out = vert_align(feats, verts, return_packed=True)
+        naive_out = TestVertAlign.vert_align_naive(feats, verts, return_packed=True)
+>       self.assertClose(out, naive_out)
+
+../pytorch3d/tests/test_vert_align.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.9386619329452515. Max relative diff 105.782958984375 Shape (1000, 512). At (625, 265).
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes
+FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds
+FAILED ../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts
+============================== 3 failed in 1.24s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes PASSED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds PASSED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts PASSED
+
+============================== 3 passed in 1.18s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_meshes PASSED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_pointclouds PASSED
+../pytorch3d/tests/test_vert_align.py::TestVertAlign::test_vert_align_with_verts PASSED
+
+============================== 3 passed in 1.48s ===============================

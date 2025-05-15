@@ -1,0 +1,667 @@
+output file:
+processed_classes-recommendersmultinomial_distribution80.json
+function:
+multinomial_distribution
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init FAILED [ 25%]', 'FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init', 'FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load', '../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct FAILED [ 75%]', 'FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init', 'FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct', '../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init FAILED [ 50%]', '../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load FAILED [100%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init FAILED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init FAILED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct FAILED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load FAILED [100%]
+
+=================================== FAILURES ===================================
+_______________________________ test_class_init ________________________________
+
+init_rbm = {'display_epoch': 20, 'epochs': 10, 'init_stdv': 0.01, 'keep_prob': 0.8, ...}
+
+    @pytest.mark.gpu
+    def test_class_init(init_rbm):
+>       model = RBM(
+            possible_ratings=init_rbm["possible_ratings"],
+            visible_units=init_rbm["n_visible"],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+            keep_prob=init_rbm["keep_prob"],
+            learning_rate=init_rbm["learning_rate"],
+            init_stdv=init_rbm["init_stdv"],
+            sampling_protocol=init_rbm["sampling_protocol"],
+            display_epoch=init_rbm["display_epoch"],
+        )
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:70: in __init__
+    self.generate_graph()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:324: in generate_graph
+    self.gibbs_sampling()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:263: in gibbs_sampling
+    _, self.v_k = self.sample_visible_units(h_k)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:237: in sample_visible_units
+    pvh = self.multinomial_distribution(phi_h)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:142: in multinomial_distribution
+    probabilities = tf.transpose(probabilities, perm=[1, 2, 0])
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/ops/weak_tensor_ops.py:88: in wrapper
+    return op(*args, **kwargs)
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+graph = <tensorflow.python.framework.ops.Graph object at 0x7e0510fb17c0>
+node_def = name: "gibbs_sampling/sample_visible_units/transpose_1"
+op: "Transpose"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "Tperm"
+  value {
+    type: DT_INT32
+  }
+}
+
+inputs = [<tf.Tensor 'gibbs_sampling/sample_visible_units/truediv:0' shape=(None, 500) dtype=float32>, <tf.Tensor 'gibbs_sampling/sample_visible_units/transpose_1/perm:0' shape=(3,) dtype=int32>]
+control_inputs = []
+op_def = name: "Transpose"
+input_arg {
+  name: "x"
+  type_attr: "T"
+}
+input_arg {
+  name: "perm"
+  type_attr: "Tperm"
+}
+output_...ult_value {
+    type: DT_INT32
+  }
+  allowed_values {
+    list {
+      type: DT_INT32
+      type: DT_INT64
+    }
+  }
+}
+
+extract_traceback = True
+
+    @tf_export("__internal__.create_c_op", v1=[])
+    @traceback_utils.filter_traceback
+    def _create_c_op(graph,
+                     node_def,
+                     inputs,
+                     control_inputs,
+                     op_def=None,
+                     extract_traceback=True) -> pywrap_tf_session.TF_Operation:
+      """Creates a TF_Operation.
+    
+      Args:
+        graph: a `Graph`.
+        node_def: `node_def_pb2.NodeDef` for the operation to create.
+        inputs: A flattened list of `Tensor`s. This function handles grouping
+          tensors into lists as per attributes in the `node_def`.
+        control_inputs: A list of `Operation`s to set as control dependencies.
+        op_def: Optional. `op_def_pb2.OpDef` for the operation to create. If not
+          specified, is looked up from the `graph` using `node_def.op`.
+        extract_traceback: if True, extract the current Python traceback to the
+          TF_Operation.
+    
+      Returns:
+        A wrapped TF_Operation*.
+      """
+      if op_def is None:
+        op_def = graph.op_def_for_type(node_def.op)  # pylint: disable=protected-access
+      # TODO(skyewm): op_def_library.apply_op() flattens the incoming inputs.
+      # Refactor so we don't have to do this here.
+      inputs = _reconstruct_sequence_inputs(op_def, inputs, node_def.attr)
+      # pylint: disable=protected-access
+      with graph._c_graph.get() as c_graph:
+        op_desc = pywrap_tf_session.TF_NewOperation(c_graph,
+                                                    compat.as_str(node_def.op),
+                                                    compat.as_str(node_def.name))
+      if node_def.device:
+        pywrap_tf_session.TF_SetDevice(op_desc, compat.as_str(node_def.device))
+      # Add inputs
+      for op_input in inputs:
+        if isinstance(op_input, (list, tuple)):
+          pywrap_tf_session.TF_AddInputList(op_desc,
+                                            [t._as_tf_output() for t in op_input])
+        else:
+          pywrap_tf_session.TF_AddInput(op_desc, op_input._as_tf_output())
+    
+      # Add control inputs
+      for control_input in control_inputs:
+        pywrap_tf_session.TF_AddControlInput(op_desc, control_input._c_op)
+      # pylint: enable=protected-access
+    
+      # Add attrs
+      for name, attr_value in node_def.attr.items():
+        serialized = attr_value.SerializeToString()
+        # TODO(skyewm): this creates and deletes a new TF_Status for every attr.
+        # It might be worth creating a convenient way to re-use the same status.
+        pywrap_tf_session.TF_SetAttrValueProto(op_desc, compat.as_str(name),
+                                               serialized)
+    
+      try:
+        c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+      except errors.InvalidArgumentError as e:
+        # Convert to ValueError for backwards compatibility.
+>       raise ValueError(e.message)
+E       ValueError: Dimension must be 2 but is 3 for '{{node gibbs_sampling/sample_visible_units/transpose_1}} = Transpose[T=DT_FLOAT, Tperm=DT_INT32](gibbs_sampling/sample_visible_units/truediv, gibbs_sampling/sample_visible_units/transpose_1/perm)' with input shapes: [?,500], [3].
+
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/framework/ops.py:1056: ValueError
+____________________________ test_train_param_init _____________________________
+
+init_rbm = {'display_epoch': 20, 'epochs': 10, 'init_stdv': 0.01, 'keep_prob': 0.8, ...}
+affinity_matrix = (array([[0, 0, 0, ..., 0, 1, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [2, 0, 2, ..., 0, 3, 0],
+       ...,
+       [1...0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]]))
+
+    @pytest.mark.gpu
+    def test_train_param_init(init_rbm, affinity_matrix):
+        # obtain the train/test set matrices
+        Xtr, _ = affinity_matrix
+    
+        # initialize the model
+>       model = RBM(
+            possible_ratings=np.setdiff1d(np.unique(Xtr), np.array([0])),
+            visible_units=Xtr.shape[1],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+        )
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:70: in __init__
+    self.generate_graph()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:324: in generate_graph
+    self.gibbs_sampling()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:263: in gibbs_sampling
+    _, self.v_k = self.sample_visible_units(h_k)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:237: in sample_visible_units
+    pvh = self.multinomial_distribution(phi_h)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:142: in multinomial_distribution
+    probabilities = tf.transpose(probabilities, perm=[1, 2, 0])
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/ops/weak_tensor_ops.py:88: in wrapper
+    return op(*args, **kwargs)
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+graph = <tensorflow.python.framework.ops.Graph object at 0x7e0510fb06c0>
+node_def = name: "gibbs_sampling/sample_visible_units/transpose_1"
+op: "Transpose"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "Tperm"
+  value {
+    type: DT_INT32
+  }
+}
+
+inputs = [<tf.Tensor 'gibbs_sampling/sample_visible_units/truediv:0' shape=(None, 53) dtype=float32>, <tf.Tensor 'gibbs_sampling/sample_visible_units/transpose_1/perm:0' shape=(3,) dtype=int32>]
+control_inputs = []
+op_def = name: "Transpose"
+input_arg {
+  name: "x"
+  type_attr: "T"
+}
+input_arg {
+  name: "perm"
+  type_attr: "Tperm"
+}
+output_...ult_value {
+    type: DT_INT32
+  }
+  allowed_values {
+    list {
+      type: DT_INT32
+      type: DT_INT64
+    }
+  }
+}
+
+extract_traceback = True
+
+    @tf_export("__internal__.create_c_op", v1=[])
+    @traceback_utils.filter_traceback
+    def _create_c_op(graph,
+                     node_def,
+                     inputs,
+                     control_inputs,
+                     op_def=None,
+                     extract_traceback=True) -> pywrap_tf_session.TF_Operation:
+      """Creates a TF_Operation.
+    
+      Args:
+        graph: a `Graph`.
+        node_def: `node_def_pb2.NodeDef` for the operation to create.
+        inputs: A flattened list of `Tensor`s. This function handles grouping
+          tensors into lists as per attributes in the `node_def`.
+        control_inputs: A list of `Operation`s to set as control dependencies.
+        op_def: Optional. `op_def_pb2.OpDef` for the operation to create. If not
+          specified, is looked up from the `graph` using `node_def.op`.
+        extract_traceback: if True, extract the current Python traceback to the
+          TF_Operation.
+    
+      Returns:
+        A wrapped TF_Operation*.
+      """
+      if op_def is None:
+        op_def = graph.op_def_for_type(node_def.op)  # pylint: disable=protected-access
+      # TODO(skyewm): op_def_library.apply_op() flattens the incoming inputs.
+      # Refactor so we don't have to do this here.
+      inputs = _reconstruct_sequence_inputs(op_def, inputs, node_def.attr)
+      # pylint: disable=protected-access
+      with graph._c_graph.get() as c_graph:
+        op_desc = pywrap_tf_session.TF_NewOperation(c_graph,
+                                                    compat.as_str(node_def.op),
+                                                    compat.as_str(node_def.name))
+      if node_def.device:
+        pywrap_tf_session.TF_SetDevice(op_desc, compat.as_str(node_def.device))
+      # Add inputs
+      for op_input in inputs:
+        if isinstance(op_input, (list, tuple)):
+          pywrap_tf_session.TF_AddInputList(op_desc,
+                                            [t._as_tf_output() for t in op_input])
+        else:
+          pywrap_tf_session.TF_AddInput(op_desc, op_input._as_tf_output())
+    
+      # Add control inputs
+      for control_input in control_inputs:
+        pywrap_tf_session.TF_AddControlInput(op_desc, control_input._c_op)
+      # pylint: enable=protected-access
+    
+      # Add attrs
+      for name, attr_value in node_def.attr.items():
+        serialized = attr_value.SerializeToString()
+        # TODO(skyewm): this creates and deletes a new TF_Status for every attr.
+        # It might be worth creating a convenient way to re-use the same status.
+        pywrap_tf_session.TF_SetAttrValueProto(op_desc, compat.as_str(name),
+                                               serialized)
+    
+      try:
+        c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+      except errors.InvalidArgumentError as e:
+        # Convert to ValueError for backwards compatibility.
+>       raise ValueError(e.message)
+E       ValueError: Dimension must be 2 but is 3 for '{{node gibbs_sampling/sample_visible_units/transpose_1}} = Transpose[T=DT_FLOAT, Tperm=DT_INT32](gibbs_sampling/sample_visible_units/truediv, gibbs_sampling/sample_visible_units/transpose_1/perm)' with input shapes: [?,53], [3].
+
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/framework/ops.py:1056: ValueError
+_____________________________ test_sampling_funct ______________________________
+
+init_rbm = {'display_epoch': 20, 'epochs': 10, 'init_stdv': 0.01, 'keep_prob': 0.8, ...}
+affinity_matrix = (array([[0, 0, 0, ..., 0, 1, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [2, 0, 2, ..., 0, 3, 0],
+       ...,
+       [1...0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]]))
+
+    @pytest.mark.gpu
+    def test_sampling_funct(init_rbm, affinity_matrix):
+        # obtain the train/test set matrices
+        Xtr, _ = affinity_matrix
+    
+        # initialize the model
+>       model = RBM(
+            possible_ratings=np.setdiff1d(np.unique(Xtr), np.array([0])),
+            visible_units=Xtr.shape[1],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+        )
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:70: in __init__
+    self.generate_graph()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:324: in generate_graph
+    self.gibbs_sampling()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:263: in gibbs_sampling
+    _, self.v_k = self.sample_visible_units(h_k)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:237: in sample_visible_units
+    pvh = self.multinomial_distribution(phi_h)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:142: in multinomial_distribution
+    probabilities = tf.transpose(probabilities, perm=[1, 2, 0])
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/ops/weak_tensor_ops.py:88: in wrapper
+    return op(*args, **kwargs)
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+graph = <tensorflow.python.framework.ops.Graph object at 0x7e0510fb1e40>
+node_def = name: "gibbs_sampling/sample_visible_units/transpose_1"
+op: "Transpose"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "Tperm"
+  value {
+    type: DT_INT32
+  }
+}
+
+inputs = [<tf.Tensor 'gibbs_sampling/sample_visible_units/truediv:0' shape=(None, 53) dtype=float32>, <tf.Tensor 'gibbs_sampling/sample_visible_units/transpose_1/perm:0' shape=(3,) dtype=int32>]
+control_inputs = []
+op_def = name: "Transpose"
+input_arg {
+  name: "x"
+  type_attr: "T"
+}
+input_arg {
+  name: "perm"
+  type_attr: "Tperm"
+}
+output_...ult_value {
+    type: DT_INT32
+  }
+  allowed_values {
+    list {
+      type: DT_INT32
+      type: DT_INT64
+    }
+  }
+}
+
+extract_traceback = True
+
+    @tf_export("__internal__.create_c_op", v1=[])
+    @traceback_utils.filter_traceback
+    def _create_c_op(graph,
+                     node_def,
+                     inputs,
+                     control_inputs,
+                     op_def=None,
+                     extract_traceback=True) -> pywrap_tf_session.TF_Operation:
+      """Creates a TF_Operation.
+    
+      Args:
+        graph: a `Graph`.
+        node_def: `node_def_pb2.NodeDef` for the operation to create.
+        inputs: A flattened list of `Tensor`s. This function handles grouping
+          tensors into lists as per attributes in the `node_def`.
+        control_inputs: A list of `Operation`s to set as control dependencies.
+        op_def: Optional. `op_def_pb2.OpDef` for the operation to create. If not
+          specified, is looked up from the `graph` using `node_def.op`.
+        extract_traceback: if True, extract the current Python traceback to the
+          TF_Operation.
+    
+      Returns:
+        A wrapped TF_Operation*.
+      """
+      if op_def is None:
+        op_def = graph.op_def_for_type(node_def.op)  # pylint: disable=protected-access
+      # TODO(skyewm): op_def_library.apply_op() flattens the incoming inputs.
+      # Refactor so we don't have to do this here.
+      inputs = _reconstruct_sequence_inputs(op_def, inputs, node_def.attr)
+      # pylint: disable=protected-access
+      with graph._c_graph.get() as c_graph:
+        op_desc = pywrap_tf_session.TF_NewOperation(c_graph,
+                                                    compat.as_str(node_def.op),
+                                                    compat.as_str(node_def.name))
+      if node_def.device:
+        pywrap_tf_session.TF_SetDevice(op_desc, compat.as_str(node_def.device))
+      # Add inputs
+      for op_input in inputs:
+        if isinstance(op_input, (list, tuple)):
+          pywrap_tf_session.TF_AddInputList(op_desc,
+                                            [t._as_tf_output() for t in op_input])
+        else:
+          pywrap_tf_session.TF_AddInput(op_desc, op_input._as_tf_output())
+    
+      # Add control inputs
+      for control_input in control_inputs:
+        pywrap_tf_session.TF_AddControlInput(op_desc, control_input._c_op)
+      # pylint: enable=protected-access
+    
+      # Add attrs
+      for name, attr_value in node_def.attr.items():
+        serialized = attr_value.SerializeToString()
+        # TODO(skyewm): this creates and deletes a new TF_Status for every attr.
+        # It might be worth creating a convenient way to re-use the same status.
+        pywrap_tf_session.TF_SetAttrValueProto(op_desc, compat.as_str(name),
+                                               serialized)
+    
+      try:
+        c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+      except errors.InvalidArgumentError as e:
+        # Convert to ValueError for backwards compatibility.
+>       raise ValueError(e.message)
+E       ValueError: Dimension must be 2 but is 3 for '{{node gibbs_sampling/sample_visible_units/transpose_1}} = Transpose[T=DT_FLOAT, Tperm=DT_INT32](gibbs_sampling/sample_visible_units/truediv, gibbs_sampling/sample_visible_units/transpose_1/perm)' with input shapes: [?,53], [3].
+
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/framework/ops.py:1056: ValueError
+________________________________ test_save_load ________________________________
+
+init_rbm = {'display_epoch': 20, 'epochs': 10, 'init_stdv': 0.01, 'keep_prob': 0.8, ...}
+affinity_matrix = (array([[0, 0, 0, ..., 0, 1, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [2, 0, 2, ..., 0, 3, 0],
+       ...,
+       [1...0, 0, 0],
+       ...,
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 0, ..., 0, 0, 0]]))
+
+    @pytest.mark.gpu
+    def test_save_load(init_rbm, affinity_matrix):
+    
+        # obtain the train/test set matrices
+        Xtr, _ = affinity_matrix
+    
+        # initialize the model
+>       original_model = RBM(
+            possible_ratings=np.setdiff1d(np.unique(Xtr), np.array([0])),
+            visible_units=Xtr.shape[1],
+            hidden_units=init_rbm["n_hidden"],
+            training_epoch=init_rbm["epochs"],
+            minibatch_size=init_rbm["minibatch"],
+            keep_prob=init_rbm["keep_prob"],
+            learning_rate=init_rbm["learning_rate"],
+            init_stdv=init_rbm["init_stdv"],
+            sampling_protocol=init_rbm["sampling_protocol"],
+            display_epoch=init_rbm["display_epoch"],
+        )
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py:158: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:70: in __init__
+    self.generate_graph()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:324: in generate_graph
+    self.gibbs_sampling()
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:263: in gibbs_sampling
+    _, self.v_k = self.sample_visible_units(h_k)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:237: in sample_visible_units
+    pvh = self.multinomial_distribution(phi_h)
+../publishablew/recommenders/recommenders/recommenders/models/rbm/rbm.py:142: in multinomial_distribution
+    probabilities = tf.transpose(probabilities, perm=[1, 2, 0])
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/ops/weak_tensor_ops.py:88: in wrapper
+    return op(*args, **kwargs)
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+graph = <tensorflow.python.framework.ops.Graph object at 0x7e0510fb1640>
+node_def = name: "gibbs_sampling/sample_visible_units/transpose_1"
+op: "Transpose"
+attr {
+  key: "T"
+  value {
+    type: DT_FLOAT
+  }
+}
+attr {
+  key: "Tperm"
+  value {
+    type: DT_INT32
+  }
+}
+
+inputs = [<tf.Tensor 'gibbs_sampling/sample_visible_units/truediv:0' shape=(None, 53) dtype=float32>, <tf.Tensor 'gibbs_sampling/sample_visible_units/transpose_1/perm:0' shape=(3,) dtype=int32>]
+control_inputs = []
+op_def = name: "Transpose"
+input_arg {
+  name: "x"
+  type_attr: "T"
+}
+input_arg {
+  name: "perm"
+  type_attr: "Tperm"
+}
+output_...ult_value {
+    type: DT_INT32
+  }
+  allowed_values {
+    list {
+      type: DT_INT32
+      type: DT_INT64
+    }
+  }
+}
+
+extract_traceback = True
+
+    @tf_export("__internal__.create_c_op", v1=[])
+    @traceback_utils.filter_traceback
+    def _create_c_op(graph,
+                     node_def,
+                     inputs,
+                     control_inputs,
+                     op_def=None,
+                     extract_traceback=True) -> pywrap_tf_session.TF_Operation:
+      """Creates a TF_Operation.
+    
+      Args:
+        graph: a `Graph`.
+        node_def: `node_def_pb2.NodeDef` for the operation to create.
+        inputs: A flattened list of `Tensor`s. This function handles grouping
+          tensors into lists as per attributes in the `node_def`.
+        control_inputs: A list of `Operation`s to set as control dependencies.
+        op_def: Optional. `op_def_pb2.OpDef` for the operation to create. If not
+          specified, is looked up from the `graph` using `node_def.op`.
+        extract_traceback: if True, extract the current Python traceback to the
+          TF_Operation.
+    
+      Returns:
+        A wrapped TF_Operation*.
+      """
+      if op_def is None:
+        op_def = graph.op_def_for_type(node_def.op)  # pylint: disable=protected-access
+      # TODO(skyewm): op_def_library.apply_op() flattens the incoming inputs.
+      # Refactor so we don't have to do this here.
+      inputs = _reconstruct_sequence_inputs(op_def, inputs, node_def.attr)
+      # pylint: disable=protected-access
+      with graph._c_graph.get() as c_graph:
+        op_desc = pywrap_tf_session.TF_NewOperation(c_graph,
+                                                    compat.as_str(node_def.op),
+                                                    compat.as_str(node_def.name))
+      if node_def.device:
+        pywrap_tf_session.TF_SetDevice(op_desc, compat.as_str(node_def.device))
+      # Add inputs
+      for op_input in inputs:
+        if isinstance(op_input, (list, tuple)):
+          pywrap_tf_session.TF_AddInputList(op_desc,
+                                            [t._as_tf_output() for t in op_input])
+        else:
+          pywrap_tf_session.TF_AddInput(op_desc, op_input._as_tf_output())
+    
+      # Add control inputs
+      for control_input in control_inputs:
+        pywrap_tf_session.TF_AddControlInput(op_desc, control_input._c_op)
+      # pylint: enable=protected-access
+    
+      # Add attrs
+      for name, attr_value in node_def.attr.items():
+        serialized = attr_value.SerializeToString()
+        # TODO(skyewm): this creates and deletes a new TF_Status for every attr.
+        # It might be worth creating a convenient way to re-use the same status.
+        pywrap_tf_session.TF_SetAttrValueProto(op_desc, compat.as_str(name),
+                                               serialized)
+    
+      try:
+        c_op = pywrap_tf_session.TF_FinishOperation(op_desc)
+      except errors.InvalidArgumentError as e:
+        # Convert to ValueError for backwards compatibility.
+>       raise ValueError(e.message)
+E       ValueError: Dimension must be 2 but is 3 for '{{node gibbs_sampling/sample_visible_units/transpose_1}} = Transpose[T=DT_FLOAT, Tperm=DT_INT32](gibbs_sampling/sample_visible_units/truediv, gibbs_sampling/sample_visible_units/transpose_1/perm)' with input shapes: [?,53], [3].
+
+../publishablew/recommenders/recommenders/venv/lib/python3.11/site-packages/tensorflow/python/framework/ops.py:1056: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init
+FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init
+FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct
+FAILED ../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load
+============================== 4 failed in 2.32s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init PASSED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init PASSED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct PASSED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load PASSED [100%]
+
+============================== 4 passed in 3.33s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/recommenders/recommenders/venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/recommenders/recommenders
+configfile: pyproject.toml
+plugins: typeguard-4.4.1, hypothesis-6.123.13, anyio-4.8.0
+collecting ... collected 4 items
+
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_class_init PASSED [ 25%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_train_param_init PASSED [ 50%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_sampling_funct PASSED [ 75%]
+../publishablew/recommenders/recommenders/tests/unit/recommenders/models/test_rbm.py::test_save_load PASSED [100%]
+
+============================== 4 passed in 3.29s ===============================

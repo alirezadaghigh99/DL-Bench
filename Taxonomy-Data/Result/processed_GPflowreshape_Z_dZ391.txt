@@ -1,0 +1,136 @@
+output file:
+processed_GPflowreshape_Z_dZ391.json
+function:
+reshape_Z_dZ
+Error Cases:
+2025-01-09 18:43:47.594361: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1736466227.605507 2793034 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1736466227.609062 2793034 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:43:47.621090: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0000 00:00:1736466230.009064 2793034 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9294 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.62s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.66s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.77s =========================

@@ -1,0 +1,182 @@
+output file:
+processed_Laplaceinit_from_model194.json
+function:
+init_from_model
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable FAILED', '../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model FAILED', 'FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition - ...', 'FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable', 'FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model', '../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 9 items
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model FAILED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable FAILED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition FAILED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_multiplication PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_decompose PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_logdet_consistent PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_dense PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_diag SKIPPED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_matrix_consistent PASSED
+
+=================================== FAILURES ===================================
+_____________________________ test_init_from_model _____________________________
+
+model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+
+    def test_init_from_model(model):
+>       kron = Kron.init_from_model(model, "cpu", torch.float)
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'laplace.utils.matrix.Kron'>
+model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+device = 'cpu', dtype = torch.float32
+
+    @classmethod
+    def init_from_model(cls, model: nn.Module | Iterable[nn.Parameter], device: torch.device, dtype: torch.dtype) -> Kron:
+>       from .temp import init_from_model
+E       ImportError: cannot import name 'init_from_model' from 'laplace.utils.temp' (/local/data0/moved_data/publishablew/Laplace/Laplace/laplace/utils/temp.py)
+
+../publishablew/Laplace/Laplace/laplace/utils/matrix.py:30: ImportError
+___________________________ test_init_from_iterable ____________________________
+
+model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+
+    def test_init_from_iterable(model):
+>       kron = Kron.init_from_model(model.parameters(), "cpu", torch.float)
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'laplace.utils.matrix.Kron'>
+model = <generator object Module.parameters at 0x726c58f4a180>, device = 'cpu'
+dtype = torch.float32
+
+    @classmethod
+    def init_from_model(cls, model: nn.Module | Iterable[nn.Parameter], device: torch.device, dtype: torch.dtype) -> Kron:
+>       from .temp import init_from_model
+E       ImportError: cannot import name 'init_from_model' from 'laplace.utils.temp' (/local/data0/moved_data/publishablew/Laplace/Laplace/laplace/utils/temp.py)
+
+../publishablew/Laplace/Laplace/laplace/utils/matrix.py:30: ImportError
+________________________________ test_addition _________________________________
+
+model = Sequential(
+  (0): Linear(in_features=3, out_features=20, bias=True)
+  (1): Linear(in_features=20, out_features=2, bias=True)
+)
+
+    def test_addition(model):
+>       kron = Kron.init_from_model(model.parameters(), "cpu", torch.float)
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'laplace.utils.matrix.Kron'>
+model = <generator object Module.parameters at 0x726c58f4a880>, device = 'cpu'
+dtype = torch.float32
+
+    @classmethod
+    def init_from_model(cls, model: nn.Module | Iterable[nn.Parameter], device: torch.device, dtype: torch.dtype) -> Kron:
+>       from .temp import init_from_model
+E       ImportError: cannot import name 'init_from_model' from 'laplace.utils.temp' (/local/data0/moved_data/publishablew/Laplace/Laplace/laplace/utils/temp.py)
+
+../publishablew/Laplace/Laplace/laplace/utils/matrix.py:30: ImportError
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model
+FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable
+FAILED ../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition - ...
+============== 3 failed, 5 passed, 1 skipped, 2 warnings in 1.83s ==============
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 9 items
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_multiplication PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_decompose PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_logdet_consistent PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_dense PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_diag SKIPPED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_matrix_consistent PASSED
+
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 8 passed, 1 skipped, 2 warnings in 1.56s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/Laplace/Laplace/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/Laplace/Laplace
+configfile: pyproject.toml
+plugins: mock-3.14.0, cov-6.0.0
+collecting ... collected 9 items
+
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_model PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_init_from_iterable PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_addition PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_multiplication PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_decompose PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_logdet_consistent PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_dense PASSED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_bmm_diag SKIPPED
+../publishablew/Laplace/Laplace/tests/test_matrix.py::test_matrix_consistent PASSED
+
+=============================== warnings summary ===============================
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:18: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION = LooseVersion(version("torch"))
+
+../publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19
+  /local/data0/moved_data/publishablew/Laplace/Laplace/venv/lib/python3.11/site-packages/unfoldNd/utils.py:19: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    TORCH_VERSION_AT_LEAST_1_12_0 = TORCH_VERSION >= LooseVersion("1.12.0")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 8 passed, 1 skipped, 2 warnings in 1.71s ===================

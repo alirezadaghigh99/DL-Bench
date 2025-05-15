@@ -1,0 +1,189 @@
+output file:
+processed_emukitmake_non_linear_kernels261.json
+function:
+make_non_linear_kernels
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard FAILED', 'FAILED ../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/emukit/emukit/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/emukit/emukit
+configfile: pyproject.toml
+collecting ... collected 19 items
+
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_kernel PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_input PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_get_fmin PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_update PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_X PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_Y PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_with_3_fidelities PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction_with_grads PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_mean_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_variance_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard FAILED
+
+=================================== FAILURES ===================================
+__________________________ test_non_linear_kernel_ard __________________________
+
+    def test_non_linear_kernel_ard():
+        """
+        Test that the kernels that act on the input space have the correct number of lengthscales when ARD is true
+        """
+        kernels = make_non_linear_kernels(GPy.kern.RBF, 2, 2, ARD=True)
+        assert len(kernels[0].lengthscale) == 2
+>       assert len(kernels[1].bias_kernel_fidelity2.lengthscale) == 2
+E       AttributeError: 'Add' object has no attribute 'bias_kernel_fidelity2'
+
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py:213: AttributeError
+=============================== warnings summary ===============================
+tests/emukit/multi_fidelity/test_non_linear_models.py: 29810 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:271: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 29810 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:272: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 284648 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:290: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 284648 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:291: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 16 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/core/gp.py:85: UserWarning:Your kernel has a different input dimension 2 then the given X dimension 3. Be very sure this is what you want and you have not forgotten to set the right input dimenion in your kernel
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:52: RuntimeWarning:overflow encountered in square
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/stationary.py:168: RuntimeWarning:overflow encountered in divide
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:178: RuntimeWarning:invalid value encountered in multiply
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard
+================ 1 failed, 18 passed, 628935 warnings in 26.60s ================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/emukit/emukit/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/emukit/emukit
+configfile: pyproject.toml
+collecting ... collected 19 items
+
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_kernel PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_input PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_get_fmin PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_update PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_X PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_Y PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_with_3_fidelities PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction_with_grads PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_mean_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_variance_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard PASSED
+
+=============================== warnings summary ===============================
+tests/emukit/multi_fidelity/test_non_linear_models.py: 6930 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:271: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 6930 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:272: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 4900 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:290: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 4900 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:291: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:52: RuntimeWarning:overflow encountered in square
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/stationary.py:168: RuntimeWarning:overflow encountered in divide
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:178: RuntimeWarning:invalid value encountered in multiply
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 19 passed, 23663 warnings in 4.97s ======================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/emukit/emukit/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/emukit/emukit
+configfile: pyproject.toml
+collecting ... collected 19 items
+
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_kernel PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_invalid_input PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_get_fmin PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_update PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_X PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_Y PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_with_3_fidelities PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_prediction_with_grads PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_highest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_middle_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[mean_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_sample_fidelities_gradient[var_gradient_lowest_fidelity] PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_mean_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_non_linear_model_variance_gradient PASSED
+../publishablew/emukit/emukit/tests/emukit/multi_fidelity/test_non_linear_models.py::test_non_linear_kernel_ard PASSED
+
+=============================== warnings summary ===============================
+tests/emukit/multi_fidelity/test_non_linear_models.py: 6930 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:271: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 6930 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/parameterized.py:272: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 4900 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:290: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py: 4900 warnings
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/paramz/core/parameter_core.py:291: DeprecationWarning:Assigning the 'data' attribute is an inherently unsafe operation and will be removed in the future.
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:52: RuntimeWarning:overflow encountered in square
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/stationary.py:168: RuntimeWarning:overflow encountered in divide
+
+tests/emukit/multi_fidelity/test_non_linear_models.py::TestNonLinearModel::test_optimize
+   /local/data0/moved_data/publishablew/emukit/emukit/venv/lib/python3.11/site-packages/GPy/kern/src/rbf.py:178: RuntimeWarning:invalid value encountered in multiply
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 19 passed, 23663 warnings in 5.38s ======================

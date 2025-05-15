@@ -1,0 +1,129 @@
+output file:
+processed_pytorch3dcot_laplacian370.json
+function:
+cot_laplacian
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv FAILED', 'FAILED ../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot', '../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot FAILED', 'FAILED ../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot FAILED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv FAILED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_uniform PASSED
+
+=================================== FAILURES ===================================
+_____________ TestLaplacianSmoothing.test_laplacian_smoothing_cot ______________
+
+self = <tests.test_mesh_laplacian_smoothing.TestLaplacianSmoothing testMethod=test_laplacian_smoothing_cot>
+
+    def test_laplacian_smoothing_cot(self):
+        """
+        Test Laplacian Smoothing with cot weights.
+        """
+        meshes = TestLaplacianSmoothing.init_meshes(10, 100, 300)
+    
+        # feats in list
+>       out = mesh_laplacian_smoothing(meshes, method="cot")
+
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/mesh_laplacian_smoothing.py:113: in mesh_laplacian_smoothing
+    L, inv_areas = cot_laplacian(verts_packed, faces_packed)
+../pytorch3d/pytorch3d/ops/laplacian_matrices.py:40: in cot_laplacian
+    from .temp import cot_laplacian
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Tuple
+    import torch
+    import torch
+>   from torch_sparse import coalesce
+E   ModuleNotFoundError: No module named 'torch_sparse'
+
+../pytorch3d/pytorch3d/ops/temp.py:4: ModuleNotFoundError
+___________ TestLaplacianSmoothing.test_laplacian_smoothing_cotcurv ____________
+
+self = <tests.test_mesh_laplacian_smoothing.TestLaplacianSmoothing testMethod=test_laplacian_smoothing_cotcurv>
+
+    def test_laplacian_smoothing_cotcurv(self):
+        """
+        Test Laplacian Smoothing with cotcurv weights.
+        """
+        meshes = TestLaplacianSmoothing.init_meshes(10, 100, 300)
+    
+        # feats in list
+>       out = mesh_laplacian_smoothing(meshes, method="cotcurv")
+
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/mesh_laplacian_smoothing.py:113: in mesh_laplacian_smoothing
+    L, inv_areas = cot_laplacian(verts_packed, faces_packed)
+../pytorch3d/pytorch3d/ops/laplacian_matrices.py:40: in cot_laplacian
+    from .temp import cot_laplacian
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from typing import Tuple
+    import torch
+    import torch
+>   from torch_sparse import coalesce
+E   ModuleNotFoundError: No module named 'torch_sparse'
+
+../pytorch3d/pytorch3d/ops/temp.py:4: ModuleNotFoundError
+=============================== warnings summary ===============================
+tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_uniform
+  /local/data0/moved_data/pytorch3d/pytorch3d/ops/laplacian_matrices.py:25: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+    A = torch.sparse.FloatTensor(idx, ones, (V, V))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot
+FAILED ../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv
+==================== 2 failed, 1 passed, 1 warning in 2.14s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot PASSED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv PASSED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_uniform PASSED
+
+=============================== warnings summary ===============================
+tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot
+  /local/data0/moved_data/pytorch3d/pytorch3d/ops/laplacian_matrices.py:130: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+    L = torch.sparse.FloatTensor(idx, cot.view(-1), (V, V))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 3 passed, 1 warning in 5.40s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot PASSED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cotcurv PASSED
+../pytorch3d/tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_uniform PASSED
+
+=============================== warnings summary ===============================
+tests/test_mesh_laplacian_smoothing.py::TestLaplacianSmoothing::test_laplacian_smoothing_cot
+  /local/data0/moved_data/pytorch3d/pytorch3d/ops/laplacian_matrices.py:130: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:641.)
+    L = torch.sparse.FloatTensor(idx, cot.view(-1), (V, V))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 3 passed, 1 warning in 5.65s =========================

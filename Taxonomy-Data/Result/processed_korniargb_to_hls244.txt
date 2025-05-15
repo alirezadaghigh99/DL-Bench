@@ -1,0 +1,406 @@
+output file:
+processed_korniargb_to_hls244.json
+function:
+rgb_to_hls
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32]', '../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'tvm', 'onnxrt', 'openxla', 'jit', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_random_extreme_values[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_module[cpu-float32] PASSED
+
+=================================== FAILURES ===================================
+_____________________ TestRgbToHls.test_unit[cpu-float32] ______________________
+
+self = <test_hls.TestRgbToHls object at 0x7d33694fd8d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_unit(self, device, dtype):
+        data = torch.tensor(
+            [
+                [
+                    [0.4237059, 0.1935902, 0.8585021, 0.3790484, 0.1389151],
+                    [0.5933651, 0.0474544, 0.2801555, 0.1691061, 0.9221829],
+                    [0.2351739, 0.5852075, 0.5789326, 0.8411915, 0.5960411],
+                    [0.0290176, 0.6459382, 0.8581501, 0.4755400, 0.7735767],
+                    [0.9497226, 0.0919441, 0.5462211, 0.7836787, 0.6403612],
+                ],
+                [
+                    [0.2280025, 0.1352853, 0.7999730, 0.6658246, 0.4910861],
+                    [0.3499791, 0.1250734, 0.6315800, 0.4785843, 0.8477826],
+                    [0.3646359, 0.2415122, 0.5301932, 0.0782518, 0.8710389],
+                    [0.6957581, 0.6162295, 0.6259052, 0.1753750, 0.6737530],
+                    [0.7678874, 0.9825978, 0.0234877, 0.2485284, 0.8159551],
+                ],
+                [
+                    [0.7330830, 0.9015747, 0.0229067, 0.4280063, 0.5400181],
+                    [0.0037299, 0.3259412, 0.3467951, 0.9575506, 0.1525899],
+                    [0.9660432, 0.5287710, 0.6654660, 0.3797526, 0.4981400],
+                    [0.7422802, 0.9926301, 0.5334370, 0.7852844, 0.4397180],
+                    [0.2281681, 0.2560037, 0.5134379, 0.5800887, 0.8685090],
+                ],
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        # OpenCV
+        expected = torch.tensor(
+            [
+                [
+                    [4.59454770, 4.26846900, 0.97384680, 2.27317070, 3.26934400],
+                    [0.61494170, 3.89691880, 2.29297200, 3.77774720, 0.94595980],
+                    [4.00329600, 5.40794320, 4.56610100, 5.86935100, 1.81946310],
+                    [3.20989560, 4.27144400, 0.29820946, 4.70416550, 0.73408560],
+                    [0.78329855, 2.28729030, 5.30166340, 5.63437900, 3.38281500],
+                ],
+                [
+                    [0.48054275, 0.51843000, 0.44070444, 0.52243650, 0.33946657],
+                    [0.29854750, 0.18669781, 0.45586777, 0.56332830, 0.53738640],
+                    [0.60060860, 0.41335985, 0.59782960, 0.45972168, 0.68458940],
+                    [0.38564888, 0.80442977, 0.69579350, 0.48032972, 0.60664740],
+                    [0.58894540, 0.53727096, 0.28485440, 0.51610350, 0.75443510],
+                ],
+                [
+                    [0.52553130, 0.79561585, 0.94802250, 0.30024928, 0.59078425],
+                    [0.98750657, 0.74582230, 0.38544560, 0.90278864, 0.83178820],
+                    [0.91497860, 0.41573380, 0.16817844, 0.82978433, 0.59113250],
+                    [0.92475650, 0.96231550, 0.53370523, 0.63488615, 0.42437580],
+                    [0.87768690, 0.96239233, 0.91754496, 0.55295944, 0.46453667],
+                ],
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+>       self.assert_close(kornia.color.rgb_to_hls(data), expected, low_tolerance=True)
+
+../publishablew/kornia/kornia/tests/color/test_hls.py:95: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[0.7312, 0.6793, 0.1550, 0.3618, 0.5203],
+         [0.0979, 0.6202, 0.3649, 0.6012, 0.1506],
+         [0.6371....8298, 0.5911],
+         [0.9248, 0.9623, 0.5337, 0.6349, 0.4244],
+         [0.8777, 0.9624, 0.9175, 0.5530, 0.4645]]])
+expected = tensor([[[4.5945, 4.2685, 0.9738, 2.2732, 3.2693],
+         [0.6149, 3.8969, 2.2930, 3.7777, 0.9460],
+         [4.0033....8298, 0.5911],
+         [0.9248, 0.9623, 0.5337, 0.6349, 0.4244],
+         [0.8777, 0.9624, 0.9175, 0.5530, 0.4645]]])
+rtol = 0.01, atol = 0.0031622776601683794, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 25 / 75 (33.3%)
+E       Greatest absolute difference: 4.935214996337891 at index (0, 2, 3) (up to 0.0031622776601683794 allowed)
+E       Greatest relative difference: 0.8408451676368713 at index (0, 3, 2) (up to 0.01 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+________________ TestRgbToHls.test_nan_rgb_to_hls[cpu-float32] _________________
+
+self = <test_hls.TestRgbToHls object at 0x7d33694fdc00>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_nan_rgb_to_hls(self, device, dtype):
+        if dtype == torch.float16:
+            pytest.skip("not work for half-precision")
+    
+        if device != torch.device("cpu") and version.parse(torch.__version__) < version.parse("1.7.0"):
+            warnings.warn(
+                "This test is not compatible with pytorch < 1.7.0. This message will be removed as soon as we do not "
+                "support pytorch 1.6.0. `torch.max()` have a problem in pytorch < 1.7.0 then we cannot get the correct "
+                "result. https://github.com/pytorch/pytorch/issues/41781",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            return
+        data = torch.ones(2, 3, 5, 5, device=device, dtype=dtype)
+    
+        # OpenCV
+        expected = torch.cat(
+            [
+                torch.zeros(2, 1, 5, 5, device=device, dtype=dtype),
+                torch.ones(2, 1, 5, 5, device=device, dtype=dtype),
+                torch.zeros(2, 1, 5, 5, device=device, dtype=dtype),
+            ],
+            dim=1,
+        )
+>       self.assert_close(kornia.color.rgb_to_hls(data), expected)
+
+../publishablew/kornia/kornia/tests/color/test_hls.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([[[[0.6667, 0.6667, 0.6667, 0.6667, 0.6667],
+          [0.6667, 0.6667, 0.6667, 0.6667, 0.6667],
+          [0.6...00, 0.0000],
+          [0.0000, 0.0000, 0.0000, 0.0000, 0.0000],
+          [0.0000, 0.0000, 0.0000, 0.0000, 0.0000]]]])
+expected = tensor([[[[0., 0., 0., 0., 0.],
+          [0., 0., 0., 0., 0.],
+          [0., 0., 0., 0., 0.],
+          [0., 0., 0.,...0., 0., 0., 0., 0.],
+          [0., 0., 0., 0., 0.],
+          [0., 0., 0., 0., 0.],
+          [0., 0., 0., 0., 0.]]]])
+rtol = 0.0001, atol = 1e-05, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 50 / 150 (33.3%)
+E       Greatest absolute difference: 0.6666666865348816 at index (0, 0, 0, 0) (up to 1e-05 allowed)
+E       Greatest relative difference: inf at index (0, 0, 0, 0) (up to 0.0001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+______________________ TestRgbToHls.test_jit[cpu-float32] ______________________
+
+self = <test_hls.TestRgbToHls object at 0x7d33694fe2c0>
+device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.jit()
+    def test_jit(self, device, dtype):
+        if version.parse(torch.__version__) < version.parse("1.7.0"):
+            warnings.warn(
+                "This test is not compatible with pytorch < 1.7.0. This message will be removed as soon as we do not "
+                "support pytorch 1.6.0. `rgb_to_hls()` method for pytorch < 1.7.0 version cannot be compiled with JIT.",
+                DeprecationWarning,
+                stacklevel=2,
+            )
+            return
+        B, C, H, W = 2, 3, 4, 4
+        img = torch.ones(B, C, H, W, device=device, dtype=dtype)
+        op = kornia.color.rgb_to_hls
+>       op_jit = torch.jit.script(op)
+
+../publishablew/kornia/kornia/tests/color/test_hls.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7d3443fb3d00>
+ctx = <torch._sources.SourceContext object at 0x7d33693c1c60>
+node = <ast.ImportFrom object at 0x7d33693ae620>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/color/hls.py", line 9
+E           def rgb_to_hls(image: Tensor, eps: float=1e-08) -> Tensor:
+E               from .temp import rgb_to_hls
+E               ~~~~ <--- HERE
+E               return rgb_to_hls(image, eps)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32]
+========================= 3 failed, 9 passed in 0.37s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', None, 'jit', 'openxla', 'onnxrt', 'inductor', 'cudagraphs', 'tvm'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_random_extreme_values[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_module[cpu-float32] PASSED
+
+============================== 12 passed in 0.25s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'cudagraphs', 'onnxrt', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 12 items
+
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape0] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape1] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape2] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_cardinality[cpu-float32-shape3] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_unit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_rgb_to_hls[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_nan_random_extreme_values[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_gradcheck[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_jit[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/color/test_hls.py::TestRgbToHls::test_module[cpu-float32] PASSED
+
+============================== 12 passed in 0.22s ==============================

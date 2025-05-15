@@ -1,0 +1,391 @@
+output file:
+processed_pyrodct381.json
+function:
+dct
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2]', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3]', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3] FAILED', '../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 16 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3] FAILED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--4] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-3] PASSED
+
+=================================== FAILURES ===================================
+_____________________________ test_dct_dim[dct--4] _____________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = -4
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = -4
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct--3] _____________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = -3
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = -3
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct--2] _____________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = -2
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = -2
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct--1] _____________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = -1
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = -1
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct-0] ______________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = 0
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = 0
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct-1] ______________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = 1
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = 1
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct-2] ______________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = 2
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = 2
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+_____________________________ test_dct_dim[dct-3] ______________________________
+
+fn = <function dct at 0x7f55af162ac0>, dim = 3
+
+    @pytest.mark.parametrize("dim", [-4, -3, -2, -1, 0, 1, 2, 3])
+    @pytest.mark.parametrize("fn", [dct, idct])
+    def test_dct_dim(fn, dim):
+        x = torch.randn(4, 5, 6, 7)
+>       actual = fn(x, dim=dim)
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/pyro/ops/tensor_utils.py:239: in dct
+    return dct(x, dim)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = tensor([[[[ 9.0976e-01,  1.5376e-01,  6.3435e-01,  3.6655e-01,  3.7665e-01,
+            2.2516e-01,  4.6476e-01],
+    ...],
+          [-9.2304e-01, -8.0425e-01, -6.8659e-01, -1.6405e+00,  4.8227e-01,
+           -3.0693e-01,  5.1280e-01]]]])
+dim = 3
+
+    def dct(x, dim=-1):
+        """
+        Compute the Discrete Cosine Transform of type II, scaled to be orthonormal.
+    
+        :param Tensor x: The input signal.
+        :param int dim: Dimension along which to compute DCT.
+        :rtype: Tensor
+        """
+        N = x.size(dim)
+>       scale = torch.sqrt(2.0 / N) * torch.ones(N, device=x.device)
+E       TypeError: sqrt(): argument 'input' (position 1) must be Tensor, not float
+
+../publishablew/pyro/pyro/pyro/ops/temp.py:17: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2]
+FAILED ../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3]
+========================= 8 failed, 8 passed in 0.51s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 16 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--4] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-3] PASSED
+
+============================== 16 passed in 0.49s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 16 items
+
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--4] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct--1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[dct-3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--4] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--3] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct--1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-0] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-1] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-2] PASSED
+../publishablew/pyro/pyro/tests/ops/test_tensor_utils.py::test_dct_dim[idct-3] PASSED
+
+============================== 16 passed in 0.42s ==============================

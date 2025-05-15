@@ -1,0 +1,432 @@
+output file:
+processed_stanzaconvert_bsf6.json
+function:
+convert_bsf
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup FAILED', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup', 'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup', 'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup FAILED', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup FAILED', '../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup FAILED', 'FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 7 items
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup FAILED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup FAILED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup FAILED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup FAILED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup FAILED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_empty_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup FAILED
+
+=================================== FAILURES ===================================
+_____________________ TestBsf2Beios.test_1line_2tok_markup _____________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_1line_2tok_markup>
+
+        def test_1line_2tok_markup(self):
+            data = 'тележурналіст Василь Нагірний .'
+            bsf_markup = 'T1	PERS 14 29	Василь Нагірний'
+            expected = '''тележурналіст O
+    Василь B-PERS
+    Нагірний E-PERS
+    . O'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: 'тележурналіст O\nВасиль B-PERS\nНагірний E-PERS\n. O' != 'тележурналіст/O Василь/B-PERS Нагірний/E-PERS ./O'
+E           + тележурналіст/O Василь/B-PERS Нагірний/E-PERS ./O- тележурналіст O
+E           - Василь B-PERS
+E           - Нагірний E-PERS
+E           - . O
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:39: AssertionError
+___________________ TestBsf2Beios.test_1line_Long_tok_markup ___________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_1line_Long_tok_markup>
+
+        def test_1line_Long_tok_markup(self):
+            data = 'А в музеї Гуцульщини і Покуття можна '
+            bsf_markup = 'T12	ORG 4 30	музеї Гуцульщини і Покуття'
+            expected = '''А O
+    в O
+    музеї B-ORG
+    Гуцульщини I-ORG
+    і I-ORG
+    Покуття E-ORG
+    можна O'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: 'А O\nв O\nмузеї B-ORG\nГуцульщини I-ORG\nі I-ORG\nПокуття E-ORG\nможна O' != 'А/O в/O музеї/B-ORG Гуцульщини/I-ORG і/I-ORG Покуття/E-ORG можна/O'
+E           + А/O в/O музеї/B-ORG Гуцульщини/I-ORG і/I-ORG Покуття/E-ORG можна/O- А O
+E           - в O
+E           - музеї B-ORG
+E           - Гуцульщини I-ORG
+E           - і I-ORG
+E           - Покуття E-ORG
+E           - можна O
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:51: AssertionError
+____________________ TestBsf2Beios.test_1line_follow_markup ____________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_1line_follow_markup>
+
+        def test_1line_follow_markup(self):
+            data = 'тележурналіст Василь .'
+            bsf_markup = 'T1	PERS 14 20	Василь'
+            expected = '''тележурналіст O
+    Василь S-PERS
+    . O'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: 'тележурналіст O\nВасиль S-PERS\n. O' != 'тележурналіст/O Василь/S-PERS ./O'
+E           + тележурналіст/O Василь/S-PERS ./O- тележурналіст O
+E           - Василь S-PERS
+E           - . O
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:30: AssertionError
+_______________________ TestBsf2Beios.test_1line_markup ________________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_1line_markup>
+
+        def test_1line_markup(self):
+            data = 'тележурналіст Василь'
+            bsf_markup = 'T1	PERS 14 20	Василь'
+            expected = '''тележурналіст O
+    Василь S-PERS'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: 'тележурналіст O\nВасиль S-PERS' != 'тележурналіст/O Василь/S-PERS'
+E           + тележурналіст/O Василь/S-PERS- тележурналіст O
+E           - Василь S-PERS
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:22: AssertionError
+_____________________ TestBsf2Beios.test_2line_2tok_markup _____________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_2line_2tok_markup>
+
+        def test_2line_2tok_markup(self):
+            data = '''тележурналіст Василь Нагірний .
+    В івано-франківському видавництві «Лілея НВ» вийшла друком'''
+            bsf_markup = '''T1	PERS 14 29	Василь Нагірний
+    T2	ORG 67 75	Лілея НВ'''
+            expected = '''тележурналіст O
+    Василь B-PERS
+    Нагірний E-PERS
+    . O
+    
+    
+    В O
+    івано-франківському O
+    видавництві O
+    « O
+    Лілея B-ORG
+    НВ E-ORG
+    » O
+    вийшла O
+    друком O'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: 'тележурналіст O\nВасиль B-PERS\nНагірний E-PERS\n. O\n[94 chars]ом O' != 'тележурналіст/O Василь/B-PERS Нагірний/E-PERS ./O В/O [64 chars]ом/O'
+E           + тележурналіст/O Василь/B-PERS Нагірний/E-PERS ./O В/O івано-франківському/O видавництві/O «Лілея/O НВ»/O вийшла/O друком/O- тележурналіст O
+E           - Василь B-PERS
+E           - Нагірний E-PERS
+E           - . O
+E           - 
+E           - 
+E           - В O
+E           - івано-франківському O
+E           - видавництві O
+E           - « O
+E           - Лілея B-ORG
+E           - НВ E-ORG
+E           - » O
+E           - вийшла O
+E           - друком O
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:73: AssertionError
+________________________ TestBsf2Beios.test_real_markup ________________________
+
+self = <stanza.tests.ner.test_bsf_2_beios.TestBsf2Beios testMethod=test_real_markup>
+
+        def test_real_markup(self):
+            data = '''Через напіввоєнний стан в Україні та збільшення телефонних терористичних погроз українці купуватимуть sim-карти тільки за паспортами .
+    Про це повідомив начальник управління зв'язків зі ЗМІ адміністрації Держспецзв'язку Віталій Кукса .
+    Він зауважив , що днями відомство опублікує проект змін до правил надання телекомунікаційних послуг , де будуть прописані норми ідентифікації громадян .
+    Абонентів , які на сьогодні вже мають sim-карту , за словами Віталія Кукси , реєструватимуть , коли ті звертатимуться в службу підтримки свого оператора мобільного зв'язку .
+    Однак мобільні оператори побоюються , що таке нововведення помітно зменшить продаж стартових пакетів , адже спеціалізовані магазини є лише у містах .
+    Відтак купити сімку в невеликих населених пунктах буде неможливо .
+    Крім того , нова процедура ідентифікації абонентів вимагатиме від операторів мобільного зв'язку додаткових витрат .
+    - Близько 90 % українських абонентів - це абоненти передоплати .
+    Якщо мова буде йти навіть про поетапну їх ідентифікацію , зробити це буде складно , довго і дорого .
+    Мобільним операторам доведеться йти на чималі витрати , пов'язані з укладанням і зберіганням договорів , веденням баз даних , - розповіла « Економічній правді » начальник відділу зв'язків з громадськістю « МТС-Україна » Вікторія Рубан .
+    '''
+            bsf_markup = '''T1	LOC 26 33	Україні
+    T2	ORG 203 218	Держспецзв'язку
+    T3	PERS 219 232	Віталій Кукса
+    T4	PERS 449 462	Віталія Кукси
+    T5	ORG 1201 1219	Економічній правді
+    T6	ORG 1267 1278	МТС-Україна
+    T7	PERS 1281 1295	Вікторія Рубан
+    '''
+            expected = '''Через O
+    напіввоєнний O
+    стан O
+    в O
+    Україні S-LOC
+    та O
+    збільшення O
+    телефонних O
+    терористичних O
+    погроз O
+    українці O
+    купуватимуть O
+    sim-карти O
+    тільки O
+    за O
+    паспортами O
+    . O
+    
+    
+    Про O
+    це O
+    повідомив O
+    начальник O
+    управління O
+    зв'язків O
+    зі O
+    ЗМІ O
+    адміністрації O
+    Держспецзв'язку S-ORG
+    Віталій B-PERS
+    Кукса E-PERS
+    . O
+    
+    
+    Він O
+    зауважив O
+    , O
+    що O
+    днями O
+    відомство O
+    опублікує O
+    проект O
+    змін O
+    до O
+    правил O
+    надання O
+    телекомунікаційних O
+    послуг O
+    , O
+    де O
+    будуть O
+    прописані O
+    норми O
+    ідентифікації O
+    громадян O
+    . O
+    
+    
+    Абонентів O
+    , O
+    які O
+    на O
+    сьогодні O
+    вже O
+    мають O
+    sim-карту O
+    , O
+    за O
+    словами O
+    Віталія B-PERS
+    Кукси E-PERS
+    , O
+    реєструватимуть O
+    , O
+    коли O
+    ті O
+    звертатимуться O
+    в O
+    службу O
+    підтримки O
+    свого O
+    оператора O
+    мобільного O
+    зв'язку O
+    . O
+    
+    
+    Однак O
+    мобільні O
+    оператори O
+    побоюються O
+    , O
+    що O
+    таке O
+    нововведення O
+    помітно O
+    зменшить O
+    продаж O
+    стартових O
+    пакетів O
+    , O
+    адже O
+    спеціалізовані O
+    магазини O
+    є O
+    лише O
+    у O
+    містах O
+    . O
+    
+    
+    Відтак O
+    купити O
+    сімку O
+    в O
+    невеликих O
+    населених O
+    пунктах O
+    буде O
+    неможливо O
+    . O
+    
+    
+    Крім O
+    того O
+    , O
+    нова O
+    процедура O
+    ідентифікації O
+    абонентів O
+    вимагатиме O
+    від O
+    операторів O
+    мобільного O
+    зв'язку O
+    додаткових O
+    витрат O
+    . O
+    
+    
+    - O
+    Близько O
+    90 O
+    % O
+    українських O
+    абонентів O
+    - O
+    це O
+    абоненти O
+    передоплати O
+    . O
+    
+    
+    Якщо O
+    мова O
+    буде O
+    йти O
+    навіть O
+    про O
+    поетапну O
+    їх O
+    ідентифікацію O
+    , O
+    зробити O
+    це O
+    буде O
+    складно O
+    , O
+    довго O
+    і O
+    дорого O
+    . O
+    
+    
+    Мобільним O
+    операторам O
+    доведеться O
+    йти O
+    на O
+    чималі O
+    витрати O
+    , O
+    пов'язані O
+    з O
+    укладанням O
+    і O
+    зберіганням O
+    договорів O
+    , O
+    веденням O
+    баз O
+    даних O
+    , O
+    - O
+    розповіла O
+    « O
+    Економічній B-ORG
+    правді E-ORG
+    » O
+    начальник O
+    відділу O
+    зв'язків O
+    з O
+    громадськістю O
+    « O
+    МТС-Україна S-ORG
+    » O
+    Вікторія B-PERS
+    Рубан E-PERS
+    . O'''
+>           self.assertEqual(expected, convert_bsf(data, bsf_markup))
+E           AssertionError: "Через O\nнапіввоєнний O\nстан O\nв O\nУкраїні [1908 chars]n. O" != "Через/O напіввоєнний/O стан/O в/O Україні/S-LO[1681 chars] ./O"
+E           Diff is 3903 characters long. Set self.maxDiff to None to see it.
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py:305: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup
+FAILED ../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup
+========================= 6 failed, 1 passed in 1.07s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 7 items
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_empty_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup PASSED
+
+============================== 7 passed in 1.06s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/stanza/stanza/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/stanza/stanza/stanza/tests
+configfile: pytest.ini
+collecting ... collected 7 items
+
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_2tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_Long_tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_follow_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_1line_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_2line_2tok_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_empty_markup PASSED
+../publishablew/stanza/stanza/stanza/tests/ner/test_bsf_2_beios.py::TestBsf2Beios::test_real_markup PASSED
+
+============================== 7 passed in 1.06s ===============================

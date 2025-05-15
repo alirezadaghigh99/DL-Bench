@@ -1,0 +1,1032 @@
+output file:
+processed_imagededupencode_images64.json
+function:
+encode_images
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'tests/test_hashing.py::test_recursive_disabled_by_default FAILED         [ 25%]', 'tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir FAILED  [ 92%]', 'tests/test_hashing.py::test_find_duplicates_correctness FAILED           [ 83%]', 'FAILED tests/test_hashing.py::test_find_duplicates_correctness - ImportError:...', 'tests/test_hashing.py::test_recursive_on_flat_directory FAILED           [ 24%]', 'FAILED tests/test_hashing.py::test_find_duplicates_to_remove_dir - ImportErro...', 'tests/test_hashing.py::test_find_duplicates_verbose_false FAILED         [100%]', 'tests/test_hashing.py::test_encode_images_rejects_non_directory_paths FAILED [ 22%]', 'FAILED tests/test_hashing.py::test_find_duplicates_outfile - ImportError: can...', 'tests/test_hashing.py::test_encode_images_accepts_non_posixpath FAILED   [ 18%]', 'tests/test_hashing.py::test_encode_images_parallelise_with_num_workers FAILED [ 27%]', 'tests/test_hashing.py::test_find_duplicates_correctness_score FAILED     [ 84%]', 'tests/test_hashing.py::test_encode_images_corrupt_and_good_images FAILED [ 82%]', 'tests/test_hashing.py::test_encode_images_returns_dict FAILED            [ 74%]', 'tests/test_hashing.py::test_encode_images_verbose_false FAILED           [ 97%]', 'FAILED tests/test_hashing.py::test_encode_images_accepts_valid_posixpath - Im...', 'tests/test_hashing.py::test_encode_images_finds_non_recursive FAILED     [ 21%]', 'tests/test_hashing.py::test_find_duplicates_to_remove_dir FAILED         [ 91%]', 'FAILED tests/test_hashing.py::test_encode_images_return_non_none_hashes - Imp...', 'FAILED tests/test_hashing.py::test_find_duplicates_verbose_true - ImportError...', 'FAILED tests/test_hashing.py::test_encode_images_parallelise_with_num_workers', 'tests/test_hashing.py::test_find_duplicates_to_remove_outfile FAILED     [ 95%]', 'tests/test_hashing.py::test_find_duplicates_verbose_true FAILED          [ 98%]', 'FAILED tests/test_hashing.py::test_encode_images_corrupt_and_good_images - Im...', 'tests/test_hashing.py::test_encode_images_return_non_none_hashes FAILED  [ 75%]', 'FAILED tests/test_hashing.py::test_find_duplicates_correctness_score - Import...', 'FAILED tests/test_hashing.py::test_encode_images_finds_recursive - ImportErro...', 'FAILED tests/test_hashing.py::test_encode_images_returns_dict - ImportError: ...', 'FAILED tests/test_hashing.py::test_encode_images_verbose_false - ImportError:...', 'FAILED tests/test_hashing.py::test_encode_images_return_vals - ImportError: c...', 'FAILED tests/test_hashing.py::test_find_duplicates_to_remove_outfile - Import...', 'tests/test_hashing.py::test_encode_images_finds_recursive FAILED         [ 20%]', 'tests/test_hashing.py::test_encode_images_return_vals FAILED             [ 23%]', 'FAILED tests/test_hashing.py::test_encode_images_accepts_non_posixpath - Impo...', 'FAILED tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir - Imp...', 'tests/test_hashing.py::test_encode_images_verbose_true FAILED            [ 96%]', 'FAILED tests/test_hashing.py::test_recursive_disabled_by_default - ImportErro...', 'tests/test_hashing.py::test_find_duplicates_outfile FAILED               [ 87%]', 'FAILED tests/test_hashing.py::test_find_duplicates_clearing - ImportError: ca...', 'FAILED tests/test_hashing.py::test_encode_images_verbose_true - ImportError: ...', 'tests/test_hashing.py::test_encode_images_accepts_valid_posixpath FAILED [ 17%]', 'FAILED tests/test_hashing.py::test_encode_images_finds_non_recursive - Import...', 'FAILED tests/test_hashing.py::test_encode_images_rejects_non_directory_paths', 'FAILED tests/test_hashing.py::test_find_duplicates_verbose_false - ImportErro...', 'tests/test_hashing.py::test_find_duplicates_clearing FAILED              [ 85%]', 'FAILED tests/test_hashing.py::test_recursive_on_flat_directory - ImportError:...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance PASSED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath FAILED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath FAILED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive FAILED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive FAILED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths FAILED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals FAILED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory FAILED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default FAILED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers FAILED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] PASSED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] PASSED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] PASSED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] PASSED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict FAILED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes FAILED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images FAILED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness FAILED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score FAILED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing FAILED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile FAILED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir FAILED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir FAILED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile FAILED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true FAILED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false FAILED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true FAILED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false FAILED         [100%]
+
+=================================== FAILURES ===================================
+__________________ test_encode_images_accepts_valid_posixpath __________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cbfff3910>
+mocker_encode_image = None
+
+    def test_encode_images_accepts_valid_posixpath(hasher, mocker_encode_image):
+>       assert len(hasher.encode_images(PATH_IMAGE_DIR)) == 6  # 6 files in the directory
+
+tests/test_hashing.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cbfff3910>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+___________________ test_encode_images_accepts_non_posixpath ___________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cbfff18d0>
+mocker_encode_image = None
+
+    def test_encode_images_accepts_non_posixpath(hasher, mocker_encode_image):
+        print(PATH_IMAGE_DIR_STRING)
+>       assert len(hasher.encode_images(PATH_IMAGE_DIR_STRING)) == 6
+
+tests/test_hashing.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cbfff18d0>
+image_dir = '/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images'
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+----------------------------- Captured stdout call -----------------------------
+/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images
+______________________ test_encode_images_finds_recursive ______________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cbfff6950>
+mocker_encode_image = None
+
+    def test_encode_images_finds_recursive(hasher, mocker_encode_image):
+>       assert (
+            len(hasher.encode_images(PATH_IMAGE_DIR_MIXED_NESTED, True)) == 6
+        )  # 6 files in total
+
+tests/test_hashing.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cbfff6950>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_nested_images')
+recursive = True, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+____________________ test_encode_images_finds_non_recursive ____________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717deeb65e50>
+mocker_encode_image = None
+
+    def test_encode_images_finds_non_recursive(hasher, mocker_encode_image):
+>       assert (
+            len(hasher.encode_images(PATH_IMAGE_DIR_MIXED_NESTED)) == 2
+        )  # 2 files in the directory
+
+tests/test_hashing.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717deeb65e50>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_nested_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+________________ test_encode_images_rejects_non_directory_paths ________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cc00a06d0>
+
+    def test_encode_images_rejects_non_directory_paths(hasher):
+        with pytest.raises(ValueError):
+>           hasher.encode_images(PATH_SINGLE_IMAGE)
+
+tests/test_hashing.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cc00a06d0>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images/ukbench00120.jpg')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+________________________ test_encode_images_return_vals ________________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cbfecca50>
+mocker_encode_image = None
+
+    def test_encode_images_return_vals(hasher, mocker_encode_image):
+        encoded_val = '123456789ABCDEFA'
+>       hashes = hasher.encode_images(PATH_IMAGE_DIR)
+
+tests/test_hashing.py:202: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cbfecca50>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________________ test_recursive_on_flat_directory _______________________
+
+    def test_recursive_on_flat_directory():
+        hasher = PHash()
+>       hashes_recursive = hasher.encode_images(PATH_IMAGE_DIR, recursive=True)
+
+tests/test_hashing.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfff2c90>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = True, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+______________________ test_recursive_disabled_by_default ______________________
+
+    def test_recursive_disabled_by_default():
+        hasher = PHash()
+>       hashes = hasher.encode_images(PATH_IMAGE_DIR_MIXED_NESTED)
+
+tests/test_hashing.py:217: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717dedd69090>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_nested_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________ test_encode_images_parallelise_with_num_workers ________________
+
+hasher = <imagededup.methods.hashing.Hashing object at 0x717cbfd04190>
+mocker = <pytest_mock.plugin.MockerFixture object at 0x717cbfd042d0>
+
+    def test_encode_images_parallelise_with_num_workers(hasher, mocker):
+        num_enc_workers = 8
+        par_mock = mocker.patch('imagededup.methods.hashing.parallelise')
+        generate_files_mock = mocker.patch(
+            'imagededup.methods.hashing.generate_files', return_value=['1.jpg', '2.jpg']
+        )
+        generate_rel_names_mock = mocker.patch(
+            'imagededup.methods.hashing.generate_relative_names'
+        )
+>       hash = hasher.encode_images(
+            PATH_IMAGE_DIR_MIXED_NESTED, num_enc_workers=num_enc_workers
+        )
+
+tests/test_hashing.py:233: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.Hashing object at 0x717cbfd04190>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_nested_images')
+recursive = False, num_enc_workers = 8
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________________ test_encode_images_returns_dict ________________________
+
+    def test_encode_images_returns_dict():
+>       hash_dict = phasher.encode_images(PATH_IMAGE_DIR)
+
+tests/test_hashing.py:691: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbff3f690>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+__________________ test_encode_images_return_non_none_hashes ___________________
+
+    def test_encode_images_return_non_none_hashes():
+>       hash_dict = dhasher.encode_images(PATH_IMAGE_DIR)
+
+tests/test_hashing.py:696: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.DHash object at 0x717cbff3f910>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+__________________ test_encode_images_corrupt_and_good_images __________________
+
+    def test_encode_images_corrupt_and_good_images():
+        ahasher = AHash()
+>       hashes = ahasher.encode_images(PATH_IMAGE_DIR)
+
+tests/test_hashing.py:725: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.AHash object at 0x717cbfe7ef10>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________________ test_find_duplicates_correctness _______________________
+
+    def test_find_duplicates_correctness():
+        phasher = PHash()
+>       duplicate_dict = phasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10
+        )
+
+tests/test_hashing.py:732: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc31490>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+____________________ test_find_duplicates_correctness_score ____________________
+
+    def test_find_duplicates_correctness_score():
+        phasher = PHash()
+>       duplicate_dict = phasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10, scores=True
+        )
+
+tests/test_hashing.py:743: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc24a50>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+________________________ test_find_duplicates_clearing _________________________
+
+    @pytest.mark.skipif(sys.platform == 'win32', reason='Does not run on Windows.')
+    def test_find_duplicates_clearing():
+        phasher = PHash()
+>       duplicate_dict = phasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR,
+            max_distance_threshold=10,
+            scores=True,
+            search_method='brute_force_cython',
+        )
+
+tests/test_hashing.py:756: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc68890>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_________________________ test_find_duplicates_outfile _________________________
+
+    def test_find_duplicates_outfile():
+        dhasher = DHash()
+        outfile_name = 'score_output.json'
+        if os.path.exists(outfile_name):
+            os.remove(outfile_name)
+>       _ = dhasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR,
+            max_distance_threshold=10,
+            scores=True,
+            outfile=outfile_name,
+        )
+
+tests/test_hashing.py:782: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.DHash object at 0x717cbfc32390>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+______________________ test_find_duplicates_to_remove_dir ______________________
+
+    def test_find_duplicates_to_remove_dir():
+        phasher = PHash()
+    
+>       removal_list = phasher.find_duplicates_to_remove(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10
+        )
+
+tests/test_hashing.py:850: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:313: in find_duplicates_to_remove
+    result = self.find_duplicates(image_dir=image_dir, encoding_map=encoding_map, max_distance_threshold=max_distance_threshold, scores=False, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc28510>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+__________________ test_find_duplicates_to_remove_nested_dir ___________________
+
+    def test_find_duplicates_to_remove_nested_dir():
+        phasher = PHash()
+>       removal_list = phasher.find_duplicates_to_remove(
+            image_dir=PATH_IMAGE_DIR_MIXED_NESTED,
+            max_distance_threshold=10,
+            recursive=True,
+        )
+
+tests/test_hashing.py:861: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:313: in find_duplicates_to_remove
+    result = self.find_duplicates(image_dir=image_dir, encoding_map=encoding_map, max_distance_threshold=max_distance_threshold, scores=False, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc5d390>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_nested_images')
+recursive = True, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+____________________ test_find_duplicates_to_remove_outfile ____________________
+
+    def test_find_duplicates_to_remove_outfile():
+        dhasher = DHash()
+        outfile_name = 'removal_list.json'
+        if os.path.exists(outfile_name):
+            os.remove(outfile_name)
+>       _ = dhasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10, outfile=outfile_name
+        )
+
+tests/test_hashing.py:895: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.DHash object at 0x717cbfc33150>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________________ test_encode_images_verbose_true ________________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x717cbfc3dc90>
+
+    def test_encode_images_verbose_true(capsys):
+        phasher = PHash(verbose=True)
+>       phasher.encode_images(image_dir=PATH_IMAGE_DIR)
+
+tests/test_hashing.py:907: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc3ddd0>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+_______________________ test_encode_images_verbose_false _______________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x717cbfc6a310>
+
+    def test_encode_images_verbose_false(capsys):
+        phasher = PHash(verbose=False)
+>       phasher.encode_images(image_dir=PATH_IMAGE_DIR)
+
+tests/test_hashing.py:916: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc69e50>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+______________________ test_find_duplicates_verbose_true _______________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x717cbfe7fed0>
+
+    def test_find_duplicates_verbose_true(capsys):
+        phasher = PHash(verbose=True)
+>       phasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10, scores=False, outfile=False
+        )
+
+tests/test_hashing.py:925: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717cbfc21310>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+______________________ test_find_duplicates_verbose_false ______________________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x717dedd52490>
+
+    def test_find_duplicates_verbose_false(capsys):
+        phasher = PHash(verbose=False)
+>       phasher.find_duplicates(
+            image_dir=PATH_IMAGE_DIR, max_distance_threshold=10, scores=False, outfile=False
+        )
+
+tests/test_hashing.py:936: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+imagededup/methods/hashing.py:242: in find_duplicates
+    result = self._find_duplicates_dir(image_dir=image_dir, max_distance_threshold=max_distance_threshold, scores=scores, outfile=outfile, search_method=search_method, recursive=recursive, num_enc_workers=num_enc_workers, num_dist_workers=num_dist_workers)
+imagededup/methods/hashing.py:274: in _find_duplicates_dir
+    encoding_map = self.encode_images(image_dir, recursive=recursive, num_enc_workers=num_enc_workers)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <imagededup.methods.hashing.PHash object at 0x717dedd505d0>
+image_dir = PosixPath('/local/data0/moved_data/publishablew/imagededup/imagededup/tests/data/mixed_images')
+recursive = False, num_enc_workers = 16
+
+    def encode_images(self, image_dir=None, recursive: bool=False, num_enc_workers: int=cpu_count()):
+>       from .temp import encode_images
+E       ImportError: cannot import name 'encode_images' from 'imagededup.methods.temp' (/local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/temp.py)
+
+imagededup/methods/hashing.py:108: ImportError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:246: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_encode_images_accepts_valid_posixpath - Im...
+FAILED tests/test_hashing.py::test_encode_images_accepts_non_posixpath - Impo...
+FAILED tests/test_hashing.py::test_encode_images_finds_recursive - ImportErro...
+FAILED tests/test_hashing.py::test_encode_images_finds_non_recursive - Import...
+FAILED tests/test_hashing.py::test_encode_images_rejects_non_directory_paths
+FAILED tests/test_hashing.py::test_encode_images_return_vals - ImportError: c...
+FAILED tests/test_hashing.py::test_recursive_on_flat_directory - ImportError:...
+FAILED tests/test_hashing.py::test_recursive_disabled_by_default - ImportErro...
+FAILED tests/test_hashing.py::test_encode_images_parallelise_with_num_workers
+FAILED tests/test_hashing.py::test_encode_images_returns_dict - ImportError: ...
+FAILED tests/test_hashing.py::test_encode_images_return_non_none_hashes - Imp...
+FAILED tests/test_hashing.py::test_encode_images_corrupt_and_good_images - Im...
+FAILED tests/test_hashing.py::test_find_duplicates_correctness - ImportError:...
+FAILED tests/test_hashing.py::test_find_duplicates_correctness_score - Import...
+FAILED tests/test_hashing.py::test_find_duplicates_clearing - ImportError: ca...
+FAILED tests/test_hashing.py::test_find_duplicates_outfile - ImportError: can...
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+FAILED tests/test_hashing.py::test_find_duplicates_to_remove_dir - ImportErro...
+FAILED tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir - Imp...
+FAILED tests/test_hashing.py::test_find_duplicates_to_remove_outfile - Import...
+FAILED tests/test_hashing.py::test_encode_images_verbose_true - ImportError: ...
+FAILED tests/test_hashing.py::test_encode_images_verbose_false - ImportError:...
+FAILED tests/test_hashing.py::test_find_duplicates_verbose_true - ImportError...
+FAILED tests/test_hashing.py::test_find_duplicates_verbose_false - ImportErro...
+================== 24 failed, 61 passed, 4 warnings in 3.29s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance PASSED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath PASSED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath PASSED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive PASSED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive PASSED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths PASSED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals PASSED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory PASSED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default PASSED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers PASSED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] PASSED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] PASSED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] PASSED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] PASSED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict PASSED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes PASSED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images PASSED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness PASSED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score PASSED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing PASSED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile PASSED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir PASSED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir PASSED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile PASSED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true PASSED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false PASSED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true PASSED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false PASSED         [100%]
+
+=================================== FAILURES ===================================
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:317: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+=================== 1 failed, 84 passed, 4 warnings in 6.83s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 85 items
+
+tests/test_hashing.py::test_correct_init_hashing PASSED                  [  1%]
+tests/test_hashing.py::test_hamming_distance PASSED                      [  2%]
+tests/test_hashing.py::test__array_to_hash PASSED                        [  3%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_input_not_int PASSED [  4%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_out_of_bound PASSED [  5%]
+tests/test_hashing.py::test__check_hamming_distance_bounds_correct PASSED [  7%]
+tests/test_hashing.py::test_encode_image_accepts_image_posixpath PASSED  [  8%]
+tests/test_hashing.py::test_encode_image_accepts_numpy_array PASSED      [  9%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input PASSED     [ 10%]
+tests/test_hashing.py::test_encode_image_valerror_wrong_input_array PASSED [ 11%]
+tests/test_hashing.py::test_encode_image_wrong_dim_input_array PASSED    [ 12%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array PASSED [ 14%]
+tests/test_hashing.py::test_encode_image_returns_none_image_pp_not_array_array_input PASSED [ 15%]
+tests/test_hashing.py::test_encode_image_accepts_non_posixpath PASSED    [ 16%]
+tests/test_hashing.py::test_encode_images_accepts_valid_posixpath PASSED [ 17%]
+tests/test_hashing.py::test_encode_images_accepts_non_posixpath PASSED   [ 18%]
+tests/test_hashing.py::test_encode_images_finds_recursive PASSED         [ 20%]
+tests/test_hashing.py::test_encode_images_finds_non_recursive PASSED     [ 21%]
+tests/test_hashing.py::test_encode_images_rejects_non_directory_paths PASSED [ 22%]
+tests/test_hashing.py::test_encode_images_return_vals PASSED             [ 23%]
+tests/test_hashing.py::test_recursive_on_flat_directory PASSED           [ 24%]
+tests/test_hashing.py::test_recursive_disabled_by_default PASSED         [ 25%]
+tests/test_hashing.py::test_encode_images_parallelise_with_num_workers PASSED [ 27%]
+tests/test_hashing.py::test_hash_func PASSED                             [ 28%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none PASSED    [ 29%]
+tests/test_hashing.py::test__find_duplicates_dict_num_dist_workers_has_impact PASSED [ 30%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_none_verbose PASSED [ 31%]
+tests/test_hashing.py::test__find_duplicates_dict_outfile_true PASSED    [ 32%]
+tests/test_hashing.py::test__find_duplicates_dir PASSED                  [ 34%]
+tests/test_hashing.py::test_find_duplicates_dir PASSED                   [ 35%]
+tests/test_hashing.py::test_find_duplicates_dir_multiprocessing_has_impact PASSED [ 36%]
+tests/test_hashing.py::test_find_duplicates_dict PASSED                  [ 37%]
+tests/test_hashing.py::test_find_duplicates_wrong_input PASSED           [ 38%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_false PASSED [ 40%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile_true PASSED [ 41%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding_map PASSED [ 42%]
+tests/test_hashing.py::test_find_duplicates_to_remove_multiprocessing_has_impact PASSED [ 43%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image0] PASSED   [ 44%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image1] PASSED   [ 45%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image2] PASSED   [ 47%]
+tests/test_hashing.py::TestCommon::test_len_hash[encode_image3] PASSED   [ 48%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image0] PASSED [ 49%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image1] PASSED [ 50%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image2] PASSED [ 51%]
+tests/test_hashing.py::TestCommon::test_hash_resize[encode_image3] PASSED [ 52%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image0] PASSED [ 54%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image1] PASSED [ 55%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image2] PASSED [ 56%]
+tests/test_hashing.py::TestCommon::test_hash_small_rotation[encode_image3] PASSED [ 57%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image0] PASSED [ 58%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image1] PASSED [ 60%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image2] PASSED [ 61%]
+tests/test_hashing.py::TestCommon::test_hash_distinct_images[encode_image3] PASSED [ 62%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image0] PASSED [ 63%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image1] PASSED [ 64%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image2] PASSED [ 65%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs[encode_image3] PASSED [ 67%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image0] PASSED [ 68%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image1] PASSED [ 69%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image2] PASSED [ 70%]
+tests/test_hashing.py::TestCommon::test_same_hashes_with_different_inputs_gray_scale[encode_image3] PASSED [ 71%]
+tests/test_hashing.py::test_wrong_arr_dims_returns_valueerror PASSED     [ 72%]
+tests/test_hashing.py::test_encode_images_returns_dict PASSED            [ 74%]
+tests/test_hashing.py::test_encode_images_return_non_none_hashes PASSED  [ 75%]
+tests/test_hashing.py::test_encode_image_hash[hash_object0-9fee256239984d71] PASSED [ 76%]
+tests/test_hashing.py::test_encode_image_hash[hash_object1-2b69707551f1b87a] PASSED [ 77%]
+tests/test_hashing.py::test_encode_image_hash[hash_object2-81b83c3c3c3c1e0a] PASSED [ 78%]
+tests/test_hashing.py::test_encode_image_hash[hash_object3-89b8bc3c3c3c5e0e] PASSED [ 80%]
+tests/test_hashing.py::test_encode_image_corrupt_file PASSED             [ 81%]
+tests/test_hashing.py::test_encode_images_corrupt_and_good_images PASSED [ 82%]
+tests/test_hashing.py::test_find_duplicates_correctness PASSED           [ 83%]
+tests/test_hashing.py::test_find_duplicates_correctness_score PASSED     [ 84%]
+tests/test_hashing.py::test_find_duplicates_clearing PASSED              [ 85%]
+tests/test_hashing.py::test_find_duplicates_outfile PASSED               [ 87%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_input FAILED    [ 88%]
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning PASSED [ 89%]
+tests/test_hashing.py::test_find_duplicates_dict_num_enc_workers_warning PASSED [ 90%]
+tests/test_hashing.py::test_find_duplicates_to_remove_dir PASSED         [ 91%]
+tests/test_hashing.py::test_find_duplicates_to_remove_nested_dir PASSED  [ 92%]
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding PASSED    [ 94%]
+tests/test_hashing.py::test_find_duplicates_to_remove_outfile PASSED     [ 95%]
+tests/test_hashing.py::test_encode_images_verbose_true PASSED            [ 96%]
+tests/test_hashing.py::test_encode_images_verbose_false PASSED           [ 97%]
+tests/test_hashing.py::test_find_duplicates_verbose_true PASSED          [ 98%]
+tests/test_hashing.py::test_find_duplicates_verbose_false PASSED         [100%]
+
+=================================== FAILURES ===================================
+___________________ test_find_duplicates_encoding_map_input ____________________
+
+    def test_find_duplicates_encoding_map_input():
+        encoding = {
+            'ukbench00120_resize.jpg': '9fee256239984d71',
+            'ukbench00120_rotation.jpg': '850d513c4fdcbb72',
+            'ukbench00120.jpg': '9fee256239984d71',
+            'ukbench00120_hflip.jpg': 'cabb7237e8cd3824',
+            'ukbench09268.jpg': 'c73c36c2da2f29c9',
+        }
+        phasher = PHash()
+>       with pytest.warns(None):
+
+tests/test_hashing.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = WarningsChecker(record=True), expected_warning = None, match_expr = None
+
+    def __init__(
+        self,
+        expected_warning: type[Warning] | tuple[type[Warning], ...] = Warning,
+        match_expr: str | Pattern[str] | None = None,
+        *,
+        _ispytest: bool = False,
+    ) -> None:
+        check_ispytest(_ispytest)
+        super().__init__(_ispytest=True)
+    
+        msg = "exceptions must be derived from Warning, not %s"
+        if isinstance(expected_warning, tuple):
+            for exc in expected_warning:
+                if not issubclass(exc, Warning):
+                    raise TypeError(msg % type(exc))
+            expected_warning_tup = expected_warning
+        elif isinstance(expected_warning, type) and issubclass(
+            expected_warning, Warning
+        ):
+            expected_warning_tup = (expected_warning,)
+        else:
+>           raise TypeError(msg % type(expected_warning))
+E           TypeError: exceptions must be derived from Warning, not <class 'NoneType'>
+
+/home/aliredaq/.local/lib/python3.11/site-packages/_pytest/recwarn.py:280: TypeError
+=============================== warnings summary ===============================
+../../../../../../usr/lib/python3/dist-packages/pytz/__init__.py:31
+  /usr/lib/python3/dist-packages/pytz/__init__.py:31: DeprecationWarning: invalid escape sequence '\s'
+    match = re.match("^#\s*version\s*([0-9a-z]*)\s*$", line)
+
+tests/test_hashing.py::test_find_duplicates_dict
+tests/test_hashing.py::test_find_duplicates_encoding_map_recursive_warning
+tests/test_hashing.py::test_find_duplicates_to_remove_encoding
+  /local/data0/moved_data/publishablew/imagededup/imagededup/imagededup/methods/hashing.py:317: RuntimeWarning: Parameter num_enc_workers has no effect since encodings are already provided
+    warnings.warn('Parameter num_enc_workers has no effect since encodings are already provided', RuntimeWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_hashing.py::test_find_duplicates_encoding_map_input - TypeE...
+=================== 1 failed, 84 passed, 4 warnings in 6.98s ===================

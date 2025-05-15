@@ -1,0 +1,262 @@
+output file:
+processed_korniascale_laf247.json
+function:
+scale_laf
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu]', 'FAILED ../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu]', '../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'jit', 'openxla', 'cudagraphs', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_float[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu] FAILED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu] FAILED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_jit[cpu-float32] SKIPPED
+
+=================================== FAILURES ===================================
+_____________________ TestScaleLAF.test_shape_tensor[cpu] ______________________
+
+self = <test_laf.TestScaleLAF object at 0x70d91d4e7760>
+device = device(type='cpu')
+
+    def test_shape_tensor(self, device):
+        inp = torch.ones(7, 3, 2, 3, device=device).float()
+        scale = torch.zeros(7, 1, 1, 1, device=device).float()
+>       assert kornia.feature.scale_laf(inp, scale).shape == inp.shape
+
+../publishablew/kornia/kornia/tests/feature/test_laf.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/laf.py:126: in scale_laf
+    return scale_laf(laf, scale_coef)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+laf = tensor([[[[1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1.,...   [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.]],
+
+         [[1., 1., 1.],
+          [1., 1., 1.]]]])
+scale_coef = tensor([[[[0.]]],
+
+
+        [[[0.]]],
+
+
+        [[[0.]]],
+
+
+        [[[0.]]],
+
+
+        [[[0.]]],
+
+
+        [[[0.]]],
+
+
+        [[[0.]]]])
+
+    def scale_laf(laf, scale_coef):
+        """
+        Scales the region part of a Local Affine Frame (LAF) by a scale coefficient.
+    
+        Parameters:
+        - laf (torch.Tensor): A tensor of shape (B, N, 2, 3) representing the LAFs.
+        - scale_coef (float or torch.Tensor): The scale coefficient to apply.
+    
+        Returns:
+        - torch.Tensor: The scaled LAF of the same shape as the input.
+    
+        Raises:
+        - TypeError: If scale_coef is neither a float nor a tensor.
+        """
+        if not isinstance(scale_coef, (float, torch.Tensor)):
+            raise TypeError('scale_coef must be either a float or a torch.Tensor')
+        if isinstance(scale_coef, float):
+            scale_coef = torch.tensor(scale_coef, dtype=laf.dtype, device=laf.device)
+        region = laf[..., :2]
+        center = laf[..., 2]
+        scaled_region = region * scale_coef.unsqueeze(-1).unsqueeze(-1)
+>       scaled_laf = torch.cat((scaled_region, center.unsqueeze(-1)), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 6 and 4
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:33: RuntimeError
+_________________________ TestScaleLAF.test_scale[cpu] _________________________
+
+self = <test_laf.TestScaleLAF object at 0x70d91d4e7a00>
+device = device(type='cpu')
+
+    def test_scale(self, device):
+        inp = torch.tensor([[5.0, 1, 0.8], [1, 1, -4.0]], device=device).float()
+        inp = inp.view(1, 1, 2, 3)
+        scale = torch.tensor([[[[2.0]]]], device=device).float()
+>       out = kornia.feature.scale_laf(inp, scale)
+
+../publishablew/kornia/kornia/tests/feature/test_laf.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/feature/laf.py:126: in scale_laf
+    return scale_laf(laf, scale_coef)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+laf = tensor([[[[ 5.0000,  1.0000,  0.8000],
+          [ 1.0000,  1.0000, -4.0000]]]])
+scale_coef = tensor([[[[2.]]]])
+
+    def scale_laf(laf, scale_coef):
+        """
+        Scales the region part of a Local Affine Frame (LAF) by a scale coefficient.
+    
+        Parameters:
+        - laf (torch.Tensor): A tensor of shape (B, N, 2, 3) representing the LAFs.
+        - scale_coef (float or torch.Tensor): The scale coefficient to apply.
+    
+        Returns:
+        - torch.Tensor: The scaled LAF of the same shape as the input.
+    
+        Raises:
+        - TypeError: If scale_coef is neither a float nor a tensor.
+        """
+        if not isinstance(scale_coef, (float, torch.Tensor)):
+            raise TypeError('scale_coef must be either a float or a torch.Tensor')
+        if isinstance(scale_coef, float):
+            scale_coef = torch.tensor(scale_coef, dtype=laf.dtype, device=laf.device)
+        region = laf[..., :2]
+        center = laf[..., 2]
+        scaled_region = region * scale_coef.unsqueeze(-1).unsqueeze(-1)
+>       scaled_laf = torch.cat((scaled_region, center.unsqueeze(-1)), dim=-1)
+E       RuntimeError: Tensors must have same number of dimensions: got 6 and 4
+
+../publishablew/kornia/kornia/kornia/feature/temp.py:33: RuntimeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu]
+FAILED ../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu]
+==================== 2 failed, 2 passed, 1 skipped in 0.33s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'inductor', 'cudagraphs', 'onnxrt', 'jit', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_float[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_jit[cpu-float32] SKIPPED
+
+========================= 4 passed, 1 skipped in 0.17s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'tvm', 'cudagraphs', 'onnxrt', 'inductor', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_float[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_shape_tensor[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_scale[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/feature/test_laf.py::TestScaleLAF::test_jit[cpu-float32] SKIPPED
+
+========================= 4 passed, 1 skipped in 0.20s =========================

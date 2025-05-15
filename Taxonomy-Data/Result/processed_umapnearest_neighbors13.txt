@@ -1,0 +1,233 @@
+output file:
+processed_umapnearest_neighbors13.json
+function:
+nearest_neighbors
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms FAILED', '../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity FAILED', '../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric FAILED', 'FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms', 'FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric', 'FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity', '../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data FAILED', 'FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/umap/umap/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/umap/umap
+collecting ... collected 11 items
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric FAILED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data FAILED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_callable_metric SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms FAILED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity FAILED
+
+=================================== FAILURES ===================================
+______________________________ test_nn_bad_metric ______________________________
+
+nn_data = array([[0.02697041, 0.6867027 , 0.2337092 , 0.9907538 , 0.42877538],
+       [0.33961787, 0.03273771, 0.88045903, 0.029... 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ]])
+
+    def test_nn_bad_metric(nn_data):
+        with pytest.raises(ValueError):
+>           nearest_neighbors(nn_data, 10, 42, {}, False, np.random)
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/umap/umap/umap/umap_.py:169: in nearest_neighbors
+    from .temp import nearest_neighbors
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import locale
+    from warnings import warn
+    import time
+    from scipy.optimize import curve_fit
+    from sklearn.base import BaseEstimator, ClassNamePrefixFeaturesOutMixin
+    from sklearn.utils import check_array, check_random_state
+    from sklearn.utils.validation import check_is_fitted
+    from sklearn.metrics import pairwise_distances
+    from sklearn.preprocessing import normalize
+    from sklearn.neighbors import KDTree
+    from sklearn.decomposition import PCA, TruncatedSVD
+    import joblib
+>   from sklearn.externals import joblib
+E   ImportError: cannot import name 'joblib' from 'sklearn.externals' (/local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/sklearn/externals/__init__.py)
+
+../publishablew/umap/umap/umap/temp.py:14: ImportError
+________________________ test_nn_bad_metric_sparse_data ________________________
+
+sparse_nn_data = <Compressed Sparse Row sparse matrix of dtype 'float64'
+	with 25000 stored elements and shape (1000, 50)>
+
+    def test_nn_bad_metric_sparse_data(sparse_nn_data):
+        with pytest.raises(ValueError):
+>           nearest_neighbors(
+                sparse_nn_data,
+                10,
+                "seuclidean",
+                {},
+                False,
+                np.random,
+            )
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/umap/umap/umap/umap_.py:169: in nearest_neighbors
+    from .temp import nearest_neighbors
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import locale
+    from warnings import warn
+    import time
+    from scipy.optimize import curve_fit
+    from sklearn.base import BaseEstimator, ClassNamePrefixFeaturesOutMixin
+    from sklearn.utils import check_array, check_random_state
+    from sklearn.utils.validation import check_is_fitted
+    from sklearn.metrics import pairwise_distances
+    from sklearn.preprocessing import normalize
+    from sklearn.neighbors import KDTree
+    from sklearn.decomposition import PCA, TruncatedSVD
+    import joblib
+>   from sklearn.externals import joblib
+E   ImportError: cannot import name 'joblib' from 'sklearn.externals' (/local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/sklearn/externals/__init__.py)
+
+../publishablew/umap/umap/umap/temp.py:14: ImportError
+_________________________ test_smooth_knn_dist_l1norms _________________________
+
+nn_data = array([[0.02697041, 0.6867027 , 0.2337092 , 0.9907538 , 0.42877538],
+       [0.33961787, 0.03273771, 0.88045903, 0.029... 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ]])
+
+    def test_smooth_knn_dist_l1norms(nn_data):
+>       norms = smooth_knn(nn_data)
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:53: in smooth_knn
+    knn_indices, knn_dists, _ = nearest_neighbors(
+../publishablew/umap/umap/umap/umap_.py:169: in nearest_neighbors
+    from .temp import nearest_neighbors
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import locale
+    from warnings import warn
+    import time
+    from scipy.optimize import curve_fit
+    from sklearn.base import BaseEstimator, ClassNamePrefixFeaturesOutMixin
+    from sklearn.utils import check_array, check_random_state
+    from sklearn.utils.validation import check_is_fitted
+    from sklearn.metrics import pairwise_distances
+    from sklearn.preprocessing import normalize
+    from sklearn.neighbors import KDTree
+    from sklearn.decomposition import PCA, TruncatedSVD
+    import joblib
+>   from sklearn.externals import joblib
+E   ImportError: cannot import name 'joblib' from 'sklearn.externals' (/local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/sklearn/externals/__init__.py)
+
+../publishablew/umap/umap/umap/temp.py:14: ImportError
+_________________ test_smooth_knn_dist_l1norms_w_connectivity __________________
+
+nn_data = array([[0.02697041, 0.6867027 , 0.2337092 , 0.9907538 , 0.42877538],
+       [0.33961787, 0.03273771, 0.88045903, 0.029... 0.        , 0.        , 0.        , 0.        ],
+       [0.        , 0.        , 0.        , 0.        , 0.        ]])
+
+    def test_smooth_knn_dist_l1norms_w_connectivity(nn_data):
+>       norms = smooth_knn(nn_data, local_connectivity=1.75)
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/umap/umap/umap/tests/test_umap_nn.py:53: in smooth_knn
+    knn_indices, knn_dists, _ = nearest_neighbors(
+../publishablew/umap/umap/umap/umap_.py:169: in nearest_neighbors
+    from .temp import nearest_neighbors
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    from __future__ import print_function
+    import locale
+    from warnings import warn
+    import time
+    from scipy.optimize import curve_fit
+    from sklearn.base import BaseEstimator, ClassNamePrefixFeaturesOutMixin
+    from sklearn.utils import check_array, check_random_state
+    from sklearn.utils.validation import check_is_fitted
+    from sklearn.metrics import pairwise_distances
+    from sklearn.preprocessing import normalize
+    from sklearn.neighbors import KDTree
+    from sklearn.decomposition import PCA, TruncatedSVD
+    import joblib
+>   from sklearn.externals import joblib
+E   ImportError: cannot import name 'joblib' from 'sklearn.externals' (/local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/sklearn/externals/__init__.py)
+
+../publishablew/umap/umap/umap/temp.py:14: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric
+FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data
+FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms
+FAILED ../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity
+========================= 4 failed, 7 skipped in 0.21s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/umap/umap/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/umap/umap
+collecting ... collected 11 items
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_callable_metric SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity PASSED
+
+=============================== warnings summary ===============================
+umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data
+  /local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION >= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.
+    warnings.warn(problem)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 4 passed, 7 skipped, 1 warning in 20.00s ===================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/umap/umap/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/umap/umap
+collecting ... collected 11 items
+
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_nn_descent_neighbor_accuracy_low_memory SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_nn_descent_neighbor_accuracy_callable_metric SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_sparse_angular_nn_descent_neighbor_accuracy SKIPPED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms PASSED
+../publishablew/umap/umap/umap/tests/test_umap_nn.py::test_smooth_knn_dist_l1norms_w_connectivity PASSED
+
+=============================== warnings summary ===============================
+umap/tests/test_umap_nn.py::test_nn_bad_metric_sparse_data
+  /local/data0/moved_data/publishablew/umap/umap/venv/lib/python3.11/site-packages/numba/np/ufunc/parallel.py:371: NumbaWarning: The TBB threading layer requires TBB version 2021 update 6 or later i.e., TBB_INTERFACE_VERSION >= 12060. Found TBB_INTERFACE_VERSION = 12050. The TBB threading layer is disabled.
+    warnings.warn(problem)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 4 passed, 7 skipped, 1 warning in 21.57s ===================

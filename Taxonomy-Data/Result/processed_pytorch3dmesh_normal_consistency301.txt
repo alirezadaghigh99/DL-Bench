@@ -1,0 +1,211 @@
+output file:
+processed_pytorch3dmesh_normal_consistency301.json
+function:
+mesh_normal_consistency
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency', '../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple FAILED', '../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency FAILED', 'FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple', 'FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection', '../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency FAILED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple FAILED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection FAILED
+
+=================================== FAILURES ===================================
+____________ TestMeshNormalConsistency.test_mesh_normal_consistency ____________
+
+self = <tests.test_mesh_normal_consistency.TestMeshNormalConsistency testMethod=test_mesh_normal_consistency>
+
+    def test_mesh_normal_consistency(self):
+        """
+        Test Mesh Normal Consistency for random meshes.
+        """
+        meshes = TestMeshNormalConsistency.init_meshes(5, 100, 300)
+    
+        out1 = mesh_normal_consistency(meshes)
+        out2 = TestMeshNormalConsistency.mesh_normal_consistency_naive(meshes)
+    
+>       self.assertTrue(torch.allclose(out1, out2))
+E       AssertionError: False is not true
+
+../pytorch3d/tests/test_mesh_normal_consistency.py:237: AssertionError
+________ TestMeshNormalConsistency.test_mesh_normal_consistency_simple _________
+
+self = <tests.test_mesh_normal_consistency.TestMeshNormalConsistency testMethod=test_mesh_normal_consistency_simple>
+
+    def test_mesh_normal_consistency_simple(self):
+        r"""
+        Mesh 1:
+                        v3
+                        /\
+                       /  \
+                   e4 / f1 \ e3
+                     /      \
+                 v2 /___e2___\ v1
+                    \        /
+                     \      /
+                 e1   \ f0 / e0
+                       \  /
+                        \/
+                        v0
+        """
+        device = torch.device("cuda:0")
+        # mesh1 shown above
+        verts1 = torch.rand((4, 3), dtype=torch.float32, device=device)
+        faces1 = torch.tensor([[0, 1, 2], [2, 1, 3]], dtype=torch.int64, device=device)
+    
+        # mesh2 is a cuboid with 8 verts, 12 faces and 18 edges
+        verts2 = torch.tensor(
+            [
+                [0, 0, 0],
+                [0, 0, 1],
+                [0, 1, 0],
+                [0, 1, 1],
+                [1, 0, 0],
+                [1, 0, 1],
+                [1, 1, 0],
+                [1, 1, 1],
+            ],
+            dtype=torch.float32,
+            device=device,
+        )
+        faces2 = torch.tensor(
+            [
+                [0, 1, 2],
+                [1, 3, 2],  # left face: 0, 1
+                [2, 3, 6],
+                [3, 7, 6],  # bottom face: 2, 3
+                [0, 2, 6],
+                [0, 6, 4],  # front face: 4, 5
+                [0, 5, 1],
+                [0, 4, 5],  # up face: 6, 7
+                [6, 7, 5],
+                [6, 5, 4],  # right face: 8, 9
+                [1, 7, 3],
+                [1, 5, 7],  # back face: 10, 11
+            ],
+            dtype=torch.int64,
+            device=device,
+        )
+    
+        # mesh3 is like mesh1 but with another face added to e2
+        verts3 = torch.rand((5, 3), dtype=torch.float32, device=device)
+        faces3 = torch.tensor(
+            [[0, 1, 2], [2, 1, 3], [2, 1, 4]], dtype=torch.int64, device=device
+        )
+    
+        meshes = Meshes(verts=[verts1, verts2, verts3], faces=[faces1, faces2, faces3])
+    
+        # mesh1: normal consistency computation
+        n0 = (verts1[1] - verts1[2]).cross(verts1[3] - verts1[2])
+        n1 = (verts1[1] - verts1[2]).cross(verts1[0] - verts1[2])
+        loss1 = 1.0 - torch.cosine_similarity(n0.view(1, 3), -(n1.view(1, 3)))
+    
+        # mesh2: normal consistency computation
+        # In the cube mesh, 6 edges are shared with coplanar faces (loss=0),
+        # 12 edges are shared by perpendicular faces (loss=1)
+        loss2 = 12.0 / 18
+    
+        # mesh3
+        n0 = (verts3[1] - verts3[2]).cross(verts3[3] - verts3[2])
+        n1 = (verts3[1] - verts3[2]).cross(verts3[0] - verts3[2])
+        n2 = (verts3[1] - verts3[2]).cross(verts3[4] - verts3[2])
+        loss3 = (
+            3.0
+            - torch.cosine_similarity(n0.view(1, 3), -(n1.view(1, 3)))
+            - torch.cosine_similarity(n0.view(1, 3), -(n2.view(1, 3)))
+            - torch.cosine_similarity(n1.view(1, 3), -(n2.view(1, 3)))
+        )
+        loss3 /= 3.0
+    
+        loss = (loss1 + loss2 + loss3) / 3.0
+    
+        out = mesh_normal_consistency(meshes)
+    
+>       self.assertTrue(torch.allclose(out, loss))
+E       AssertionError: False is not true
+
+../pytorch3d/tests/test_mesh_normal_consistency.py:226: AssertionError
+________________ TestMeshNormalConsistency.test_no_intersection ________________
+
+self = <tests.test_mesh_normal_consistency.TestMeshNormalConsistency testMethod=test_no_intersection>
+
+    def test_no_intersection(self):
+        """
+        Test Mesh Normal Consistency for a mesh known to have no
+        intersecting faces.
+        """
+        verts = torch.rand(1, 6, 3)
+        faces = torch.arange(6).reshape(1, 2, 3)
+        meshes = Meshes(verts=verts, faces=faces)
+        out = mesh_normal_consistency(meshes)
+>       self.assertEqual(out.item(), 0)
+E       AttributeError: 'float' object has no attribute 'item'
+
+../pytorch3d/tests/test_mesh_normal_consistency.py:248: AttributeError
+=============================== warnings summary ===============================
+tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency
+  /local/data0/moved_data/pytorch3d/tests/test_mesh_normal_consistency.py:117: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    normals.append((v1 - v0).view(-1).cross((v2 - v0).view(-1)))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency
+FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple
+FAILED ../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection
+========================= 3 failed, 1 warning in 2.84s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency PASSED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple PASSED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection PASSED
+
+=============================== warnings summary ===============================
+tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency
+  /local/data0/moved_data/pytorch3d/tests/test_mesh_normal_consistency.py:117: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    normals.append((v1 - v0).view(-1).cross((v2 - v0).view(-1)))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 3 passed, 1 warning in 2.64s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 3 items
+
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency PASSED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency_simple PASSED
+../pytorch3d/tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_no_intersection PASSED
+
+=============================== warnings summary ===============================
+tests/test_mesh_normal_consistency.py::TestMeshNormalConsistency::test_mesh_normal_consistency
+  /local/data0/moved_data/pytorch3d/tests/test_mesh_normal_consistency.py:117: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    normals.append((v1 - v0).view(-1).cross((v2 - v0).view(-1)))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 3 passed, 1 warning in 2.62s =========================

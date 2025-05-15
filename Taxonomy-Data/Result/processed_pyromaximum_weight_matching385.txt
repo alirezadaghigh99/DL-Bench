@@ -1,0 +1,399 @@
+output file:
+processed_pyromaximum_weight_matching385.json
+function:
+maximum_weight_matching
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32]', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64]', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64]', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32]', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64]', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32]', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64]', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64]', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32] FAILED', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32]', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32] FAILED', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64] FAILED', 'FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32]', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32] FAILED', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64] FAILED', '../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 10 items
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32] FAILED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64] FAILED
+
+=================================== FAILURES ===================================
+_______________________ test_mode_phylo[2-torch.float32] _______________________
+
+num_leaves = 2, dtype = torch.float32
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([0]), b = tensor([0, 0]), prec = 1e-05
+msg = 'tensor([0]) vs tensor([0, 0])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([0]) vs tensor([0, 0])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[2-torch.float64] _______________________
+
+num_leaves = 2, dtype = torch.float64
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([0]), b = tensor([0, 0]), prec = 1e-05
+msg = 'tensor([0]) vs tensor([0, 0])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([0]) vs tensor([0, 0])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[3-torch.float32] _______________________
+
+num_leaves = 3, dtype = torch.float32
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([1, 0]), b = tensor([1, 0, 1, 0]), prec = 1e-05
+msg = 'tensor([1, 0]) vs tensor([1, 0, 1, 0])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([1, 0]) vs tensor([1, 0, 1, 0])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[3-torch.float64] _______________________
+
+num_leaves = 3, dtype = torch.float64
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([1, 0]), b = tensor([1, 1, 0, 0]), prec = 1e-05
+msg = 'tensor([1, 0]) vs tensor([1, 1, 0, 0])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([1, 0]) vs tensor([1, 1, 0, 0])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[4-torch.float32] _______________________
+
+num_leaves = 4, dtype = torch.float32
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([2, 0, 1]), b = tensor([0, 1, 2, 2, 0, 1]), prec = 1e-05
+msg = 'tensor([2, 0, 1]) vs tensor([0, 1, 2, 2, 0, 1])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([2, 0, 1]) vs tensor([0, 1, 2, 2, 0, 1])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[4-torch.float64] _______________________
+
+num_leaves = 4, dtype = torch.float64
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([2, 1, 0]), b = tensor([2, 2, 0, 1, 0, 1]), prec = 1e-05
+msg = 'tensor([2, 1, 0]) vs tensor([2, 2, 0, 1, 0, 1])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([2, 1, 0]) vs tensor([2, 2, 0, 1, 0, 1])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[5-torch.float32] _______________________
+
+num_leaves = 5, dtype = torch.float32
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([3, 2, 1, 0]), b = tensor([3, 3, 1, 2, 1, 0, 0, 2]), prec = 1e-05
+msg = 'tensor([3, 2, 1, 0]) vs tensor([3, 3, 1, 2, 1, 0, 0, 2])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([3, 2, 1, 0]) vs tensor([3, 3, 1, 2, 1, 0, 0, 2])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[5-torch.float64] _______________________
+
+num_leaves = 5, dtype = torch.float64
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([2, 3, 0, 1]), b = tensor([3, 2, 1, 3, 0, 0, 1, 2]), prec = 1e-05
+msg = 'tensor([2, 3, 0, 1]) vs tensor([3, 2, 1, 3, 0, 0, 1, 2])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([2, 3, 0, 1]) vs tensor([3, 2, 1, 3, 0, 0, 1, 2])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[6-torch.float32] _______________________
+
+num_leaves = 6, dtype = torch.float32
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([3, 4, 2, 1, 0]), b = tensor([3, 4, 2, 2, 1, 4, 0, 1, 0, 3])
+prec = 1e-05
+msg = 'tensor([3, 4, 2, 1, 0]) vs tensor([3, 4, 2, 2, 1, 4, 0, 1, 0, 3])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([3, 4, 2, 1, 0]) vs tensor([3, 4, 2, 2, 1, 4, 0, 1, 0, 3])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+_______________________ test_mode_phylo[6-torch.float64] _______________________
+
+num_leaves = 6, dtype = torch.float64
+
+    @pytest.mark.parametrize("dtype", [torch.float, torch.double], ids=str)
+    @pytest.mark.parametrize("num_leaves", [2, 3, 4, 5, 6])
+    def test_mode_phylo(num_leaves, dtype):
+        logits, times = random_phylo_logits(num_leaves, dtype)
+        d = dist.OneTwoMatching(logits)
+        values = d.enumerate_support()
+        i = d.log_prob(values).max(0).indices.item()
+        expected = values[i]
+        actual = d.mode()
+>       assert_equal(actual, expected)
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyro/pyro/tests/common.py:248: in assert_equal
+    return assert_close(actual, expected, atol=prec, msg=msg)
+../publishablew/pyro/pyro/tests/common.py:218: in assert_close
+    assert_tensors_equal(actual, expected, prec, msg)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([4, 1, 3, 0, 2]), b = tensor([3, 4, 1, 2, 0, 4, 0, 1, 2, 3])
+prec = 1e-05
+msg = 'tensor([4, 1, 3, 0, 2]) vs tensor([3, 4, 1, 2, 0, 4, 0, 1, 2, 3])'
+
+    def assert_tensors_equal(a, b, prec=0.0, msg=""):
+>       assert a.size() == b.size(), msg
+E       AssertionError: tensor([4, 1, 3, 0, 2]) vs tensor([3, 4, 1, 2, 0, 4, 0, 1, 2, 3])
+
+../publishablew/pyro/pyro/tests/common.py:147: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32]
+FAILED ../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64]
+============================== 10 failed in 0.47s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 10 items
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64] PASSED
+
+============================== 10 passed in 0.21s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyro/pyro/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyro/pyro
+configfile: setup.cfg
+collecting ... collected 10 items
+
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[2-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[3-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[4-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[5-torch.float64] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float32] PASSED
+../publishablew/pyro/pyro/tests/distributions/test_one_two_matching.py::test_mode_phylo[6-torch.float64] PASSED
+
+============================== 10 passed in 0.34s ==============================

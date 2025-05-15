@@ -1,0 +1,736 @@
+output file:
+processed_inferencecreate_tiles14.json
+function:
+create_tiles
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images FAILED', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid FAILED', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid FAILED', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image FAILED', 'FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images FAILED', '../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:40:55] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 10 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_generate_color_image PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors FAILED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid_to_small_to_fit_images PASSED
+
+=================================== FAILURES ===================================
+_______________________ test_create_tiles_with_one_image _______________________
+
+one_image = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+     ...[ 70, 146, 142],
+        ...,
+        [ 68, 146, 135],
+        [ 44, 122, 111],
+        [ 37, 115, 104]]], dtype=uint8)
+single_image_tile = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+     ...[  0,   0,   0],
+        ...,
+        [  0,   0,   0],
+        [  0,   0,   0],
+        [  0,   0,   0]]], dtype=uint8)
+
+    def test_create_tiles_with_one_image(
+        one_image: np.ndarray, single_image_tile: np.ndarray
+    ) -> None:
+        # when
+        result = create_tiles(images=[one_image])
+    
+        # then
+>       assert np.allclose(result, single_image_tile, atol=5.0)
+E       assert False
+E        +  where False = <function allclose at 0x78abc195b9f0>(array([[[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       [[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       [[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       ...,\n\n       [[ 66, 140, 136],\n        [ 59, 135, 131],\n        [ 55, 130, 128],\n        ...,\n        [ 69, 145, 134],\n        [ 70, 146, 135],\n        [ 47, 125, 114]],\n\n       [[ 65, 141, 137],\n        [ 62, 138, 134],\n        [ 63, 138, 136],\n        ...,\n        [ 28, 104,  93],\n        [ 29, 107,  96],\n        [ 42, 120, 109]],\n\n       [[ 63, 140, 136],\n        [ 62, 139, 135],\n        [ 70, 146, 142],\n        ...,\n        [ 68, 146, 135],\n        [ 44, 122, 111],\n        [ 37, 115, 104]]], dtype=uint8), array([[[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       [[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       [[235, 152,  97],\n        [235, 152,  97],\n        [236, 153,  98],\n        ...,\n        [253, 223, 188],\n        [253, 224, 187],\n        [253, 224, 187]],\n\n       ...,\n\n       [[ 65, 141, 137],\n        [ 62, 138, 134],\n        [ 63, 138, 136],\n        ...,\n        [ 28, 104,  93],\n        [ 29, 107,  96],\n        [ 42, 120, 109]],\n\n       [[ 63, 140, 136],\n        [ 62, 139, 135],\n        [ 70, 146, 142],\n        ...,\n        [ 68, 146, 135],\n        [ 44, 122, 111],\n        [ 37, 115, 104]],\n\n       [[  0,   0,   0],\n        [  0,   0,   0],\n        [  0,   0,   0],\n        ...,\n        [  0,   0,   0],\n        [  0,   0,   0],\n        [  0,   0,   0]]], dtype=uint8), atol=5.0)
+E        +    where <function allclose at 0x78abc195b9f0> = np.allclose
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:24: AssertionError
+______________ test_create_tiles_with_one_image_and_enforced_grid ______________
+
+one_image = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+     ...[ 70, 146, 142],
+        ...,
+        [ 68, 146, 135],
+        [ 44, 122, 111],
+        [ 37, 115, 104]]], dtype=uint8)
+single_image_tile_enforced_grid = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [  0,   0,   0],
+     ...[  0,   0,   0],
+        ...,
+        [  0,   0,   0],
+        [  0,   0,   0],
+        [  0,   0,   0]]], dtype=uint8)
+
+    def test_create_tiles_with_one_image_and_enforced_grid(
+        one_image: np.ndarray, single_image_tile_enforced_grid: np.ndarray
+    ) -> None:
+        # when
+>       result = create_tiles(images=[one_image], grid_size=(None, 3))
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/utils/drawing.py:12: in create_tiles
+    return create_tiles(images, grid_size, single_tile_size, tile_scaling, tile_padding_color, tile_margin, tile_margin_color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 70, 146, 142],
+        ...,
+        [ 68, 146, 135],
+        [ 44, 122, 111],
+        [ 37, 115, 104]]], dtype=uint8)]
+grid_size = (None, 3), tile_size = None, scaling_method = 'avg'
+padding_color = (0, 0, 0), tile_margin = 15, margin_color = (255, 255, 255)
+
+    def create_tiles(images, grid_size=None, tile_size=None, scaling_method='min', padding_color=(0, 0, 0), tile_margin=0, margin_color=(255, 255, 255)):
+        if not images:
+            raise ValueError('The list of images is empty.')
+        num_images = len(images)
+        if grid_size is None:
+            grid_rows = grid_cols = int(np.ceil(np.sqrt(num_images)))
+        else:
+            grid_rows, grid_cols = grid_size
+>       if num_images > grid_rows * grid_cols:
+E       TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
+
+../publishablew/inference/inference/inference/core/utils/temp.py:19: TypeError
+______________________ test_create_tiles_with_two_images _______________________
+
+two_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 95,  81,  62],
+        ...,
+        [170, 164, 165],
+        [169, 163, 164],
+        [170, 164, 165]]], dtype=uint8)]
+two_images_tile = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [149, 116,  71],
+     ...[  0,   0,   0],
+        ...,
+        [  0,   0,   0],
+        [  0,   0,   0],
+        [  0,   0,   0]]], dtype=uint8)
+
+    def test_create_tiles_with_two_images(
+        two_images: List[np.ndarray], two_images_tile: np.ndarray
+    ) -> None:
+        # when
+        result = create_tiles(images=two_images)
+    
+        # then
+>       assert np.allclose(result, two_images_tile, atol=5.0)
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2241: in allclose
+    res = all(isclose(a, b, rtol=rtol, atol=atol, equal_nan=equal_nan))
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2351: in isclose
+    return within_tol(x, y, atol, rtol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [149, 116,  71],
+     ...[255, 255, 255],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)
+y = array([[[        235,         152,          97],
+        [        235,         152,          97],
+        [        236...   0,           0],
+        [          0,           0,           0],
+        [          0,           0,           0]]])
+atol = 5.0, rtol = 1e-05
+
+    def within_tol(x, y, atol, rtol):
+        with errstate(invalid='ignore'), _no_nep50_warning():
+>           return less_equal(abs(x-y), atol + rtol * abs(y))
+E           ValueError: operands could not be broadcast together with shapes (869,1295,3) (427,1295,3)
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2332: ValueError
+_____________________ test_create_tiles_with_three_images ______________________
+
+three_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ...181, 134, 102],
+        ...,
+        [ 85,  76,  73],
+        [ 85,  76,  73],
+        [ 85,  76,  73]]], dtype=uint8)]
+three_images_tile = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [202, 170, 157],
+     ...[  0,   0,   0],
+        ...,
+        [  0,   0,   0],
+        [  0,   0,   0],
+        [  0,   0,   0]]], dtype=uint8)
+
+    def test_create_tiles_with_three_images(
+        three_images: List[np.ndarray], three_images_tile: np.ndarray
+    ) -> None:
+        # when
+        result = create_tiles(images=three_images)
+    
+        # then
+>       assert np.allclose(result, three_images_tile, atol=5.0)
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2241: in allclose
+    res = all(isclose(a, b, rtol=rtol, atol=atol, equal_nan=equal_nan))
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2351: in isclose
+    return within_tol(x, y, atol, rtol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [149, 116,  71],
+     ...[181, 134, 102],
+        ...,
+        [255, 255, 255],
+        [255, 255, 255],
+        [255, 255, 255]]], dtype=uint8)
+y = array([[[        235,         152,          97],
+        [        235,         152,          97],
+        [        236...   0,           0],
+        [          0,           0,           0],
+        [          0,           0,           0]]])
+atol = 5.0, rtol = 1e-05
+
+    def within_tol(x, y, atol, rtol):
+        with errstate(invalid='ignore'), _no_nep50_warning():
+>           return less_equal(abs(x-y), atol + rtol * abs(y))
+E           ValueError: operands could not be broadcast together with shapes (869,1295,3) (427,1950,3)
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/numpy/core/numeric.py:2332: ValueError
+______________________ test_create_tiles_with_four_images ______________________
+
+four_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ...103,  72,  47],
+        ...,
+        [ 26,  69, 102],
+        [ 30,  68, 102],
+        [ 28,  67,  99]]], dtype=uint8)]
+four_images_tile = array([[[  0,   0,   0],
+        [235, 152,  97],
+        [235, 152,  97],
+        ...,
+        [148, 115,  70],
+     ...[186, 138, 104],
+        ...,
+        [  0,   0,   0],
+        [  0,   0,   0],
+        [  0,   0,   0]]], dtype=uint8)
+
+    def test_create_tiles_with_four_images(
+        four_images: List[np.ndarray], four_images_tile: np.ndarray
+    ) -> None:
+        # when
+>       result = create_tiles(images=four_images)
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/utils/drawing.py:12: in create_tiles
+    return create_tiles(images, grid_size, single_tile_size, tile_scaling, tile_padding_color, tile_margin, tile_margin_color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ...103,  72,  47],
+        ...,
+        [ 26,  69, 102],
+        [ 30,  68, 102],
+        [ 28,  67,  99]]], dtype=uint8)]
+grid_size = None, tile_size = None, scaling_method = 'avg'
+padding_color = (0, 0, 0), tile_margin = 15, margin_color = (255, 255, 255)
+
+    def create_tiles(images, grid_size=None, tile_size=None, scaling_method='min', padding_color=(0, 0, 0), tile_margin=0, margin_color=(255, 255, 255)):
+        if not images:
+            raise ValueError('The list of images is empty.')
+        num_images = len(images)
+        if grid_size is None:
+            grid_rows = grid_cols = int(np.ceil(np.sqrt(num_images)))
+        else:
+            grid_rows, grid_cols = grid_size
+        if num_images > grid_rows * grid_cols:
+            raise ValueError('The number of images exceeds the grid size.')
+        if tile_size is None:
+            tile_height, tile_width = images[0].shape[:2]
+        else:
+            tile_height, tile_width = tile_size
+        resized_images = []
+        for img in images:
+            if scaling_method == 'min':
+                scale_factor = min(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'max':
+                scale_factor = max(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'avg':
+                scale_factor = (tile_width / img.shape[1] + tile_height / img.shape[0]) / 2
+            else:
+                raise ValueError("Invalid scaling method. Choose 'min', 'max', or 'avg'.")
+            new_size = (int(img.shape[1] * scale_factor), int(img.shape[0] * scale_factor))
+            resized_img = cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+            tile_img = np.full((tile_height, tile_width, 3), padding_color, dtype=np.uint8)
+            y_offset = (tile_height - resized_img.shape[0]) // 2
+            x_offset = (tile_width - resized_img.shape[1]) // 2
+>           tile_img[y_offset:y_offset + resized_img.shape[0], x_offset:x_offset + resized_img.shape[1]] = resized_img
+E           ValueError: could not broadcast input array from shape (423,646,3) into shape (423,3,3)
+
+../publishablew/inference/inference/inference/core/utils/temp.py:40: ValueError
+______________________ test_create_tiles_with_all_images _______________________
+
+all_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+all_images_tile = array([[[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0...     [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]], dtype=uint8)
+
+    def test_create_tiles_with_all_images(
+        all_images: List[np.ndarray], all_images_tile: np.ndarray
+    ) -> None:
+        # when
+>       result = create_tiles(images=all_images)
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/utils/drawing.py:12: in create_tiles
+    return create_tiles(images, grid_size, single_tile_size, tile_scaling, tile_padding_color, tile_margin, tile_margin_color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+grid_size = None, tile_size = None, scaling_method = 'avg'
+padding_color = (0, 0, 0), tile_margin = 15, margin_color = (255, 255, 255)
+
+    def create_tiles(images, grid_size=None, tile_size=None, scaling_method='min', padding_color=(0, 0, 0), tile_margin=0, margin_color=(255, 255, 255)):
+        if not images:
+            raise ValueError('The list of images is empty.')
+        num_images = len(images)
+        if grid_size is None:
+            grid_rows = grid_cols = int(np.ceil(np.sqrt(num_images)))
+        else:
+            grid_rows, grid_cols = grid_size
+        if num_images > grid_rows * grid_cols:
+            raise ValueError('The number of images exceeds the grid size.')
+        if tile_size is None:
+            tile_height, tile_width = images[0].shape[:2]
+        else:
+            tile_height, tile_width = tile_size
+        resized_images = []
+        for img in images:
+            if scaling_method == 'min':
+                scale_factor = min(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'max':
+                scale_factor = max(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'avg':
+                scale_factor = (tile_width / img.shape[1] + tile_height / img.shape[0]) / 2
+            else:
+                raise ValueError("Invalid scaling method. Choose 'min', 'max', or 'avg'.")
+            new_size = (int(img.shape[1] * scale_factor), int(img.shape[0] * scale_factor))
+            resized_img = cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+            tile_img = np.full((tile_height, tile_width, 3), padding_color, dtype=np.uint8)
+            y_offset = (tile_height - resized_img.shape[0]) // 2
+            x_offset = (tile_width - resized_img.shape[1]) // 2
+>           tile_img[y_offset:y_offset + resized_img.shape[0], x_offset:x_offset + resized_img.shape[1]] = resized_img
+E           ValueError: could not broadcast input array from shape (423,646,3) into shape (423,3,3)
+
+../publishablew/inference/inference/inference/core/utils/temp.py:40: ValueError
+______________ test_create_tiles_with_all_images_and_custom_grid _______________
+
+all_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+all_images_tile_and_custom_grid = array([[[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0...     [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]], dtype=uint8)
+
+    def test_create_tiles_with_all_images_and_custom_grid(
+        all_images: List[np.ndarray], all_images_tile_and_custom_grid: np.ndarray
+    ) -> None:
+        # when
+>       result = create_tiles(images=all_images, grid_size=(3, 3))
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/utils/drawing.py:12: in create_tiles
+    return create_tiles(images, grid_size, single_tile_size, tile_scaling, tile_padding_color, tile_margin, tile_margin_color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+grid_size = (3, 3), tile_size = None, scaling_method = 'avg'
+padding_color = (0, 0, 0), tile_margin = 15, margin_color = (255, 255, 255)
+
+    def create_tiles(images, grid_size=None, tile_size=None, scaling_method='min', padding_color=(0, 0, 0), tile_margin=0, margin_color=(255, 255, 255)):
+        if not images:
+            raise ValueError('The list of images is empty.')
+        num_images = len(images)
+        if grid_size is None:
+            grid_rows = grid_cols = int(np.ceil(np.sqrt(num_images)))
+        else:
+            grid_rows, grid_cols = grid_size
+        if num_images > grid_rows * grid_cols:
+            raise ValueError('The number of images exceeds the grid size.')
+        if tile_size is None:
+            tile_height, tile_width = images[0].shape[:2]
+        else:
+            tile_height, tile_width = tile_size
+        resized_images = []
+        for img in images:
+            if scaling_method == 'min':
+                scale_factor = min(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'max':
+                scale_factor = max(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'avg':
+                scale_factor = (tile_width / img.shape[1] + tile_height / img.shape[0]) / 2
+            else:
+                raise ValueError("Invalid scaling method. Choose 'min', 'max', or 'avg'.")
+            new_size = (int(img.shape[1] * scale_factor), int(img.shape[0] * scale_factor))
+            resized_img = cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+            tile_img = np.full((tile_height, tile_width, 3), padding_color, dtype=np.uint8)
+            y_offset = (tile_height - resized_img.shape[0]) // 2
+            x_offset = (tile_width - resized_img.shape[1]) // 2
+>           tile_img[y_offset:y_offset + resized_img.shape[0], x_offset:x_offset + resized_img.shape[1]] = resized_img
+E           ValueError: could not broadcast input array from shape (423,646,3) into shape (423,3,3)
+
+../publishablew/inference/inference/inference/core/utils/temp.py:40: ValueError
+_____________ test_create_tiles_with_all_images_and_custom_colors ______________
+
+all_images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+all_images_tile_and_custom_colors = array([[[224, 224, 224],
+        [224, 224, 224],
+        [224, 224, 224],
+        ...,
+        [224, 224, 224],
+     ...[224, 224, 224],
+        ...,
+        [224, 224, 224],
+        [224, 224, 224],
+        [224, 224, 224]]], dtype=uint8)
+
+    def test_create_tiles_with_all_images_and_custom_colors(
+        all_images: List[np.ndarray], all_images_tile_and_custom_colors: np.ndarray
+    ) -> None:
+        # when
+>       result = create_tiles(
+            images=all_images,
+            tile_margin_color=(127, 127, 127),
+            tile_padding_color=(224, 224, 224),
+        )
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/inference/inference/inference/core/utils/drawing.py:12: in create_tiles
+    return create_tiles(images, grid_size, single_tile_size, tile_scaling, tile_padding_color, tile_margin, tile_margin_color)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+images = [array([[[235, 152,  97],
+        [235, 152,  97],
+        [236, 153,  98],
+        ...,
+        [253, 223, 188],
+    ... 15,  20,  29],
+        ...,
+        [  5,   5,   5],
+        [  5,   5,   5],
+        [  5,   5,   5]]], dtype=uint8)]
+grid_size = None, tile_size = None, scaling_method = 'avg'
+padding_color = (224, 224, 224), tile_margin = 15
+margin_color = (127, 127, 127)
+
+    def create_tiles(images, grid_size=None, tile_size=None, scaling_method='min', padding_color=(0, 0, 0), tile_margin=0, margin_color=(255, 255, 255)):
+        if not images:
+            raise ValueError('The list of images is empty.')
+        num_images = len(images)
+        if grid_size is None:
+            grid_rows = grid_cols = int(np.ceil(np.sqrt(num_images)))
+        else:
+            grid_rows, grid_cols = grid_size
+        if num_images > grid_rows * grid_cols:
+            raise ValueError('The number of images exceeds the grid size.')
+        if tile_size is None:
+            tile_height, tile_width = images[0].shape[:2]
+        else:
+            tile_height, tile_width = tile_size
+        resized_images = []
+        for img in images:
+            if scaling_method == 'min':
+                scale_factor = min(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'max':
+                scale_factor = max(tile_width / img.shape[1], tile_height / img.shape[0])
+            elif scaling_method == 'avg':
+                scale_factor = (tile_width / img.shape[1] + tile_height / img.shape[0]) / 2
+            else:
+                raise ValueError("Invalid scaling method. Choose 'min', 'max', or 'avg'.")
+            new_size = (int(img.shape[1] * scale_factor), int(img.shape[0] * scale_factor))
+            resized_img = cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+            tile_img = np.full((tile_height, tile_width, 3), padding_color, dtype=np.uint8)
+            y_offset = (tile_height - resized_img.shape[0]) // 2
+            x_offset = (tile_width - resized_img.shape[1]) // 2
+>           tile_img[y_offset:y_offset + resized_img.shape[0], x_offset:x_offset + resized_img.shape[1]] = resized_img
+E           ValueError: could not broadcast input array from shape (423,646,3) into shape (423,3,3)
+
+../publishablew/inference/inference/inference/core/utils/temp.py:40: ValueError
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid
+FAILED ../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors
+=================== 8 failed, 2 passed, 13 warnings in 4.28s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:41:00] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 10 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_generate_color_image PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid_to_small_to_fit_images PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 13 warnings in 4.38s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/inference/inference/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/inference/inference
+configfile: pytest.ini
+plugins: anyio-4.8.0, requests-mock-1.11.0, timeout-2.3.1, retry-1.6.3, asyncio-0.21.1
+asyncio: mode=Mode.STRICT
+collecting ... [01/16/25 20:40:49] WARNING  Your inference package version 0.31.1 is out of date! Please upgrade to version 0.33.0 of inference for the latest features and bug fixes by running `pip install --upgrade inference`.    __init__.py:41
+collected 10 items
+
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_generate_color_image PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_one_image_and_enforced_grid PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_two_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_three_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_four_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_colors PASSED
+../publishablew/inference/inference/tests/inference/unit_tests/core/utils/test_drawing.py::test_create_tiles_with_all_images_and_custom_grid_to_small_to_fit_images PASSED
+
+=============================== warnings summary ===============================
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'example'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/fields.py:1042
+  PydanticDeprecatedSince20: Using extra keyword arguments on `Field` is deprecated and will be removed. Use `json_schema_extra` instead. (Extra keys: 'field'). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/starlette/formparsers.py:12
+  PendingDeprecationWarning: Please use `import python_multipart` instead.
+
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1137
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1150
+../publishablew/inference/inference/inference/core/workflows/execution_engine/entities/types.py:1166
+  PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/inference/core/entities/requests/clip.py:29
+../publishablew/inference/inference/inference/core/entities/requests/gaze.py:40
+../publishablew/inference/inference/inference/core/entities/requests/cogvlm.py:41
+../publishablew/inference/inference/inference/core/entities/requests/trocr.py:25
+  PydanticDeprecatedSince20: Pydantic V1 style `@validator` validators are deprecated. You should migrate to Pydantic V2 style `@field_validator` validators, see the migration guide for more details. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/pydantic/deprecated/class_validators.py:121
+  PydanticDeprecatedSince20: `allow_reuse` is deprecated and will be ignored; it should no longer be necessary. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.10/migration/
+
+../publishablew/inference/inference/venv/lib/python3.11/site-packages/timm/models/layers/__init__.py:48
+  FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 10 passed, 13 warnings in 4.86s ========================

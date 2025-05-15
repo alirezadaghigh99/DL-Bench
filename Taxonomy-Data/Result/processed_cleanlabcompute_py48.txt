@@ -1,0 +1,235 @@
+output file:
+processed_cleanlabcompute_py48.json
+function:
+compute_py
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err', '../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning', '../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py FAILED', '../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err FAILED', '../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error', '../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 10 items
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_ps_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_nm PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py FAILED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning FAILED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err FAILED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps FAILED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error FAILED
+
+=================================== FAILURES ===================================
+________________________________ test_latent_py ________________________________
+
+    def test_latent_py():
+        ps, py, inv = get_latent_py_ps_inv()
+>       py2 = latent_algebra.compute_py(ps, nm, inv)
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ps = array([0.33333333, 0.16666667, 0.5       ])
+noise_matrix = array([[1. , 0. , 0.2],
+       [0. , 0.7, 0.2],
+       [0. , 0.3, 0.6]])
+inverse_noise_matrix = array([[5.0000000e-01, 0.0000000e+00, 0.0000000e+00],
+       [0.0000000e+00, 4.2003982e-06, 5.9999964e-07],
+       [5.0000000e-01, 9.9999580e-01, 9.9999940e-01]])
+
+    def compute_py(ps, noise_matrix, inverse_noise_matrix, *, py_method='cnt', true_labels_class_counts=None) -> np.ndarray:
+        from .temp import compute_py
+>       return compute_py(ps, noise_matrix, inverse_noise_matrix)
+E       TypeError: compute_py() missing 2 required positional arguments: 'py_method' and 'true_labels_class_counts'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/latent_algebra.py:151: TypeError
+____________________________ test_latent_py_warning ____________________________
+
+    def test_latent_py_warning():
+        ps, py, inv = get_latent_py_ps_inv()
+        with pytest.raises(TypeError) as e:
+            with pytest.warns(UserWarning) as w:
+>               py2 = latent_algebra.compute_py(
+                    ps=np.array([[[0.1, 0.3, 0.6]]]),
+                    noise_matrix=nm,
+                    inverse_noise_matrix=inv,
+                )
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ps = array([[[0.1, 0.3, 0.6]]])
+noise_matrix = array([[1. , 0. , 0.2],
+       [0. , 0.7, 0.2],
+       [0. , 0.3, 0.6]])
+inverse_noise_matrix = array([[5.0000000e-01, 0.0000000e+00, 0.0000000e+00],
+       [0.0000000e+00, 4.2003982e-06, 5.9999964e-07],
+       [5.0000000e-01, 9.9999580e-01, 9.9999940e-01]])
+
+    def compute_py(ps, noise_matrix, inverse_noise_matrix, *, py_method='cnt', true_labels_class_counts=None) -> np.ndarray:
+        from .temp import compute_py
+>       return compute_py(ps, noise_matrix, inverse_noise_matrix)
+E       TypeError: compute_py() missing 2 required positional arguments: 'py_method' and 'true_labels_class_counts'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/latent_algebra.py:151: TypeError
+
+During handling of the above exception, another exception occurred:
+
+    def test_latent_py_warning():
+        ps, py, inv = get_latent_py_ps_inv()
+        with pytest.raises(TypeError) as e:
+>           with pytest.warns(UserWarning) as w:
+E           Failed: DID NOT WARN. No warnings of type (<class 'UserWarning'>,) were emitted.
+E            Emitted warnings: [].
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:59: Failed
+_____________________________ test_compute_py_err ______________________________
+
+    def test_compute_py_err():
+        ps, py, inv = get_latent_py_ps_inv()
+        try:
+>           py = latent_algebra.compute_py(
+                ps=ps,
+                noise_matrix=nm,
+                inverse_noise_matrix=inv,
+                py_method="marginal_ps",
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:75: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ps = array([0.33333333, 0.16666667, 0.5       ])
+noise_matrix = array([[1. , 0. , 0.2],
+       [0. , 0.7, 0.2],
+       [0. , 0.3, 0.6]])
+inverse_noise_matrix = array([[5.0000000e-01, 0.0000000e+00, 0.0000000e+00],
+       [0.0000000e+00, 4.2003982e-06, 5.9999964e-07],
+       [5.0000000e-01, 9.9999580e-01, 9.9999940e-01]])
+
+    def compute_py(ps, noise_matrix, inverse_noise_matrix, *, py_method='cnt', true_labels_class_counts=None) -> np.ndarray:
+        from .temp import compute_py
+>       return compute_py(ps, noise_matrix, inverse_noise_matrix)
+E       TypeError: compute_py() missing 2 required positional arguments: 'py_method' and 'true_labels_class_counts'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/latent_algebra.py:151: TypeError
+_________________________ test_compute_py_marginal_ps __________________________
+
+    def test_compute_py_marginal_ps():
+        ps, py, inv = get_latent_py_ps_inv()
+        cj = nm * ps * len(s)
+        true_labels_class_counts = cj.sum(axis=0)
+>       py2 = latent_algebra.compute_py(
+            ps=ps,
+            noise_matrix=nm,
+            inverse_noise_matrix=inv,
+            py_method="marginal_ps",
+            true_labels_class_counts=true_labels_class_counts,
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ps = array([0.33333333, 0.16666667, 0.5       ])
+noise_matrix = array([[1. , 0. , 0.2],
+       [0. , 0.7, 0.2],
+       [0. , 0.3, 0.6]])
+inverse_noise_matrix = array([[5.0000000e-01, 0.0000000e+00, 0.0000000e+00],
+       [0.0000000e+00, 4.2003982e-06, 5.9999964e-07],
+       [5.0000000e-01, 9.9999580e-01, 9.9999940e-01]])
+
+    def compute_py(ps, noise_matrix, inverse_noise_matrix, *, py_method='cnt', true_labels_class_counts=None) -> np.ndarray:
+        from .temp import compute_py
+>       return compute_py(ps, noise_matrix, inverse_noise_matrix)
+E       TypeError: compute_py() missing 2 required positional arguments: 'py_method' and 'true_labels_class_counts'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/latent_algebra.py:151: TypeError
+_____ test_compute_py_method_marginal_true_labels_class_counts_none_error ______
+
+    def test_compute_py_method_marginal_true_labels_class_counts_none_error():
+        ps, py, inv = get_latent_py_ps_inv()
+        with pytest.raises(ValueError) as e:
+>           _ = latent_algebra.compute_py(
+                ps=ps,
+                noise_matrix=nm,
+                inverse_noise_matrix=inv,
+                py_method="marginal",
+                true_labels_class_counts=None,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py:135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ps = array([0.33333333, 0.16666667, 0.5       ])
+noise_matrix = array([[1. , 0. , 0.2],
+       [0. , 0.7, 0.2],
+       [0. , 0.3, 0.6]])
+inverse_noise_matrix = array([[5.0000000e-01, 0.0000000e+00, 0.0000000e+00],
+       [0.0000000e+00, 4.2003982e-06, 5.9999964e-07],
+       [5.0000000e-01, 9.9999580e-01, 9.9999940e-01]])
+
+    def compute_py(ps, noise_matrix, inverse_noise_matrix, *, py_method='cnt', true_labels_class_counts=None) -> np.ndarray:
+        from .temp import compute_py
+>       return compute_py(ps, noise_matrix, inverse_noise_matrix)
+E       TypeError: compute_py() missing 2 required positional arguments: 'py_method' and 'true_labels_class_counts'
+
+../publishablew/cleanlab/cleanlab/cleanlab/internal/latent_algebra.py:151: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error
+========================= 5 failed, 5 passed in 0.65s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 10 items
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_ps_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_nm PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error PASSED
+
+============================== 10 passed in 0.53s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 10 items
+
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_ps_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_inv PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_nm PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_latent_py_warning PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_err PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_marginal_ps PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_pyx_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_latent_algebra.py::test_compute_py_method_marginal_true_labels_class_counts_none_error PASSED
+
+============================== 10 passed in 0.54s ==============================

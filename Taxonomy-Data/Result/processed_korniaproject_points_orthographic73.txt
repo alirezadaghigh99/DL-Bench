@@ -1,0 +1,210 @@
+output file:
+processed_korniaproject_points_orthographic73.json
+function:
+project_points_orthographic
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'inductor', 'onnxrt', 'openxla', 'jit', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] FAILED
+
+=================================== FAILURES ===================================
+_______________ TestProjectionOrthographic.test_jit[cpu-float32] _______________
+
+self = <test_projections.TestProjectionOrthographic object at 0x7b5f280ff700>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_jit(self, device, dtype) -> None:
+>       self._test_jit_project(device, dtype)
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:225: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py:211: in _test_jit_project
+    op_script = torch.jit.script(project_points_orthographic)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <torch.jit.frontend.StmtBuilder object at 0x7b5ff8ba7d30>
+ctx = <torch._sources.SourceContext object at 0x7b5f1df32b60>
+node = <ast.ImportFrom object at 0x7b5f1df49c90>
+
+    def __call__(self, ctx, node):
+        method = getattr(self, "build_" + node.__class__.__name__, None)
+        if method is None:
+>           raise UnsupportedNodeError(ctx, node)
+E           torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E             File "/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/camera/projection_orthographic.py", line 7
+E           def project_points_orthographic(points_in_camera: Tensor) -> Tensor:
+E               from .temp import project_points_orthographic
+E               ~~~~ <--- HERE
+E               return project_points_orthographic(points_in_camera)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/jit/frontend.py:416: UnsupportedNodeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32]
+========================= 1 failed, 13 passed in 0.37s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'cudagraphs', 'jit', 'tvm', 'openxla', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] PASSED
+
+============================== 14 passed in 0.22s ==============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'openxla', 'tvm', 'cudagraphs', 'inductor', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 14 items
+
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_cardinality[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_points_orthographic_batch[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_unproject_points_orthographic_batch_extension[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_project_unproject[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_dx_proj_x[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_exception[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_gradcheck[cpu] PASSED
+../publishablew/kornia/kornia/tests/geometry/camera/test_projections.py::TestProjectionOrthographic::test_jit[cpu-float32] PASSED
+
+============================== 14 passed in 0.23s ==============================

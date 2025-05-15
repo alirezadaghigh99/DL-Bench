@@ -1,0 +1,733 @@
+output file:
+processed_scikit-learn_find_binning_thresholds70.json
+function:
+_find_binning_thresholds
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_regular_data', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10]', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 54 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_regular_data I: Seeding RNGs with 1861593587
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[257] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_n_features_transform PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-11] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[255-12-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[7] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[3-2--1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[42-1-0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[255-0.3-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[2-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[3-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[4-4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[255-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[5-17] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_subsample PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[256-n_bins_non_missing0-X_trans_expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[15] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature_negative_missing PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[128] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_make_known_categories_bitsets PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical0-known_categories0-Known categories for feature 0 must be provided] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical1-known_categories1-isn't marked as a categorical feature, but categories were passed] PASSED
+
+=================================== FAILURES ===================================
+__________________ test_find_binning_thresholds_regular_data ___________________
+
+    def test_find_binning_thresholds_regular_data():
+        data = np.linspace(0, 10, 1001)
+        bin_thresholds = _find_binning_thresholds(data, max_bins=10)
+>       assert_allclose(bin_thresholds, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7fd7b8a3d8b0>, array([0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5]), array([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'strict': False, ...}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           (shapes (10,), (9,) mismatch)
+E            ACTUAL: array([0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5])
+E            DESIRED: array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_______________ test_find_binning_thresholds_small_regular_data ________________
+
+    def test_find_binning_thresholds_small_regular_data():
+        data = np.linspace(0, 10, 11)
+    
+        bin_thresholds = _find_binning_thresholds(data, max_bins=5)
+>       assert_allclose(bin_thresholds, [2, 4, 6, 8])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7fd7b127c1f0>, array([1., 3., 5., 7., 9.]), array([2, 4, 6, 8]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'strict': False, ...}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           (shapes (5,), (4,) mismatch)
+E            ACTUAL: array([1., 3., 5., 7., 9.])
+E            DESIRED: array([2, 4, 6, 8])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+___________________ test_find_binning_thresholds_random_data ___________________
+
+    def test_find_binning_thresholds_random_data():
+        bin_thresholds = [
+            _find_binning_thresholds(DATA[:, i], max_bins=255) for i in range(2)
+        ]
+        for i in range(len(bin_thresholds)):
+>           assert bin_thresholds[i].shape == (254,)  # 255 - 1
+E           AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:57: AssertionError
+___________________ test_find_binning_thresholds_low_n_bins ____________________
+
+    def test_find_binning_thresholds_low_n_bins():
+        bin_thresholds = [
+            _find_binning_thresholds(DATA[:, i], max_bins=128) for i in range(2)
+        ]
+        for i in range(len(bin_thresholds)):
+>           assert bin_thresholds[i].shape == (127,)  # 128 - 1
+E           AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:74: AssertionError
+_____________________________ test_map_to_bins[16] _____________________________
+
+max_bins = 16
+
+    @pytest.mark.parametrize("max_bins", [16, 128, 255])
+    def test_map_to_bins(max_bins):
+        bin_thresholds = [
+            _find_binning_thresholds(DATA[:, i], max_bins=max_bins) for i in range(2)
+        ]
+        binned = np.zeros_like(DATA, dtype=X_BINNED_DTYPE, order="F")
+        is_categorical = np.zeros(2, dtype=np.uint8)
+        last_bin_idx = max_bins
+        _map_to_bins(DATA, bin_thresholds, is_categorical, last_bin_idx, n_threads, binned)
+        assert binned.shape == DATA.shape
+        assert binned.dtype == np.uint8
+        assert binned.flags.f_contiguous
+    
+        min_indices = DATA.argmin(axis=0)
+        max_indices = DATA.argmax(axis=0)
+    
+        for feature_idx, min_idx in enumerate(min_indices):
+            assert binned[min_idx, feature_idx] == 0
+        for feature_idx, max_idx in enumerate(max_indices):
+>           assert binned[max_idx, feature_idx] == max_bins - 1
+E           AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:113: AssertionError
+____________________________ test_map_to_bins[128] _____________________________
+
+max_bins = 128
+
+    @pytest.mark.parametrize("max_bins", [16, 128, 255])
+    def test_map_to_bins(max_bins):
+        bin_thresholds = [
+            _find_binning_thresholds(DATA[:, i], max_bins=max_bins) for i in range(2)
+        ]
+        binned = np.zeros_like(DATA, dtype=X_BINNED_DTYPE, order="F")
+        is_categorical = np.zeros(2, dtype=np.uint8)
+        last_bin_idx = max_bins
+        _map_to_bins(DATA, bin_thresholds, is_categorical, last_bin_idx, n_threads, binned)
+        assert binned.shape == DATA.shape
+        assert binned.dtype == np.uint8
+        assert binned.flags.f_contiguous
+    
+        min_indices = DATA.argmin(axis=0)
+        max_indices = DATA.argmax(axis=0)
+    
+        for feature_idx, min_idx in enumerate(min_indices):
+            assert binned[min_idx, feature_idx] == 0
+        for feature_idx, max_idx in enumerate(max_indices):
+>           assert binned[max_idx, feature_idx] == max_bins - 1
+E           AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:113: AssertionError
+____________________________ test_map_to_bins[255] _____________________________
+
+max_bins = 255
+
+    @pytest.mark.parametrize("max_bins", [16, 128, 255])
+    def test_map_to_bins(max_bins):
+        bin_thresholds = [
+            _find_binning_thresholds(DATA[:, i], max_bins=max_bins) for i in range(2)
+        ]
+        binned = np.zeros_like(DATA, dtype=X_BINNED_DTYPE, order="F")
+        is_categorical = np.zeros(2, dtype=np.uint8)
+        last_bin_idx = max_bins
+        _map_to_bins(DATA, bin_thresholds, is_categorical, last_bin_idx, n_threads, binned)
+        assert binned.shape == DATA.shape
+        assert binned.dtype == np.uint8
+        assert binned.flags.f_contiguous
+    
+        min_indices = DATA.argmin(axis=0)
+        max_indices = DATA.argmax(axis=0)
+    
+        for feature_idx, min_idx in enumerate(min_indices):
+            assert binned[min_idx, feature_idx] == 0
+        for feature_idx, max_idx in enumerate(max_indices):
+>           assert binned[max_idx, feature_idx] == max_bins - 1
+E           AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:113: AssertionError
+________________________ test_bin_mapper_random_data[5] ________________________
+
+max_bins = 5
+
+    @pytest.mark.parametrize("max_bins", [5, 10, 42])
+    def test_bin_mapper_random_data(max_bins):
+        n_samples, n_features = DATA.shape
+    
+        expected_count_per_bin = n_samples // max_bins
+        tol = int(0.05 * expected_count_per_bin)
+    
+        # max_bins is the number of bins for non-missing values
+        n_bins = max_bins + 1
+        mapper = _BinMapper(n_bins=n_bins, random_state=42).fit(DATA)
+        binned = mapper.transform(DATA)
+    
+        assert binned.shape == (n_samples, n_features)
+        assert binned.dtype == np.uint8
+        assert_array_equal(binned.min(axis=0), np.array([0, 0]))
+>       assert_array_equal(binned.max(axis=0), np.array([max_bins - 1, max_bins - 1]))
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([5, 5], dtype=uint8), array([4, 4]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference among violations: 1
+E           Max relative difference among violations: 0.25
+E            ACTUAL: array([5, 5], dtype=uint8)
+E            DESIRED: array([4, 4])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_______________________ test_bin_mapper_random_data[10] ________________________
+
+max_bins = 10
+
+    @pytest.mark.parametrize("max_bins", [5, 10, 42])
+    def test_bin_mapper_random_data(max_bins):
+        n_samples, n_features = DATA.shape
+    
+        expected_count_per_bin = n_samples // max_bins
+        tol = int(0.05 * expected_count_per_bin)
+    
+        # max_bins is the number of bins for non-missing values
+        n_bins = max_bins + 1
+        mapper = _BinMapper(n_bins=n_bins, random_state=42).fit(DATA)
+        binned = mapper.transform(DATA)
+    
+        assert binned.shape == (n_samples, n_features)
+        assert binned.dtype == np.uint8
+        assert_array_equal(binned.min(axis=0), np.array([0, 0]))
+>       assert_array_equal(binned.max(axis=0), np.array([max_bins - 1, max_bins - 1]))
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([10, 10], dtype=uint8), array([9, 9]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference among violations: 1
+E           Max relative difference among violations: 0.11111111
+E            ACTUAL: array([10, 10], dtype=uint8)
+E            DESIRED: array([9, 9])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_______________________ test_bin_mapper_random_data[42] ________________________
+
+max_bins = 42
+
+    @pytest.mark.parametrize("max_bins", [5, 10, 42])
+    def test_bin_mapper_random_data(max_bins):
+        n_samples, n_features = DATA.shape
+    
+        expected_count_per_bin = n_samples // max_bins
+        tol = int(0.05 * expected_count_per_bin)
+    
+        # max_bins is the number of bins for non-missing values
+        n_bins = max_bins + 1
+        mapper = _BinMapper(n_bins=n_bins, random_state=42).fit(DATA)
+        binned = mapper.transform(DATA)
+    
+        assert binned.shape == (n_samples, n_features)
+        assert binned.dtype == np.uint8
+        assert_array_equal(binned.min(axis=0), np.array([0, 0]))
+>       assert_array_equal(binned.max(axis=0), np.array([max_bins - 1, max_bins - 1]))
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([42, 42], dtype=uint8), array([41, 41]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference among violations: 1
+E           Max relative difference among violations: 0.02439024
+E            ACTUAL: array([42, 42], dtype=uint8)
+E            DESIRED: array([41, 41])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+________________________ test_n_bins_non_missing[0-10] _________________________
+
+n_bins = 10, diff = 0
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+________________________ test_n_bins_non_missing[0-100] ________________________
+
+n_bins = 100, diff = 0
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+________________________ test_n_bins_non_missing[0-256] ________________________
+
+n_bins = 256, diff = 0
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+________________________ test_n_bins_non_missing[5-10] _________________________
+
+n_bins = 10, diff = 5
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+________________________ test_n_bins_non_missing[5-100] ________________________
+
+n_bins = 100, diff = 5
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+________________________ test_n_bins_non_missing[5-256] ________________________
+
+n_bins = 256, diff = 5
+
+    @pytest.mark.parametrize("n_bins", [10, 100, 256])
+    @pytest.mark.parametrize("diff", [-5, 0, 5])
+    def test_n_bins_non_missing(n_bins, diff):
+        # Check that n_bins_non_missing is n_unique_values when
+        # there are not a lot of unique values, else n_bins - 1.
+    
+        n_unique_values = n_bins + diff
+        X = list(range(n_unique_values)) * 2
+        X = np.array(X).reshape(-1, 1)
+        mapper = _BinMapper(n_bins=n_bins).fit(X)
+>       assert np.all(mapper.n_bins_non_missing_ == min(n_bins - 1, n_unique_values))
+E       AssertionError
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:249: AssertionError
+_____ test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1] _____
+
+n_bins = 3, n_bins_non_missing = [2, 2, 2]
+X_trans_expected = [[0, 0, 0], [2, 2, 0], [0, 0, 0], [2, 1, 1], [1, 1, 1], [1, 0, 0]]
+
+    @pytest.mark.parametrize(
+        "n_bins, n_bins_non_missing, X_trans_expected",
+        [
+            (
+                256,
+                [4, 2, 2],
+                [
+                    [0, 0, 0],  # 255 <=> missing value
+                    [255, 255, 0],
+                    [1, 0, 0],
+                    [255, 1, 1],
+                    [2, 1, 1],
+                    [3, 0, 0],
+                ],
+            ),
+            (
+                3,
+                [2, 2, 2],
+                [
+                    [0, 0, 0],  # 2 <=> missing value
+                    [2, 2, 0],
+                    [0, 0, 0],
+                    [2, 1, 1],
+                    [1, 1, 1],
+                    [1, 0, 0],
+                ],
+            ),
+        ],
+    )
+    def test_missing_values_support(n_bins, n_bins_non_missing, X_trans_expected):
+        # check for missing values: make sure nans are mapped to the last bin
+        # and that the _BinMapper attributes are correct
+    
+        X = [
+            [1, 1, 0],
+            [np.nan, np.nan, 0],
+            [2, 1, 0],
+            [np.nan, 2, 1],
+            [3, 2, 1],
+            [4, 1, 0],
+        ]
+    
+        X = np.array(X)
+    
+        mapper = _BinMapper(n_bins=n_bins)
+        mapper.fit(X)
+    
+>       assert_array_equal(mapper.n_bins_non_missing_, n_bins_non_missing)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([3, 2, 2], dtype=uint32), [2, 2, 2])
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 1 / 3 (33.3%)
+E           Max absolute difference among violations: 1
+E           Max relative difference among violations: 0.5
+E            ACTUAL: array([3, 2, 2], dtype=uint32)
+E            DESIRED: array([2, 2, 2])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+_____________________________ test_infinite_values _____________________________
+
+    def test_infinite_values():
+        # Make sure infinite values are properly handled.
+        bin_mapper = _BinMapper()
+    
+        X = np.array([-np.inf, 0, 1, np.inf]).reshape(-1, 1)
+    
+        bin_mapper.fit(X)
+>       assert_allclose(bin_mapper.bin_thresholds_[0], [-np.inf, 0.5, ALMOST_INF])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py:333: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x7fd7b127c1f0>, array([0.5]), array([   -inf, 5.e-001, 1.e+300]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'strict': False, ...}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           (shapes (1,), (3,) mismatch)
+E            ACTUAL: array([0.5])
+E            DESIRED: array([   -inf, 5.e-001, 1.e+300])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_regular_data
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values
+======================== 18 failed, 36 passed in 1.32s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 54 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_regular_data I: Seeding RNGs with 1738273414
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[257] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_n_features_transform PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-11] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[255-12-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[7] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[3-2--1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[42-1-0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[255-0.3-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[2-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[3-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[4-4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[255-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[5-17] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_subsample PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[256-n_bins_non_missing0-X_trans_expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[15] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature_negative_missing PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[128] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_make_known_categories_bitsets PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical0-known_categories0-Known categories for feature 0 must be provided] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical1-known_categories1-isn't marked as a categorical feature, but categories were passed] PASSED
+
+============================== 54 passed in 1.02s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 54 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_regular_data I: Seeding RNGs with 331080724
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_small_regular_data PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_random_data PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_find_binning_thresholds_low_n_bins PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_invalid_n_bins[257] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_n_features_transform PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[16] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[128] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_map_to_bins[255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_random_data[42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-5] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[5-11] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_small_random_data[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[5-5-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_repeated_values[255-12-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[7] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_repeated_values_invariance[42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[3-2--1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[42-1-0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_identity_small[255-0.3-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[2-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[3-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[4-4] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-42] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[255-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[5-17] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_bin_mapper_idempotence[42-255] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[-5-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[0-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-10] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-100] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_n_bins_non_missing[5-256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_subsample PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[256-n_bins_non_missing0-X_trans_expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_missing_values_support[3-n_bins_non_missing1-X_trans_expected1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_infinite_values PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[15] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_feature_negative_missing PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[128] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_with_numerical_features[256] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_make_known_categories_bitsets PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical0-known_categories0-Known categories for feature 0 must be provided] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/ensemble/_hist_gradient_boosting/tests/test_binning.py::test_categorical_parameters[is_categorical1-known_categories1-isn't marked as a categorical feature, but categories were passed] PASSED
+
+============================== 54 passed in 1.00s ==============================

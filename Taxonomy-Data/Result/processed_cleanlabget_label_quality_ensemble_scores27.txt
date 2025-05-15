@@ -1,0 +1,264 @@
+output file:
+processed_cleanlabget_label_quality_ensemble_scores27.json
+function:
+get_label_quality_ensemble_scores
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores Pruning 33 predictions out of 44 using threshold==0.99. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.96. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 50 passed, 1 warning in 2.77s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores Pruning 33 predictions out of 44 using threshold==0.99. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.96. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 50 passed, 1 warning in 2.59s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores Pruning 33 predictions out of 44 using threshold==0.99. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.96. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 50 passed, 1 warning in 3.14s =========================

@@ -1,0 +1,305 @@
+output file:
+processed_neurodiffeqgrad378.json
+function:
+grad
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian FAILED', 'FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl', 'FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad', 'FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian', '../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian FAILED', 'FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian', '../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl FAILED', '../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 7 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_cartesian_to_spherical PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_to_cartesian PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_div PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad FAILED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl FAILED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian FAILED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian FAILED
+
+=================================== FAILURES ===================================
+_____________________________ test_spherical_grad ______________________________
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+x = [tensor([[8.6354],
+        [6.8025],
+        [7.9052],
+        ...,
+        [9.9504],
+        [6.5367],
+        [6.651...2.2253],
+        ...,
+        [1.0793],
+        [5.1581],
+        [0.5152]], device='cuda:0', grad_fn=<ViewBackward0>)]
+
+    def test_spherical_grad(u, x):
+>       out_r, out_theta, out_phi = spherical_grad(u, *x)
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py:90: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:154: in spherical_grad
+    u_dr, u_dth, u_dph = grad(u, r, theta, phi)
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:15: in grad
+    return grad(u)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+xs = ()
+
+    def grad(u, *xs):
+        """
+        Calculate the gradient of tensor u with respect to a tuple of tensors xs.
+    
+        :param u: The tensor u.
+        :type u: torch.Tensor
+        :param *xs: The sequence of tensors x_i.
+        :type xs: torch.Tensor
+        :return: A tuple of gradients of u with respect to each x_i.
+        :rtype: List[torch.Tensor]
+        """
+        if u.numel() != 1:
+>           raise ValueError('The tensor u must be a scalar (i.e., it should have exactly one element).')
+E           ValueError: The tensor u must be a scalar (i.e., it should have exactly one element).
+
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/temp.py:19: ValueError
+_____________________________ test_spherical_curl ______________________________
+
+U = (tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [...[0.2008],
+        ...,
+        [0.0214],
+        [0.0573],
+        [0.1373]], device='cuda:0', grad_fn=<SumBackward1>))
+x = [tensor([[8.6354],
+        [6.8025],
+        [7.9052],
+        ...,
+        [9.9504],
+        [6.5367],
+        [6.651...2.2253],
+        ...,
+        [1.0793],
+        [5.1581],
+        [0.5152]], device='cuda:0', grad_fn=<ViewBackward0>)]
+
+    def test_spherical_curl(U, x):
+>       out_r, out_theta, out_phi = spherical_curl(*U, *x)
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:130: in spherical_curl
+    ur_dth, ur_dph = grad(u_r, theta, phi)
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:15: in grad
+    return grad(u)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+xs = ()
+
+    def grad(u, *xs):
+        """
+        Calculate the gradient of tensor u with respect to a tuple of tensors xs.
+    
+        :param u: The tensor u.
+        :type u: torch.Tensor
+        :param *xs: The sequence of tensors x_i.
+        :type xs: torch.Tensor
+        :return: A tuple of gradients of u with respect to each x_i.
+        :rtype: List[torch.Tensor]
+        """
+        if u.numel() != 1:
+>           raise ValueError('The tensor u must be a scalar (i.e., it should have exactly one element).')
+E           ValueError: The tensor u must be a scalar (i.e., it should have exactly one element).
+
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/temp.py:19: ValueError
+___________________________ test_spherical_laplacian ___________________________
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+x = [tensor([[8.6354],
+        [6.8025],
+        [7.9052],
+        ...,
+        [9.9504],
+        [6.5367],
+        [6.651...2.2253],
+        ...,
+        [1.0793],
+        [5.1581],
+        [0.5152]], device='cuda:0', grad_fn=<ViewBackward0>)]
+
+    def test_spherical_laplacian(u, x):
+>       out = spherical_laplacian(u, *x)
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:193: in spherical_laplacian
+    u_dr, u_dth, u_dph = grad(u, r, theta, phi)
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:15: in grad
+    return grad(u)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+xs = ()
+
+    def grad(u, *xs):
+        """
+        Calculate the gradient of tensor u with respect to a tuple of tensors xs.
+    
+        :param u: The tensor u.
+        :type u: torch.Tensor
+        :param *xs: The sequence of tensors x_i.
+        :type xs: torch.Tensor
+        :return: A tuple of gradients of u with respect to each x_i.
+        :rtype: List[torch.Tensor]
+        """
+        if u.numel() != 1:
+>           raise ValueError('The tensor u must be a scalar (i.e., it should have exactly one element).')
+E           ValueError: The tensor u must be a scalar (i.e., it should have exactly one element).
+
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/temp.py:19: ValueError
+_______________________ test_spherical_vector_laplacian ________________________
+
+U = (tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [...[0.2008],
+        ...,
+        [0.0214],
+        [0.0573],
+        [0.1373]], device='cuda:0', grad_fn=<SumBackward1>))
+x = [tensor([[8.6354],
+        [6.8025],
+        [7.9052],
+        ...,
+        [9.9504],
+        [6.5367],
+        [6.651...2.2253],
+        ...,
+        [1.0793],
+        [5.1581],
+        [0.5152]], device='cuda:0', grad_fn=<ViewBackward0>)]
+
+    def test_spherical_vector_laplacian(U, x):
+>       out_r, out_theta, out_phi = spherical_vector_laplacian(*U, *x)
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:216: in spherical_vector_laplacian
+    ur_dr, ur_dth, ur_dph = grad(u_r, r, theta, phi)
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/operators.py:15: in grad
+    return grad(u)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+u = tensor([[-0.0316],
+        [ 0.3237],
+        [ 0.3707],
+        ...,
+        [ 0.0876],
+        [ 0.1346],
+        [-0.2396]], device='cuda:0', grad_fn=<SumBackward1>)
+xs = ()
+
+    def grad(u, *xs):
+        """
+        Calculate the gradient of tensor u with respect to a tuple of tensors xs.
+    
+        :param u: The tensor u.
+        :type u: torch.Tensor
+        :param *xs: The sequence of tensors x_i.
+        :type xs: torch.Tensor
+        :return: A tuple of gradients of u with respect to each x_i.
+        :rtype: List[torch.Tensor]
+        """
+        if u.numel() != 1:
+>           raise ValueError('The tensor u must be a scalar (i.e., it should have exactly one element).')
+E           ValueError: The tensor u must be a scalar (i.e., it should have exactly one element).
+
+../publishablew/neurodiffeq/neurodiffeq/neurodiffeq/temp.py:19: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian
+FAILED ../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian
+========================= 4 failed, 3 passed in 2.43s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 7 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_cartesian_to_spherical PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_to_cartesian PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_div PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian PASSED
+
+============================== 7 passed in 2.21s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/neurodiffeq/neurodiffeq
+collecting ... collected 7 items
+
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_cartesian_to_spherical PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_to_cartesian PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_div PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_grad PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_curl PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_laplacian PASSED
+../publishablew/neurodiffeq/neurodiffeq/tests/test_operators_spherical.py::test_spherical_vector_laplacian PASSED
+
+============================== 7 passed in 3.06s ===============================

@@ -1,0 +1,227 @@
+output file:
+processed_imagededupload_image43.json
+function:
+load_image
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'tests/test_image_utils.py::test_load_image_all_inputs_correct FAILED     [100%]', 'FAILED tests/test_image_utils.py::test_load_image_target_size_grayscale_true', 'tests/test_image_utils.py::test_load_image_alpha_channel_image_converts FAILED [ 90%]', 'FAILED tests/test_image_utils.py::test_load_image_accepts_pil - AssertionErro...', 'tests/test_image_utils.py::test_load_image_target_size_grayscale_true FAILED [ 95%]', 'tests/test_image_utils.py::test_load_image_accepts_pil FAILED            [ 80%]', 'FAILED tests/test_image_utils.py::test_load_image_alpha_channel_image_converts', 'FAILED tests/test_image_utils.py::test_load_image_all_inputs_correct - Assert...'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil FAILED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts FAILED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true FAILED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct FAILED     [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_load_image_accepts_pil __________________________
+
+self = <MagicMock name='preprocess_image' id='126238083626128'>
+args = (<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=640x480 at 0x72D01821AE10>,)
+kwargs = {'grayscale': False, 'target_size': None}
+msg = "Expected 'preprocess_image' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+/usr/lib/python3.11/unittest/mock.py:950: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+mocker = <pytest_mock.plugin.MockerFixture object at 0x72d01821b750>
+
+    def test_load_image_accepts_pil(mocker):
+        preprocess_mocker = mocker.patch('imagededup.utils.image_utils.preprocess_image')
+        load_image(PATH_SINGLE_IMAGE)
+>       preprocess_mocker.assert_called_once_with(
+            Image.open(PATH_SINGLE_IMAGE), target_size=None, grayscale=False
+        )
+E       AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+tests/test_image_utils.py:168: AssertionError
+_________________ test_load_image_alpha_channel_image_converts _________________
+
+self = <MagicMock name='preprocess_image' id='126238083569680'>
+args = (<PIL.Image.Image image mode=RGB size=640x480 at 0x72D0185C4250>,)
+kwargs = {'grayscale': False, 'target_size': None}
+msg = "Expected 'preprocess_image' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+/usr/lib/python3.11/unittest/mock.py:950: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+preprocess_mocker = <MagicMock name='preprocess_image' id='126238083569680'>
+
+    def test_load_image_alpha_channel_image_converts(preprocess_mocker):
+        PATH_ALPHA_IMAGE = p.parent / 'data/alpha_channel_image.png'
+        alpha_converted = Image.open(PATH_ALPHA_IMAGE).convert('RGBA').convert('RGB')
+        load_image(PATH_ALPHA_IMAGE)
+>       preprocess_mocker.assert_called_once_with(
+            alpha_converted, target_size=None, grayscale=False
+        )
+E       AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+tests/test_image_utils.py:187: AssertionError
+__________________ test_load_image_target_size_grayscale_true __________________
+
+self = <MagicMock name='preprocess_image' id='126238083605904'>
+args = (<PIL.JpegImagePlugin.JpegImageFile image mode=RGB size=640x480 at 0x72D018216C10>,)
+kwargs = {'grayscale': True, 'target_size': (8, 8)}
+msg = "Expected 'preprocess_image' to be called once. Called 0 times."
+
+    def assert_called_once_with(self, /, *args, **kwargs):
+        """assert that the mock was called exactly once and that that call was
+        with the specified arguments."""
+        if not self.call_count == 1:
+            msg = ("Expected '%s' to be called once. Called %s times.%s"
+                   % (self._mock_name or 'mock',
+                      self.call_count,
+                      self._calls_repr()))
+>           raise AssertionError(msg)
+E           AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+/usr/lib/python3.11/unittest/mock.py:950: AssertionError
+
+During handling of the above exception, another exception occurred:
+
+preprocess_mocker = <MagicMock name='preprocess_image' id='126238083605904'>
+
+    def test_load_image_target_size_grayscale_true(preprocess_mocker):
+        load_image(image_file=PATH_SINGLE_IMAGE, target_size=(8, 8), grayscale=True)
+>       preprocess_mocker.assert_called_once_with(
+            Image.open(PATH_SINGLE_IMAGE), target_size=(8, 8), grayscale=True
+        )
+E       AssertionError: Expected 'preprocess_image' to be called once. Called 0 times.
+
+tests/test_image_utils.py:194: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  imagededup.utils.temp:temp.py:33 An error occurred while loading the image: module 'PIL.Image' has no attribute 'ANTIALIAS'
+______________________ test_load_image_all_inputs_correct ______________________
+
+    def test_load_image_all_inputs_correct():
+        target_size = (8, 8)
+        loaded_image = load_image(
+            image_file=PATH_SINGLE_IMAGE, target_size=target_size, grayscale=True
+        )
+>       assert isinstance(loaded_image, np.ndarray)
+E       AssertionError: assert False
+E        +  where False = isinstance(None, <class 'numpy.ndarray'>)
+E        +    where <class 'numpy.ndarray'> = np.ndarray
+
+tests/test_image_utils.py:207: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  imagededup.utils.temp:temp.py:33 An error occurred while loading the image: module 'PIL.Image' has no attribute 'ANTIALIAS'
+=========================== short test summary info ============================
+FAILED tests/test_image_utils.py::test_load_image_accepts_pil - AssertionErro...
+FAILED tests/test_image_utils.py::test_load_image_alpha_channel_image_converts
+FAILED tests/test_image_utils.py::test_load_image_target_size_grayscale_true
+FAILED tests/test_image_utils.py::test_load_image_all_inputs_correct - Assert...
+========================= 4 failed, 16 passed in 1.98s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.84s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.3, pluggy-1.5.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/imagededup/imagededup
+plugins: hydra-core-1.3.2, mock-3.14.0, anyio-4.6.2.post1
+collecting ... collected 20 items
+
+tests/test_image_utils.py::test___check_3_dim_raises_assertionerror_wrong_input_shape PASSED [  5%]
+tests/test_image_utils.py::test___check_3_dim_not_raises_assertionerror_right_input_shape PASSED [ 10%]
+tests/test_image_utils.py::test__add_third_dim_converts2_to_3_dims PASSED [ 15%]
+tests/test_image_utils.py::test__raise_wrong_dim_value_error_raises_error PASSED [ 20%]
+tests/test_image_utils.py::test_check_image_array_hash_checks_3_dims PASSED [ 25%]
+tests/test_image_utils.py::test_check_image_array_wrong_dims_raises_error PASSED [ 30%]
+tests/test_image_utils.py::test_check_image_array_2_dims_nothing_happens PASSED [ 35%]
+tests/test_image_utils.py::test_expand_image_array_cnn_checks_3_dims_and_returns_input_array PASSED [ 40%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_unit PASSED [ 45%]
+tests/test_image_utils.py::test_expand_image_array_cnn_2d_adds_dim_int PASSED [ 50%]
+tests/test_image_utils.py::test_expand_image_array_cnn_wrong_dims_raises_error PASSED [ 55%]
+tests/test_image_utils.py::test_preprocess_image_accepts_array_input PASSED [ 60%]
+tests/test_image_utils.py::test_preprocess_image_accepts_pil_input PASSED [ 65%]
+tests/test_image_utils.py::test_preprocess_image_wrong_input PASSED      [ 70%]
+tests/test_image_utils.py::test_preprocess_image_grayscale_false PASSED  [ 75%]
+tests/test_image_utils.py::test_load_image_accepts_pil PASSED            [ 80%]
+tests/test_image_utils.py::test_load_image_returns_none_wrong_input PASSED [ 85%]
+tests/test_image_utils.py::test_load_image_alpha_channel_image_converts PASSED [ 90%]
+tests/test_image_utils.py::test_load_image_target_size_grayscale_true PASSED [ 95%]
+tests/test_image_utils.py::test_load_image_all_inputs_correct PASSED     [100%]
+
+============================== 20 passed in 1.85s ==============================

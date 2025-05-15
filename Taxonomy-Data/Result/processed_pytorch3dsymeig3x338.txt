@@ -1,0 +1,321 @@
+output file:
+processed_pytorch3dsymeig3x338.json
+function:
+symeig3x3
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu', 'FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu', 'FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu', '../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu FAILED', 'FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu', '../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu FAILED', '../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu FAILED', '../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 13 items
+
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu FAILED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu FAILED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu FAILED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu FAILED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_more_dimensions PASSED
+
+=================================== FAILURES ===================================
+________________ TestSymEig3x3.test_degenerate_eigenvalues_cpu _________________
+
+self = <tests.test_symeig3x3.TestSymEig3x3 testMethod=test_degenerate_eigenvalues_cpu>
+
+    def test_degenerate_eigenvalues_cpu(self):
+>       self._test_degenerate_eigenvalues(self._cpu)
+
+../pytorch3d/tests/test_symeig3x3.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_symeig3x3.py:211: in _test_degenerate_eigenvalues
+    self._test_eigenvalues_and_eigenvectors(
+../pytorch3d/tests/test_symeig3x3.py:176: in _test_eigenvalues_and_eigenvectors
+    eigenvalues, eigenvectors = symeig3x3(test_input, eigenvectors=True)
+../pytorch3d/pytorch3d/common/workaround/symeig3x3.py:212: in symeig3x3
+    return symeig3x3(inputs, eigenvectors)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+matrix = tensor([[[ 1.8316, -0.1373,  0.0425],
+         [-0.1373, -0.3632,  0.5717],
+         [ 0.0425,  0.5717,  1.7009]],
+
+  ...],
+
+        [[-0.7096, -0.0436,  0.0312],
+         [-0.0436,  0.2732,  0.0924],
+         [ 0.0312,  0.0924, -0.7182]]])
+eigenvectors = True
+
+    def symeig3x3(matrix: torch.Tensor, eigenvectors: bool=False):
+        """
+        Computes the eigenvalues and optionally the eigenvectors of symmetric 3x3 matrices.
+    
+        Parameters:
+        - matrix (torch.Tensor): A tensor of shape (..., 3, 3) representing symmetric matrices.
+        - eigenvectors (bool): If True, compute both eigenvalues and eigenvectors. If False, compute only eigenvalues.
+    
+        Returns:
+        - If eigenvectors is False, returns a tensor of eigenvalues with shape (..., 3).
+        - If eigenvectors is True, returns a tuple (eigenvalues, eigenvectors) where:
+          - eigenvalues is a tensor of shape (..., 3).
+          - eigenvectors is a tensor of shape (..., 3, 3).
+        """
+        if not torch.allclose(matrix, matrix.transpose(-2, -1)):
+>           raise ValueError('Input matrices must be symmetric.')
+E           ValueError: Input matrices must be symmetric.
+
+../pytorch3d/pytorch3d/common/workaround/temp.py:23: ValueError
+________________ TestSymEig3x3.test_degenerate_eigenvalues_gpu _________________
+
+self = <tests.test_symeig3x3.TestSymEig3x3 testMethod=test_degenerate_eigenvalues_gpu>
+
+    def test_degenerate_eigenvalues_gpu(self):
+>       self._test_degenerate_eigenvalues(self._gpu)
+
+../pytorch3d/tests/test_symeig3x3.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_symeig3x3.py:211: in _test_degenerate_eigenvalues
+    self._test_eigenvalues_and_eigenvectors(
+../pytorch3d/tests/test_symeig3x3.py:176: in _test_eigenvalues_and_eigenvectors
+    eigenvalues, eigenvectors = symeig3x3(test_input, eigenvectors=True)
+../pytorch3d/pytorch3d/common/workaround/symeig3x3.py:212: in symeig3x3
+    return symeig3x3(inputs, eigenvectors)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+matrix = tensor([[[-0.2636, -0.0770,  0.4195],
+         [-0.0770, -0.1048,  0.0119],
+         [ 0.4195,  0.0119, -0.3181]],
+
+  ...0254, -0.1127,  0.0145],
+         [-0.1127,  1.2720,  0.7615],
+         [ 0.0145,  0.7615, -0.0297]]], device='cuda:0')
+eigenvectors = True
+
+    def symeig3x3(matrix: torch.Tensor, eigenvectors: bool=False):
+        """
+        Computes the eigenvalues and optionally the eigenvectors of symmetric 3x3 matrices.
+    
+        Parameters:
+        - matrix (torch.Tensor): A tensor of shape (..., 3, 3) representing symmetric matrices.
+        - eigenvectors (bool): If True, compute both eigenvalues and eigenvectors. If False, compute only eigenvalues.
+    
+        Returns:
+        - If eigenvectors is False, returns a tensor of eigenvalues with shape (..., 3).
+        - If eigenvectors is True, returns a tuple (eigenvalues, eigenvectors) where:
+          - eigenvalues is a tensor of shape (..., 3).
+          - eigenvectors is a tensor of shape (..., 3, 3).
+        """
+        if not torch.allclose(matrix, matrix.transpose(-2, -1)):
+>           raise ValueError('Input matrices must be symmetric.')
+E           ValueError: Input matrices must be symmetric.
+
+../pytorch3d/pytorch3d/common/workaround/temp.py:23: ValueError
+_______________________ TestSymEig3x3.test_gradients_cpu _______________________
+
+self = <tests.test_symeig3x3.TestSymEig3x3 testMethod=test_gradients_cpu>
+
+    def test_gradients_cpu(self):
+>       self._test_gradients(self._cpu)
+
+../pytorch3d/tests/test_symeig3x3.py:134: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_symeig3x3.py:161: in _test_gradients
+    torch.autograd.gradcheck(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:2053: in gradcheck
+    return _gradcheck_helper(**args)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:2082: in _gradcheck_helper
+    _gradcheck_real_imag(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:1492: in _gradcheck_real_imag
+    gradcheck_fn(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:1599: in _slow_gradcheck
+    _get_numerical_jacobian(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:298: in _get_numerical_jacobian
+    get_numerical_jacobian_wrt_specific_input(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:486: in get_numerical_jacobian_wrt_specific_input
+    jacobian_cols[d_idx] = _compute_numerical_jvps_wrt_specific_input(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:394: in _compute_numerical_jvps_wrt_specific_input
+    ds_dx_tup = jvp_fn(delta[0] if isinstance(delta, tuple) else delta)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:633: in jvp_fn
+    return _compute_numerical_gradient(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:372: in _compute_numerical_gradient
+    outa = fn()
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:625: in wrapped_fn
+    return tuple(a.clone() for a in _as_tuple(fn(*inp)))
+../pytorch3d/pytorch3d/common/workaround/symeig3x3.py:212: in symeig3x3
+    return symeig3x3(inputs, eigenvectors)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+matrix = tensor([[[ 3.7130e+00, -3.1315e+00, -3.8793e-02],
+         [-3.1315e+00,  4.6025e-01,  1.9810e+00],
+         [-3.8792e...2.5773e-01],
+         [ 1.9179e-02,  2.5773e-01,  4.0553e-01]]], dtype=torch.float64,
+       grad_fn=<ToCopyBackward0>)
+eigenvectors = True
+
+    def symeig3x3(matrix: torch.Tensor, eigenvectors: bool=False):
+        """
+        Computes the eigenvalues and optionally the eigenvectors of symmetric 3x3 matrices.
+    
+        Parameters:
+        - matrix (torch.Tensor): A tensor of shape (..., 3, 3) representing symmetric matrices.
+        - eigenvectors (bool): If True, compute both eigenvalues and eigenvectors. If False, compute only eigenvalues.
+    
+        Returns:
+        - If eigenvectors is False, returns a tensor of eigenvalues with shape (..., 3).
+        - If eigenvectors is True, returns a tuple (eigenvalues, eigenvectors) where:
+          - eigenvalues is a tensor of shape (..., 3).
+          - eigenvectors is a tensor of shape (..., 3, 3).
+        """
+        if not torch.allclose(matrix, matrix.transpose(-2, -1)):
+>           raise ValueError('Input matrices must be symmetric.')
+E           ValueError: Input matrices must be symmetric.
+
+../pytorch3d/pytorch3d/common/workaround/temp.py:23: ValueError
+_______________________ TestSymEig3x3.test_gradients_gpu _______________________
+
+self = <tests.test_symeig3x3.TestSymEig3x3 testMethod=test_gradients_gpu>
+
+    def test_gradients_gpu(self):
+>       self._test_gradients(self._gpu)
+
+../pytorch3d/tests/test_symeig3x3.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/test_symeig3x3.py:161: in _test_gradients
+    torch.autograd.gradcheck(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:2053: in gradcheck
+    return _gradcheck_helper(**args)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:2082: in _gradcheck_helper
+    _gradcheck_real_imag(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:1492: in _gradcheck_real_imag
+    gradcheck_fn(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:1599: in _slow_gradcheck
+    _get_numerical_jacobian(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:298: in _get_numerical_jacobian
+    get_numerical_jacobian_wrt_specific_input(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:486: in get_numerical_jacobian_wrt_specific_input
+    jacobian_cols[d_idx] = _compute_numerical_jvps_wrt_specific_input(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:394: in _compute_numerical_jvps_wrt_specific_input
+    ds_dx_tup = jvp_fn(delta[0] if isinstance(delta, tuple) else delta)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:633: in jvp_fn
+    return _compute_numerical_gradient(
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:372: in _compute_numerical_gradient
+    outa = fn()
+../pytorch3d/venv/lib/python3.8/site-packages/torch/autograd/gradcheck.py:625: in wrapped_fn
+    return tuple(a.clone() for a in _as_tuple(fn(*inp)))
+../pytorch3d/pytorch3d/common/workaround/symeig3x3.py:212: in symeig3x3
+    return symeig3x3(inputs, eigenvectors)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+matrix = tensor([[[ 3.7643e-02,  1.8351e+00,  1.1174e-01],
+         [ 1.8351e+00,  3.7033e+00, -5.3383e-01],
+         [ 1.1174e...     [-2.6407e-01,  4.6411e-01,  4.1128e+00]]], device='cuda:0',
+       dtype=torch.float64, grad_fn=<ToCopyBackward0>)
+eigenvectors = True
+
+    def symeig3x3(matrix: torch.Tensor, eigenvectors: bool=False):
+        """
+        Computes the eigenvalues and optionally the eigenvectors of symmetric 3x3 matrices.
+    
+        Parameters:
+        - matrix (torch.Tensor): A tensor of shape (..., 3, 3) representing symmetric matrices.
+        - eigenvectors (bool): If True, compute both eigenvalues and eigenvectors. If False, compute only eigenvalues.
+    
+        Returns:
+        - If eigenvectors is False, returns a tensor of eigenvalues with shape (..., 3).
+        - If eigenvectors is True, returns a tuple (eigenvalues, eigenvectors) where:
+          - eigenvalues is a tensor of shape (..., 3).
+          - eigenvectors is a tensor of shape (..., 3, 3).
+        """
+        if not torch.allclose(matrix, matrix.transpose(-2, -1)):
+>           raise ValueError('Input matrices must be symmetric.')
+E           ValueError: Input matrices must be symmetric.
+
+../pytorch3d/pytorch3d/common/workaround/temp.py:23: ValueError
+=============================== warnings summary ===============================
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu
+  /local/data0/moved_data/pytorch3d/tests/test_symeig3x3.py:153: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.
+    with torch.autograd.detect_anomaly():
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu
+FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu
+FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu
+FAILED ../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu
+=================== 4 failed, 9 passed, 2 warnings in 1.63s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 13 items
+
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_more_dimensions PASSED
+
+=============================== warnings summary ===============================
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu
+  /local/data0/moved_data/pytorch3d/tests/test_symeig3x3.py:153: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.
+    with torch.autograd.detect_anomaly():
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 2 warnings in 4.19s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 13 items
+
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_eigenvalues_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_degenerate_inputs_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_eigenvectors_are_orthonormal_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_eigen_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_cpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_is_not_nan_or_inf_gpu PASSED
+../pytorch3d/tests/test_symeig3x3.py::TestSymEig3x3::test_more_dimensions PASSED
+
+=============================== warnings summary ===============================
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_cpu
+tests/test_symeig3x3.py::TestSymEig3x3::test_gradients_gpu
+  /local/data0/moved_data/pytorch3d/tests/test_symeig3x3.py:153: UserWarning: Anomaly Detection has been enabled. This mode will increase the runtime and should only be enabled for debugging.
+    with torch.autograd.detect_anomaly():
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 13 passed, 2 warnings in 4.47s ========================

@@ -1,0 +1,165 @@
+output file:
+processed_small-text_bald355.json
+function:
+_bald
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros', '../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 4 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_str PASSED
+
+=================================== FAILURES ===================================
+___________________ BALDHelperTest.test_bald_with_only_zeros ___________________
+
+self = <tests.unit.small_text.query_strategies.test_bayesian.BALDHelperTest testMethod=test_bald_with_only_zeros>
+
+    def test_bald_with_only_zeros(self):
+        p = np.zeros((10, 5, 3))
+        result = _bald(p)
+>       assert_array_equal(np.zeros(10,), result)
+
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]), array([[0., 0., 0.],
+       [0., 0., 0.],
+  ...0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           (shapes (10,), (10, 3) mismatch)
+E            x: array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+E            y: array([[0., 0., 0.],
+E                  [0., 0., 0.],
+E                  [0., 0., 0.],...
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+=============================== warnings summary ===============================
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/temp.py:23: RuntimeWarning: divide by zero encountered in log
+    expected_entropy = -np.sum(p * np.log(p + eps), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/temp.py:23: RuntimeWarning: invalid value encountered in multiply
+    expected_entropy = -np.sum(p * np.log(p + eps), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/temp.py:25: RuntimeWarning: divide by zero encountered in log
+    entropy_of_mean = -np.sum(mean_p * np.log(mean_p + eps))
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/temp.py:25: RuntimeWarning: invalid value encountered in multiply
+    entropy_of_mean = -np.sum(mean_p * np.log(mean_p + eps))
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/data/datasets.py:422: UserWarning: Passing target_labels=None is discouraged as it can lead to unintended results in combination with indexing and cloning. Moreover, explicit target labels might be required in the next major version.
+    check_target_labels(target_labels)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros
+=================== 1 failed, 3 passed, 5 warnings in 1.67s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 4 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_str PASSED
+
+=============================== warnings summary ===============================
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:12: RuntimeWarning: divide by zero encountered in log2
+    model_prediction_entropy = -np.sum(p_mean * np.log2(p_mean + eps), axis=-1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:12: RuntimeWarning: invalid value encountered in multiply
+    model_prediction_entropy = -np.sum(p_mean * np.log2(p_mean + eps), axis=-1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:13: RuntimeWarning: divide by zero encountered in log2
+    expected_prediction_entropy = -np.mean(np.sum(p * np.log2(p + eps), axis=-1), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:13: RuntimeWarning: invalid value encountered in multiply
+    expected_prediction_entropy = -np.mean(np.sum(p * np.log2(p + eps), axis=-1), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/data/datasets.py:422: UserWarning: Passing target_labels=None is discouraged as it can lead to unintended results in combination with indexing and cloning. Moreover, explicit target labels might be required in the next major version.
+    check_target_labels(target_labels)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 5 warnings in 1.59s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 4 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_str PASSED
+
+=============================== warnings summary ===============================
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:12: RuntimeWarning: divide by zero encountered in log2
+    model_prediction_entropy = -np.sum(p_mean * np.log2(p_mean + eps), axis=-1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:12: RuntimeWarning: invalid value encountered in multiply
+    model_prediction_entropy = -np.sum(p_mean * np.log2(p_mean + eps), axis=-1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:13: RuntimeWarning: divide by zero encountered in log2
+    expected_prediction_entropy = -np.mean(np.sum(p * np.log2(p + eps), axis=-1), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDHelperTest::test_bald_with_only_zeros_no_epsilon
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/query_strategies/bayesian.py:13: RuntimeWarning: invalid value encountered in multiply
+    expected_prediction_entropy = -np.mean(np.sum(p * np.log2(p + eps), axis=-1), axis=1)
+
+tests/unit/small_text/query_strategies/test_bayesian.py::BALDTest::test_simple_query
+  /local/data0/moved_data/publishablew/small-text/small-text/small_text/data/datasets.py:422: UserWarning: Passing target_labels=None is discouraged as it can lead to unintended results in combination with indexing and cloning. Moreover, explicit target labels might be required in the next major version.
+    check_target_labels(target_labels)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 4 passed, 5 warnings in 1.86s =========================

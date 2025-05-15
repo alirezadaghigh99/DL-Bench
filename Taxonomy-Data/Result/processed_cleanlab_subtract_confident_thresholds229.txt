@@ -1,0 +1,378 @@
+output file:
+processed_cleanlab_subtract_confident_thresholds229.json
+function:
+_subtract_confident_thresholds
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 36 items
+
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_normalized_margin_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_self_confidence_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_rank_by_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test__subtract_confident_thresholds PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-confidence_weighted_entropy] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-confidence_weighted_entropy] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-confidence_weighted_entropy] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_weight_ensemble_members_by_parameter_error Weighting scheme for ensemble: not_a_real_method
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_custom_weights Weighting scheme for ensemble: custom
+Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_empty_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_length_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_weight_ensemble_members_by_for_custom_weights_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_pred_probs_list_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_unsupported_method_for_adjust_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_find_top_issues PASSED
+
+============================== 36 passed in 1.76s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 36 items
+
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_normalized_margin_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_self_confidence_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_rank_by_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test__subtract_confident_thresholds PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-confidence_weighted_entropy] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-confidence_weighted_entropy] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-confidence_weighted_entropy] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_weight_ensemble_members_by_parameter_error Weighting scheme for ensemble: not_a_real_method
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_custom_weights Weighting scheme for ensemble: custom
+Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_empty_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_length_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_weight_ensemble_members_by_for_custom_weights_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_pred_probs_list_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_unsupported_method_for_adjust_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_find_top_issues PASSED
+
+============================== 36 passed in 1.68s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 36 items
+
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_normalized_margin_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_get_self_confidence_for_each_label PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_rank_by_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[False-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func0] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_order_label_issues_using_scoring_func_ranking[True-scoring_method_func2] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test__subtract_confident_thresholds PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-False-confidence_weighted_entropy] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-self_confidence] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-normalized_margin] Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[uniform-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-False-confidence_weighted_entropy] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-self_confidence] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-normalized_margin] Weighting scheme for ensemble: accuracy
+Ensemble members will be weighted by their relative accuracy
+  Model 0 accuracy : 0.74375
+  Model 0 weight   : 0.3333333333333333
+  Model 1 accuracy : 0.74375
+  Model 1 weight   : 0.3333333333333333
+  Model 2 accuracy : 0.74375
+  Model 2 weight   : 0.3333333333333333
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[accuracy-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-False-confidence_weighted_entropy] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-self_confidence] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-normalized_margin] Weighting scheme for ensemble: log_loss_search
+Ensemble members will be weighted by log-loss between their predicted probabilities and given labels
+  Model 0 weight   : 0.33333333333333337
+  Model 1 weight   : 0.33333333333333337
+  Model 2 weight   : 0.33333333333333337
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_ensemble_scoring_func[log_loss_search-True-confidence_weighted_entropy] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_weight_ensemble_members_by_parameter_error Weighting scheme for ensemble: not_a_real_method
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_custom_weights Weighting scheme for ensemble: custom
+Weighting scheme for ensemble: uniform
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_empty_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_length_custom_weights_error Weighting scheme for ensemble: custom
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_wrong_weight_ensemble_members_by_for_custom_weights_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_bad_pred_probs_list_parameter_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_unsupported_method_for_adjust_pred_probs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_rank.py::test_find_top_issues PASSED
+
+============================== 36 passed in 1.76s ==============================

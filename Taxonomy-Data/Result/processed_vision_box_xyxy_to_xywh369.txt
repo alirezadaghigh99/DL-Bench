@@ -1,0 +1,107 @@
+output file:
+processed_vision_box_xyxy_to_xywh369.json
+function:
+_box_xyxy_to_xywh
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit FAILED', 'FAILED ../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 9 items
+
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_same PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_xywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xywh_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit FAILED
+
+=================================== FAILURES ===================================
+_____________________ TestBoxConvert.test_bbox_convert_jit _____________________
+../publishablew/vision/vision/test/test_ops.py:1357: in test_bbox_convert_jit
+    scripted_fn = torch.jit.script(ops.box_convert)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_script.py:1205: in _script_impl
+    fn = torch._C._jit_script_compile(
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_recursive.py:1002: in try_compile_fn
+    return torch.jit.script(fn, _rcb=rcb)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_script.py:1429: in script
+    ret = _script_impl(
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/_script.py:1202: in _script_impl
+    ast = get_jit_def(obj, obj.__name__)
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/frontend.py:383: in get_jit_def
+    return build_def(
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/frontend.py:444: in build_def
+    return Def(Ident(r, def_name), decl, build_stmts(ctx, body))
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/frontend.py:197: in build_stmts
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/frontend.py:197: in <listcomp>
+    stmts = [build_stmt(ctx, s) for s in stmts]
+../publishablew/vision/vision/venv/lib/python3.11/site-packages/torch/jit/frontend.py:416: in __call__
+    raise UnsupportedNodeError(ctx, node)
+E   torch.jit.frontend.UnsupportedNodeError: import statements aren't supported:
+E     File "/local/data0/moved_data/publishablew/vision/vision/torchvision/ops/_box_convert.py", line 58
+E   def _box_xyxy_to_xywh(boxes: Tensor) -> Tensor:
+E       from .temp import _box_xyxy_to_xywh
+E       ~~~~ <--- HERE
+E       return _box_xyxy_to_xywh(boxes)
+=========================== short test summary info ============================
+FAILED ../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit
+========================= 1 failed, 8 passed in 0.20s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 9 items
+
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_same PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_xywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xywh_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit PASSED
+
+============================== 9 passed in 0.13s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/vision/vision/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/vision/vision
+configfile: pytest.ini
+plugins: mock-3.14.0
+collecting ... collected 9 items
+
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_same PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_xywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xyxy_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_xywh_cxcywh PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xwcx-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-xwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_invalid[xhwcy-cxwyh] PASSED
+../publishablew/vision/vision/test/test_ops.py::TestBoxConvert::test_bbox_convert_jit PASSED
+
+============================== 9 passed in 0.12s ===============================

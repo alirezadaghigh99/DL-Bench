@@ -1,0 +1,751 @@
+output file:
+processed_cleanlab_get_min_pred_prob346.json
+function:
+_get_min_pred_prob
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False]', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1]', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True]', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error FAILED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=================================== FAILURES ===================================
+________________________ test_get_label_quality_scores _________________________
+
+    def test_get_label_quality_scores():
+>       scores = get_label_quality_scores(labels, predictions)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:211: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+__________ test_get_label_quality_scores_custom_weights[agg_weights0] __________
+
+agg_weights = {'badloc': 0.0, 'overlooked': 1.0, 'swap': 0.0}
+
+    @pytest.mark.parametrize(
+        "agg_weights",
+        [
+            {"overlooked": 1.0, "swap": 0.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 1.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 0.0, "badloc": 1.0},
+        ],
+    )
+    def test_get_label_quality_scores_custom_weights(agg_weights):
+>       scores = get_label_quality_scores(labels, predictions, aggregation_weights=agg_weights)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+__________ test_get_label_quality_scores_custom_weights[agg_weights1] __________
+
+agg_weights = {'badloc': 0.0, 'overlooked': 0.0, 'swap': 1.0}
+
+    @pytest.mark.parametrize(
+        "agg_weights",
+        [
+            {"overlooked": 1.0, "swap": 0.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 1.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 0.0, "badloc": 1.0},
+        ],
+    )
+    def test_get_label_quality_scores_custom_weights(agg_weights):
+>       scores = get_label_quality_scores(labels, predictions, aggregation_weights=agg_weights)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+__________ test_get_label_quality_scores_custom_weights[agg_weights2] __________
+
+agg_weights = {'badloc': 1.0, 'overlooked': 0.0, 'swap': 0.0}
+
+    @pytest.mark.parametrize(
+        "agg_weights",
+        [
+            {"overlooked": 1.0, "swap": 0.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 1.0, "badloc": 0.0},
+            {"overlooked": 0.0, "swap": 0.0, "badloc": 1.0},
+        ],
+    )
+    def test_get_label_quality_scores_custom_weights(agg_weights):
+>       scores = get_label_quality_scores(labels, predictions, aggregation_weights=agg_weights)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:228: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+___________________________ test_issues_from_scores ____________________________
+
+    def test_issues_from_scores():
+>       scores = get_label_quality_scores(labels, predictions)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:246: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+____________________________ test_get_min_pred_prob ____________________________
+
+    def test_get_min_pred_prob():
+>       min = _get_min_pred_prob(predictions)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:258: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+______________________ test_compute_label_quality_scores _______________________
+
+    def test_compute_label_quality_scores():
+>       scores = _compute_label_quality_scores(labels, predictions)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:365: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+______________ test_overlooked_score_shifts_in_correct_direction _______________
+
+    def test_overlooked_score_shifts_in_correct_direction():
+        perfect_label = labels[0]
+        bad_label = copy.deepcopy(labels[0])
+        worst_label = copy.deepcopy(labels[0])
+    
+        bad_label["bboxes"] = np.delete(bad_label["bboxes"], 2, axis=0)  # 0.79 pred_probs
+        worst_label["bboxes"] = np.delete(worst_label["bboxes"], -1, axis=0)  # 0.84 pred_probs
+    
+        bad_label["labels"] = np.delete(bad_label["labels"], 2)
+        worst_label["labels"] = np.delete(worst_label["labels"], -1)
+    
+>       scores = _compute_label_quality_scores(
+            [perfect_label, bad_label, worst_label], [predictions[0], predictions[0], predictions[0]]
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:387: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ...      array([[107.  ,  16.  , 195.  ,  41.  ,   0.98]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object)]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+________________ test_badloc_score_shifts_in_correct_direction _________________
+
+    def test_badloc_score_shifts_in_correct_direction():
+        perfect_label = labels[0]
+        bad_label = copy.deepcopy(labels[0])
+        worst_label = copy.deepcopy(labels[0])
+    
+        bad_label["bboxes"][0] = bad_label["bboxes"][0] - 20
+        worst_label["bboxes"][0] = worst_label["bboxes"][0] - 100
+    
+>       scores = _compute_label_quality_scores(
+            [perfect_label, bad_label, worst_label], [predictions[0], predictions[0], predictions[0]]
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:403: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ...      array([[107.  ,  16.  , 195.  ,  41.  ,   0.98]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object)]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+_________________ test_swap_score_shifts_in_correct_direction __________________
+
+    def test_swap_score_shifts_in_correct_direction():
+        perfect_label = labels[0]
+        bad_label = copy.deepcopy(labels[0])
+        worst_label = copy.deepcopy(labels[0])
+    
+        bad_label["bboxes"][0] = bad_label["bboxes"][0] - 20
+        bad_label["labels"][0] = np.random.choice([i for i in range(10) if i != bad_label["labels"][0]])
+        worst_label["bboxes"][0] = worst_label["bboxes"][0] - 100
+        worst_label["labels"][0] = np.random.choice(
+            [i for i in range(10) if i != bad_label["labels"][0]]
+        )
+    
+>       scores = _compute_label_quality_scores(
+            [perfect_label, bad_label, worst_label], [predictions[0], predictions[0], predictions[0]]
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:431: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ...      array([[107.  ,  16.  , 195.  ,  41.  ,   0.98]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object)]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+_____________________ test_return_issues_ranked_by_scores ______________________
+
+    def test_return_issues_ranked_by_scores():
+>       label_issue_idx = find_label_issues(labels, predictions, return_indices_ranked_by_score=True)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:579: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/filter.py:116: in find_label_issues
+    is_issue = _find_label_issues(
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/filter.py:189: in _find_label_issues
+    scores = get_label_quality_scores(labels, predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+__________________ test_bad_input_find_label_issues_internal ___________________
+
+    def test_bad_input_find_label_issues_internal():
+>       bad_label_issues = _find_label_issues(labels, predictions, scoring_method="bad_method")
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:592: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/filter.py:189: in _find_label_issues
+    scores = get_label_quality_scores(labels, predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+________________________ test_swap_overlap_labels[True] ________________________
+
+overlapping_label_check = True
+
+    @pytest.mark.parametrize("overlapping_label_check", [True, False])
+    def test_swap_overlap_labels(overlapping_label_check):
+        prediction = predictions[3].copy()
+        label = labels[3].copy()
+        label["bboxes"] = np.append(label["bboxes"], [label["bboxes"][-1]], axis=0)
+        label["labels"] = np.append(label["labels"], (label["labels"][-1] + 1) % 10)
+>       score = get_label_quality_scores(
+            [label], [prediction], overlapping_label_check=overlapping_label_check
+        )[0]
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([], shape=(0, 5), dtype=float32),
+       array([[ 43.  ,  64.  ,  44.  , 203.  ,   0.96]]),
+       array...      array([], shape=(0, 5), dtype=float32),
+       array([[  4.  ,  28.  ,  64.  , 224.  ,   0.99]])], dtype=object)]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+_______________________ test_swap_overlap_labels[False] ________________________
+
+overlapping_label_check = False
+
+    @pytest.mark.parametrize("overlapping_label_check", [True, False])
+    def test_swap_overlap_labels(overlapping_label_check):
+        prediction = predictions[3].copy()
+        label = labels[3].copy()
+        label["bboxes"] = np.append(label["bboxes"], [label["bboxes"][-1]], axis=0)
+        label["labels"] = np.append(label["labels"], (label["labels"][-1] + 1) % 10)
+>       score = get_label_quality_scores(
+            [label], [prediction], overlapping_label_check=overlapping_label_check
+        )[0]
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:803: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:66: in get_label_quality_scores
+    return _compute_label_quality_scores(labels=labels, predictions=predictions, method=method, threshold=probability_threshold, aggregation_weights=aggregation_weights, overlapping_label_check=overlapping_label_check, verbose=verbose)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([], shape=(0, 5), dtype=float32),
+       array([[ 43.  ,  64.  ,  44.  , 203.  ,   0.96]]),
+       array...      array([], shape=(0, 5), dtype=float32),
+       array([[  4.  ,  28.  ,  64.  , 224.  ,   0.99]])], dtype=object)]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+____________________ test_invalid_method_raises_value_error ____________________
+
+    def test_invalid_method_raises_value_error():
+        with pytest.raises(ValueError) as error:
+            method = "invalid_method"
+>           scores = _compute_label_quality_scores(labels, predictions, method=method)
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py:918: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:97: in _compute_label_quality_scores
+    min_pred_prob = _get_min_pred_prob(predictions)
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/rank.py:113: in _get_min_pred_prob
+    return _get_min_pred_prob(predictions)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+predictions = [array([array([[ 90.  , 243.  , 194.  , 253.  ,   0.96]]),
+       array([[ 89.  ,  18.  , 167.  ,  27.  ,   0.98]]),
+ ... array([[ 78.  ,  95.  , 191.  , 131.  ,   0.96]]),
+       array([], shape=(0, 5), dtype=float32)], dtype=object), ...]
+
+    def _get_min_pred_prob(predictions):
+        pred_probs = [1.0]
+        for prediction in predictions:
+>           last_column = prediction[:, -1]
+E           IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed
+
+../publishablew/cleanlab/cleanlab/cleanlab/object_detection/temp.py:13: IndexError
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error
+=================== 15 failed, 35 passed, 1 warning in 3.22s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores Pruning 33 predictions out of 44 using threshold==0.99. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.96. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 50 passed, 1 warning in 2.57s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 50 items
+
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights0] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights1] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_label_quality_scores_custom_weights[agg_weights2] Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_issues_from_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_min_pred_prob PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_score PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_valid_subtype_score_params PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_aggregation_weights PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmin1d PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_softmax PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bbox_xyxy_to_xywh Wrong bbox shape 5
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[True] Pruning 44 predictions out of 44 using threshold==1.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_prune_by_threshold[False] Pruning 0 predictions out of 44 using threshold==0.6. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.5. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_similarity_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_compute_label_quality_scores Pruning 33 predictions out of 44 using threshold==0.99. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+Pruning 0 predictions out of 44 using threshold==0.96. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_scores_indexed_correctly PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_score_shifts_in_correct_direction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_separate_prediction PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_return_issues_ranked_by_scores Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bad_input_find_label_issues_internal Pruning 0 predictions out of 44 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_per_box PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_object_counts_per_image PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_bounding_box_size_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_class_label_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_get_sorted_bbox_count_idxs PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_size_distributions PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_plot_class_distribution PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_visualize PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_has_labels_overlap PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[True] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_overlap_labels[False] Pruning 0 predictions out of 5 using threshold==0.0. These predictions are no longer considered as potential candidates for identifying label issues as their similarity with the given labels is no longer considered.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_only_overlap_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_find_label_issues_overlapping_labels[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_badloc_low_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_overlooked_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_swap_high_probability_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_invalid_method_raises_value_error PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives[False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_true_positives_false_positives_high_threshold PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[None] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_metrics[class_names1] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_per_class_confusion_matrix PASSED
+../publishablew/cleanlab/cleanlab/tests/test_object_detection.py::test_calculate_areas_across_boxes PASSED
+
+=============================== warnings summary ===============================
+tests/test_object_detection.py::test_visualize
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/object_detection/summary.py:433: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+    fig, ax = plt.subplots(frameon=False, figsize=figsize)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 50 passed, 1 warning in 2.93s =========================

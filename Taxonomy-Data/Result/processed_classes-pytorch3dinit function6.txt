@@ -1,0 +1,82 @@
+output file:
+processed_classes-pytorch3dinit function6.json
+function:
+__init__
+Error Cases:
+ERROR: found no collectors for /local/data0/moved_data/pytorch3d/tests/test_transforms.py::TestTranslate
+
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+__________________ ERROR collecting tests/test_transforms.py ___________________
+../pytorch3d/tests/test_transforms.py:13: in <module>
+    from pytorch3d.transforms import random_rotations
+../pytorch3d/pytorch3d/transforms/__init__.py:38: in <module>
+    from .transform3d import Rotate, RotateAxisAngle, Scale, Transform3d, Translate
+../pytorch3d/pytorch3d/transforms/transform3d.py:451: in <module>
+    class Translate(Transform3d):
+../pytorch3d/pytorch3d/transforms/transform3d.py:453: in Translate
+    def __init__(self, x: Union[Tensor, float], y: Optional[Union[Tensor, float]]=None, z: Optional[Union[Tensor, float]]=None, dtype: torch.dtype=torch.float32, device: Optional[torch.device]=None) -> None:
+E   NameError: name 'Tensor' is not defined
+=========================== short test summary info ============================
+ERROR ../pytorch3d/tests/test_transforms.py - NameError: name 'Tensor' is not...
+=============================== 1 error in 0.95s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 13 items
+
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 76%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [100%]
+
+============================== 13 passed in 1.18s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 13 items
+
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_bad_broadcast PASSED [  7%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_get_item PASSED [ 15%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_inverse PASSED [ 23%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix PASSED [ 30%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_matrix_extra_args PASSED [ 38%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast PASSED [ 46%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_broadcast_grad PASSED [ 53%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_mixed_scalars PASSED [ 61%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_python_scalar PASSED [ 69%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar PASSED [ 76%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_scalar_grads PASSED [ 84%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_torch_vectors PASSED [ 92%]
+../pytorch3d/tests/test_transforms.py::TestTranslate::test_vector_broadcast PASSED [100%]
+
+============================== 13 passed in 1.67s ==============================

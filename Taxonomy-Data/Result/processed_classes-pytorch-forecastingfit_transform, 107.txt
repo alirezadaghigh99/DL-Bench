@@ -1,0 +1,1159 @@
+output file:
+processed_classes-pytorch-forecastingfit_transform, 107.json
+function:
+fit_transform
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs12-groups12] FAILED [ 88%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs6-groups6] FAILED [ 72%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs3-groups3] FAILED [ 63%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs10-groups10] FAILED [ 83%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs2-groups2] FAILED [ 61%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs5-groups5] FAILED [ 69%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs4-groups4] FAILED [ 66%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs1-groups1] FAILED [ 58%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs13-groups13] FAILED [ 91%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs8-groups8] FAILED [ 77%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs9-groups9] FAILED [ 80%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs7-groups7] FAILED [ 75%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs11-groups11] FAILED [ 86%]', '../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs0-groups0] FAILED [ 55%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/venv/bin/python3
+cachedir: .cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting
+configfile: pytest.ini
+plugins: cov-6.0.0
+collecting ... collected 36 items
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data0-True] PASSED [  2%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data1-False] PASSED [  5%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data2-True] PASSED [  8%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data3-False] PASSED [ 11%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder_add PASSED [ 13%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs0] PASSED [ 16%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs1] PASSED [ 19%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs2] PASSED [ 22%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs3] PASSED [ 25%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs4] PASSED [ 27%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs5] PASSED [ 30%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs6] PASSED [ 33%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs7] PASSED [ 36%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs8] PASSED [ 38%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs9] PASSED [ 41%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs10] PASSED [ 44%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs11] PASSED [ 47%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs12] PASSED [ 50%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs13] PASSED [ 52%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs0-groups0] FAILED [ 55%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs1-groups1] FAILED [ 58%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs2-groups2] FAILED [ 61%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs3-groups3] FAILED [ 63%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs4-groups4] FAILED [ 66%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs5-groups5] FAILED [ 69%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs6-groups6] FAILED [ 72%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs7-groups7] FAILED [ 75%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs8-groups8] FAILED [ 77%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs9-groups9] FAILED [ 80%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs10-groups10] FAILED [ 83%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs11-groups11] FAILED [ 86%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs12-groups12] FAILED [ 88%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs13-groups13] FAILED [ 91%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer_with_limited_history PASSED [ 94%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_MultiNormalizer_fitted PASSED [ 97%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_TorchNormalizer_dtype_consistency PASSED [100%]
+
+=================================== FAILURES ===================================
+____________________ test_GroupNormalizer[kwargs0-groups0] _____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'robust', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='robust',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs1-groups1] _____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'robust', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='robust',
+	groups=['a'],
+	center=True,
+	scale_by_group=False,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs2-groups2] _____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation='log',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs3-groups3] _____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'standard', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=True,
+	scale_by_group=False,
+	transformation='log',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs4-groups4] _____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation='relu',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs5-groups5] _____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'standard', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=True,
+	scale_by_group=False,
+	transformation='relu',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs6-groups6] _____________________
+
+kwargs = {'center': False, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=False,
+	scale_by_group=False,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs7-groups7] _____________________
+
+kwargs = {'center': False, 'groups': ['a'], 'method': 'standard', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=False,
+	scale_by_group=False,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs8-groups8] _____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation='log1p',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+____________________ test_GroupNormalizer[kwargs9-groups9] _____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'standard', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=True,
+	scale_by_group=False,
+	transformation='log1p',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+___________________ test_GroupNormalizer[kwargs10-groups10] ____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation='softplus',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+___________________ test_GroupNormalizer[kwargs11-groups11] ____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'standard', 'scale_by_group': False, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=True,
+	scale_by_group=False,
+	transformation='softplus',
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+___________________ test_GroupNormalizer[kwargs12-groups12] ____________________
+
+kwargs = {'center': True, 'groups': [], 'method': 'standard', 'scale_by_group': False, ...}
+groups = []
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=[],
+	center=True,
+	scale_by_group=False,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+___________________ test_GroupNormalizer[kwargs13-groups13] ____________________
+
+kwargs = {'center': True, 'groups': ['a'], 'method': 'standard', 'scale_by_group': True, ...}
+groups = ['a']
+
+    @pytest.mark.parametrize(
+        "kwargs,groups",
+        itertools.product(
+            [
+                dict(method="robust"),
+                dict(transformation="log"),
+                dict(transformation="relu"),
+                dict(center=False),
+                dict(transformation="log1p"),
+                dict(transformation="softplus"),
+                dict(scale_by_group=True),
+            ],
+            [[], ["a"]],
+        ),
+    )
+    def test_GroupNormalizer(kwargs, groups):
+        data = pd.DataFrame(dict(a=[1, 1, 2, 2, 3], b=[1.1, 1.1, 1.0, 0.0, 1.1]))
+        defaults = dict(method="standard", transformation=None, center=True, scale_by_group=False)
+        defaults.update(kwargs)
+        kwargs = defaults
+        kwargs["groups"] = groups
+        kwargs["scale_by_group"] = kwargs["scale_by_group"] and len(kwargs["groups"]) > 0
+    
+        normalizer = GroupNormalizer(**kwargs)
+>       encoded = normalizer.fit_transform(data["b"], data)
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pytorch-forecasting/pytorch-forecasting/venv/lib/python3.11/site-packages/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = GroupNormalizer(
+	method='standard',
+	groups=['a'],
+	center=True,
+	scale_by_group=True,
+	transformation=None,
+	method_kwargs={}
+)
+y = 0    1.1
+1    1.1
+2    1.0
+3    0.0
+4    1.1
+Name: b, dtype: float64
+X =    a    b
+0  1  1.1
+1  1  1.1
+2  2  1.0
+3  2  0.0
+4  3  1.1
+return_norm = False
+
+    def fit_transform(self, y: pd.Series, X: pd.DataFrame, return_norm: bool=False) -> Union[np.ndarray, Tuple[np.ndarray, np.ndarray]]:
+        if 'group' not in X.columns:
+>           raise ValueError("X must contain a 'group' column for group-specific normalization.")
+E           ValueError: X must contain a 'group' column for group-specific normalization.
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:720: ValueError
+=============================== warnings summary ===============================
+tests/test_data/test_encoders.py: 20 warnings
+  /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:474: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+    y = (y - center) / scale
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 14 failed, 22 passed, 20 warnings in 0.63s ==================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/venv/bin/python3
+cachedir: .cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting
+configfile: pytest.ini
+plugins: cov-6.0.0
+collecting ... collected 36 items
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data0-True] PASSED [  2%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data1-False] PASSED [  5%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data2-True] PASSED [  8%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data3-False] PASSED [ 11%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder_add PASSED [ 13%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs0] PASSED [ 16%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs1] PASSED [ 19%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs2] PASSED [ 22%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs3] PASSED [ 25%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs4] PASSED [ 27%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs5] PASSED [ 30%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs6] PASSED [ 33%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs7] PASSED [ 36%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs8] PASSED [ 38%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs9] PASSED [ 41%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs10] PASSED [ 44%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs11] PASSED [ 47%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs12] PASSED [ 50%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs13] PASSED [ 52%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs0-groups0] PASSED [ 55%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs1-groups1] PASSED [ 58%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs2-groups2] PASSED [ 61%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs3-groups3] PASSED [ 63%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs4-groups4] PASSED [ 66%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs5-groups5] PASSED [ 69%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs6-groups6] PASSED [ 72%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs7-groups7] PASSED [ 75%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs8-groups8] PASSED [ 77%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs9-groups9] PASSED [ 80%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs10-groups10] PASSED [ 83%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs11-groups11] PASSED [ 86%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs12-groups12] PASSED [ 88%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs13-groups13] PASSED [ 91%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer_with_limited_history PASSED [ 94%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_MultiNormalizer_fitted PASSED [ 97%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_TorchNormalizer_dtype_consistency PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_data/test_encoders.py: 20 warnings
+  /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:557: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+    y = (y - center) / scale
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform linux, python 3.11.10-final-0 ----------
+Name                                                                                                                                                 Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py                                      421     97    77%   22, 26, 34-36, 45, 65, 68, 71, 74, 81, 84, 98, 101, 104, 118, 121, 124, 159, 204-206, 238-239, 313-315, 324-325, 335, 340, 358, 376, 387, 482-483, 497, 509-511, 518, 521, 565, 682-683, 693-698, 716, 821, 846-851, 899, 938, 958, 977, 984, 994-995, 1001-1002, 1080, 1086, 1092, 1115-1133, 1147-1151, 1160, 1184-1218
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/examples.py                                       28     19    32%   26-33, 49-50, 87-111
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/samplers.py                                       58     45    22%   43-55, 67, 73-95, 98-111, 114, 126-133
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/timeseries.py                                    733    640    13%   50-74, 80, 96-113, 335-506, 514, 526, 538-541, 547-550, 561-564, 575-578, 587-622, 635, 645, 652-667, 678, 691-693, 706-881, 895-918, 945-973, 987-1050, 1060, 1072-1078, 1088-1091, 1101, 1112-1115, 1125, 1135-1139, 1148-1155, 1178, 1206-1225, 1239-1317, 1335-1345, 1362-1381, 1396-1412, 1421, 1436-1455, 1461, 1478-1492, 1504-1686, 1716-1778, 1866-1891, 1903-1909, 1912
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/_mqf2_utils.py                                148    148     0%   3-526
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/base_metrics.py                               409    294    28%   48, 63, 79, 91-97, 111-122, 125-127, 130-131, 134-136, 160-163, 167, 170, 173, 176, 180-201, 205-208, 212-213, 216-217, 220, 234-237, 255-263, 266-271, 277, 286, 297-308, 317-325, 340-359, 362, 366, 369-370, 373-374, 389-395, 410-416, 425, 443-485, 512-524, 527-530, 543-547, 556-564, 579-590, 593, 597, 600-601, 604-605, 620, 635, 638-645, 648-649, 664-665, 678-680, 685-715, 718, 733-734, 737, 741, 744, 747, 771, 787-802, 805-819, 822-823, 837-852, 866-884, 917-919, 932, 945-947, 959-963, 976-982, 997-1005, 1027-1031, 1044-1047
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/distributions.py                              205    150    27%   24-29, 36-39, 74-87, 90-103, 110-117, 132-136, 141-152, 166, 181, 186-196, 212-214, 227-230, 235-252, 291-336, 340, 343-358, 374-379, 384-385, 399-415, 420-429, 433-439, 466-471, 474-479, 492-500, 505-506, 509-513, 527-549
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/point.py                                      100     67    33%   36, 41-42, 45-51, 69-71, 82-83, 94-95, 104-107, 121, 135, 146, 149-150, 182-209, 212, 217-252, 288-290, 293-294, 297-301
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/quantile.py                                    22     14    36%   28-30, 34-40, 52-55, 67
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/base_model.py                                  888    766    14%   73-112, 129-158, 195-204, 208-214, 226-282, 285-286, 289-290, 293-333, 337-341, 449-529, 534-535, 539, 547, 559-562, 581-591, 613-640, 646, 652-655, 658-659, 662-665, 668-672, 675-676, 679-683, 686-687, 715-729, 749-840, 859-885, 938, 944, 951-956, 966-968, 983-1015, 1050-1159, 1165-1187, 1193-1198, 1210-1316, 1331-1343, 1346-1354, 1364-1367, 1370-1373, 1389-1401, 1418-1434, 1481-1523, 1560-1617, 1654-1658, 1667, 1678, 1689, 1694, 1699, 1704-1707, 1728-1771, 1791-1812, 1838-1927, 1953-2053, 2089-2098, 2122-2157, 2274-2300, 2311, 2347-2355, 2374, 2420-2438
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/baseline.py                                     19     11    42%   44-59, 64-68, 71, 74
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/deepar/__init__.py                             143    119    17%   109-183, 205-217, 231-253, 260-266, 274-279, 294-333, 339-361, 364-373, 421-430
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/mlp/__init__.py                                 66     50    24%   81-133, 145, 156-173, 177-179
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/mlp/submodules.py                               27     22    19%   20-45, 50
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nbeats/__init__.py                             126    109    13%   90-143, 156-186, 208-235, 241-272, 278-292, 320-376
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nbeats/sub_modules.py                           88     68    23%   14-18, 22-33, 47-66, 69, 84-117, 120-126, 129, 142-159, 162-165, 178-188, 191-196
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nhits/__init__.py                              183    154    16%   144-208, 238, 249, 260, 271, 285-343, 367-394, 400-440, 465-562, 568-591
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nhits/sub_modules.py                           162    141    13%   12-14, 17-18, 23-27, 36-60, 64-78, 108-167, 172-210, 241-269, 293-336, 346-383
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nn/embeddings.py                                85     64    25%   11-12, 15-28, 73-118, 121-138, 145, 148, 151, 154, 157, 161, 165-168, 182-197
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nn/rnn.py                                       79     56    29%   37, 50, 64, 91-128, 137-140, 143-158, 161-164, 173, 176-186, 189, 202-210
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/rnn/__init__.py                                116     96    17%   84-158, 178-184, 198-220, 227-233, 241-246, 261-292, 298-317
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/__init__.py        271    242    11%   136-357, 379-384, 392, 398-424, 430-532, 544-545, 548-551, 555-560, 566-567, 588-709, 738-763, 778-817, 824-881, 891-896
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/sub_modules.py     292    245    16%   16-18, 21-34, 39-45, 48-51, 54-68, 75-84, 87-91, 94-98, 103-115, 118-125, 130-142, 145-152, 164-172, 175-177, 190-215, 224-230, 233-246, 263-313, 317, 321, 324-354, 359-368, 371-376, 381-387, 390-403, 408-421, 424-428, 431-449
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/tuning.py           63     63     0%   5-221
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_dependencies.py                                 15     10    33%   16-28, 40, 57-62
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_maint/_show_versions.py                         43     35    19%   23-31, 81-115, 133-142
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_utils.py                                       210    170    19%   33-41, 60-73, 86-102, 116-119, 137-140, 158-173, 190-211, 225-231, 247-256, 274-291, 305-308, 319-325, 344-347, 356-359, 362, 365, 368, 379, 394-404, 431-451, 476-485, 501-510, 530-552, 557-561, 564-568
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                                                 5032   3895    23%
+
+7 files skipped due to complete coverage.
+Coverage HTML written to dir htmlcov
+
+======================= 36 passed, 20 warnings in 1.07s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/venv/bin/python3
+cachedir: .cache
+rootdir: /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting
+configfile: pytest.ini
+plugins: cov-6.0.0
+collecting ... collected 36 items
+
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data0-True] PASSED [  2%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data1-False] PASSED [  5%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data2-True] PASSED [  8%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder[data3-False] PASSED [ 11%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_NaNLabelEncoder_add PASSED [ 13%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs0] PASSED [ 16%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs1] PASSED [ 19%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs2] PASSED [ 22%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs3] PASSED [ 25%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs4] PASSED [ 27%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs5] PASSED [ 30%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs6] PASSED [ 33%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs7] PASSED [ 36%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs8] PASSED [ 38%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs9] PASSED [ 41%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs10] PASSED [ 44%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs11] PASSED [ 47%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs12] PASSED [ 50%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer[kwargs13] PASSED [ 52%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs0-groups0] PASSED [ 55%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs1-groups1] PASSED [ 58%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs2-groups2] PASSED [ 61%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs3-groups3] PASSED [ 63%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs4-groups4] PASSED [ 66%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs5-groups5] PASSED [ 69%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs6-groups6] PASSED [ 72%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs7-groups7] PASSED [ 75%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs8-groups8] PASSED [ 77%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs9-groups9] PASSED [ 80%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs10-groups10] PASSED [ 83%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs11-groups11] PASSED [ 86%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs12-groups12] PASSED [ 88%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_GroupNormalizer[kwargs13-groups13] PASSED [ 91%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_EncoderNormalizer_with_limited_history PASSED [ 94%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_MultiNormalizer_fitted PASSED [ 97%]
+../publishablew/pytorch-forecasting/pytorch-forecasting/tests/test_data/test_encoders.py::test_TorchNormalizer_dtype_consistency PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_data/test_encoders.py: 20 warnings
+  /local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py:557: DeprecationWarning: __array_wrap__ must accept context and return_scalar arguments (positionally) in the future. (Deprecated NumPy 2.0)
+    y = (y - center) / scale
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform linux, python 3.11.10-final-0 ----------
+Name                                                                                                                                                 Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/encoders.py                                      421     97    77%   22, 26, 34-36, 45, 65, 68, 71, 74, 81, 84, 98, 101, 104, 118, 121, 124, 159, 204-206, 238-239, 313-315, 324-325, 335, 340, 358, 376, 387, 482-483, 497, 509-511, 518, 521, 565, 682-683, 693-698, 716, 821, 846-851, 899, 938, 958, 977, 984, 994-995, 1001-1002, 1080, 1086, 1092, 1115-1133, 1147-1151, 1160, 1184-1218
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/examples.py                                       28     19    32%   26-33, 49-50, 87-111
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/samplers.py                                       58     45    22%   43-55, 67, 73-95, 98-111, 114, 126-133
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/data/timeseries.py                                    733    640    13%   50-74, 80, 96-113, 335-506, 514, 526, 538-541, 547-550, 561-564, 575-578, 587-622, 635, 645, 652-667, 678, 691-693, 706-881, 895-918, 945-973, 987-1050, 1060, 1072-1078, 1088-1091, 1101, 1112-1115, 1125, 1135-1139, 1148-1155, 1178, 1206-1225, 1239-1317, 1335-1345, 1362-1381, 1396-1412, 1421, 1436-1455, 1461, 1478-1492, 1504-1686, 1716-1778, 1866-1891, 1903-1909, 1912
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/_mqf2_utils.py                                148    148     0%   3-526
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/base_metrics.py                               409    294    28%   48, 63, 79, 91-97, 111-122, 125-127, 130-131, 134-136, 160-163, 167, 170, 173, 176, 180-201, 205-208, 212-213, 216-217, 220, 234-237, 255-263, 266-271, 277, 286, 297-308, 317-325, 340-359, 362, 366, 369-370, 373-374, 389-395, 410-416, 425, 443-485, 512-524, 527-530, 543-547, 556-564, 579-590, 593, 597, 600-601, 604-605, 620, 635, 638-645, 648-649, 664-665, 678-680, 685-715, 718, 733-734, 737, 741, 744, 747, 771, 787-802, 805-819, 822-823, 837-852, 866-884, 917-919, 932, 945-947, 959-963, 976-982, 997-1005, 1027-1031, 1044-1047
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/distributions.py                              205    150    27%   24-29, 36-39, 74-87, 90-103, 110-117, 132-136, 141-152, 166, 181, 186-196, 212-214, 227-230, 235-252, 291-336, 340, 343-358, 374-379, 384-385, 399-415, 420-429, 433-439, 466-471, 474-479, 492-500, 505-506, 509-513, 527-549
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/point.py                                      100     67    33%   36, 41-42, 45-51, 69-71, 82-83, 94-95, 104-107, 121, 135, 146, 149-150, 182-209, 212, 217-252, 288-290, 293-294, 297-301
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/metrics/quantile.py                                    22     14    36%   28-30, 34-40, 52-55, 67
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/base_model.py                                  888    766    14%   73-112, 129-158, 195-204, 208-214, 226-282, 285-286, 289-290, 293-333, 337-341, 449-529, 534-535, 539, 547, 559-562, 581-591, 613-640, 646, 652-655, 658-659, 662-665, 668-672, 675-676, 679-683, 686-687, 715-729, 749-840, 859-885, 938, 944, 951-956, 966-968, 983-1015, 1050-1159, 1165-1187, 1193-1198, 1210-1316, 1331-1343, 1346-1354, 1364-1367, 1370-1373, 1389-1401, 1418-1434, 1481-1523, 1560-1617, 1654-1658, 1667, 1678, 1689, 1694, 1699, 1704-1707, 1728-1771, 1791-1812, 1838-1927, 1953-2053, 2089-2098, 2122-2157, 2274-2300, 2311, 2347-2355, 2374, 2420-2438
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/baseline.py                                     19     11    42%   44-59, 64-68, 71, 74
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/deepar/__init__.py                             143    119    17%   109-183, 205-217, 231-253, 260-266, 274-279, 294-333, 339-361, 364-373, 421-430
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/mlp/__init__.py                                 66     50    24%   81-133, 145, 156-173, 177-179
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/mlp/submodules.py                               27     22    19%   20-45, 50
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nbeats/__init__.py                             126    109    13%   90-143, 156-186, 208-235, 241-272, 278-292, 320-376
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nbeats/sub_modules.py                           88     68    23%   14-18, 22-33, 47-66, 69, 84-117, 120-126, 129, 142-159, 162-165, 178-188, 191-196
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nhits/__init__.py                              183    154    16%   144-208, 238, 249, 260, 271, 285-343, 367-394, 400-440, 465-562, 568-591
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nhits/sub_modules.py                           162    141    13%   12-14, 17-18, 23-27, 36-60, 64-78, 108-167, 172-210, 241-269, 293-336, 346-383
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nn/embeddings.py                                85     64    25%   11-12, 15-28, 73-118, 121-138, 145, 148, 151, 154, 157, 161, 165-168, 182-197
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/nn/rnn.py                                       79     56    29%   37, 50, 64, 91-128, 137-140, 143-158, 161-164, 173, 176-186, 189, 202-210
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/rnn/__init__.py                                116     96    17%   84-158, 178-184, 198-220, 227-233, 241-246, 261-292, 298-317
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/__init__.py        271    242    11%   136-357, 379-384, 392, 398-424, 430-532, 544-545, 548-551, 555-560, 566-567, 588-709, 738-763, 778-817, 824-881, 891-896
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/sub_modules.py     292    245    16%   16-18, 21-34, 39-45, 48-51, 54-68, 75-84, 87-91, 94-98, 103-115, 118-125, 130-142, 145-152, 164-172, 175-177, 190-215, 224-230, 233-246, 263-313, 317, 321, 324-354, 359-368, 371-376, 381-387, 390-403, 408-421, 424-428, 431-449
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/models/temporal_fusion_transformer/tuning.py           63     63     0%   5-221
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_dependencies.py                                 15     10    33%   16-28, 40, 57-62
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_maint/_show_versions.py                         43     35    19%   23-31, 81-115, 133-142
+/local/data0/moved_data/publishablew/pytorch-forecasting/pytorch-forecasting/pytorch_forecasting/utils/_utils.py                                       210    170    19%   33-41, 60-73, 86-102, 116-119, 137-140, 158-173, 190-211, 225-231, 247-256, 274-291, 305-308, 319-325, 344-347, 356-359, 362, 365, 368, 379, 394-404, 431-451, 476-485, 501-510, 530-552, 557-561, 564-568
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                                                                                 5032   3895    23%
+
+7 files skipped due to complete coverage.
+Coverage HTML written to dir htmlcov
+
+======================= 36 passed, 20 warnings in 1.13s ========================

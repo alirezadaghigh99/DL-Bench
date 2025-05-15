@@ -1,0 +1,525 @@
+output file:
+processed_GPflowndiagquad39.json
+function:
+ndiagquad
+Error Cases:
+2025-01-09 18:43:01.822176: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1736466181.833305 2791967 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1736466181.836866 2791967 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:43:01.848895: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph FAILED
+
+=================================== FAILURES ===================================
+__________________________ test_diagquad_1d[var0-mu0] __________________________
+
+mu = array([1. , 1.3]), var = array([3. , 3.5])
+
+    @pytest.mark.parametrize("mu", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var", [np.array([3.0, 3.5])])
+    def test_diagquad_1d(mu: TensorType, var: TensorType) -> None:
+        num_gauss_hermite_points = 25
+>       quad = quadrature.ndiagquad([lambda *X: tf.exp(X[0])], num_gauss_hermite_points, [mu], [var])
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:72: in ndiagquad
+    return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function test_diagquad_1d.<locals>.<lambda> at 0x702ba359e5c0>]
+H = 25, Fmu = [array([1. , 1.3])], Fvar = [array([3. , 3.5])], logspace = False
+Ys = {}
+
+    def ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=False, **Ys: TensorType) -> tf.Tensor:
+        """
+        Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+        :param funcs: A callable or an iterable of callables representing the integrands.
+        :param H: Number of Gauss-Hermite quadrature points.
+        :param Fmu: Means of the Gaussian distributions.
+        :param Fvar: Variances of the Gaussian distributions.
+        :param logspace: Whether to compute the log-expectation of exp(funcs).
+        :param Ys: Additional deterministic inputs to the integrands.
+        :return: The computed expectation with the same shape as Fmu.
+        """
+        warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+        if not isinstance(funcs, Iterable):
+            funcs = [funcs]
+        if not isinstance(Fmu, (tuple, list)):
+            Fmu = (Fmu,)
+        if not isinstance(Fvar, (tuple, list)):
+            Fvar = (Fvar,)
+>       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E       TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+../publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:37: TypeError
+___________________ test_diagquad_2d[var20-mu20-var10-mu10] ____________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5]), mu2 = array([-2. ,  0.3])
+var2 = array([4. , 4.2])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    @pytest.mark.parametrize("mu2", [np.array([-2.0, 0.3])])
+    @pytest.mark.parametrize("var2", [np.array([4.0, 4.2])])
+    def test_diagquad_2d(mu1: TensorType, var1: TensorType, mu2: TensorType, var2: TensorType) -> None:
+        alpha = 2.5
+        # using logspace=True we can reduce this, see test_diagquad_logspace
+        num_gauss_hermite_points = 35
+>       quad = quadrature.ndiagquad(
+            lambda *X: tf.exp(X[0] + alpha * X[1]),
+            num_gauss_hermite_points,
+            [mu1, mu2],
+            [var1, var2],
+        )
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:72: in ndiagquad
+    return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function test_diagquad_2d.<locals>.<lambda> at 0x702ba347c360>]
+H = 35, Fmu = [array([1. , 1.3]), array([-2. ,  0.3])]
+Fvar = [array([3. , 3.5]), array([4. , 4.2])], logspace = False, Ys = {}
+
+    def ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=False, **Ys: TensorType) -> tf.Tensor:
+        """
+        Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+        :param funcs: A callable or an iterable of callables representing the integrands.
+        :param H: Number of Gauss-Hermite quadrature points.
+        :param Fmu: Means of the Gaussian distributions.
+        :param Fvar: Variances of the Gaussian distributions.
+        :param logspace: Whether to compute the log-expectation of exp(funcs).
+        :param Ys: Additional deterministic inputs to the integrands.
+        :return: The computed expectation with the same shape as Fmu.
+        """
+        warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+        if not isinstance(funcs, Iterable):
+            funcs = [funcs]
+        if not isinstance(Fmu, (tuple, list)):
+            Fmu = (Fmu,)
+        if not isinstance(Fvar, (tuple, list)):
+            Fvar = (Fvar,)
+>       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E       TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+../publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:37: TypeError
+________________ test_diagquad_logspace[var20-mu20-var10-mu10] _________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5]), mu2 = array([-2. ,  0.3])
+var2 = array([4. , 4.2])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    @pytest.mark.parametrize("mu2", [np.array([-2.0, 0.3])])
+    @pytest.mark.parametrize("var2", [np.array([4.0, 4.2])])
+    def test_diagquad_logspace(
+        mu1: TensorType, var1: TensorType, mu2: TensorType, var2: TensorType
+    ) -> None:
+        alpha = 2.5
+        num_gauss_hermite_points = 25
+>       quad = quadrature.ndiagquad(
+            lambda *X: (X[0] + alpha * X[1]),
+            num_gauss_hermite_points,
+            [mu1, mu2],
+            [var1, var2],
+            logspace=True,
+        )
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:72: in ndiagquad
+    return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function test_diagquad_logspace.<locals>.<lambda> at 0x702ba359e700>]
+H = 25, Fmu = [array([1. , 1.3]), array([-2. ,  0.3])]
+Fvar = [array([3. , 3.5]), array([4. , 4.2])], logspace = True, Ys = {}
+
+    def ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=False, **Ys: TensorType) -> tf.Tensor:
+        """
+        Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+        :param funcs: A callable or an iterable of callables representing the integrands.
+        :param H: Number of Gauss-Hermite quadrature points.
+        :param Fmu: Means of the Gaussian distributions.
+        :param Fvar: Variances of the Gaussian distributions.
+        :param logspace: Whether to compute the log-expectation of exp(funcs).
+        :param Ys: Additional deterministic inputs to the integrands.
+        :return: The computed expectation with the same shape as Fmu.
+        """
+        warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+        if not isinstance(funcs, Iterable):
+            funcs = [funcs]
+        if not isinstance(Fmu, (tuple, list)):
+            Fmu = (Fmu,)
+        if not isinstance(Fvar, (tuple, list)):
+            Fvar = (Fvar,)
+>       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E       TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+../publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:37: TypeError
+_____________________ test_diagquad_with_kwarg[var10-mu10] _____________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    def test_diagquad_with_kwarg(mu1: TensorType, var1: TensorType) -> None:
+        alpha: AnyNDArray = np.array([2.5, -1.3])
+        num_gauss_hermite_points = 25
+>       quad = quadrature.ndiagquad(
+            lambda X, Y: tf.exp(X * Y), num_gauss_hermite_points, mu1, var1, Y=alpha
+        )
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:72: in ndiagquad
+    return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function test_diagquad_with_kwarg.<locals>.<lambda> at 0x702ba347c7c0>]
+H = 25, Fmu = (array([1. , 1.3]),), Fvar = (array([3. , 3.5]),)
+logspace = False, Ys = {}
+
+    def ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=False, **Ys: TensorType) -> tf.Tensor:
+        """
+        Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+        :param funcs: A callable or an iterable of callables representing the integrands.
+        :param H: Number of Gauss-Hermite quadrature points.
+        :param Fmu: Means of the Gaussian distributions.
+        :param Fvar: Variances of the Gaussian distributions.
+        :param logspace: Whether to compute the log-expectation of exp(funcs).
+        :param Ys: Additional deterministic inputs to the integrands.
+        :return: The computed expectation with the same shape as Fmu.
+        """
+        warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+        if not isinstance(funcs, Iterable):
+            funcs = [funcs]
+        if not isinstance(Fmu, (tuple, list)):
+            Fmu = (Fmu,)
+        if not isinstance(Fvar, (tuple, list)):
+            Fvar = (Fvar,)
+>       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E       TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+../publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:37: TypeError
+_____________________ test_ndiagquad_does_not_throw_error ______________________
+
+    def test_ndiagquad_does_not_throw_error() -> None:
+        """
+        Check that the autograph=False for quadrature.ndiagquad does not throw an error.
+        Regression test for https://github.com/GPflow/GPflow/issues/1547.
+        """
+    
+        @tf.function(autograph=False)
+        def func_ndiagquad_autograph_false() -> tf.Tensor:
+            mu: AnyNDArray = np.array([1.0, 1.3])
+            var: AnyNDArray = np.array([3.0, 3.5])
+            num_gauss_hermite_points = 25
+            return quadrature.ndiagquad(
+                [lambda *X: tf.exp(X[0])], num_gauss_hermite_points, [mu], [var]
+            )
+    
+>       func_ndiagquad_autograph_false()
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:96: in func_ndiagquad_autograph_false
+    return quadrature.ndiagquad(
+../publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:72: in ndiagquad
+    return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function test_ndiagquad_does_not_throw_error.<locals>.func_ndiagquad_autograph_false.<locals>.<lambda> at 0x702ba347d3a0>]
+H = 25, Fmu = [array([1. , 1.3])], Fvar = [array([3. , 3.5])], logspace = False
+Ys = {}
+
+    def ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=False, **Ys: TensorType) -> tf.Tensor:
+        """
+        Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+        :param funcs: A callable or an iterable of callables representing the integrands.
+        :param H: Number of Gauss-Hermite quadrature points.
+        :param Fmu: Means of the Gaussian distributions.
+        :param Fvar: Variances of the Gaussian distributions.
+        :param logspace: Whether to compute the log-expectation of exp(funcs).
+        :param Ys: Additional deterministic inputs to the integrands.
+        :return: The computed expectation with the same shape as Fmu.
+        """
+        warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+        if not isinstance(funcs, Iterable):
+            funcs = [funcs]
+        if not isinstance(Fmu, (tuple, list)):
+            Fmu = (Fmu,)
+        if not isinstance(Fvar, (tuple, list)):
+            Fvar = (Fvar,)
+>       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E       TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+../publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:37: TypeError
+__________________________ test_quadrature_autograph ___________________________
+
+    def test_quadrature_autograph() -> None:
+        """
+        Check that the return value is equal with and without Autograph
+        Regression test for https://github.com/GPflow/GPflow/issues/1547.
+        """
+    
+        def compute(autograph: bool) -> AnyNDArray:
+            @tf.function(autograph=autograph)
+            def func() -> tf.Tensor:
+                mu: AnyNDArray = np.array([1.0, 1.3])
+                var: AnyNDArray = np.array([3.0, 3.5])
+                num_gauss_hermite_points = 25
+                return quadrature.ndiagquad(
+                    [lambda *X: tf.exp(X[0])], num_gauss_hermite_points, [mu], [var]
+                )
+    
+            (result,) = func()
+            return cast(AnyNDArray, result.numpy())
+    
+        np.testing.assert_equal(
+>           compute(autograph=True),
+            compute(autograph=False),
+        )
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:119: in compute
+    (result,) = func()
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py:153: in error_handler
+    raise e.with_traceback(filtered_tb) from None
+/tmp/__autograph_generated_fileuqbq7tmd.py:15: in tf__func
+    retval_ = ag__.converted_call(ag__.ld(quadrature).ndiagquad, ([ag__.autograph_artifact(lambda *X: ag__.converted_call(ag__.ld(tf).exp, (ag__.ld(X)[0],), None, fscope))], ag__.ld(num_gauss_hermite_points), [ag__.ld(mu)], [ag__.ld(var)]), None, fscope)
+/tmp/__autograph_generated_file3lvs9j1w.py:198: in tf__wrapped_function
+    ag__.if_stmt(ag__.not_(do_return), if_body_5, else_body_5, get_state_8, set_state_8, ('arg_map', 'arg_map[RESULT_TOKEN]', 'checker', 'do_return', 'retval_'), 5)
+/tmp/__autograph_generated_filej4zf5cru.py:13: in tf__ndiagquad
+    retval_ = ag__.converted_call(ag__.ld(ndiagquad), (ag__.ld(funcs), ag__.ld(H), ag__.ld(Fmu), ag__.ld(Fvar), ag__.ld(logspace)), None, fscope)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+funcs = [<function outer_factory.<locals>.inner_factory.<locals>.tf__func.<locals>.<lambda> at 0x702ba347e980>]
+H = 25, Fmu = [array([1. , 1.3])], Fvar = [array([3. , 3.5])], logspace = False
+Ys = {}
+fscope = <tensorflow.python.autograph.core.function_wrappers.FunctionScope object at 0x702ba3f97550>
+do_return = False
+retval_ = <tensorflow.python.autograph.operators.variables.UndefinedReturnValue object at 0x702ba3f95490>
+get_state = <function outer_factory.<locals>.inner_factory.<locals>.tf__ndiagquad.<locals>.get_state at 0x702ba8233100>
+set_state = <function outer_factory.<locals>.inner_factory.<locals>.tf__ndiagquad.<locals>.set_state at 0x702ba8230ea0>
+if_body = <function outer_factory.<locals>.inner_factory.<locals>.tf__ndiagquad.<locals>.if_body at 0x702ba8233a60>
+else_body = <function outer_factory.<locals>.inner_factory.<locals>.tf__ndiagquad.<locals>.else_body at 0x702ba8231120>
+
+        def tf__ndiagquad(funcs: Union[Callable[..., tf.Tensor], Iterable[Callable[..., tf.Tensor]]], H: int, Fmu: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], Fvar: Union[TensorType, Tuple[TensorType, ...], List[TensorType]], logspace: bool=None, **Ys: TensorType) -> tf.Tensor:
+            """
+    Compute N Gaussian expectation integrals using Gauss-Hermite quadrature.
+    
+    :param funcs: A callable or an iterable of callables representing the integrands.
+    :param H: Number of Gauss-Hermite quadrature points.
+    :param Fmu: Means of the Gaussian distributions.
+    :param Fvar: Variances of the Gaussian distributions.
+    :param logspace: Whether to compute the log-expectation of exp(funcs).
+    :param Ys: Additional deterministic inputs to the integrands.
+    :return: The computed expectation with the same shape as Fmu.
+    """
+            with ag__.FunctionScope('ndiagquad', 'fscope', ag__.STD) as fscope:
+                do_return = False
+                retval_ = ag__.UndefinedReturnValue()
+                ag__.converted_call(ag__.ld(warnings).warn, ('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', ag__.ld(DeprecationWarning)), None, fscope)
+    
+                def get_state():
+                    return (funcs,)
+    
+                def set_state(vars_):
+                    nonlocal funcs
+                    funcs, = vars_
+    
+                def if_body():
+                    nonlocal funcs
+                    funcs = [ag__.ld(funcs)]
+    
+                def else_body():
+                    nonlocal funcs
+                    pass
+                ag__.if_stmt(ag__.not_(ag__.converted_call(ag__.ld(isinstance), (ag__.ld(funcs), ag__.ld(Iterable)), None, fscope)), if_body, else_body, get_state, set_state, ('funcs',), 1)
+    
+                def get_state_1():
+                    return (Fmu,)
+    
+                def set_state_1(vars_):
+                    nonlocal Fmu
+                    Fmu, = vars_
+    
+                def if_body_1():
+                    nonlocal Fmu
+                    Fmu = (ag__.ld(Fmu),)
+    
+                def else_body_1():
+                    nonlocal Fmu
+                    pass
+                ag__.if_stmt(ag__.not_(ag__.converted_call(ag__.ld(isinstance), (ag__.ld(Fmu), (ag__.ld(tuple), ag__.ld(list))), None, fscope)), if_body_1, else_body_1, get_state_1, set_state_1, ('Fmu',), 1)
+    
+                def get_state_2():
+                    return (Fvar,)
+    
+                def set_state_2(vars_):
+                    nonlocal Fvar
+                    Fvar, = vars_
+    
+                def if_body_2():
+                    nonlocal Fvar
+                    Fvar = (ag__.ld(Fvar),)
+    
+                def else_body_2():
+                    nonlocal Fvar
+                    pass
+                ag__.if_stmt(ag__.not_(ag__.converted_call(ag__.ld(isinstance), (ag__.ld(Fvar), (ag__.ld(tuple), ag__.ld(list))), None, fscope)), if_body_2, else_body_2, get_state_2, set_state_2, ('Fvar',), 1)
+>               quadrature = ag__.converted_call(ag__.ld(NDiagGHQuadrature), (ag__.ld(H), ag__.ld(Fmu), ag__.ld(Fvar)), None, fscope)
+E               TypeError: in user code:
+E               
+E                   File "/local/data0/moved_data/publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py", line 116, in func  *
+E                       [lambda *X: tf.exp(X[0])], num_gauss_hermite_points, [mu], [var]
+E                   File "/local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/check_shapes/decorator.py", line 69, in wrapped_function  *
+E                       def wrapped_function(*args: Any, **kwargs: Any) -> Any:
+E                   File "/local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py", line 72, in ndiagquad  *
+E                       return ndiagquad(funcs, H, Fmu, Fvar, logspace)
+E                   File "/local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/temp.py", line 37, in ndiagquad  *
+E                       quadrature = NDiagGHQuadrature(H, Fmu, Fvar)
+E               
+E                   TypeError: NDiagGHQuadrature.__init__() takes 3 positional arguments but 4 were given
+
+/tmp/__autograph_generated_filejws3e2yy.py:70: TypeError
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/temp.py:30: DeprecationWarning: The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.
+    warnings.warn('The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.', DeprecationWarning)
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: The ndiagquad function is deprecated. Please use gpflow.quadrature.NDiagGHQuadrature instead.
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+======================== 6 failed, 8 warnings in 1.93s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.55s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.86s =========================

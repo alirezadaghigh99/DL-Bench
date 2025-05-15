@@ -1,0 +1,230 @@
+output file:
+processed_deepchembuild_layers377.json
+function:
+build_layers
+Error Cases:
+2024-12-26 19:21:19.823561: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1735258879.835100  891470 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1735258879.838574  891470 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-26 19:21:19.851204: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2]', '../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3] FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3]', '../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2] FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0]', '../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1] FAILED', 'FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1]', '../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 4 items
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0] FAILED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1] FAILED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2] FAILED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3] FAILED
+
+=================================== FAILURES ===================================
+______________ test_multilayer_perceptron[False-False-expected0] _______________
+
+skip_connection = False, batch_norm = False
+expected = [[0.2795, 0.4243], [0.2795, 0.4243]]
+
+    @pytest.mark.torch
+    @pytest.mark.parametrize('skip_connection,batch_norm,expected',
+                             [(False, False, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, False, [[-0.9612, 2.3846], [-4.1104, 5.7606]]),
+                              (False, True, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, True, [[-0.9612, 2.3846], [-4.1104, 5.7606]])])
+    def test_multilayer_perceptron(skip_connection, batch_norm, expected):
+        """Test invoking MLP."""
+        torch.manual_seed(0)
+        input_ar = torch.tensor([[1., 2.], [5., 6.]])
+>       layer = torch_layers.MultilayerPerceptron(d_input=2,
+                                                  d_output=2,
+                                                  d_hidden=(2, 2),
+                                                  activation_fn='relu',
+                                                  dropout=0.0,
+                                                  batch_norm=batch_norm,
+                                                  skip_connection=skip_connection)
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py:672: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:71: in __init__
+    self.model = nn.Sequential(*self.build_layers())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = MultilayerPerceptron(
+  (dropout): Dropout(p=0.0, inplace=False)
+)
+
+    def build_layers(self):
+>       from .temp import build_layers
+E       ImportError: cannot import name 'build_layers' from 'deepchem.models.torch_models.temp' (/local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/models/torch_models/temp.py)
+
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:76: ImportError
+_______________ test_multilayer_perceptron[True-False-expected1] _______________
+
+skip_connection = True, batch_norm = False
+expected = [[-0.9612, 2.3846], [-4.1104, 5.7606]]
+
+    @pytest.mark.torch
+    @pytest.mark.parametrize('skip_connection,batch_norm,expected',
+                             [(False, False, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, False, [[-0.9612, 2.3846], [-4.1104, 5.7606]]),
+                              (False, True, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, True, [[-0.9612, 2.3846], [-4.1104, 5.7606]])])
+    def test_multilayer_perceptron(skip_connection, batch_norm, expected):
+        """Test invoking MLP."""
+        torch.manual_seed(0)
+        input_ar = torch.tensor([[1., 2.], [5., 6.]])
+>       layer = torch_layers.MultilayerPerceptron(d_input=2,
+                                                  d_output=2,
+                                                  d_hidden=(2, 2),
+                                                  activation_fn='relu',
+                                                  dropout=0.0,
+                                                  batch_norm=batch_norm,
+                                                  skip_connection=skip_connection)
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py:672: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:71: in __init__
+    self.model = nn.Sequential(*self.build_layers())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = MultilayerPerceptron(
+  (dropout): Dropout(p=0.0, inplace=False)
+)
+
+    def build_layers(self):
+>       from .temp import build_layers
+E       ImportError: cannot import name 'build_layers' from 'deepchem.models.torch_models.temp' (/local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/models/torch_models/temp.py)
+
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:76: ImportError
+_______________ test_multilayer_perceptron[False-True-expected2] _______________
+
+skip_connection = False, batch_norm = True
+expected = [[0.2795, 0.4243], [0.2795, 0.4243]]
+
+    @pytest.mark.torch
+    @pytest.mark.parametrize('skip_connection,batch_norm,expected',
+                             [(False, False, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, False, [[-0.9612, 2.3846], [-4.1104, 5.7606]]),
+                              (False, True, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, True, [[-0.9612, 2.3846], [-4.1104, 5.7606]])])
+    def test_multilayer_perceptron(skip_connection, batch_norm, expected):
+        """Test invoking MLP."""
+        torch.manual_seed(0)
+        input_ar = torch.tensor([[1., 2.], [5., 6.]])
+>       layer = torch_layers.MultilayerPerceptron(d_input=2,
+                                                  d_output=2,
+                                                  d_hidden=(2, 2),
+                                                  activation_fn='relu',
+                                                  dropout=0.0,
+                                                  batch_norm=batch_norm,
+                                                  skip_connection=skip_connection)
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py:672: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:71: in __init__
+    self.model = nn.Sequential(*self.build_layers())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = MultilayerPerceptron(
+  (dropout): Dropout(p=0.0, inplace=False)
+)
+
+    def build_layers(self):
+>       from .temp import build_layers
+E       ImportError: cannot import name 'build_layers' from 'deepchem.models.torch_models.temp' (/local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/models/torch_models/temp.py)
+
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:76: ImportError
+_______________ test_multilayer_perceptron[True-True-expected3] ________________
+
+skip_connection = True, batch_norm = True
+expected = [[-0.9612, 2.3846], [-4.1104, 5.7606]]
+
+    @pytest.mark.torch
+    @pytest.mark.parametrize('skip_connection,batch_norm,expected',
+                             [(False, False, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, False, [[-0.9612, 2.3846], [-4.1104, 5.7606]]),
+                              (False, True, [[0.2795, 0.4243], [0.2795, 0.4243]]),
+                              (True, True, [[-0.9612, 2.3846], [-4.1104, 5.7606]])])
+    def test_multilayer_perceptron(skip_connection, batch_norm, expected):
+        """Test invoking MLP."""
+        torch.manual_seed(0)
+        input_ar = torch.tensor([[1., 2.], [5., 6.]])
+>       layer = torch_layers.MultilayerPerceptron(d_input=2,
+                                                  d_output=2,
+                                                  d_hidden=(2, 2),
+                                                  activation_fn='relu',
+                                                  dropout=0.0,
+                                                  batch_norm=batch_norm,
+                                                  skip_connection=skip_connection)
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py:672: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:71: in __init__
+    self.model = nn.Sequential(*self.build_layers())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = MultilayerPerceptron(
+  (dropout): Dropout(p=0.0, inplace=False)
+)
+
+    def build_layers(self):
+>       from .temp import build_layers
+E       ImportError: cannot import name 'build_layers' from 'deepchem.models.torch_models.temp' (/local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/models/torch_models/temp.py)
+
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:76: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0]
+FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1]
+FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2]
+FAILED ../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3]
+============================== 4 failed in 4.49s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 4 items
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3] PASSED
+
+=============================== warnings summary ===============================
+../publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:1203
+  /local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/models/torch_models/layers.py:1203: DeprecationWarning: invalid escape sequence '\m'
+    """Output computation for a GraphNetwork
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 4 passed, 1 warning in 4.02s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 4 items
+
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-False-expected0] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-False-expected1] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[False-True-expected2] PASSED
+../publishablew/deepchem/deepchem/deepchem/models/tests/test_layers.py::test_multilayer_perceptron[True-True-expected3] PASSED
+
+============================== 4 passed in 4.46s ===============================

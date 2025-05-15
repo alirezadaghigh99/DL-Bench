@@ -1,0 +1,282 @@
+output file:
+processed_classes-korniaforward56.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32] FAILED [ 20%]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32] FAILED [ 40%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32] FAILED [ 60%]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'inductor', 'openxla', 'tvm', 'jit', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32] FAILED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32] FAILED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32] FAILED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_jit[cpu-float32] SKIPPED [100%]
+
+=================================== FAILURES ===================================
+_____________________ TestTranslate.test_dxdy[cpu-float32] _____________________
+
+self = <test_affine.TestTranslate object at 0x7a8766b0aa70>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_dxdy(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype)
+        expected = torch.tensor([[[0.0, 1.0], [0.0, 3.0], [0.0, 5.0], [0.0, 7.0]]], device=device, dtype=dtype)
+        # prepare transformation
+        translation = torch.tensor([[1.0, 0.0]], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Translate(translation, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:328: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Translate()
+input = tensor([[[1., 2.],
+         [3., 4.],
+         [5., 6.],
+         [7., 8.]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+>       tx, ty = self.translation
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:694: ValueError
+__________________ TestTranslate.test_dxdy_batch[cpu-float32] __________________
+
+self = <test_affine.TestTranslate object at 0x7a8766b0ae60>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_dxdy_batch(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype).repeat(
+            2, 1, 1, 1
+        )
+        expected = torch.tensor(
+            [[[[0.0, 1.0], [0.0, 3.0], [0.0, 5.0], [0.0, 7.0]]], [[[0.0, 0.0], [0.0, 1.0], [0.0, 3.0], [0.0, 5.0]]]],
+            device=device,
+            dtype=dtype,
+        )
+        # prepare transformation
+        translation = torch.tensor([[1.0, 0.0], [1.0, 1.0]], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Translate(translation, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:343: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Translate()
+input = tensor([[[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]],
+
+
+        [[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        tx, ty = self.translation
+        N, C, H, W = input.size()
+        tx_normalized = 2.0 * tx / W
+        ty_normalized = 2.0 * ty / H
+>       theta = torch.tensor([[1, 0, tx_normalized], [0, 1, ty_normalized]], dtype=input.dtype, device=input.device).unsqueeze(0).repeat(N, 1, 1)
+E       ValueError: only one element tensors can be converted to Python scalars
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:698: ValueError
+_____________ TestTranslate.test_dxdy_batch_broadcast[cpu-float32] _____________
+
+self = <test_affine.TestTranslate object at 0x7a8766b0b190>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_dxdy_batch_broadcast(self, device, dtype):
+        # prepare input data
+        inp = torch.tensor([[[1.0, 2.0], [3.0, 4.0], [5.0, 6.0], [7.0, 8.0]]], device=device, dtype=dtype).repeat(
+            2, 1, 1, 1
+        )
+        expected = torch.tensor(
+            [[[[0.0, 1.0], [0.0, 3.0], [0.0, 5.0], [0.0, 7.0]]], [[[0.0, 1.0], [0.0, 3.0], [0.0, 5.0], [0.0, 7.0]]]],
+            device=device,
+            dtype=dtype,
+        )
+        # prepare transformation
+        translation = torch.tensor([[1.0, 0.0]], device=device, dtype=dtype)
+        transform = kornia.geometry.transform.Translate(translation, align_corners=True)
+>       self.assert_close(transform(inp), expected, atol=1e-4, rtol=1e-4)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:358: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Translate()
+input = tensor([[[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]],
+
+
+        [[[1., 2.],
+          [3., 4.],
+          [5., 6.],
+          [7., 8.]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+>       tx, ty = self.translation
+E       ValueError: not enough values to unpack (expected 2, got 1)
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:694: ValueError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32]
+==================== 3 failed, 1 passed, 1 skipped in 0.42s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'cudagraphs', 'tvm', 'jit', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_jit[cpu-float32] SKIPPED [100%]
+
+========================= 4 passed, 1 skipped in 0.17s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'openxla', 'inductor', 'cudagraphs', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 5 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy[cpu-float32] PASSED [ 20%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch[cpu-float32] PASSED [ 40%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_dxdy_batch_broadcast[cpu-float32] PASSED [ 60%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_gradcheck[cpu] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestTranslate::test_jit[cpu-float32] SKIPPED [100%]
+
+========================= 4 passed, 1 skipped in 0.24s =========================

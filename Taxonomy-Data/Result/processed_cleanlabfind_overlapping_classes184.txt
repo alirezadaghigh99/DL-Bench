@@ -1,0 +1,859 @@
+output file:
+processed_cleanlabfind_overlapping_classes184.json
+function:
+find_overlapping_classes
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_multilabel_error[mnist]', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True]', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint FAILED', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False]', 'FAILED', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True]', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False] FAILED', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True]', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False] FAILED', '../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 25 items
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[mnist] 
+Mnist
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[caltech256] 
+Caltech256
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 29,780 examples and 256 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+         Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0      tennis-shoes          254  ...             0.333333             0.640777
+1        skateboard          184  ...             0.258427             0.640777
+2        chopsticks           38  ...             0.263158             0.658824
+3    drinking-straw           58  ...             0.246575             0.662651
+4             yo-yo          248  ...             0.355769             0.670000
+..              ...          ...  ...                  ...                  ...
+251         raccoon          167  ...             0.000000             1.000000
+252     hummingbird          112  ...             0.000000             1.000000
+253       hourglass          109  ...             0.022989             1.000000
+254        starfish          200  ...             0.000000             1.000000
+255          saturn          176  ...             0.049505             1.000000
+
+[256 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+       Class Index A  ...  Joint Probability
+0                190  ...           0.002183
+1                 59  ...           0.000974
+2                  9  ...           0.000806
+3                 78  ...           0.000806
+4                 79  ...           0.000772
+...              ...  ...                ...
+32635             49  ...           0.000000
+32636             49  ...           0.000000
+32637             49  ...           0.000000
+32638             49  ...           0.000000
+32639            254  ...           0.000000
+
+[32640 rows x 4 columns]
+
+ * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[cifar100] 
+Cifar100
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 10,000 examples and 100 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+    Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0          boy           11  ...             0.452381                 0.46
+1         girl           35  ...             0.459770                 0.47
+2         seal           72  ...             0.523364                 0.51
+3          man           46  ...             0.460784                 0.55
+4        shark           73  ...             0.446602                 0.57
+..         ...          ...  ...                  ...                  ...
+95        road           68  ...             0.103774                 0.95
+96       skunk           75  ...             0.030612                 0.95
+97      orange           53  ...             0.110092                 0.97
+98  motorcycle           48  ...             0.049020                 0.97
+99    wardrobe           94  ...             0.049020                 0.97
+
+[100 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+      Class Index A  Class Index B  Num Overlapping Examples  Joint Probability
+0                47             52                        32             0.0032
+1                35             98                        30             0.0030
+2                11             46                        30             0.0030
+3                47             96                        27             0.0027
+4                78             99                        25             0.0025
+...             ...            ...                       ...                ...
+4945             20             78                         0             0.0000
+4946             20             79                         0             0.0000
+4947             20             80                         0             0.0000
+4948             20             81                         0             0.0000
+4949             98             99                         0             0.0000
+
+[4950 rows x 4 columns]
+
+ * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_multilabel_error[mnist] 
+Mnist
+
+FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True] FAILED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-False]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[mnist]  * Overall, about 0% (15 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 1.00.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[caltech256]  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[cifar100]  * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_function_calls  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint FAILED
+
+=================================== FAILURES ===================================
+_________________________ test_multilabel_error[mnist] _________________________
+
+dataset_name = 'mnist'
+
+    @pytest.mark.parametrize("dataset_name", ["mnist"])
+    def test_multilabel_error(dataset_name):
+        print("\n" + dataset_name.capitalize() + "\n")
+        class_names = eval(dataset_name)
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        # if this runs without issue no all four datasets, the test passes
+>       with pytest.raises(ValueError) as e:
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:457: Failed
+______________________ test_symmetry_df_size[mnist-True] _______________________
+
+asymmetric = True, dataset_name = 'mnist'
+
+    @pytest.mark.parametrize("asymmetric", [True, False])
+    @pytest.mark.parametrize("dataset_name", ["mnist", "imdb"])
+    def test_symmetry_df_size(asymmetric, dataset_name):
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        num_classes = pred_probs.shape[1]
+>       df = find_overlapping_classes(
+            joint=joint,
+            asymmetric=asymmetric,
+            class_names=eval(dataset_name),
+            num_examples=len(labels),
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:467: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+______________________ test_symmetry_df_size[mnist-False] ______________________
+
+asymmetric = False, dataset_name = 'mnist'
+
+    @pytest.mark.parametrize("asymmetric", [True, False])
+    @pytest.mark.parametrize("dataset_name", ["mnist", "imdb"])
+    def test_symmetry_df_size(asymmetric, dataset_name):
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        num_classes = pred_probs.shape[1]
+>       df = find_overlapping_classes(
+            joint=joint,
+            asymmetric=asymmetric,
+            class_names=eval(dataset_name),
+            num_examples=len(labels),
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:467: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+_______________________ test_symmetry_df_size[imdb-True] _______________________
+
+asymmetric = True, dataset_name = 'imdb'
+
+    @pytest.mark.parametrize("asymmetric", [True, False])
+    @pytest.mark.parametrize("dataset_name", ["mnist", "imdb"])
+    def test_symmetry_df_size(asymmetric, dataset_name):
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        num_classes = pred_probs.shape[1]
+>       df = find_overlapping_classes(
+            joint=joint,
+            asymmetric=asymmetric,
+            class_names=eval(dataset_name),
+            num_examples=len(labels),
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:467: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+______________________ test_symmetry_df_size[imdb-False] _______________________
+
+asymmetric = False, dataset_name = 'imdb'
+
+    @pytest.mark.parametrize("asymmetric", [True, False])
+    @pytest.mark.parametrize("dataset_name", ["mnist", "imdb"])
+    def test_symmetry_df_size(asymmetric, dataset_name):
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        num_classes = pred_probs.shape[1]
+>       df = find_overlapping_classes(
+            joint=joint,
+            asymmetric=asymmetric,
+            class_names=eval(dataset_name),
+            num_examples=len(labels),
+        )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:467: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+_ test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True] _
+
+use_num_examples = True, use_labels = True
+func = <function find_overlapping_classes at 0x7fe8c22a0ae0>
+
+    @pytest.mark.parametrize("use_num_examples", [True, False])
+    @pytest.mark.parametrize("use_labels", [True, False])
+    @pytest.mark.parametrize(
+        "func", [find_overlapping_classes, rank_classes_by_label_quality, overall_label_health_score]
+    )
+    def test_value_error_missing_num_examples_with_joint(use_num_examples, use_labels, func):
+        dataset_name = "imdb"
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        if use_num_examples is False and use_labels is False:  # can't infer num_examples. Throw error!
+            with pytest.raises(ValueError) as e:
+                df = func(
+                    labels=labels if use_labels else None,
+                    joint=joint,
+                    num_examples=len(labels) if use_num_examples else None,
+                )
+        else:  # at least one of use_num_examples and use_labels must be True. Can infer num_examples.
+            # If this runs without error, the test passes.
+>           df = func(
+                labels=labels if use_labels else None,
+                joint=joint,
+                num_examples=len(labels) if use_num_examples else None,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:503: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = array([0, 0, 0, ..., 1, 1, 1], dtype=uint16), pred_probs = None
+asymmetric = False, class_names = None, num_examples = None, joint = None
+confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+_ test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False] _
+
+use_num_examples = False, use_labels = True
+func = <function find_overlapping_classes at 0x7fe8c22a0ae0>
+
+    @pytest.mark.parametrize("use_num_examples", [True, False])
+    @pytest.mark.parametrize("use_labels", [True, False])
+    @pytest.mark.parametrize(
+        "func", [find_overlapping_classes, rank_classes_by_label_quality, overall_label_health_score]
+    )
+    def test_value_error_missing_num_examples_with_joint(use_num_examples, use_labels, func):
+        dataset_name = "imdb"
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        if use_num_examples is False and use_labels is False:  # can't infer num_examples. Throw error!
+            with pytest.raises(ValueError) as e:
+                df = func(
+                    labels=labels if use_labels else None,
+                    joint=joint,
+                    num_examples=len(labels) if use_num_examples else None,
+                )
+        else:  # at least one of use_num_examples and use_labels must be True. Can infer num_examples.
+            # If this runs without error, the test passes.
+>           df = func(
+                labels=labels if use_labels else None,
+                joint=joint,
+                num_examples=len(labels) if use_num_examples else None,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:503: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = array([0, 0, 0, ..., 1, 1, 1], dtype=uint16), pred_probs = None
+asymmetric = False, class_names = None, num_examples = None, joint = None
+confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+_ test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True] _
+
+use_num_examples = True, use_labels = False
+func = <function find_overlapping_classes at 0x7fe8c22a0ae0>
+
+    @pytest.mark.parametrize("use_num_examples", [True, False])
+    @pytest.mark.parametrize("use_labels", [True, False])
+    @pytest.mark.parametrize(
+        "func", [find_overlapping_classes, rank_classes_by_label_quality, overall_label_health_score]
+    )
+    def test_value_error_missing_num_examples_with_joint(use_num_examples, use_labels, func):
+        dataset_name = "imdb"
+        pred_probs, labels = _get_pred_probs_labels_from_labelerrors_datasets(dataset_name)
+        joint = estimate_joint(labels=labels, pred_probs=pred_probs)
+        if use_num_examples is False and use_labels is False:  # can't infer num_examples. Throw error!
+            with pytest.raises(ValueError) as e:
+                df = func(
+                    labels=labels if use_labels else None,
+                    joint=joint,
+                    num_examples=len(labels) if use_num_examples else None,
+                )
+        else:  # at least one of use_num_examples and use_labels must be True. Can infer num_examples.
+            # If this runs without error, the test passes.
+>           df = func(
+                labels=labels if use_labels else None,
+                joint=joint,
+                num_examples=len(labels) if use_num_examples else None,
+            )
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:503: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+______________ test_find_overlapping_classes_with_confident_joint ______________
+
+    @pytest.mark.issue_651
+>   @given(confident_joint=confident_joint_strategy)
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:550: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:555: in test_find_overlapping_classes_with_confident_joint
+    overlapping_classes = find_overlapping_classes(confident_joint=confident_joint)
+../publishablew/cleanlab/cleanlab/cleanlab/dataset.py:79: in find_overlapping_classes
+    return find_overlapping_classes(labels, pred_probs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+labels = None, pred_probs = None, asymmetric = False, class_names = None
+num_examples = None, joint = None, confident_joint = None
+
+    def find_overlapping_classes(labels=None, pred_probs=None, asymmetric=False, class_names=None, num_examples=None, joint=None, confident_joint=None):
+        if joint is not None and num_examples is None:
+            raise ValueError("If 'joint' is provided, 'num_examples' must also be provided.")
+        if confident_joint is None:
+            if labels is None or pred_probs is None:
+>               raise ValueError("If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.")
+E               ValueError: If 'confident_joint' is not provided, both 'labels' and 'pred_probs' must be provided.
+E               Falsifying example: test_find_overlapping_classes_with_confident_joint(
+E                   confident_joint=array([[0, 0],
+E                          [0, 0]], dtype=int32),  # or any other generated value
+E               )
+
+../publishablew/cleanlab/cleanlab/cleanlab/temp.py:14: ValueError
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:549
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_dataset.py:549: PytestUnknownMarkWarning: Unknown pytest.mark.issue_651 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.issue_651
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_multilabel_error[mnist]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint
+=================== 9 failed, 16 passed, 1 warning in 22.81s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 25 items
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[mnist] 
+Mnist
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[caltech256] 
+Caltech256
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 29,780 examples and 256 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+         Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0      tennis-shoes          254  ...             0.333333             0.640777
+1        skateboard          184  ...             0.258427             0.640777
+2        chopsticks           38  ...             0.263158             0.658824
+3    drinking-straw           58  ...             0.246575             0.662651
+4             yo-yo          248  ...             0.355769             0.670000
+..              ...          ...  ...                  ...                  ...
+251         raccoon          167  ...             0.000000             1.000000
+252     hummingbird          112  ...             0.000000             1.000000
+253       hourglass          109  ...             0.022989             1.000000
+254        starfish          200  ...             0.000000             1.000000
+255          saturn          176  ...             0.049505             1.000000
+
+[256 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+       Class Name A   Class Name B  ...  Num Overlapping Examples  Joint Probability
+0           sneaker   tennis-shoes  ...                        66           0.002216
+1           frisbee          yo-yo  ...                        29           0.000974
+2              duck          goose  ...                        26           0.000873
+3          beer-mug     coffee-mug  ...                        22           0.000739
+4              frog           toad  ...                        22           0.000739
+...             ...            ...  ...                       ...                ...
+32635     cormorant  covered-wagon  ...                         0           0.000000
+32636         conch           toad  ...                         0           0.000000
+32637         conch   tennis-shoes  ...                         0           0.000000
+32638         conch      greyhound  ...                         0           0.000000
+32639  tennis-shoes           toad  ...                         0           0.000000
+
+[32640 rows x 6 columns]
+
+ * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[cifar100] 
+Cifar100
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 10,000 examples and 100 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+    Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0          boy           11  ...             0.452381                 0.46
+1         girl           35  ...             0.459770                 0.47
+2         seal           72  ...             0.523364                 0.51
+3          man           46  ...             0.460784                 0.55
+4        shark           73  ...             0.446602                 0.57
+..         ...          ...  ...                  ...                  ...
+95        road           68  ...             0.103774                 0.95
+96       skunk           75  ...             0.030612                 0.95
+97      orange           53  ...             0.110092                 0.97
+98  motorcycle           48  ...             0.049020                 0.97
+99    wardrobe           94  ...             0.049020                 0.97
+
+[100 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+     Class Name A Class Name B  ...  Num Overlapping Examples  Joint Probability
+0            girl        woman  ...                        34             0.0034
+1             boy          man  ...                        32             0.0032
+2      maple_tree  willow_tree  ...                        26             0.0026
+3      maple_tree     oak_tree  ...                        25             0.0025
+4           otter         seal  ...                        25             0.0025
+...           ...          ...  ...                       ...                ...
+4945       cattle        whale  ...                         0             0.0000
+4946       cattle  willow_tree  ...                         0             0.0000
+4947       cattle        woman  ...                         0             0.0000
+4948       cattle         worm  ...                         0             0.0000
+4949        woman         worm  ...                         0             0.0000
+
+[4950 rows x 6 columns]
+
+ * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_multilabel_error[mnist] 
+Mnist
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-False]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[mnist]  * Overall, about 0% (15 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 1.00.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[caltech256]  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[cifar100]  * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_function_calls  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint PASSED
+
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:549
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_dataset.py:549: PytestUnknownMarkWarning: Unknown pytest.mark.issue_651 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.issue_651
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 25 passed, 1 warning in 16.60s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/local/data0/moved_data/Organized_benchmark/.hypothesis/examples'))
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+plugins: hypothesis-6.124.1
+collecting ... collected 25 items
+
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[mnist] 
+Mnist
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[caltech256] 
+Caltech256
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 29,780 examples and 256 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+         Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0      tennis-shoes          254  ...             0.333333             0.640777
+1        skateboard          184  ...             0.258427             0.640777
+2        chopsticks           38  ...             0.263158             0.658824
+3    drinking-straw           58  ...             0.246575             0.662651
+4             yo-yo          248  ...             0.355769             0.670000
+..              ...          ...  ...                  ...                  ...
+251         raccoon          167  ...             0.000000             1.000000
+252     hummingbird          112  ...             0.000000             1.000000
+253       hourglass          109  ...             0.022989             1.000000
+254        starfish          200  ...             0.000000             1.000000
+255          saturn          176  ...             0.049505             1.000000
+
+[256 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+       Class Name A   Class Name B  ...  Num Overlapping Examples  Joint Probability
+0           sneaker   tennis-shoes  ...                        66           0.002216
+1           frisbee          yo-yo  ...                        29           0.000974
+2              duck          goose  ...                        26           0.000873
+3          beer-mug     coffee-mug  ...                        22           0.000739
+4              frog           toad  ...                        22           0.000739
+...             ...            ...  ...                       ...                ...
+32635     cormorant  covered-wagon  ...                         0           0.000000
+32636         conch           toad  ...                         0           0.000000
+32637         conch   tennis-shoes  ...                         0           0.000000
+32638         conch      greyhound  ...                         0           0.000000
+32639  tennis-shoes           toad  ...                         0           0.000000
+
+[32640 rows x 6 columns]
+
+ * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_real_datasets[cifar100] 
+Cifar100
+
+-------------------------------------------------------------
+|  Generating a Cleanlab Dataset Health Summary             |
+|   for your dataset with 10,000 examples and 100 classes.  |
+|  Note, Cleanlab is not a medical doctor... yet.           |
+-------------------------------------------------------------
+
+Overall Class Quality and Noise across your dataset (below)
+------------------------------------------------------------ 
+
+    Class Name  Class Index  ...  Inverse Label Noise  Label Quality Score
+0          boy           11  ...             0.452381                 0.46
+1         girl           35  ...             0.459770                 0.47
+2         seal           72  ...             0.523364                 0.51
+3          man           46  ...             0.460784                 0.55
+4        shark           73  ...             0.446602                 0.57
+..         ...          ...  ...                  ...                  ...
+95        road           68  ...             0.103774                 0.95
+96       skunk           75  ...             0.030612                 0.95
+97      orange           53  ...             0.110092                 0.97
+98  motorcycle           48  ...             0.049020                 0.97
+99    wardrobe           94  ...             0.049020                 0.97
+
+[100 rows x 7 columns]
+
+Class Overlap. In some cases, you may want to merge classes in the top rows (below)
+-----------------------------------------------------------------------------------
+
+     Class Name A Class Name B  ...  Num Overlapping Examples  Joint Probability
+0            girl        woman  ...                        34             0.0034
+1             boy          man  ...                        32             0.0032
+2      maple_tree  willow_tree  ...                        26             0.0026
+3      maple_tree     oak_tree  ...                        25             0.0025
+4           otter         seal  ...                        25             0.0025
+...           ...          ...  ...                       ...                ...
+4945       cattle        whale  ...                         0             0.0000
+4946       cattle  willow_tree  ...                         0             0.0000
+4947       cattle        woman  ...                         0             0.0000
+4948       cattle         worm  ...                         0             0.0000
+4949        woman         worm  ...                         0             0.0000
+
+[4950 rows x 6 columns]
+
+ * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+
+Generated with <3 from Cleanlab.
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_multilabel_error[mnist] 
+Mnist
+
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[mnist-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_symmetry_df_size[imdb-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-True-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[find_overlapping_classes-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-True-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-True] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[rank_classes_by_label_quality-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-True-False]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-True]  * Overall, about 5% (1,309 of the 25,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.95.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_value_error_missing_num_examples_with_joint[overall_label_health_score-False-False] PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[mnist]  * Overall, about 0% (15 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 1.00.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[caltech256]  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_matched_num_issues[cifar100]  * Overall, about 18% (1,846 of the 10,000) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.82.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_overall_label_health_score_function_calls  * Overall, about 7% (2,051 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.93.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+ * Overall, about 8% (2,420 of the 29,780) labels in your dataset have potential issues.
+ ** The overall label health score for this dataset is: 0.92.
+PASSED
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py::test_find_overlapping_classes_with_confident_joint PASSED
+
+=============================== warnings summary ===============================
+../publishablew/cleanlab/cleanlab/tests/test_dataset.py:549
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/tests/test_dataset.py:549: PytestUnknownMarkWarning: Unknown pytest.mark.issue_651 - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.issue_651
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 25 passed, 1 warning in 18.31s ========================

@@ -1,0 +1,166 @@
+output file:
+processed_scikit-learnimg_to_graph133.json
+function:
+img_to_graph
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 22 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph I: Seeding RNGs with 593414457
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_grid_to_graph PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions_with_grid SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_rect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patch_same_size_image SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_less_than_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_fit SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches_default SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_all_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_strided PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_square SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_width_patch PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_wrong_input SKIPPED
+
+=================================== FAILURES ===================================
+___________________________ test_img_to_graph_sparse ___________________________
+
+    def test_img_to_graph_sparse():
+        # Check that the edges are in the right position
+        #  when using a sparse image with a singleton component
+        mask = np.zeros((2, 3), dtype=bool)
+        mask[0, 0] = 1
+        mask[:, 2] = 1
+        x = np.zeros((2, 3))
+        x[0, 0] = 1
+        x[0, 2] = -1
+        x[1, 2] = -2
+        grad_x = img_to_graph(x, mask=mask).todense()
+        desired = np.array([[1, 0, 0], [0, -1, 1], [0, 1, -2]])
+>       np.testing.assert_array_equal(grad_x, desired)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, matrix([[ 1.,  1.,  0.,  1.,  0.,  0.],
+        [ 1.,  0.,  1.,  0.,  0.,  0.],
+        [ 0.,...,  0.,  2.],
+        [ 0.,  0.,  1.,  0.,  2., -2.]]), array([[ 1,  0,  0],
+       [ 0, -1,  1],
+       [ 0,  1, -2]]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           (shapes (6, 6), (3, 3) mismatch)
+E            ACTUAL: matrix([[ 1.,  1.,  0.,  1.,  0.,  0.],
+E                   [ 1.,  0.,  1.,  0.,  0.,  0.],
+E                   [ 0.,  1., -1.,  0.,  0.,  1.],...
+E            DESIRED: array([[ 1,  0,  0],
+E                  [ 0, -1,  1],
+E                  [ 0,  1, -2]])
+
+/usr/local/lib/python3.9/contextlib.py:79: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse
+=================== 1 failed, 4 passed, 17 skipped in 0.15s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 22 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph I: Seeding RNGs with 441073835
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_grid_to_graph PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions_with_grid SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_rect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patch_same_size_image SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_less_than_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_fit SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches_default SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_all_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_strided PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_square SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_width_patch PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_wrong_input SKIPPED
+
+======================== 5 passed, 17 skipped in 0.07s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 22 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph I: Seeding RNGs with 476383474
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_img_to_graph_sparse PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_grid_to_graph PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_connect_regions_with_grid SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_all_rect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patch_same_size_image SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_less_than_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_reconstruct_patches_perfect_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_fit SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_max_patches_default SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_all_patches SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_color SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_strided PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_extract_patches_square SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_width_patch PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_extraction/tests/test_image.py::test_patch_extractor_wrong_input SKIPPED
+
+======================== 5 passed, 17 skipped in 0.07s =========================

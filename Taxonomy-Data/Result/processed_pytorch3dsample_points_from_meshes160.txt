@@ -1,0 +1,309 @@
+output file:
+processed_pytorch3dsample_points_from_meshes160.json
+function:
+sample_points_from_meshes
+Error Cases:
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [32,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [51,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [52,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [53,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [9,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [10,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [11,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [27,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [28,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [29,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [30,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+../aten/src/ATen/native/cuda/IndexKernel.cu:92: operator(): block: [0,0,0], thread: [31,0,0] Assertion `-sizes[i] <= index && index < sizes[i] && "index out of bounds"` failed.
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output FAILED', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan FAILED', 'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling', 'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs', 'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes FAILED', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling FAILED', 'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output', 'FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow FAILED', '../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 8 items
+
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes FAILED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs FAILED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output FAILED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling FAILED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow FAILED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan FAILED
+
+=================================== FAILURES ===================================
+____________________ TestSamplePoints.test_all_empty_meshes ____________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_all_empty_meshes>
+
+    def test_all_empty_meshes(self):
+        """
+        Check sample_points_from_meshes raises an exception if all meshes are
+        invalid.
+        """
+        device = get_random_cuda_device()
+        verts1 = torch.tensor([], dtype=torch.float32, device=device)
+        faces1 = torch.tensor([], dtype=torch.int64, device=device)
+        meshes = Meshes(verts=[verts1, verts1, verts1], faces=[faces1, faces1, faces1])
+        with self.assertRaises(ValueError) as err:
+>           sample_points_from_meshes(meshes, num_samples=100, return_normals=True)
+E           AssertionError: ValueError not raised
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:86: AssertionError
+________________________ TestSamplePoints.test_outputs _________________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_outputs>
+
+    def test_outputs(self):
+    
+        for add_texture in (True, False):
+            meshes = init_meshes(device=torch.device("cuda:0"), add_texture=add_texture)
+            out1 = sample_points_from_meshes(meshes, num_samples=100)
+>           self.assertTrue(torch.is_tensor(out1))
+E           AssertionError: False is not true
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:308: AssertionError
+____________________ TestSamplePoints.test_sampling_output _____________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_sampling_output>
+
+    def test_sampling_output(self):
+        """
+        Check outputs of sampling are correct for different meshes.
+        For an ico_sphere, the sampled vertices should lie on a unit sphere.
+        For an empty mesh, the samples and normals should be 0.
+        """
+        device = get_random_cuda_device()
+    
+        # Unit simplex.
+        verts_pyramid = torch.tensor(
+            [[0.0, 0.0, 0.0], [1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]],
+            dtype=torch.float32,
+            device=device,
+        )
+        faces_pyramid = torch.tensor(
+            [[0, 1, 2], [0, 2, 3], [0, 1, 3], [1, 2, 3]],
+            dtype=torch.int64,
+            device=device,
+        )
+        sphere_mesh = ico_sphere(9, device)
+        verts_sphere, faces_sphere = sphere_mesh.get_mesh_verts_faces(0)
+        verts_empty = torch.tensor([], dtype=torch.float32, device=device)
+        faces_empty = torch.tensor([], dtype=torch.int64, device=device)
+        num_samples = 10
+        meshes = Meshes(
+            verts=[verts_empty, verts_sphere, verts_pyramid],
+            faces=[faces_empty, faces_sphere, faces_pyramid],
+        )
+        samples, normals = sample_points_from_meshes(
+            meshes, num_samples=num_samples, return_normals=True
+        )
+        samples = samples.cpu()
+        normals = normals.cpu()
+    
+        self.assertEqual(samples.shape, (3, num_samples, 3))
+        self.assertEqual(normals.shape, (3, num_samples, 3))
+    
+        # Empty meshes: should have all zeros for samples and normals.
+        self.assertClose(samples[0, :], torch.zeros((num_samples, 3)))
+        self.assertClose(normals[0, :], torch.zeros((num_samples, 3)))
+    
+        # Sphere: points should have radius 1.
+        x, y, z = samples[1, :].unbind(1)
+        radius = torch.sqrt(x**2 + y**2 + z**2)
+    
+>       self.assertClose(radius, torch.ones(num_samples))
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:134: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/tests/common_testing.py:209: in assertClose
+    self.fail(err)
+E   AssertionError: Not close. Max diff 0.7866639494895935. Max relative diff 0.7866639494895935 Shape (10,). At (3,).
+____________________ TestSamplePoints.test_texture_sampling ____________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_texture_sampling>
+
+    def test_texture_sampling(self):
+        device = torch.device("cuda:0")
+        batch_size = 6
+        # verts
+        verts = torch.rand((batch_size, 6, 3), device=device, dtype=torch.float32)
+        verts[:, :3, 2] = 1.0
+        verts[:, 3:, 2] = -1.0
+        # textures
+        texts = torch.rand((batch_size, 6, 3), device=device, dtype=torch.float32)
+        # faces
+        faces = torch.tensor([[0, 1, 2], [3, 4, 5]], device=device, dtype=torch.int64)
+        faces = faces.view(1, 2, 3).expand(batch_size, -1, -1)
+    
+        meshes = Meshes(verts=verts, faces=faces, textures=TexturesVertex(texts))
+    
+        num_samples = 24
+>       samples, normals, textures = sample_points_from_meshes(
+            meshes, num_samples=num_samples, return_normals=True, return_textures=True
+        )
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:359: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/ops/sample_points_from_meshes.py:14: in sample_points_from_meshes
+    return sample_points_from_meshes(meshes, num_samples, return_normals, return_textures)
+../pytorch3d/pytorch3d/ops/temp.py:54: in sample_points_from_meshes
+    face_textures = mesh.textures.faces_verts_textures_packed()
+../pytorch3d/pytorch3d/renderer/mesh/textures.py:1888: in faces_verts_textures_packed
+    verts_features_packed = self.verts_features_packed()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.renderer.mesh.textures.TexturesVertex object at 0x7ca08631f1f0>
+
+    def verts_features_packed(self) -> torch.Tensor:
+>       if self.isempty():
+E       RuntimeError: CUDA error: device-side assert triggered
+E       CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+E       For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+E       Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+../pytorch3d/pytorch3d/renderer/mesh/textures.py:1799: RuntimeError
+__________________ TestSamplePoints.test_texture_sampling_cow __________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_texture_sampling_cow>
+
+    def setUp(self) -> None:
+        super().setUp()
+>       torch.manual_seed(1)
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/random.py:46: in manual_seed
+    torch.cuda.manual_seed_all(seed)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/random.py:127: in manual_seed_all
+    _lazy_call(cb, seed_all=True)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/__init__.py:244: in _lazy_call
+    callable()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def cb():
+        for i in range(device_count()):
+            default_generator = torch.cuda.default_generators[i]
+>           default_generator.manual_seed(seed)
+E           RuntimeError: CUDA error: device-side assert triggered
+E           CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+E           For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+E           Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/random.py:125: RuntimeError
+_______________________ TestSamplePoints.test_verts_nan ________________________
+
+self = <tests.test_sample_points_from_meshes.TestSamplePoints testMethod=test_verts_nan>
+
+    def setUp(self) -> None:
+        super().setUp()
+>       torch.manual_seed(1)
+
+../pytorch3d/tests/test_sample_points_from_meshes.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/venv/lib/python3.8/site-packages/torch/random.py:46: in manual_seed
+    torch.cuda.manual_seed_all(seed)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/random.py:127: in manual_seed_all
+    _lazy_call(cb, seed_all=True)
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/__init__.py:244: in _lazy_call
+    callable()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def cb():
+        for i in range(device_count()):
+            default_generator = torch.cuda.default_generators[i]
+>           default_generator.manual_seed(seed)
+E           RuntimeError: CUDA error: device-side assert triggered
+E           CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+E           For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+E           Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/cuda/random.py:125: RuntimeError
+=============================== warnings summary ===============================
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:199: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+    freqs = torch.cuda.FloatTensor(
+
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:273: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    weights = torch.load(get_tests_dir() / "weights.pt")
+
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs
+  /local/data0/moved_data/pytorch3d/pytorch3d/ops/temp.py:41: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    face_areas = 0.5 * torch.norm(torch.cross(v1 - v0, v2 - v0), dim=1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow
+FAILED ../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan
+=================== 6 failed, 2 passed, 3 warnings in 1.78s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 8 items
+
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan PASSED
+
+=============================== warnings summary ===============================
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:199: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+    freqs = torch.cuda.FloatTensor(
+
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:273: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    weights = torch.load(get_tests_dir() / "weights.pt")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 2 warnings in 1.85s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 8 items
+
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_all_empty_meshes PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_outputs PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_sampling_output PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_texture_sampling_cow PASSED
+../pytorch3d/tests/test_sample_points_from_meshes.py::TestSamplePoints::test_verts_nan PASSED
+
+=============================== warnings summary ===============================
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:199: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:78.)
+    freqs = torch.cuda.FloatTensor(
+
+tests/test_sample_points_from_meshes.py::TestSamplePoints::test_multinomial_weights
+  /local/data0/moved_data/pytorch3d/tests/test_sample_points_from_meshes.py:273: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    weights = torch.load(get_tests_dir() / "weights.pt")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 8 passed, 2 warnings in 2.17s =========================

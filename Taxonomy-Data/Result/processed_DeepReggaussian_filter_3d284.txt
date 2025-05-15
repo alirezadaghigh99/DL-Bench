@@ -1,0 +1,302 @@
+output file:
+processed_DeepReggaussian_filter_3d284.json
+function:
+gaussian_filter_3d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1] FAILED [ 22%]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2] FAILED [100%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1] FAILED [ 88%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0] FAILED [ 77%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3] FAILED [ 44%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2] FAILED [ 33%]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0] FAILED [ 11%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5] FAILED [ 66%]', 'test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4] FAILED [ 55%]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2]', 'FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 9 items
+
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0] FAILED [ 11%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1] FAILED [ 22%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2] FAILED [ 33%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3] FAILED [ 44%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4] FAILED [ 55%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5] FAILED [ 66%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0] FAILED [ 77%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1] FAILED [ 88%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2] FAILED [100%]
+
+=================================== FAILURES ===================================
+______ TestGaussianFilter3D.test_kernel_size[kernel_sigma0-kernel_size0] _______
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65a350d0>
+kernel_sigma = (1, 1, 1), kernel_size = (3, 3, 3, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([3, 3, 3]) == (3, 3, 3, 3, 3)
+E         +TensorShape([3, 3, 3])
+E         -(3, 3, 3, 3, 3)
+E         Full diff:
+E         - (3, 3, 3, 3, 3)
+E         + TensorShape([3, 3, 3])
+
+test/unit/test_layer_util.py:256: AssertionError
+______ TestGaussianFilter3D.test_kernel_size[kernel_sigma1-kernel_size1] _______
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65908950>
+kernel_sigma = (2, 2, 2), kernel_size = (7, 7, 7, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([6, 6, 6]) == (7, 7, 7, 3, 3)
+E         +TensorShape([6, 6, 6])
+E         -(7, 7, 7, 3, 3)
+E         Full diff:
+E         - (7, 7, 7, 3, 3)
+E         + TensorShape([6, 6, 6])
+
+test/unit/test_layer_util.py:256: AssertionError
+______ TestGaussianFilter3D.test_kernel_size[kernel_sigma2-kernel_size2] _______
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65a26990>
+kernel_sigma = (5, 5, 5), kernel_size = (15, 15, 15, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([15, 15, 15]) == (15, 15, 15, 3, 3)
+E         +TensorShape([15, 15, 15])
+E         -(15, 15, 15, 3, 3)
+E         Full diff:
+E         - (15, 15, 15, 3, 3)
+E         + TensorShape([15, 15, 15])
+
+test/unit/test_layer_util.py:256: AssertionError
+____________ TestGaussianFilter3D.test_kernel_size[1-kernel_size3] _____________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df659d1850>
+kernel_sigma = 1, kernel_size = (3, 3, 3, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([3, 3, 3]) == (3, 3, 3, 3, 3)
+E         +TensorShape([3, 3, 3])
+E         -(3, 3, 3, 3, 3)
+E         Full diff:
+E         - (3, 3, 3, 3, 3)
+E         + TensorShape([3, 3, 3])
+
+test/unit/test_layer_util.py:256: AssertionError
+____________ TestGaussianFilter3D.test_kernel_size[2-kernel_size4] _____________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65808f10>
+kernel_sigma = 2, kernel_size = (7, 7, 7, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([6, 6, 6]) == (7, 7, 7, 3, 3)
+E         +TensorShape([6, 6, 6])
+E         -(7, 7, 7, 3, 3)
+E         Full diff:
+E         - (7, 7, 7, 3, 3)
+E         + TensorShape([6, 6, 6])
+
+test/unit/test_layer_util.py:256: AssertionError
+____________ TestGaussianFilter3D.test_kernel_size[5-kernel_size5] _____________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65808750>
+kernel_sigma = 5, kernel_size = (15, 15, 15, 3, 3)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma, kernel_size",
+        [
+            ((1, 1, 1), (3, 3, 3, 3, 3)),
+            ((2, 2, 2), (7, 7, 7, 3, 3)),
+            ((5, 5, 5), (15, 15, 15, 3, 3)),
+            (1, (3, 3, 3, 3, 3)),
+            (2, (7, 7, 7, 3, 3)),
+            (5, (15, 15, 15, 3, 3)),
+        ],
+    )
+    def test_kernel_size(self, kernel_sigma, kernel_size):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert filter.shape == kernel_size
+E       assert TensorShape([15, 15, 15]) == (15, 15, 15, 3, 3)
+E         +TensorShape([15, 15, 15])
+E         -(15, 15, 15, 3, 3)
+E         Full diff:
+E         - (15, 15, 15, 3, 3)
+E         + TensorShape([15, 15, 15])
+
+test/unit/test_layer_util.py:256: AssertionError
+_________________ TestGaussianFilter3D.test_sum[kernel_sigma0] _________________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65808550>
+kernel_sigma = (1, 1, 1)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma",
+        [(1, 1, 1), (2, 2, 2), (5, 5, 5)],
+    )
+    def test_sum(self, kernel_sigma):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert np.allclose(np.sum(filter), 3, atol=1e-3)
+E       assert False
+E        +  where False = <function allclose at 0x73df73efbc20>(0.9999999, 3, atol=0.001)
+E        +    where <function allclose at 0x73df73efbc20> = np.allclose
+E        +    and   0.9999999 = <function sum at 0x73df73ee5680>(<tf.Tensor: shape=(3, 3, 3), dtype=float32, numpy=\narray([[[0.02058628, 0.03394104, 0.02058628],\n        [0.03394104, ...2058628],\n        [0.03394104, 0.05595932, 0.03394104],\n        [0.02058628, 0.03394104, 0.02058628]]], dtype=float32)>)
+E        +      where <function sum at 0x73df73ee5680> = np.sum
+
+test/unit/test_layer_util.py:264: AssertionError
+_________________ TestGaussianFilter3D.test_sum[kernel_sigma1] _________________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65a26fd0>
+kernel_sigma = (2, 2, 2)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma",
+        [(1, 1, 1), (2, 2, 2), (5, 5, 5)],
+    )
+    def test_sum(self, kernel_sigma):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert np.allclose(np.sum(filter), 3, atol=1e-3)
+E       assert False
+E        +  where False = <function allclose at 0x73df73efbc20>(1.0, 3, atol=0.001)
+E        +    where <function allclose at 0x73df73efbc20> = np.allclose
+E        +    and   1.0 = <function sum at 0x73df73ee5680>(<tf.Tensor: shape=(6, 6, 6), dtype=float32, numpy=\narray([[[0.00280113, 0.00407562, 0.00461828, 0.00407562, 0.00280113...00080254],\n        [0.00080254, 0.00116768, 0.00132316, 0.00116768, 0.00080254,\n         0.00042957]]], dtype=float32)>)
+E        +      where <function sum at 0x73df73ee5680> = np.sum
+
+test/unit/test_layer_util.py:264: AssertionError
+_________________ TestGaussianFilter3D.test_sum[kernel_sigma2] _________________
+
+self = <test.unit.test_layer_util.TestGaussianFilter3D object at 0x73df65808c50>
+kernel_sigma = (5, 5, 5)
+
+    @pytest.mark.parametrize(
+        "kernel_sigma",
+        [(1, 1, 1), (2, 2, 2), (5, 5, 5)],
+    )
+    def test_sum(self, kernel_sigma):
+        filter = layer_util.gaussian_filter_3d(kernel_sigma)
+>       assert np.allclose(np.sum(filter), 3, atol=1e-3)
+E       assert False
+E        +  where False = <function allclose at 0x73df73efbc20>(1.0, 3, atol=0.001)
+E        +    where <function allclose at 0x73df73efbc20> = np.allclose
+E        +    and   1.0 = <function sum at 0x73df73ee5680>(<tf.Tensor: shape=(15, 15, 15), dtype=float32, numpy=\narray([[[4.1198975e-05, 5.3432188e-05, 6.6580607e-05, ...,\n     ...198975e-05, 5.3432188e-05, 6.6580607e-05, ...,\n         6.6580607e-05, 5.3432188e-05, 4.1198975e-05]]], dtype=float32)>)
+E        +      where <function sum at 0x73df73ee5680> = np.sum
+
+test/unit/test_layer_util.py:264: AssertionError
+=========================== short test summary info ============================
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1]
+FAILED test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2]
+============================== 9 failed in 1.41s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 9 items
+
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0] PASSED [ 11%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1] PASSED [ 22%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2] PASSED [ 33%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3] PASSED [ 44%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4] PASSED [ 55%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5] PASSED [ 66%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0] PASSED [ 77%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1] PASSED [ 88%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2] PASSED [100%]
+
+============================== 9 passed in 1.17s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 9 items
+
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma0-kernel_size0] PASSED [ 11%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma1-kernel_size1] PASSED [ 22%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[kernel_sigma2-kernel_size2] PASSED [ 33%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[1-kernel_size3] PASSED [ 44%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[2-kernel_size4] PASSED [ 55%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_kernel_size[5-kernel_size5] PASSED [ 66%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma0] PASSED [ 77%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma1] PASSED [ 88%]
+test/unit/test_layer_util.py::TestGaussianFilter3D::test_sum[kernel_sigma2] PASSED [100%]
+
+============================== 9 passed in 1.38s ===============================

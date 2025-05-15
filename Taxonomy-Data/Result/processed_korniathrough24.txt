@@ -1,0 +1,458 @@
+output file:
+processed_korniathrough24.json
+function:
+through
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'tvm', 'jit', 'openxla', 'cudagraphs', None, 'onnxrt'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 27 items
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_module[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_module[cpu-float32] SKIPPED
+
+=================================== FAILURES ===================================
+________________ TestParametrizedLine.test_through[cpu-float32] ________________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efda20>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_through(self, device, dtype):
+        p0 = torch.tensor([-1.0, -1.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 1.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([-1., -1.])
+p1 = tensor([1., 1.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+_______________ TestParametrizedLine.test_point_at[cpu-float32] ________________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efdd50>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_point_at(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+______________ TestParametrizedLine.test_projection1[cpu-float32] ______________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efe080>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_projection1(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0], device=device, dtype=dtype)
+        p2 = torch.tensor([0.5, 0.5], device=device, dtype=dtype)
+        p3_expected = torch.tensor([0.5, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+______________ TestParametrizedLine.test_projection2[cpu-float32] ______________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efe3b0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_projection2(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([0.0, 1.0], device=device, dtype=dtype)
+        p2 = torch.tensor([0.5, 0.5], device=device, dtype=dtype)
+        p3_expected = torch.tensor([0.0, 0.5], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([0., 1.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+______________ TestParametrizedLine.test_projection[cpu-float32] _______________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efd810>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_projection(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+_______________ TestParametrizedLine.test_distance[cpu-float32] ________________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efe740>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_distance(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+___________ TestParametrizedLine.test_squared_distance[cpu-float32] ____________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efea70>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_squared_distance(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+___________ TestParametrizedLine.test_instersect_plane[cpu-float32] ____________
+
+self = <tests.geometry.test_line.TestParametrizedLine object at 0x7041b3efeda0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_instersect_plane(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 0.0, 0.0], device=device, dtype=dtype)
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0., 0.])
+p1 = tensor([1., 0., 0.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+___________________ TestFitLine.test_fit_line2[cpu-float32] ____________________
+
+self = <tests.geometry.test_line.TestFitLine object at 0x7041b3effb80>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_fit_line2(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 1.0], device=device, dtype=dtype)
+    
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0.])
+p1 = tensor([1., 1.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+___________________ TestFitLine.test_fit_line3[cpu-float32] ____________________
+
+self = <tests.geometry.test_line.TestFitLine object at 0x7041b3efe8c0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_fit_line3(self, device, dtype):
+        p0 = torch.tensor([0.0, 0.0, 0.0], device=device, dtype=dtype)
+        p1 = torch.tensor([1.0, 1.0, 1.0], device=device, dtype=dtype)
+    
+>       l1 = ParametrizedLine.through(p0, p1)
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cls = <class 'kornia.geometry.line.ParametrizedLine'>, p0 = tensor([0., 0., 0.])
+p1 = tensor([1., 1., 1.])
+
+    @classmethod
+    def through(cls, p0: Tensor, p1: Tensor) -> 'ParametrizedLine':
+>       from .temp import through
+E       ImportError: cannot import name 'through' from 'kornia.geometry.temp' (/local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/temp.py)
+
+../publishablew/kornia/kornia/kornia/geometry/line.py:65: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32]
+=================== 10 failed, 7 passed, 10 skipped in 0.36s ===================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'inductor', 'cudagraphs', 'onnxrt', 'openxla', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 27 items
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_module[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_module[cpu-float32] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/plane.py:88: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    normal = v0.cross(v1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 17 passed, 10 skipped, 1 warning in 0.31s ===================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'cudagraphs', 'openxla', 'inductor', 'jit', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 27 items
+
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_through[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_point_at[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection1[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_projection[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_distance[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_squared_distance[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_module[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestParametrizedLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-2-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-3-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_smoke[cpu-float32-4-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line2[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_fit_line3[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_gradcheck[cpu] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_cardinality[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_jit[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_exception[cpu-float32] SKIPPED
+../publishablew/kornia/kornia/tests/geometry/test_line.py::TestFitLine::test_module[cpu-float32] SKIPPED
+
+=============================== warnings summary ===============================
+tests/geometry/test_line.py::TestParametrizedLine::test_instersect_plane[cpu-float32]
+  /local/data0/moved_data/publishablew/kornia/kornia/kornia/geometry/plane.py:88: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+  Please either pass the dim explicitly or simply use torch.linalg.cross.
+  The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+    normal = v0.cross(v1)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================== 17 passed, 10 skipped, 1 warning in 0.21s ===================

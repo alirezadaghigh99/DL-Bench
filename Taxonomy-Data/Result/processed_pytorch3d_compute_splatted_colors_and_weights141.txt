@@ -1,0 +1,260 @@
+output file:
+processed_pytorch3d_compute_splatted_colors_and_weights141.json
+function:
+_compute_splatted_colors_and_weights
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background FAILED', '../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground FAILED', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle', 'FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground', '../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle FAILED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+=================================== FAILURES ===================================
+_______ TestComputeSplattedColorsAndWeights.test_accumulation_background _______
+
+self = <tests.test_splatter_blend.TestComputeSplattedColorsAndWeights testMethod=test_accumulation_background>
+
+    def test_accumulation_background(self):
+        # Set occlusion_layers to all -1, so all splats are background splats.
+        splat_colors_and_weights = torch.rand((1, 1, 1, 3, 9, 5))
+        occlusion_layers = torch.zeros((1, 1, 1, 9)) - 1
+>       splatted_colors, splatted_weights = _compute_splatted_colors_and_weights(
+            occlusion_layers, splat_colors_and_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:487: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:168: in _compute_splatted_colors_and_weights
+    return _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+occlusion_layers = tensor([[[[-1., -1., -1., -1., -1., -1., -1., -1., -1.]]]])
+splat_colors_and_weights = tensor([[[[[[0.3382, 0.2404, 0.9832, 0.8931, 0.7116],
+            [0.8642, 0.8962, 0.6891, 0.5071, 0.9313],
+          ...4234],
+            [0.1725, 0.5027, 0.1564, 0.5301, 0.9392],
+            [0.2894, 0.9182, 0.3124, 0.6712, 0.2098]]]]]])
+
+    def _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights):
+        """
+        Accumulates splatted colors in background, surface, and foreground occlusion buffers.
+    
+        Args:
+            occlusion_layers (torch.Tensor): A tensor of shape (N, H, W, 9).
+            splat_colors_and_weights (torch.Tensor): A tensor of shape (N, H, W, K, 9, 5).
+    
+        Returns:
+            tuple: A tuple containing:
+                - splatted_colors (torch.Tensor): A tensor of shape (N, H, W, 4, 3).
+                - splatted_weights (torch.Tensor): A tensor of shape (N, H, W, 1, 3).
+        """
+        N, H, W, K, _, _ = splat_colors_and_weights.shape
+        splatted_colors = torch.zeros((N, H, W, 4, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        splatted_weights = torch.zeros((N, H, W, 1, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        for i in range(3):
+            weights = splat_colors_and_weights[..., i, 4]
+            colors = splat_colors_and_weights[..., i, :3]
+            weighted_colors = colors * weights.unsqueeze(-1)
+            splatted_colors[..., i, :] = weighted_colors.sum(dim=3)
+            splatted_weights[..., 0, i] = weights.sum(dim=3)
+>       splatted_colors[..., 3, :] = splatted_weights[..., 0, :].unsqueeze(-1)
+E       RuntimeError: The expanded size of the tensor (1) must match the existing size (3) at non-singleton dimension 2.  Target sizes: [1, 1, 1, 3].  Tensor sizes: [3, 1]
+
+../pytorch3d/pytorch3d/renderer/temp.py:33: RuntimeError
+_______ TestComputeSplattedColorsAndWeights.test_accumulation_foreground _______
+
+self = <tests.test_splatter_blend.TestComputeSplattedColorsAndWeights testMethod=test_accumulation_foreground>
+
+    def test_accumulation_foreground(self):
+        # Set occlusion_layers to all 1. Then the top splatter is a foreground
+        # splatter, mid splatter is surface, and bottom splatter is background.
+        splat_colors_and_weights = torch.rand((1, 1, 1, 3, 9, 5))
+        occlusion_layers = torch.zeros((1, 1, 1, 9)) + 1
+>       splatted_colors, splatted_weights = _compute_splatted_colors_and_weights(
+            occlusion_layers, splat_colors_and_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:548: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:168: in _compute_splatted_colors_and_weights
+    return _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+occlusion_layers = tensor([[[[1., 1., 1., 1., 1., 1., 1., 1., 1.]]]])
+splat_colors_and_weights = tensor([[[[[[0.2809, 0.2731, 0.5497, 0.9469, 0.5624],
+            [0.6372, 0.3719, 0.7650, 0.4543, 0.6042],
+          ...4045],
+            [0.1553, 0.9348, 0.9741, 0.6917, 0.5287],
+            [0.1676, 0.8619, 0.1306, 0.0806, 0.5406]]]]]])
+
+    def _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights):
+        """
+        Accumulates splatted colors in background, surface, and foreground occlusion buffers.
+    
+        Args:
+            occlusion_layers (torch.Tensor): A tensor of shape (N, H, W, 9).
+            splat_colors_and_weights (torch.Tensor): A tensor of shape (N, H, W, K, 9, 5).
+    
+        Returns:
+            tuple: A tuple containing:
+                - splatted_colors (torch.Tensor): A tensor of shape (N, H, W, 4, 3).
+                - splatted_weights (torch.Tensor): A tensor of shape (N, H, W, 1, 3).
+        """
+        N, H, W, K, _, _ = splat_colors_and_weights.shape
+        splatted_colors = torch.zeros((N, H, W, 4, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        splatted_weights = torch.zeros((N, H, W, 1, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        for i in range(3):
+            weights = splat_colors_and_weights[..., i, 4]
+            colors = splat_colors_and_weights[..., i, :3]
+            weighted_colors = colors * weights.unsqueeze(-1)
+            splatted_colors[..., i, :] = weighted_colors.sum(dim=3)
+            splatted_weights[..., 0, i] = weights.sum(dim=3)
+>       splatted_colors[..., 3, :] = splatted_weights[..., 0, :].unsqueeze(-1)
+E       RuntimeError: The expanded size of the tensor (1) must match the existing size (3) at non-singleton dimension 2.  Target sizes: [1, 1, 1, 3].  Tensor sizes: [3, 1]
+
+../pytorch3d/pytorch3d/renderer/temp.py:33: RuntimeError
+_________ TestComputeSplattedColorsAndWeights.test_accumulation_middle _________
+
+self = <tests.test_splatter_blend.TestComputeSplattedColorsAndWeights testMethod=test_accumulation_middle>
+
+    def test_accumulation_middle(self):
+        # Set occlusion_layers to all 0, so top splats are co-surface with splatted
+        # pixels. Thus, the top splatting layer should be accumulated to surface, and
+        # all other layers to background.
+        splat_colors_and_weights = torch.rand((1, 1, 1, 3, 9, 5))
+        occlusion_layers = torch.zeros((1, 1, 1, 9))
+>       splatted_colors, splatted_weights = _compute_splatted_colors_and_weights(
+            occlusion_layers, splat_colors_and_weights
+        )
+
+../pytorch3d/tests/test_splatter_blend.py:518: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/renderer/splatter_blend.py:168: in _compute_splatted_colors_and_weights
+    return _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+occlusion_layers = tensor([[[[0., 0., 0., 0., 0., 0., 0., 0., 0.]]]])
+splat_colors_and_weights = tensor([[[[[[0.5246, 0.0333, 0.6312, 0.3704, 0.5427],
+            [0.9214, 0.4668, 0.7449, 0.7035, 0.0142],
+          ...7010],
+            [0.8221, 0.0948, 0.6425, 0.0559, 0.2050],
+            [0.5252, 0.4478, 0.0659, 0.6809, 0.4300]]]]]])
+
+    def _compute_splatted_colors_and_weights(occlusion_layers, splat_colors_and_weights):
+        """
+        Accumulates splatted colors in background, surface, and foreground occlusion buffers.
+    
+        Args:
+            occlusion_layers (torch.Tensor): A tensor of shape (N, H, W, 9).
+            splat_colors_and_weights (torch.Tensor): A tensor of shape (N, H, W, K, 9, 5).
+    
+        Returns:
+            tuple: A tuple containing:
+                - splatted_colors (torch.Tensor): A tensor of shape (N, H, W, 4, 3).
+                - splatted_weights (torch.Tensor): A tensor of shape (N, H, W, 1, 3).
+        """
+        N, H, W, K, _, _ = splat_colors_and_weights.shape
+        splatted_colors = torch.zeros((N, H, W, 4, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        splatted_weights = torch.zeros((N, H, W, 1, 3), dtype=splat_colors_and_weights.dtype, device=splat_colors_and_weights.device)
+        for i in range(3):
+            weights = splat_colors_and_weights[..., i, 4]
+            colors = splat_colors_and_weights[..., i, :3]
+            weighted_colors = colors * weights.unsqueeze(-1)
+            splatted_colors[..., i, :] = weighted_colors.sum(dim=3)
+            splatted_weights[..., 0, i] = weights.sum(dim=3)
+>       splatted_colors[..., 3, :] = splatted_weights[..., 0, :].unsqueeze(-1)
+E       RuntimeError: The expanded size of the tensor (1) must match the existing size (3) at non-singleton dimension 2.  Target sizes: [1, 1, 1, 3].  Tensor sizes: [3, 1]
+
+../pytorch3d/pytorch3d/renderer/temp.py:33: RuntimeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground
+FAILED ../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle
+========================= 3 failed, 16 passed in 1.39s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.18s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 19 items
+
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_h PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_crops_w PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPrecompute::test_offsets PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_alpha PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestPreparPixelsAndColors::test_background_z PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestGetSplatKernelNormalization::test_splat_kernel_normalization PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_mid_to_top_level_splatting PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeOcclusionLayers::test_single_layer PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_all_equal PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_random_inputs PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattingColorsAndWeights::test_zero_alpha_zero_weight PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestOffsetSplats::test_offset PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_background PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_foreground PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestComputeSplattedColorsAndWeights::test_accumulation_middle PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_background_color PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_opaque PASSED
+../pytorch3d/tests/test_splatter_blend.py::TestNormalizeAndComposeAllLayers::test_compositing_transparencies PASSED
+
+============================== 19 passed in 1.24s ==============================

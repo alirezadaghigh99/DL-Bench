@@ -1,0 +1,96 @@
+output file:
+processed_deepchemcompute_centroid344.json
+function:
+compute_centroid
+Error Cases:
+2024-12-26 19:21:03.842990: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1735258863.854835  891305 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1735258863.858218  891305 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2024-12-26 19:21:03.870677: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_pairwise_distances PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_rotation_matrix PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_unit_vector PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_is_angle_within_cutoff PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_subract_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_unit_vector PASSED
+
+=============================== warnings summary ===============================
+deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between
+  /local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/utils/geometry_utils.py:52: RuntimeWarning: invalid value encountered in arccos
+    angle = np.arccos(np.dot(vector_i_u, vector_j_u))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 8 passed, 1 warning in 4.07s =========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_pairwise_distances PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_rotation_matrix PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_unit_vector PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_is_angle_within_cutoff PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_subract_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_unit_vector PASSED
+
+=============================== warnings summary ===============================
+deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between
+  /local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/utils/geometry_utils.py:54: RuntimeWarning: invalid value encountered in arccos
+    angle = np.arccos(np.dot(vector_i_u, vector_j_u))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 8 passed, 1 warning in 4.09s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/deepchem/deepchem/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/deepchem/deepchem
+configfile: setup.cfg
+plugins: flaky-3.8.1
+collecting ... collected 8 items
+
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_compute_pairwise_distances PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_rotation_matrix PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_generate_random_unit_vector PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_is_angle_within_cutoff PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_subract_centroid PASSED
+../publishablew/deepchem/deepchem/deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_unit_vector PASSED
+
+=============================== warnings summary ===============================
+deepchem/utils/test/test_geometry_utils.py::TestGeometryUtils::test_angle_between
+  /local/data0/moved_data/publishablew/deepchem/deepchem/deepchem/utils/geometry_utils.py:54: RuntimeWarning: invalid value encountered in arccos
+    angle = np.arccos(np.dot(vector_i_u, vector_j_u))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========================= 8 passed, 1 warning in 4.35s =========================

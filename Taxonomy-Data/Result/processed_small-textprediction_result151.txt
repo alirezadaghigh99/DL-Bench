@@ -1,0 +1,140 @@
+output file:
+processed_small-textprediction_result151.json
+function:
+prediction_result
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba FAILED', '../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel FAILED', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel', 'FAILED ../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 8 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_invalid_call PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_both PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_prediction PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_proba PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba FAILED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_with_proba PASSED
+
+=================================== FAILURES ===================================
+__________ ClassificationUtilsTest.test_prediction_result_multilabel ___________
+
+self = <tests.unit.small_text.utils.test_classification.ClassificationUtilsTest testMethod=test_prediction_result_multilabel>
+
+    def test_prediction_result_multilabel(self):
+        proba = np.array([
+            [0.1, 0.2, 0.6, 0.1],
+            [0.25, 0.25, 0.25, 0.25],
+            [0.3, 0.3, 0.2, 0.2],
+            [0.3, 0.2, 0.5, 0.1],
+        ])
+        result = prediction_result(proba, True, proba.shape[1])
+        expected = csr_matrix(np.array([
+            [0, 0, 1, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]))
+>       assert_csr_matrix_equal(expected, result)
+
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py:52: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = <4x4 sparse matrix of type '<class 'numpy.int64'>'
+	with 1 stored elements in Compressed Sparse Row format>
+y = [[0, 0, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], check_shape = True
+
+    def assert_csr_matrix_equal(x, y, check_shape=True):
+>       if check_shape and x.shape != y.shape:
+E       AttributeError: 'list' object has no attribute 'shape'
+
+../publishablew/small-text/small-text/tests/utils/testing.py:13: AttributeError
+_____ ClassificationUtilsTest.test_prediction_result_multilabel_with_proba _____
+
+self = <tests.unit.small_text.utils.test_classification.ClassificationUtilsTest testMethod=test_prediction_result_multilabel_with_proba>
+
+    def test_prediction_result_multilabel_with_proba(self):
+        proba = np.array([
+            [0.1, 0.2, 0.6, 0.1],
+            [0.25, 0.25, 0.25, 0.25],
+            [0.3, 0.3, 0.2, 0.2],
+            [0.3, 0.2, 0.5, 0.1],
+        ])
+        result, proba_result = prediction_result(proba, True, proba.shape[1], return_proba=True)
+        expected = csr_matrix(np.array([
+            [0, 0, 1, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+            [0, 0, 0, 0],
+        ]))
+>       assert_csr_matrix_equal(expected, result)
+
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+x = <4x4 sparse matrix of type '<class 'numpy.int64'>'
+	with 1 stored elements in Compressed Sparse Row format>
+y = [[0, 0, 1, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], check_shape = True
+
+    def assert_csr_matrix_equal(x, y, check_shape=True):
+>       if check_shape and x.shape != y.shape:
+E       AttributeError: 'list' object has no attribute 'shape'
+
+../publishablew/small-text/small-text/tests/utils/testing.py:13: AttributeError
+=========================== short test summary info ============================
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel
+FAILED ../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba
+========================= 2 failed, 6 passed in 1.58s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 8 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_invalid_call PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_both PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_prediction PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_proba PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_with_proba PASSED
+
+============================== 8 passed in 1.51s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/small-text/small-text/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/small-text/small-text
+configfile: pytest.ini
+plugins: srcpaths-1.2.1, cov-6.0.0, approvaltests-14.2.0, approvaltests-0.2.4
+collecting ... collected 8 items
+
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_invalid_call PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_both PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_prediction PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_empty_result_single_label_proba PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_multilabel_with_proba PASSED
+../publishablew/small-text/small-text/tests/unit/small_text/utils/test_classification.py::ClassificationUtilsTest::test_prediction_result_with_proba PASSED
+
+============================== 8 passed in 7.94s ===============================

@@ -1,0 +1,358 @@
+output file:
+processed_scikit-learnchi2357.json
+function:
+chi2
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_matrix]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array]', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_matrix] I: Seeding RNGs with 294653308
+FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chisquare PASSED
+
+=================================== FAILURES ===================================
+____________________________ test_chi2[csr_matrix] _____________________________
+
+csr_container = <class 'scipy.sparse._csr.csr_matrix'>
+
+    @pytest.mark.parametrize("csr_container", CSR_CONTAINERS)
+    def test_chi2(csr_container):
+        # Test Chi2 feature extraction
+    
+>       chi2 = mkchi2(k=1).fit(X, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:469: in fit
+    score_func_ret = self.score_func(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+_____________________________ test_chi2[csr_array] _____________________________
+
+csr_container = <class 'scipy.sparse._csr.csr_array'>
+
+    @pytest.mark.parametrize("csr_container", CSR_CONTAINERS)
+    def test_chi2(csr_container):
+        # Test Chi2 feature extraction
+    
+>       chi2 = mkchi2(k=1).fit(X, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:469: in fit
+    score_func_ret = self.score_func(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+__________________________ test_chi2_coo[coo_matrix] ___________________________
+
+coo_container = <class 'scipy.sparse._coo.coo_matrix'>
+
+    @pytest.mark.parametrize("coo_container", COO_CONTAINERS)
+    def test_chi2_coo(coo_container):
+        # Check that chi2 works with a COO matrix
+        # (as returned by CountVectorizer, DictVectorizer)
+        Xcoo = coo_container(X)
+>       mkchi2(k=2).fit_transform(Xcoo, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:862: in fit_transform
+    return self.fit(X, y, **fit_params).transform(X)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:469: in fit
+    score_func_ret = self.score_func(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+___________________________ test_chi2_coo[coo_array] ___________________________
+
+coo_container = <class 'scipy.sparse._coo.coo_array'>
+
+    @pytest.mark.parametrize("coo_container", COO_CONTAINERS)
+    def test_chi2_coo(coo_container):
+        # Check that chi2 works with a COO matrix
+        # (as returned by CountVectorizer, DictVectorizer)
+        Xcoo = coo_container(X)
+>       mkchi2(k=2).fit_transform(Xcoo, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_set_output.py:319: in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:862: in fit_transform
+    return self.fit(X, y, **fit_params).transform(X)
+../publishablew/scikit-learn/scikit-learn/sklearn/base.py:1330: in wrapper
+    return fit_method(estimator, *args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:469: in fit
+    score_func_ret = self.score_func(X, y)
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:189: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+________________________ test_chi2_negative[csr_matrix] ________________________
+
+csr_container = <class 'scipy.sparse._csr.csr_matrix'>
+
+    @pytest.mark.parametrize("csr_container", CSR_CONTAINERS)
+    def test_chi2_negative(csr_container):
+        # Check for proper error on negative numbers in the input X.
+        X, y = [[0, 1], [-1e-20, 1]], [0, 1]
+        for X in (X, np.array(X), csr_container(X)):
+            with pytest.raises(ValueError):
+>               chi2(X, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+________________________ test_chi2_negative[csr_array] _________________________
+
+csr_container = <class 'scipy.sparse._csr.csr_array'>
+
+    @pytest.mark.parametrize("csr_container", CSR_CONTAINERS)
+    def test_chi2_negative(csr_container):
+        # Check for proper error on negative numbers in the input X.
+        X, y = [[0, 1], [-1e-20, 1]], [0, 1]
+        for X in (X, np.array(X), csr_container(X)):
+            with pytest.raises(ValueError):
+>               chi2(X, y)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+___________________________ test_chi2_unused_feature ___________________________
+
+    def test_chi2_unused_feature():
+        # Unused feature should evaluate to NaN
+        # and should issue no runtime warning
+        with warnings.catch_warnings(record=True) as warned:
+            warnings.simplefilter("always")
+>           chi, p = chi2([[1, 0], [0, 0]], [1, 0])
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/_univariate_selection.py:166: in chi2
+    from .temp import chi2
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    from numbers import Integral, Real
+    import numpy as np
+    from scipy import special, stats
+    from ..base import BaseEstimator, _fit_context
+    from ..preprocessing import LabelBinarizer
+    from ..utils import as_float_array, check_array, check_X_y, safe_mask, safe_sqr
+    from ..utils._param_validation import Interval, StrOptions, validate_params
+    from ..utils.extmath import row_norms, safe_sparse_dot
+    from ..utils.validation import check_is_fitted, validate_data
+    from ._base import SelectorMixin
+    import numpy as np
+    from scipy.sparse import issparse
+>   from scipy.stats import chi21 as chi2_dist
+E   ImportError: cannot import name 'chi21' from 'scipy.stats' (/local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/lib/python3.9/site-packages/scipy/stats/__init__.py)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/temp.py:14: ImportError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature
+========================= 7 failed, 1 passed in 0.50s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_matrix] I: Seeding RNGs with 535585930
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chisquare PASSED
+
+============================== 8 passed in 0.27s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 8 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_matrix] I: Seeding RNGs with 1516220753
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_coo[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_negative[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chi2_unused_feature PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/feature_selection/tests/test_chi2.py::test_chisquare PASSED
+
+============================== 8 passed in 0.47s ===============================

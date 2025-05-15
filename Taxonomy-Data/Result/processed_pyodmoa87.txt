@@ -1,0 +1,112 @@
+output file:
+processed_pyodmoa87.json
+function:
+moa
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat FAILED', '../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets FAILED', 'FAILED ../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat', 'FAILED ../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyod/pyod/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyod/pyod
+collecting ... collected 4 items
+
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_dynamic_repeat PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets FAILED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat FAILED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_repeat PASSED
+
+=================================== FAILURES ===================================
+______________________ TestMOA.test_moa_static_n_buckets _______________________
+
+self = <pyod.test.test_combination.TestMOA testMethod=test_moa_static_n_buckets>
+
+    def test_moa_static_n_buckets(self):
+>       with assert_raises(ValueError):
+E       AssertionError: ValueError not raised
+
+../publishablew/pyod/pyod/pyod/test/test_combination.py:108: AssertionError
+_______________________ TestMOA.test_moa_static_norepeat _______________________
+
+self = <pyod.test.test_combination.TestMOA testMethod=test_moa_static_norepeat>
+
+    def test_moa_static_norepeat(self):
+        score = moa(self.scores, 3, method='static',
+                    bootstrap_estimators=False, random_state=42)
+    
+        assert_equal(score.shape, (4,))
+    
+        shuffled_list = shuffle(list(range(0, 6, 1)), random_state=42)
+        manual_scores = np.zeros([4, 3])
+        manual_scores[:, 0] = np.mean(self.scores[:, shuffled_list[0:2]],
+                                      axis=1)
+        manual_scores[:, 1] = np.mean(self.scores[:, shuffled_list[2:4]],
+                                      axis=1)
+        manual_scores[:, 2] = np.mean(self.scores[:, shuffled_list[4:6]],
+                                      axis=1)
+    
+        manual_score = np.max(manual_scores, axis=1)
+>       assert_array_equal(score, manual_score)
+
+../publishablew/pyod/pyod/pyod/test/test_combination.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pyod/pyod/venv/lib/python3.11/site-packages/numpy/_utils/__init__.py:85: in wrapper
+    return fun(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<built-in function eq>, array([0.68333333, 0.60833333, 0.49166667, 0.56666667]), array([0.8  , 0.775, 0.635, 0.795]))
+kwds = {'err_msg': '', 'header': 'Arrays are not equal', 'strict': False, 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Arrays are not equal
+E           
+E           Mismatched elements: 4 / 4 (100%)
+E           Max absolute difference among violations: 0.22833333
+E           Max relative difference among violations: 0.28721174
+E            ACTUAL: array([0.683333, 0.608333, 0.491667, 0.566667])
+E            DESIRED: array([0.8  , 0.775, 0.635, 0.795])
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets
+FAILED ../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat
+========================= 2 failed, 2 passed in 0.52s ==========================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyod/pyod/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyod/pyod
+collecting ... collected 4 items
+
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_dynamic_repeat PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_repeat PASSED
+
+============================== 4 passed in 0.45s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pyod/pyod/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/pyod/pyod
+collecting ... collected 4 items
+
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_dynamic_repeat PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_n_buckets PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_norepeat PASSED
+../publishablew/pyod/pyod/pyod/test/test_combination.py::TestMOA::test_moa_static_repeat PASSED
+
+============================== 4 passed in 0.46s ===============================

@@ -1,0 +1,909 @@
+output file:
+processed_pennylane323.json
+function:
+cast
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0] FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0]', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1]', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires FAILED', '../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1] FAILED', 'FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 29 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_wire_order_returns_base_matrix PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0] FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1] FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class FAILED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted FAILED
+
+=================================== FAILURES ===================================
+_______________________ TestExpandMatrix.test_expansion ________________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2936bad0>
+
+    def test_expansion(self):
+        """Tests the case where the original matrix is expanded"""
+>       res = qml.math.expand_matrix(self.base_matrix_1, wires=[2], wire_order=[0, 2])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:87: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_________________ TestExpandMatrix.test_expansion_broadcasted __________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e293801d0>
+
+    def test_expansion_broadcasted(self):
+        """Tests the case where the broadcasted original matrix is expanded"""
+>       res = qml.math.expand_matrix(self.base_matrix_1_broadcasted, wires=[2], wire_order=[0, 2])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+________________ TestExpandMatrix.test_autograd[0-base_matrix0] ________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29381150>
+i = 0
+base_matrix = tensor([[ 0.2,  1.1],
+        [-1.3,  1.9]], requires_grad=True)
+tol = 0.001
+
+    @pytest.mark.autograd
+    @pytest.mark.parametrize(
+        "i, base_matrix",
+        [
+            (0, [[0.2, 1.1], [-1.3, 1.9]]),
+            (1, [[[0.2, 0.5], [1.2, 1.1]], [[-0.3, -0.2], [-1.3, 1.9]], [[0.2, 0.1], [0.2, 0.7]]]),
+        ],
+    )
+    def test_autograd(self, i, base_matrix, tol):
+        """Tests differentiation in autograd by computing the Jacobian of
+        the expanded matrix with respect to the canonical matrix."""
+    
+        base_matrix = pnp.array(base_matrix, requires_grad=True)
+        jac_fn = qml.jacobian(self.func_for_autodiff)
+>       jac = jac_fn(base_matrix)
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/_grad.py:517: in _jacobian_function
+    jac = tuple(_jacobian(func, arg)(*args, **kwargs) for arg in _argnum)
+../publishablew/pennylane/pennylane/pennylane/_grad.py:517: in <genexpr>
+    jac = tuple(_jacobian(func, arg)(*args, **kwargs) for arg in _argnum)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/wrap_util.py:20: in nary_f
+    return unary_operator(unary_f, x, *nary_op_args, **nary_op_kwargs)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/differential_operators.py:60: in jacobian
+    vjp, ans = _make_vjp(fun, x)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/core.py:10: in make_vjp
+    end_value, end_node =  trace(start_node, fun, x)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/tracer.py:10: in trace
+    end_box = fun(start_box)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/wrap_util.py:15: in unary_f
+    return fun(*subargs, **kwargs)
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:151: in func_for_autodiff
+    return qml.math.expand_matrix(mat, wires=[2], wire_order=[0, 2])
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+________________ TestExpandMatrix.test_autograd[1-base_matrix1] ________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e293813d0>
+i = 1
+base_matrix = tensor([[[ 0.2,  0.5],
+         [ 1.2,  1.1]],
+
+        [[-0.3, -0.2],
+         [-1.3,  1.9]],
+
+        [[ 0.2,  0.1],
+         [ 0.2,  0.7]]], requires_grad=True)
+tol = 0.001
+
+    @pytest.mark.autograd
+    @pytest.mark.parametrize(
+        "i, base_matrix",
+        [
+            (0, [[0.2, 1.1], [-1.3, 1.9]]),
+            (1, [[[0.2, 0.5], [1.2, 1.1]], [[-0.3, -0.2], [-1.3, 1.9]], [[0.2, 0.1], [0.2, 0.7]]]),
+        ],
+    )
+    def test_autograd(self, i, base_matrix, tol):
+        """Tests differentiation in autograd by computing the Jacobian of
+        the expanded matrix with respect to the canonical matrix."""
+    
+        base_matrix = pnp.array(base_matrix, requires_grad=True)
+        jac_fn = qml.jacobian(self.func_for_autodiff)
+>       jac = jac_fn(base_matrix)
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/_grad.py:517: in _jacobian_function
+    jac = tuple(_jacobian(func, arg)(*args, **kwargs) for arg in _argnum)
+../publishablew/pennylane/pennylane/pennylane/_grad.py:517: in <genexpr>
+    jac = tuple(_jacobian(func, arg)(*args, **kwargs) for arg in _argnum)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/wrap_util.py:20: in nary_f
+    return unary_operator(unary_f, x, *nary_op_args, **nary_op_kwargs)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/differential_operators.py:60: in jacobian
+    vjp, ans = _make_vjp(fun, x)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/core.py:10: in make_vjp
+    end_value, end_node =  trace(start_node, fun, x)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/tracer.py:10: in trace
+    end_box = fun(start_box)
+../publishablew/pennylane/pennylane/venv/lib/python3.11/site-packages/autograd/wrap_util.py:15: in unary_f
+    return fun(*subargs, **kwargs)
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:151: in func_for_autodiff
+    return qml.math.expand_matrix(mat, wires=[2], wire_order=[0, 2])
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_______________________ TestExpandMatrix.test_expand_one _______________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29383850>
+tol = 0.001
+
+    def test_expand_one(self, tol):
+        """Test that a 1 qubit gate correctly expands to 3 qubits."""
+        U = np.array(
+            [
+                [0.83645892 - 0.40533293j, -0.20215326 + 0.30850569j],
+                [-0.23889780 - 0.28101519j, -0.88031770 - 0.29832709j],
+            ]
+        )
+        # test applied to wire 0
+>       res = qml.math.expand_matrix(U, [0], [0, 4, 9])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:267: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_________________ TestExpandMatrix.test_expand_one_broadcasted _________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29383b90>
+tol = 0.001
+
+    def test_expand_one_broadcasted(self, tol):
+        """Test that a broadcasted 1 qubit gate correctly expands to 3 qubits."""
+        U = np.array(
+            [
+                [0.83645892 - 0.40533293j, -0.20215326 + 0.30850569j],
+                [-0.23889780 - 0.28101519j, -0.88031770 - 0.29832709j],
+            ]
+        )
+        # outer product with batch vector
+        U = np.tensordot([0.14, -0.23, 1.3j], U, axes=0)
+        # test applied to wire 0
+>       res = qml.math.expand_matrix(U, [0], [0, 4, 9])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:292: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+______________ TestExpandMatrix.test_expand_two_consecutive_wires ______________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29383fd0>
+tol = 0.001
+
+    def test_expand_two_consecutive_wires(self, tol):
+        """Test that a 2 qubit gate on consecutive wires correctly
+        expands to 4 qubits."""
+        U2 = np.array([[0, 1, 1, 1], [1, 0, 1, -1], [1, -1, 0, 1], [1, 1, -1, 0]]) / np.sqrt(3)
+    
+        # test applied to wire 0+1
+>       res = qml.math.expand_matrix(U2, [0, 1], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:312: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+________ TestExpandMatrix.test_expand_two_consecutive_wires_broadcasted ________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29388650>
+tol = 0.001
+
+    def test_expand_two_consecutive_wires_broadcasted(self, tol):
+        """Test that a broadcasted 2 qubit gate on consecutive wires correctly
+        expands to 4 qubits."""
+        U2 = np.array([[0, 1, 1, 1], [1, 0, 1, -1], [1, -1, 0, 1], [1, 1, -1, 0]]) / np.sqrt(3)
+        U2 = np.tensordot([2.31, 1.53, 0.7 - 1.9j], U2, axes=0)
+    
+        # test applied to wire 0+1
+>       res = qml.math.expand_matrix(U2, [0, 1], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:333: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_______________ TestExpandMatrix.test_expand_two_reversed_wires ________________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29388c90>
+tol = 0.001
+
+    def test_expand_two_reversed_wires(self, tol):
+        """Test that a 2 qubit gate on reversed consecutive wires correctly
+        expands to 4 qubits."""
+        # CNOT with target on wire 1
+>       res = qml.math.expand_matrix(CNOT, [1, 0], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:351: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_________ TestExpandMatrix.test_expand_two_reversed_wires_broadcasted __________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e293892d0>
+tol = 0.001
+
+    def test_expand_two_reversed_wires_broadcasted(self, tol):
+        """Test that a broadcasted 2 qubit gate on reversed consecutive wires correctly
+        expands to 4 qubits."""
+        # CNOT with target on wire 1 and a batch dimension of size 1
+>       res = qml.math.expand_matrix(CNOT_broadcasted, [1, 0], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:360: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_____________ TestExpandMatrix.test_expand_three_consecutive_wires _____________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e29389910>
+tol = 0.001
+
+    def test_expand_three_consecutive_wires(self, tol):
+        """Test that a 3 qubit gate on consecutive
+        wires correctly expands to 4 qubits."""
+        # test applied to wire 0,1,2
+>       res = qml.math.expand_matrix(Toffoli, [0, 1, 2], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:371: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_______ TestExpandMatrix.test_expand_three_consecutive_wires_broadcasted _______
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2938a010>
+tol = 0.001
+
+    def test_expand_three_consecutive_wires_broadcasted(self, tol):
+        """Test that a broadcasted 3 qubit gate on consecutive
+        wires correctly expands to 4 qubits."""
+        # test applied to wire 0,1,2
+>       res = qml.math.expand_matrix(Toffoli_broadcasted, [0, 1, 2], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:384: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:180: in expand_matrix
+    mats.append((eye_interface(num_post_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+______ TestExpandMatrix.test_expand_three_nonconsecutive_ascending_wires _______
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2938a750>
+tol = 0.001
+
+    def test_expand_three_nonconsecutive_ascending_wires(self, tol):
+        """Test that a 3 qubit gate on non-consecutive but ascending
+        wires correctly expands to 4 qubits."""
+        # test applied to wire 0,2,3
+>       res = qml.math.expand_matrix(Toffoli, [0, 2, 3], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:397: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:159: in expand_matrix
+    mat = kron_interface(mat, eye_interface(len(wire_difference)))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_ TestExpandMatrix.test_expand_three_nonconsecutive_ascending_wires_broadcasted _
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2938ae50>
+tol = 0.001
+
+    def test_expand_three_nonconsecutive_ascending_wires_broadcasted(self, tol):
+        """Test that a broadcasted 3 qubit gate on non-consecutive but ascending
+        wires correctly expands to 4 qubits."""
+        # test applied to wire 0,2,3
+>       res = qml.math.expand_matrix(Toffoli_broadcasted[:1], [0, 2, 3], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:410: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:154: in expand_matrix
+    batch_matrices = [
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:155: in <listcomp>
+    kron_interface(batch, eye_interface(len(wire_difference))) for batch in mat
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_____ TestExpandMatrix.test_expand_three_nonconsecutive_nonascending_wires _____
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2938b550>
+tol = 0.001
+
+    def test_expand_three_nonconsecutive_nonascending_wires(self, tol):
+        """Test that a 3 qubit gate on non-consecutive non-ascending
+        wires correctly expands to 4 qubits"""
+        # test applied to wire 3, 1, 2
+>       res = qml.math.expand_matrix(Toffoli, [3, 1, 2], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:441: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_ TestExpandMatrix.test_expand_three_nonconsecutive_nonascending_wires_broadcasted _
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e2938bc50>
+tol = 0.001
+
+    def test_expand_three_nonconsecutive_nonascending_wires_broadcasted(self, tol):
+        """Test that a broadcasted 3 qubit gate on non-consecutive non-ascending
+        wires correctly expands to 4 qubits"""
+        # test applied to wire 3, 1, 2
+>       res = qml.math.expand_matrix(Toffoli_broadcasted, [3, 1, 2], [0, 1, 2, 3])
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:458: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:174: in expand_matrix
+    mats.append((eye_interface(num_pre_identities),))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+_________ TestExpandMatrix.test_expand_matrix_usage_in_operator_class __________
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e27100390>
+tol = 0.001
+
+    def test_expand_matrix_usage_in_operator_class(self, tol):
+        """Tests that the method is used correctly by defining a dummy operator and
+        checking the permutation/expansion."""
+    
+        perm = [0, 2, 1, 3]
+        permuted_matrix = self.base_matrix_2[perm][:, perm]
+    
+        expanded_matrix = np.array(
+            [
+                [1, 2, 0, 0, 3, 4, 0, 0],
+                [5, 6, 0, 0, 7, 8, 0, 0],
+                [0, 0, 1, 2, 0, 0, 3, 4],
+                [0, 0, 5, 6, 0, 0, 7, 8],
+                [9, 10, 0, 0, 11, 12, 0, 0],
+                [13, 14, 0, 0, 15, 16, 0, 0],
+                [0, 0, 9, 10, 0, 0, 11, 12],
+                [0, 0, 13, 14, 0, 0, 15, 16],
+            ]
+        )
+    
+        class DummyOp(qml.operation.Operator):
+            """Dummy operator for testing the expand_matrix method."""
+    
+            num_wires = 2
+    
+            @staticmethod
+            def compute_matrix():
+                return self.base_matrix_2
+    
+        op = DummyOp(wires=[0, 2])
+        assert np.allclose(op.matrix(), self.base_matrix_2, atol=tol)
+        assert np.allclose(op.matrix(wire_order=[2, 0]), permuted_matrix, atol=tol)
+>       assert np.allclose(op.matrix(wire_order=[0, 1, 2]), expanded_matrix, atol=tol)
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:512: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/operation.py:822: in matrix
+    return expand_matrix(canonical_matrix, wires=self.wires, wire_order=wire_order)
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:159: in expand_matrix
+    mat = kron_interface(mat, eye_interface(len(wire_difference)))
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+___ TestExpandMatrix.test_expand_matrix_usage_in_operator_class_broadcasted ____
+
+self = <test_matrix_manipulation.TestExpandMatrix object at 0x708e27100a90>
+tol = 0.001
+
+    def test_expand_matrix_usage_in_operator_class_broadcasted(self, tol):
+        """Tests that the method is used correctly with a broadcasted matrix by defining
+        a dummy operator and checking the permutation/expansion."""
+    
+        perm = [0, 2, 1, 3]
+        permuted_matrix = self.base_matrix_2_broadcasted[:, perm][:, :, perm]
+    
+        expanded_matrix = np.tensordot(
+            np.tensordot(
+                np.kron(SWAP, I),
+                np.kron(I_broadcasted, self.base_matrix_2_broadcasted),
+                axes=[[1], [1]],
+            ),
+            np.kron(SWAP, I),
+            axes=[[2], [0]],
+        )
+        expanded_matrix = np.moveaxis(expanded_matrix, 0, -2)
+    
+        class DummyOp(qml.operation.Operator):
+            """Dummy operator for testing the expand_matrix method."""
+    
+            num_wires = 2
+    
+            # pylint: disable=arguments-differ
+            @staticmethod
+            def compute_matrix():
+                """Compute the matrix of the DummyOp."""
+                return self.base_matrix_2_broadcasted
+    
+        op = DummyOp(wires=[0, 2])
+        assert np.allclose(op.matrix(), self.base_matrix_2_broadcasted, atol=tol)
+        assert np.allclose(op.matrix(wire_order=[2, 0]), permuted_matrix, atol=tol)
+>       assert np.allclose(op.matrix(wire_order=[0, 1, 2]), expanded_matrix, atol=tol)
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py:546: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/pennylane/pennylane/pennylane/operation.py:822: in matrix
+    return expand_matrix(canonical_matrix, wires=self.wires, wire_order=wire_order)
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:154: in expand_matrix
+    batch_matrices = [
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:155: in <listcomp>
+    kron_interface(batch, eye_interface(len(wire_difference))) for batch in mat
+../publishablew/pennylane/pennylane/pennylane/math/matrix_manipulation.py:130: in eye_interface
+    return qml.math.cast_like(qml.math.eye(qudit_dim**dim, like=interface), mat)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:118: in cast_like
+    return cast(tensor1, dtype)
+../publishablew/pennylane/pennylane/pennylane/math/utils.py:52: in cast
+    from .temp import cast
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    import warnings
+    import autoray as ar
+    import numpy as _np
+    from autograd.numpy.numpy_boxes import ArrayBox
+    from autoray import numpy as np
+    from . import single_dispatch
+    import numpy as np
+>   import torch
+E   ModuleNotFoundError: No module named 'torch'
+
+../publishablew/pennylane/pennylane/pennylane/math/temp.py:8: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0]
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1]
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class
+FAILED ../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted
+=================== 18 failed, 5 passed, 6 skipped in 0.71s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 29 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_wire_order_returns_base_matrix PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted PASSED
+
+======================== 23 passed, 6 skipped in 0.05s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/pennylane/pennylane/venv/bin/python
+cachedir: .pytest_cache
+benchmark: 5.1.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: /local/data0/moved_data/publishablew/pennylane/pennylane/tests
+configfile: pytest.ini
+plugins: flaky-3.8.1, xdist-3.6.1, split-0.10.0, rng-1.0.0, mock-3.14.0, forked-1.6.0, cov-6.0.0, benchmark-5.1.0
+collecting ... collected 29 items
+
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_wire_order_returns_base_matrix PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_no_expansion_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_permutation_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expansion_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[0-base_matrix0] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_autograd[1-base_matrix1] PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_torch[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_jax[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[0-base_matrix0] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_tf[1-base_matrix1] SKIPPED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_one_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_consecutive_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_two_reversed_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_consecutive_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_ascending_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_three_nonconsecutive_nonascending_wires_broadcasted PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class PASSED
+../publishablew/pennylane/pennylane/tests/math/test_matrix_manipulation.py::TestExpandMatrix::test_expand_matrix_usage_in_operator_class_broadcasted PASSED
+
+======================== 23 passed, 6 skipped in 0.05s =========================

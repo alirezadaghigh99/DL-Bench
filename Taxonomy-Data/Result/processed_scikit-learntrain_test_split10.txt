@@ -1,0 +1,1412 @@
+output file:
+processed_scikit-learntrain_test_split10.json
+function:
+train_test_split
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2]', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix]', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix]', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array]', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix]', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix] FAILED', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array] FAILED', 'FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans', '../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix] FAILED'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 249 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cross_validator_with_default_params I: Seeding RNGs with 535235497
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_2d_y PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_valueerrors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_indices PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_balance PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_stratifiedkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_groupkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_can_detect_dependent_samples_on_digits PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_trivial PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_approximate PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y0-groups0-expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y1-groups1-expected1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[None-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[0.7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_init PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_respects_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_iter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_even PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_overlap_train_test_bug PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel_many_labels PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_predefinedsplit_with_kfold_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_changing_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_order_dependence PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out_error_on_fewer_number_of_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_value_errors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedStratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_stratified_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_stratified_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array] FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[2.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[1.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[0.1-0.95] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[None-1j] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[11-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[10-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[8-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_reproducible PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedshufflesplit_list_input PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_check_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cv_iterable_wrapper PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_max_train_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_gap PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_nested_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_build_repr PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[GroupShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset FAILED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_p_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv0-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv1-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv2-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv3-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv11-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv12-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv13-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv14-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv15-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv16-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv17-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv18-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv19-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv20-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv21-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv22-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv23-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv24-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv25-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv26-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv27-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv28-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv29-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv30-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv31-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=None,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+
+=================================== FAILURES ===================================
+_________________________ test_train_test_split_errors _________________________
+
+    def test_train_test_split_errors():
+        pytest.raises(ValueError, train_test_split)
+    
+        pytest.raises(ValueError, train_test_split, range(3), train_size=1.1)
+    
+        pytest.raises(ValueError, train_test_split, range(3), test_size=0.6, train_size=0.6)
+        pytest.raises(
+            ValueError,
+            train_test_split,
+            range(3),
+            test_size=np.float32(0.6),
+            train_size=np.float32(0.6),
+        )
+        pytest.raises(ValueError, train_test_split, range(3), test_size="wrong_type")
+        pytest.raises(ValueError, train_test_split, range(3), test_size=2, train_size=4)
+        pytest.raises(TypeError, train_test_split, range(3), some_argument=1.1)
+        pytest.raises(ValueError, train_test_split, range(3), range(42))
+        pytest.raises(ValueError, train_test_split, range(10), shuffle=False, stratify=True)
+    
+        with pytest.raises(
+            ValueError,
+            match=r"train_size=11 should be either positive and "
+            r"smaller than the number of samples 10 or a "
+            r"float in the \(0, 1\) range",
+        ):
+>           train_test_split(range(10), train_size=11, test_size=1)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1297: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+
+During handling of the above exception, another exception occurred:
+
+    def test_train_test_split_errors():
+        pytest.raises(ValueError, train_test_split)
+    
+        pytest.raises(ValueError, train_test_split, range(3), train_size=1.1)
+    
+        pytest.raises(ValueError, train_test_split, range(3), test_size=0.6, train_size=0.6)
+        pytest.raises(
+            ValueError,
+            train_test_split,
+            range(3),
+            test_size=np.float32(0.6),
+            train_size=np.float32(0.6),
+        )
+        pytest.raises(ValueError, train_test_split, range(3), test_size="wrong_type")
+        pytest.raises(ValueError, train_test_split, range(3), test_size=2, train_size=4)
+        pytest.raises(TypeError, train_test_split, range(3), some_argument=1.1)
+        pytest.raises(ValueError, train_test_split, range(3), range(42))
+        pytest.raises(ValueError, train_test_split, range(10), shuffle=False, stratify=True)
+    
+        with pytest.raises(
+            ValueError,
+            match=r"train_size=11 should be either positive and "
+            r"smaller than the number of samples 10 or a "
+            r"float in the \(0, 1\) range",
+        ):
+>           train_test_split(range(10), train_size=11, test_size=1)
+E           AssertionError: Regex pattern did not match.
+E            Regex: 'train_size=11 should be either positive and smaller than the number of samples 10 or a float in the \\(0, 1\\) range'
+E            Input: 'At least one array is required as input.'
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1297: AssertionError
+______________ test_train_test_split_default_test_size[None-7-3] _______________
+
+train_size = None, exp_train = 7, exp_test = 3
+
+    @pytest.mark.parametrize(
+        "train_size, exp_train, exp_test", [(None, 7, 3), (8, 8, 2), (0.8, 8, 2)]
+    )
+    def test_train_test_split_default_test_size(train_size, exp_train, exp_test):
+        # Check that the default value has the expected behavior, i.e. complement
+        # train_size unless both are specified.
+>       X_train, X_test = train_test_split(X, train_size=train_size)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+________________ test_train_test_split_default_test_size[8-8-2] ________________
+
+train_size = 8, exp_train = 8, exp_test = 2
+
+    @pytest.mark.parametrize(
+        "train_size, exp_train, exp_test", [(None, 7, 3), (8, 8, 2), (0.8, 8, 2)]
+    )
+    def test_train_test_split_default_test_size(train_size, exp_train, exp_test):
+        # Check that the default value has the expected behavior, i.e. complement
+        # train_size unless both are specified.
+>       X_train, X_test = train_test_split(X, train_size=train_size)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_______________ test_train_test_split_default_test_size[0.8-8-2] _______________
+
+train_size = 0.8, exp_train = 8, exp_test = 2
+
+    @pytest.mark.parametrize(
+        "train_size, exp_train, exp_test", [(None, 7, 3), (8, 8, 2), (0.8, 8, 2)]
+    )
+    def test_train_test_split_default_test_size(train_size, exp_train, exp_test):
+        # Check that the default value has the expected behavior, i.e. complement
+        # train_size unless both are specified.
+>       X_train, X_test = train_test_split(X, train_size=train_size)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+______________________ test_train_test_split[coo_matrix] _______________________
+
+coo_container = <class 'scipy.sparse._coo.coo_matrix'>
+
+    @pytest.mark.parametrize("coo_container", COO_CONTAINERS)
+    def test_train_test_split(coo_container):
+        X = np.arange(100).reshape((10, 10))
+        X_s = coo_container(X)
+        y = np.arange(10)
+    
+        # simple test
+>       split = train_test_split(X, y, test_size=None, train_size=0.5)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1385: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_______________________ test_train_test_split[coo_array] _______________________
+
+coo_container = <class 'scipy.sparse._coo.coo_array'>
+
+    @pytest.mark.parametrize("coo_container", COO_CONTAINERS)
+    def test_train_test_split(coo_container):
+        X = np.arange(100).reshape((10, 10))
+        X_s = coo_container(X)
+        y = np.arange(10)
+    
+        # simple test
+>       split = train_test_split(X, y, test_size=None, train_size=0.5)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1385: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_____________________ test_train_test_split_32bit_overflow _____________________
+
+    def test_train_test_split_32bit_overflow():
+        """Check for integer overflow on 32-bit platforms.
+    
+        Non-regression test for:
+        https://github.com/scikit-learn/scikit-learn/issues/20774
+        """
+    
+        # A number 'n' big enough for expression 'n * n * train_size' to cause
+        # an overflow for signed 32-bit integer
+        big_number = 100000
+    
+        # Definition of 'y' is a part of reproduction - population for at least
+        # one class should be in the same order of magnitude as size of X
+        X = np.arange(big_number)
+        y = X > (0.99 * big_number)
+    
+>       split = train_test_split(X, y, stratify=y, train_size=0.25)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1442: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_________________________ test_train_test_split_pandas _________________________
+
+    def test_train_test_split_pandas():
+        # check train_test_split doesn't destroy pandas dataframe
+        types = [MockDataFrame]
+        try:
+            from pandas import DataFrame
+    
+            types.append(DataFrame)
+        except ImportError:
+            pass
+        for InputFeatureType in types:
+            # X dataframe
+            X_df = InputFeatureType(X)
+>           X_train, X_test = train_test_split(X_df)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1461: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[coo_matrix] ___________________
+
+sparse_container = <class 'scipy.sparse._coo.coo_matrix'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[coo_array] ____________________
+
+sparse_container = <class 'scipy.sparse._coo.coo_array'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[csc_matrix] ___________________
+
+sparse_container = <class 'scipy.sparse._csc.csc_matrix'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[csc_array] ____________________
+
+sparse_container = <class 'scipy.sparse._csc.csc_array'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[csr_matrix] ___________________
+
+sparse_container = <class 'scipy.sparse._csr.csr_matrix'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+___________________ test_train_test_split_sparse[csr_array] ____________________
+
+sparse_container = <class 'scipy.sparse._csr.csr_array'>
+
+    @pytest.mark.parametrize(
+        "sparse_container", COO_CONTAINERS + CSC_CONTAINERS + CSR_CONTAINERS
+    )
+    def test_train_test_split_sparse(sparse_container):
+        # check that train_test_split converts scipy sparse matrices
+        # to csr, as stated in the documentation
+        X = np.arange(100).reshape((10, 10))
+        X_s = sparse_container(X)
+>       X_train, X_test = train_test_split(X_s)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1474: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+______________________ test_train_test_split_mock_pandas _______________________
+
+    def test_train_test_split_mock_pandas():
+        # X mock dataframe
+        X_df = MockDataFrame(X)
+>       X_train, X_test = train_test_split(X_df)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1482: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_______________________ test_train_test_split_list_input _______________________
+
+    def test_train_test_split_list_input():
+        # Check that when y is a list / list of string labels, it works.
+        X = np.ones(7)
+        y1 = ["1"] * 4 + ["0"] * 3
+        y2 = np.hstack((np.ones(4), np.zeros(3)))
+        y3 = y2.tolist()
+    
+        for stratify in (True, False):
+>           X_train1, X_test1, y_train1, y_test1 = train_test_split(
+                X, y1, stratify=y1 if stratify else None, random_state=0
+            )
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1496: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_______________________ test_train_test_split_allow_nans _______________________
+
+    def test_train_test_split_allow_nans():
+        # Check that train_test_split allows input data with NaNs
+        X = np.arange(200, dtype=np.float64).reshape(10, -1)
+        X[2, :] = np.nan
+        y = np.repeat([0, 1], X.shape[0] / 2)
+>       train_test_split(X, y, test_size=0.2, random_state=42)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1545: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+_____________________ test_train_test_split_empty_trainset _____________________
+
+    def test_train_test_split_empty_trainset():
+        (X,) = [[1]]  # 1 sample
+        with pytest.raises(
+            ValueError,
+            match=(
+                "With n_samples=1, test_size=0.99 and train_size=None, "
+                "the resulting train set will be empty"
+            ),
+        ):
+>           train_test_split(X, test_size=0.99)
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1976: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/scikit-learn/scikit-learn/sklearn/utils/_param_validation.py:216: in wrapper
+    return func(*args, **kwargs)
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/_split.py:2336: in train_test_split
+    return train_test_split()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+test_size = None, train_size = None, random_state = None, shuffle = True
+
+    def train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None):
+        if not arrays:
+>           raise ValueError('At least one array is required as input.')
+E           ValueError: At least one array is required as input.
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/temp.py:22: ValueError
+
+During handling of the above exception, another exception occurred:
+
+    def test_train_test_split_empty_trainset():
+        (X,) = [[1]]  # 1 sample
+        with pytest.raises(
+            ValueError,
+            match=(
+                "With n_samples=1, test_size=0.99 and train_size=None, "
+                "the resulting train set will be empty"
+            ),
+        ):
+>           train_test_split(X, test_size=0.99)
+E           AssertionError: Regex pattern did not match.
+E            Regex: 'With n_samples=1, test_size=0.99 and train_size=None, the resulting train set will be empty'
+E            Input: 'At least one array is required as input.'
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py:1976: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array]
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans
+FAILED ../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset
+=========== 18 failed, 207 passed, 24 skipped, 84 warnings in 8.32s ============
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 249 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cross_validator_with_default_params I: Seeding RNGs with 1338511115
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_2d_y PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_valueerrors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_indices PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_balance PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_stratifiedkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_groupkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_can_detect_dependent_samples_on_digits PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_trivial PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_approximate PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y0-groups0-expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y1-groups1-expected1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[None-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[0.7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_init PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_respects_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_iter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_even PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_overlap_train_test_bug PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel_many_labels PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_predefinedsplit_with_kfold_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_changing_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_order_dependence PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out_error_on_fewer_number_of_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_value_errors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedStratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_stratified_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_stratified_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[2.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[1.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[0.1-0.95] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[None-1j] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[11-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[10-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[8-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_reproducible PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedshufflesplit_list_input PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_check_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cv_iterable_wrapper PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_max_train_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_gap PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_nested_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_build_repr PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[GroupShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_p_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv0-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv1-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv2-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv3-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv11-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv12-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv13-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv14-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv15-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv16-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv17-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv18-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv19-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv20-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv21-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv22-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv23-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv24-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv25-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv26-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv27-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv28-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv29-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv30-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv31-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=None,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+
+================= 225 passed, 24 skipped, 84 warnings in 7.40s =================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.9.0, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/scikit-learn/scikit-learn/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/scikit-learn/scikit-learn
+configfile: setup.cfg
+plugins: cov-6.0.0
+collecting ... collected 249 items
+
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cross_validator_with_default_params I: Seeding RNGs with 1499019223
+PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_2d_y PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_valueerrors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_indices PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_no_shuffle PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_ratios[StratifiedGroupKFold-10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_kfold_label_invariance[StratifiedGroupKFold-7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_balance PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedkfold_balance[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_kfold_stratifiedkfold_reproducibility[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_stratifiedkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_groupkfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_kfold_can_detect_dependent_samples_on_digits PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_trivial PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_approximate PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y0-groups0-expected0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_homogeneous_groups[y1-groups1-expected1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[5-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[30-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr0] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr1] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_group_kfold_against_group_kfold[70-cls_distr3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[None-9-1-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_default_test_size[0.8-8-2-StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[None-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split_default_test_size[0.7-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_init PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_respects_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_iter PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_even PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_overlap_train_test_bug PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_shuffle_split_multilabel_many_labels PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_predefinedsplit_with_kfold_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_shuffle_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_changing_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_group_out_order_dependence PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_p_group_out_error_on_fewer_number_of_groups PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_value_errors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_cv_repr[RepeatedStratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_get_n_splits_for_repeated_stratified_kfold PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_repeated_stratified_kfold_determinstic_split PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_errors PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[None-7-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[8-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_default_test_size[0.8-8-2] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[True-stratify1-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-numpy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-array_api_strict-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-cupy-None-None] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cpu-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float64] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-cuda-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_array_api_train_test_split[False-None-torch-mps-float32] SKIPPED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_32bit_overflow PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_pandas PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[coo_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csc_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_matrix] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_sparse[csr_array] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_mock_pandas PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_list_input PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[2.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[1.0-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[0.1-0.95] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[None-1j] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[11-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[10-None] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_errors[8-3] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shufflesplit_reproducible PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratifiedshufflesplit_list_input PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_allow_nans PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_check_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_cv_iterable_wrapper PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-True-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_group_kfold[42-False-StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_max_train_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_test_size PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_time_series_gap PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_nested_cv PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_build_repr PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[ShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[GroupShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_shuffle_split_empty_trainset[StratifiedShuffleSplit] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_train_test_split_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_one_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_leave_p_out_empty_trainset PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[KFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[StratifiedGroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_random_state_shuffle_false[GroupKFold] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv0-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv1-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv2-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv3-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv4-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv5-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv6-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv7-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv8-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv9-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv10-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv11-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv12-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv13-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv14-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv15-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv16-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv17-True] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv18-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv19-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv20-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv21-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv22-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv23-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv24-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv25-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv26-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv27-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv28-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv29-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv30-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_yields_constant_splits[cv31-False] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_get_metadata_routing[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeavePGroupsOut(n_groups=1)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[StratifiedGroupKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[LeaveOneGroupOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_splitter_set_split_request[GroupShuffleSplit(n_splits=5, random_state=None, test_size=None,\n         train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[KFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[TimeSeriesSplit(gap=0, max_train_size=None, n_splits=5, test_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeaveOneOut()] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[LeavePOut(p=2)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[ShuffleSplit(n_splits=10, random_state=None, test_size=None, train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=0.5,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[PredefinedSplit(test_fold=array([1, 1, 2, 2]))] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_no_group_splitters_warns_with_groups[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedKFold(n_splits=5, random_state=None, shuffle=False)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[StratifiedShuffleSplit(n_splits=10, random_state=None, test_size=None,\n            train_size=None)] PASSED
+../publishablew/scikit-learn/scikit-learn/sklearn/model_selection/tests/test_split.py::test_stratified_splitter_without_y[RepeatedStratifiedKFold(n_repeats=10, n_splits=5, random_state=None)] PASSED
+
+================= 225 passed, 24 skipped, 84 warnings in 7.48s =================

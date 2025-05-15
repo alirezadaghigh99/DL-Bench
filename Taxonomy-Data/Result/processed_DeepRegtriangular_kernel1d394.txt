@@ -1,0 +1,177 @@
+output file:
+processed_DeepRegtriangular_kernel1d394.json
+function:
+triangular_kernel1d
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] - assert False', 'FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] - assert False', 'test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] FAILED        [100%]', 'test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] FAILED        [ 25%]', 'test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] FAILED        [ 75%]', 'FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] - assert False', 'FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] - assert False', 'test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] FAILED        [ 50%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] FAILED        [ 25%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] FAILED        [ 50%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] FAILED        [ 75%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] FAILED        [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_triangular_kernel1d[3] __________________________
+
+kernel_size = 3
+
+    @pytest.mark.parametrize("kernel_size", [3, 5, 7, 9])
+    def test_triangular_kernel1d(kernel_size):
+        """
+        Testing the 1-D triangular kernel
+        :param kernel_size: int (odd number)
+        :return:
+        """
+        expected = np.zeros(shape=(kernel_size,), dtype=np.float32)
+        expected[kernel_size // 2] = kernel_size // 2 + 1
+        for it_k in range(kernel_size // 2):
+            expected[it_k] = it_k + 1
+            expected[-it_k - 1] = it_k + 1
+    
+        got = triangular_kernel1d(kernel_size)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(3,), dtype=float32, numpy=array([0., 1., 0.], dtype=float32)>, array([1., 2., 1.], dtype=float32))
+
+test/unit/test_loss_kernel.py:87: AssertionError
+----------------------------- Captured stderr call -----------------------------
+2025-01-21 15:43:13.317651: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2025-01-21 15:43:13.463349: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:982] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2025-01-21 15:43:13.471997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1716] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: NVIDIA GeForce RTX 3060 computeCapability: 8.6
+coreClock: 1.777GHz coreCount: 28 deviceMemorySize: 11.64GiB deviceMemoryBandwidth: 335.32GiB/s
+2025-01-21 15:43:13.472142: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:13.472216: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcublas.so.10'; dlerror: libcublas.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:13.489388: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcufft.so.10
+2025-01-21 15:43:13.489734: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcurand.so.10
+2025-01-21 15:43:13.489830: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcusolver.so.10'; dlerror: libcusolver.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:13.489897: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcusparse.so.10'; dlerror: libcusparse.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:13.489967: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/cuda/lib64:
+2025-01-21 15:43:13.489978: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1753] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2025-01-21 15:43:13.490257: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-01-21 15:43:13.494447: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 3393635000 Hz
+2025-01-21 15:43:13.494989: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x53f35c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-01-21 15:43:13.495006: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2025-01-21 15:43:13.495733: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1257] Device interconnect StreamExecutor with strength 1 edge matrix:
+2025-01-21 15:43:13.495743: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1263]      
+_________________________ test_triangular_kernel1d[5] __________________________
+
+kernel_size = 5
+
+    @pytest.mark.parametrize("kernel_size", [3, 5, 7, 9])
+    def test_triangular_kernel1d(kernel_size):
+        """
+        Testing the 1-D triangular kernel
+        :param kernel_size: int (odd number)
+        :return:
+        """
+        expected = np.zeros(shape=(kernel_size,), dtype=np.float32)
+        expected[kernel_size // 2] = kernel_size // 2 + 1
+        for it_k in range(kernel_size // 2):
+            expected[it_k] = it_k + 1
+            expected[-it_k - 1] = it_k + 1
+    
+        got = triangular_kernel1d(kernel_size)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(5,), dtype=float32, numpy=array([0., 1., 2., 1., 0.], dtype=float32)>, array([1., 2., 3., 2., 1.], dtype=float32))
+
+test/unit/test_loss_kernel.py:87: AssertionError
+_________________________ test_triangular_kernel1d[7] __________________________
+
+kernel_size = 7
+
+    @pytest.mark.parametrize("kernel_size", [3, 5, 7, 9])
+    def test_triangular_kernel1d(kernel_size):
+        """
+        Testing the 1-D triangular kernel
+        :param kernel_size: int (odd number)
+        :return:
+        """
+        expected = np.zeros(shape=(kernel_size,), dtype=np.float32)
+        expected[kernel_size // 2] = kernel_size // 2 + 1
+        for it_k in range(kernel_size // 2):
+            expected[it_k] = it_k + 1
+            expected[-it_k - 1] = it_k + 1
+    
+        got = triangular_kernel1d(kernel_size)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(7,), dtype=float32, numpy=array([0., 1., 2., 3., 2., 1., 0.], dtype=float32)>, array([1., 2., 3., 4., 3., 2., 1.], dtype=float32))
+
+test/unit/test_loss_kernel.py:87: AssertionError
+_________________________ test_triangular_kernel1d[9] __________________________
+
+kernel_size = 9
+
+    @pytest.mark.parametrize("kernel_size", [3, 5, 7, 9])
+    def test_triangular_kernel1d(kernel_size):
+        """
+        Testing the 1-D triangular kernel
+        :param kernel_size: int (odd number)
+        :return:
+        """
+        expected = np.zeros(shape=(kernel_size,), dtype=np.float32)
+        expected[kernel_size // 2] = kernel_size // 2 + 1
+        for it_k in range(kernel_size // 2):
+            expected[it_k] = it_k + 1
+            expected[-it_k - 1] = it_k + 1
+    
+        got = triangular_kernel1d(kernel_size)
+>       assert is_equal_tf(got, expected)
+E       assert False
+E        +  where False = is_equal_tf(<tf.Tensor: shape=(9,), dtype=float32, numpy=array([0., 1., 2., 3., 4., 3., 2., 1., 0.], dtype=float32)>, array([1., 2., 3., 4., 5., 4., 3., 2., 1.], dtype=float32))
+
+test/unit/test_loss_kernel.py:87: AssertionError
+=========================== short test summary info ============================
+FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] - assert False
+FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] - assert False
+FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] - assert False
+FAILED test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] - assert False
+============================== 4 failed in 1.56s ===============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] PASSED        [ 25%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] PASSED        [ 50%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] PASSED        [ 75%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] PASSED        [100%]
+
+============================== 4 passed in 1.26s ===============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.7.16, pytest-6.2.3, py-1.11.0, pluggy-0.13.1 -- /home/aliredaq/anaconda3/envs/deepreg/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/DeepReg/DeepReg, configfile: pytest.ini
+plugins: dependency-0.5.1, cov-2.11.1
+collecting ... collected 4 items
+
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[3] PASSED        [ 25%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[5] PASSED        [ 50%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[7] PASSED        [ 75%]
+test/unit/test_loss_kernel.py::test_triangular_kernel1d[9] PASSED        [100%]
+
+============================== 4 passed in 1.24s ===============================

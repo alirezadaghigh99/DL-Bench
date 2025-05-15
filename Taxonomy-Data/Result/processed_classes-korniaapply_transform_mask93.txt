@@ -1,0 +1,186 @@
+output file:
+processed_classes-korniaapply_transform_mask93.json
+function:
+apply_transform_mask
+Error Cases:
+
+Pass or Failed: 1
+
+Related Failed Test Cases:
+set()
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'jit', 'cudagraphs', 'tvm', 'inductor', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [  4%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [  9%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_gradcheck[cpu] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.19s =========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'jit', 'tvm', 'inductor', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [  4%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [  9%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_gradcheck[cpu] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.19s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'cudagraphs', 'jit', 'onnxrt', 'inductor', 'tvm', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 21 items
+
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [  4%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [  9%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 14%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 19%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 23%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 28%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 33%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_random_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 38%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 42%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 47%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 52%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 57%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range0] PASSED [ 61%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range0-erase_scale_range1] PASSED [ 66%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range0] PASSED [ 71%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_no_rectangle_erasing_shape[batch_shape1-aspect_ratio_range1-erase_scale_range1] PASSED [ 76%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range0] PASSED [ 80%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range0-erase_scale_range1] PASSED [ 85%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range0] PASSED [ 90%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_same_on_batch[shape0-aspect_ratio_range1-erase_scale_range1] PASSED [ 95%]
+../publishablew/kornia/kornia/tests/augmentation/test_augmentation.py::TestRectangleRandomErasing::test_gradcheck[cpu] SKIPPED [100%]
+
+======================== 20 passed, 1 skipped in 0.23s =========================

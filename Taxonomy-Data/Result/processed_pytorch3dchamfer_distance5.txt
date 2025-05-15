@@ -1,0 +1,1478 @@
+output file:
+processed_pytorch3dchamfer_distance5.json
+function:
+chamfer_distance
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds - I...', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm - A...', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals FAILED', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum', '../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean FAILED', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean', 'FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 18 items
+
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum FAILED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud FAILED
+
+=================================== FAILURES ===================================
+___________________ TestChamfer.test_chamfer_joint_reduction ___________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_joint_reduction>
+
+    def test_chamfer_joint_reduction(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        when batch_reduction in ["mean", "sum"] and
+        point_reduction in ["mean", "sum"].
+        """
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+    
+        points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        weights = points_normals.weights
+    
+        P1 = p1.shape[1]
+        P2 = p2.shape[1]
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+        # batch_reduction = "sum", point_reduction = "sum".
+>       loss, loss_norm = chamfer_distance(
+            p1,
+            p2,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            weights=weights,
+            batch_reduction="sum",
+            point_reduction="sum",
+        )
+
+../pytorch3d/tests/test_chamfer.py:1041: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da38a7eea0>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_____________ TestChamfer.test_chamfer_point_batch_reduction_mean ______________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_point_batch_reduction_mean>
+
+    def test_chamfer_point_batch_reduction_mean(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for the default settings (point_reduction = "mean" and batch_reduction = "mean")
+        and no normals.
+        This tests only uses homogeneous pointclouds.
+        """
+        import time
+        start = time.time()
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+    
+        for norm in [1, 2]:
+            points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+            p1 = points_normals.p1
+            p2 = points_normals.p2
+            weights = points_normals.weights
+            p11 = p1.detach().clone()
+            p22 = p2.detach().clone()
+            p11.requires_grad = True
+            p22.requires_grad = True
+            P1 = p1.shape[1]
+            P2 = p2.shape[1]
+    
+            pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+                p1, p2, norm=norm
+            )
+    
+            # point_reduction = "mean".
+>           loss, loss_norm = chamfer_distance(p11, p22, weights=weights, norm=norm)
+
+../pytorch3d/tests/test_chamfer.py:258: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:30: in pairwise_distances
+    return np.sum(np.abs(a[:, :, None, :] - b[:, None, :, :]), axis=-1)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[[ 5.0986e-01,  3.2472e-01,  2.4354e-02],
+          [ 4.9756e-01, -5.1005e-01,  5.4798e-01],
+          [ 4.78...01, -1.9347e-01],
+          [ 1.4422e-01, -2.6010e-02, -1.5687e-02]]]], device='cuda:0',
+       grad_fn=<SubBackward0>)
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+_________________ TestChamfer.test_chamfer_point_reduction_max _________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_point_reduction_max>
+
+    def test_chamfer_point_reduction_max(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = "max" and batch_reduction = None.
+        """
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, unused_pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=None, y_normals=None
+        )
+    
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=None,
+            y_normals=None,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="max",
+        )
+
+../pytorch3d/tests/test_chamfer.py:888: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da38a57ae0>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+________________ TestChamfer.test_chamfer_point_reduction_mean _________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_point_reduction_mean>
+
+    def test_chamfer_point_reduction_mean(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = "mean" and batch_reduction = None.
+        """
+        import time
+        start = time.time()
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+        P1 = p1.shape[1]
+        P2 = p2.shape[1]
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+        # point_reduction = "mean".
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="mean",
+        )
+
+../pytorch3d/tests/test_chamfer.py:614: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da38a4ad10>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+________________ TestChamfer.test_chamfer_point_reduction_none _________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_point_reduction_none>
+
+    def test_chamfer_point_reduction_none(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = None and batch_reduction = None.
+        """
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+        # point_reduction = None
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            batch_reduction=None,
+            point_reduction=None,
+        )
+
+../pytorch3d/tests/test_chamfer.py:797: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da0355fc20>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_________________ TestChamfer.test_chamfer_point_reduction_sum _________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_point_reduction_sum>
+
+    def test_chamfer_point_reduction_sum(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = "sum" and batch_reduction = None.
+        """
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="sum",
+        )
+
+../pytorch3d/tests/test_chamfer.py:708: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da03575a90>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_____________ TestChamfer.test_chamfer_pointcloud_object_nonormals _____________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_pointcloud_object_nonormals>
+
+    def test_chamfer_pointcloud_object_nonormals(self):
+        import time
+        start = time.time()
+        N = 5
+        P1, P2 = 100, 100
+        device = get_random_cuda_device()
+    
+        reductions = [
+            ("sum", "sum"),
+            ("mean", "sum"),
+            ("sum", "mean"),
+            ("mean", "mean"),
+            ("sum", None),
+            ("mean", None),
+            (None, None),
+        ]
+        for point_reduction, batch_reduction in reductions:
+            # Reinitialize all the tensors so that the
+            # backward pass can be computed.
+            points_normals = TestChamfer.init_pointclouds(
+                N, P1, P2, device, allow_empty=False
+            )
+    
+            # Chamfer with pointclouds as input.
+>           cham_cloud, _ = chamfer_distance(
+                points_normals.cloud1,
+                points_normals.cloud2,
+                point_reduction=point_reduction,
+                batch_reduction=batch_reduction,
+            )
+
+../pytorch3d/tests/test_chamfer.py:536: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.structures.pointclouds.Pointclouds object at 0x75da035babb0>
+index = (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+    def __getitem__(
+        self,
+        index: Union[int, List[int], slice, torch.BoolTensor, torch.LongTensor],
+    ) -> "Pointclouds":
+        """
+        Args:
+            index: Specifying the index of the cloud to retrieve.
+                Can be an int, slice, list of ints or a boolean tensor.
+    
+        Returns:
+            Pointclouds object with selected clouds. The tensors are not cloned.
+        """
+        normals, features = None, None
+        normals_list = self.normals_list()
+        features_list = self.features_list()
+        if isinstance(index, int):
+            points = [self.points_list()[index]]
+            if normals_list is not None:
+                normals = [normals_list[index]]
+            if features_list is not None:
+                features = [features_list[index]]
+        elif isinstance(index, slice):
+            points = self.points_list()[index]
+            if normals_list is not None:
+                normals = normals_list[index]
+            if features_list is not None:
+                features = features_list[index]
+        elif isinstance(index, list):
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        elif isinstance(index, torch.Tensor):
+            if index.dim() != 1 or index.dtype.is_floating_point:
+                raise IndexError(index)
+            # NOTE consider converting index to cpu for efficiency
+            if index.dtype == torch.bool:
+                # advanced indexing on a single dimension
+                index = index.nonzero()
+                index = index.squeeze(1) if index.numel() > 0 else index
+                index = index.tolist()
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        else:
+>           raise IndexError(index)
+E           IndexError: (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+../pytorch3d/pytorch3d/structures/pointclouds.py:415: IndexError
+____________ TestChamfer.test_chamfer_pointcloud_object_withnormals ____________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_pointcloud_object_withnormals>
+
+    def test_chamfer_pointcloud_object_withnormals(self):
+        import time
+        start = time.time()
+        N = 5
+        P1, P2 = 100, 100
+        device = get_random_cuda_device()
+    
+        reductions = [
+            ("sum", "sum"),
+            ("mean", "sum"),
+            ("sum", "mean"),
+            ("mean", "mean"),
+            ("sum", None),
+            ("mean", None),
+            (None, None),
+        ]
+        for point_reduction, batch_reduction in reductions:
+            # Reinitialize all the tensors so that the
+            # backward pass can be computed.
+            points_normals = TestChamfer.init_pointclouds(
+                N, P1, P2, device, allow_empty=False
+            )
+    
+            # Chamfer with pointclouds as input.
+>           cham_cloud, norm_cloud = chamfer_distance(
+                points_normals.cloud1,
+                points_normals.cloud2,
+                point_reduction=point_reduction,
+                batch_reduction=batch_reduction,
+            )
+
+../pytorch3d/tests/test_chamfer.py:445: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.structures.pointclouds.Pointclouds object at 0x75da0317cb80>
+index = (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+    def __getitem__(
+        self,
+        index: Union[int, List[int], slice, torch.BoolTensor, torch.LongTensor],
+    ) -> "Pointclouds":
+        """
+        Args:
+            index: Specifying the index of the cloud to retrieve.
+                Can be an int, slice, list of ints or a boolean tensor.
+    
+        Returns:
+            Pointclouds object with selected clouds. The tensors are not cloned.
+        """
+        normals, features = None, None
+        normals_list = self.normals_list()
+        features_list = self.features_list()
+        if isinstance(index, int):
+            points = [self.points_list()[index]]
+            if normals_list is not None:
+                normals = [normals_list[index]]
+            if features_list is not None:
+                features = [features_list[index]]
+        elif isinstance(index, slice):
+            points = self.points_list()[index]
+            if normals_list is not None:
+                normals = normals_list[index]
+            if features_list is not None:
+                features = features_list[index]
+        elif isinstance(index, list):
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        elif isinstance(index, torch.Tensor):
+            if index.dim() != 1 or index.dtype.is_floating_point:
+                raise IndexError(index)
+            # NOTE consider converting index to cpu for efficiency
+            if index.dtype == torch.bool:
+                # advanced indexing on a single dimension
+                index = index.nonzero()
+                index = index.squeeze(1) if index.numel() > 0 else index
+                index = index.tolist()
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        else:
+>           raise IndexError(index)
+E           IndexError: (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+../pytorch3d/pytorch3d/structures/pointclouds.py:415: IndexError
+_________________ TestChamfer.test_chamfer_vs_naive_pointcloud _________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_chamfer_vs_naive_pointcloud>
+
+    def test_chamfer_vs_naive_pointcloud(self):
+        """
+        Test the default settings for chamfer_distance
+        (point reduction = "mean" and batch_reduction="mean") but with heterogeneous
+        pointclouds as input. Compare with the naive implementation of chamfer
+        which supports heterogeneous pointcloud objects.
+        """
+        import time
+        start = time.time()
+        N, max_P1, max_P2 = 3, 70, 70
+        device = get_random_cuda_device()
+    
+        for norm in [1, 2]:
+            points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+            weights = points_normals.weights
+            x_lengths = points_normals.p1_lengths
+            y_lengths = points_normals.p2_lengths
+    
+            # Chamfer with tensors as input for heterogeneous pointclouds.
+>           cham_tensor, norm_tensor = chamfer_distance(
+                points_normals.p1,
+                points_normals.p2,
+                x_normals=points_normals.n1,
+                y_normals=points_normals.n2,
+                x_lengths=points_normals.p1_lengths,
+                y_lengths=points_normals.p2_lengths,
+                weights=weights,
+                norm=norm,
+            )
+
+../pytorch3d/tests/test_chamfer.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:30: in pairwise_distances
+    return np.sum(np.abs(a[:, :, None, :] - b[:, None, :, :]), axis=-1)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[[ 5.0986e-01,  3.2472e-01,  2.4354e-02],
+          [ 4.9756e-01, -5.1005e-01,  5.4798e-01],
+          [ 4.78...01, -1.5965e-01],
+          [ 2.3514e-01, -1.9234e-01,  2.5245e-01]]]], device='cuda:0',
+       grad_fn=<SubBackward0>)
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+________________________ TestChamfer.test_empty_clouds _________________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_empty_clouds>
+
+    def test_empty_clouds(self):
+        # Check that point_reduction doesn't divide by zero
+        points1 = Pointclouds(points=[torch.zeros(0, 3), torch.zeros(10, 3)])
+        points2 = Pointclouds(points=torch.ones(2, 40, 3))
+>       loss, _ = chamfer_distance(points1, points2, batch_reduction=None)
+
+../pytorch3d/tests/test_chamfer.py:1200: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <pytorch3d.structures.pointclouds.Pointclouds object at 0x75da0359cbe0>
+index = (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+    def __getitem__(
+        self,
+        index: Union[int, List[int], slice, torch.BoolTensor, torch.LongTensor],
+    ) -> "Pointclouds":
+        """
+        Args:
+            index: Specifying the index of the cloud to retrieve.
+                Can be an int, slice, list of ints or a boolean tensor.
+    
+        Returns:
+            Pointclouds object with selected clouds. The tensors are not cloned.
+        """
+        normals, features = None, None
+        normals_list = self.normals_list()
+        features_list = self.features_list()
+        if isinstance(index, int):
+            points = [self.points_list()[index]]
+            if normals_list is not None:
+                normals = [normals_list[index]]
+            if features_list is not None:
+                features = [features_list[index]]
+        elif isinstance(index, slice):
+            points = self.points_list()[index]
+            if normals_list is not None:
+                normals = normals_list[index]
+            if features_list is not None:
+                features = features_list[index]
+        elif isinstance(index, list):
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        elif isinstance(index, torch.Tensor):
+            if index.dim() != 1 or index.dtype.is_floating_point:
+                raise IndexError(index)
+            # NOTE consider converting index to cpu for efficiency
+            if index.dtype == torch.bool:
+                # advanced indexing on a single dimension
+                index = index.nonzero()
+                index = index.squeeze(1) if index.numel() > 0 else index
+                index = index.tolist()
+            points = [self.points_list()[i] for i in index]
+            if normals_list is not None:
+                normals = [normals_list[i] for i in index]
+            if features_list is not None:
+                features = [features_list[i] for i in index]
+        else:
+>           raise IndexError(index)
+E           IndexError: (slice(None, None, None), slice(None, None, None), None, slice(None, None, None))
+
+../pytorch3d/pytorch3d/structures/pointclouds.py:415: IndexError
+______________________ TestChamfer.test_incorrect_inputs _______________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_incorrect_inputs>
+
+    def test_incorrect_inputs(self):
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+    
+        # Normals of wrong shape
+        with self.assertRaisesRegex(ValueError, "Expected normals to be of shape"):
+>           chamfer_distance(p1, p2, x_normals=p1_normals[None])
+
+../pytorch3d/tests/test_chamfer.py:1169: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+______________________ TestChamfer.test_incorrect_weights ______________________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_incorrect_weights>
+
+    def test_incorrect_weights(self):
+        N, P1, P2 = 16, 64, 128
+        device = get_random_cuda_device()
+        p1 = torch.rand(
+            (N, P1, 3), dtype=torch.float32, device=device, requires_grad=True
+        )
+        p2 = torch.rand(
+            (N, P2, 3), dtype=torch.float32, device=device, requires_grad=True
+        )
+    
+        weights = torch.zeros((N,), dtype=torch.float32, device=device)
+>       loss, loss_norm = chamfer_distance(
+            p1, p2, weights=weights, batch_reduction="mean"
+        )
+
+../pytorch3d/tests/test_chamfer.py:1135: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[4.7638e-02, 4.1735e-02, 3.4423e-02],
+          [2.9926e-01, 7.7125e-01, 6.6082e-02],
+          [6.5231e-01,...98e-02, 6.6755e-02],
+          [1.5832e-02, 6.9704e-03, 5.9449e-02]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da7dfe4db0>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+________________________ TestChamfer.test_invalid_norm _________________________
+ValueError: Unsupported norm type. Use 1 or 2.
+
+During handling of the above exception, another exception occurred:
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_invalid_norm>
+
+    def test_invalid_norm(self):
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+    
+        with self.assertRaisesRegex(ValueError, "Support for 1 or 2 norm."):
+>           chamfer_distance(p1, p2, norm=0)
+E           AssertionError: "Support for 1 or 2 norm." does not match "Unsupported norm type. Use 1 or 2."
+
+../pytorch3d/tests/test_chamfer.py:1191: AssertionError
+________ TestChamfer.test_single_direction_chamfer_point_reduction_mean ________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_single_direction_chamfer_point_reduction_mean>
+
+    def test_single_direction_chamfer_point_reduction_mean(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = "mean" and batch_reduction = None.
+        """
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+        P1 = p1.shape[1]
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+        # point_reduction = "mean".
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="mean",
+            single_directional=True,
+        )
+
+../pytorch3d/tests/test_chamfer.py:663: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da03174770>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+________ TestChamfer.test_single_direction_chamfer_point_reduction_none ________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_single_direction_chamfer_point_reduction_none>
+
+    def test_single_direction_chamfer_point_reduction_none(self):
+        """
+        Compare output of vectorized chamfer loss with naive implementation
+        for point_reduction = None and batch_reduction = None.
+        """
+        N, max_P1, max_P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+        # point_reduction = None
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            batch_reduction=None,
+            point_reduction=None,
+            single_directional=True,
+        )
+
+../pytorch3d/tests/test_chamfer.py:850: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da38a4c9a0>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_______ TestChamfer.test_single_directional_chamfer_point_reduction_max ________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_single_directional_chamfer_point_reduction_max>
+
+    def test_single_directional_chamfer_point_reduction_max(self):
+        """
+        Compare output of vectorized single directional chamfer loss with naive implementation
+        for point_reduction = "max" and batch_reduction = None.
+        """
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, unused_pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=None, y_normals=None
+        )
+    
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=None,
+            y_normals=None,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="max",
+            single_directional=True,
+        )
+
+../pytorch3d/tests/test_chamfer.py:928: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da0355ff40>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_______ TestChamfer.test_single_directional_chamfer_point_reduction_sum ________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_single_directional_chamfer_point_reduction_sum>
+
+    def test_single_directional_chamfer_point_reduction_sum(self):
+        """
+        Compare output of vectorized single directional chamfer loss with naive implementation
+        for point_reduction = "sum" and batch_reduction = None.
+        """
+        N, P1, P2 = 7, 10, 18
+        device = get_random_cuda_device()
+        points_normals = TestChamfer.init_pointclouds(N, P1, P2, device)
+        p1 = points_normals.p1
+        p2 = points_normals.p2
+        p1_normals = points_normals.n1
+        p2_normals = points_normals.n2
+        weights = points_normals.weights
+        p11 = p1.detach().clone()
+        p22 = p2.detach().clone()
+        p11.requires_grad = True
+        p22.requires_grad = True
+    
+        pred_loss, pred_loss_norm = TestChamfer.chamfer_distance_naive(
+            p1, p2, x_normals=p1_normals, y_normals=p2_normals
+        )
+    
+>       loss, loss_norm = chamfer_distance(
+            p11,
+            p22,
+            x_normals=p1_normals,
+            y_normals=p2_normals,
+            weights=weights,
+            batch_reduction=None,
+            point_reduction="sum",
+            single_directional=True,
+        )
+
+../pytorch3d/tests/test_chamfer.py:752: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:32: in pairwise_distances
+    return np.sqrt(np.sum((a[:, :, None, :] - b[:, None, :, :]) ** 2, axis=-1))
+<__array_function__ internals>:200: in sum
+    ???
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:2324: in sum
+    return _wrapreduction(a, np.add, 'sum', axis, dtype, out, keepdims=keepdims,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = tensor([[[[2.5996e-01, 1.0544e-01, 5.9314e-04],
+          [2.4756e-01, 2.6016e-01, 3.0028e-01],
+          [2.2928e-01,...85e-02, 3.7432e-02],
+          [2.0800e-02, 6.7649e-04, 2.4609e-04]]]], device='cuda:0',
+       grad_fn=<PowBackward0>)
+ufunc = <ufunc 'add'>, method = 'sum', axis = -1, dtype = None, out = None
+kwargs = {'initial': <no value>, 'keepdims': <no value>, 'where': <no value>}
+passkwargs = {}
+reduction = <built-in method sum of Tensor object at 0x75da38a74f40>
+
+    def _wrapreduction(obj, ufunc, method, axis, dtype, out, **kwargs):
+        passkwargs = {k: v for k, v in kwargs.items()
+                      if v is not np._NoValue}
+    
+        if type(obj) is not mu.ndarray:
+            try:
+                reduction = getattr(obj, method)
+            except AttributeError:
+                pass
+            else:
+                # This branch is needed for reductions like any which don't
+                # support a dtype.
+                if dtype is not None:
+                    return reduction(axis=axis, dtype=dtype, out=out, **passkwargs)
+                else:
+>                   return reduction(axis=axis, out=out, **passkwargs)
+E                   TypeError: sum() received an invalid combination of arguments - got (out=NoneType, axis=int, ), but expected one of:
+E                    * (*, torch.dtype dtype = None)
+E                         didn't match because some of the keywords were incorrect: out, axis
+E                    * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                    * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+
+../pytorch3d/venv/lib/python3.8/site-packages/numpy/core/fromnumeric.py:84: TypeError
+_______ TestChamfer.test_single_directional_chamfer_vs_naive_pointcloud ________
+
+self = <tests.test_chamfer.TestChamfer testMethod=test_single_directional_chamfer_vs_naive_pointcloud>
+
+    def test_single_directional_chamfer_vs_naive_pointcloud(self):
+        """
+        Test the single directional settings for chamfer_distance
+        (point reduction = "mean" and batch_reduction="mean") but with heterogeneous
+        pointclouds as input. Compare with the naive implementation of chamfer
+        which supports heterogeneous pointcloud objects.
+        """
+        import time
+        start = time.time()
+        N, max_P1, max_P2 = 3, 70, 70
+        device = get_random_cuda_device()
+    
+        for norm in [1, 2]:
+            for abs_cosine in [True, False]:
+                points_normals = TestChamfer.init_pointclouds(N, max_P1, max_P2, device)
+                weights = points_normals.weights
+                x_lengths = points_normals.p1_lengths
+                y_lengths = points_normals.p2_lengths
+    
+                # Chamfer with tensors as input for heterogeneous pointclouds.
+>               cham_tensor, norm_tensor = chamfer_distance(
+                    points_normals.p1,
+                    points_normals.p2,
+                    x_normals=points_normals.n1,
+                    y_normals=points_normals.n2,
+                    x_lengths=points_normals.p1_lengths,
+                    y_lengths=points_normals.p2_lengths,
+                    weights=weights,
+                    norm=norm,
+                    single_directional=True,
+                    abs_cosine=abs_cosine,
+                )
+
+../pytorch3d/tests/test_chamfer.py:364: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../pytorch3d/pytorch3d/loss/chamfer.py:118: in chamfer_distance
+    return chamfer_distance(x, y, x_lengths, y_lengths, x_normals, y_normals, weights, batch_reduction, point_reduction, norm, single_directional, abs_cosine)
+../pytorch3d/pytorch3d/loss/temp.py:45: in chamfer_distance
+    dist_x_to_y = pairwise_distances(x, y, norm=norm)
+../pytorch3d/pytorch3d/loss/temp.py:30: in pairwise_distances
+    return np.sum(np.abs(a[:, :, None, :] - b[:, None, :, :]), axis=-1)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = tensor([[[[ 5.0986e-01,  3.2472e-01,  2.4354e-02],
+          [ 4.9756e-01, -5.1005e-01,  5.4798e-01],
+          [ 4.78...01, -1.5965e-01],
+          [ 2.3514e-01, -1.9234e-01,  2.5245e-01]]]], device='cuda:0',
+       grad_fn=<SubBackward0>)
+dtype = None
+
+    def __array__(self, dtype=None):
+        if has_torch_function_unary(self):
+            return handle_torch_function(Tensor.__array__, (self,), self, dtype=dtype)
+        if dtype is None:
+>           return self.numpy()
+E           TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+
+../pytorch3d/venv/lib/python3.8/site-packages/torch/_tensor.py:1083: TypeError
+=========================== short test summary info ============================
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds - I...
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm - A...
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum
+FAILED ../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud
+============================== 18 failed in 2.59s ==============================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 18 items
+
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean gpu 0.23361420631408691
+gpu 0.4665341377258301
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean gpu 0.2480158805847168
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals gpu 0.051935434341430664
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals gpu 0.0711367130279541
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud gpu 1.6892399787902832
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud gpu 3.2686564922332764
+PASSED
+
+============================== 18 passed in 8.83s ==============================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.8.5, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/pytorch3d/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/pytorch3d
+collecting ... collected 18 items
+
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_joint_reduction PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_batch_reduction_mean gpu 0.23088550567626953
+gpu 0.45551180839538574
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_max PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_mean gpu 0.23086762428283691
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_none PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_point_reduction_sum PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_nonormals gpu 0.049765825271606445
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_pointcloud_object_withnormals gpu 0.07099032402038574
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_chamfer_vs_naive_pointcloud gpu 1.687962532043457
+PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_empty_clouds PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_inputs PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_incorrect_weights PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_invalid_norm PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_mean PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_direction_chamfer_point_reduction_none PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_max PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_point_reduction_sum PASSED
+../pytorch3d/tests/test_chamfer.py::TestChamfer::test_single_directional_chamfer_vs_naive_pointcloud gpu 3.220388412475586
+PASSED
+
+============================== 18 passed in 8.77s ==============================

@@ -1,0 +1,1037 @@
+output file:
+processed_korniarun_7point224.json
+function:
+run_7point
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2]', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3] FAILED', '../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'inductor', 'tvm', 'onnxrt', 'jit', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-2-9] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-2-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_opencv_svd[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32] FAILED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_epipolar_constraint_7point[cpu-float32] XFAIL
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_gradcheck[cpu] PASSED
+
+=================================== FAILURES ===================================
+_____________ TestFindFundamental.test_shape_7point[cpu-float32-1] _____________
+
+self = <test_fundamental.TestFindFundamental object at 0x7079608db520>
+batch_size = 1, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 3])
+    def test_shape_7point(self, batch_size, device, dtype):
+        B = batch_size
+        points1 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        points2 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        torch.ones(B, 7, device=device, dtype=dtype)
+>       F_mat = epi.find_fundamental(points1, points2, method="7POINT")
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:171: in find_fundamental
+    result = run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:62: in run_7point
+    return run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:82: in run_7point
+    norm_points1, T1 = normalize_points(points1)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:14: in normalize_points
+    mean = np.mean(points, axis=1, keepdims=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[0.6321, 0.3003],
+         [0.3128, 0.7223],
+         [0.0354, 0.0013],
+         [0.4680, 0.0585],
+         [0.3108, 0.7781],
+         [0.5830, 0.9904],
+         [0.0319, 0.5835]]])
+axis = 1, dtype = None, out = None, keepdims = True
+
+    @array_function_dispatch(_mean_dispatcher)
+    def mean(a, axis=None, dtype=None, out=None, keepdims=np._NoValue, *,
+             where=np._NoValue):
+        """
+        Compute the arithmetic mean along the specified axis.
+    
+        Returns the average of the array elements.  The average is taken over
+        the flattened array by default, otherwise over the specified axis.
+        `float64` intermediate and return values are used for integer inputs.
+    
+        Parameters
+        ----------
+        a : array_like
+            Array containing numbers whose mean is desired. If `a` is not an
+            array, a conversion is attempted.
+        axis : None or int or tuple of ints, optional
+            Axis or axes along which the means are computed. The default is to
+            compute the mean of the flattened array.
+    
+            .. versionadded:: 1.7.0
+    
+            If this is a tuple of ints, a mean is performed over multiple axes,
+            instead of a single axis or all the axes as before.
+        dtype : data-type, optional
+            Type to use in computing the mean.  For integer inputs, the default
+            is `float64`; for floating point inputs, it is the same as the
+            input dtype.
+        out : ndarray, optional
+            Alternate output array in which to place the result.  The default
+            is ``None``; if provided, it must have the same shape as the
+            expected output, but the type will be cast if necessary.
+            See :ref:`ufuncs-output-type` for more details.
+    
+        keepdims : bool, optional
+            If this is set to True, the axes which are reduced are left
+            in the result as dimensions with size one. With this option,
+            the result will broadcast correctly against the input array.
+    
+            If the default value is passed, then `keepdims` will not be
+            passed through to the `mean` method of sub-classes of
+            `ndarray`, however any non-default value will be.  If the
+            sub-class' method does not implement `keepdims` any
+            exceptions will be raised.
+    
+        where : array_like of bool, optional
+            Elements to include in the mean. See `~numpy.ufunc.reduce` for details.
+    
+            .. versionadded:: 1.20.0
+    
+        Returns
+        -------
+        m : ndarray, see dtype parameter above
+            If `out=None`, returns a new array containing the mean values,
+            otherwise a reference to the output array is returned.
+    
+        See Also
+        --------
+        average : Weighted average
+        std, var, nanmean, nanstd, nanvar
+    
+        Notes
+        -----
+        The arithmetic mean is the sum of the elements along the axis divided
+        by the number of elements.
+    
+        Note that for floating-point input, the mean is computed using the
+        same precision the input has.  Depending on the input data, this can
+        cause the results to be inaccurate, especially for `float32` (see
+        example below).  Specifying a higher-precision accumulator using the
+        `dtype` keyword can alleviate this issue.
+    
+        By default, `float16` results are computed using `float32` intermediates
+        for extra precision.
+    
+        Examples
+        --------
+        >>> a = np.array([[1, 2], [3, 4]])
+        >>> np.mean(a)
+        2.5
+        >>> np.mean(a, axis=0)
+        array([2., 3.])
+        >>> np.mean(a, axis=1)
+        array([1.5, 3.5])
+    
+        In single precision, `mean` can be inaccurate:
+    
+        >>> a = np.zeros((2, 512*512), dtype=np.float32)
+        >>> a[0, :] = 1.0
+        >>> a[1, :] = 0.1
+        >>> np.mean(a)
+        0.54999924
+    
+        Computing the mean in float64 is more accurate:
+    
+        >>> np.mean(a, dtype=np.float64)
+        0.55000000074505806 # may vary
+    
+        Specifying a where argument:
+    
+        >>> a = np.array([[5, 9, 13], [14, 10, 12], [11, 15, 19]])
+        >>> np.mean(a)
+        12.0
+        >>> np.mean(a, where=[[True], [False], [False]])
+        9.0
+    
+        """
+        kwargs = {}
+        if keepdims is not np._NoValue:
+            kwargs['keepdims'] = keepdims
+        if where is not np._NoValue:
+            kwargs['where'] = where
+        if type(a) is not mu.ndarray:
+            try:
+                mean = a.mean
+            except AttributeError:
+                pass
+            else:
+>               return mean(axis=axis, dtype=dtype, out=out, **kwargs)
+E               TypeError: mean() received an invalid combination of arguments - got (keepdims=bool, dtype=NoneType, out=NoneType, axis=int, ), but expected one of:
+E                * (*, torch.dtype dtype = None)
+E                * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+E                * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3502: TypeError
+_____________ TestFindFundamental.test_shape_7point[cpu-float32-2] _____________
+
+self = <test_fundamental.TestFindFundamental object at 0x7079608db460>
+batch_size = 2, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 3])
+    def test_shape_7point(self, batch_size, device, dtype):
+        B = batch_size
+        points1 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        points2 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        torch.ones(B, 7, device=device, dtype=dtype)
+>       F_mat = epi.find_fundamental(points1, points2, method="7POINT")
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:171: in find_fundamental
+    result = run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:62: in run_7point
+    return run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:82: in run_7point
+    norm_points1, T1 = normalize_points(points1)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:14: in normalize_points
+    mean = np.mean(points, axis=1, keepdims=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[0.2860, 0.0354],
+         [0.9224, 0.7490],
+         [0.2230, 0.2645],
+         [0.7327, 0.9229],
+         [... 0.0822],
+         [0.3389, 0.2480],
+         [0.4583, 0.1480],
+         [0.2633, 0.4073],
+         [0.6997, 0.0176]]])
+axis = 1, dtype = None, out = None, keepdims = True
+
+    @array_function_dispatch(_mean_dispatcher)
+    def mean(a, axis=None, dtype=None, out=None, keepdims=np._NoValue, *,
+             where=np._NoValue):
+        """
+        Compute the arithmetic mean along the specified axis.
+    
+        Returns the average of the array elements.  The average is taken over
+        the flattened array by default, otherwise over the specified axis.
+        `float64` intermediate and return values are used for integer inputs.
+    
+        Parameters
+        ----------
+        a : array_like
+            Array containing numbers whose mean is desired. If `a` is not an
+            array, a conversion is attempted.
+        axis : None or int or tuple of ints, optional
+            Axis or axes along which the means are computed. The default is to
+            compute the mean of the flattened array.
+    
+            .. versionadded:: 1.7.0
+    
+            If this is a tuple of ints, a mean is performed over multiple axes,
+            instead of a single axis or all the axes as before.
+        dtype : data-type, optional
+            Type to use in computing the mean.  For integer inputs, the default
+            is `float64`; for floating point inputs, it is the same as the
+            input dtype.
+        out : ndarray, optional
+            Alternate output array in which to place the result.  The default
+            is ``None``; if provided, it must have the same shape as the
+            expected output, but the type will be cast if necessary.
+            See :ref:`ufuncs-output-type` for more details.
+    
+        keepdims : bool, optional
+            If this is set to True, the axes which are reduced are left
+            in the result as dimensions with size one. With this option,
+            the result will broadcast correctly against the input array.
+    
+            If the default value is passed, then `keepdims` will not be
+            passed through to the `mean` method of sub-classes of
+            `ndarray`, however any non-default value will be.  If the
+            sub-class' method does not implement `keepdims` any
+            exceptions will be raised.
+    
+        where : array_like of bool, optional
+            Elements to include in the mean. See `~numpy.ufunc.reduce` for details.
+    
+            .. versionadded:: 1.20.0
+    
+        Returns
+        -------
+        m : ndarray, see dtype parameter above
+            If `out=None`, returns a new array containing the mean values,
+            otherwise a reference to the output array is returned.
+    
+        See Also
+        --------
+        average : Weighted average
+        std, var, nanmean, nanstd, nanvar
+    
+        Notes
+        -----
+        The arithmetic mean is the sum of the elements along the axis divided
+        by the number of elements.
+    
+        Note that for floating-point input, the mean is computed using the
+        same precision the input has.  Depending on the input data, this can
+        cause the results to be inaccurate, especially for `float32` (see
+        example below).  Specifying a higher-precision accumulator using the
+        `dtype` keyword can alleviate this issue.
+    
+        By default, `float16` results are computed using `float32` intermediates
+        for extra precision.
+    
+        Examples
+        --------
+        >>> a = np.array([[1, 2], [3, 4]])
+        >>> np.mean(a)
+        2.5
+        >>> np.mean(a, axis=0)
+        array([2., 3.])
+        >>> np.mean(a, axis=1)
+        array([1.5, 3.5])
+    
+        In single precision, `mean` can be inaccurate:
+    
+        >>> a = np.zeros((2, 512*512), dtype=np.float32)
+        >>> a[0, :] = 1.0
+        >>> a[1, :] = 0.1
+        >>> np.mean(a)
+        0.54999924
+    
+        Computing the mean in float64 is more accurate:
+    
+        >>> np.mean(a, dtype=np.float64)
+        0.55000000074505806 # may vary
+    
+        Specifying a where argument:
+    
+        >>> a = np.array([[5, 9, 13], [14, 10, 12], [11, 15, 19]])
+        >>> np.mean(a)
+        12.0
+        >>> np.mean(a, where=[[True], [False], [False]])
+        9.0
+    
+        """
+        kwargs = {}
+        if keepdims is not np._NoValue:
+            kwargs['keepdims'] = keepdims
+        if where is not np._NoValue:
+            kwargs['where'] = where
+        if type(a) is not mu.ndarray:
+            try:
+                mean = a.mean
+            except AttributeError:
+                pass
+            else:
+>               return mean(axis=axis, dtype=dtype, out=out, **kwargs)
+E               TypeError: mean() received an invalid combination of arguments - got (keepdims=bool, dtype=NoneType, out=NoneType, axis=int, ), but expected one of:
+E                * (*, torch.dtype dtype = None)
+E                * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+E                * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3502: TypeError
+_____________ TestFindFundamental.test_shape_7point[cpu-float32-3] _____________
+
+self = <test_fundamental.TestFindFundamental object at 0x7079608db760>
+batch_size = 3, device = device(type='cpu'), dtype = torch.float32
+
+    @pytest.mark.parametrize("batch_size", [1, 2, 3])
+    def test_shape_7point(self, batch_size, device, dtype):
+        B = batch_size
+        points1 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        points2 = torch.rand(B, 7, 2, device=device, dtype=dtype)
+        torch.ones(B, 7, device=device, dtype=dtype)
+>       F_mat = epi.find_fundamental(points1, points2, method="7POINT")
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:171: in find_fundamental
+    result = run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:62: in run_7point
+    return run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:82: in run_7point
+    norm_points1, T1 = normalize_points(points1)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:14: in normalize_points
+    mean = np.mean(points, axis=1, keepdims=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[0.4395, 0.8158],
+         [0.1003, 0.6534],
+         [0.0450, 0.7513],
+         [0.1763, 0.1152],
+         [... 0.8977],
+         [0.0238, 0.6087],
+         [0.6647, 0.1255],
+         [0.2097, 0.9332],
+         [0.6237, 0.7488]]])
+axis = 1, dtype = None, out = None, keepdims = True
+
+    @array_function_dispatch(_mean_dispatcher)
+    def mean(a, axis=None, dtype=None, out=None, keepdims=np._NoValue, *,
+             where=np._NoValue):
+        """
+        Compute the arithmetic mean along the specified axis.
+    
+        Returns the average of the array elements.  The average is taken over
+        the flattened array by default, otherwise over the specified axis.
+        `float64` intermediate and return values are used for integer inputs.
+    
+        Parameters
+        ----------
+        a : array_like
+            Array containing numbers whose mean is desired. If `a` is not an
+            array, a conversion is attempted.
+        axis : None or int or tuple of ints, optional
+            Axis or axes along which the means are computed. The default is to
+            compute the mean of the flattened array.
+    
+            .. versionadded:: 1.7.0
+    
+            If this is a tuple of ints, a mean is performed over multiple axes,
+            instead of a single axis or all the axes as before.
+        dtype : data-type, optional
+            Type to use in computing the mean.  For integer inputs, the default
+            is `float64`; for floating point inputs, it is the same as the
+            input dtype.
+        out : ndarray, optional
+            Alternate output array in which to place the result.  The default
+            is ``None``; if provided, it must have the same shape as the
+            expected output, but the type will be cast if necessary.
+            See :ref:`ufuncs-output-type` for more details.
+    
+        keepdims : bool, optional
+            If this is set to True, the axes which are reduced are left
+            in the result as dimensions with size one. With this option,
+            the result will broadcast correctly against the input array.
+    
+            If the default value is passed, then `keepdims` will not be
+            passed through to the `mean` method of sub-classes of
+            `ndarray`, however any non-default value will be.  If the
+            sub-class' method does not implement `keepdims` any
+            exceptions will be raised.
+    
+        where : array_like of bool, optional
+            Elements to include in the mean. See `~numpy.ufunc.reduce` for details.
+    
+            .. versionadded:: 1.20.0
+    
+        Returns
+        -------
+        m : ndarray, see dtype parameter above
+            If `out=None`, returns a new array containing the mean values,
+            otherwise a reference to the output array is returned.
+    
+        See Also
+        --------
+        average : Weighted average
+        std, var, nanmean, nanstd, nanvar
+    
+        Notes
+        -----
+        The arithmetic mean is the sum of the elements along the axis divided
+        by the number of elements.
+    
+        Note that for floating-point input, the mean is computed using the
+        same precision the input has.  Depending on the input data, this can
+        cause the results to be inaccurate, especially for `float32` (see
+        example below).  Specifying a higher-precision accumulator using the
+        `dtype` keyword can alleviate this issue.
+    
+        By default, `float16` results are computed using `float32` intermediates
+        for extra precision.
+    
+        Examples
+        --------
+        >>> a = np.array([[1, 2], [3, 4]])
+        >>> np.mean(a)
+        2.5
+        >>> np.mean(a, axis=0)
+        array([2., 3.])
+        >>> np.mean(a, axis=1)
+        array([1.5, 3.5])
+    
+        In single precision, `mean` can be inaccurate:
+    
+        >>> a = np.zeros((2, 512*512), dtype=np.float32)
+        >>> a[0, :] = 1.0
+        >>> a[1, :] = 0.1
+        >>> np.mean(a)
+        0.54999924
+    
+        Computing the mean in float64 is more accurate:
+    
+        >>> np.mean(a, dtype=np.float64)
+        0.55000000074505806 # may vary
+    
+        Specifying a where argument:
+    
+        >>> a = np.array([[5, 9, 13], [14, 10, 12], [11, 15, 19]])
+        >>> np.mean(a)
+        12.0
+        >>> np.mean(a, where=[[True], [False], [False]])
+        9.0
+    
+        """
+        kwargs = {}
+        if keepdims is not np._NoValue:
+            kwargs['keepdims'] = keepdims
+        if where is not np._NoValue:
+            kwargs['where'] = where
+        if type(a) is not mu.ndarray:
+            try:
+                mean = a.mean
+            except AttributeError:
+                pass
+            else:
+>               return mean(axis=axis, dtype=dtype, out=out, **kwargs)
+E               TypeError: mean() received an invalid combination of arguments - got (keepdims=bool, dtype=NoneType, out=NoneType, axis=int, ), but expected one of:
+E                * (*, torch.dtype dtype = None)
+E                * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+E                * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3502: TypeError
+_____________ TestFindFundamental.test_7point_opencv[cpu-float32] ______________
+
+self = <test_fundamental.TestFindFundamental object at 0x7079608dbd60>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_7point_opencv(self, device, dtype):
+        points1 = torch.tensor(
+            [
+                [
+                    [0.8569, 0.5982],
+                    [0.0059, 0.9649],
+                    [0.1968, 0.8846],
+                    [0.6084, 0.3467],
+                    [0.9633, 0.5274],
+                    [0.8941, 0.8939],
+                    [0.0863, 0.5133],
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        points2 = torch.tensor(
+            [
+                [
+                    [0.0928, 0.3013],
+                    [0.0989, 0.9649],
+                    [0.0341, 0.4827],
+                    [0.8294, 0.4469],
+                    [0.2230, 0.2998],
+                    [0.1722, 0.8182],
+                    [0.5264, 0.8869],
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+    
+        # generated with OpenCV using above points
+        # Fm_expected shape is 9x3
+        # import cv2
+        # Fm_expected, _ = cv2.findFundamentalMat(
+        #   points1.detach().numpy().reshape(-1, 1, 2),
+        #   points2.detach().numpy().reshape(-1, 1, 2), cv2.FM_7POINT)
+    
+        Fm_expected = torch.tensor(
+            [
+                [
+                    [
+                        [-2.87490907, 5.41934672, 0.73871396],
+                        [0.34010174, 3.70371623, -4.65517276],
+                        [-0.1809933, -0.56577107, 1.0],
+                    ],
+                    [
+                        [0.14465888, 0.68711702, -0.65570944],
+                        [0.53424758, 0.7988479, -0.75446946],
+                        [-0.48201197, -1.05375511, 1.0],
+                    ],
+                    [
+                        [-0.0901827, 1.05515785, -0.54726062],
+                        [0.51914823, 1.02476892, -1.05783979],
+                        [-0.45860077, -1.01580301, 1.0],
+                    ],
+                ]
+            ],
+            device=device,
+            dtype=dtype,
+        )
+>       F_mat = epi.find_fundamental(points1, points2, method="7POINT")
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py:236: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:171: in find_fundamental
+    result = run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:62: in run_7point
+    return run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:82: in run_7point
+    norm_points1, T1 = normalize_points(points1)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:14: in normalize_points
+    mean = np.mean(points, axis=1, keepdims=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[0.8569, 0.5982],
+         [0.0059, 0.9649],
+         [0.1968, 0.8846],
+         [0.6084, 0.3467],
+         [0.9633, 0.5274],
+         [0.8941, 0.8939],
+         [0.0863, 0.5133]]])
+axis = 1, dtype = None, out = None, keepdims = True
+
+    @array_function_dispatch(_mean_dispatcher)
+    def mean(a, axis=None, dtype=None, out=None, keepdims=np._NoValue, *,
+             where=np._NoValue):
+        """
+        Compute the arithmetic mean along the specified axis.
+    
+        Returns the average of the array elements.  The average is taken over
+        the flattened array by default, otherwise over the specified axis.
+        `float64` intermediate and return values are used for integer inputs.
+    
+        Parameters
+        ----------
+        a : array_like
+            Array containing numbers whose mean is desired. If `a` is not an
+            array, a conversion is attempted.
+        axis : None or int or tuple of ints, optional
+            Axis or axes along which the means are computed. The default is to
+            compute the mean of the flattened array.
+    
+            .. versionadded:: 1.7.0
+    
+            If this is a tuple of ints, a mean is performed over multiple axes,
+            instead of a single axis or all the axes as before.
+        dtype : data-type, optional
+            Type to use in computing the mean.  For integer inputs, the default
+            is `float64`; for floating point inputs, it is the same as the
+            input dtype.
+        out : ndarray, optional
+            Alternate output array in which to place the result.  The default
+            is ``None``; if provided, it must have the same shape as the
+            expected output, but the type will be cast if necessary.
+            See :ref:`ufuncs-output-type` for more details.
+    
+        keepdims : bool, optional
+            If this is set to True, the axes which are reduced are left
+            in the result as dimensions with size one. With this option,
+            the result will broadcast correctly against the input array.
+    
+            If the default value is passed, then `keepdims` will not be
+            passed through to the `mean` method of sub-classes of
+            `ndarray`, however any non-default value will be.  If the
+            sub-class' method does not implement `keepdims` any
+            exceptions will be raised.
+    
+        where : array_like of bool, optional
+            Elements to include in the mean. See `~numpy.ufunc.reduce` for details.
+    
+            .. versionadded:: 1.20.0
+    
+        Returns
+        -------
+        m : ndarray, see dtype parameter above
+            If `out=None`, returns a new array containing the mean values,
+            otherwise a reference to the output array is returned.
+    
+        See Also
+        --------
+        average : Weighted average
+        std, var, nanmean, nanstd, nanvar
+    
+        Notes
+        -----
+        The arithmetic mean is the sum of the elements along the axis divided
+        by the number of elements.
+    
+        Note that for floating-point input, the mean is computed using the
+        same precision the input has.  Depending on the input data, this can
+        cause the results to be inaccurate, especially for `float32` (see
+        example below).  Specifying a higher-precision accumulator using the
+        `dtype` keyword can alleviate this issue.
+    
+        By default, `float16` results are computed using `float32` intermediates
+        for extra precision.
+    
+        Examples
+        --------
+        >>> a = np.array([[1, 2], [3, 4]])
+        >>> np.mean(a)
+        2.5
+        >>> np.mean(a, axis=0)
+        array([2., 3.])
+        >>> np.mean(a, axis=1)
+        array([1.5, 3.5])
+    
+        In single precision, `mean` can be inaccurate:
+    
+        >>> a = np.zeros((2, 512*512), dtype=np.float32)
+        >>> a[0, :] = 1.0
+        >>> a[1, :] = 0.1
+        >>> np.mean(a)
+        0.54999924
+    
+        Computing the mean in float64 is more accurate:
+    
+        >>> np.mean(a, dtype=np.float64)
+        0.55000000074505806 # may vary
+    
+        Specifying a where argument:
+    
+        >>> a = np.array([[5, 9, 13], [14, 10, 12], [11, 15, 19]])
+        >>> np.mean(a)
+        12.0
+        >>> np.mean(a, where=[[True], [False], [False]])
+        9.0
+    
+        """
+        kwargs = {}
+        if keepdims is not np._NoValue:
+            kwargs['keepdims'] = keepdims
+        if where is not np._NoValue:
+            kwargs['where'] = where
+        if type(a) is not mu.ndarray:
+            try:
+                mean = a.mean
+            except AttributeError:
+                pass
+            else:
+>               return mean(axis=axis, dtype=dtype, out=out, **kwargs)
+E               TypeError: mean() received an invalid combination of arguments - got (keepdims=bool, dtype=NoneType, out=NoneType, axis=int, ), but expected one of:
+E                * (*, torch.dtype dtype = None)
+E                * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+E                * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3502: TypeError
+________ TestFindFundamental.test_synthetic_sampson_7point[cpu-float32] ________
+
+self = <test_fundamental.TestFindFundamental object at 0x7079607180d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_synthetic_sampson_7point(self, device, dtype):
+        scene: Dict[str, torch.Tensor] = generate_two_view_random_scene(device, dtype)
+        x1 = scene["x1"][:, :7, :]
+        x2 = scene["x2"][:, :7, :]
+>       F_est = epi.find_fundamental(x1, x2, None, "7POINT")
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py:243: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:171: in find_fundamental
+    result = run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/fundamental.py:62: in run_7point
+    return run_7point(points1, points2)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:82: in run_7point
+    norm_points1, T1 = normalize_points(points1)
+../publishablew/kornia/kornia/kornia/geometry/epipolar/temp.py:14: in normalize_points
+    mean = np.mean(points, axis=1, keepdims=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = tensor([[[ 52.7824,  98.7711],
+         [ 17.4335, 108.7369],
+         [ 27.8945, 106.6440],
+         [ 20.7673, 109.7621],
+         [ 33.5900,  92.3942],
+         [ 49.0769,  97.6406],
+         [ 28.9352,  95.5378]]])
+axis = 1, dtype = None, out = None, keepdims = True
+
+    @array_function_dispatch(_mean_dispatcher)
+    def mean(a, axis=None, dtype=None, out=None, keepdims=np._NoValue, *,
+             where=np._NoValue):
+        """
+        Compute the arithmetic mean along the specified axis.
+    
+        Returns the average of the array elements.  The average is taken over
+        the flattened array by default, otherwise over the specified axis.
+        `float64` intermediate and return values are used for integer inputs.
+    
+        Parameters
+        ----------
+        a : array_like
+            Array containing numbers whose mean is desired. If `a` is not an
+            array, a conversion is attempted.
+        axis : None or int or tuple of ints, optional
+            Axis or axes along which the means are computed. The default is to
+            compute the mean of the flattened array.
+    
+            .. versionadded:: 1.7.0
+    
+            If this is a tuple of ints, a mean is performed over multiple axes,
+            instead of a single axis or all the axes as before.
+        dtype : data-type, optional
+            Type to use in computing the mean.  For integer inputs, the default
+            is `float64`; for floating point inputs, it is the same as the
+            input dtype.
+        out : ndarray, optional
+            Alternate output array in which to place the result.  The default
+            is ``None``; if provided, it must have the same shape as the
+            expected output, but the type will be cast if necessary.
+            See :ref:`ufuncs-output-type` for more details.
+    
+        keepdims : bool, optional
+            If this is set to True, the axes which are reduced are left
+            in the result as dimensions with size one. With this option,
+            the result will broadcast correctly against the input array.
+    
+            If the default value is passed, then `keepdims` will not be
+            passed through to the `mean` method of sub-classes of
+            `ndarray`, however any non-default value will be.  If the
+            sub-class' method does not implement `keepdims` any
+            exceptions will be raised.
+    
+        where : array_like of bool, optional
+            Elements to include in the mean. See `~numpy.ufunc.reduce` for details.
+    
+            .. versionadded:: 1.20.0
+    
+        Returns
+        -------
+        m : ndarray, see dtype parameter above
+            If `out=None`, returns a new array containing the mean values,
+            otherwise a reference to the output array is returned.
+    
+        See Also
+        --------
+        average : Weighted average
+        std, var, nanmean, nanstd, nanvar
+    
+        Notes
+        -----
+        The arithmetic mean is the sum of the elements along the axis divided
+        by the number of elements.
+    
+        Note that for floating-point input, the mean is computed using the
+        same precision the input has.  Depending on the input data, this can
+        cause the results to be inaccurate, especially for `float32` (see
+        example below).  Specifying a higher-precision accumulator using the
+        `dtype` keyword can alleviate this issue.
+    
+        By default, `float16` results are computed using `float32` intermediates
+        for extra precision.
+    
+        Examples
+        --------
+        >>> a = np.array([[1, 2], [3, 4]])
+        >>> np.mean(a)
+        2.5
+        >>> np.mean(a, axis=0)
+        array([2., 3.])
+        >>> np.mean(a, axis=1)
+        array([1.5, 3.5])
+    
+        In single precision, `mean` can be inaccurate:
+    
+        >>> a = np.zeros((2, 512*512), dtype=np.float32)
+        >>> a[0, :] = 1.0
+        >>> a[1, :] = 0.1
+        >>> np.mean(a)
+        0.54999924
+    
+        Computing the mean in float64 is more accurate:
+    
+        >>> np.mean(a, dtype=np.float64)
+        0.55000000074505806 # may vary
+    
+        Specifying a where argument:
+    
+        >>> a = np.array([[5, 9, 13], [14, 10, 12], [11, 15, 19]])
+        >>> np.mean(a)
+        12.0
+        >>> np.mean(a, where=[[True], [False], [False]])
+        9.0
+    
+        """
+        kwargs = {}
+        if keepdims is not np._NoValue:
+            kwargs['keepdims'] = keepdims
+        if where is not np._NoValue:
+            kwargs['where'] = where
+        if type(a) is not mu.ndarray:
+            try:
+                mean = a.mean
+            except AttributeError:
+                pass
+            else:
+>               return mean(axis=axis, dtype=dtype, out=out, **kwargs)
+E               TypeError: mean() received an invalid combination of arguments - got (keepdims=bool, dtype=NoneType, out=NoneType, axis=int, ), but expected one of:
+E                * (*, torch.dtype dtype = None)
+E                * (tuple of ints dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+E                * (tuple of names dim, bool keepdim = False, *, torch.dtype dtype = None)
+E                     didn't match because some of the keywords were incorrect: keepdims, dtype, out, axis
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:3502: TypeError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32]
+=================== 5 failed, 10 passed, 1 xfailed in 0.48s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'cudagraphs', 'onnxrt', 'openxla', 'inductor', 'jit', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-2-9] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-2-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_opencv_svd[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_epipolar_constraint_7point[cpu-float32] XPASS
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_gradcheck[cpu] PASSED
+
+======================== 15 passed, 1 xpassed in 0.20s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'openxla', 'inductor', 'jit', None, 'tvm', 'cudagraphs'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 16 items
+
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_smoke[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-2-9] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-1-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-2-8] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_noweights[cpu-float32-3-10] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_shape_7point[cpu-float32-3] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_opencv_svd[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_7point_opencv[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson_7point[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_epipolar_constraint_7point[cpu-float32] XPASS
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_synthetic_sampson[cpu-float32] PASSED
+../publishablew/kornia/kornia/tests/geometry/epipolar/test_fundamental.py::TestFindFundamental::test_gradcheck[cpu] PASSED
+
+======================== 15 passed, 1 xpassed in 0.25s =========================

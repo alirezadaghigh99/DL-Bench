@@ -1,0 +1,426 @@
+output file:
+processed_classes-korniaforward47.json
+function:
+forward
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32] FAILED [ 50%]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32] FAILED [ 37%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32] FAILED [ 62%]', '../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32] FAILED [ 87%]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'jit', 'cudagraphs', 'openxla', 'inductor', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_no_args PASSED [ 12%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_batch_size_mismatch[cpu-float32] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32] FAILED [ 37%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32] FAILED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32] FAILED [ 62%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_shear[cpu-float32] SKIPPED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32] FAILED [ 87%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_compose_affine_matrix_3x3[cpu-float32] PASSED [100%]
+
+=================================== FAILURES ===================================
+_________________ TestAffine2d.test_affine_rotate[cpu-float32] _________________
+
+self = <test_affine.TestAffine2d object at 0x7d75918f2d70>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_affine_rotate(self, device, dtype):
+        # TODO: Remove when #666 is implemented
+        if device.type == "cuda":
+            pytest.skip("Currently breaks in CUDA." "See https://github.com/kornia/kornia/issues/666")
+        torch.manual_seed(0)
+        angle = torch.rand(1, device=device, dtype=dtype) * 90.0
+        input = torch.rand(1, 2, 3, 4, device=device, dtype=dtype)
+    
+        transform = kornia.geometry.transform.Affine(angle=angle).to(device=device, dtype=dtype)
+>       actual = transform(input)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:579: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Affine()
+input = tensor([[[[0.7682, 0.0885, 0.1320, 0.3074],
+          [0.6341, 0.4901, 0.8964, 0.4556],
+          [0.6323, 0.3489, 0.4...89, 0.2939, 0.5185, 0.6977],
+          [0.8000, 0.1610, 0.2823, 0.6816],
+          [0.9152, 0.3971, 0.8742, 0.4194]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        batch_size, channels, height, width = input.size()
+        angle = self.angle if self.angle is not None else torch.zeros(batch_size)
+        translation = self.translation if self.translation is not None else torch.zeros(batch_size, 2)
+        scale_factor = self.scale_factor if self.scale_factor is not None else torch.ones(batch_size, 2)
+        shear = self.shear if self.shear is not None else torch.zeros(batch_size, 2)
+        center = self.center if self.center is not None else torch.tensor([width / 2, height / 2]).repeat(batch_size, 1)
+        angle = angle * torch.pi / 180.0
+        cos_a = torch.cos(angle)
+        sin_a = torch.sin(angle)
+        rotation_matrix = torch.stack([cos_a, -sin_a, sin_a, cos_a], dim=-1).view(batch_size, 2, 2)
+        scale_matrix = torch.diag_embed(scale_factor)
+        shear_matrix = torch.stack([torch.ones_like(shear[:, 0]), shear[:, 0], shear[:, 1], torch.ones_like(shear[:, 1])], dim=-1).view(batch_size, 2, 2)
+        transform_matrix = rotation_matrix @ scale_matrix @ shear_matrix
+        center_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        center_matrix[:, 0, 2] = center[:, 0]
+        center_matrix[:, 1, 2] = center[:, 1]
+        translation_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        translation_matrix[:, 0, 2] = translation[:, 0]
+        translation_matrix[:, 1, 2] = translation[:, 1]
+        full_transform = torch.eye(3).repeat(batch_size, 1, 1)
+        full_transform[:, :2, :2] = transform_matrix
+        full_transform = translation_matrix @ center_matrix @ full_transform @ torch.inverse(center_matrix)
+        affine_matrices = full_transform[:, :2, :]
+>       grid = F.affine_grid(affine_matrices, input.size(), align_corners=self.align_corners)
+E       NameError: name 'F' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:603: NameError
+_______________ TestAffine2d.test_affine_translate[cpu-float32] ________________
+
+self = <test_affine.TestAffine2d object at 0x7d75918f30a0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_affine_translate(self, device, dtype):
+        # TODO: Remove when #666 is implemented
+        if device.type == "cuda":
+            pytest.skip("Currently breaks in CUDA." "See https://github.com/kornia/kornia/issues/666")
+        torch.manual_seed(0)
+        translation = torch.rand(1, 2, device=device, dtype=dtype) * 2.0
+        input = torch.rand(1, 2, 3, 4, device=device, dtype=dtype)
+    
+        transform = kornia.geometry.transform.Affine(translation=translation).to(device=device, dtype=dtype)
+>       actual = transform(input)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:592: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Affine()
+input = tensor([[[[0.0885, 0.1320, 0.3074, 0.6341],
+          [0.4901, 0.8964, 0.4556, 0.6323],
+          [0.3489, 0.4017, 0.0...39, 0.5185, 0.6977, 0.8000],
+          [0.1610, 0.2823, 0.6816, 0.9152],
+          [0.3971, 0.8742, 0.4194, 0.5529]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        batch_size, channels, height, width = input.size()
+        angle = self.angle if self.angle is not None else torch.zeros(batch_size)
+        translation = self.translation if self.translation is not None else torch.zeros(batch_size, 2)
+        scale_factor = self.scale_factor if self.scale_factor is not None else torch.ones(batch_size, 2)
+        shear = self.shear if self.shear is not None else torch.zeros(batch_size, 2)
+        center = self.center if self.center is not None else torch.tensor([width / 2, height / 2]).repeat(batch_size, 1)
+        angle = angle * torch.pi / 180.0
+        cos_a = torch.cos(angle)
+        sin_a = torch.sin(angle)
+        rotation_matrix = torch.stack([cos_a, -sin_a, sin_a, cos_a], dim=-1).view(batch_size, 2, 2)
+        scale_matrix = torch.diag_embed(scale_factor)
+        shear_matrix = torch.stack([torch.ones_like(shear[:, 0]), shear[:, 0], shear[:, 1], torch.ones_like(shear[:, 1])], dim=-1).view(batch_size, 2, 2)
+        transform_matrix = rotation_matrix @ scale_matrix @ shear_matrix
+        center_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        center_matrix[:, 0, 2] = center[:, 0]
+        center_matrix[:, 1, 2] = center[:, 1]
+        translation_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        translation_matrix[:, 0, 2] = translation[:, 0]
+        translation_matrix[:, 1, 2] = translation[:, 1]
+        full_transform = torch.eye(3).repeat(batch_size, 1, 1)
+        full_transform[:, :2, :2] = transform_matrix
+        full_transform = translation_matrix @ center_matrix @ full_transform @ torch.inverse(center_matrix)
+        affine_matrices = full_transform[:, :2, :]
+>       grid = F.affine_grid(affine_matrices, input.size(), align_corners=self.align_corners)
+E       NameError: name 'F' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:603: NameError
+_________________ TestAffine2d.test_affine_scale[cpu-float32] __________________
+
+self = <test_affine.TestAffine2d object at 0x7d75918f33d0>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_affine_scale(self, device, dtype):
+        # TODO: Remove when #666 is implemented
+        if device.type == "cuda":
+            pytest.skip("Currently breaks in CUDA." "See https://github.com/kornia/kornia/issues/666")
+        torch.manual_seed(0)
+        _scale_factor = torch.rand(1, device=device, dtype=dtype) * 2.0
+        scale_factor = torch.stack([_scale_factor, _scale_factor], dim=1)
+        input = torch.rand(1, 2, 3, 4, device=device, dtype=dtype)
+    
+        transform = kornia.geometry.transform.Affine(scale_factor=scale_factor).to(device=device, dtype=dtype)
+>       actual = transform(input)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:606: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Affine()
+input = tensor([[[[0.7682, 0.0885, 0.1320, 0.3074],
+          [0.6341, 0.4901, 0.8964, 0.4556],
+          [0.6323, 0.3489, 0.4...89, 0.2939, 0.5185, 0.6977],
+          [0.8000, 0.1610, 0.2823, 0.6816],
+          [0.9152, 0.3971, 0.8742, 0.4194]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        batch_size, channels, height, width = input.size()
+        angle = self.angle if self.angle is not None else torch.zeros(batch_size)
+        translation = self.translation if self.translation is not None else torch.zeros(batch_size, 2)
+        scale_factor = self.scale_factor if self.scale_factor is not None else torch.ones(batch_size, 2)
+        shear = self.shear if self.shear is not None else torch.zeros(batch_size, 2)
+        center = self.center if self.center is not None else torch.tensor([width / 2, height / 2]).repeat(batch_size, 1)
+        angle = angle * torch.pi / 180.0
+        cos_a = torch.cos(angle)
+        sin_a = torch.sin(angle)
+        rotation_matrix = torch.stack([cos_a, -sin_a, sin_a, cos_a], dim=-1).view(batch_size, 2, 2)
+        scale_matrix = torch.diag_embed(scale_factor)
+        shear_matrix = torch.stack([torch.ones_like(shear[:, 0]), shear[:, 0], shear[:, 1], torch.ones_like(shear[:, 1])], dim=-1).view(batch_size, 2, 2)
+        transform_matrix = rotation_matrix @ scale_matrix @ shear_matrix
+        center_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        center_matrix[:, 0, 2] = center[:, 0]
+        center_matrix[:, 1, 2] = center[:, 1]
+        translation_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        translation_matrix[:, 0, 2] = translation[:, 0]
+        translation_matrix[:, 1, 2] = translation[:, 1]
+        full_transform = torch.eye(3).repeat(batch_size, 1, 1)
+        full_transform[:, :2, :2] = transform_matrix
+        full_transform = translation_matrix @ center_matrix @ full_transform @ torch.inverse(center_matrix)
+        affine_matrices = full_transform[:, :2, :]
+>       grid = F.affine_grid(affine_matrices, input.size(), align_corners=self.align_corners)
+E       NameError: name 'F' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:603: NameError
+____________ TestAffine2d.test_affine_rotate_translate[cpu-float32] ____________
+
+self = <test_affine.TestAffine2d object at 0x7d75918f3a30>
+device = device(type='cpu'), dtype = torch.float32
+
+    def test_affine_rotate_translate(self, device, dtype):
+        # TODO: Remove when #666 is implemented
+        if device.type == "cuda":
+            pytest.skip("Currently breaks in CUDA." "See https://github.com/kornia/kornia/issues/666")
+        batch_size = 2
+    
+        input = torch.tensor(
+            [[[0.0, 0.0, 0.0, 1.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]]],
+            device=device,
+            dtype=dtype,
+        ).repeat(batch_size, 1, 1, 1)
+    
+        angle = torch.tensor(180.0, device=device, dtype=dtype).repeat(batch_size)
+        translation = torch.tensor([1.0, 0.0], device=device, dtype=dtype).repeat(batch_size, 1)
+    
+        expected = torch.tensor(
+            [[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 1.0, 0.0, 0.0]]],
+            device=device,
+            dtype=dtype,
+        ).repeat(batch_size, 1, 1, 1)
+    
+        transform = kornia.geometry.transform.Affine(angle=angle, translation=translation, align_corners=True).to(
+            device=device, dtype=dtype
+        )
+>       actual = transform(input)
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py:648: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/core/module.py:274: in __call__
+    _output_image = decorated_forward(*inputs, **kwargs)
+../publishablew/kornia/kornia/kornia/core/module.py:63: in wrapper
+    tensor_outputs = func(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Affine()
+input = tensor([[[[0., 0., 0., 1.],
+          [0., 0., 1., 0.],
+          [0., 0., 0., 0.],
+          [0., 0., 0., 0.]]],
+
+
+        [[[0., 0., 0., 1.],
+          [0., 0., 1., 0.],
+          [0., 0., 0., 0.],
+          [0., 0., 0., 0.]]]])
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        batch_size, channels, height, width = input.size()
+        angle = self.angle if self.angle is not None else torch.zeros(batch_size)
+        translation = self.translation if self.translation is not None else torch.zeros(batch_size, 2)
+        scale_factor = self.scale_factor if self.scale_factor is not None else torch.ones(batch_size, 2)
+        shear = self.shear if self.shear is not None else torch.zeros(batch_size, 2)
+        center = self.center if self.center is not None else torch.tensor([width / 2, height / 2]).repeat(batch_size, 1)
+        angle = angle * torch.pi / 180.0
+        cos_a = torch.cos(angle)
+        sin_a = torch.sin(angle)
+        rotation_matrix = torch.stack([cos_a, -sin_a, sin_a, cos_a], dim=-1).view(batch_size, 2, 2)
+        scale_matrix = torch.diag_embed(scale_factor)
+        shear_matrix = torch.stack([torch.ones_like(shear[:, 0]), shear[:, 0], shear[:, 1], torch.ones_like(shear[:, 1])], dim=-1).view(batch_size, 2, 2)
+        transform_matrix = rotation_matrix @ scale_matrix @ shear_matrix
+        center_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        center_matrix[:, 0, 2] = center[:, 0]
+        center_matrix[:, 1, 2] = center[:, 1]
+        translation_matrix = torch.eye(3).repeat(batch_size, 1, 1)
+        translation_matrix[:, 0, 2] = translation[:, 0]
+        translation_matrix[:, 1, 2] = translation[:, 1]
+        full_transform = torch.eye(3).repeat(batch_size, 1, 1)
+        full_transform[:, :2, :2] = transform_matrix
+        full_transform = translation_matrix @ center_matrix @ full_transform @ torch.inverse(center_matrix)
+        affine_matrices = full_transform[:, :2, :]
+>       grid = F.affine_grid(affine_matrices, input.size(), align_corners=self.align_corners)
+E       NameError: name 'F' is not defined
+
+../publishablew/kornia/kornia/kornia/geometry/transform/affwarp.py:603: NameError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32]
+FAILED ../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32]
+==================== 4 failed, 3 passed, 1 skipped in 0.45s ====================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'tvm', 'jit', 'onnxrt', 'inductor', 'cudagraphs', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_no_args PASSED [ 12%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_batch_size_mismatch[cpu-float32] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32] PASSED [ 37%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32] PASSED [ 62%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_shear[cpu-float32] SKIPPED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32] PASSED [ 87%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_compose_affine_matrix_3x3[cpu-float32] PASSED [100%]
+
+========================= 7 passed, 1 skipped in 0.16s =========================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python3
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'openxla', 'tvm', 'jit', 'inductor', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 8 items
+
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_no_args PASSED [ 12%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_batch_size_mismatch[cpu-float32] PASSED [ 25%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate[cpu-float32] PASSED [ 37%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_translate[cpu-float32] PASSED [ 50%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_scale[cpu-float32] PASSED [ 62%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_shear[cpu-float32] SKIPPED [ 75%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_affine_rotate_translate[cpu-float32] PASSED [ 87%]
+../publishablew/kornia/kornia/tests/geometry/transform/test_affine.py::TestAffine2d::test_compose_affine_matrix_3x3[cpu-float32] PASSED [100%]
+
+========================= 7 passed, 1 skipped in 0.29s =========================

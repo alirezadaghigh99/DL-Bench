@@ -1,0 +1,456 @@
+output file:
+processed_classes-cleanlabpredict_proba22.json
+function:
+predict_proba
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] FAILED [ 77%]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4]', '../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats FAILED [ 81%]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1]', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats', 'FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3]', '../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] FAILED [ 76%]', '../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] FAILED [ 79%]', '../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf FAILED [  6%]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf FAILED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] PASSED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] FAILED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] FAILED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] FAILED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats FAILED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_cl_default_clf ______________________________
+
+    def test_cl_default_clf():
+        cl = CleanLearning()  # default clf is LogisticRegression
+        X_train_og = deepcopy(HIGH_DIM_DATA["X_train"])
+        cl.fit(HIGH_DIM_DATA["X_train"], HIGH_DIM_DATA["labels_train"])
+    
+        # assert result has the correct length
+        result = cl.predict(HIGH_DIM_DATA["X_test"])
+        assert len(result) == len(HIGH_DIM_DATA["X_test"])
+    
+        result = cl.predict(X=HIGH_DIM_DATA["X_test"])
+        assert len(result) == len(HIGH_DIM_DATA["X_test"])
+    
+        # assert pred_proba has the right dimensions (N x K),
+        # where K = 10 (number of classes) as specified in make_high_dim_data()
+>       pred_proba = cl.predict_proba(HIGH_DIM_DATA["X_test"])
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:185: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CleanLearning(clf=LogisticRegression(),
+              find_label_issues_kwargs={'confident_joint': array([[1, 2, 3, 3,... 2, 0],
+       [2, 1, 4, 2, 3, 0, 2, 1, 0, 1]]),
+                                        'min_examples_per_class': 10})
+X = array([[[0.69803922, 0.02352941, 0.78823529, ..., 0.36470588,
+         0.01568627, 0.51372549],
+        [0.42352941, 0...1372549, 0.89803922],
+        [0.37647059, 0.08235294, 0.30588235, ..., 0.94117647,
+         0.70980392, 0.31764706]]])
+args = (), kwargs = {}
+
+    def predict_proba(self, X, *args, **kwargs):
+        if self.clf is None:
+            raise ValueError('No classifier has been set for CleanLearning.')
+        if isinstance(X, np.ndarray) and X.ndim != 2:
+>           raise ValueError('Input data X must be a two-dimensional array.')
+E           ValueError: Input data X must be a two-dimensional array.
+
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:499: ValueError
+_________________________________ test_dimN[1] _________________________________
+
+N = 1
+
+    @pytest.mark.filterwarnings("ignore::RuntimeWarning")
+    @pytest.mark.parametrize("N", [1, 3, 4])
+    def test_dimN(N):
+        X, labels = dimN_data(N)
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        # just make sure we don't crash...
+        cl.fit(X, labels)
+        cl.predict(X)
+>       cl.predict_proba(X)
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:704: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CleanLearning(clf=ReshapingLogisticRegression(),
+              find_label_issues_kwargs={'confident_joint': array([[10...    [ 4,  0, 22,  4],
+       [ 8,  1, 13,  5]]),
+                                        'min_examples_per_class': 10})
+X = array([-1.71526055,  0.74999135, -0.3594208 , -0.42974999, -0.27712666,
+        1.88139564, -0.01661642,  1.30243111, ...319374,  1.25489668, -1.5744971 ,  0.14621283,
+        0.65756222, -0.0451344 ,  0.36692276,  0.10967233,  1.58811145])
+args = (), kwargs = {}
+
+    def predict_proba(self, X, *args, **kwargs):
+        if self.clf is None:
+            raise ValueError('No classifier has been set for CleanLearning.')
+        if isinstance(X, np.ndarray) and X.ndim != 2:
+>           raise ValueError('Input data X must be a two-dimensional array.')
+E           ValueError: Input data X must be a two-dimensional array.
+
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:499: ValueError
+_________________________________ test_dimN[3] _________________________________
+
+N = 3
+
+    @pytest.mark.filterwarnings("ignore::RuntimeWarning")
+    @pytest.mark.parametrize("N", [1, 3, 4])
+    def test_dimN(N):
+        X, labels = dimN_data(N)
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        # just make sure we don't crash...
+        cl.fit(X, labels)
+        cl.predict(X)
+>       cl.predict_proba(X)
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:704: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CleanLearning(clf=ReshapingLogisticRegression(),
+              find_label_issues_kwargs={'confident_joint': array([[10...    [ 9,  7,  8,  1],
+       [ 6,  7,  2,  7]]),
+                                        'min_examples_per_class': 10})
+X = array([[[-2.01531759e-01, -3.42821506e-01,  1.37429150e+00],
+        [-1.33279676e+00, -9.19629448e-01, -1.23058655e+0...    [ 4.05923511e-01,  1.57595807e+00, -5.43818728e-01],
+        [ 4.93741160e-01,  4.12456442e-01,  1.37245770e-01]]])
+args = (), kwargs = {}
+
+    def predict_proba(self, X, *args, **kwargs):
+        if self.clf is None:
+            raise ValueError('No classifier has been set for CleanLearning.')
+        if isinstance(X, np.ndarray) and X.ndim != 2:
+>           raise ValueError('Input data X must be a two-dimensional array.')
+E           ValueError: Input data X must be a two-dimensional array.
+
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:499: ValueError
+_________________________________ test_dimN[4] _________________________________
+
+N = 4
+
+    @pytest.mark.filterwarnings("ignore::RuntimeWarning")
+    @pytest.mark.parametrize("N", [1, 3, 4])
+    def test_dimN(N):
+        X, labels = dimN_data(N)
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        # just make sure we don't crash...
+        cl.fit(X, labels)
+        cl.predict(X)
+>       cl.predict_proba(X)
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:704: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CleanLearning(clf=ReshapingLogisticRegression(),
+              find_label_issues_kwargs={'confident_joint': array([[ 2...    [ 5, 10, 10,  5],
+       [ 6,  9,  5,  5]]),
+                                        'min_examples_per_class': 10})
+X = array([[[[ 0.74653412, -1.36530696, -0.0070679 ],
+         [-1.03353143, -0.21732173,  0.37111064],
+         [ 1.06659...9,  0.32151686],
+         [-1.28931883, -0.34277874,  1.30282046],
+         [-0.97316127, -0.54704117, -0.45861986]]]])
+args = (), kwargs = {}
+
+    def predict_proba(self, X, *args, **kwargs):
+        if self.clf is None:
+            raise ValueError('No classifier has been set for CleanLearning.')
+        if isinstance(X, np.ndarray) and X.ndim != 2:
+>           raise ValueError('Input data X must be a two-dimensional array.')
+E           ValueError: Input data X must be a two-dimensional array.
+
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:499: ValueError
+_______________________________ test_1D_formats ________________________________
+
+    @pytest.mark.filterwarnings("ignore::UserWarning")
+    def test_1D_formats():
+        X, labels = dimN_data(1)
+        X_series = pd.Series(X)
+        labels_series = pd.Series(labels)
+        idx = list(np.random.choice(len(labels), size=len(labels), replace=False))
+        X_series.index = idx
+        labels_series.index = idx
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        # just make sure we don't crash...
+        cl.fit(X_series, labels_series)
+        cl.predict(X_series)
+        cl.predict_proba(X_series)
+        cl.score(X_series, labels)
+        # Repeat with rare labels:
+        labels_rare = deepcopy(labels)
+        class0_inds = np.where(labels_rare == 0)[0]
+        class0_inds_remove = class0_inds[1:]
+        labels_rare[class0_inds_remove] = 1
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        cl.fit(X_series, labels_rare)
+        cl.predict(X_series)
+        cl.predict_proba(X_series)
+        cl.score(X_series, labels)
+        # Repeat with DataFrame labels:
+        labels_df = pd.DataFrame({"colname": labels})
+        cl = CleanLearning(clf=ReshapingLogisticRegression())
+        cl.fit(X, labels_df)
+        cl.predict(X)
+>       pred_probs = cl.predict_proba(X)
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py:737: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = CleanLearning(clf=ReshapingLogisticRegression(),
+              find_label_issues_kwargs={'confident_joint': array([[ 1...    [ 2,  4,  1, 19],
+       [ 3,  5,  3, 17]]),
+                                        'min_examples_per_class': 10})
+X = array([ 1.25205531,  0.10686486,  0.94809213,  1.00143723, -0.79183447,
+       -0.45667098, -1.24719785,  0.11703638, ...799358,  0.30086456, -1.87460819, -1.51152262,
+       -0.26334478,  0.35077602,  0.54923512,  1.56161277, -0.73195847])
+args = (), kwargs = {}
+
+    def predict_proba(self, X, *args, **kwargs):
+        if self.clf is None:
+            raise ValueError('No classifier has been set for CleanLearning.')
+        if isinstance(X, np.ndarray) and X.ndim != 2:
+>           raise ValueError('Input data X must be a two-dimensional array.')
+E           ValueError: Input data X must be a two-dimensional array.
+
+../publishablew/cleanlab/cleanlab/cleanlab/classification.py:499: ValueError
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:612: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f'`find_label_issues_kwargs` is not used when `low_memory=True`.')
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:616: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f'`{arg_name}` is not used when `low_memory=True`.')
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4]
+FAILED ../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats
+================== 5 failed, 54 passed, 2 warnings in 15.85s ===================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf PASSED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] PASSED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] PASSED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] PASSED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] PASSED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats PASSED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:810: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`find_label_issues_kwargs` is not used when `low_memory=True`.")
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:818: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 59 passed, 2 warnings in 15.86s ========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/cleanlab/cleanlab/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/cleanlab/cleanlab
+configfile: pyproject.toml
+collecting ... collected 59 items
+
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data0] PASSED [  1%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data1] PASSED [  3%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl[data2] PASSED [  5%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cl_default_clf PASSED [  6%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data0] PASSED [  8%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data1] PASSED [ 10%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_rare_label[data2] PASSED [ 11%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_invalid_inputs PASSED [ 13%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_aux_inputs PASSED [ 15%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_validation_data PASSED [ 16%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_fit PASSED [ 18%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict_proba PASSED [ 20%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_raise_error_no_clf_predict PASSED [ 22%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_seed PASSED [ 23%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_default_clf PASSED [ 25%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm PASSED [ 27%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_inm PASSED [ 28%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[numpy] PASSED [ 30%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[sparse] PASSED [ 32%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_nm[dataframe] PASSED [ 33%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[numpy] PASSED [ 35%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[sparse] PASSED [ 37%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_with_inm[dataframe] PASSED [ 38%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[numpy] PASSED [ 40%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[sparse] PASSED [ 42%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_nm_inm[dataframe] PASSED [ 44%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[numpy] PASSED [ 45%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[sparse] PASSED [ 47%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_clf_fit_y_alias[dataframe] PASSED [ 49%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[numpy] PASSED [ 50%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[sparse] PASSED [ 52%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_pred_and_pred_proba[dataframe] PASSED [ 54%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[numpy] PASSED [ 55%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[sparse] PASSED [ 57%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_score[dataframe] PASSED [ 59%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[numpy] PASSED [ 61%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[sparse] PASSED [ 62%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_score[dataframe] PASSED [ 64%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[numpy] PASSED [ 66%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[sparse] PASSED [ 67%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_no_fit_sample_weight[dataframe] PASSED [ 69%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[numpy] PASSED [ 71%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[sparse] PASSED [ 72%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_fit_pred_probs[dataframe] PASSED [ 74%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[1] PASSED [ 76%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[3] PASSED [ 77%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_dimN[4] PASSED [ 79%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_1D_formats PASSED [ 81%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_sklearn_gridsearchcv PASSED [ 83%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-both] PASSED [ 84%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[0-confident_learning] PASSED [ 86%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-both] PASSED [ 88%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[6-confident_learning] PASSED [ 89%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-both] PASSED [ 91%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_cj_in_find_label_issues_kwargs[2-confident_learning] PASSED [ 93%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_label_issues_uses_thresholds PASSED [ 94%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_missing_classes PASSED [ 96%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_find_issues_low_memory PASSED [ 98%]
+../publishablew/cleanlab/cleanlab/tests/test_classification.py::test_confident_joint_setting_in_find_label_issues_kwargs PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:810: UserWarning: `find_label_issues_kwargs` is not used when `low_memory=True`.
+    warnings.warn(f"`find_label_issues_kwargs` is not used when `low_memory=True`.")
+
+tests/test_classification.py::test_find_issues_low_memory
+  /local/data0/moved_data/publishablew/cleanlab/cleanlab/cleanlab/classification.py:818: UserWarning: `noise_matrix` is not used when `low_memory=True`.
+    warnings.warn(f"`{arg_name}` is not used when `low_memory=True`.")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 59 passed, 2 warnings in 17.22s ========================

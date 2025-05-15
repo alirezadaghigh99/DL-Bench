@@ -1,0 +1,295 @@
+output file:
+processed_GPflowgh_points_and_weights390.json
+function:
+gh_points_and_weights
+Error Cases:
+2025-01-09 18:44:05.301383: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1736466245.312611 2793413 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1736466245.316164 2793413 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-01-09 18:44:05.328105: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0000 00:00:1736466247.734036 2793413 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9326 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3060, pci bus id: 0000:06:00.0, compute capability: 8.6
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] FAILED', '../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] FAILED', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]', 'FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]'}
+
+All Test Cases On Generated code:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] FAILED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=================================== FAILURES ===================================
+__________________________ test_diagquad_1d[var0-mu0] __________________________
+
+mu = array([1. , 1.3]), var = array([3. , 3.5])
+
+    @pytest.mark.parametrize("mu", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var", [np.array([3.0, 3.5])])
+    def test_diagquad_1d(mu: TensorType, var: TensorType) -> None:
+        num_gauss_hermite_points = 25
+        quad = quadrature.ndiagquad([lambda *X: tf.exp(X[0])], num_gauss_hermite_points, [mu], [var])
+        expected = np.exp(mu + var / 2)
+>       assert_allclose(quad[0], expected)
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x735fc5e825c0>, array([10.19976769, 15.60146693]), array([12.18249396, 21.11534442]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 5.5138775
+E           Max relative difference: 0.26113131
+E            x: array([10.199768, 15.601467])
+E            y: array([12.182494, 21.115344])
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+___________________ test_diagquad_2d[var20-mu20-var10-mu10] ____________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5]), mu2 = array([-2. ,  0.3])
+var2 = array([4. , 4.2])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    @pytest.mark.parametrize("mu2", [np.array([-2.0, 0.3])])
+    @pytest.mark.parametrize("var2", [np.array([4.0, 4.2])])
+    def test_diagquad_2d(mu1: TensorType, var1: TensorType, mu2: TensorType, var2: TensorType) -> None:
+        alpha = 2.5
+        # using logspace=True we can reduce this, see test_diagquad_logspace
+        num_gauss_hermite_points = 35
+        quad = quadrature.ndiagquad(
+            lambda *X: tf.exp(X[0] + alpha * X[1]),
+            num_gauss_hermite_points,
+            [mu1, mu2],
+            [var1, var2],
+        )
+        expected = np.exp(mu1 + var1 / 2 + alpha * mu2 + alpha ** 2 * var2 / 2)
+>       assert_allclose(quad, expected)
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x735fc5e82a20>, array([   63.1005715 , 41449.44674723]), array([2.20264658e+04, 2.24096001e+07]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 22368150.63295621
+E           Max relative difference: 0.99815037
+E            x: array([   63.100571, 41449.446747])
+E            y: array([2.202647e+04, 2.240960e+07])
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+________________ test_diagquad_logspace[var20-mu20-var10-mu10] _________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5]), mu2 = array([-2. ,  0.3])
+var2 = array([4. , 4.2])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    @pytest.mark.parametrize("mu2", [np.array([-2.0, 0.3])])
+    @pytest.mark.parametrize("var2", [np.array([4.0, 4.2])])
+    def test_diagquad_logspace(
+        mu1: TensorType, var1: TensorType, mu2: TensorType, var2: TensorType
+    ) -> None:
+        alpha = 2.5
+        num_gauss_hermite_points = 25
+        quad = quadrature.ndiagquad(
+            lambda *X: (X[0] + alpha * X[1]),
+            num_gauss_hermite_points,
+            [mu1, mu2],
+            [var1, var2],
+            logspace=True,
+        )
+        expected = mu1 + var1 / 2 + alpha * mu2 + alpha ** 2 * var2 / 2
+>       assert_allclose(quad, expected)
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x735fc5e82fc0>, array([ 4.14472967, 10.63222965]), array([10.   , 16.925]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 6.29277035
+E           Max relative difference: 0.58552703
+E            x: array([ 4.14473, 10.63223])
+E            y: array([10.   , 16.925])
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+_____________________ test_diagquad_with_kwarg[var10-mu10] _____________________
+
+mu1 = array([1. , 1.3]), var1 = array([3. , 3.5])
+
+    @pytest.mark.parametrize("mu1", [np.array([1.0, 1.3])])
+    @pytest.mark.parametrize("var1", [np.array([3.0, 3.5])])
+    def test_diagquad_with_kwarg(mu1: TensorType, var1: TensorType) -> None:
+        alpha: AnyNDArray = np.array([2.5, -1.3])
+        num_gauss_hermite_points = 25
+        quad = quadrature.ndiagquad(
+            lambda X, Y: tf.exp(X * Y), num_gauss_hermite_points, mu1, var1, Y=alpha
+        )
+        expected = np.exp(alpha * mu1 + alpha ** 2 * var1 / 2)
+>       assert_allclose(quad, expected)
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<function assert_allclose.<locals>.compare at 0x735fbff85300>, array([2.34458761e+03, 1.43492838e+00]), array([1.43630599e+05, 3.55196155e+00]))
+kwds = {'equal_nan': True, 'err_msg': '', 'header': 'Not equal to tolerance rtol=1e-07, atol=0', 'verbose': True}
+
+    @wraps(func)
+    def inner(*args, **kwds):
+        with self._recreate_cm():
+>           return func(*args, **kwds)
+E           AssertionError: 
+E           Not equal to tolerance rtol=1e-07, atol=0
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Max absolute difference: 141286.01169627
+E           Max relative difference: 0.98367627
+E            x: array([2.344588e+03, 1.434928e+00])
+E            y: array([1.436306e+05, 3.551962e+00])
+
+/usr/lib/python3.11/contextlib.py:81: AssertionError
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+FAILED ../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+=================== 4 failed, 2 passed, 9 warnings in 2.84s ====================
+
+
+Final Test Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.58s =========================
+
+
+Initial Result:
+============================= test session starts ==============================
+platform linux -- Python 3.11.10, pytest-8.3.4, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/GPflow/GPflow/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /local/data0/moved_data/publishablew/GPflow/GPflow
+collecting ... collected 6 items
+
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10] PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error PASSED
+../publishablew/GPflow/GPflow/tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph PASSED
+
+=============================== warnings summary ===============================
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:57: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    if (distutils.version.LooseVersion(tf.__version__) <
+
+../publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow_probability/python/__init__.py:58: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+    distutils.version.LooseVersion(required_tensorflow_version)):
+
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_1d[var0-mu0]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_2d[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_logspace[var20-mu20-var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_diagquad_with_kwarg[var10-mu10]
+tests/gpflow/quadrature/test_quadrature.py::test_ndiagquad_does_not_throw_error
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/gpflow/quadrature/deprecated.py:165: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    warnings.warn(
+
+tests/gpflow/quadrature/test_quadrature.py::test_quadrature_autograph
+  /local/data0/moved_data/publishablew/GPflow/GPflow/venv/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py:371: DeprecationWarning: Please use gpflow.quadrature.NDiagGHQuadrature instead (note the changed convention of how multi-dimensional quadrature is handled)
+    return py_builtins.overload_of(f)(*args)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 6 passed, 9 warnings in 2.80s =========================

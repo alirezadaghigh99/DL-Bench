@@ -1,0 +1,439 @@
+output file:
+processed_kornialeft_jacobian351.json
+function:
+left_jacobian
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None]', '../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1]', 'FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5]', '../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2] FAILED', '../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5] FAILED'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'jit', 'inductor', 'onnxrt', 'openxla', 'tvm', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None] FAILED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1] FAILED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2] FAILED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5] FAILED
+
+=================================== FAILURES ===================================
+_________________ TestSo3.test_left_jacobian[cpu-float32-None] _________________
+
+self = <test_so3.TestSo3 object at 0x7ce00713f6d0>, device = device(type='cpu')
+dtype = torch.float32, batch_size = None
+
+    @pytest.mark.parametrize("batch_size", (None, 1, 2, 5))
+    def test_left_jacobian(self, device, dtype, batch_size):
+        vec = self._make_rand_data(device, dtype, batch_size, dims=3)
+>       Jl = So3.left_jacobian(vec)
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/liegroup/so3.py:350: in left_jacobian
+    return left_jacobian(vec)
+../publishablew/kornia/kornia/kornia/geometry/liegroup/temp.py:38: in left_jacobian
+    theta = vec.norm(dim=1, keepdim=True)
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/_tensor.py:827: in norm
+    return torch.norm(self, p, dim, keepdim, dtype=dtype)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+input = tensor([0.0383, 0.4359, 0.1411]), p = 'fro', dim = 1, keepdim = True
+out = None, dtype = None
+
+    def norm(  # noqa: F811
+        input,
+        p: Optional[Union[float, str]] = "fro",
+        dim=None,
+        keepdim=False,
+        out=None,
+        dtype=None,
+    ):
+        r"""Returns the matrix norm or vector norm of a given tensor.
+    
+        .. warning::
+    
+            torch.norm is deprecated and may be removed in a future PyTorch release.
+            Its documentation and behavior may be incorrect, and it is no longer
+            actively maintained.
+    
+            Use :func:`torch.linalg.vector_norm` when computing vector norms and
+            :func:`torch.linalg.matrix_norm` when computing matrix norms.
+            For a function with a similar behavior as this one see :func:`torch.linalg.norm`.
+            Note, however, the signature for these functions is slightly different than the
+            signature for ``torch.norm``.
+    
+        Args:
+            input (Tensor): The input tensor. Its data type must be either a floating
+                point or complex type. For complex inputs, the norm is calculated using the
+                absolute value of each element. If the input is complex and neither
+                :attr:`dtype` nor :attr:`out` is specified, the result's data type will
+                be the corresponding floating point type (e.g. float if :attr:`input` is
+                complexfloat).
+    
+            p (int, float, inf, -inf, 'fro', 'nuc', optional): the order of norm. Default: ``'fro'``
+                The following norms can be calculated:
+    
+                ======  ==============  ==========================
+                ord     matrix norm     vector norm
+                ======  ==============  ==========================
+                'fro'   Frobenius norm  --
+                'nuc'   nuclear norm    --
+                Number  --              sum(abs(x)**ord)**(1./ord)
+                ======  ==============  ==========================
+    
+                The vector norm can be calculated across any number of dimensions.
+                The corresponding dimensions of :attr:`input` are flattened into
+                one dimension, and the norm is calculated on the flattened
+                dimension.
+    
+                Frobenius norm produces the same result as ``p=2`` in all cases
+                except when :attr:`dim` is a list of three or more dims, in which
+                case Frobenius norm throws an error.
+    
+                Nuclear norm can only be calculated across exactly two dimensions.
+    
+            dim (int, tuple of ints, list of ints, optional):
+                Specifies which dimension or dimensions of :attr:`input` to
+                calculate the norm across. If :attr:`dim` is ``None``, the norm will
+                be calculated across all dimensions of :attr:`input`. If the norm
+                type indicated by :attr:`p` does not support the specified number of
+                dimensions, an error will occur.
+            keepdim (bool, optional): whether the output tensors have :attr:`dim`
+                retained or not. Ignored if :attr:`dim` = ``None`` and
+                :attr:`out` = ``None``. Default: ``False``
+            out (Tensor, optional): the output tensor. Ignored if
+                :attr:`dim` = ``None`` and :attr:`out` = ``None``.
+            dtype (:class:`torch.dtype`, optional): the desired data type of
+                returned tensor. If specified, the input tensor is casted to
+                :attr:`dtype` while performing the operation. Default: None.
+    
+        .. note::
+            Even though ``p='fro'`` supports any number of dimensions, the true
+            mathematical definition of Frobenius norm only applies to tensors with
+            exactly two dimensions. :func:`torch.linalg.matrix_norm` with ``ord='fro'``
+            aligns with the mathematical definition, since it can only be applied across
+            exactly two dimensions.
+    
+        Example::
+    
+            >>> import torch
+            >>> a = torch.arange(9, dtype= torch.float) - 4
+            >>> b = a.reshape((3, 3))
+            >>> torch.norm(a)
+            tensor(7.7460)
+            >>> torch.norm(b)
+            tensor(7.7460)
+            >>> torch.norm(a, float('inf'))
+            tensor(4.)
+            >>> torch.norm(b, float('inf'))
+            tensor(4.)
+            >>> c = torch.tensor([[ 1, 2, 3], [-1, 1, 4]] , dtype=torch.float)
+            >>> torch.norm(c, dim=0)
+            tensor([1.4142, 2.2361, 5.0000])
+            >>> torch.norm(c, dim=1)
+            tensor([3.7417, 4.2426])
+            >>> torch.norm(c, p=1, dim=1)
+            tensor([6., 6.])
+            >>> d = torch.arange(8, dtype=torch.float).reshape(2, 2, 2)
+            >>> torch.norm(d, dim=(1, 2))
+            tensor([ 3.7417, 11.2250])
+            >>> torch.norm(d[0, :, :]), torch.norm(d[1, :, :])
+            (tensor(3.7417), tensor(11.2250))
+        """
+    
+        if has_torch_function_unary(input):
+            return handle_torch_function(
+                norm, (input,), input, p=p, dim=dim, keepdim=keepdim, out=out, dtype=dtype
+            )
+    
+        # NB. All the repeated code and weird python is to please TorchScript.
+        #     For a more compact implementation see the relevant function in `_refs/__init__.py`
+    
+        # We don't do this for MPS or sparse tensors
+        if input.layout == torch.strided and input.device.type in (
+            "cpu",
+            "cuda",
+            "meta",
+            torch.utils.backend_registration._privateuse1_backend_name,
+        ):
+            if dim is not None:
+                if isinstance(dim, (int, torch.SymInt)):
+                    _dim = [dim]
+                else:
+                    _dim = dim
+            else:
+                _dim = None  # type: ignore[assignment]
+    
+            if isinstance(p, str):
+                if p == "fro" and (
+                    dim is None or isinstance(dim, (int, torch.SymInt)) or len(dim) <= 2
+                ):
+                    if out is None:
+>                       return torch.linalg.vector_norm(
+                            input, 2, _dim, keepdim, dtype=dtype
+                        )
+E                       IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 1)
+
+../publishablew/kornia/kornia/venv/lib/python3.10/site-packages/torch/functional.py:1800: IndexError
+__________________ TestSo3.test_left_jacobian[cpu-float32-1] ___________________
+
+self = <test_so3.TestSo3 object at 0x7ce00713f610>, device = device(type='cpu')
+dtype = torch.float32, batch_size = 1
+
+    @pytest.mark.parametrize("batch_size", (None, 1, 2, 5))
+    def test_left_jacobian(self, device, dtype, batch_size):
+        vec = self._make_rand_data(device, dtype, batch_size, dims=3)
+>       Jl = So3.left_jacobian(vec)
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/liegroup/so3.py:350: in left_jacobian
+    return left_jacobian(vec)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+vec = tensor([[0.8955, 0.1945, 0.3457]])
+
+    def left_jacobian(vec):
+        """
+        Compute the left Jacobian of SO(3) for a batch of rotation vectors.
+    
+        Args:
+            vec: A tensor of shape (B, 3) where B is the batch size.
+    
+        Returns:
+            A tensor of shape (B, 3, 3) representing the left Jacobian matrices.
+        """
+        B = vec.shape[0]
+        theta = vec.norm(dim=1, keepdim=True)
+        theta_sq = theta ** 2
+        theta_cub = theta ** 3
+        small_angle = theta < 1e-06
+        large_angle = ~small_angle
+        I = torch.eye(3, device=vec.device, dtype=vec.dtype).unsqueeze(0).repeat(B, 1, 1)
+        phi_hat = skew_symmetric(vec)
+        phi_hat_sq = torch.bmm(phi_hat, phi_hat)
+        J_l = I.clone()
+        if large_angle.any():
+            cos_theta = torch.cos(theta[large_angle])
+            sin_theta = torch.sin(theta[large_angle])
+>           J_l[large_angle] += (1 - cos_theta) / theta_sq[large_angle] * phi_hat[large_angle]
+E           IndexError: The shape of the mask [1, 1] at index 1 does not match the shape of the indexed tensor [1, 3, 3] at index 1
+
+../publishablew/kornia/kornia/kornia/geometry/liegroup/temp.py:50: IndexError
+__________________ TestSo3.test_left_jacobian[cpu-float32-2] ___________________
+
+self = <test_so3.TestSo3 object at 0x7ce00713f970>, device = device(type='cpu')
+dtype = torch.float32, batch_size = 2
+
+    @pytest.mark.parametrize("batch_size", (None, 1, 2, 5))
+    def test_left_jacobian(self, device, dtype, batch_size):
+        vec = self._make_rand_data(device, dtype, batch_size, dims=3)
+>       Jl = So3.left_jacobian(vec)
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/liegroup/so3.py:350: in left_jacobian
+    return left_jacobian(vec)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+vec = tensor([[0.7296, 0.9009, 0.7896],
+        [0.4014, 0.4991, 0.1517]])
+
+    def left_jacobian(vec):
+        """
+        Compute the left Jacobian of SO(3) for a batch of rotation vectors.
+    
+        Args:
+            vec: A tensor of shape (B, 3) where B is the batch size.
+    
+        Returns:
+            A tensor of shape (B, 3, 3) representing the left Jacobian matrices.
+        """
+        B = vec.shape[0]
+        theta = vec.norm(dim=1, keepdim=True)
+        theta_sq = theta ** 2
+        theta_cub = theta ** 3
+        small_angle = theta < 1e-06
+        large_angle = ~small_angle
+        I = torch.eye(3, device=vec.device, dtype=vec.dtype).unsqueeze(0).repeat(B, 1, 1)
+        phi_hat = skew_symmetric(vec)
+        phi_hat_sq = torch.bmm(phi_hat, phi_hat)
+        J_l = I.clone()
+        if large_angle.any():
+            cos_theta = torch.cos(theta[large_angle])
+            sin_theta = torch.sin(theta[large_angle])
+>           J_l[large_angle] += (1 - cos_theta) / theta_sq[large_angle] * phi_hat[large_angle]
+E           IndexError: The shape of the mask [2, 1] at index 1 does not match the shape of the indexed tensor [2, 3, 3] at index 1
+
+../publishablew/kornia/kornia/kornia/geometry/liegroup/temp.py:50: IndexError
+__________________ TestSo3.test_left_jacobian[cpu-float32-5] ___________________
+
+self = <test_so3.TestSo3 object at 0x7ce00713fa30>, device = device(type='cpu')
+dtype = torch.float32, batch_size = 5
+
+    @pytest.mark.parametrize("batch_size", (None, 1, 2, 5))
+    def test_left_jacobian(self, device, dtype, batch_size):
+        vec = self._make_rand_data(device, dtype, batch_size, dims=3)
+>       Jl = So3.left_jacobian(vec)
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py:259: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/kornia/geometry/liegroup/so3.py:350: in left_jacobian
+    return left_jacobian(vec)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+vec = tensor([[0.3092, 0.0911, 0.0237],
+        [0.4437, 0.4214, 0.1812],
+        [0.8767, 0.3148, 0.4013],
+        [0.4297, 0.1557, 0.0996],
+        [0.0122, 0.7580, 0.2849]])
+
+    def left_jacobian(vec):
+        """
+        Compute the left Jacobian of SO(3) for a batch of rotation vectors.
+    
+        Args:
+            vec: A tensor of shape (B, 3) where B is the batch size.
+    
+        Returns:
+            A tensor of shape (B, 3, 3) representing the left Jacobian matrices.
+        """
+        B = vec.shape[0]
+        theta = vec.norm(dim=1, keepdim=True)
+        theta_sq = theta ** 2
+        theta_cub = theta ** 3
+        small_angle = theta < 1e-06
+        large_angle = ~small_angle
+        I = torch.eye(3, device=vec.device, dtype=vec.dtype).unsqueeze(0).repeat(B, 1, 1)
+        phi_hat = skew_symmetric(vec)
+        phi_hat_sq = torch.bmm(phi_hat, phi_hat)
+        J_l = I.clone()
+        if large_angle.any():
+            cos_theta = torch.cos(theta[large_angle])
+            sin_theta = torch.sin(theta[large_angle])
+>           J_l[large_angle] += (1 - cos_theta) / theta_sq[large_angle] * phi_hat[large_angle]
+E           IndexError: The shape of the mask [5, 1] at index 1 does not match the shape of the indexed tensor [5, 3, 3] at index 1
+
+../publishablew/kornia/kornia/kornia/geometry/liegroup/temp.py:50: IndexError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None]
+FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1]
+FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2]
+FAILED ../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5]
+============================== 4 failed in 0.38s ===============================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'openxla', 'onnxrt', 'tvm', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5] PASSED
+
+============================== 4 passed in 0.19s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'openxla', 'onnxrt', 'tvm', 'cudagraphs', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 4 items
+
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-None] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-1] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-2] PASSED
+../publishablew/kornia/kornia/tests/geometry/liegroup/test_so3.py::TestSo3::test_left_jacobian[cpu-float32-5] PASSED
+
+============================== 4 passed in 0.21s ===============================

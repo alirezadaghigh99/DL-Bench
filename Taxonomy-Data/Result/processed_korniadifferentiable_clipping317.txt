@@ -1,0 +1,182 @@
+output file:
+processed_korniadifferentiable_clipping317.json
+function:
+differentiable_clipping
+Error Cases:
+
+Pass or Failed: 0
+
+Related Failed Test Cases:
+{'../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu] FAILED', 'FAILED ../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu]'}
+
+All Test Cases On Generated code:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'onnxrt', 'tvm', 'cudagraphs', 'jit', 'inductor', 'openxla', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 2 items
+
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu] FAILED
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_gradcheck[cpu] PASSED
+
+=================================== FAILURES ===================================
+_________ TestDifferentiableClipping.test_differentiable_clipping[cpu] _________
+
+self = <test_misc.TestDifferentiableClipping object at 0x727bd15e8670>
+device = device(type='cpu')
+
+    def test_differentiable_clipping(self, device):
+        x = tensor([1.0, 6.0, 10.0, 12.0], device=device)
+        y = differentiable_clipping(x, min_val=5.0, max_val=10.0)
+        y_expected = tensor([4.9804, 6.0, 10.0, 10.0173], device=device)
+    
+>       self.assert_close(y, y_expected)
+
+../publishablew/kornia/kornia/tests/utils/test_misc.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../publishablew/kornia/kornia/testing/base.py:106: in assert_close
+    return assert_close(actual, expected, rtol=rtol, atol=atol)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+actual = tensor([ 5.0000,  6.0000,  9.9861, 10.0000])
+expected = tensor([ 4.9804,  6.0000, 10.0000, 10.0173]), rtol = 0.0001
+atol = 1e-05, kwargs = {}
+
+    def assert_close(
+        actual: Tensor, expected: Tensor, *, rtol: Optional[float] = None, atol: Optional[float] = None, **kwargs: Any
+    ) -> None:
+        if rtol is None and atol is None:
+            # `torch.testing.assert_close` used different default tolerances than `torch.testing.assert_allclose`.
+            # TODO: remove this special handling as soon as https://github.com/kornia/kornia/issues/1134 is resolved
+            #  Basically, this whole wrapper function can be removed and `torch.testing.assert_close` can be used
+            #  directly.
+            rtol, atol = _default_tolerances(actual, expected)
+    
+>       return _assert_close(
+            actual,
+            expected,
+            rtol=rtol,
+            atol=atol,
+            # this is the default value for torch>=1.10, but not for torch==1.9
+            # TODO: remove this if kornia relies on torch>=1.10
+            check_stride=False,
+            equal_nan=False,
+            **kwargs,
+        )
+E       AssertionError: Tensor-likes are not close!
+E       
+E       Mismatched elements: 3 / 4 (75.0%)
+E       Greatest absolute difference: 0.01959991455078125 at index (0,) (up to 1e-05 allowed)
+E       Greatest relative difference: 0.003935409709811211 at index (0,) (up to 0.0001 allowed)
+
+../publishablew/kornia/kornia/testing/base.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED ../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu]
+========================= 1 failed, 1 passed in 0.24s ==========================
+
+
+Final Test Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'cudagraphs', 'jit', 'onnxrt', 'openxla', None, 'tvm', 'inductor'}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 2 items
+
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu] PASSED
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_gradcheck[cpu] PASSED
+
+============================== 2 passed in 0.12s ===============================
+
+
+Initial Result:
+Setting up torch compile...
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.3.3, pluggy-1.5.0 -- /local/data0/moved_data/publishablew/kornia/kornia/venv/bin/python
+cachedir: .pytest_cache
+
+cpu info:
+	- Model name: AMD Ryzen 7 PRO 5845 8-Core Processor
+	- Architecture: x86_64
+	- CPU(s): 16
+	- Thread(s) per core: 2
+	- CPU max MHz: 4661.7178
+	- CPU min MHz: 2200.0000
+gpu info: {'GPU 0': 'NVIDIA GeForce RTX 3060'}
+main deps:
+    - kornia-0.7.4
+    - torch-2.5.1+cu124
+        - commit: a8d6afb511a69687bbb2b7e88a3cf67917e1697e
+        - cuda: 12.4
+        - nvidia-driver: 555.42.02
+x deps:
+    - accelerate-1.1.1
+dev deps:
+    - kornia_rs-0.1.7
+    - onnx-1.17.0
+gcc info: (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
+available optimizers: {'', 'inductor', 'jit', 'openxla', 'tvm', 'cudagraphs', 'onnxrt', None}
+model weights cached: ['checkpoints']
+
+rootdir: /local/data0/moved_data/publishablew/kornia/kornia
+configfile: pyproject.toml
+plugins: timeout-2.3.1
+collecting ... collected 2 items
+
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_differentiable_clipping[cpu] PASSED
+../publishablew/kornia/kornia/tests/utils/test_misc.py::TestDifferentiableClipping::test_gradcheck[cpu] PASSED
+
+============================== 2 passed in 0.19s ===============================
