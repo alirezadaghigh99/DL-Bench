@@ -12,8 +12,8 @@ from botocore.exceptions import ClientError
 from openai import OpenAI
 import csv
 import json
-OPENAI_API_KEY = ""
-Geminay_KEY = ""
+
+
 from prompts.few_shot_cot import cot_fewshot_data_outsider, cot_fewshot_using_different_categories, cot_few_shot_using_same_or_different_category
 from prompts.zero_shot_cot import ZeroShotCoT
 from prompts.few_shot import fewshot_data_outsider, fewshot_using_different_categories, few_shot_using_same_or_different_category, fewshot_data_outside_benchmark
@@ -27,7 +27,7 @@ from fireworks.client import Fireworks
 
 # from google import genai
 
-FIREWORK_API = ""
+W
 def call_geminai(prompt):
     
     client = genai.Client(api_key=Geminay_KEY)
