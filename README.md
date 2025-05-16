@@ -153,19 +153,89 @@ The benchmark produces detailed results showing how different LLMs and prompting
 }
 ```
 
-## 💻 Example Usage
+## 💻 Usage
 
-### Testing with Different LLMs
+### LLM Module
+
+The `LLM` folder contains the core functionality for interacting with various Large Language Models:
+
+#### Using `call.py`
+
+The `call.py` file provides a unified interface for communicating with multiple LLM providers:
+
 ```python
 from src.LLM.call import process_file_data
 
-# Test with different LLMs
-result_openai = process_file_data(prompt, llm="openai-4o")
-result_claude = process_file_data(prompt, llm="antropic")
-result_llama = process_file_data(prompt, llm="llama")
+# Basic usage with OpenAI GPT-4o
+result = process_file_data(prompt, llm="openai-4o")
+
+# Use Anthropic Claude
+result = process_file_data(prompt, llm="antropic")
+
+# Use Llama
+result = process_file_data(prompt, llm="llama")
+
+# Additional parameters
+result = process_file_data(
+    prompt,
+    llm="openai-4o",
+    temperature=0.2,  # Control randomness
+    max_tokens=1500,  # Maximum response length
+    prompt_type="cot"  # Chain-of-thought prompting
+)
 ```
 
+The `function_extractor.py` tool can also be used to extract function definitions from source code files, which is useful for generating context for LLM prompts.
+
+### Testing Framework
+
+The `tester` folder contains tools for evaluating LLM-generated code:
+
+#### Using `parse_run_combined.py`
+
+This is the main entry point for benchmark evaluation that handles both function and class implementations:
+
+```python
+from src.tester.parse_run_combined import process_function_file, process_class_file
+
+# Process a function implementation task
+process_function_file(
+    file_path="path/to/test.json",
+    folder_path="results/output",
+    BASE_PATH="/path/to/base",
+    r="pytorch",  # Repository
+    llm="openai-4o",
+    technique="zeroshot",
+    version="v2"
+)
+
+# Process a class implementation task
+process_class_file(
+    file_path="path/to/class_test.json",
+    folder_path="results/output",
+    BASE_PATH="/path/to/base",
+    r="pytorch3d",
+    llm="antropic",
+    technique="few_shot",
+    version="v1"
+)
+
+# Batch processing multiple files
+process_batch(
+    folder_path="path/to/tests",
+    output_path="path/to/results",
+    llm="openai-4o",
+    technique="zeroshot_cot"
+)
+```
+
+Related utility files:
+- `parse_run_function.py` and `parse_run_class.py`: Specialized runners for different task types
+- `replacer_function.py` and `replacer_class.py`: Replace code in source files for testing
+- `test_runner_function.py` and `test_runner_class.py`: Execute tests on generated code
+
 ### Using Different Prompting Techniques
+
 ```python
 from src.prompts.few_shot import few_shot_using_same_or_different_category
 from src.prompts.zero_shot_cot import ZeroShotCoT
@@ -178,22 +248,6 @@ few_shot_prompt = few_shot_using_same_or_different_category(
 # Create zero-shot CoT prompt
 zero_shot_cot = ZeroShotCoT("dlbench", "4o", "zero_cot")
 cot_prompt = zero_shot_cot.form_technique_prompt(prompt)
-```
-
-### Running Tests for a Specific Repository
-```python
-from src.tester.parse_run_combined import process_function_file
-
-# Process function files for PyTorch repository
-process_function_file(
-    file_path="path/to/test.json",
-    folder_path="results/output",
-    BASE_PATH="/path/to/base",
-    r="pytorch",
-    llm="openai-4o_new",
-    technique="zeroshot",
-    version="v2"
-)
 ```
 
 ## 🧠 Category Classification
