@@ -295,7 +295,7 @@ DL-Bench works with 30+ machine learning repositories, including:
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the AGPL-GNU License - see the LICENSE file for details.
 
 ---
 
