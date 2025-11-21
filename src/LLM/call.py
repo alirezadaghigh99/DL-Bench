@@ -27,7 +27,7 @@ from fireworks.client import Fireworks
 
 # from google import genai
 
-W
+
 def call_geminai(prompt):
     
     client = genai.Client(api_key=Geminay_KEY)
