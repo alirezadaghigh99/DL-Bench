@@ -19,7 +19,6 @@ from prompts.zero_shot_cot import ZeroShotCoT
 from prompts.few_shot import fewshot_data_outsider, fewshot_using_different_categories, few_shot_using_same_or_different_category, fewshot_data_outside_benchmark
 zero_shot_cot = ZeroShotCoT("dlbench", "4o", "zero_cot")
 
-data_path = "/home/aliredaq/Desktop/DeepAgent/ICSE/data/DLEval-20240920T201632Z-001/DLEval"
 all_files = os.listdir(data_path)
 client = OpenAI(api_key=OPENAI_API_KEY)
 # import google.generativeai as genai
