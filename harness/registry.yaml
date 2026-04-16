@@ -1,0 +1,113 @@
+# DL-Bench repository registry.
+#
+# Each entry maps a `repo` value (as it appears in the dataset) to the Docker
+# image that has the repo cloned and installed, plus the path inside the image
+# where the clone lives. `ground Truth` and `test_cases` from the dataset are
+# interpreted relative to `repo_dir`.
+#
+# Add a new repo by:
+#   1. Putting a Dockerfile in dockerfiles/<repo>/
+#   2. Building it as dlbench/<repo>:latest
+#   3. Adding an entry below.
+
+defaults:
+  python_bin: python
+  pytest_args: ["-p", "no:cacheprovider", "--tb=short", "-q"]
+  timeout_s: 300
+
+repos:
+  kornia:
+    image: dlbench/kornia:latest
+    repo_dir: /app/kornia
+
+  GPflow:
+    image: dlbench/gpflow:latest
+    repo_dir: /app/GPflow
+
+  scikit-learn:
+    image: dlbench/scikit-learn:latest
+    repo_dir: /app/scikit-learn
+
+  vision:
+    image: dlbench/vision:latest
+    repo_dir: /app/vision
+
+  pyro:
+    image: dlbench/pyro:latest
+    repo_dir: /app/pyro
+
+  pytorch3d:
+    image: dlbench/pytorch3d:latest
+    repo_dir: /app/pytorch3d
+
+  cleanlab:
+    image: dlbench/cleanlab:latest
+    repo_dir: /app/cleanlab
+
+  deepchem:
+    image: dlbench/deepchem:latest
+    repo_dir: /app/deepchem
+
+  emukit:
+    image: dlbench/emukit:latest
+    repo_dir: /app/emukit
+
+  ignite:
+    image: dlbench/ignite:latest
+    repo_dir: /app/ignite
+
+  imagededup:
+    image: dlbench/imagededup:latest
+    repo_dir: /app/imagededup
+
+  inference:
+    image: dlbench/inference:latest
+    repo_dir: /app/inference
+
+  Laplace:
+    image: dlbench/laplace:latest
+    repo_dir: /app/Laplace
+
+  lightly:
+    image: dlbench/lightly:latest
+    repo_dir: /app/lightly
+
+  neupy:
+    image: dlbench/neupy:latest
+    repo_dir: /app/neupy
+
+  neurodiffeq:
+    image: dlbench/neurodiffeq:latest
+    repo_dir: /app/neurodiffeq
+
+  nncf:
+    image: dlbench/nncf:latest
+    repo_dir: /app/nncf
+
+  pennylane:
+    image: dlbench/pennylane:latest
+    repo_dir: /app/pennylane
+
+  pfrl:
+    image: dlbench/pfrl:latest
+    repo_dir: /app/pfrl
+
+  pyod:
+    image: dlbench/pyod:latest
+    repo_dir: /app/pyod
+
+  recommenders:
+    image: dlbench/recommenders:latest
+    repo_dir: /app/recommenders
+
+  small-text:
+    image: dlbench/small-text:latest
+    repo_dir: /app/small-text
+
+  sparseml:
+    image: dlbench/sparseml:latest
+    repo_dir: /app/sparseml
+
+  stanza:
+    image: dlbench/stanza:latest
+    repo_dir: /app/stanza

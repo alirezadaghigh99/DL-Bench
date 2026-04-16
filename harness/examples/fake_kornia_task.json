@@ -1,0 +1,12 @@
+{
+    "result": "Sure! Here is the function:\n\n```python\nimport torch\n\ndef invert(image, max_val=torch.tensor(1.0)):\n    if not isinstance(image, torch.Tensor):\n        raise TypeError(f\"Input image type is not a torch.Tensor. Got {type(image)}\")\n    return max_val.to(image) - image\n```\n",
+    "prompt": "Write a Python function `invert` that inverts an image tensor.",
+    "function_name": "invert",
+    "ground_truth": "kornia/enhance/adjust.py",
+    "test": "tests/enhance/test_adjust.py::TestInvert",
+    "class": "",
+    "stage": "pre/post processing",
+    "task": "general",
+    "data": "image",
+    "repo": "kornia"
+}
