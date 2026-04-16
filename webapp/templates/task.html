@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}{{ task.repo }} / {{ task.function_name }}{% endblock %}
+{% block body %}
+
+<h1>{{ task.repo }} / <code>{{ task.function_name }}</code>
+  {% if task.class_name %}<small>(class <code>{{ task.class_name }}</code>)</small>{% endif %}
+</h1>
+
+<p class="meta">
+  <span>stage: {{ task.stage }}</span>
+  <span>task: {{ task.task_type }}</span>
+  <span>data: {{ task.data_type }}</span>
+  <span>file: <code>{{ task.ground_truth }}</code></span>
+  <span>tests: <code>{{ task.test_paths }}</code></span>
+</p>
+
+{% if task.repo not in registered_repos %}
+<div class="warn">
+  Repo <code>{{ task.repo }}</code> isn't in the harness registry — evaluation will be unavailable until you add it and build the Docker image.
+</div>
+{% endif %}
+
+{% if message %}<div class="warn">{{ message }}</div>{% endif %}
+
+<details>
+  <summary>Original prompt ({{ task.prompt | length }} chars)</summary>
+  <pre>{{ task.prompt }}</pre>
+</details>
+
+<form method="post" class="controls">
+  <label>Model
+    <select name="model">
+      {% for m in models %}<option value="{{ m }}" {% if m == model %}selected{% endif %}>{{ m }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Technique
+    <select name="technique">
+      {% for t in techniques %}<option value="{{ t }}" {% if t == technique %}selected{% endif %}>{{ t }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Temperature <input type="number" step="0.1" min="0" max="2" name="temperature" value="0"></label>
+  <label class="check"><input type="checkbox" name="force"> force re-generate</label>
+  <button type="submit" name="action" value="generate">Generate</button>
+  <button type="submit" name="action" value="evaluate"
+    {% if task.repo not in registered_repos %}disabled{% endif %}
+    {% if not active_gen %}title="Generate first"{% endif %}>
+    Evaluate
+  </button>
+</form>
+
+{% if active_gen %}
+<section class="card">
+  <h2>Generation <small>({{ model }} / {{ technique }})</small></h2>
+  <p class="meta">
+    <span>tokens: {{ active_gen.input_tokens }} in / {{ active_gen.output_tokens }} out</span>
+    <span>cost: {{ active_gen.cost_usd | usd }}</span>
+    <span>API time: {{ active_gen.duration_s | dur }}</span>
+  </p>
+  <h3>Response</h3>
+  <pre class="code">{{ active_gen.response }}</pre>
+</section>
+{% else %}
+  <p><em>No generation yet for {{ model }} / {{ technique }}. Click Generate.</em></p>
+{% endif %}
+
+{% if evaluations %}
+<section>
+  <h2>Evaluations</h2>
+  {% for e in evaluations %}
+  <div class="eval status-{{ e.status }}">
+    <h3>{{ e.status | upper }}
+      <small>{{ e.counts.passed }}P / {{ e.counts.failed }}F / {{ e.counts.errored }}E / {{ e.counts.skipped }}S</small>
+    </h3>
+    {% if e.detail %}<p class="meta"><span>{{ e.detail }}</span></p>{% endif %}
+    <p class="meta">
+      <span>extract: {{ e.extract_s | dur }}</span>
+      <span>patch: {{ e.patch_s | dur }}</span>
+      <span>docker pytest: {{ e.docker_s | dur }}</span>
+      <span><strong>total: {{ e.total_s | dur }}</strong></span>
+    </p>
+    {% if e.stderr_tail %}
+      <details><summary>stderr tail</summary><pre>{{ e.stderr_tail }}</pre></details>
+    {% endif %}
+    {% if e.stdout_tail %}
+      <details><summary>stdout tail</summary><pre>{{ e.stdout_tail }}</pre></details>
+    {% endif %}
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if generations|length > 1 %}
+<section>
+  <h2>Other generations for this task</h2>
+  <table>
+    <thead><tr><th>Model</th><th>Technique</th><th>Cost</th><th>API time</th></tr></thead>
+    <tbody>
+    {% for g in generations %}
+      <tr>
+        <td><a href="?model={{ g.model }}&technique={{ g.technique }}">{{ g.model }}</a></td>
+        <td>{{ g.technique }}</td>
+        <td>{{ g.cost_usd | usd }}</td>
+        <td>{{ g.duration_s | dur }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}DL-Bench — overview{% endblock %}
+{% block body %}
+<h1>DL-Bench</h1>
+<p>{{ n_tasks }} tasks across {{ repos|length }} repositories.</p>
+
+<section class="cards">
+  <div class="card">
+    <h3>Generations</h3>
+    <p class="big">{{ totals.generations }}</p>
+    <small>{{ totals.input_tokens }} in / {{ totals.output_tokens }} out tokens</small>
+    <small>{{ totals.cost_usd | usd }} spent</small>
+    <small>{{ totals.gen_duration_s | dur }} cumulative API time</small>
+  </div>
+  <div class="card">
+    <h3>Evaluations</h3>
+    <p class="big">{{ totals.evaluations }}</p>
+    <small>{{ totals.eval_passed }} passing</small>
+    <small>{{ totals.eval_duration_s | dur }} cumulative test time</small>
+  </div>
+</section>
+
+<h2>Browse by repo</h2>
+<ul class="repos">
+  {% for r in repos %}
+    <li><a href="{{ url_for('tasks', repo=r) }}">{{ r }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

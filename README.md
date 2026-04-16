@@ -89,13 +89,29 @@ pip install -r requirements.txt
 ```
 
 ### Running the Benchmark
-```bash
-# Main benchmark execution
-python src/tester/parse_run_combined.py
 
-# For specific LLM and prompting technique
-python src/LLM/call.py
+The current evaluator lives under [`harness/`](harness/README.md). It runs
+each repository's tests inside a per-repo Docker image, so it is
+cross-platform and reproducible (no per-machine `venv/` setup, no hardcoded
+paths). See `harness/README.md` for full details.
+
+```bash
+# Build the Docker image for the repo you want to evaluate (one-time)
+docker build -t dlbench/kornia:latest dockerfiles/kornia
+
+# Evaluate one LLM-output JSON
+python -m harness.cli single harness/examples/fake_kornia_task.json
+
+# Evaluate every JSON in a folder, append structured results
+python -m harness.cli folder \
+    results/llm-output/zeroshot/output_openai-4o_new/v2/kornia \
+    results/eval/zeroshot_openai-4o_kornia.jsonl
 ```
+
+The legacy entry points (`src/tester/parse_run_combined.py`, `src/LLM/call.py`)
+are preserved for reference but are deprecated; they require Linux, conda or a
+hand-built `venv/` per repo, and absolute paths under
+`/local/data0/moved_data/publishablew/`.
 
 ## 🧠 Prompting Techniques
 

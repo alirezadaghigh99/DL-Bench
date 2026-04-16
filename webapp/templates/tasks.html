@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Tasks{% endblock %}
+{% block body %}
+<h1>Tasks {% if repo %}<small>({{ repo }})</small>{% endif %}</h1>
+
+<form method="get" class="inline">
+  <label>Repo
+    <select name="repo" onchange="this.form.submit()">
+      <option value="">— all —</option>
+      {% for r in repos %}
+        <option value="{{ r }}" {% if r == repo %}selected{% endif %}>{{ r }}</option>
+      {% endfor %}
+    </select>
+  </label>
+</form>
+
+<p>{{ total }} task(s).
+{% set last_page = (total - 1) // page_size %}
+{% if page > 0 %}<a href="?repo={{ repo or '' }}&page={{ page - 1 }}">← prev</a>{% endif %}
+page {{ page + 1 }} / {{ last_page + 1 }}
+{% if page < last_page %}<a href="?repo={{ repo or '' }}&page={{ page + 1 }}">next →</a>{% endif %}
+</p>
+
+<table>
+  <thead><tr><th>Repo</th><th>Function</th><th>Class</th><th>Stage</th><th>Data</th><th></th></tr></thead>
+  <tbody>
+  {% for t in items %}
+    <tr>
+      <td>{{ t.repo }}</td>
+      <td><code>{{ t.function_name }}</code></td>
+      <td>{{ t.class_name or "—" }}</td>
+      <td>{{ t.stage }}</td>
+      <td>{{ t.data_type }}</td>
+      <td><a href="{{ url_for('task_view', tid=t.id) }}">open</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

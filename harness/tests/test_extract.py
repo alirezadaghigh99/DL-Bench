@@ -30,7 +30,7 @@ def test_falls_back_to_plain_block():
 
 
 def test_skips_unparseable_block():
-    r = extract("```python\nthis is not python\n```")
+    r = extract("```python\ndef f(:::\n```")
     assert r is None
 
 

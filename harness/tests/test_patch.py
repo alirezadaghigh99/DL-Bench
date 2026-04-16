@@ -22,14 +22,13 @@ def test_replaces_top_level_function():
     """)
     llm = _src("""
         def add(a, b):
-            # smarter version
             return a + b + 0
     """)
     out = make_patched_source(original, llm, "add", None)
     tree = ast.parse(out)
     funcs = {n.name: n for n in tree.body if isinstance(n, ast.FunctionDef)}
     assert "add" in funcs and "other" in funcs
-    assert "smarter version" in ast.unparse(funcs["add"])
+    assert "a + b + 0" in ast.unparse(funcs["add"])
 
 
 def test_replaces_class_method_and_keeps_other_methods():

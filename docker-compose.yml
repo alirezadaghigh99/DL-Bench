@@ -1,0 +1,17 @@
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: webapp/Dockerfile
+    image: dlbench/webapp:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    volumes:
+      # Cache (sqlite + any artifacts) lives on the host so it survives restarts.
+      - ./var:/app/var
+      # Docker-out-of-Docker: webapp runs `docker run dlbench/<repo>:latest ...`
+      # on the *host* daemon. The host must already have those images built.
+      - /var/run/docker.sock:/var/run/docker.sock
